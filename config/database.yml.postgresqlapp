@@ -1,0 +1,15 @@
+<% branch_name = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '') %>
+<% repository_name = `git rev-parse --show-toplevel`.split('/').last.strip %>
+
+# Check doc/why_database_name_only_63_characters_long.md to see
+# details about the restriction on database name
+
+development:
+  adapter: postgresql
+  database: <%= "#{repository_name}_development_#{branch_name}"[0...63] %>
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: <%= "#{repository_name}_test_#{branch_name}"[0...63] %>
+  host: localhost

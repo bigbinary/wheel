@@ -1,0 +1,8 @@
+<ul class="nav navbar-nav">
+  <%= nav_link('Users', superadmin_users_path) %>
+  <%= nav_link('Email logs', superadmin_email_logs_path, controller_name == 'email_logs') %>
+  <%= nav_link("Active Admin", active_admin_root_path)%>
+  <%= nav_link('DJ', '/delayed_job', false, "target" => '_blank') %>
+</ul>
+
+<%= render('shared/user_right_nav') %>

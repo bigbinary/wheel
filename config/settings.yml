@@ -1,0 +1,91 @@
+common:
+
+  secret_key_base: <%= ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64) %>
+
+  twilio:
+    from_number: <%= ENV['TWILIO_FROM_NUMBER'] %>
+    account_sid: <%= ENV['TWILIO_ACCOUNT_SID'] %>
+    auth_token: <%= ENV['TWILIO_AUTH_TOKEN'] %>
+
+  honeybadger_api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
+
+  aws_s3:
+    access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+    secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+    bucket_name: <%= ENV['AWS_S3_BUCKET_NAME'] %>
+
+  host: lvh.me:3000
+  url_with_port: http://lvh.me:3000
+
+  mailer:
+    default_from_email: "'Wheel' <notifications@wheel.com>"
+    host_for_email_with_www: www.localhost:3000
+    delivery_method: test
+    smtp_settings:
+      user_name: <%=ENV['MAILTRAP_USERNAME']%>
+      password: <%=ENV['MAILTRAP_PASSWORD']%>
+      address: mailtrap.io
+      port: 2525
+      authentication: plain
+
+  support_email:
+    support@example.com
+
+  devise:
+    secret_key: <%= ENV['DEVISE_KEY'] || SecureRandom.hex(64) %>
+
+test:
+  mailer:
+    delivery_method: :test
+  intercepted_emails:
+    - john@example.com
+    - adam@example.com
+
+development:
+  mailer:
+    delivery_method: :smtp
+  intercepted_emails:
+    - john@example.com
+    - adam@example.com
+
+staging:
+  mailer:
+    host_for_email_with_www: www.wheel.net
+    delivery_method: :smtp
+
+    smtp_settings:
+      user_name: <%=ENV['MANDRILLAPP_USERNAME']%>
+      password: <%=ENV['MANDRILLAPP_PASSWORD']%>
+      domain: www.wheel.com
+      address: smtp.mandrillapp.com
+      port: 587
+      authentication: plain
+      enable_starttls_auto: true
+
+  host: wheel.com
+  url_with_port: http://wheel.com
+  intercepted_emails:
+    - john@example.com
+    - adam@example.com
+  support_email:
+    support@example.com
+
+production:
+  bcc: hello.wheel@gmail.com
+  mailer:
+    host_for_email_with_www: www.wheel.com
+    delivery_method: :smtp
+
+    smtp_settings:
+      user_name: <%=ENV['MANDRILLAPP_USERNAME']%>
+      password: <%=ENV['MANDRILLAPP_PASSWORD']%>
+      domain: www.wheel.com
+      address: smtp.mandrillapp.com
+      port: 587
+      authentication: plain
+      enable_starttls_auto: true
+
+  host: www.wheel.com
+  url_with_port: http://wheel.com
+  support_email:
+    support@example.com

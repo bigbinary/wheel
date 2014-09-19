@@ -1,0 +1,22 @@
+<div class="row" style="padding-top: 10px;">
+  <%= simple_form_for @contact, html: { class: 'bootstrap-center-form-medium' } do |f| %>
+
+    <h2>Contact us</h2>
+
+    <div class="form-controls">
+      <%= f.input :title, required: true, input_html: { class: 'form-control' }  %>
+    </div>
+
+    <div class="form-controls">
+      <%= f.input :email, required: true, input_html: { class: 'form-control' } %>
+    </div>
+
+    <div class="form-controls">
+      <%= f.input :body,  as: :text, input_html: { class: 'form-control', rows: '3' } %>
+    </div>
+
+    <div class="form-buttons">
+      <%= f.button :submit, 'Send message', class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

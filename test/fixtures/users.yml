@@ -1,0 +1,16 @@
+admin:
+  email: 'admin@example.com'
+  first_name: 'Adam'
+  last_name: 'Smith'
+  encrypted_password: '$2a$10$3OF9YyLG6D8P8EqFFdudmeIUtIlnX2usIFYhAJ77pep5y93BLuSuu' #welcome
+  reset_password_token: 5h632xrnASqFanDhKQsB8
+  role: 'super_admin'
+  authentication_token: 5h632xrnASqFanDhKQsB8
+
+nancy:
+  email: 'nancy.smith@example.com'
+  first_name: 'Nancy'
+  last_name: 'Smith'
+  encrypted_password: '$2a$10$3OF9YyLG6D8P8EqFFdudmeIUtIlnX2usIFYhAJ77pep5y93BLuSuu' #welcome
+  reset_password_token: 5h632xrnASsFanDhKQsB7
+  authentication_token: 5h632xrnASqFanDhKQsB8

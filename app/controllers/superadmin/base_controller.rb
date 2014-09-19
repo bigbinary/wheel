@@ -1,0 +1,17 @@
+class Superadmin::BaseController < ApplicationController
+
+  before_filter :ensure_current_user_is_superadmin!
+
+  layout 'superadmin'
+
+  private
+
+  def ensure_current_user_is_superadmin!
+    authenticate_user!
+
+    unless current_user.super_admin?
+      redirect_to root_path, status: :forbidden, alert: "Unauthorized Access!"
+    end
+  end
+
+end
