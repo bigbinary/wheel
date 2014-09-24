@@ -5,8 +5,9 @@ user = User.find(email: 'john@example.com')
 auth_token = user.authentication_token
 ```
 
-In the following example replace the auth_token value with the value
-derived in the above step.
+In the following example replace the `auth_token` value with the value derived in the above step when appropriate.
+
+### Show user information
 
 ```
 curl -v -H "X-Auth-Token: zsCbdiCyDMhb4NxMZCMH" \
