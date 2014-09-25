@@ -1,4 +1,4 @@
-### How to make curl request to check authentication
+### Playing with api using curl
 
 ``` ruby
 user = User.find(email: 'john@example.com')
@@ -11,7 +11,7 @@ In the following example replace the `auth_token` value with the value derived i
 
 ```
 curl -v -H "X-Auth-Token: zsCbdiCyDMhb4NxMZCMH" \
-        -H "Accept: application/json" \
-        -H "Content-type: application/json" \
+        -H "Accept: application/json"           \
+        -H "Content-type: application/json"     \
         http://localhost:3000/api/v1/users/john@example.com
 ```
