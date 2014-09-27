@@ -1,4 +1,4 @@
-![circleci image](https://circleci.com/gh/bigbinary/wheel.png?circle-token=7bb42337cdade1b80439ab4c0238c0893488620f)
+[![Circle CI](https://circleci.com/gh/bigbinary/wheel.png?style=badge)](https://circleci.com/gh/bigbinary/wheel)
 
 ### Setup
 
