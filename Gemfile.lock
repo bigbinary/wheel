@@ -42,17 +42,6 @@ GIT
       activesupport (>= 4.0)
       sprockets (~> 2.8)
 
-GIT
-  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: 1d93c5a77049b3d21d17c847ad0531d7714fa229
-  branch: bootstrap3
-  specs:
-    twitter-bootstrap-rails (3.1.1)
-      actionpack (>= 3.1)
-      execjs
-      rails (>= 3.1)
-      railties (>= 3.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -238,6 +227,11 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (3.2.0)
+      actionpack (~> 4.1)
+      execjs (~> 2.2)
+      rails (~> 4.1)
+      railties (~> 4.1)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -275,5 +269,5 @@ DEPENDENCIES
   spring
   sprockets-rails!
   thin
-  twitter-bootstrap-rails!
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)

@@ -38,7 +38,7 @@ gem 'handy'
 gem 'honeybadger'
 
 # use bootstrap3
-gem 'twitter-bootstrap-rails', github: 'seyhunak/twitter-bootstrap-rails', branch: 'bootstrap3'
+gem 'twitter-bootstrap-rails'
 
 # forms made easy for rails
 gem 'simple_form'
