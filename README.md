@@ -19,3 +19,9 @@ replace all occurrences of `Wheel` with `Pump`.
 ### Instructions
 
  - [How we work](http://how-we-work.bigbinary.com/)
+ 
+
+ Brought to you by
+-----------------
+
+![BigBinary](http://bigbinary.com/assets/common/logo.png)
