@@ -28,3 +28,14 @@ curl -v                                      \
      -d '{"first_name":"Johnny"}'            \
      http://localhost:3000/api/v1/users/john@example.com
 ```
+
+#### Deleting a user
+
+```
+curl -v                                      \
+     -X DELETE                               \
+     -H "X-Auth-Token: jz_sPhqn-8jySr_72Ehj" \
+     -H "Accept: application/json"           \
+     -H "Content-type: application/json"     \
+     http://localhost:3000/api/v1/users/john@example.com
+```
