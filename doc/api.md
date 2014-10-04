@@ -19,6 +19,7 @@ curl -v                                       \
 
 ### Update user information
 
+```
 curl -v                                      \
      -X PUT                                  \
      -H "X-Auth-Token: jz_sPhqn-8jySr_72Ehj" \
@@ -26,3 +27,4 @@ curl -v                                      \
      -H "Content-type: application/json"     \
      -d '{"first_name":"Johnny"}'            \
      http://localhost:3000/api/v1/users/john@example.com
+```
