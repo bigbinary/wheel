@@ -10,8 +10,19 @@ In the following example replace the `auth_token` value with the value derived i
 ### Show user information
 
 ```
-curl -v -H "X-Auth-Token: zsCbdiCyDMhb4NxMZCMH" \
-        -H "Accept: application/json"           \
-        -H "Content-type: application/json"     \
-        http://localhost:3000/api/v1/users/john@example.com
+curl -v                                       \
+      -H "X-Auth-Token: jz_sPhqn-8jySr_72Ehj" \
+      -H "Accept: application/json"           \
+      -H "Content-type: application/json"     \
+      http://localhost:3000/api/v1/users/john@example.com
 ```
+
+### Update user information
+
+curl -v                                      \
+     -X PUT                                  \
+     -H "X-Auth-Token: jz_sPhqn-8jySr_72Ehj" \
+     -H "Accept: application/json"           \
+     -H "Content-type: application/json"     \
+     -d '{"first_name":"Johnny"}'            \
+     http://localhost:3000/api/v1/users/john@example.com
