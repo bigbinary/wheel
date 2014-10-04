@@ -1,7 +1,7 @@
 ### Playing with api using curl
 
 ``` ruby
-user = User.find(email: 'john@example.com')
+user = User.where(email: 'john@example.com').first
 auth_token = user.authentication_token
 ```
 
