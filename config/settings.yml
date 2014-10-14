@@ -1,13 +1,12 @@
 common:
 
   secret_key_base: <%= ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64) %>
+  honeybadger_api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
 
   twilio:
     from_number: <%= ENV['TWILIO_FROM_NUMBER'] %>
     account_sid: <%= ENV['TWILIO_ACCOUNT_SID'] %>
     auth_token: <%= ENV['TWILIO_AUTH_TOKEN'] %>
-
-  honeybadger_api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
 
   aws_s3:
     access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
