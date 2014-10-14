@@ -15,7 +15,6 @@ common:
     bucket_name: <%= ENV['AWS_S3_BUCKET_NAME'] %>
 
   host: lvh.me:3000
-  url_with_port: http://lvh.me:3000
 
   mailer:
     default_from_email: "'Wheel' <notifications@wheel.com>"
@@ -34,16 +33,16 @@ common:
   devise:
     secret_key: <%= ENV['DEVISE_KEY'] || SecureRandom.hex(64) %>
 
-test:
+development:
   mailer:
-    delivery_method: :test
+    delivery_method: :smtp
   intercepted_emails:
     - john@example.com
     - adam@example.com
 
-development:
+test:
   mailer:
-    delivery_method: :smtp
+    delivery_method: :test
   intercepted_emails:
     - john@example.com
     - adam@example.com
@@ -63,7 +62,6 @@ staging:
       enable_starttls_auto: true
 
   host: wheel.com
-  url_with_port: http://wheel.com
   intercepted_emails:
     - john@example.com
     - adam@example.com
@@ -86,6 +84,5 @@ production:
       enable_starttls_auto: true
 
   host: www.wheel.com
-  url_with_port: http://wheel.com
   support_email:
     support@example.com
