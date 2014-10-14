@@ -4,7 +4,7 @@ class Mailer < ActionMailer::Base
 
   default from: Settings.mailer.default_from_email
 
-  default_url_options[:host] = Settings.mailer.host_for_email_with_www
+  default_url_options[:host] = Settings.host
 
   def contact_us_notification(contact)
     @email = contact.email
