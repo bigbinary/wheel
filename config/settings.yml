@@ -34,16 +34,16 @@ common:
   devise:
     secret_key: <%= ENV['DEVISE_KEY'] || SecureRandom.hex(64) %>
 
-test:
+development:
   mailer:
-    delivery_method: :test
+    delivery_method: :smtp
   intercepted_emails:
     - john@example.com
     - adam@example.com
 
-development:
+test:
   mailer:
-    delivery_method: :smtp
+    delivery_method: :test
   intercepted_emails:
     - john@example.com
     - adam@example.com
