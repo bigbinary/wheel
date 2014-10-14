@@ -18,7 +18,6 @@ common:
 
   mailer:
     default_from_email: "'Wheel' <notifications@wheel.com>"
-    host_for_email_with_www: www.localhost:3000
     delivery_method: test
     smtp_settings:
       user_name: <%=ENV['MAILTRAP_USERNAME']%>
@@ -34,6 +33,7 @@ common:
     secret_key: <%= ENV['DEVISE_KEY'] || SecureRandom.hex(64) %>
 
 development:
+  host: http://localhost:3000
   mailer:
     delivery_method: :smtp
   intercepted_emails:
@@ -41,6 +41,7 @@ development:
     - adam@example.com
 
 test:
+  host: http://localhost:3000
   mailer:
     delivery_method: :test
   intercepted_emails:
@@ -48,8 +49,8 @@ test:
     - adam@example.com
 
 staging:
+  host: http://www.wheel.net
   mailer:
-    host_for_email_with_www: www.wheel.net
     delivery_method: :smtp
 
     smtp_settings:
@@ -61,7 +62,6 @@ staging:
       authentication: plain
       enable_starttls_auto: true
 
-  host: wheel.com
   intercepted_emails:
     - john@example.com
     - adam@example.com
@@ -69,9 +69,9 @@ staging:
     support@example.com
 
 production:
+  host: http://www.wheel.com
   bcc: hello.wheel@gmail.com
   mailer:
-    host_for_email_with_www: www.wheel.com
     delivery_method: :smtp
 
     smtp_settings:
@@ -83,6 +83,5 @@ production:
       authentication: plain
       enable_starttls_auto: true
 
-  host: www.wheel.com
   support_email:
     support@example.com
