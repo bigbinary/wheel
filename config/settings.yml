@@ -14,8 +14,6 @@ common:
     secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
     bucket_name: <%= ENV['AWS_S3_BUCKET_NAME'] %>
 
-  host: lvh.me:3000
-
   mailer:
     default_from_email: "'Wheel' <notifications@wheel.com>"
     delivery_method: test
