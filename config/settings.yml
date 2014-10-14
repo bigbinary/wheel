@@ -49,7 +49,7 @@ test:
     - adam@example.com
 
 staging:
-  host: http://www.wheel.net
+  host: <%= ENV['APP_URL'] || 'http://www.wheel.net' %>
   mailer:
     delivery_method: :smtp
 
@@ -69,7 +69,7 @@ staging:
     support@example.com
 
 production:
-  host: http://www.wheel.com
+  host: <%= ENV['APP_URL'] || 'http://www.wheel.com' %>
   bcc: hello.wheel@gmail.com
   mailer:
     delivery_method: :smtp
