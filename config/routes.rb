@@ -1,6 +1,6 @@
 Wheel::Application.routes.draw do
 
-  devise_for :users, controllers: {registrations: 'registrations'}
+  devise_for :users, controllers: { registrations: 'registrations' }
 
   # Authentication
   devise_scope :user do
@@ -16,26 +16,41 @@ Wheel::Application.routes.draw do
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # See how all your routes lay out with 'rake routes'.
 
   unauthenticated do
-    get '/logout' => redirect("/")
+    get '/logout' => redirect('/')
   end
 
   authenticate :user, ->(u) { u.super_admin? } do
-    get "/delayed_job" => DelayedJobWeb, :anchor => false
-    put "/delayed_job" => DelayedJobWeb, :anchor => false
-    post "/delayed_job" => DelayedJobWeb, :anchor => false
+    get '/delayed_job' => DelayedJobWeb, :anchor => false
+    put '/delayed_job' => DelayedJobWeb, :anchor => false
+    post '/delayed_job' => DelayedJobWeb, :anchor => false
+
+    ActiveAdmin.routes(self)
+    namespace :superadmin do
+      root to: 'users#index'
+      resources :users
+
+      resources :email_logs
+    end
+
   end
 
-  ActiveAdmin.routes(self)
+  authenticated :user do
+    get '/pages' => 'pages#index', as: :pages
+    get 'pages/contact_us'
+    get 'pages/about'
 
-  get "/pages" => "pages#index", as: :pages
-  get "pages/contact_us"
-  get "pages/about"
+    resources :contacts, only: [:create]
+  end
 
-  resources :contacts, only: [:create]
-
+  unauthenticated do
+    as :user do
+      root :to => 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+  
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       devise_scope :user do
@@ -46,12 +61,6 @@ Wheel::Application.routes.draw do
     end
   end
 
-  namespace :superadmin do
-    root to: 'users#index'
-    resources :users
-
-    resources :email_logs
-  end
 
   root 'home#index'
 end
