@@ -31,8 +31,6 @@ Wheel::Application.routes.draw do
     namespace :superadmin do
       root to: 'users#index'
       resources :users
-
-      resources :email_logs
     end
 
   end
