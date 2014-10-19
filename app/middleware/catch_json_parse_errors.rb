@@ -8,13 +8,13 @@ class CatchJsonParseErrors
     begin
       @app.call(env)
     rescue ActionDispatch::ParamsParser::ParseError => exception
-      content_type_is_json?(env) ? build_response(exception) : raise(exception)
+      is_content_type_json?(env) ? build_response(exception) : raise(exception)
     end
   end
 
   private
 
-  def content_type_is_json? env
+  def is_content_type_json? env
     env['CONTENT_TYPE'] =~ /application\/json/
   end
 
