@@ -17,10 +17,10 @@ common:
     default_from_email: "'Wheel' <notifications@wheel.com>"
     delivery_method: test
     smtp_settings:
-      user_name: <%=ENV['MAILTRAP_USERNAME']%>
-      password: <%=ENV['MAILTRAP_PASSWORD']%>
-      address: mailtrap.io
-      port: 2525
+      user_name: <%=ENV['MANDRILLAPP_USERNAME']%>
+      password: <%=ENV['MANDRILLAPP_PASSWORD']%>
+      address: smtp.mandrillapp.com
+      port: 587
       authentication: plain
 
   support_email:
