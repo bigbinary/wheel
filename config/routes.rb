@@ -48,7 +48,7 @@ Wheel::Application.routes.draw do
       root :to => 'devise/sessions#new', as: :unauthenticated_root
     end
   end
-  
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       devise_scope :user do
