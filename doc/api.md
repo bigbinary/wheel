@@ -1,4 +1,4 @@
-### Playing with api using curl
+### Testing with api using curl
 
 ``` ruby
 user = User.where(email: 'john@example.com').first
@@ -34,11 +34,11 @@ curl -v                                      \
 Without using `wrap_parameters` .
 
 ```
-curl -v                                      \
-     -X PUT                                  \
-     -H "X-Auth-Token: pFfxLhBgvnoYeXnbDnFL" \
-     -H "Accept: application/json"           \
-     -H "Content-type: application/json"     \
+curl -v                                       \
+     -X PUT                                   \
+     -H "X-Auth-Token: pFfxLhBgvnoYeXnbDnFL"  \
+     -H "Accept: application/json"            \
+     -H "Content-type: application/json"      \
      -d '{"user":{"first_name":"Johnny"}}'    \
      http://localhost:3000/api/v1/users/john@example.com
 ```
@@ -54,7 +54,7 @@ curl -v                                      \
      http://localhost:3000/api/v1/users/john@example.com
 ```
 
-#### Adding a user
+#### Adding a new user
 
 ```
 curl -v                                      \
