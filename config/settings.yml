@@ -17,8 +17,8 @@ common:
     default_from_email: "'Wheel' <notifications@wheel.com>"
     delivery_method: test
     smtp_settings:
-      user_name: <%=ENV['MANDRILLAPP_USERNAME']%>
-      password: <%=ENV['MANDRILLAPP_PASSWORD']%>
+      user_name: <%= ENV['MANDRILLAPP_USERNAME'] %>
+      password: <%= ENV['MANDRILLAPP_PASSWORD'] %>
       address: smtp.mandrillapp.com
       port: 587
       authentication: plain
@@ -51,8 +51,8 @@ staging:
     delivery_method: :smtp
 
     smtp_settings:
-      user_name: <%=ENV['MANDRILLAPP_USERNAME']%>
-      password: <%=ENV['MANDRILLAPP_PASSWORD']%>
+      user_name: <%= ENV['MANDRILLAPP_USERNAME'] %>
+      password: <%= ENV['MANDRILLAPP_PASSWORD'] %>
       domain: www.wheel.com
       address: smtp.mandrillapp.com
       port: 587
@@ -72,8 +72,8 @@ production:
     delivery_method: :smtp
 
     smtp_settings:
-      user_name: <%=ENV['MANDRILLAPP_USERNAME']%>
-      password: <%=ENV['MANDRILLAPP_PASSWORD']%>
+      user_name: <%= ENV['MANDRILLAPP_USERNAME'] %>
+      password: <%= ENV['MANDRILLAPP_PASSWORD'] %>
       domain: www.wheel.com
       address: smtp.mandrillapp.com
       port: 587
