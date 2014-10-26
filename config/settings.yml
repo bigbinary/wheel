@@ -33,7 +33,7 @@ development:
   host: http://localhost:3000
   mailer:
     delivery_method: :smtp
-  intercepted_emails:
+  intercept_and_forward_emails_to:
     - john@example.com
     - adam@example.com
 
@@ -41,7 +41,7 @@ test:
   host: http://localhost:3000
   mailer:
     delivery_method: :test
-  intercepted_emails:
+  intercept_and_forward_emails_to:
     - john@example.com
     - adam@example.com
 
@@ -59,7 +59,7 @@ staging:
       authentication: plain
       enable_starttls_auto: true
 
-  intercepted_emails:
+  intercept_and_forward_emails_to:
     - john@example.com
     - adam@example.com
   support_email:

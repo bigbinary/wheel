@@ -1,6 +1,6 @@
 class EmailInterceptor
   def self.delivering_email(message)
-    message.to = Settings.intercepted_emails
+    message.to = Settings.intercept_and_forward_emails_to
   end
 end
 
