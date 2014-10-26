@@ -55,6 +55,9 @@ gem 'rails_12factor'
 # for email validation
 gem 'email_validator'
 
+# For variants support
+gem 'browser'
+
 group :development do
 
   # mutes assets pipeline log messages
