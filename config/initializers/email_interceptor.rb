@@ -4,4 +4,4 @@ class EmailInterceptor
   end
 end
 
-ActionMailer::Base.register_interceptor(EmailInterceptor) unless Rails.env.production?
+ActionMailer::Base.register_interceptor(EmailInterceptor) if Settings.intercept_and_forward_emails_to.present?
