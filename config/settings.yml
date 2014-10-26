@@ -2,6 +2,7 @@ common:
 
   secret_key_base: <%= ENV['SECRET_KEY_BASE'] || SecureRandom.hex(64) %>
   honeybadger_api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
+  host: <%= ENV['APP_URL'] || ENV['HEROKU_APP_URL'] || 'http://localhost:3000' %>
 
   twilio:
     from_number: <%= ENV['TWILIO_FROM_NUMBER'] %>
@@ -30,7 +31,6 @@ common:
     secret_key: <%= ENV['DEVISE_KEY'] || SecureRandom.hex(64) %>
 
 development:
-  host: http://localhost:3000
   mailer:
     delivery_method: :smtp
   intercept_and_forward_emails_to:
@@ -38,7 +38,6 @@ development:
     - adam@example.com
 
 test:
-  host: http://localhost:3000
   mailer:
     delivery_method: :test
   intercept_and_forward_emails_to:
@@ -46,7 +45,6 @@ test:
     - adam@example.com
 
 staging:
-  host: <%= ENV['APP_URL'] || 'http://www.wheel.net' %>
   mailer:
     delivery_method: :smtp
 
@@ -66,7 +64,6 @@ staging:
     support@example.com
 
 production:
-  host: <%= ENV['APP_URL'] || 'http://www.wheel.com' %>
   bcc: hello.wheel@gmail.com
   mailer:
     delivery_method: :smtp
