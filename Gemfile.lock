@@ -81,6 +81,7 @@ GEM
     bourbon (4.0.2)
       sass (~> 3.3)
       thor
+    browser (0.7.0)
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -246,6 +247,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   arel
+  browser
   carrierwave
   coffee-rails!
   delayed_job_active_record
