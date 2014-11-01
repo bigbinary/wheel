@@ -2,10 +2,10 @@ source 'https://rubygems.org'
 
 ruby '2.1.3'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.7'
 gem 'arel'
 gem 'jquery-rails'
-gem 'sprockets-rails', github: 'rails/sprockets-rails'
+gem 'sprockets-rails', '~> 2.0'
 gem 'sass-rails',   github: 'rails/sass-rails'
 gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'uglifier', '>= 1.0.3'
