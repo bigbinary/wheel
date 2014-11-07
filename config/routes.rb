@@ -36,12 +36,11 @@ Wheel::Application.routes.draw do
   end
 
   get 'pages/about'
+  get 'pages/contact_us'
+  resources :contacts, only: [:create]
 
   authenticated :user do
     get '/pages' => 'pages#index', as: :pages
-    get 'pages/contact_us'
-
-    resources :contacts, only: [:create]
   end
 
   unauthenticated do
