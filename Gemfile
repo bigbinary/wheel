@@ -50,7 +50,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'carrierwave'
 
 # for logging to work in heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: [:production, :staging]
 
 # for email validation
 gem 'email_validator'
