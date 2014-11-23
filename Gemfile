@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
+
 gem 'arel'
 gem 'jquery-rails'
-gem 'sprockets-rails', '~> 2.0'
+gem 'sprockets-rails', '3.0.0.beta1'
 gem 'sass-rails',   github: 'rails/sass-rails'
 gem 'uglifier', '>= 1.0.3'
 
@@ -19,7 +20,7 @@ gem 'sprockets-strict-mode'
 gem 'jbuilder', '~> 1.2'
 
 # for authentication
-gem 'devise', '3.2.3'
+gem 'devise', '3.4.1'
 
 # for sending devise emails in background
 gem 'devise-async'
@@ -43,7 +44,7 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 
 # admin framework
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', github: 'activeadmin'
 
 # for handling file uploads
 gem 'carrierwave'
@@ -78,6 +79,9 @@ group :development do
 
   # speeds up development by keeping your application running in the background
   gem 'spring'
+
+  # web console
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
