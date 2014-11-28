@@ -1,3 +1,8 @@
+html, body {
+  min-height: 100%;
+  height:100%
+}
+
 .bootstrap-center-form {
     padding: 19px 29px 29px;
     margin: 0 auto 20px;
@@ -19,6 +24,11 @@
       margin-top: 1em;
       margin-bottom: 1em;
     }
+
+    h2 {
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
 }
 
 .bootstrap-center-form-small {
@@ -29,4 +39,38 @@
 .bootstrap-center-form-medium {
   @extend .bootstrap-center-form;
   max-width: 500px;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.sessions, .passwords, .registrations {
+  background: #e4eaef;
+
+  .navbar {
+    margin-bottom: 0;
+  }
+
+  form h2 {
+
+  }
+
+  .page {
+    padding-top: 40px;
+  }
+
+  .user_remember_me {
+    position: relative;
+    left: 20px;
+  }
+  .devise-links {
+    border-top: 1px solid #e4eaef;
+    padding: 10px 30px;
+    margin: 0px -30px -20px;
+  }
+}
+
+.alert {
+  margin: 10px 0;
 }
