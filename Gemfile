@@ -7,7 +7,6 @@ gem 'arel'
 gem 'jquery-rails'
 gem 'sprockets-rails', '~> 2.0'
 gem 'sass-rails',   github: 'rails/sass-rails'
-gem 'coffee-rails', github: 'rails/coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 
 # database
