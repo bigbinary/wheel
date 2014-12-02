@@ -1,0 +1,15 @@
+.row{style: "padding-top: 10px;"}
+  = simple_form_for(resource, as: resource_name,                                      |
+                              url: session_path(resource_name),                       |
+                              wrapper: :bootstrap3,                                   |
+    html: { class: 'bootstrap-center-form-medium' }) do |f| |
+    %h2 Please Sign in
+    .form-controls
+      = f.input :email, placeholder: 'Email address', label: false, autofocus: true, input_html: { class: 'form-control' }
+      = f.input :password, placeholder: 'Password', label: false, input_html: { class: 'form-control' }
+      - if devise_mapping.rememberable?
+        = f.input :remember_me, as: :boolean, wrapper: :default
+    .form-buttons
+      = f.button :submit, "Sign in", class: 'btn btn-primary'
+    .devise-links
+      = render "users/shared/links"

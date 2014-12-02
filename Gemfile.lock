@@ -104,6 +104,13 @@ GEM
     execjs (2.2.1)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
+    haml (4.0.6)
+      tilt
+    haml-rails (0.5.3)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 3.1, < 5.0)
+      railties (>= 4.0.1)
     handy (0.0.27)
       hashr
     has_scope (0.6.0.rc)
@@ -239,6 +246,7 @@ DEPENDENCIES
   devise (= 3.2.3)
   devise-async
   email_validator
+  haml-rails
   handy
   honeybadger
   jbuilder (~> 1.2)

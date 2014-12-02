@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width"/>
-  <style>
+!!! Strict
+%html{xmlns: "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "width=device-width", name: "viewport"}/
+    :css
       body {
           font-family: sans-serif;
           font-size: 14px;
@@ -152,73 +152,31 @@
           position: relative;
           z-index: 1;
       }
-
-  </style>
-</head>
-<body style="font-size: 16px !important; line-height: 26px !important;">
-<table class="body" style="width: 100% !important;">
-  <tr>
-    <td class="center" align="center" valign="top">
-      <center>
-
-        <table class="row header" style="background: #000000 !important; width: 100% !important;">
-          <tr>
-            <td class="center" align="center">
-              <center>
-
-                <table class="container">
-                  <tr>
-                    <td class="wrapper last">
-
-                      <table class="twelve columns">
-                        <tr>
-                          <td class="six sub-columns">
-
-                          </td>
-                          <td class="six sub-columns last" >
-                            <span class="template-label">&nbsp;</span>
-                          </td>
-                        </tr>
-                      </table>
-
-                    </td>
-                  </tr>
-                </table>
-
-              </center>
-            </td>
-          </tr>
-        </table>
-
-        <table class="container">
-          <tr>
-            <td>
-
-              <table class="row">
-                <tr>
-                  <td class="wrapper last">
-
-                    <table class="twelve columns">
-                      <tr>
-                        <td>
-                          <%= yield %>
-                        </td>
-                        <td class="expander"></td>
-                      </tr>
-                    </table>
-
-                  </td>
-                </tr>
-              </table>
-
-              <!-- container end below -->
-            </td>
-          </tr>
-        </table>
-
-      </center>
-    </td>
-  </tr>
-</table>
-</body>
-</html>
+  %body{style: "font-size: 16px !important; line-height: 26px !important;"}
+    %table.body{style: "width: 100% !important;"}
+      %tr
+        %td.center{align: "center", valign: "top"}
+          %center
+            %table.row.header{style: "background: #000000 !important; width: 100% !important;"}
+              %tr
+                %td.center{align: "center"}
+                  %center
+                    %table.container
+                      %tr
+                        %td.wrapper.last
+                          %table.twelve.columns
+                            %tr
+                              %td.six.sub-columns
+                              %td.six.sub-columns.last
+                                %span.template-label &nbsp;
+            %table.container
+              %tr
+                %td
+                  %table.row
+                    %tr
+                      %td.wrapper.last
+                        %table.twelve.columns
+                          %tr
+                            %td
+                              = yield
+                            %td.expander

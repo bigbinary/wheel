@@ -57,6 +57,8 @@ gem 'email_validator'
 # For variants support
 gem 'browser'
 
+gem 'haml-rails'
+
 group :development do
 
   # mutes assets pipeline log messages
