@@ -1,0 +1,12 @@
+.row{style: "padding-top: 10px;"}
+  = simple_form_for(resource, as:  resource_name,                                                    |
+                              url: password_path(resource_name),                                     |
+                              wrapper: :bootstrap3,                                                  |
+                              html: { method: :post, class: 'bootstrap-center-form-medium' }) do |f| |
+    %h2 Forgot your password?
+    .form-controls
+      = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
+    .form-buttons
+      = f.button :submit, "Send me reset password instructions", class: 'btn btn-primary'
+    .devise-links
+      = render "users/shared/links"

@@ -1,0 +1,22 @@
+.row{style: "padding-top: 10px;"}
+  = simple_form_for(resource, as:  resource_name,                                                   |
+                              url: profile_update_path,                                             |
+                              wrapper: :bootstrap3,                                                 |
+                              html: { method: :put, class: 'bootstrap-center-form-medium' }) do |f| |
+    %h2
+      Edit #{resource_name.to_s.humanize}
+    .form-controls
+      = f.input :email, required: true,                       |
+                        autofocus: true,                      |
+                        input_html: { class: 'form-control' } |
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %p
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      = f.input :first_name, required: true, input_html: { class: 'form-control' }
+      = f.input :last_name, required: true, input_html: { class: 'form-control' }
+      = f.input :profile_image, as: :file
+      = f.input :current_password, required: true,                                                |
+                                   hint: "we need your current password to confirm your changes", |
+                                   input_html: { class: 'form-control' }                          |
+    .form-buttons
+      = f.button :submit, "Update", class: 'btn btn-primary'

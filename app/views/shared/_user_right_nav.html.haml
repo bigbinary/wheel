@@ -1,0 +1,5 @@
+%ul.nav.navbar-nav.navbar-right
+  - if user_signed_in?
+    = render 'shared/user_is_signed_in'
+  - else
+    = nav_link 'Sign in', new_session_path(:user)

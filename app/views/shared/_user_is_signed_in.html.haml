@@ -1,0 +1,11 @@
+%li.dropdown
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+    = current_user.name
+    %b.caret
+  %ul.dropdown-menu
+    - if super_admin_signed_in?
+      = nav_link 'Superadmin', superadmin_root_path
+      %li.divider
+    = nav_link 'My account', profile_path
+    = nav_link 'Change password', password_edit_path
+    = nav_link 'Logout', destroy_user_session_path, false, method: :delete

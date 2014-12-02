@@ -1,0 +1,5 @@
+%ul.nav.navbar-nav
+  = nav_link('Users', superadmin_users_path)
+  = nav_link("Active Admin", active_admin_root_path)
+  = nav_link('DJ', '/delayed_job', false, "target" => '_blank')
+= render('shared/user_right_nav')

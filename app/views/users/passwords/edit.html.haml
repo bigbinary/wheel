@@ -1,0 +1,22 @@
+.row{style: "padding-top: 10px;"}
+  = simple_form_for(resource, as: resource_name,                                                    |
+                              url: password_path(resource_name),                                    |
+                              wrapper: :bootstrap3,                                                 |
+                              html: { method: :put, class: 'bootstrap-center-form-medium' }) do |f| |
+    %h2 Change your password
+    = f.input :reset_password_token, as: :hidden, input_html: { class: 'form-control' }
+    .form-controls
+      = f.full_error :reset_password_token
+    .form-controls
+      = f.input :password, label: "New password",                     |
+                           required: true,                            |
+                           autofocus: true,                           |
+                           input_html: { class: 'form-control' }      |
+      
+      = f.input :password_confirmation, label: "Confirm your new password",                                 |
+                                        required: true,                                                     |
+                                        input_html: { class: 'form-control' }                               |
+    .form-buttons
+      = f.button :submit, "Change my password", class: 'btn-primary'
+    .devise-links
+      = render "users/shared/links"
