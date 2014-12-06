@@ -2,7 +2,7 @@ common:
 
   secret_key_base: <%= ENV['SECRET_KEY_BASE'] %>
   honeybadger_api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
-  host: <%= ENV['APP_URL'] || ENV['HEROKU_APP_URL'] || 'http://localhost:3000' %>
+  host: <%= ENV['APP_URL'] || ENV['HEROKU_URL'] || 'http://localhost:3000' %>
 
   twilio:
     from_number: <%= ENV['TWILIO_FROM_NUMBER'] %>
