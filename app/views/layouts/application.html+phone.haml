@@ -12,7 +12,7 @@
     = stylesheet_link_tag "application_phone", media: "all"
     / <link rel="icon" href="/favicon.ico" type="image/x-icon">
     / <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-  %body
+  %body{class: "#{@layout_carrier.class_for_body}"}
     .navbar.navbar-default.navbar-static-top{role: "navigation"}
       .container
         .navbar-header
