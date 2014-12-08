@@ -138,7 +138,6 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    metaclass (0.0.4)
     mime-types (2.4.3)
     minitest (5.4.3)
     minitest-reporters (1.0.5)
@@ -146,8 +145,6 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mocha (1.1.0)
-      metaclass (~> 0.0.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
     pg (0.17.1)
@@ -252,7 +249,6 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   minitest-reporters
-  mocha
   pg
   quiet_assets
   rails (= 4.1.8)

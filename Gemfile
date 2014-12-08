@@ -73,9 +73,6 @@ group :test do
   # customizable MiniTest output formats
   gem 'minitest-reporters', require: false
 
-  # mocking and stubbing library
-  gem 'mocha', require: false
-
   # for test coverage report
   gem 'simplecov', require: false
 end
