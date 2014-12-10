@@ -60,6 +60,7 @@ gem 'email_validator'
 # For variants support
 gem 'browser'
 
+# Haml as templating engine
 gem 'haml-rails'
 
 group :development do
