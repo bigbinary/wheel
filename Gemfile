@@ -15,8 +15,11 @@ gem 'pg'
 # for building JSON
 gem 'jbuilder', '~> 1.2'
 
-# ruby web server
-gem 'thin'
+# HTTP server for Rack applications
+gem 'unicorn'
+
+# without this in development webrick is used
+gem "unicorn-rails"
 
 # for authentication
 gem 'devise', '3.2.3'
