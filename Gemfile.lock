@@ -210,6 +210,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sprockets-strict-mode (1.0)
+      sprockets
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -261,6 +263,7 @@ DEPENDENCIES
   simplecov
   spring
   sprockets-rails (~> 2.0)
+  sprockets-strict-mode
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn
