@@ -63,6 +63,8 @@ gem 'browser'
 # Haml as templating engine
 gem 'haml-rails'
 
+gem 'sprockets-strict-mode'
+
 group :development do
 
   # mutes assets pipeline log messages
