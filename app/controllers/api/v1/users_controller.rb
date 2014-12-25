@@ -1,7 +1,7 @@
 class Api::V1::UsersController < Api::V1::BaseController
 
-  skip_before_filter :authenticate_user!, only: [:create]
-  skip_before_filter :authenticate_user_using_x_auth_token, only: [:create]
+  skip_before_action :authenticate_user!, only: [:create]
+  skip_before_action :authenticate_user_using_x_auth_token, only: [:create]
 
   def show
     @user = User.find_by(email: params[:id])
