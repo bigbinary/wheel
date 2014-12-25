@@ -1,7 +1,7 @@
 class Api::V1::SessionsController < Api::V1::BaseController
 
-  skip_before_filter :authenticate_user!
-  skip_before_filter :authenticate_user_using_x_auth_token
+  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user_using_x_auth_token
 
   def create
     user = User.find_for_database_authentication(email: params[:user] && params[:user][:email])
