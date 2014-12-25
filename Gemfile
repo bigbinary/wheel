@@ -15,12 +15,6 @@ gem 'pg'
 # for building JSON
 gem 'jbuilder', '~> 1.2'
 
-# HTTP server for Rack applications
-gem 'unicorn'
-
-# without this in development webrick is used
-gem "unicorn-rails"
-
 # for authentication
 gem 'devise', '3.2.3'
 
@@ -64,6 +58,8 @@ gem 'browser'
 gem 'haml-rails'
 
 group :development do
+  # HTTP server for Rack applications
+  gem 'thin'
 
   # mutes assets pipeline log messages
   gem 'quiet_assets'
@@ -79,4 +75,12 @@ group :test do
 
   # for test coverage report
   gem 'simplecov', require: false
+end
+
+group :staging, :production do
+  # HTTP server for Rack applications
+  gem 'unicorn'
+
+  # without this in development default one is used
+  gem "unicorn-rails"
 end
