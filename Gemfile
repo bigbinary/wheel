@@ -15,11 +15,10 @@ gem 'pg'
 # for building JSON
 gem 'jbuilder', '~> 1.2'
 
-# HTTP server for Rack applications
-gem 'unicorn'
-
-# without this in development webrick is used
-gem "unicorn-rails"
+# HTTP server for Rack applications for staginng and production
+# See https://github.com/bigbinary/wheel/issues/43 for why unicorn is
+# not used in development.
+gem 'unicorn', group: [:staging, :production]
 
 # for authentication
 gem 'devise', '3.2.3'
@@ -64,6 +63,9 @@ gem 'browser'
 gem 'haml-rails'
 
 group :development do
+
+  # application server for development
+  gem 'thin'
 
   # mutes assets pipeline log messages
   gem 'quiet_assets'
