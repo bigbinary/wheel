@@ -23,15 +23,15 @@ desc 'Deletes all records and populates sample data'
 task setup_sample_data: [:environment, :not_production] do
   delete_all_records_from_all_tables
 
-  create_user email: 'john@example.com'
+  create_user email: 'sam@example.com'
 
   puts 'sample data was added successfully'
 end
 
 def create_user( options = {} )
-  user_attributes = { email: 'john@example.com',
+  user_attributes = { email: 'sam@example.com',
                       password: 'welcome',
-                      first_name: "John",
+                      first_name: "Sam",
                       last_name: "Smith",
                       role: "super_admin" }
   attributes = user_attributes.merge options
