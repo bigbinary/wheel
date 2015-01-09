@@ -12,13 +12,11 @@ gem 'uglifier', '>= 1.0.3'
 # database
 gem 'pg'
 
+# use "strict mode" in JavaScript
+gem 'sprockets-strict-mode'
+
 # for building JSON
 gem 'jbuilder', '~> 1.2'
-
-# HTTP server for Rack applications for staginng and production
-# See https://github.com/bigbinary/wheel/issues/43 for why unicorn is
-# not used in development.
-gem 'unicorn', group: [:staging, :production]
 
 # for authentication
 gem 'devise', '3.2.3'
@@ -56,11 +54,16 @@ gem 'rails_12factor'
 # for email validation
 gem 'email_validator'
 
-# For variants support
+# for variants support
 gem 'browser'
 
-# Haml as templating engine
+# haml as templating engine
 gem 'haml-rails'
+
+# HTTP server for Rack applications for staginng and production
+# See https://github.com/bigbinary/wheel/issues/43 for why unicorn is
+# not used in development.
+gem 'unicorn', group: [:staging, :production]
 
 group :development do
 
