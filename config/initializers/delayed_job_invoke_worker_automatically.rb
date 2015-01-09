@@ -20,7 +20,7 @@ unless Rails.env.production?
      ENV['INVOKE_WORKER_AUTOMATICALLY'] &&
      ENV['INVOKE_WORKER_AUTOMATICALLY'] == 'enabled'
 
-    pid = spawn('INVOKE_WORKER_AUTOMATICALLY=disabled TRAP_SIGNALS=true bundle exec rake jobs:work')
+    pid = spawn('INVOKE_WORKER_AUTOMATICALLY=disabled bundle exec rake jobs:work')
     Process.detach(pid)
   end
 
