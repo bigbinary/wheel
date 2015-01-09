@@ -227,6 +227,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    sprockets-strict-mode (1.0)
+      sprockets
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -279,6 +281,7 @@ DEPENDENCIES
   simplecov
   spring
   sprockets-rails (~> 2.0)
+  sprockets-strict-mode
   thin
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
