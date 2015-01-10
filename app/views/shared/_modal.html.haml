@@ -1,0 +1,8 @@
+%div{class: "modal", "data-behavior" => "modal-content"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        = button_tag '×', :class => "close btn-close-dialog", "data-behavior" => "modal-close", "aria-hidden" => "true"
+        %h4.modal-title= yield(:modal_title)
+      .modal-body
+        = yield(:modal_body)

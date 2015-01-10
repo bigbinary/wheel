@@ -14,4 +14,4 @@
       %td
         = user.last_sign_in_at
       %td
-        = link_to 'Edit', '#'
+        = link_to 'Edit', "#", data:{url: edit_superadmin_user_path(user), behavior: 'display-in-modal' }
