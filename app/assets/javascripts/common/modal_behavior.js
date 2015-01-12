@@ -4,24 +4,25 @@ if ( Modal !== undefined ) {
 
 var Modal = (function() {
 
-    var modal_content_selector = "[data-behavior ~= modal-content]",
-        modal_container_selector = "[data-behavior ~= modal-container]";
+    var modalContentSelector = "[data-behavior ~= modal-content]",
+        modalContainerSelector = "[data-behavior ~= modal-container]";
 
     function _displayModal(link) {
-        var modalContainer = _findOrCreateModalContainer(),
+        var $modalContainer = _findOrCreateModalContainer(),
             url = link.data('url');
 
-        $(modalContainer).load(url, function() {
-            $(this).find(modal_content_selector).show();
-            $(this).find(modal_content_selector).find('[data-focus~=true]').focus();
+        $modalContainer.load(url, function() {
+            var $element = $(this).find(modalContentSelector);
+            $element.show();
+            $element.find('[data-focus~=true]').focus();
         });
     }
 
     function _findOrCreateModalContainer() {
         var element;
 
-        if ($(modal_container_selector).length) {
-            element = $(modal_container_selector);
+        if ($(modalContainerSelector).length) {
+            element = $(modalContainerSelector);
         } else {
             element = $('<div data-behavior="modal-container"></div>');
             $('body').append(element);
@@ -35,13 +36,13 @@ var Modal = (function() {
 
         if (data.modal_content) {
             modalContainer.html(data.modal_content)
-            modalContainer.find(modal_content_selector).show();
+            modalContainer.find(modalContentSelector).show();
 
         } else if (data.redirect_to) {
             window.location.href = data.redirect_to;
 
         } else {
-            modalContainer.find(modal_content_selector).hide();
+            modalContainer.find(modalContentSelector).hide();
         };
     }
 
@@ -52,7 +53,7 @@ var Modal = (function() {
 
     function hide(event) {
         event.preventDefault()
-        $(this).closest(modal_content_selector).hide();
+        $(this).closest(modalContentSelector).hide();
     };
 
     function submitForm(event){
