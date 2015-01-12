@@ -4,8 +4,8 @@ if ( Modal !== undefined ) {
 
 var Modal = (function() {
 
-    var modal_content_selector = "[data-behavior~=modal-content]",
-        modal_container_selector = "[data-behavior~=modal-container]";
+    var modal_content_selector = "[data-behavior ~= modal-content]",
+        modal_container_selector = "[data-behavior ~= modal-container]";
 
     function _displayModal(link) {
         var modal_container = _findOrCreateModalContainer(),
@@ -18,13 +18,15 @@ var Modal = (function() {
     }
 
     function _findOrCreateModalContainer() {
-        var element = "";
+        var element;
+
         if ($(modal_container_selector).length) {
             element = $(modal_container_selector);
         } else {
             element = $('<div data-behavior="modal-container"></div>');
-            $('body').append(element)
+            $('body').append(element);
         }
+
         return element
     };
 
