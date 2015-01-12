@@ -4,24 +4,25 @@ if ( Modal !== undefined ) {
 
 var Modal = (function() {
 
-    var modal_content_selector = "[data-behavior ~= modal-content]",
-        modal_container_selector = "[data-behavior ~= modal-container]";
+    var modalContentSelector = "[data-behavior ~= modal-content]",
+        modalContainerSelector = "[data-behavior ~= modal-container]";
 
     function _displayModal(link) {
-        var modal_container = _findOrCreateModalContainer(),
+        var $modalContainer = _findOrCreateModalContainer(),
             url = link.data('url');
 
-        $(modal_container).load(url, function() {
-            $(this).find(modal_content_selector).show();
-            $(this).find(modal_content_selector).find('[data-focus~=true]').focus();
+        $modalContainer.load(url, function() {
+            var $element = $(this).find(modalContentSelector);
+            $element.show();
+            $element.find('[data-focus~=true]').focus();
         });
     }
 
     function _findOrCreateModalContainer() {
         var element;
 
-        if ($(modal_container_selector).length) {
-            element = $(modal_container_selector);
+        if ($(modalContainerSelector).length) {
+            element = $(modalContainerSelector);
         } else {
             element = $('<div data-behavior="modal-container"></div>');
             $('body').append(element);
@@ -31,17 +32,17 @@ var Modal = (function() {
     };
 
     function _formSubmissionResponseHandler(data) {
-        var modal_container = _findOrCreateModalContainer();
+        var modalContainer = _findOrCreateModalContainer();
 
         if (data.modal_content) {
-            modal_container.html(data.modal_content)
-            modal_container.find(modal_content_selector).show();
+            modalContainer.html(data.modal_content)
+            modalContainer.find(modalContentSelector).show();
 
         } else if (data.redirect_to) {
             window.location.href = data.redirect_to;
 
         } else {
-            modal_container.find(modal_content_selector).hide();
+            modalContainer.find(modalContentSelector).hide();
         };
     }
 
@@ -52,7 +53,7 @@ var Modal = (function() {
 
     function hide(event) {
         event.preventDefault()
-        $(this).closest(modal_content_selector).hide();
+        $(this).closest(modalContentSelector).hide();
     };
 
     function submitForm(event){
