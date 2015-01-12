@@ -32,6 +32,7 @@ var Modal = (function() {
 
     function _formSubmitResponseHandler(data) {
         var modal_container = _findOrCreateModalContainer();
+
         if (data.modal_content) {
             modal_container.html(data.modal_content)
             modal_container.find(modal_content_selector).show();
@@ -55,8 +56,8 @@ var Modal = (function() {
     };
 
     function submitForm(event){
-        event.preventDefault();
         var form = $(this);
+        event.preventDefault();
 
         $.ajax({
             type: form.attr('method'),
