@@ -8,10 +8,10 @@ var Modal = (function() {
         modal_container_selector = "[data-behavior ~= modal-container]";
 
     function _displayModal(link) {
-        var modal_container = _findOrCreateModalContainer(),
+        var modalContainer = _findOrCreateModalContainer(),
             url = link.data('url');
 
-        $(modal_container).load(url, function() {
+        $(modalContainer).load(url, function() {
             $(this).find(modal_content_selector).show();
             $(this).find(modal_content_selector).find('[data-focus~=true]').focus();
         });
@@ -31,17 +31,17 @@ var Modal = (function() {
     };
 
     function _formSubmissionResponseHandler(data) {
-        var modal_container = _findOrCreateModalContainer();
+        var modalContainer = _findOrCreateModalContainer();
 
         if (data.modal_content) {
-            modal_container.html(data.modal_content)
-            modal_container.find(modal_content_selector).show();
+            modalContainer.html(data.modal_content)
+            modalContainer.find(modal_content_selector).show();
 
         } else if (data.redirect_to) {
             window.location.href = data.redirect_to;
 
         } else {
-            modal_container.find(modal_content_selector).hide();
+            modalContainer.find(modal_content_selector).hide();
         };
     }
 
