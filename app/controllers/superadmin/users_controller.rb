@@ -1,12 +1,14 @@
 class Superadmin::UsersController < Superadmin::BaseController
 
   before_action :load_user, only: [:edit, :update]
+
   def index
     @users = User.order('id desc')
   end
 
   def edit
     @user_name = @user.name
+
     render partial: 'edit_modal'
   end
 

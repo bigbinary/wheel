@@ -3,12 +3,14 @@ if ( Modal !== undefined ) {
 }
 
 var Modal = (function() {
-    var modal_content_selector = "[data-behavior~=modal-content]",
-        modal_container_selector = "[data-behavior~=modal-container]";
+
+    var modal_content_selector = "[data-behavior ~= modal-content]",
+        modal_container_selector = "[data-behavior ~= modal-container]";
 
     function _displayModal(link) {
         var modal_container = _findOrCreateModalContainer(),
             url = link.data('url');
+
         $(modal_container).load(url, function() {
             $(this).find(modal_content_selector).show();
             $(this).find(modal_content_selector).find('[data-focus~=true]').focus();
@@ -16,25 +18,28 @@ var Modal = (function() {
     }
 
     function _findOrCreateModalContainer() {
-        var element = "";
-        if($(modal_container_selector).length) {
+        var element;
+
+        if ($(modal_container_selector).length) {
             element = $(modal_container_selector);
-        }
-        else {
+        } else {
             element = $('<div data-behavior="modal-container"></div>');
-            $('body').append(element)
+            $('body').append(element);
         }
+
         return element
     };
 
-    function _formSubmitResponseHandler(data) {
+    function _formSubmissionResponseHandler(data) {
         var modal_container = _findOrCreateModalContainer();
-        if(data.modal_content) {
+
+        if (data.modal_content) {
             modal_container.html(data.modal_content)
             modal_container.find(modal_content_selector).show();
-        }
-        else if(data.redirect_to) {
+
+        } else if (data.redirect_to) {
             window.location.href = data.redirect_to;
+
         } else {
             modal_container.find(modal_content_selector).hide();
         };
@@ -51,13 +56,14 @@ var Modal = (function() {
     };
 
     function submitForm(event){
-        event.preventDefault();
         var form = $(this);
+        event.preventDefault();
+
         $.ajax({
             type: form.attr('method'),
             url: form.attr('action'),
             data: form.serialize()
-        }).done(_formSubmitResponseHandler);
+        }).done(_formSubmissionResponseHandler);
     };
 
     return { "displayInModal": displayInModal,
@@ -66,6 +72,6 @@ var Modal = (function() {
 
 })();
 
-$(document).on('click', 'a[data-behavior~=display-in-modal]', Modal.displayInModal);
-$(document).on("click", "[data-behavior~=modal-close]", Modal.hide)
-$(document).on('submit', "[data-behavior~=modal-container] form", Modal.submitForm)
+$(document).on('click', 'a[data-behavior ~= display-in-modal]', Modal.displayInModal);
+$(document).on("click", "[data-behavior ~= modal-close]", Modal.hide)
+$(document).on('submit', "[data-behavior ~= modal-container] form", Modal.submitForm)
