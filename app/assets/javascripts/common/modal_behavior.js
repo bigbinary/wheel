@@ -10,6 +10,7 @@ var Modal = (function() {
     function _displayModal(link) {
         var modal_container = _findOrCreateModalContainer(),
             url = link.data('url');
+
         $(modal_container).load(url, function() {
             $(this).find(modal_content_selector).show();
             $(this).find(modal_content_selector).find('[data-focus~=true]').focus();
@@ -18,10 +19,9 @@ var Modal = (function() {
 
     function _findOrCreateModalContainer() {
         var element = "";
-        if($(modal_container_selector).length) {
+        if ($(modal_container_selector).length) {
             element = $(modal_container_selector);
-        }
-        else {
+        } else {
             element = $('<div data-behavior="modal-container"></div>');
             $('body').append(element)
         }
@@ -30,12 +30,13 @@ var Modal = (function() {
 
     function _formSubmitResponseHandler(data) {
         var modal_container = _findOrCreateModalContainer();
-        if(data.modal_content) {
+        if (data.modal_content) {
             modal_container.html(data.modal_content)
             modal_container.find(modal_content_selector).show();
-        }
-        else if(data.redirect_to) {
+
+        } else if (data.redirect_to) {
             window.location.href = data.redirect_to;
+
         } else {
             modal_container.find(modal_content_selector).hide();
         };
@@ -54,6 +55,7 @@ var Modal = (function() {
     function submitForm(event){
         event.preventDefault();
         var form = $(this);
+
         $.ajax({
             type: form.attr('method'),
             url: form.attr('action'),
