@@ -3,6 +3,7 @@ if ( Modal !== undefined ) {
 }
 
 var Modal = (function() {
+
     var modal_content_selector = "[data-behavior~=modal-content]",
         modal_container_selector = "[data-behavior~=modal-container]";
 
