@@ -1,5 +1,6 @@
 = content_for(:modal_title) do
   Edit #{@user_name.to_s.humanize}
+
 = content_for(:modal_body) do
   .row{style: "padding-top: 10px;"}
     = simple_form_for(@user, url: superadmin_user_path(@user),                                     |
