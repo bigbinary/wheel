@@ -30,7 +30,7 @@ var Modal = (function() {
         return element
     };
 
-    function _formSubmitResponseHandler(data) {
+    function _formSubmissionResponseHandler(data) {
         var modal_container = _findOrCreateModalContainer();
 
         if (data.modal_content) {
@@ -63,7 +63,7 @@ var Modal = (function() {
             type: form.attr('method'),
             url: form.attr('action'),
             data: form.serialize()
-        }).done(_formSubmitResponseHandler);
+        }).done(_formSubmissionResponseHandler);
     };
 
     return { "displayInModal": displayInModal,
