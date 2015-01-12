@@ -69,6 +69,6 @@ var Modal = (function() {
 
 })();
 
-$(document).on('click', 'a[data-behavior~=display-in-modal]', Modal.displayInModal);
-$(document).on("click", "[data-behavior~=modal-close]", Modal.hide)
-$(document).on('submit', "[data-behavior~=modal-container] form", Modal.submitForm)
+$(document).on('click', 'a[data-behavior ~= display-in-modal]', Modal.displayInModal);
+$(document).on("click", "[data-behavior ~= modal-close]", Modal.hide)
+$(document).on('submit', "[data-behavior ~= modal-container] form", Modal.submitForm)
