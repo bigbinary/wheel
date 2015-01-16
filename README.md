@@ -40,7 +40,7 @@ replace all occurrences of `Wheel` with `Pump`.
 - Has a bunch of tests to make it easier to get started with new tests.
 - Uses PostgreSQL.
 - Built in support for [carrierwave](https://github.com/carrierwaveuploader/carrierwave) to easily upload items to s3.
-- Built in support for "variants" so the pages can be customzied for tablet or phone easily.
+- Built in support for "variants" so the pages can be customized for tablet or phone easily.
 - Uses [simple_form](https://github.com/plataformatec/simple_form) .
 - Built in support for [mandrill](http://how-we-work.bigbinary.com/externalservices/mandrill.html) .
 - Easy to generate "test coverage" .
