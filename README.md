@@ -44,6 +44,7 @@ replace all occurrences of `Wheel` with `Pump`.
 - Uses [simple_form](https://github.com/plataformatec/simple_form) .
 - Built in support for [mandrill](http://how-we-work.bigbinary.com/externalservices/mandrill.html) .
 - Easy to generate "test coverage" .
+- Built in support for [email prefixing](http://codecrate.com/2015/01/email-prefixer-release.html)
 
 
 #### Brought to you by
