@@ -65,6 +65,9 @@ gem 'haml-rails'
 # not used in development.
 gem 'unicorn', group: [:staging, :production]
 
+# Automatically prefix all delivered emails with the application name and Rails environment
+gem 'email_prefixer'
+
 group :development do
 
   # application server for development

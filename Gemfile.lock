@@ -99,6 +99,8 @@ GEM
     devise-async (0.9.0)
       devise (~> 3.2)
     docile (1.1.5)
+    email_prefixer (1.0.2)
+      rails (>= 4.0)
     email_validator (1.5.0)
       activemodel
     erubis (2.7.0)
@@ -265,6 +267,7 @@ DEPENDENCIES
   delayed_job_web (>= 1.2.0)
   devise (= 3.2.3)
   devise-async
+  email_prefixer
   email_validator
   haml-rails
   handy
