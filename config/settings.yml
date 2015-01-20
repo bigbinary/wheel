@@ -1,5 +1,6 @@
 common:
 
+  subject_prefix_for_outgoing_emails: WHEEL
   secret_key_base: <%= ENV['SECRET_KEY_BASE'] %>
   honeybadger_api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
   host: <%= ENV['APP_URL'] || ENV['HEROKU_URL'] || 'http://localhost:3000' %>
