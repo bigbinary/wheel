@@ -60,6 +60,9 @@ gem 'browser'
 # haml as templating engine
 gem 'haml-rails'
 
+# intercepts outgoing emails in non-production environment
+gem 'mail_interceptor'
+
 # HTTP server for Rack applications for staginng and production
 # See https://github.com/bigbinary/wheel/issues/43 for why unicorn is
 # not used in development.
