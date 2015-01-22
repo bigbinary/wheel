@@ -46,7 +46,7 @@ replace all occurrences of `Wheel` with `Pump`.
 - Easy to generate "test coverage" .
 
 
+
 #### Brought to you by
 
-
-![BigBinary](http://bigbinary.com/assets/common/logo.png)
+[![BigBinary logo](http://bigbinary.com/assets/common/logo.png)](http://BigBinary.com)
