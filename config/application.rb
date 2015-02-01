@@ -23,6 +23,6 @@ module Wheel
     # The default value is true. This option is here so that users running tests from within vim
     # can turn off colorized logging easily. Still looking for an easy solution to accomplish it.
     # config.colorize_logging = false
-
+    config.middleware.use Rack::Deflater
   end
 end
