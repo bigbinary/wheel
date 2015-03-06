@@ -6,8 +6,9 @@ gem 'rails', '4.2.0'
 
 gem 'arel'
 gem 'jquery-rails'
+
 gem 'sprockets-rails', '3.0.0.beta1'
-gem 'sass-rails',   github: 'rails/sass-rails'
+gem 'sass-rails', '>= 3.2'
 gem 'uglifier', '>= 1.0.3'
 
 # database
@@ -38,7 +39,10 @@ gem 'handy'
 gem 'honeybadger'
 
 # use bootstrap3
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.3.3'
+
+# use font-awesome
+gem 'font-awesome-sass', '~> 4.3.0'
 
 # forms made easy for rails
 gem 'simple_form'

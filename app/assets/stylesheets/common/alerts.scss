@@ -1,0 +1,40 @@
+.alert {
+  margin: 10px 0;
+  font-weight: bold;
+  position: relative;
+  padding-left: 40px;
+  &:after {
+    position: absolute;
+    font: normal normal normal 18px/1 FontAwesome;
+    left: 16px;
+    top: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.alert-success {
+  border-color: #98CF6A;
+  &:after {
+    color: #48cf36;
+    content: "\f00c";
+    text-shadow: 1px 1px 0px #6D924E;
+  }
+}
+
+.alert-danger {
+  border-color: #ebb6bf;
+  color: #CA3532;
+  &:after {
+    content: "\f057";
+  }
+}
+
+.alert-warning {
+  background-color: #F9F3DD;
+  border-color: #E9D5AC;
+  color: #b97a38;
+  &:after {
+    content: "\f071";
+  }
+}
