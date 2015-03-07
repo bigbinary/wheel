@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.1'
 
 gem 'rails', '4.2.0'
 
@@ -50,7 +50,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'carrierwave'
 
 # for logging to work in heroku
-gem 'rails_12factor'
+gem 'rails_12factor', group: [:staging, :production]
 
 # for email validation
 gem 'email_validator'
