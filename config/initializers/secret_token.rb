@@ -10,5 +10,5 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 
-Wheel::Application.config.secret_key_base = Settings.secret_key_base
+#Wheel::Application.config.secret_key_base = Settings.secret_key_base
 
