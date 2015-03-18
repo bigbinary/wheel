@@ -18,7 +18,7 @@ replace all occurrences of `Wheel` with `Pump`.
 
 #### Features
 
-- Uses [Boostrap](http://getbootstrap.com) .
+- Uses [Bootstrap](http://getbootstrap.com) .
 - rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
 - Uses [devise](https://github.com/plataformatec/devise) .
 - Heroku ready. Push to heroku and it will work .
