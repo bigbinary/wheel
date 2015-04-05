@@ -132,7 +132,7 @@ GEM
       activesupport (>= 3.2, < 5)
     hashr (0.0.22)
     hike (1.2.3)
-    honeybadger (2.0.6)
+    honeybadger (2.0.11)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
