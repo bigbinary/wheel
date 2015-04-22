@@ -1,0 +1,2 @@
+---
+api_key: <%= Settings.honeybadger_api_key %>
