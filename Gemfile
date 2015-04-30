@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise', '3.4.1'
 
 # for sending devise emails in background
-gem 'devise-async'
+gem 'devise-async', github: 'mhfs/devise-async', tag: 'v0.10.0-alpha'
 
 # for background job processing
 gem 'delayed_job_active_record'
