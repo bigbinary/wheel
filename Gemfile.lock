@@ -18,8 +18,7 @@ GIT
 
 GIT
   remote: git://github.com/mhfs/devise-async.git
-  revision: d5ae22ad6ab5e8b74c733048481436975dcc362f
-  tag: v0.10.0-alpha
+  revision: f8f61910e6ef54fdc91ebf5088c0594be9dca19c
   specs:
     devise-async (0.9.0)
       devise (~> 3.2)
