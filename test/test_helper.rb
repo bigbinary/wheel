@@ -24,7 +24,12 @@ require 'rails/test_help'
 if Rails.application.config.colorize_logging
   require 'minitest/reporters'
   require 'minitest/pride'
-  MiniTest::Reporters.use!
+
+  MiniTest::Reporters.use!(
+    Minitest::Reporters::ProgressReporter.new,
+    ENV,
+    Minitest.backtrace_filter # Use filter that Rails has already set.
+  )
 end
 
 class ActiveSupport::TestCase
