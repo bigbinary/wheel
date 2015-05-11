@@ -4,12 +4,15 @@
 # Check doc/why_database_name_only_63_characters_long.md to see
 # details about the restriction on database name
 
+# If you prefer to have branch name in the database name then use following
+# database: <%= "#{repository_name}_development_#{branch_name}"[0...63] %>
+
 development:
   adapter: postgresql
-  database: <%= "#{repository_name}_development_#{branch_name}"[0...63] %>
+  database: <%= "#{repository_name}_development"[0...63] %>
   host: localhost
 
 test:
   adapter: postgresql
-  database: <%= "#{repository_name}_test_#{branch_name}"[0...63] %>
+  database: <%= "#{repository_name}_test"[0...63] %>
   host: localhost
