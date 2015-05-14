@@ -12,7 +12,6 @@ machine:
   # Add some environment variables
   environment:
     ACCEPTANCE_TESTS: test
-    TESTOPTS: --seed=7862
 
 ## Customize database setup
 database:
