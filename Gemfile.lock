@@ -298,6 +298,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.3)
   browser
   carrierwave
+  daemons
   delayed_job_active_record
   delayed_job_web (>= 1.2.0)
   devise (= 3.4.1)

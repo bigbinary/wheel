@@ -73,6 +73,9 @@ gem 'mail_interceptor'
 # not used in development.
 gem 'unicorn', group: [:staging, :production]
 
+# For starting Delayed job background process
+gem 'daemons'
+
 group :development do
 
   # application server for development
