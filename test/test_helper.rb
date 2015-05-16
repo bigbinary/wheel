@@ -24,7 +24,14 @@ require 'rails/test_help'
 if Rails.application.config.colorize_logging
   require 'minitest/reporters'
   require 'minitest/pride'
-  MiniTest::Reporters.use!
+
+  # Refer https://github.com/kern/minitest-reporters#caveats
+  # If you want to see full stacktrace then just use
+  # MiniTest::Reporters.use!
+
+  MiniTest::Reporters.use! Minitest::Reporters::ProgressReporter.new,
+                           ENV,
+                           Minitest.backtrace_filter
 end
 
 class ActiveSupport::TestCase
