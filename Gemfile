@@ -66,7 +66,10 @@ gem 'browser'
 gem 'haml-rails'
 
 # intercepts outgoing emails in non-production environment
-gem 'mail_interceptor'
+gem 'mail_interceptor', github: 'bigbinary/mail_interceptor', group: [:development, :staging]
+
+# Adds prefix to the subject in emails
+gem 'email_prefixer'
 
 # HTTP server for Rack applications for staginng and production
 # See https://github.com/bigbinary/wheel/issues/43 for why unicorn is

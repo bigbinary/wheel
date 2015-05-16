@@ -17,6 +17,13 @@ GIT
       sass-rails
 
 GIT
+  remote: git://github.com/bigbinary/mail_interceptor.git
+  revision: 3c6e9689e78a8edbf589d284b03a0146af421847
+  specs:
+    mail_interceptor (0.0.5)
+      activesupport
+
+GIT
   remote: git://github.com/mhfs/devise-async.git
   revision: f8f61910e6ef54fdc91ebf5088c0594be9dca19c
   specs:
@@ -110,6 +117,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     docile (1.1.5)
+    email_prefixer (1.1.0)
+      rails (>= 4.0)
     email_validator (1.5.0)
       activemodel
     erubis (2.7.0)
@@ -167,8 +176,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mail_interceptor (0.0.3)
-      activesupport
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
@@ -303,6 +310,7 @@ DEPENDENCIES
   delayed_job_web (>= 1.2.0)
   devise (= 3.4.1)
   devise-async!
+  email_prefixer
   email_validator
   font-awesome-sass (~> 4.3.0)
   haml-rails
@@ -310,7 +318,7 @@ DEPENDENCIES
   honeybadger
   jbuilder (~> 1.2)
   jquery-rails
-  mail_interceptor
+  mail_interceptor!
   minitest-reporters
   pg
   quiet_assets
