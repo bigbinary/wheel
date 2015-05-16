@@ -41,9 +41,6 @@ development:
 test:
   mailer:
     delivery_method: :test
-  intercept_and_forward_emails_to:
-    - john@example.com
-    - adam@example.com
 
 staging:
   mailer:
