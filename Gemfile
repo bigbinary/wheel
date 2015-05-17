@@ -8,8 +8,8 @@ gem 'arel'
 gem 'jquery-rails'
 
 gem 'sprockets-rails', '3.0.0.beta1'
-gem 'sass-rails', '>= 3.2'
-gem 'uglifier', '>= 1.0.3'
+gem 'sass-rails', '>= 5.0.3'
+gem 'uglifier', '>= 2.7.1'
 
 # database
 gem 'pg'
@@ -18,7 +18,7 @@ gem 'pg'
 gem 'sprockets-strict-mode'
 
 # for building JSON
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '>= 2.2.13'
 
 # for authentication
 gem 'devise', '3.4.1'
@@ -30,7 +30,7 @@ gem 'devise-async', github: 'mhfs/devise-async'
 gem 'delayed_job_active_record'
 
 # web interface for delayed job
-gem 'delayed_job_web', '>= 1.2.0'
+gem 'delayed_job_web', '>= 1.2.10'
 
 # For starting Delayed job background process
 gem 'daemons'
