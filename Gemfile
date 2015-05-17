@@ -32,6 +32,9 @@ gem 'delayed_job_active_record'
 # web interface for delayed job
 gem 'delayed_job_web', '>= 1.2.0'
 
+# For starting Delayed job background process
+gem 'daemons'
+
 # collection of handy tools
 gem 'handy'
 
@@ -71,13 +74,10 @@ gem 'mail_interceptor', github: 'bigbinary/mail_interceptor', group: [:developme
 # Adds prefix to the subject in emails
 gem 'email_prefixer'
 
-# HTTP server for Rack applications for staginng and production
+# HTTP server for Rack applications for staging and production
 # See https://github.com/bigbinary/wheel/issues/43 for why unicorn is
 # not used in development.
 gem 'unicorn', group: [:staging, :production]
-
-# For starting Delayed job background process
-gem 'daemons'
 
 group :development do
 
