@@ -3,7 +3,7 @@
 class HoneybadgerDelayedJobPlugin < Delayed::Plugin
   callbacks do |lifecycle|
     lifecycle.before(:invoke_job) do |job, *args, &block|
-      Honeybadger.context(job_name: job.name, host: Settings.host)
+      Honeybadger.context(job_name: job.name, host: Rails.application.secrets.host)
     end
   end
 end

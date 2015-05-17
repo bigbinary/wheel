@@ -1,2 +1,2 @@
 ---
-api_key: <%= Settings.honeybadger_api_key %>
+api_key: <%= ENV['HONEYBADGER_API_KEY'] %>
