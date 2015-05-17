@@ -69,7 +69,7 @@ gem 'browser'
 gem 'haml-rails'
 
 # intercepts outgoing emails in non-production environment
-gem 'mail_interceptor', github: 'bigbinary/mail_interceptor', group: [:development, :staging]
+gem 'mail_interceptor', github: 'bigbinary/mail_interceptor', group: [:development, :staging, :test]
 
 # Adds prefix to the subject in emails
 gem 'email_prefixer'
@@ -101,4 +101,7 @@ group :test do
 
   # for test coverage report
   gem 'simplecov', require: false
+
+  # Report test coverage
+  gem 'coveralls', require: false
 end

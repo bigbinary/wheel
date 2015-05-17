@@ -16,4 +16,21 @@ class Superadmin::UsersControllerTest < ActionController::TestCase
     assert_response :forbidden
   end
 
+  def test_edit_user_modal_success_response
+    user = users :admin
+    sign_in user
+    get :edit, id: users(:nancy)
+    assert_response :success
+  end
+
+  def test_user_update_success
+    admin = users :admin
+    sign_in admin
+    nancy = users :nancy
+
+    post :update, id: nancy, user: {first_name: 'Jane'}
+    nancy.reload
+
+    assert 'Jane', nancy.first_name
+  end
 end
