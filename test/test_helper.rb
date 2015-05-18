@@ -1,7 +1,7 @@
 require 'coveralls'
 Coveralls.wear!
 
-def enable_local_test_coverage
+def enable_test_coverage
   require 'simplecov'
 
   SimpleCov.start do
@@ -17,7 +17,7 @@ def enable_local_test_coverage
   end
 end
 
-enable_local_test_coverage if ENV['COVERAGE']
+enable_test_coverage if ENV['COVERAGE']
 
 ENV["RAILS_ENV"] ||= "test"
 

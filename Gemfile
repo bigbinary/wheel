@@ -69,7 +69,7 @@ gem 'browser'
 gem 'haml-rails'
 
 # intercepts outgoing emails in non-production environment
-gem 'mail_interceptor', github: 'bigbinary/mail_interceptor', group: [:development, :staging, :test]
+gem 'mail_interceptor', github: 'bigbinary/mail_interceptor', group: [:development, :staging]
 
 # Adds prefix to the subject in emails
 gem 'email_prefixer'
