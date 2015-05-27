@@ -9,10 +9,6 @@ machine:
     version:
       2.2.2
 
-  # Add some environment variables
-  environment:
-    ACCEPTANCE_TESTS: test
-
 ## Customize database setup
 database:
   override:
