@@ -1,5 +1,4 @@
 [![Circle CI](https://circleci.com/gh/bigbinary/wheel.png?style=badge)](https://circleci.com/gh/bigbinary/wheel)
-[![Coverage Status](https://coveralls.io/repos/bigbinary/wheel/badge.svg)](https://coveralls.io/r/bigbinary/wheel)
 
 #### Setup
 

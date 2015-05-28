@@ -1,5 +1,3 @@
-require 'coveralls'
-Coveralls.wear!
 
 def enable_test_coverage
   require 'simplecov'

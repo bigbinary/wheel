@@ -102,6 +102,4 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 
-  # Report test coverage
-  gem 'coveralls', require: false
 end
