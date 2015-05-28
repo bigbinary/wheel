@@ -1,3 +1,4 @@
+
 def enable_test_coverage
   require 'simplecov'
 
