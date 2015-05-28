@@ -102,3 +102,6 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 end
+
+# Attach comments to Active Record queries
+gem 'marginalia'
