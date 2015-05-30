@@ -26,6 +26,7 @@
     "no-multi-spaces": [0],
     "no-shadow": [0],
     "no-unused-vars": [1],
+    "no-underscore-dangle": [0],
     "no-use-before-define": [0, "nofunc"],
     "comma-dangle": "never"
   }
