@@ -26,7 +26,7 @@
     "no-multi-spaces": [0],
     "no-shadow": [0],
 
-    // in ReactJS it is commont to have components defined first and then used later. PR #88
+    // in ReactJS it is common to have components defined first and then used later. PR #88
     "no-unused-vars": [0],
 
     //allow function names starting with underscore statements like this._executeQuery is being flagged. PR #86
