@@ -26,6 +26,9 @@
     "no-multi-spaces": [0],
     "no-shadow": [0],
 
+    // allow alert
+    "no-alert": [0],
+
     // in ReactJS it is common to have components defined first and then used later. PR #88
     "no-unused-vars": [0],
 
