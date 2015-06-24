@@ -7,7 +7,7 @@ gem 'rails', '4.2.1'
 gem 'arel'
 gem 'jquery-rails'
 
-gem 'sprockets-rails'
+gem 'sprockets-rails', github: 'rails/sprockets-rails'
 gem 'sass-rails', '>= 5.0.3'
 gem 'uglifier', '>= 2.7.1'
 
