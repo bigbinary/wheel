@@ -7,15 +7,15 @@ gem 'rails', '4.2.1'
 gem 'arel'
 gem 'jquery-rails'
 
-gem 'sprockets-rails', '3.0.0.beta1'
+gem 'sprockets-rails', github: 'rails/sprockets-rails'
 gem 'sass-rails', '>= 5.0.3'
 gem 'uglifier', '>= 2.7.1'
 
 # database
 gem 'pg'
 
-# use "strict mode" in JavaScript
-gem 'sprockets-strict-mode'
+# Sprockets support for .es6 files, using babel.
+gem 'sprockets-es6', require: 'sprockets/es6'
 
 # for building JSON
 gem 'jbuilder', '>= 2.2.13'
