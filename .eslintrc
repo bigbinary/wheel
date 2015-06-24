@@ -38,7 +38,8 @@
     //In ReactNavite code it is common to have styles.xxx at the top while styles is defined later. PR #85
     "no-use-before-define": [0, "nofunc"],
 
-    "comma-dangle": [2, "never"],
+    // Allow dangling commas
+    "comma-dangle": [0],
 
     // Force space after keywords like if, else and before code blocks. PR #91
     "space-after-keywords": [2],
