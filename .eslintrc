@@ -43,6 +43,9 @@
 
     // Force space after keywords like if, else and before code blocks. PR #91
     "space-after-keywords": [2],
-    "space-before-blocks": [2]
+    "space-before-blocks": [2],
+
+    // Don't warn if camelcase variable names are used. PR #96
+    "camelcase": [0]
   }
 }
