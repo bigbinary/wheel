@@ -19,7 +19,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     if @user.valid?
       render json: @user
     else
-      render json: { error: @user.errors.full_messages.join }, status: 422
+      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
     end
   end
 
@@ -33,7 +33,7 @@ class Api::V1::UsersController < Api::V1::BaseController
       render json: @user
 
     else
-      render json: { error: @user.errors.full_messages.join }, status: 422
+      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
     end
   end
 
@@ -47,7 +47,7 @@ class Api::V1::UsersController < Api::V1::BaseController
       render json: @user
 
     else
-      render json: @user.errors.full_messages.join, status: 422
+      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
     end
   end
 
