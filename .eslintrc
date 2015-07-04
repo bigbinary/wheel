@@ -3,7 +3,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jquery": true  // This will remove warnings related to $ being undefined. PR #97
   },
   "ecmaFeatures": {
     "arrowFunctions": true,
