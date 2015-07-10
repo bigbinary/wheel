@@ -6,6 +6,9 @@
     "node": true,
     "jquery": true  // This will remove warnings related to $ being undefined. PR #97
   },
+  "plugins": [
+    "react"        // This will remove warnings related to React not being defined. PR #98
+  ]
   "ecmaFeatures": {
     "arrowFunctions": true,
     "blockBindings": true,
