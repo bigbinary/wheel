@@ -8,7 +8,7 @@
   },
   "plugins": [
     "react"        // This will remove warnings related to React not being defined. PR #98
-  ]
+  ],
   "ecmaFeatures": {
     "arrowFunctions": true,
     "blockBindings": true,
