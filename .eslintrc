@@ -50,6 +50,10 @@
     "space-before-blocks": [2],
 
     // Don't warn if camelcase variable names are used. PR #96
-    "camelcase": [0]
+    "camelcase": [0],
+
+    // Prefer === over ==. PR #100
+    "eqeqeq": [2]
+
   }
 }
