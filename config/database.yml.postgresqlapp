@@ -11,8 +11,10 @@ development:
   adapter: postgresql
   database: <%= "#{repository_name}_development"[0...63] %>
   host: localhost
+  pool: 5
 
 test:
   adapter: postgresql
   database: <%= "#{repository_name}_test"[0...63] %>
   host: localhost
+  pool: 5
