@@ -3,3 +3,4 @@ test:
   username: ubuntu
   database: circle_ruby_test
   adapter: postgresql
+  pool: 5
