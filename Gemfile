@@ -62,6 +62,18 @@ gem 'fog', require: false
 # for CarrierWave to perform image manipulations
 #gem 'mini_magick'
 
+group :development, :test do
+  gem 'pry'
+  gem 'pry-byebug', '~> 1.3.3'
+  gem 'pry-rails'
+  gem 'pry-rescue', '>= 1.4.2'
+  gem 'pry-remote'
+end
+
+gem 'react-rails', '~> 1.2.0'
+
+gem 'awesome_print', group: :development
+
 # for logging to work in heroku
 gem 'rails_12factor', group: [:staging, :production]
 
