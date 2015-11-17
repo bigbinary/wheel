@@ -98,6 +98,9 @@ group :development do
 
   # web console
   gem 'web-console', '~> 2.0'
+
+  # reports N+1 queries
+  gem 'bullet'
 end
 
 group :test do
@@ -113,4 +116,3 @@ end
 # Attach comments to Active Record queries
 gem 'marginalia'
 
-gem 'bullet'
