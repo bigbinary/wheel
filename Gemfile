@@ -41,10 +41,10 @@ gem 'handy'
 # for error tracking
 gem 'honeybadger'
 
-# use bootstrap3
+# for using bootstrap framework
 gem 'bootstrap-sass', '~> 3.3.3'
 
-# use font-awesome
+# for using font-awesome
 gem 'font-awesome-sass', '~> 4.3.0'
 
 # forms made easy for rails
