@@ -4,9 +4,9 @@ ruby '2.2.3'
 
 gem 'rails', '4.2.1'
 
+# friends of Rails
 gem 'arel'
 gem 'jquery-rails'
-
 gem 'sprockets-rails', github: 'rails/sprockets-rails'
 gem 'sass-rails', '>= 5.0.3'
 gem 'uglifier', '>= 2.7.1'
