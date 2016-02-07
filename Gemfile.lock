@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/activeadmin/activeadmin.git
-  revision: 60914c887942cb34d737428fb9813f69bb8ae3ee
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 7c1e64264167680afaffc4dab1a1338e7ca25d84
   specs:
-    activeadmin (1.0.0.pre)
+    activeadmin (1.0.0.pre2)
       arbre (~> 1.0, >= 1.0.2)
       bourbon
       coffee-rails
@@ -10,34 +10,11 @@ GIT
       formtastic_i18n
       inherited_resources (~> 1.6)
       jquery-rails
-      jquery-ui-rails (~> 5.0)
+      jquery-ui-rails
       kaminari (~> 0.15)
       rails (>= 3.2, < 5.0)
       ransack (~> 1.3)
       sass-rails
-
-GIT
-  remote: git://github.com/bigbinary/mail_interceptor.git
-  revision: 3c6e9689e78a8edbf589d284b03a0146af421847
-  specs:
-    mail_interceptor (0.0.5)
-      activesupport
-
-GIT
-  remote: git://github.com/mhfs/devise-async.git
-  revision: f8f61910e6ef54fdc91ebf5088c0594be9dca19c
-  specs:
-    devise-async (0.9.0)
-      devise (~> 3.2)
-
-GIT
-  remote: git://github.com/rails/sprockets-rails.git
-  revision: 7bd1560360248ab11d8aba81e558bd817935c692
-  specs:
-    sprockets-rails (3.0.0.beta1)
-      actionpack (>= 4.0)
-      activesupport (>= 4.0)
-      sprockets (>= 3.0.0, < 4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -85,19 +62,13 @@ GEM
     autoprefixer-rails (5.1.7)
       execjs
       json
-    babel-source (5.6.3)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     bcrypt (3.1.10)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
-    bourbon (4.2.1)
+    bourbon (4.2.6)
       sass (~> 3.4)
-      thor
+      thor (~> 0.19)
     browser (0.8.0)
     builder (3.2.2)
     bullet (4.14.10)
@@ -108,13 +79,13 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    coffee-rails (4.1.0)
+    coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
-    coffee-script (2.3.0)
+      railties (>= 4.0.0, < 5.1.x)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1)
+    coffee-script-source (1.10.0)
     daemons (1.1.9)
     debug_inspector (0.0.2)
     delayed_job (4.0.6)
@@ -133,13 +104,14 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-async (0.10.1)
+      devise (~> 3.2)
     docile (1.1.5)
     email_prefixer (1.1.0)
       rails (>= 4.0)
     email_validator (1.5.0)
       activemodel
     erubis (2.7.0)
-    eventmachine (1.0.7)
     excon (0.45.4)
     execjs (2.4.0)
     fission (0.5.0)
@@ -243,7 +215,7 @@ GEM
     formatador (0.2.5)
     formtastic (3.1.3)
       actionpack (>= 3.2.13)
-    formtastic_i18n (0.1.1)
+    formtastic_i18n (0.5.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -281,17 +253,18 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (5.0.3)
+    jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kgio (2.9.3)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mail_interceptor (0.0.6)
+      activesupport
     marginalia (1.3.0)
       actionpack (>= 2.3)
       activerecord (>= 2.3)
@@ -311,8 +284,9 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.1)
-    polyamorous (1.1.0)
+    polyamorous (1.3.0)
       activerecord (>= 3.0)
+    puma (2.15.3)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -349,14 +323,13 @@ GEM
       activesupport (= 4.2.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    raindrops (0.13.0)
     rake (10.4.2)
-    ransack (1.6.3)
+    ransack (1.7.0)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       i18n
-      polyamorous (~> 1.1)
+      polyamorous (~> 1.2)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby-progressbar (1.7.1)
@@ -385,13 +358,10 @@ GEM
     spring (1.3.3)
     sprockets (3.2.0)
       rack (~> 1.0)
-    sprockets-es6 (0.6.2)
-      babel-transpiler
+    sprockets-rails (3.0.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    thin (1.6.3)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
-      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -400,18 +370,13 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    unicorn (4.8.3)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
     uniform_notifier (1.9.0)
     warden (1.2.3)
       rack (>= 1.0)
-    web-console (2.1.1)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
+    web-console (3.1.1)
+      activemodel (>= 4.2)
+      debug_inspector
+      railties (>= 4.2)
 
 PLATFORMS
   ruby
@@ -427,7 +392,7 @@ DEPENDENCIES
   delayed_job_active_record
   delayed_job_web (>= 1.2.10)
   devise (= 3.4.1)
-  devise-async!
+  devise-async
   email_prefixer
   email_validator
   fog
@@ -437,10 +402,11 @@ DEPENDENCIES
   honeybadger
   jbuilder (>= 2.2.13)
   jquery-rails
-  mail_interceptor!
+  mail_interceptor
   marginalia
   minitest-reporters
   pg
+  puma
   quiet_assets
   rails (= 4.2.1)
   rails_12factor
@@ -448,12 +414,9 @@ DEPENDENCIES
   simple_form
   simplecov
   spring
-  sprockets-es6
-  sprockets-rails!
-  thin
+  sprockets-rails
   uglifier (>= 2.7.1)
-  unicorn
-  web-console (~> 2.0)
+  web-console (~> 3.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
