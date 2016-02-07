@@ -106,4 +106,3 @@ end
 
 # Attach comments to Active Record queries
 gem 'marginalia'
-
