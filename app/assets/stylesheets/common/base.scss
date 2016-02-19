@@ -7,3 +7,48 @@ html, body {
   margin-bottom: 0;
 }
 
+.floating-menu {
+  position: fixed;
+  right: 0;
+  background: #eee;
+  border-style: solid;
+  border-color: #ddd;
+  top: 50%;
+  border-width: 1px 0 1px 1px;
+  border-radius: 3px 0 0 3px;
+  transition: right 0.5s cubic-bezier(.5, 0, .5, 1);
+  -webkit-transition: right 0.5s cubic-bezier(.5, 0, .5, 1);
+  a {
+    display: block;
+    padding: 10px;
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+    }
+  }
+  &.toggled {
+    right: 300px;
+  }
+}
+
+.floating-menu-detailed {
+  background: #eee;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -300px;
+  width: 300px;
+  z-index: 1000;
+  padding: 40px 20px 20px 20px;
+  box-shadow: -1px 0 3px rgba(0,0,0,0.2);
+  transition: right 0.5s cubic-bezier(.5, 0, .5, 1);
+  -webkit-transition: right 0.5s cubic-bezier(.5, 0, .5, 1);
+  &.open {
+    right: 0;
+  }
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+}
