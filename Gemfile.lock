@@ -383,7 +383,6 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
-  arel
   bootstrap-sass (~> 3.3.3)
   browser
   bullet
