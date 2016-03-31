@@ -77,10 +77,13 @@ gem 'mail_interceptor', group: [:development, :staging]
 gem 'email_prefixer'
 
 # application server
-gem 'puma'
+gem 'puma', '~> 3.2'
 
 # Attach comments to Active Record queries
 gem 'marginalia'
+
+# timeout Rails request, needed if running on heroku- https://devcenter.heroku.com/articles/request-timeout
+gem "rack-timeout"
 
 group :development do
 
