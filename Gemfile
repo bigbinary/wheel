@@ -73,10 +73,14 @@ gem 'haml-rails'
 # intercepts outgoing emails in non-production environment
 gem 'mail_interceptor', group: [:development, :staging]
 
-# Adds prefix to the subject in emails
+# Adds prefix to subject in emails
 gem 'email_prefixer'
 
+# application server
 gem 'puma'
+
+# Attach comments to Active Record queries
+gem 'marginalia'
 
 group :development do
 
@@ -102,6 +106,3 @@ group :test do
   gem 'simplecov', require: false
 
 end
-
-# Attach comments to Active Record queries
-gem 'marginalia'
