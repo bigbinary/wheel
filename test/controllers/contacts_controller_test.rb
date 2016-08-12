@@ -10,7 +10,7 @@ class ContactsControllerTest < ActionController::TestCase
     contact_param = { contact: { title: 'contact title',
                                  body: 'some message',
                                  email: 'bob@example.com' } }
-    post :create, contact_param
+    post :create, params: contact_param
 
     assert_includes ActionMailer::Base.deliveries.last.from, contact_param[:contact][:email]
     assert_redirected_to pages_contact_us_path
@@ -18,18 +18,18 @@ class ContactsControllerTest < ActionController::TestCase
   end
 
   def test_create_failure
-    post :create, contact: { title: 'contact title',
-                             body: 'some message',
-                             email: 'bob' }
+    post :create, params: { contact: { title: 'contact title',
+                                       body: 'some message',
+                                       email: 'bob' }}
 
     contact = assigns :contact
     assert_includes contact.errors.full_messages, 'Email is invalid'
   end
 
   def test_create_failure_should_render_contact_us_template
-    post :create, contact: { title: 'contact title',
-                             body: 'some message',
-                             email: 'bob' }
+    post :create, params: { contact: { title: 'contact title',
+                                       body: 'some message',
+                                       email: 'bob' }}
 
     assert_template "pages/contact_us"
     assert_not_nil assigns(:contact)

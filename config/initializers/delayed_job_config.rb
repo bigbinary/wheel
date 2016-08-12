@@ -1,3 +1,5 @@
+MAIL_DELIVERY_PRIORITY_MEDIUM = -1
+
 Delayed::Worker.destroy_failed_jobs = false
 
 # Amount of time to sleep when no jobs are found. You can easily set it to 5 seconds or less.
@@ -9,6 +11,10 @@ Delayed::Worker.max_run_time        = 5.minutes
 Delayed::Worker.read_ahead          = 10
 
 Delayed::Worker.delay_jobs          = !Rails.env.test?
+
+Delayed::Worker.default_queue_name  = 'default'
+
+Delayed::Worker.queue_attributes    = { devise_email: { priority: MAIL_DELIVERY_PRIORITY_MEDIUM } }
 
 if ENV['HEROKU'].present?
   Delayed::Worker.logger = Logger.new(STDOUT)

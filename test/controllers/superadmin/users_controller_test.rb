@@ -19,7 +19,7 @@ class Superadmin::UsersControllerTest < ActionController::TestCase
   def test_edit_user_modal_success_response
     user = users :admin
     sign_in user
-    get :edit, id: users(:nancy)
+    get :edit, params: { id: users(:nancy) }
     assert_response :success
   end
 
@@ -28,7 +28,7 @@ class Superadmin::UsersControllerTest < ActionController::TestCase
     sign_in admin
     nancy = users :nancy
 
-    post :update, id: nancy, user: {first_name: 'Jane'}
+    post :update, params: { id: nancy, user: {first_name: 'Jane'} }
     nancy.reload
 
     assert 'Jane', nancy.first_name

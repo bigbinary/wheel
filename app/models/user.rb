@@ -1,9 +1,9 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :trackable, :validatable, :rememberable, :async
+         :recoverable, :trackable, :validatable, :rememberable
 
   mount_uploader :profile_image, ProfileImageUploader
 
@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later(queue: 'devise_email')
+  end
 
   def ensure_authentication_token_is_present
     if authentication_token.blank?

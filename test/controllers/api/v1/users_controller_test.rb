@@ -6,7 +6,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     admin = users(:admin)
     set_auth_headers!(admin)
 
-    get :show, { id: admin.email, format: :json }
+    get :show, params: { id: admin.email, format: :json }
 
     assert_response :success
     json = JSON.parse(response.body)
@@ -18,7 +18,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     an_invalid_email = 'this_email_is_not_present_in_db@example.com'
     set_auth_headers!(admin)
 
-    get :show, { id: an_invalid_email, format: :json }
+    get :show, params: { id: an_invalid_email, format: :json }
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials", JSON.parse(response.body)['error']
@@ -35,10 +35,10 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
                         phone_number: '1(555)555-5555' }
 
     # Ensure that there are no users with this email in db
-    User.delete_all(email: valid_email)
+    User.where(email: valid_email).delete_all
 
     assert_difference 'User.count', 1 do
-      post :create, user: valid_user_json
+      post :create, params: { user: valid_user_json }
       assert_response :success
     end
   end
@@ -53,9 +53,9 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
                         }
 
     # Ensure that there are no users with this email in db
-    User.delete_all( email: valid_email )
+    User.where( email: valid_email ).delete_all
 
-    post :create, user: invalid_user_json
+    post :create, params: { user: invalid_user_json }
     assert_response 422
     assert_equal "Password can't be blank", JSON.parse(response.body)['error']
   end
@@ -63,7 +63,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
   def test_update_should_not_succeed_without_authentication
     admin = users :admin
     json_data = admin.as_json
-    put :update, { id: admin.email, user: json_data }
+    put :update, params: { id: admin.email, user: json_data }
     assert_response 401
   end
 
@@ -72,7 +72,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     an_invalid_email = 'this_email_is_not_present_in_db@example.com'
     set_auth_headers!(admin)
 
-    put :update, { id: an_invalid_email, format: :json }
+    put :update, params: { id: an_invalid_email, format: :json }
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials", JSON.parse(response.body)['error']
@@ -83,7 +83,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     new_first_name = 'John2'
     set_auth_headers!(admin)
 
-    put :update, { id: admin.email, user: { first_name: new_first_name }, format: :json }
+    put :update, params: { id: admin.email, user: { first_name: new_first_name }, format: :json }
 
     assert_response :success
     admin.reload
@@ -95,7 +95,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
 
     set_auth_headers!(admin)
 
-    put :update, { id: admin.email, format: :json, user: { password: 'new test password', password_confirmation: 'not matching confirmation' } }
+    put :update, params: { id: admin.email, format: :json, user: { password: 'new test password', password_confirmation: 'not matching confirmation' } }
     assert_response 422
 
     assert_equal "Password confirmation doesn't match Password", JSON.parse(response.body)['error'], response.body
@@ -103,7 +103,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
 
   def test_destroy_should_not_be_invokable_without_authentication
     admin = users :admin
-    delete :destroy, id: admin.email
+    delete :destroy, params: { id: admin.email }
     assert_response 401
 
     assert_equal 'Could not authenticate with the provided credentials', JSON.parse(response.body)['error']
@@ -114,7 +114,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
     set_auth_headers!(admin)
 
     assert_difference 'User.count', -1 do
-      delete :destroy, { id: admin.email, format: :json }
+      delete :destroy, params: { id: admin.email, format: :json }
       assert_response :success
     end
   end
@@ -125,7 +125,7 @@ class Api::V1::UsersControllerTest < ActionController::TestCase
 
     set_auth_headers!(admin)
 
-    delete :destroy, { id: email, format: :json }
+    delete :destroy, params: { id: email, format: :json }
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials", JSON.parse(response.body)['error']

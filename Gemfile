@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'rails', '4.2.6'
+gem 'rails', '~> 5.0.0'
 
 # friends of Rails
 gem 'jquery-rails'
@@ -17,15 +17,14 @@ gem 'pg'
 gem 'jbuilder', '>= 2.2.13'
 
 # for authentication
-gem 'devise', '3.4.1'
-
-# for sending devise emails in background
-gem 'devise-async'
+gem 'devise' , '~> 4.1.0'
 
 # for background job processing
 gem 'delayed_job_active_record'
 
 # web interface for delayed job
+gem "sinatra", github: 'sinatra/sinatra'
+gem "rack-protection", github: 'sinatra/rack-protection'
 gem 'delayed_job_web', '>= 1.2.10'
 
 # For starting Delayed job background process
@@ -48,6 +47,7 @@ gem 'simple_form'
 
 # admin framework
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # for handling file uploads
 gem 'carrierwave'
@@ -80,15 +80,12 @@ gem 'email_prefixer'
 gem 'puma', '~> 3.2'
 
 # Attach comments to Active Record queries
-gem 'marginalia'
+gem 'marginalia', github: 'basecamp/marginalia'
 
 # timeout Rails request, needed if running on heroku- https://devcenter.heroku.com/articles/request-timeout
 gem "rack-timeout"
 
 group :development do
-
-  # mutes assets pipeline log messages
-  gem 'quiet_assets'
 
   # speeds up development by keeping your application running in the background
   gem 'spring'
@@ -108,4 +105,6 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 
+  # for controller testing
+  gem 'rails-controller-testing'
 end

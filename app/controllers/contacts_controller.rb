@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
 
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(contact_params)
 
     if @contact.valid?
       Mailer.delay.contact_us_notification(@contact)
@@ -10,6 +10,12 @@ class ContactsController < ApplicationController
     else
       render template: 'pages/contact_us'
     end
+  end
+
+  private
+
+  def contact_params
+    params.require(:contact).permit([ :email, :title, :body]).to_h
   end
 
 end

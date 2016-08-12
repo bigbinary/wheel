@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_device_type
-    request.variant = :phone if browser.mobile?
+    request.variant = :phone if browser.device.mobile?
   end
 
   def set_honeybadger_context

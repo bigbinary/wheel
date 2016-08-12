@@ -13,7 +13,7 @@ def delete_all_records_from_all_tables
 
   Dir.glob(Rails.root + 'app/models/*.rb').each { |file| require file }
 
-  ActiveRecord::Base.descendants.each do |klass|
+  ApplicationRecord.descendants.each do |klass|
     klass.reset_column_information
     klass.delete_all
   end

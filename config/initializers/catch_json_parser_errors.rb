@@ -1,3 +1,3 @@
 unless Rails.env.development?
-  Rails.application.config.middleware.insert_before ActionDispatch::ParamsParser, "CatchJsonParseErrors"
+  Rails.application.config.middleware.use CatchJsonParseErrors
 end
