@@ -92,6 +92,7 @@ group :development do
 
   # web console
   gem 'web-console', '~> 3.0'
+  gem 'listen', '~> 3.0.5'
 
   # reports N+1 queries
   gem 'bullet'
