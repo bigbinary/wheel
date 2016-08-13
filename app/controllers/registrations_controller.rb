@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
     if update_resource(resource, password_update_params)
       if is_flashing_format?
         set_flash_message :notice, :updated
-        sign_in(resource_name, resource, bypass: true)
+        bypass_sign_in(resource)
         respond_with(resource, location: after_update_path_for(resource))
       end
     else

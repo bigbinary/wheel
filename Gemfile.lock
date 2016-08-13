@@ -136,7 +136,7 @@ GEM
       activerecord (> 3.0.0)
       delayed_job (> 2.0.3)
       sinatra (>= 1.4.4)
-    devise (4.1.1)
+    devise (4.2.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.1)
@@ -463,7 +463,7 @@ DEPENDENCIES
   daemons
   delayed_job_active_record
   delayed_job_web (>= 1.2.10)
-  devise (~> 4.1.0)
+  devise (~> 4.2.0)
   email_prefixer
   email_validator
   fog

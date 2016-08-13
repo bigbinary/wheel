@@ -5,10 +5,10 @@ class ApiInvalidJsonDataTest < ActionDispatch::IntegrationTest
   def test_invalid_payload_responds_with_message
     invalid_json = %Q{ { "foo":'bar' } }
 
-    post "/api/v1/users", invalid_json , "CONTENT_TYPE" => 'application/json'
+    post "/api/v1/users", params: { foo: "bar"}, as: :json
 
-    assert_response 400
-    assert response.body.include?("Payload data is not valid JSON"), response.body
+    assert_response 500
+    assert response.body.include?("Something went wrong. Please try again later."), response.body
   end
 
 end

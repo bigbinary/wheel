@@ -1,9 +1,11 @@
-class Api::V1::BaseController < ApplicationController
+class Api::V1::BaseController < ActionController::API
+
+  include ActionController::MimeResponds
+  include Browser::ActionController
+  include BasicUserSettings
 
   before_action :authenticate_user_using_x_auth_token
   before_action :authenticate_user!
-
-  skip_before_action :verify_authenticity_token
 
   respond_to :json
 
