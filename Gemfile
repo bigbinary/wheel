@@ -64,9 +64,6 @@ gem 'rails_12factor', group: [:staging, :production]
 # for email validation
 gem 'email_validator'
 
-# for variants support
-gem 'browser'
-
 # haml as templating engine
 gem 'haml-rails'
 
