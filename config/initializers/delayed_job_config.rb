@@ -1,3 +1,4 @@
+# Delayed job priority: lower numbers run first; default is 0 but can be reconfigured
 MAIL_DELIVERY_PRIORITY_MEDIUM = -1
 
 Delayed::Worker.destroy_failed_jobs = false

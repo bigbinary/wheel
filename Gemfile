@@ -22,9 +22,12 @@ gem 'devise' , '~> 4.2.0'
 # for background job processing
 gem 'delayed_job_active_record'
 
-# web interface for delayed job
+# For dependency resolution of 'delayed_job_web' gem
+# More info - https://github.com/ejschmitt/delayed_job_web/issues/84
 gem "sinatra", github: 'sinatra/sinatra'
 gem "rack-protection", github: 'sinatra/rack-protection'
+
+# web interface for delayed job
 gem 'delayed_job_web', '>= 1.2.10'
 
 # For starting Delayed job background process
@@ -87,7 +90,7 @@ group :development do
   # speeds up development by keeping your application running in the background
   gem 'spring'
 
-  # web console
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '~> 3.0'
   gem 'listen', '~> 3.0.5'
 
@@ -103,6 +106,4 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 
-  # for controller testing
-  gem 'rails-controller-testing'
 end

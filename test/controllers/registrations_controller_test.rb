@@ -40,6 +40,7 @@ class RegistrationsControllerTest < ActionController::TestCase
 
   def test_does_not_update_password_given_invalid_data
     nancy = users :nancy
+    old_password = nancy.encrypted_password
     sign_in nancy
 
     get :edit_password
@@ -48,10 +49,10 @@ class RegistrationsControllerTest < ActionController::TestCase
     invalid_user_data = { password: 'new password', password_confirmation: 'new not matching password', current_password: 'welcome' }
 
     put :update_password, params: { user: invalid_user_data }
-    assert_response :success
-    assert assigns(:user)
-    @user = assigns(:user)
-    assert @user.errors.count > 0
+
+    nancy.reload
+    assert_match "error", response.body
+    assert_equal nancy.encrypted_password, old_password
   end
 
   def test_updates_user_profile_given_valid_data
