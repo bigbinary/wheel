@@ -3,8 +3,6 @@ class Api::V1::BaseController < ApplicationController
   before_action :authenticate_user_using_x_auth_token
   before_action :authenticate_user!
 
-  skip_before_action :verify_authenticity_token
-
   respond_to :json
 
   rescue_from Exception, with: :handle_api_exceptions

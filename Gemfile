@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'rails', '4.2.6'
+gem 'rails', '~> 5.0.0'
 
 # friends of Rails
 gem 'jquery-rails'
@@ -17,13 +17,15 @@ gem 'pg'
 gem 'jbuilder', '>= 2.2.13'
 
 # for authentication
-gem 'devise', '3.4.1'
-
-# for sending devise emails in background
-gem 'devise-async'
+gem 'devise' , '~> 4.2.0'
 
 # for background job processing
 gem 'delayed_job_active_record'
+
+# For dependency resolution of 'delayed_job_web' gem
+# More info - https://github.com/ejschmitt/delayed_job_web/issues/84
+gem "sinatra", github: 'sinatra/sinatra'
+gem "rack-protection", github: 'sinatra/rack-protection'
 
 # web interface for delayed job
 gem 'delayed_job_web', '>= 1.2.10'
@@ -48,6 +50,7 @@ gem 'simple_form'
 
 # admin framework
 gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # for handling file uploads
 gem 'carrierwave'
@@ -64,9 +67,6 @@ gem 'rails_12factor', group: [:staging, :production]
 # for email validation
 gem 'email_validator'
 
-# for variants support
-gem 'browser'
-
 # haml as templating engine
 gem 'haml-rails'
 
@@ -80,21 +80,19 @@ gem 'email_prefixer'
 gem 'puma', '~> 3.2'
 
 # Attach comments to Active Record queries
-gem 'marginalia'
+gem 'marginalia', github: 'basecamp/marginalia'
 
 # timeout Rails request, needed if running on heroku- https://devcenter.heroku.com/articles/request-timeout
 gem "rack-timeout"
 
 group :development do
 
-  # mutes assets pipeline log messages
-  gem 'quiet_assets'
-
   # speeds up development by keeping your application running in the background
   gem 'spring'
 
-  # web console
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '~> 3.0'
+  gem 'listen', '~> 3.0.5'
 
   # reports N+1 queries
   gem 'bullet'
