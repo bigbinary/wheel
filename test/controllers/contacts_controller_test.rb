@@ -23,17 +23,9 @@ class ContactsControllerTest < ActionController::TestCase
                                          email: 'bob' }}
     post :create, params: invalid_contact_param
 
-    assert_nil ActionMailer::Base.deliveries.last
-    assert_nil flash[:notice]
-  end
-
-  def test_create_failure_should_render_contact_us_template
-    post :create, params: { contact: { title: 'contact title',
-                                       body: 'some message',
-                                       email: 'bob' }}
-
     assert_select 'form#new_contact'
     assert_nil ActionMailer::Base.deliveries.last
+    assert_nil flash[:notice]
   end
 
 end
