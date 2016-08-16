@@ -10,6 +10,9 @@ gem 'sprockets-rails'
 gem 'sass-rails', '>= 5.0.3'
 gem 'uglifier', '>= 2.7.1'
 
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+
 # database
 gem 'pg'
 

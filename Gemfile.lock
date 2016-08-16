@@ -436,6 +436,9 @@ GEM
     tilt (2.0.5)
     tool (0.2.3)
     trollop (2.1.2)
+    turbolinks (5.0.1)
+      turbolinks-source (~> 5)
+    turbolinks-source (5.0.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.1)
@@ -491,6 +494,7 @@ DEPENDENCIES
   sinatra!
   spring
   sprockets-rails
+  turbolinks (~> 5)
   uglifier (>= 2.7.1)
   web-console (~> 3.0)
 
