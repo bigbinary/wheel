@@ -32,7 +32,7 @@ replace all occurrences of `Wheel` with `Pump`.
 - An orange ribbon at the top for non-production environment.
 - Uses haml for cleaner syntax over erb.
 - No coffeescript. We prefer JavaScript.
-- Uses [turbo-link](https://github.com/turbolinks/turbolinks).
+- Uses [turbolinks](https://github.com/turbolinks/turbolinks).
 - Uses [ActiveAdmin](http://activeadmin.info).
 - When exception is sent to honeybadger then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html) .
 - Uses [DelayedJob](https://github.com/collectiveidea/delayed_job).
