@@ -2,6 +2,11 @@ require 'test_helper'
 
 class ContactsControllerTest < ActionController::TestCase
 
+  def before_setup
+    super
+    ActionMailer::Base.deliveries.clear
+  end
+
   def setup
     request.env["HTTP_REFERER"] = "http://test.com"
   end
