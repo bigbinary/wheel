@@ -29,7 +29,6 @@ replace all occurrences of `Wheel` with `Pump`.
 - Uses modal box to showcase an example of editing information using modal box.
 - Enables __strict mode__ for all JavaScript code.
 - Uses __puma__ as web server.
-- An orange ribbon at the top for non-production environment.
 - Uses haml for cleaner syntax over erb.
 - No coffeescript. We prefer JavaScript.
 - No turbo-link.
