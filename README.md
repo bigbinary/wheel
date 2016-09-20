@@ -24,7 +24,7 @@ replace all occurrences of `Wheel` with `Pump`.
 - rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
 - Uses [devise](https://github.com/plataformatec/devise) .
 - Heroku ready. Push to heroku and it will work .
-- Uses [honeybadger](https://www.honeybadger.io).
+- Uses [Rollbar](https://rollbar.com).
 - Built in superadmin feature.
 - Uses modal box to showcase an example of editing information using modal box.
 - Enables __strict mode__ for all JavaScript code.
@@ -33,7 +33,7 @@ replace all occurrences of `Wheel` with `Pump`.
 - No coffeescript. We prefer JavaScript.
 - Uses [turbolinks](https://github.com/turbolinks/turbolinks).
 - Uses [ActiveAdmin](http://activeadmin.info).
-- When exception is sent to honeybadger then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html) .
+- When exception is sent to Rollbar then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html) .
 - Uses [DelayedJob](https://github.com/collectiveidea/delayed_job).
 - Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
 - Uses [CircleCI](https://circleci.com) for continuous testing.

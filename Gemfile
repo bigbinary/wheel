@@ -40,7 +40,7 @@ gem 'daemons'
 gem 'handy'
 
 # for error tracking
-gem 'honeybadger'
+gem 'rollbar'
 
 # for using bootstrap framework
 gem 'bootstrap-sass', '~> 3.3.3'
