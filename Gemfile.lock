@@ -17,20 +17,15 @@ GIT
       activerecord (>= 2.3)
 
 GIT
-  remote: git://github.com/sinatra/rack-protection.git
-  revision: 7e723a74763bb83989d1249cdceb9cceb2ee6f01
-  specs:
-    rack-protection (2.0.0)
-      rack
-
-GIT
   remote: git://github.com/sinatra/sinatra.git
-  revision: 285275b42fa1bf096a5c9559b6cead2f31b65b66
+  revision: af6dad2a6c31e31617712b15f455b2a3d3eb1c06
   specs:
-    sinatra (2.0.0.pre.alpha)
-      mustermann (~> 0.4)
+    rack-protection (2.0.0.beta2)
+      rack
+    sinatra (2.0.0.beta2)
+      mustermann (= 1.0.0.beta2)
       rack (~> 2.0)
-      rack-protection (~> 2.0)
+      rack-protection (= 2.0.0.beta2)
       tilt (~> 2.0)
 
 GIT
@@ -343,8 +338,7 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     multi_json (1.12.1)
-    mustermann (0.4.0)
-      tool (~> 0.2)
+    mustermann (1.0.0.beta2)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -435,7 +429,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.5)
-    tool (0.2.3)
     trollop (2.1.2)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
