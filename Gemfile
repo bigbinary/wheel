@@ -56,7 +56,7 @@ gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'carrierwave'
 
 # for CarrierWave to upload files to cloud storage like Amazon S3
-gem 'fog', require: false
+gem 'fog-aws', require: false
 
 # for CarrierWave to perform image manipulations
 #gem 'mini_magick'
