@@ -36,9 +36,6 @@ gem 'delayed_job_web', '>= 1.2.10'
 # For starting Delayed job background process
 gem 'daemons'
 
-# collection of handy tools
-gem 'handy'
-
 # for error tracking
 gem 'rollbar'
 
