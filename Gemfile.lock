@@ -289,12 +289,9 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    handy (0.0.32)
-      hashr
     has_scope (0.7.0)
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
-    hashr (2.0.0)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -467,7 +464,6 @@ DEPENDENCIES
   fog
   font-awesome-sass (~> 4.3.0)
   haml-rails
-  handy
   inherited_resources!
   jbuilder (>= 2.2.13)
   jquery-rails
