@@ -14,7 +14,7 @@ database:
   override:
     # replace Circle's generated database.yml
     - cp config/database.yml.ci config/database.yml
-    - bundle exec rake test --trace
+    - bin/rake db:create db:schema:load --trace
 
 test:
   minitest_globs:
