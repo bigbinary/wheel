@@ -17,7 +17,8 @@ Delayed::Worker.default_queue_name  = 'default'
 
 Delayed::Worker.queue_attributes    = { devise_email: { priority: MAIL_DELIVERY_PRIORITY_MEDIUM } }
 
-if ENV['HEROKU'].present?
+#if ENV['HEROKU_APP_NAME'].present?
+if $PROGRAM_NAME =~ /delayed_job/
   Delayed::Worker.logger = Logger.new(STDOUT)
 else
   Delayed::Worker.logger = Logger.new(File.join(Rails.root, 'log', 'delayed_job.log'))
