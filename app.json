@@ -1,0 +1,32 @@
+{
+  "name": "wheel",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake setup_sample_data"
+  },
+  "env": {
+    "SECRET_KEY_BASE":{
+      "required":true
+    },
+   "RACK_ENV": {
+      "value": "staging"
+    },
+    "RAILS_ENV": {
+      "value": "staging"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required":true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required":true
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "LOG_LEVEL": {
+      "value": "DEBUG"
+    }
+  },
+  "formation": { },
+  "addons": [ "heroku-postgresql" ],
+  "buildpacks": [ ]
+}
