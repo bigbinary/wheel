@@ -3,10 +3,9 @@
 ## TOC
 * [About](#about)
 * [Local Development Setup](#local-development-setup)
-* [Writing Unit Tests](#writing-unit-tests)
-* [Circle CI](#circle-ci)
-* [Communication](#communication)
-* [Environments](#environments)
+* [Replace wheel with your project name](#replace-wheel-with-your-project-name)
+* [Features](#features)
+* [Heroku Review](#heroku-review)
 
 ## About
 
@@ -29,7 +28,7 @@ Let's say that the project name is `Pump`. Execute the command below to
 replace all occurrences of `Wheel` with `Pump`.
 
 ```
- perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
+perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 ```
 
 ## Features
@@ -59,6 +58,12 @@ replace all occurrences of `Wheel` with `Pump`.
 * Built in support for [mandrill](http://how-we-work.bigbinary.com/externalservices/mandrill.html).
 * Easy to generate "test coverage".
 * Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
+
+## Heroku Review
+
+[Heroku Review](https://devcenter.heroku.com/articles/github-integration-review-apps)
+is enabled on this application. It means when a PR is sent then heroku
+automatically deploys an application for that branch.
 
 
 #### Brought to you by
