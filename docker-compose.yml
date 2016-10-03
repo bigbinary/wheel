@@ -1,0 +1,13 @@
+version: '2'
+services:
+  db:
+    image: postgres:9.4
+  web:
+    build: .
+    command: "sh /wheel/entrypoint.sh"
+    volumes:
+      - .:/wheel
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

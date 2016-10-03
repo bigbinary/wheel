@@ -21,6 +21,13 @@ cp config/database.yml.postgresqlapp config/database.yml
 rake setup
 bundle exec rails server
 ```
+##  Running with Docker 
+
+On the host where docker and docker-compose is installed run the follwing command
+```
+docker-compose up
+```
+After the successful containers creation you should be able to access app on `http:<machine-ip>:3000`
 
 ## Replace Wheel with your project name
 
