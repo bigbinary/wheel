@@ -21,6 +21,19 @@ cp config/database.yml.postgresqlapp config/database.yml
 rake setup
 bundle exec rails server
 ```
+##  Running with Docker 
+
+### Pre-Requesites
+
+Make sure you have [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/) installed.
+
+### Starting rails
+
+```
+docker-compose up
+```
+
+After the container is successfully created you should be able to access your app on `http://localhost:9000`
 
 ## Replace Wheel with your project name
 
