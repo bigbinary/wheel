@@ -22,7 +22,7 @@ cp config/database.yml.postgresqlapp config/database.yml
 rake setup
 bundle exec rails server
 ```
-##  Running with Docker 
+##  Running with Docker
 
 ### Pre-Requesites
 
@@ -69,7 +69,7 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * Built in support for [carrierwave](https://github.com/carrierwaveuploader/carrierwave) to easily upload items to s3.
 * Built in support for "variants" so the pages can be customized for tablet or phone easily.
 * Uses [simple_form](https://github.com/plataformatec/simple_form).
-* Built in support for [mandrill](http://how-we-work.bigbinary.com/externalservices/mandrill.html).
+* Built in support for [Mailgun](http://mailgun.com).
 * Easy to generate "test coverage".
 * Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
 
