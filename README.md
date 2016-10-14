@@ -3,6 +3,7 @@
 ## TOC
 * [About](#about)
 * [Local Development Setup](#local-development-setup)
+* [Running with Docker](#running-with-docker)
 * [Replace wheel with your project name](#replace-wheel-with-your-project-name)
 * [Features](#features)
 * [Heroku Review](#heroku-review)
