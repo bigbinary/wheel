@@ -4,4 +4,3 @@ RUN mkdir -p /wheel
 WORKDIR /wheel
 ADD . /wheel
 RUN bundle install
-RUN rm /wheel/tmp/pids/server.pid && true
