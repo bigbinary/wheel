@@ -50,8 +50,9 @@ class ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 end
 
-def headers(user)
+def headers(user, options = {})
   {
-    "X-Auth-Token" => user.authentication_token
-  }
+    "X-Auth-Token" => user.authentication_token,
+    "X-Auth-Email" => user.email
+  }.merge(options)
 end
