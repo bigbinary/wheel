@@ -46,6 +46,12 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
-class ActionController::TestCase
-  include Devise::Test::ControllerHelpers
+class ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+end
+
+def headers(user)
+  {
+    "X-Auth-Token" => user.authentication_token
+  }
 end

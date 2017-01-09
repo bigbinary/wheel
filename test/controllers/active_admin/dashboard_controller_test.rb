@@ -1,6 +1,6 @@
-require 'test_helper'
+require "test_helper"
 
-class ActiveAdmin::DashboardControllerTest < ActionController::TestCase
+class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
   fixtures :all
 
   def setup
@@ -8,14 +8,17 @@ class ActiveAdmin::DashboardControllerTest < ActionController::TestCase
   end
 
   def test_index_success_for_super_admin
-    get :index
+    get active_admin_root_url
+
     assert_response :success
   end
 
-  def test_index_redirects_for_non_super_admin
+  def test_index_for_non_super_admin
     sign_in users(:nancy)
-    get :index
-    assert_response :forbidden
+
+    assert_raises ActionController::RoutingError do
+      get active_admin_root_url
+    end
   end
 
 end

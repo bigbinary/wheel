@@ -1,12 +1,12 @@
-require 'test_helper'
+require "test_helper"
 
-class HomeControllerTest < ActionController::TestCase
+class HomeControllerTest < ActionDispatch::IntegrationTest
 
   def test_index_renders_message
     admin = users :admin
     sign_in admin
 
-    get :index
+    get "/"
 
     assert_response :success
   end
