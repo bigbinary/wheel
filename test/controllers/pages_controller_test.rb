@@ -1,21 +1,24 @@
-require 'test_helper'
+require "test_helper"
 
-class PagesControllerTest < ActionController::TestCase
+class PagesControllerTest < ActionDispatch::IntegrationTest
 
   def test_index_success
-    get :index
+    admin = users(:admin)
+    sign_in(admin)
+
+    get pages_url
 
     assert_response :success
   end
 
   def test_contact_us_success
-    get :contact_us
+    get pages_contact_us_url
 
     assert_response :success
   end
 
   def test_about_success
-    get :about
+    get pages_about_url
 
     assert_response :success
   end

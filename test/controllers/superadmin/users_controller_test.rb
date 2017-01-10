@@ -1,25 +1,29 @@
-require 'test_helper'
+require "test_helper"
 
-class Superadmin::UsersControllerTest < ActionController::TestCase
+class Superadmin::UsersControllerTest < ActionDispatch::IntegrationTest
 
   def test_index_when_user_is_superadmin
     user = users :admin
     sign_in user
-    get :index
+
+    get superadmin_users_url
     assert_response :success
   end
 
   def test_index_when_user_is_not_superadmin
     user = users :nancy
     sign_in user
-    get :index
-    assert_response :forbidden
+
+    assert_raises ActionController::RoutingError do
+      get superadmin_users_url
+    end
   end
 
   def test_edit_user_modal_success_response
     user = users :admin
     sign_in user
-    get :edit, params: { id: users(:nancy) }
+
+    get edit_superadmin_user_url(users(:nancy))
     assert_response :success
   end
 
@@ -28,9 +32,9 @@ class Superadmin::UsersControllerTest < ActionController::TestCase
     sign_in admin
     nancy = users :nancy
 
-    post :update, params: { id: nancy, user: {first_name: 'Jane'} }
+    put superadmin_user_url(nancy), params: { user: { first_name: "Jane" } }
     nancy.reload
 
-    assert 'Jane', nancy.first_name
+    assert "Jane", nancy.first_name
   end
 end
