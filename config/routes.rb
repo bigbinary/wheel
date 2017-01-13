@@ -1,6 +1,7 @@
 Wheel::Application.routes.draw do
-
-  devise_for :users, controllers: { registrations: 'registrations' }
+  # Setting path_prefix makes sure that devise routes do not conflict
+  # with users resources routes.
+  devise_for :users, path_prefix: 'devise', controllers: { registrations: 'registrations' }
 
   # Authentication
   devise_scope :user do
