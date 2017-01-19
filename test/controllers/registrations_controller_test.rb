@@ -62,7 +62,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     valid_user_data = { first_name: "John2", current_password: "welcome" }
-    put "/users", params: { user: valid_user_data }
+    patch user_registration_url(nancy, format: :html), params: { user: valid_user_data }
     assert_redirected_to root_path
     nancy.reload
     assert_equal nancy.first_name, valid_user_data[:first_name]
