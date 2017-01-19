@@ -1,6 +1,12 @@
 desc 'Ensure that code is not running in production environment'
 task :not_production do
-  raise 'do not run in production' if Rails.env.production?
+  if Rails.env.production? && ENV["DELETE_PRODUCTION_DATA"].blank?
+    msg = "Deleting production data is not allowed. "
+    msg << "If you really want to delete all production data and populate sample data then "
+    msg << "execute "
+    msg << "DELETE_PRODUCTION_DATA=1 rake setup_sample_data"
+    raise msg
+  end
 end
 
 desc 'Sets up the project by running migration and populating sample data'
