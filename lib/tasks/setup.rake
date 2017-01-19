@@ -1,6 +1,7 @@
 desc 'Ensure that code is not running in production environment'
 task :not_production do
   if Rails.env.production? && ENV["DELETE_PRODUCTION_DATA"].blank?
+    puts ""
     puts "*" * 50
     puts "Deleting production data is not allowed. "
     puts "If you really want to delete all production data and populate sample data then "
@@ -9,6 +10,7 @@ task :not_production do
     puts " "
     puts "If you are using heroku then execute command as shown below"
     puts "heroku run rake setup_sample_data DELETE_PRODUCTION_DATA=1 -a app_name"
+    puts "*" * 50
     puts ""
     throw :error
   end
