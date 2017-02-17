@@ -5,7 +5,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   def test_show_for_a_valid_user
     admin = users(:admin)
 
-    get api_v1_user_url(admin.email), params: { id: admin.email, format: :json },
+    get api_v1_user_url(admin), params: { format: :json },
         headers: headers(admin)
 
     assert_response :success
@@ -15,10 +15,10 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
   def test_show_when_email_is_not_present
     admin = users :admin
-    an_invalid_email = "this_email_is_not_present_in_db@example.com"
+    an_invalid_email = { "X-Auth-Email" => "this_email_is_not_present_in_db@example.com" }
 
-    get api_v1_user_url(an_invalid_email), params: { id: an_invalid_email, format: :json },
-        headers: headers(admin)
+    get api_v1_user_url(admin), params: { format: :json },
+        headers: headers(admin, an_invalid_email)
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
@@ -74,10 +74,10 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
   def test_update_should_return_error_when_email_is_not_present
     admin = users(:admin)
-    an_invalid_email = "this_email_is_not_present_in_db@example.com"
+    an_invalid_email = { "X-Auth-Email" => "this_email_is_not_present_in_db@example.com" }
 
-    put api_v1_user_url(an_invalid_email), params: { id: an_invalid_email, format: :json },
-        headers: headers(admin)
+    put api_v1_user_url(admin), params: { format: :json },
+        headers: headers(admin, an_invalid_email)
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
@@ -88,8 +88,8 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     admin = users(:admin)
     new_first_name = "John2"
 
-    put api_v1_user_url(admin.email), params: { id: admin.email, format: :json,
-                                                user: { first_name: new_first_name } },
+    put api_v1_user_url(admin), params: { format: :json,
+                                          user: { first_name: new_first_name } },
         headers: headers(admin)
 
     assert_response :success
@@ -100,10 +100,10 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   def test_update_user_should_return_error_for_invalid_data
     admin = users(:admin)
 
-    put api_v1_user_url(admin.email), params: { id: admin.email, format: :json,
-                                                user: { password: "new test password",
-                                                        password_confirmation:
-                                                          "not matching confirmation" } },
+    put api_v1_user_url(admin), params: { format: :json,
+                                          user: { password: "new test password",
+                                                  password_confirmation:
+                                                    "not matching confirmation" } },
         headers: headers(admin)
 
     assert_response 422
@@ -126,7 +126,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     admin = users :admin
 
     assert_difference "User.count", -1 do
-      delete api_v1_user_url(admin.email), params: { id: admin.email, format: :json },
+      delete api_v1_user_url(admin), params: { format: :json },
              headers: headers(admin)
 
       assert_response :success
@@ -135,9 +135,9 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
   def test_destroy_should_return_error_if_email_is_not_present_in_database
     admin = users :admin
-    email = "this_email_is_not_present_in_db@example.com"
+    email = { "X-Auth-Email" => "this_email_is_not_present_in_db@example.com" }
 
-    delete api_v1_user_url(email), params: { id: email, format: :json }, headers: headers(admin)
+    delete api_v1_user_url(admin), params: { format: :json }, headers: headers(admin, email)
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
