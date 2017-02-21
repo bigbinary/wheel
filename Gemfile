@@ -95,7 +95,9 @@ group :development do
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '~> 3.0'
-  gem 'listen', '~> 3.0.5'
+
+  # Reenable after https://github.com/rails/rails/issues/26158 is fixed
+  # gem 'listen', '~> 3.0.5'
 
   # reports N+1 queries
   gem 'bullet'
