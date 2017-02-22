@@ -1,1 +1,1 @@
-Marginalia.application_name = 'WHEEL'
+Marginalia.application_name = Rails.application.secrets.subject_prefix_for_outgoing_emails
