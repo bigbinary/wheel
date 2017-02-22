@@ -1,3 +1,4 @@
 EmailPrefixer.configure do |config|
-  config.stage_name = Rails.application.secrets.subject_prefix_for_outgoing_emails
+  config.application_name = Rails.application.secrets.subject_prefix_for_outgoing_emails
+  config.stage_name = Rails.env
 end
