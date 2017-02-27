@@ -100,7 +100,7 @@ group :development do
   # gem 'listen', '~> 3.0.5'
 
   # reports N+1 queries
-  gem 'bullet'
+  # gem 'bullet' # commented out till fixed because as it is not compatible with rails 5.1 beta
 end
 
 group :test do
