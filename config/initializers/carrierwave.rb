@@ -22,11 +22,11 @@ def setup_for_storing_assets_in_s3
     config.root            = Rails.root.join('tmp')
     config.fog_credentials = {
         provider:              'AWS',
-        aws_access_key_id:     Rails.application.secrets.aws_s3['access_key_id'],
-        aws_secret_access_key: Rails.application.secrets.aws_s3['secret_access_key'],
+        aws_access_key_id:     Rails.application.secrets.aws_s3[:access_key_id],
+        aws_secret_access_key: Rails.application.secrets.aws_s3[:secret_access_key],
         region:                'us-west-2'
     }
-    config.fog_directory   = Rails.application.secrets.aws_s3['bucket_name']
+    config.fog_directory   = Rails.application.secrets.aws_s3[:bucket_name]
     config.fog_public      = true
     config.fog_attributes  = { 'Cache-Control' => 'max-age=315576000' }
     config.storage         = :fog
