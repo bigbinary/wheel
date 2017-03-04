@@ -7,7 +7,7 @@ machine:
   # Version of ruby to use
   ruby:
     version:
-      2.3.1
+      2.4.0
 
 ## Customize database setup
 database:
