@@ -25,6 +25,9 @@ gem 'devise' , '~> 4.2.0'
 # for background job processing
 gem 'delayed_job_active_record'
 
+# for error tracking
+gem 'honeybadger', '~> 3.1'
+
 # For dependency resolution of 'delayed_job_web' gem
 # More info - https://github.com/ejschmitt/delayed_job_web/issues/84
 gem "sinatra", github: 'sinatra/sinatra'
@@ -35,9 +38,6 @@ gem 'delayed_job_web', '>= 1.2.10'
 
 # For starting Delayed job background process
 gem 'daemons'
-
-# for error tracking
-gem 'rollbar'
 
 # for using bootstrap framework
 gem 'bootstrap-sass', '~> 3.3.3'

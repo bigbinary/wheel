@@ -286,6 +286,7 @@ GEM
     has_scope (0.7.0)
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
+    honeybadger (3.1.2)
     html2haml (2.1.0)
       erubis (~> 2.7.0)
       haml (~> 4.0)
@@ -390,8 +391,6 @@ GEM
       trollop (~> 2.1)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rollbar (2.14.0)
-      multi_json
     ruby-progressbar (1.8.1)
     ruby_parser (3.8.4)
       sexp_processor (~> 4.1)
@@ -459,6 +458,7 @@ DEPENDENCIES
   fog
   font-awesome-sass (~> 4.3.0)
   haml-rails
+  honeybadger (~> 3.1)
   inherited_resources!
   jbuilder (>= 2.2.13)
   jquery-growl-rails
@@ -472,7 +472,6 @@ DEPENDENCIES
   rack-timeout
   rails (~> 5.1.0.rc1)
   rails_12factor
-  rollbar
   sass-rails (>= 5.0.3)
   simple_form
   simplecov
