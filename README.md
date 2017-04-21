@@ -51,7 +51,7 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
 * Uses [devise](https://github.com/plataformatec/devise) .
 * Heroku ready. Push to heroku and it will work .
-* Uses [Rollbar](https://rollbar.com).
+* Uses [Honeybadger](https://www.honeybadger.io/).
 * Built in superadmin feature.
 * Uses modal box to showcase an example of editing information using modal box.
 * Enables __strict mode__ for all JavaScript code.
