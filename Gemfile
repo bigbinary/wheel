@@ -80,7 +80,7 @@ gem 'email_prefixer'
 gem 'puma', '~> 3.2'
 
 # Attach comments to Active Record queries
-gem 'marginalia', github: 'basecamp/marginalia'
+#gem 'marginalia'
 
 # timeout Rails request, needed if running on heroku- https://devcenter.heroku.com/articles/request-timeout
 gem "rack-timeout"
