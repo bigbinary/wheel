@@ -9,14 +9,6 @@ GIT
       responders
 
 GIT
-  remote: git://github.com/basecamp/marginalia.git
-  revision: 35d72e7c3ec99f58cea0e99f611b49fe1bed1733
-  specs:
-    marginalia (1.4.0)
-      actionpack (>= 2.3)
-      activerecord (>= 2.3)
-
-GIT
   remote: git://github.com/sinatra/sinatra.git
   revision: 32f416c7b8e5131247dadee4ac848ac42c43c761
   specs:
@@ -324,6 +316,9 @@ GEM
       mime-types (>= 1.16, < 4)
     mail_interceptor (0.0.7)
       activesupport
+    marginalia (1.4.0)
+      actionpack (>= 2.3)
+      activerecord (>= 2.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -464,7 +459,7 @@ DEPENDENCIES
   jquery-growl-rails
   jquery-rails
   mail_interceptor
-  marginalia!
+  marginalia
   minitest-reporters
   pg
   puma (~> 3.2)
