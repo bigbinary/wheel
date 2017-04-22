@@ -316,9 +316,6 @@ GEM
       mime-types (>= 1.16, < 4)
     mail_interceptor (0.0.7)
       activesupport
-    marginalia (1.4.0)
-      actionpack (>= 2.3)
-      activerecord (>= 2.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -459,7 +456,6 @@ DEPENDENCIES
   jquery-growl-rails
   jquery-rails
   mail_interceptor
-  marginalia
   minitest-reporters
   pg
   puma (~> 3.2)
