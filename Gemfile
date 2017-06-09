@@ -67,8 +67,8 @@ gem 'rails_12factor', group: [:staging, :production]
 # for email validation
 gem 'email_validator'
 
-# haml as templating engine
-gem 'haml-rails'
+# templating engine
+gem 'slim'
 
 # intercepts outgoing emails in non-production environment
 gem 'mail_interceptor', group: [:development, :staging]
