@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
-gem 'rails', '~> 5.1.0.rc2'
+gem 'rails', '~> 5.1'
 
 # friends of Rails
 gem 'jquery-rails'
@@ -20,7 +20,7 @@ gem 'pg'
 gem 'jbuilder', '>= 2.2.13'
 
 # for authentication
-gem 'devise' , '~> 4.2.0'
+gem 'devise'
 
 # for background job processing
 gem 'delayed_job_active_record'
@@ -49,8 +49,8 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'simple_form'
 
 # admin framework
-gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
-gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'activeadmin'
+#gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # for handling file uploads
 gem 'carrierwave'
