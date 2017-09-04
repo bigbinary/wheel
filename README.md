@@ -15,6 +15,7 @@ Rails application which is built with
 opinions of BigBinary team.
 
 ## Local Development Setup
+Install the latest [Node.js](https://nodejs.org) version. Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
 
 ```
 bundle install
@@ -72,6 +73,8 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * Built in support for [Mailgun](http://mailgun.com).
 * Easy to generate "test coverage".
 * Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
+* Auto-formats Ruby code with [rubocop](https://github.com/bbatsov/rubocop).
+* Auto-formats JavaScript and CSS code with [prettier](https://github.com/prettier/prettier).
 
 ## Heroku Review
 
