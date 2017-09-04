@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
   def index
     render
   end
@@ -11,5 +10,4 @@ class PagesController < ApplicationController
   def about
     render
   end
-
 end

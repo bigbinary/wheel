@@ -1,6 +1,5 @@
 class Mailer < ActionMailer::Base
-
-  layout 'mailer'
+  layout "mailer"
 
   default from: Rails.application.secrets.mailer_default_from_email
 
@@ -16,5 +15,4 @@ class Mailer < ActionMailer::Base
       format.html
     end
   end
-
 end

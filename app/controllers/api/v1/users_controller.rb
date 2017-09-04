@@ -1,5 +1,4 @@
 class Api::V1::UsersController < Api::V1::BaseController
-
   skip_before_action :authenticate_user!, only: [:create]
   skip_before_action :authenticate_user_using_x_auth_token, only: [:create]
 
@@ -49,12 +48,11 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   private
 
-  def set_user
-    @user = User.find(params[:id])
-  end
+    def set_user
+      @user = User.find(params[:id])
+    end
 
-  def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
-  end
-
+    def user_params
+      params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)
+    end
 end

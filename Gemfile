@@ -101,6 +101,9 @@ group :development do
 
   # reports N+1 queries
   # gem 'bullet' # commented out till fixed because as it is not compatible with rails 5.1 beta
+
+  # A Ruby static code analyzer, based on the community Ruby style guide
+  gem 'rubocop', '~> 0.49.1', require: false
 end
 
 group :test do
