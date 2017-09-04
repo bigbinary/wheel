@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "app/**/*.{js,scss}": [
+      "./node_modules/prettier/bin/prettier.js --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^4.1.0",
+    "prettier": "^1.6.1"
+  }
+}

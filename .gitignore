@@ -24,3 +24,6 @@ public/uploads
 coverage
 .*swp
 /uploads/*
+
+# Ignore node packages
+/node_modules
