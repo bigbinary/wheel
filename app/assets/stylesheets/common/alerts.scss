@@ -14,25 +14,25 @@
 }
 
 .alert-success {
-  border-color: #98CF6A;
+  border-color: #98cf6a;
   &:after {
     color: #48cf36;
     content: "\f00c";
-    text-shadow: 1px 1px 0px #6D924E;
+    text-shadow: 1px 1px 0px #6d924e;
   }
 }
 
 .alert-danger {
   border-color: #ebb6bf;
-  color: #CA3532;
+  color: #ca3532;
   &:after {
     content: "\f057";
   }
 }
 
 .alert-warning {
-  background-color: #F9F3DD;
-  border-color: #E9D5AC;
+  background-color: #f9f3dd;
+  border-color: #e9d5ac;
   color: #b97a38;
   &:after {
     content: "\f071";
