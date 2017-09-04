@@ -6,6 +6,10 @@
     "app/**/*.{js,scss}": [
       "./node_modules/prettier/bin/prettier.js --trailing-comma es5 --write",
       "git add"
+    ],
+    "{app,test}/**/*.rb": [
+      "bundle exec rubocop -a",
+      "git add"
     ]
   },
   "devDependencies": {
