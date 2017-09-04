@@ -1,5 +1,4 @@
 class ProfileImageUploader < CarrierWave::Uploader::Base
-
   storage :file
 
   def store_dir
@@ -22,9 +21,8 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
 
   protected
 
-  def secure_token
-    var = :"@#{mounted_as}_secure_token"
-    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
-  end
-
+    def secure_token
+      var = :"@#{mounted_as}_secure_token"
+      model.instance_variable_get(var) || model.instance_variable_set(var, SecureRandom.uuid)
+    end
 end

@@ -15,30 +15,29 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      respond_with(resource, action: 'edit_password')
+      respond_with(resource, action: "edit_password")
     end
   end
 
   private
 
-  def sign_up_params
-    resource_params.permit(:email, :password, :password_confirmation, :first_name, :last_name)
-  end
+    def sign_up_params
+      resource_params.permit(:email, :password, :password_confirmation, :first_name, :last_name)
+    end
 
-  def account_update_params
-    resource_params.permit(:email, :current_password, :first_name, :last_name, :profile_image)
-  end
+    def account_update_params
+      resource_params.permit(:email, :current_password, :first_name, :last_name, :profile_image)
+    end
 
-  def password_update_params
-    resource_params.permit(:password, :password_confirmation, :current_password)
-  end
+    def password_update_params
+      resource_params.permit(:password, :password_confirmation, :current_password)
+    end
 
-  def resource_params
-    params.require(:user)
-  end
+    def resource_params
+      params.require(:user)
+    end
 
-  def load_resource
-    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-  end
-
+    def load_resource
+      self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
+    end
 end
