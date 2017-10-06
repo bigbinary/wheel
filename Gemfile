@@ -45,6 +45,9 @@ gem 'bootstrap-sass', '~> 3.3.3'
 # for using font-awesome
 gem 'font-awesome-sass', '~> 4.3.0'
 
+# Support for cross-browser css compatibilty
+gem "autoprefixer-rails"
+
 # forms made easy for rails
 gem 'simple_form'
 
