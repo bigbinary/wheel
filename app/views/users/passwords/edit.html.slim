@@ -11,11 +11,11 @@
       = f.input :password, label: "New password",                     \
                            required: true,                            \
                            autofocus: true,                           \
-                           input_html: { class: 'form-control' }      \
+                           input_html: { class: 'form-control' }
 
       = f.input :password_confirmation, label: "Confirm your new password",                                 \
                                         required: true,                                                     \
-                                        input_html: { class: 'form-control' }                               \
+                                        input_html: { class: 'form-control' }
     .form-buttons
       = f.button :submit, "Change my password", class: 'btn-primary'
     .devise-links
