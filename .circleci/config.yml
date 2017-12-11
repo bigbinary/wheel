@@ -15,7 +15,6 @@ jobs:
     steps:
 
       - checkout
-      - cp config/database.yml.ci config/database.yml
 
       # Download and cache dependencies
       - restore_cache:
@@ -27,12 +26,13 @@ jobs:
 #      Enable if using yarn
 #      - restore_cache:
 #          keys:
-#          - act-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
-#          - act-yarn-deps-{{ .Branch }}
-#          - act-yarn-deps
+#          - wheel-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
+#          - wheel-yarn-deps-{{ .Branch }}
+#          - wheel-yarn-deps
 
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
-      - run: bin/yarn install
+#      Enable if using yarn
+#      - run: bin/yarn install
 
       # Store bundle cache
       - save_cache:
@@ -50,21 +50,22 @@ jobs:
 
       # Store yarn cache: When using Yarn
 #      - save_cache:
-#          key: act-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
+#          key: wheel-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
 #          paths:
 #            - vendor/node_modules
 #      - save_cache:
-#          key: act-yarn-deps-{{ .Branch }}
+#          key: wheel-yarn-deps-{{ .Branch }}
 #          paths:
 #            - vendor/node_modules
 #      - save_cache:
-#          key: act-yarn-deps
+#          key: wheel-yarn-deps
 #          paths:
 #            - vendor/node_modules
 
       - run: mkdir reports
 
      # Database setup
+      - run: cp config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create db:schema:load --trace
 #      Enable if using yarn
 #      - run: bin/yarn install
