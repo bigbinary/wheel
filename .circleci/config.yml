@@ -15,7 +15,7 @@ jobs:
     steps:
 
       - checkout
-      - run: cp config/database.ci.yml config/database.yml
+      - cp config/database.yml.ci config/database.yml
 
       # Download and cache dependencies
       - restore_cache:
@@ -65,8 +65,7 @@ jobs:
       - run: mkdir reports
 
      # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run: bundle exec rake db:create db:schema:load --trace
 #      Enable if using yarn
 #      - run: bin/yarn install
 #      - run: bin/webpack
