@@ -1,6 +1,14 @@
-test:
-  host: localhost
-  username: ubuntu
-  database: circle_ruby_test
+default: &default
   adapter: postgresql
-  pool: 5
+  host: 127.0.0.1
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 10 } %>
+
+development:
+  <<: *default
+  database: wheel_development
+
+test:
+  <<: *default
+  user: postgres
+  database: heka_test<%= ENV['CIRCLE_NODE_INDEX'] %>
