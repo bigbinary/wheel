@@ -97,7 +97,7 @@ workflows:
   version: 2
   commit:
     jobs:
-      - test
+      - build
   nightly:
     triggers:
       - schedule:
@@ -107,4 +107,4 @@ workflows:
               only:
                 - master
     jobs:
-      - test
+      - build
