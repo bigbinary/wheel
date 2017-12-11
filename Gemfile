@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.1'
+ruby '2.4.2'
 
 gem 'rails', '~> 5.1'
 
@@ -107,6 +107,11 @@ group :development do
 
   # A Ruby static code analyzer, based on the community Ruby style guide
   gem 'rubocop', '~> 0.49.1', require: false
+
+  # Patch-level verification for Bundler. https://github.com/rubysec/bundler-audit
+  gem "bundler-audit", require: false
+  # vulnerabity checker for Ruby itself. https://github.com/civisanalytics/ruby_audit
+  gem "ruby_audit", require: false
 end
 
 group :test do
@@ -117,4 +122,6 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 
+  # For splitting tests across CircleCI containers
+  gem 'knapsack'
 end
