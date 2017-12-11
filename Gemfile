@@ -30,8 +30,8 @@ gem 'honeybadger', '~> 3.1'
 
 # For dependency resolution of 'delayed_job_web' gem
 # More info - https://github.com/ejschmitt/delayed_job_web/issues/84
-gem "sinatra", github: 'sinatra/sinatra'
-gem "rack-protection", github: 'sinatra/sinatra'
+gem "sinatra", '>= 2.0'
+gem "rack-protection", ">= 2.0"
 
 # web interface for delayed job
 gem 'delayed_job_web', '>= 1.2.10'
