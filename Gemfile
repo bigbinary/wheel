@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.1'
+ruby '2.4.2'
 
 gem 'rails', '~> 5.1'
 
@@ -30,8 +30,8 @@ gem 'honeybadger', '~> 3.1'
 
 # For dependency resolution of 'delayed_job_web' gem
 # More info - https://github.com/ejschmitt/delayed_job_web/issues/84
-gem "sinatra", github: 'sinatra/sinatra'
-gem "rack-protection", github: 'sinatra/sinatra'
+gem "sinatra", '>= 2.0'
+gem "rack-protection", ">= 2.0"
 
 # web interface for delayed job
 gem 'delayed_job_web', '>= 1.2.10'
@@ -107,6 +107,11 @@ group :development do
 
   # A Ruby static code analyzer, based on the community Ruby style guide
   gem 'rubocop', '~> 0.49.1', require: false
+
+  # Patch-level verification for Bundler. https://github.com/rubysec/bundler-audit
+  gem "bundler-audit", require: false
+  # vulnerabity checker for Ruby itself. https://github.com/civisanalytics/ruby_audit
+  gem "ruby_audit", require: false
 end
 
 group :test do
@@ -117,4 +122,15 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 
+  # Minitest reporter plugin for CircleCI. Gerates JUnit xml reports from tests. https://github.com/circleci/minitest-ci
+  gem "minitest-ci"
+
+  # For splitting tests across CircleCI containers
+  gem 'knapsack'
+end
+
+
+group :development, :test do
+# For splitting tests across CircleCI containers
+  gem 'knapsack'
 end

@@ -1,0 +1,93 @@
+version: 2
+jobs:
+  build:
+    parallelism: 2
+    docker:
+      # specify the version you desire here
+       - image: circleci/ruby:2.4.2-node-browsers
+       - image: circleci/postgres:9.6.2
+    working_directory: ~/wheel
+    environment:
+      TZ: "/usr/share/zoneinfo/America/New_York"
+      RAILS_ENV: "test"
+      RACK_ENV: "test"
+      KNAPSACK_GENERATE_REPORT: "true"
+
+    steps:
+
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          - gem-cache-{{ checksum "Gemfile.lock" }}
+          - gem-cache
+
+#      Enable if using yarn
+#      - restore_cache:
+#          keys:
+#          - wheel-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
+#          - wheel-yarn-deps-{{ .Branch }}
+#          - wheel-yarn-deps
+
+      - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+#      Enable if using yarn
+#      - run: bin/yarn install
+
+      # Store bundle cache
+      - save_cache:
+          key: gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - save_cache:
+          key: gem-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - save_cache:
+          key: gem-cache
+          paths:
+            - vendor/bundle
+
+      # Store yarn cache: When using Yarn
+#      - save_cache:
+#          key: wheel-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
+#          paths:
+#            - vendor/node_modules
+#      - save_cache:
+#          key: wheel-yarn-deps-{{ .Branch }}
+#          paths:
+#            - vendor/node_modules
+#      - save_cache:
+#          key: wheel-yarn-deps
+#          paths:
+#            - vendor/node_modules
+
+      - run: mkdir reports
+
+     # Database setup
+      - run: cp config/database.yml.ci config/database.yml
+      - run: bundle exec rake db:create db:schema:load --trace
+#      Enable if using yarn
+#      - run: bin/yarn install
+#      - run: bin/webpack
+      - run: bundle exec ruby-audit check
+      - run: bundle exec bundle-audit check --update
+
+      # Unit tests
+      - run:
+          shell: /bin/bash
+          command: |
+            KNAPSACK_GENERATE_REPORT=true COVERAGE=true bundle exec rake knapsack:minitest --trace
+
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
+          destination: reports
+      - store_artifacts:
+          path: coverage
+          destination: coverage
+      - store_artifacts:
+          path: knapsack_minitest_report.json
+          destination: knapsack_minitest_report.json

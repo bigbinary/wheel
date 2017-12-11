@@ -27,3 +27,5 @@ coverage
 
 # Ignore node packages
 /node_modules
+
+test/reports
