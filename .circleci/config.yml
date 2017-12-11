@@ -91,3 +91,20 @@ jobs:
       - store_artifacts:
           path: knapsack_minitest_report.json
           destination: knapsack_minitest_report.json
+
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - test
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - test
