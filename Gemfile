@@ -122,6 +122,15 @@ group :test do
   # for test coverage report
   gem 'simplecov', require: false
 
+  # Minitest reporter plugin for CircleCI. Gerates JUnit xml reports from tests. https://github.com/circleci/minitest-ci
+  gem "minitest-ci"
+
   # For splitting tests across CircleCI containers
+  gem 'knapsack'
+end
+
+
+group :development, :test do
+# For splitting tests across CircleCI containers
   gem 'knapsack'
 end

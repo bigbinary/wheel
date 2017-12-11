@@ -303,6 +303,8 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.3.0)
     minitest (5.10.2)
+    minitest-ci (3.3.0)
+      minitest (>= 5.0.6)
     minitest-reporters (1.1.14)
       ansi
       builder
@@ -463,6 +465,7 @@ DEPENDENCIES
   jquery-rails
   knapsack
   mail_interceptor
+  minitest-ci
   minitest-reporters
   pg
   puma (~> 3.2)

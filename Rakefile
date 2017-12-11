@@ -4,3 +4,5 @@
 require_relative 'config/application'
 
 Wheel::Application.load_tasks
+
+Knapsack.load_tasks if defined?(Knapsack)
