@@ -1,31 +1,52 @@
 .alert {
-  margin: 10px 0;
-  font-weight: bold;
+  margin: 0 0 10px 0;
   position: relative;
-  padding-left: 40px;
-  &:after {
-    position: absolute;
-    font: normal normal normal 18px/1 FontAwesome;
-    left: 16px;
-    top: 16px;
-    width: 16px;
-    height: 16px;
+  border-radius: 0;
+  border-width: 1px 0;
+
+  & > .container {
+    position: relative;
+    padding-left: 40px;
+
+    @media screen and (max-width: 768px) {
+      padding: 0;
+    }
+
+    &:after {
+      position: absolute;
+      font: normal normal normal 18px/1 FontAwesome;
+      left: 15px;
+      top: 50%;
+      width: 16px;
+      height: 16px;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+
+      @media screen and (max-width: 768px) {
+        content: "" !important;
+      }
+    }
+  }
+
+  .close {
+    cursor: pointer;
   }
 }
 
 .alert-success {
   border-color: #98cf6a;
-  &:after {
+
+  & > .container:after {
     color: #48cf36;
     content: "\f00c";
-    text-shadow: 1px 1px 0px #6d924e;
   }
 }
 
 .alert-danger {
   border-color: #ebb6bf;
   color: #ca3532;
-  &:after {
+
+  & > .container:after {
     content: "\f057";
   }
 }
@@ -34,7 +55,8 @@
   background-color: #f9f3dd;
   border-color: #e9d5ac;
   color: #b97a38;
-  &:after {
+
+  & > .container:after {
     content: "\f071";
   }
 }
