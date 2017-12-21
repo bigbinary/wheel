@@ -1,11 +1,11 @@
 .header
   nav.navbar.navbar-expand-lg.navbar-light.bg-light
     .container
-      a.navbar-brand href="#"  Wheel
+      = link_to 'Wheel', root_path, class: 'navbar-brand'
 
       button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
         span.navbar-toggler-icon
 
       .collapse.navbar-collapse#navbarSupportedContent
         .navbar-nav.ml-auto
-          = render 'shared/header/nav_links'
+          = render 'shared/header/superadmin_nav_links'
