@@ -14,18 +14,10 @@ html lang="en"
     /! <link rel="icon" href="/favicon.ico" type="image/x-icon"
     /! <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
   body
-    .navbar.navbar-default.navbar-static-top role="navigation"
-      .container
-        .navbar-header
-          button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand href="/"  Wheel
-        .navbar-collapse.collapse
-          = render 'shared/nav'
-    .container.page
+
+    = render 'shared/header/main'
+
+    .page
       .row
         .col-sm-12
           = render 'shared/bootstrap_flash'
