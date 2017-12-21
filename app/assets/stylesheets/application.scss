@@ -1,6 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap/custom";
-
 @import "common/base";
 @import "common/alerts";
 
@@ -9,3 +6,4 @@
 @import "jquery.growl";
 
 @import "bootstrap/devise_forms";
+@import "bootstrap";
