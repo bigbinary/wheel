@@ -17,8 +17,6 @@ html lang="en"
     = render 'shared/header/nav_superadmin'
     = render 'shared/bootstrap_flash'
 
-    .container
-      .row
-        .col-sm-12
-          = yield
-
+    .content
+      .container
+        = yield

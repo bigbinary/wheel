@@ -17,7 +17,6 @@ html lang="en"
     = render 'shared/header/nav'
     = render 'shared/bootstrap_flash'
 
-    .page
-      .row
-        .col-sm-12
-          = yield
+    .content
+      .container
+        = yield
