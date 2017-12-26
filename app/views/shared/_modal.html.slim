@@ -1,9 +1,14 @@
-div class: "modal" data-behavior="modal-content"
-  .modal-dialog
+.modal.fade id="#{yield(:modal_id)}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  .modal-dialog role="document"
     .modal-content
+
       .modal-header
-        = button_tag '×', :class => "close btn-close-dialog", "data-behavior" => "modal-close", "aria-hidden" => "true"
-        h4.modal-title= yield(:modal_title)
+        h5.modal-title= yield(:modal_title)
+        button.close aria-label="Close" data-dismiss="modal" type="button" 
+          span aria-hidden="true" &times;
+
       .modal-body
         = yield(:modal_body)
 
+      .modal-footer
+        = yield(:modal_footer)
