@@ -13,8 +13,3 @@ table.table.table-striped
         = user.email
       td
         = user.last_sign_in_at
-      td
-        = link_to 'Edit', "#", data: { url: edit_superadmin_user_path(user), toggle: 'modal', target: '#user-edit-modal' }
-
-= render 'superadmin/users/edit_modal'
-
