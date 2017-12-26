@@ -19,22 +19,4 @@ class Superadmin::UsersControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  def test_edit_user_modal_success_response
-    user = users :admin
-    sign_in user
-
-    get edit_superadmin_user_url(users(:nancy))
-    assert_response :success
-  end
-
-  def test_user_update_success
-    admin = users :admin
-    sign_in admin
-    nancy = users :nancy
-
-    put superadmin_user_url(nancy), params: { user: { first_name: "Jane" } }
-    nancy.reload
-
-    assert "Jane", nancy.first_name
-  end
 end
