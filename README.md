@@ -85,4 +85,4 @@ automatically deploys an application for that branch.
 
 #### Brought to you by
 
-<a href='http://BigBinary.com'><img src="https://s3.amazonaws.com/bigbinary-media/horizontal/logo_blue.png" width="200px"/></a>
+<a href='http://BigBinary.com'><img src="https://github.com/bigbinary/bigbinary-assets/blob/press-assets/PNG/logo-light-square.png" width="200px"/></a>
