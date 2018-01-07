@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.4.2'
+ruby '2.5.0'
 
 gem 'rails', '~> 5.1'
 
@@ -20,7 +20,7 @@ gem 'pg'
 gem 'jbuilder', '>= 2.2.13'
 
 # for authentication
-gem 'devise'
+gem 'devise', " 4.4.0"
 
 # for background job processing
 gem 'delayed_job_active_record'
@@ -124,6 +124,7 @@ group :test do
 
   # Minitest reporter plugin for CircleCI. Gerates JUnit xml reports from tests. https://github.com/circleci/minitest-ci
   gem "minitest-ci"
+  gem "minitest", "5.10.3"
 
   # For splitting tests across CircleCI containers
   gem 'knapsack'
