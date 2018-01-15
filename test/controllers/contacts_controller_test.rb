@@ -1,7 +1,6 @@
 require "test_helper"
 
 class ContactsControllerTest < ActionDispatch::IntegrationTest
-
   def before_setup
     super
     ActionMailer::Base.deliveries.clear
@@ -21,12 +20,11 @@ class ContactsControllerTest < ActionDispatch::IntegrationTest
   def test_create_failure
     invalid_contact_param = { contact: { title: "contact title",
                                          body: "some message",
-                                         email: "bob" }}
+                                         email: "bob" } }
     post contacts_url, params: invalid_contact_param
 
     assert_select "form#new_contact"
     assert_nil ActionMailer::Base.deliveries.last
     assert_nil flash[:notice]
   end
-
 end

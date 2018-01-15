@@ -1,7 +1,6 @@
 require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
-
   def test_index_success
     admin = users(:admin)
     sign_in(admin)
@@ -22,5 +21,4 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :success
   end
-
 end

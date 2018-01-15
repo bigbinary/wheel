@@ -20,5 +20,4 @@ class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
       get active_admin_root_url
     end
   end
-
 end
