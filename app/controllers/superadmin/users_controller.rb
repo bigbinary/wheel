@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Superadmin::UsersController < Superadmin::BaseController
   before_action :load_user, only: [:edit, :update]
 

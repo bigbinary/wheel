@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RegistrationsController < Devise::RegistrationsController
   prepend_before_action :authenticate_scope!, only: [:edit, :update, :edit_password, :update_password, :destroy]
   before_action :load_resource, only: [:edit_password, :update_password]

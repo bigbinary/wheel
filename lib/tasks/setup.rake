@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 desc "Ensure that code is not running in production environment"
 task :not_production do
   if Rails.env.production? && ENV["DELETE_PRODUCTION_DATA"].blank?

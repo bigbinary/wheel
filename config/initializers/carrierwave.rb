@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "carrierwave/orm/activerecord"
 
 def setup_for_storing_assets_in_file_system

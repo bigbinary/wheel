@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if Rails.application.secrets.intercept_and_forward_emails_to.present?
   options = { forward_emails_to: Rails.application.secrets.intercept_and_forward_emails_to,
               deliver_emails_to: ["@example.com"] }

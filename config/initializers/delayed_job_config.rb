@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Delayed job priority: lower numbers run first; default is 0 but can be reconfigured
 MAIL_DELIVERY_PRIORITY_MEDIUM = -1
 

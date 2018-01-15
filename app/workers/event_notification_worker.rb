@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventNotificationWorker < BaseWorker
   def perform
     super

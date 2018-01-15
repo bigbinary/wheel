@@ -1,4 +1,6 @@
 
+# frozen_string_literal: true
+
 def enable_test_coverage
   require "simplecov"
 

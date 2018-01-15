@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby "2.5.0"
@@ -53,7 +55,7 @@ gem "simple_form"
 
 # admin framework
 gem "activeadmin"
-#gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+# gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # for handling file uploads
 gem "carrierwave"
@@ -62,7 +64,7 @@ gem "carrierwave"
 gem "fog", require: false
 
 # for CarrierWave to perform image manipulations
-#gem 'mini_magick'
+# gem 'mini_magick'
 
 # for logging to work in heroku
 gem "rails_12factor", group: [:staging, :production]
@@ -83,7 +85,7 @@ gem "email_prefixer"
 gem "puma", "~> 3.2"
 
 # Attach comments to Active Record queries
-#gem 'marginalia'
+# gem 'marginalia'
 
 # timeout Rails request, needed if running on heroku- https://devcenter.heroku.com/articles/request-timeout
 gem "rack-timeout"

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def super_admin_signed_in?
     user_signed_in? && current_user.super_admin?
