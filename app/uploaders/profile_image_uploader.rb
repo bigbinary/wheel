@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ProfileImageUploader < CarrierWave::Uploader::Base
   storage :file
 

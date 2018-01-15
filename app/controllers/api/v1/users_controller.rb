@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::UsersController < Api::V1::BaseController
   skip_before_action :authenticate_user!, only: [:create]
   skip_before_action :authenticate_user_using_x_auth_token, only: [:create]

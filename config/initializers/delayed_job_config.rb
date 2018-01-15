@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Delayed job priority: lower numbers run first; default is 0 but can be reconfigured
 MAIL_DELIVERY_PRIORITY_MEDIUM = -1
 
@@ -13,11 +15,11 @@ Delayed::Worker.read_ahead          = 10
 
 Delayed::Worker.delay_jobs          = !Rails.env.test?
 
-Delayed::Worker.default_queue_name  = 'default'
+Delayed::Worker.default_queue_name  = "default"
 
 Delayed::Worker.queue_attributes    = { devise_email: { priority: MAIL_DELIVERY_PRIORITY_MEDIUM } }
 
 # In production have default number of attempts ( which I think is 30 )
 if !Rails.env.production?
-  Delayed::Worker.max_attempts        = 3
+  Delayed::Worker.max_attempts = 3
 end

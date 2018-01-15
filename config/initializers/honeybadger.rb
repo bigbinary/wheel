@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # When a DelayedJob operation fails then honeybadger should collect
 # contextual information like job name and the host.
 class HoneybadgerDelayedJobPlugin < Delayed::Plugin

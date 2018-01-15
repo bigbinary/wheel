@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class RegistrationsControllerTest < ActionDispatch::IntegrationTest
-
   def test_successfull_user_registration
     assert_difference("User.count") do
       post user_registration_url, params: { user: { email: "nancy@test.example.com",
@@ -67,5 +68,4 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     nancy.reload
     assert_equal nancy.first_name, valid_user_data[:first_name]
   end
-
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class Api::V1::SessionsControllerTest < ActionDispatch::IntegrationTest
-
   def test_valid_email_and_password_should_be_able_to_log_in
     admin = users :admin
 
@@ -28,5 +29,4 @@ class Api::V1::SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert response.parsed_body["auth_token"]
   end
-
 end

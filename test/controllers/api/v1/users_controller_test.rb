@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
-
   def test_show_for_a_valid_user
     admin = users(:admin)
 
@@ -55,7 +56,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
                         }
 
     # Ensure that there are no users with this email in db
-    User.where( email: valid_email ).delete_all
+    User.where(email: valid_email).delete_all
 
     post api_v1_users_url, params: { user: invalid_user_json, format: :json }
 
@@ -143,5 +144,4 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Could not authenticate with the provided credentials",
                  response.parsed_body["error"]
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AdditionService
   attr_reader :number1, :number2
 

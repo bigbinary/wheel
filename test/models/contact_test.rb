@@ -1,11 +1,12 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 class ContactTest < ActiveSupport::TestCase
-
   def test_valid_contact
-    valid_contact = { email: 'bob@exmaple.com',
-                      title: 'need help',
-                      body: 'some message' }
+    valid_contact = { email: "bob@exmaple.com",
+                      title: "need help",
+                      body: "some message" }
 
     contact = Contact.new(valid_contact)
 
@@ -13,9 +14,9 @@ class ContactTest < ActiveSupport::TestCase
   end
 
   def test_invalid_contact
-    invalid_contact = { email: 'bob',
-                        title: '',
-                        body: 'some message' }
+    invalid_contact = { email: "bob",
+                        title: "",
+                        body: "some message" }
 
     contact = Contact.new(invalid_contact)
 
@@ -23,5 +24,4 @@ class ContactTest < ActiveSupport::TestCase
     assert_includes contact.errors.full_messages, "Title can't be blank"
     assert_includes contact.errors.full_messages, "Email is invalid"
   end
-
 end

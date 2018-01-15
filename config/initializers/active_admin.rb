@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.setup do |config|
 
   # == Site Title
@@ -27,7 +29,7 @@ ActiveAdmin.setup do |config|
   # eg:
   config.default_namespace = :active_admin
   config.namespace :active_admin do |active_admin|
-    active_admin.root_to = 'dashboard#index'
+    active_admin.root_to = "dashboard#index"
   end
   #
   # This will create resources in the HelloWorld module and
@@ -87,7 +89,6 @@ ActiveAdmin.setup do |config|
   # to return the currently logged in user.
   config.current_user_method = :current_user
 
-
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These
@@ -106,7 +107,6 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.logout_link_method = :get
 
-
   # == Root
   #
   # Set the action to call for the root path. You can set different
@@ -114,7 +114,6 @@ ActiveAdmin.setup do |config|
   #
   # Default:
   # config.root_to = 'dashboard#index'
-
 
   # == Admin Comments
   #
@@ -129,13 +128,11 @@ ActiveAdmin.setup do |config|
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
 
-
   # == Batch Actions
   #
   # Enable and disable Batch Actions
   #
   config.batch_actions = true
-
 
   # == Controller Filters
   #
@@ -144,12 +141,10 @@ ActiveAdmin.setup do |config|
   #
   # config.before_filter :do_something_awesome
 
-
   # == Setting a Favicon
   #
   # config.favicon = '/assets/favicon.ico'
 
-  
   # == CSV options
   #
   # Set the CSV builder separator
@@ -157,7 +152,6 @@ ActiveAdmin.setup do |config|
   #
   # Force the use of quotes
   # config.csv_options = { :force_quotes => true }
-
 
   # == Menu System
   #
@@ -180,7 +174,6 @@ ActiveAdmin.setup do |config|
   #     end
   #   end
 
-
   # == Download Links
   #
   # You can disable download links on resource listing pages,
@@ -202,14 +195,12 @@ ActiveAdmin.setup do |config|
   #
   #   end
 
-
   # == Pagination
   #
   # Pagination is enabled by default for all resources.
   # You can control the default per page count for all resources here.
   #
   # config.default_per_page = 30
-
 
   # == Filters
   #
