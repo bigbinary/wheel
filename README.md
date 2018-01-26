@@ -19,8 +19,7 @@ Install the latest [Node.js](https://nodejs.org) version. Make sure that [npm](h
 
 ```
 bundle install
-cp config/database.yml.postgresqlapp config/database.yml
-rake setup
+bundle exec rake setup
 bundle exec rails server
 ```
 ##  Running with Docker
