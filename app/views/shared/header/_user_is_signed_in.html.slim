@@ -4,7 +4,7 @@ li.nav-item.dropdown
   ul.dropdown-menu.dropdown-menu-right aria-labelledby="navbarDropdown"
     - if super_admin_signed_in?
       = link_to 'Superadmin', superadmin_root_path, class: 'dropdown-item'
-      li.divider
-      = link_to 'My Account', profile_path, class: 'dropdown-item'
-      = link_to 'Change Password', password_edit_path, class: 'dropdown-item'
-      = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item'
+    li.divider
+    = link_to 'My Account', profile_path, class: 'dropdown-item'
+    = link_to 'Change Password', password_edit_path, class: 'dropdown-item'
+    = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item'
