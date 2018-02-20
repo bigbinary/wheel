@@ -11,4 +11,4 @@ development:
 test:
   <<: *default
   user: postgres
-  database: heka_test<%= ENV['CIRCLE_NODE_INDEX'] %>
+  database: wheel_test<%= ENV['CIRCLE_NODE_INDEX'] %>
