@@ -127,9 +127,6 @@ group :test do
   # Minitest reporter plugin for CircleCI. Gerates JUnit xml reports from tests. https://github.com/circleci/minitest-ci
   gem "minitest-ci"
   gem "minitest", "5.10.3"
-
-  # For splitting tests across CircleCI containers
-  gem "knapsack"
 end
 
 group :development, :test do
