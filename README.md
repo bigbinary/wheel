@@ -85,6 +85,8 @@ is enabled on this application. It means when a PR is sent then heroku
 automatically deploys an application for that branch.
 
 
-#### Brought to you by
+## About BigBinary
 
 <a href='http://BigBinary.com'><img src="https://github.com/bigbinary/bigbinary-assets/blob/press-assets/PNG/logo-light-square.png" width="200px"/></a>
+
+![BigBinary](https://raw.githubusercontent.com/bigbinary/bigbinary-assets/press-assets/SVG/logo-light-solid-small.svg)
