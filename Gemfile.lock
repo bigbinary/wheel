@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/rails/webpacker.git
+  revision: 90373c21b1987bed4f8e040bccb7e5e33cac9a71
+  specs:
+    webpacker (4.0.0.pre.pre.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -347,6 +356,8 @@ GEM
     rack (2.0.4)
     rack-protection (2.0.1)
       rack
+    rack-proxy (0.6.4)
+      rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rack-timeout (0.4.2)
@@ -522,6 +533,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   uglifier (>= 2.7.1)
   web-console (~> 3.0)
+  webpacker!
 
 RUBY VERSION
    ruby 2.5.1p57
