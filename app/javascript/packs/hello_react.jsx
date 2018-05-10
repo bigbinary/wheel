@@ -7,16 +7,8 @@ import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
 const Hello = props => (
-  <div>Hello {props.name}!</div>
+  <h2>Hello from React! I have no alignment</h2>
 )
-
-Hello.defaultProps = {
-  name: 'David'
-}
-
-Hello.propTypes = {
-  name: PropTypes.string
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
