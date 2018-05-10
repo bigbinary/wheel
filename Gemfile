@@ -99,6 +99,9 @@ gem "rack-timeout"
 # for displaying notifications
 gem "jquery-growl-rails"
 
+# For faster env load times
+gem "bootsnap"
+
 group :development do
 
   # speeds up development by keeping your application running in the background
