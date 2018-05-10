@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.5.1"
 
-gem "rails", "~> 5.1"
+gem "rails", "~> 5.2"
 
 # friends of Rails
 gem "jquery-rails"
@@ -25,7 +25,7 @@ gem "pg"
 gem "jbuilder", ">= 2.2.13"
 
 # for authentication
-gem "devise", " 4.4.0"
+gem "devise", " 4.4.3"
 
 # for background job processing
 gem "delayed_job_active_record"
