@@ -78,7 +78,13 @@ GEM
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+<<<<<<< HEAD
     bootstrap (4.1.1)
+=======
+    bootsnap (1.3.0)
+      msgpack (~> 1.0)
+    bootstrap (4.0.0.beta2.1)
+>>>>>>> Add missing bootsnap
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
@@ -353,6 +359,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
+    msgpack (1.2.4)
     multi_json (1.12.2)
     mustermann (1.0.2)
 <<<<<<< HEAD
@@ -508,7 +515,12 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   autoprefixer-rails
+<<<<<<< HEAD
   bootstrap (~> 4.1.1)
+=======
+  bootsnap
+  bootstrap (~> 4.0.0.beta2)
+>>>>>>> Add missing bootsnap
   bundler-audit
   daemons
   delayed_job_active_record
