@@ -10,59 +10,69 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+<<<<<<< HEAD
     actioncable (5.1.4)
       actionpack (= 5.1.4)
+=======
+    CFPropertyList (2.3.6)
+    actioncable (5.2.0)
+      actionpack (= 5.2.0)
+>>>>>>> Update to Rails 5.2
       nio4r (~> 2.0)
-      websocket-driver (~> 0.6.1)
-    actionmailer (5.1.4)
-      actionpack (= 5.1.4)
-      actionview (= 5.1.4)
-      activejob (= 5.1.4)
+      websocket-driver (>= 0.6.1)
+    actionmailer (5.2.0)
+      actionpack (= 5.2.0)
+      actionview (= 5.2.0)
+      activejob (= 5.2.0)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 2.0)
-    actionpack (5.1.4)
-      actionview (= 5.1.4)
-      activesupport (= 5.1.4)
+    actionpack (5.2.0)
+      actionview (= 5.2.0)
+      activesupport (= 5.2.0)
       rack (~> 2.0)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (5.1.4)
-      activesupport (= 5.1.4)
+    actionview (5.2.0)
+      activesupport (= 5.2.0)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
-    activeadmin (1.2.0)
+    activeadmin (1.3.0)
       arbre (>= 1.1.1)
       coffee-rails
       formtastic (~> 3.1)
       formtastic_i18n
-      inherited_resources (~> 1.7)
+      inherited_resources (>= 1.7.0)
       jquery-rails (>= 4.2.0)
-      kaminari (>= 0.15, < 2.0)
-      railties (>= 4.2, < 5.2)
+      kaminari (>= 0.15)
+      railties (>= 4.2, < 5.3)
       ransack (~> 1.3)
       sass (~> 3.1)
       sprockets (< 4.1)
-    activejob (5.1.4)
-      activesupport (= 5.1.4)
+    activejob (5.2.0)
+      activesupport (= 5.2.0)
       globalid (>= 0.3.6)
-    activemodel (5.1.4)
-      activesupport (= 5.1.4)
-    activerecord (5.1.4)
-      activemodel (= 5.1.4)
-      activesupport (= 5.1.4)
-      arel (~> 8.0)
-    activesupport (5.1.4)
+    activemodel (5.2.0)
+      activesupport (= 5.2.0)
+    activerecord (5.2.0)
+      activemodel (= 5.2.0)
+      activesupport (= 5.2.0)
+      arel (>= 9.0)
+    activestorage (5.2.0)
+      actionpack (= 5.2.0)
+      activerecord (= 5.2.0)
+      marcel (~> 0.3.1)
+    activesupport (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
-    arel (8.0.0)
+    arel (9.0.0)
     ast (2.3.0)
     autoprefixer-rails (7.2.3)
       execjs
@@ -84,21 +94,21 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    crass (1.0.3)
+    crass (1.0.4)
     daemons (1.2.5)
-    delayed_job (4.1.4)
-      activesupport (>= 3.0, < 5.2)
-    delayed_job_active_record (4.1.2)
-      activerecord (>= 3.0, < 5.2)
+    delayed_job (4.1.5)
+      activesupport (>= 3.0, < 5.3)
+    delayed_job_active_record (4.1.3)
+      activerecord (>= 3.0, < 5.3)
       delayed_job (>= 3.0, < 5)
     delayed_job_web (1.4)
       activerecord (> 3.0.0)
       delayed_job (> 2.0.3)
       sinatra (>= 1.4.4)
-    devise (4.4.0)
+    devise (4.4.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.2)
+      railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
     docile (1.1.5)
@@ -106,9 +116,169 @@ GEM
       rails (>= 4.0)
     email_validator (1.6.0)
       activemodel
+<<<<<<< HEAD
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+=======
+    erubi (1.7.1)
+    excon (0.60.0)
+    execjs (2.7.0)
+    ffi (1.9.23)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (1.42.0)
+      fog-aliyun (>= 0.1.0)
+      fog-atmos
+      fog-aws (>= 0.6.0)
+      fog-brightbox (~> 0.4)
+      fog-cloudatcost (~> 0.1.0)
+      fog-core (~> 1.45)
+      fog-digitalocean (>= 0.3.0)
+      fog-dnsimple (~> 1.0)
+      fog-dynect (~> 0.0.2)
+      fog-ecloud (~> 0.1)
+      fog-google (<= 0.1.0)
+      fog-internet-archive
+      fog-joyent
+      fog-json
+      fog-local
+      fog-openstack
+      fog-ovirt
+      fog-powerdns (>= 0.1.1)
+      fog-profitbricks
+      fog-rackspace
+      fog-radosgw (>= 0.0.2)
+      fog-riakcs
+      fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
+      fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-vsphere (>= 0.4.0)
+      fog-xenserver
+      fog-xml (~> 0.1.1)
+      ipaddress (~> 0.5)
+      json (~> 2.0)
+    fog-aliyun (0.2.0)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      ipaddress (~> 0.8)
+      xml-simple (~> 1.1)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-aws (2.0.0)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-brightbox (0.14.0)
+      fog-core (~> 1.22)
+      fog-json
+      inflecto (~> 0.0.2)
+    fog-cloudatcost (0.1.2)
+      fog-core (~> 1.36)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (1.45.0)
+      builder
+      excon (~> 0.58)
+      formatador (~> 0.2)
+    fog-digitalocean (0.3.0)
+      fog-core (~> 1.42)
+      fog-json (>= 1.0)
+      fog-xml (>= 0.1)
+      ipaddress (>= 0.5)
+    fog-dnsimple (1.0.0)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
+    fog-dynect (0.0.3)
+      fog-core
+      fog-json
+      fog-xml
+    fog-ecloud (0.3.0)
+      fog-core
+      fog-xml
+    fog-google (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-internet-archive (0.0.1)
+      fog-core
+      fog-json
+      fog-xml
+    fog-joyent (0.0.1)
+      fog-core (~> 1.42)
+      fog-json (>= 1.0)
+    fog-json (1.0.2)
+      fog-core (~> 1.0)
+      multi_json (~> 1.10)
+    fog-local (0.4.0)
+      fog-core (~> 1.27)
+    fog-openstack (0.1.22)
+      fog-core (>= 1.40)
+      fog-json (>= 1.0)
+      ipaddress (>= 0.8)
+    fog-ovirt (0.1.2)
+      fog-core (~> 1.45)
+      fog-json
+      fog-xml (~> 0.1.1)
+      rbovirt (~> 0.1.4)
+    fog-powerdns (0.1.1)
+      fog-core (~> 1.27)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+    fog-profitbricks (4.1.1)
+      fog-core (~> 1.42)
+      fog-json (~> 1.0)
+    fog-rackspace (0.1.5)
+      fog-core (>= 1.35)
+      fog-json (>= 1.0)
+      fog-xml (>= 0.1)
+      ipaddress (>= 0.8)
+    fog-radosgw (0.0.5)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-riakcs (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-sakuracloud (1.7.5)
+      fog-core
+      fog-json
+    fog-serverlove (0.1.2)
+      fog-core
+      fog-json
+    fog-softlayer (1.1.4)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.1)
+      fog-core
+      fog-json
+    fog-terremark (0.1.0)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.1.0)
+      fission
+      fog-core
+    fog-voxel (0.1.0)
+      fog-core
+      fog-xml
+    fog-vsphere (1.13.1)
+      fog-core
+      rbvmomi (~> 1.9)
+    fog-xenserver (0.3.0)
+      fog-core
+      fog-xml
+    fog-xml (0.1.3)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+>>>>>>> Update to Rails 5.2
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     formtastic (3.1.5)
@@ -116,11 +286,17 @@ GEM
     formtastic_i18n (0.6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    has_scope (0.7.1)
-      actionpack (>= 4.1, < 5.2)
-      activesupport (>= 4.1, < 5.2)
+    has_scope (0.7.2)
+      actionpack (>= 4.1)
+      activesupport (>= 4.1)
     honeybadger (3.2.0)
+<<<<<<< HEAD
     i18n (0.9.1)
+=======
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    i18n (1.0.1)
+>>>>>>> Update to Rails 5.2
       concurrent-ruby (~> 1.0)
     inherited_resources (1.8.0)
       actionpack (>= 4.2, <= 5.2)
@@ -131,7 +307,7 @@ GEM
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
     jquery-growl-rails (1.1.9)
-    jquery-rails (4.3.1)
+    jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -157,7 +333,16 @@ GEM
       mini_mime (>= 0.1.1)
     mail_interceptor (0.0.7)
       activesupport
+    marcel (0.3.2)
+      mimemagic (~> 0.3.2)
     method_source (0.9.0)
+<<<<<<< HEAD
+=======
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mimemagic (0.3.2)
+>>>>>>> Update to Rails 5.2
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
@@ -170,38 +355,49 @@ GEM
       ruby-progressbar
     multi_json (1.12.2)
     mustermann (1.0.2)
+<<<<<<< HEAD
     nio4r (2.1.0)
     nokogiri (1.8.4)
+=======
+    netrc (0.11.0)
+    nio4r (2.3.1)
+    nokogiri (1.8.2)
+>>>>>>> Update to Rails 5.2
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     parallel (1.12.1)
     parser (2.4.0.2)
       ast (~> 2.3)
     pg (0.21.0)
-    polyamorous (1.3.1)
+    polyamorous (1.3.3)
       activerecord (>= 3.0)
     popper_js (1.12.9)
     powerpack (0.1.1)
     puma (3.11.0)
     rack (2.0.5)
+<<<<<<< HEAD
     rack-protection (2.0.3)
+=======
+    rack-protection (2.0.1)
+>>>>>>> Update to Rails 5.2
       rack
     rack-proxy (0.6.4)
       rack
-    rack-test (0.8.2)
+    rack-test (1.0.0)
       rack (>= 1.0, < 3)
     rack-timeout (0.4.2)
-    rails (5.1.4)
-      actioncable (= 5.1.4)
-      actionmailer (= 5.1.4)
-      actionpack (= 5.1.4)
-      actionview (= 5.1.4)
-      activejob (= 5.1.4)
-      activemodel (= 5.1.4)
-      activerecord (= 5.1.4)
-      activesupport (= 5.1.4)
+    rails (5.2.0)
+      actioncable (= 5.2.0)
+      actionmailer (= 5.2.0)
+      actionpack (= 5.2.0)
+      actionview (= 5.2.0)
+      activejob (= 5.2.0)
+      activemodel (= 5.2.0)
+      activerecord (= 5.2.0)
+      activestorage (= 5.2.0)
+      activesupport (= 5.2.0)
       bundler (>= 1.3.0)
-      railties (= 5.1.4)
+      railties (= 5.2.0)
       sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
@@ -213,21 +409,21 @@ GEM
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
-    railties (5.1.4)
-      actionpack (= 5.1.4)
-      activesupport (= 5.1.4)
+    railties (5.2.0)
+      actionpack (= 5.2.0)
+      activesupport (= 5.2.0)
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
-    rake (12.3.0)
-    ransack (1.8.4)
+    rake (12.3.1)
+    ransack (1.8.8)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       i18n
-      polyamorous (~> 1.3)
-    rb-fsevent (0.10.2)
+      polyamorous (~> 1.3.2)
+    rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     responders (2.4.0)
@@ -243,7 +439,7 @@ GEM
     ruby-progressbar (1.9.0)
     ruby_audit (1.2.0)
       bundler-audit (~> 0.6.0)
-    sass (3.5.4)
+    sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -254,9 +450,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    simple_form (3.5.0)
-      actionpack (> 4, < 5.2)
-      activemodel (> 4, < 5.2)
+    simple_form (4.0.0)
+      actionpack (> 4)
+      activemodel (> 4)
     simplecov (0.15.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -290,7 +486,7 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
-    tzinfo (1.2.4)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.0.2)
       execjs (>= 0.3.0, < 3)
@@ -302,7 +498,7 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    websocket-driver (0.6.5)
+    websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
 
@@ -317,7 +513,7 @@ DEPENDENCIES
   daemons
   delayed_job_active_record
   delayed_job_web (>= 1.2.10)
-  devise (= 4.4.0)
+  devise (= 4.4.3)
   email_prefixer
   email_validator
   font-awesome-sass (~> 4.3.0)
@@ -334,7 +530,7 @@ DEPENDENCIES
   puma (~> 3.2)
   rack-protection (>= 2.0)
   rack-timeout
-  rails (~> 5.1)
+  rails (~> 5.2)
   rails_12factor
   rubocop
   ruby_audit
