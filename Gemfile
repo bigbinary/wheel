@@ -12,6 +12,9 @@ gem "sprockets-rails"
 gem "sass-rails", ">= 5.0.3"
 gem "uglifier", ">= 2.7.1"
 
+# Use Webpack to manage app-like JavaScript modules in Rails
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
 

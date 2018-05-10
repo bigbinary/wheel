@@ -24,16 +24,16 @@ jobs:
           - gem-cache-{{ checksum "Gemfile.lock" }}
           - gem-cache
 
-#      Enable if using yarn
-#      - restore_cache:
-#          keys:
-#          - wheel-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
-#          - wheel-yarn-deps-{{ .Branch }}
-#          - wheel-yarn-deps
+      # Enable if using yarn
+      - restore_cache:
+          keys:
+          - wheel-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          - wheel-yarn-deps-{{ .Branch }}
+          - wheel-yarn-deps
 
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
-#      Enable if using yarn
-#      - run: bin/yarn install
+      # Enable if using yarn
+      - run: bin/yarn install
 
       # Store bundle cache
       - save_cache:
@@ -50,27 +50,27 @@ jobs:
             - vendor/bundle
 
       # Store yarn cache: When using Yarn
-#      - save_cache:
-#          key: wheel-yarn-deps-{{ .Branch }}-{{ checksum "vendor/yarn.lock" }}
-#          paths:
-#            - vendor/node_modules
-#      - save_cache:
-#          key: wheel-yarn-deps-{{ .Branch }}
-#          paths:
-#            - vendor/node_modules
-#      - save_cache:
-#          key: wheel-yarn-deps
-#          paths:
-#            - vendor/node_modules
+      - save_cache:
+          key: wheel-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - vendor/node_modules
+      - save_cache:
+          key: wheel-yarn-deps-{{ .Branch }}
+          paths:
+            - vendor/node_modules
+      - save_cache:
+          key: wheel-yarn-deps
+          paths:
+            - vendor/node_modules
 
       - run: mkdir reports
 
      # Database setup
       - run: cp config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create db:schema:load --trace
-#      Enable if using yarn
-#      - run: bin/yarn install
-#      - run: bin/webpack
+      # Enable if using yarn
+      - run: bin/yarn install
+      - run: bin/webpack
       - run: bundle exec ruby-audit check
       - run: bundle exec bundle-audit check --update
 
