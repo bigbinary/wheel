@@ -16,7 +16,7 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.1.0",
     "prettier": "^1.6.1",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "@rails/webpacker": "^3.5.3",
