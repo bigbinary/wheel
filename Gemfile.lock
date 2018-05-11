@@ -322,6 +322,10 @@ GEM
     kaminari-core (1.1.1)
     knapsack (1.15.0)
       rake
+    listen (3.1.5)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -436,6 +440,7 @@ GEM
     ruby-progressbar (1.9.0)
     ruby_audit (1.2.0)
       bundler-audit (~> 0.6.0)
+    ruby_dep (1.5.0)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -527,6 +532,7 @@ DEPENDENCIES
   jquery-growl-rails
   jquery-rails
   knapsack
+  listen (~> 3.1.5)
   mail_interceptor
   minitest (= 5.10.3)
   minitest-ci
