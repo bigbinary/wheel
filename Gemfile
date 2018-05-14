@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.5.1"
 
-gem "rails", "~> 5.1"
+gem "rails", "~> 5.2"
 
 # friends of Rails
 gem "jquery-rails"
@@ -25,7 +25,7 @@ gem "pg"
 gem "jbuilder", ">= 2.2.13"
 
 # for authentication
-gem "devise", " 4.4.0"
+gem "devise", " 4.4.3"
 
 # for background job processing
 gem "delayed_job_active_record"
@@ -99,6 +99,9 @@ gem "rack-timeout"
 # for displaying notifications
 gem "jquery-growl-rails"
 
+# For faster env load times
+gem "bootsnap"
+
 group :development do
 
   # speeds up development by keeping your application running in the background
@@ -108,7 +111,7 @@ group :development do
   gem "web-console", "~> 3.0"
 
   # Reenable after https://github.com/rails/rails/issues/26158 is fixed
-  # gem 'listen', '~> 3.0.5'
+  gem 'listen', '~> 3.1.5'
 
   # reports N+1 queries
   # gem 'bullet' # commented out till fixed because as it is not compatible with rails 5.1 beta
