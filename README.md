@@ -39,13 +39,13 @@ docker-compose up
 
 After the container is successfully created you should be able to access your app on `http://localhost:9000`
 
-## Replace Wheel with your project name
+## Replace MeTube with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
-replace all occurrences of `Wheel` with `Pump`.
+replace all occurrences of `MeTube` with `Pump`.
 
 ```
-perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
+perl -e "s/MeTube/Pump/g;" -pi $(find . -type f)
 ```
 
 ## Features

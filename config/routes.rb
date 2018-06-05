@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Wheel::Application.routes.draw do
+MeTube::Application.routes.draw do
   # Setting path_prefix makes sure that devise routes do not conflict
   # with users resources routes.
   #
