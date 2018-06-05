@@ -5,6 +5,6 @@
 
 require_relative "config/application"
 
-MeTube::Application.load_tasks
+Wheel::Application.load_tasks
 
 Knapsack.load_tasks if defined?(Knapsack)
