@@ -60,15 +60,6 @@ gem "simple_form"
 gem "activeadmin"
 # gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
-# for handling file uploads
-gem "carrierwave"
-
-# for CarrierWave to upload files to cloud storage like Amazon S3
-gem "fog", require: false
-
-# for CarrierWave to perform image manipulations
-# gem 'mini_magick'
-
 # for logging to work in heroku
 gem "rails_12factor", group: [:staging, :production]
 
