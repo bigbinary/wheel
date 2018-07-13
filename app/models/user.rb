@@ -6,8 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable, :rememberable
 
-  mount_uploader :profile_image, ProfileImageUploader
-
   before_save :ensure_authentication_token_is_present
 
   validates :first_name, :last_name, :email, presence: true
