@@ -68,9 +68,9 @@ GEM
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
-    bootstrap (4.0.0.beta2.1)
+    bootstrap (4.1.1)
       autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
+      popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     builder (3.2.3)
     bundler-audit (0.6.0)
@@ -312,7 +312,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   autoprefixer-rails
-  bootstrap (~> 4.0.0.beta2)
+  bootstrap (~> 4.1.1)
   bundler-audit
   daemons
   delayed_job_active_record
