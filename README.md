@@ -1,20 +1,10 @@
 [![Circle CI](https://circleci.com/gh/bigbinary/wheel.png?style=badge)](https://circleci.com/gh/bigbinary/wheel)
 
-## TOC
-* [About](#about)
-* [Local Development Setup](#local-development-setup)
-* [Running with Docker](#running-with-docker)
-* [Replace wheel with your project name](#replace-wheel-with-your-project-name)
-* [Features](#features)
-* [Heroku Review](#heroku-review)
-
-## About
-
-This is a base project to quickly spin up a
-Rails application which is built with
-opinions of BigBinary team.
+Made by the team at [BigBinary](https://bigbinary.com), this is a base project to quickly spin up a
+Rails application built with opinions of BigBinary style of working.
 
 ## Local Development Setup
+
 Install the latest [Node.js](https://nodejs.org) version. Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
 
 ```
