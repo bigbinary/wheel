@@ -10,6 +10,7 @@ Install the latest [Node.js](https://nodejs.org) version. Make sure that [npm](h
 ```
 bundle install
 bundle exec rake setup
+npm install
 bundle exec rails server
 ```
 
