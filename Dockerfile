@@ -4,3 +4,4 @@ RUN mkdir -p /wheel
 WORKDIR /wheel
 ADD . /wheel
 RUN bundle install
+CMD setup_while_container_init.sh
