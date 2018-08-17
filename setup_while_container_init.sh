@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 cd /wheel
 bundle install
-bundle exec rake setup
-web
+web()
 {
 bundle exec rake setup
 rm tmp/pids/server.pid || true
-RAILS_ENV=$APP_ENV bundle exec rails server -p 80 -b 0.0.0.0
+bin/yarn
+bundle exec rails server -p 80 -b 0.0.0.0
 }
-delayed_job
+delayed_job()
 {
 bundle exec
 }
@@ -21,7 +21,7 @@ case $POD_TYPE in
    web
    ;;
   "background" )
-   background
+   delayed_job
    ;;
   "cron_job" )
    cron_job
