@@ -12,26 +12,12 @@ delayed_job()
 {
 bundle exec bin/delayed_job run
 }
-websocket()
-{
-    echo "websocket pod"
-}
-cron_job()
-{
-    echo "cron job pod"
-}
 case $POD_TYPE in
   "WEB" )
    web
    ;;
-  "websocket" )
-   websocket
-   ;;
   "background" )
    delayed_job
-   ;;
-  "cron_job" )
-   cron_job
    ;;
   * )
    echo "Unknown POD_TYPE"
