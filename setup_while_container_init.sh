@@ -10,24 +10,28 @@ bundle exec rails server -p 80 -b 0.0.0.0
 }
 delayed_job()
 {
-bundle exec
+bundle exec bin/delayed_job run
 }
-
+websocket()
+{
+    echo "websocket pod"
+}
+cron_job()
+{
+    echo "cron job pod"
+}
 case $POD_TYPE in
   "WEB" )
    web
    ;;
   "websocket" )
-   web
+   websocket
    ;;
   "background" )
    delayed_job
    ;;
   "cron_job" )
    cron_job
-   ;;
-  "rails_console" )
-   rails_console
    ;;
   * )
    echo "Unknown POD_TYPE"
