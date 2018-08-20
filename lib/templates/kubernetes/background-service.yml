@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: wheel-background 
+  name: background
+spec:
+  ports:
+  - name: puma
+    port: 80
+    targetPort: 80
+  selector:
+    app: wheel-background 
