@@ -40,6 +40,10 @@ Create postgres db and service.
 
 `kubectl create -f db-deployment.yml -f db-service.yml`
 
+$Create configmap for database.yml.
+
+`kubectl create -f database-configmap.yml`
+
 Create web/puma deployment and service.
 
 `kubectl create -f web-deployment.yml -f web-service.yml`
