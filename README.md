@@ -30,7 +30,7 @@ docker-compose up
 
 After the container is successfully created you should be able to access your app on `http://localhost:9000`
 
-### Deploy wheel on kubernetes
+### Deploy wheel on Kubernetes
 
 Deploy wheel on kubernetes using [this templates](https://github.com/bigbinary/wheel/tree/master/lib/templates/kubernetes).
 

@@ -1,4 +1,4 @@
-#### Deploy wheel on kubernetes.
+#### Deploy wheel on Kubernetes
 
 Create postgres db and service.
 
