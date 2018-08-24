@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 cd /wheel
 bundle install
 web() {
