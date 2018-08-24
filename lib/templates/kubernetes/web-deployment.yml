@@ -12,7 +12,7 @@ spec:
         app: wheel-web 
     spec:
       containers:
-      - image: rahulmahale/wheel:generic
+      - image: bigbinary/wheel:generic
         name: web 
         imagePullPolicy: Always 
         env:

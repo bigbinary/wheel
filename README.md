@@ -32,7 +32,7 @@ After the container is successfully created you should be able to access your ap
 
 ### Deploy wheel on kubernetes
 
-Deploy wheel on kubernetes using [this templates](https://github.com/RahulMahale/wheel/tree/master/lib/templates/kubernetes).
+Deploy wheel on kubernetes using [this templates](https://github.com/bigbinary/wheel/tree/master/lib/templates/kubernetes).
 
 Run following commands to deploy wheel on k8s.
 
