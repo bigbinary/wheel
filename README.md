@@ -30,6 +30,35 @@ docker-compose up
 
 After the container is successfully created you should be able to access your app on `http://localhost:9000`
 
+### Deploy wheel on Kubernetes
+
+Deploy wheel on kubernetes using [this templates](https://github.com/bigbinary/wheel/tree/master/lib/templates/kubernetes).
+
+Run following commands to deploy wheel on k8s.
+
+Create postgres db and service.
+
+`kubectl create -f db-deployment.yml -f db-service.yml`
+
+$Create configmap for database.yml.
+
+`kubectl create -f database-configmap.yml`
+
+Create web/puma deployment and service.
+
+`kubectl create -f web-deployment.yml -f web-service.yml`
+
+Create background/delayed_job deployment and service.
+
+`kubectl create -f background-deployment.yml -f background-service.yml`
+
+Get application endpoint.
+
+```
+$ kubectl get svc web -o wide | awk '{print $4}'
+a55714dd1a22d11e88d4b0a87a399dcf-2144329260.us-east-1.elb.amazonaws.com
+```
+
 ## Replace Wheel with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
