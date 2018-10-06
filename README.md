@@ -34,13 +34,21 @@ After the container is successfully created you should be able to access your ap
 
 Deploy wheel on kubernetes using [this templates](https://github.com/bigbinary/wheel/tree/master/lib/templates/kubernetes).
 
+You will need access to the working [kubernetes](https://kubernetes.io/) cluster.
+
+Install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) locally
+and setup kubeconfig.
+
+If you dont have k8s cluster setup,
+simply install [minikube](https://github.com/kubernetes/minikube).
+
 Run following commands to deploy wheel on k8s.
 
 Create postgres db and service.
 
 `kubectl create -f db-deployment.yml -f db-service.yml`
 
-$Create configmap for database.yml.
+Create configmap for database.yml.
 
 `kubectl create -f database-configmap.yml`
 
