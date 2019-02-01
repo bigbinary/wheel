@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    parallelism: 2
+    parallelism: 6
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.6.0-node-browsers
