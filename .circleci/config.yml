@@ -76,7 +76,7 @@ jobs:
       # Unit tests
       - run:
           shell: /bin/bash
-          command: COVERAGE=true bundle exec rake test --trace
+          command: bundle exec rake test --trace
 
 workflows:
   version: 2
