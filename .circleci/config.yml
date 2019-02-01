@@ -11,7 +11,6 @@ jobs:
       TZ: "/usr/share/zoneinfo/America/New_York"
       RAILS_ENV: "test"
       RACK_ENV: "test"
-      KNAPSACK_GENERATE_REPORT: "true"
 
     steps:
 
@@ -71,27 +70,13 @@ jobs:
       # Enable if using yarn
       - run: bin/yarn install
       - run: bin/webpack
-      - run: bundle exec ruby-audit check
-      - run: bundle exec bundle-audit check --update
+      - run: bundle exec rails webpacker:compile
+
 
       # Unit tests
       - run:
           shell: /bin/bash
-          command: |
-            KNAPSACK_GENERATE_REPORT=true COVERAGE=true bundle exec rake knapsack:minitest --trace
-
-      - store_test_results:
-          path: reports
-      - store_artifacts:
-          path: reports
-          destination: reports
-      - store_artifacts:
-          path: coverage
-          destination: coverage
-      - store_artifacts:
-          path: knapsack_minitest_report.json
-          destination: knapsack_minitest_report.json
-
+          command: COVERAGE=true bundle exec rake test --trace
 
 workflows:
   version: 2
