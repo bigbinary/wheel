@@ -2,10 +2,6 @@ version: 2
 jobs:
   build:
     parallelism: 6
-    branches:
-      ignore:
-        - staging
-        - production
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.6.0-node-browsers
@@ -87,3 +83,8 @@ workflows:
   commit:
     jobs:
       - build
+        filters:
+          branches:
+            ignore:
+              - staging
+              - production
