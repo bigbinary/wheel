@@ -118,9 +118,6 @@ end
 
 group :test do
 
-  # customizable MiniTest output formats
-  gem "minitest-reporters", require: false
-
   # for test coverage report
   gem "simplecov", require: false
 
