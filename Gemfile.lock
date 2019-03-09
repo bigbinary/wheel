@@ -63,7 +63,6 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    ansi (1.5.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (9.0.0)
@@ -178,11 +177,6 @@ GEM
     minitest (5.10.3)
     minitest-ci (3.4.0)
       minitest (>= 5.0.6)
-    minitest-reporters (1.3.6)
-      ansi
-      builder
-      minitest (>= 5.0)
-      ruby-progressbar
     msgpack (1.2.6)
     multi_json (1.13.1)
     mustermann (1.0.3)
@@ -347,7 +341,6 @@ DEPENDENCIES
   mail_interceptor
   minitest (= 5.10.3)
   minitest-ci
-  minitest-reporters
   pg
   puma (~> 3.2)
   rack-protection (>= 2.0)
@@ -373,4 +366,4 @@ RUBY VERSION
    ruby 2.6.0p0
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
