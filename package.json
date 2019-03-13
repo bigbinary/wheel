@@ -16,13 +16,15 @@
     "husky": "^0.14.3",
     "lint-staged": "^4.1.0",
     "prettier": "^1.6.1",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "@rails/webpacker": "4.0.0-pre.2",
+    "@babel/preset-react": "^7.0.0",
+    "@rails/webpacker": "^4.0.2",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }
