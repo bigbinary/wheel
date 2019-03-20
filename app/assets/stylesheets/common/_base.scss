@@ -1,3 +1,7 @@
+body{
+  color: #3f474e;
+}
+
 
 h1,
 .h1 {
@@ -29,13 +33,33 @@ a, h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
+abbr[title]{
+  text-decoration: none;
+}
 
 img {
   max-width: 100%;
   height: auto;
 }
 
+p{
+  font-size: 1.25rem;
+}
 
-.content {
-  margin-top: 20px;
+.page-title{
+  font-size: 1.8rem;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form-wrap__center{
+  display: flex;
+  flex-direction: column;
+  min-height: 88vh;
+  align-items: center;
+  justify-content: center;
 }

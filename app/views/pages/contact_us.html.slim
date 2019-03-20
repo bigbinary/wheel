@@ -1,13 +1,12 @@
-.form-row.align-items-center
-  .col-12.col-md-6.mx-auto
-    = simple_form_for @contact, html: { class: 'bootstrap-center-form-medium' } do |f|
-      h2.mb-4 Contact us
-      .form-controls
-        = f.input :title, required: true, input_html: { class: 'form-control' }
-      .form-controls
-        = f.input :email, required: true, input_html: { class: 'form-control' }
-      .form-controls
-        = f.input :body,  as: :text, input_html: { class: 'form-control', rows: '3' }
-      .form-buttons.mt-3
-        = f.button :submit, 'Send message', class: "btn btn-primary"
+ .form-wrap__center   
+  = simple_form_for @contact, html: { class: 'bootstrap-center-form-medium' } do |f|
+    h1.page-title.mb-4  Contact us
+    .form-controls
+      = f.input :title, required: true, input_html: { class: 'form-control' }
+    .form-controls
+      = f.input :email, required: true, input_html: { class: 'form-control' }
+    .form-controls
+      = f.input :body,  as: :text, input_html: { class: 'form-control', rows: '3' }
+    .form-buttons.pt-3
+      = f.button :submit, 'Send message', class: "btn btn-primary"
 
