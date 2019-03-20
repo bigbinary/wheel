@@ -1,8 +1,15 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "jquery.growl";
-@import "bootstrap/devise_forms";
-@import "bootstrap";
 
+
+
+
+@import "common/variables";
 @import "common/base";
 @import "common/alerts";
+@import "common/navbar";
+
+
+@import "bootstrap/variables";
+@import "bootstrap";
