@@ -87,7 +87,7 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * Uses modal box to showcase an example of editing information using modal box.
 * Enables __strict mode__ for all JavaScript code.
 * Uses __puma__ as web server.
-* Uses haml for cleaner syntax over erb.
+* Uses slim for cleaner syntax over erb and better performance over haml.
 * No coffeescript. We prefer JavaScript.
 * Uses [turbolinks](https://github.com/turbolinks/turbolinks).
 * Uses [ActiveAdmin](http://activeadmin.info).
