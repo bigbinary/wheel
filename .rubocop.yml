@@ -146,3 +146,7 @@ Style/RedundantReturn:
 Style/Semicolon:
   Enabled: true
   AllowAsExpressionSeparator: true
+
+# Corrects usage of :true/:false to true/false
+Lint/BooleanSymbol:
+  Enabled: true
