@@ -7,6 +7,9 @@ AllCops:
     - '**/templates/**/*'
     - '**/vendor/**/*'
     - 'actionpack/lib/action_dispatch/journey/parser.rb'
+    - 'db/schema.rb'
+    - 'db/migrate/**/*'
+    - 'node_modules/**/*'
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
@@ -131,7 +134,7 @@ Style/UnneededPercentQ:
 
 # Align `end` with the matching keyword or starting expression except for
 # assignments, where it should be aligned with the LHS.
-Lint/EndAlignment:
+Layout/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
 
@@ -149,4 +152,20 @@ Style/Semicolon:
 
 # Corrects usage of :true/:false to true/false
 Lint/BooleanSymbol:
+  Enabled: true
+
+# No space in method name and the arguments
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+# Enabled Rails cops for the command rubocop -a
+Rails:
+  Enabled: true
+
+# Correct usage of Date methods in Rails
+Rails/Date:
+  Enabled: true
+
+# Correct usage of TimeZone methods in Rails
+Rails/TimeZone:
   Enabled: true
