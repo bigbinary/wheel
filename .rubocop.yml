@@ -10,6 +10,12 @@ AllCops:
     - 'db/schema.rb'
     - 'db/migrate/**/*'
     - 'node_modules/**/*'
+    - 'bin/**'
+    - 'config/application.rb'
+    - 'config/boot.rb'
+    - 'config/environment.rb'
+    - 'config/environments/*.rb'
+    - 'config/routes.rb'
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
