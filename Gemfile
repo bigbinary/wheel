@@ -25,7 +25,7 @@ gem "pg"
 gem "jbuilder", ">= 2.2.13"
 
 # for authentication
-gem "devise", " 4.4.3"
+gem "devise", "~> 4.6"
 
 # for background job processing
 gem "delayed_job_active_record"
