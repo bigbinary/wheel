@@ -78,6 +78,10 @@ jobs:
           shell: /bin/bash
           command: bundle exec rake test --trace
 
+      # Bundler audit
+      - run:
+          shell: /bin/bash
+          command: bundle exec bundle-audit check --update
 workflows:
   version: 2
   commit:
