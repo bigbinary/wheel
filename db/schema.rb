@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_193251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: :cascade do |t|
+  create_table "active_admin_comments", id: :uuid, force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_id", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_193251) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "delayed_jobs", force: :cascade do |t|
+  create_table "delayed_jobs", id: :uuid, force: :cascade do |t|
     t.integer "priority", default: 0
     t.integer "attempts", default: 0
     t.text "handler"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2018_07_13_193251) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
