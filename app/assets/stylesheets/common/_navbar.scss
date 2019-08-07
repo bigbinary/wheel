@@ -1,18 +1,20 @@
-
-
-.navbar-expand-lg {
-    .navbar-nav {
-        .nav-item{
-            .nav-link{
-                text-transform: uppercase;
-            }
-        }
-        .dropdown-menu {
-            a.dropdown-item{
-                text-transform: uppercase;
-            }
-        }
-    }
+.navbar-brand {
+  @include font-size(2rem);
 }
 
-
+.navbar-expand-lg {
+  .navbar-nav {
+    .nav-item {
+      .nav-link {
+        text-transform: uppercase;
+      }
+    }
+    .dropdown-menu {
+      a.dropdown-item {
+        text-transform: uppercase;
+        @include font-size(1.4rem);
+        cursor: pointer;
+      }
+    }
+  }
+}

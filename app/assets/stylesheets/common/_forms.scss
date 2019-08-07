@@ -1,8 +1,12 @@
-form{
-    width: 100%;
-    max-width: 450px;
+form {
+  width: 100%;
+  max-width: 450px;
 }
 
-.form-controls{
-    margin-bottom: 0.9375rem;
+.form-controls {
+  margin-bottom: 0.9375rem;
+  .form-control {
+    padding: 6px 10px;
+    @include font-size(1.6rem);
+  }
 }
