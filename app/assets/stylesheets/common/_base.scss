@@ -1,39 +1,58 @@
-body{
-  color: #3f474e;
+html {
+  font-size: 62.5%;
 }
 
+body {
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.6rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $c-text;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 h1,
 .h1 {
-  font-size: 3.8rem;
+  @include font-size(3.8rem);
 }
 h2,
 .h2 {
-  font-size: 2.8rem;
+  @include font-size(2.8rem);
 }
 h3,
 .h3 {
-  font-size: 1.8rem;
+  @include font-size(1.8rem);
 }
 h4,
 .h4 {
-  font-size: 2.4rem;
+  @include font-size(2.4rem);
 }
 h5,
 .h5 {
-  font-size: 2.0rem;
+  @include font-size(2rem);
 }
 h6,
 .h6 {
-  font-size: 1.8rem;
+  @include font-size(1.8rem);
 }
 
-
-a, h1, h2, h3, h4, h5, h6 {
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   word-wrap: break-word;
 }
 
-abbr[title]{
+abbr[title] {
   text-decoration: none;
 }
 
@@ -42,23 +61,29 @@ img {
   height: auto;
 }
 
-p{
-  font-size: 1.25rem;
+p {
+  @include font-size(2rem);
 }
 
-.page-title{
-  font-size: 1.8rem;
+.page-title {
+  @include font-size(2.8rem);
+  font-weight: 900;
+  color: #2f3236;
+  margin-bottom: 10px;
 }
 
-.wrapper{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.form-wrap__center{
+.form-wrap__center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.main-content {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.footer-text {
+  @include font-size(1.4rem);
 }
