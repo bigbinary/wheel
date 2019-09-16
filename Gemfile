@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.6.2"
 
-gem "rails", "~> 5.2.2"
+gem 'rails', '~> 6.0.0'
 
 # friends of Rails
 gem "jquery-rails"
@@ -27,25 +27,15 @@ gem "jbuilder", ">= 2.2.13"
 # for authentication
 gem "devise", "~> 4.7"
 
-# for background job processing
-gem "delayed_job_active_record"
-
 # for error tracking
 gem "honeybadger", "~> 3.1"
 
-# For dependency resolution of 'delayed_job_web' gem
-# More info - https://github.com/ejschmitt/delayed_job_web/issues/84
 gem "sinatra", ">= 2.0.2"
 gem "rack-protection", ">= 2.0"
 
-# web interface for delayed job
-gem "delayed_job_web", ">= 1.2.10"
-
-# For starting Delayed job background process
-gem "daemons"
-
 # for using bootstrap framework
 gem "bootstrap", "~> 4.3.1"
+gem 'pry'
 
 # for using font-awesome
 gem "font-awesome-sass", "~> 4.3.0"
@@ -55,6 +45,8 @@ gem "autoprefixer-rails"
 
 # forms made easy for rails
 gem "simple_form"
+
+gem 'coffee-script'
 
 # admin framework
 gem "activeadmin"
@@ -92,6 +84,7 @@ gem "jquery-growl-rails"
 
 # For faster env load times
 gem "bootsnap"
+gem "sidekiq"
 
 group :development do
 

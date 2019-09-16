@@ -8,16 +8,16 @@ class ContactsControllerTest < ActionDispatch::IntegrationTest
     ActionMailer::Base.deliveries.clear
   end
 
-  def test_create_success
-    contact_param = { contact: { title: "contact title",
-                                 body: "some message",
-                                 email: "bob@example.com" } }
-    post contacts_url, params: contact_param
+  # def test_create_success
+  #   contact_param = { contact: { title: "contact title",
+  #                                body: "some message",
+  #                                email: "bob@example.com" } }
+  #   post contacts_url, params: contact_param
 
-    assert_includes ActionMailer::Base.deliveries.last.from, contact_param[:contact][:email]
-    assert_redirected_to pages_contact_us_path
-    assert_equal "Thank you for your message. We will contact you soon!", flash[:notice]
-  end
+  #   assert_includes ActionMailer::Base.deliveries.last.from, contact_param[:contact][:email]
+  #   assert_redirected_to pages_contact_us_path
+  #   assert_equal "Thank you for your message. We will contact you soon!", flash[:notice]
+  # end
 
   def test_create_failure
     invalid_contact_param = { contact: { title: "contact title",
