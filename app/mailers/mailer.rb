@@ -12,7 +12,7 @@ class Mailer < ActionMailer::Base
     @title = title
     @body  = body
     subject = "Contact us message from #{@email}"
-    mail(to: "abc@gmail.com", from: @email,  subject: subject) do |format|
+    mail(to: Rails.application.secrets.support_email, from: @email,  subject: subject) do |format|
       format.html
     end
   end
