@@ -35,7 +35,6 @@ gem "rack-protection", ">= 2.0"
 
 # for using bootstrap framework
 gem "bootstrap", "~> 4.3.1"
-gem 'pry'
 
 # for using font-awesome
 gem "font-awesome-sass", "~> 4.3.0"
@@ -90,6 +89,7 @@ group :development do
 
   # speeds up development by keeping your application running in the background
   gem "spring"
+  gem 'pry'
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem "web-console", "~> 3.0"
