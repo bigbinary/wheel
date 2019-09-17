@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 class Mailer < ActionMailer::Base
   layout "mailer"
 
@@ -8,12 +7,12 @@ class Mailer < ActionMailer::Base
 
   default_url_options[:host] = Rails.application.secrets.host
 
-  def contact_us_notification(title, email, body)
+  def contact_us_email(contact_details)
     @email = email
     @title = title
     @body  = body
     subject = "Contact us message from #{@email}"
-    mail(to: Rails.application.secrets.support_email, from: @email,  subject: subject) do |format|
+    mail(to: "abc@gmail.com", from: @email,  subject: subject) do |format|
       format.html
     end
   end

@@ -41,7 +41,6 @@ gem "font-awesome-sass", "~> 4.3.0"
 
 # Support for cross-browser css compatibilty
 gem "autoprefixer-rails"
-
 # forms made easy for rails
 gem "simple_form"
 
