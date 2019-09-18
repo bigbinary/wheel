@@ -29,9 +29,6 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(u) { u.super_admin? } do
-    get "/delayed_job" => DelayedJobWeb, :anchor => false
-    put "/delayed_job" => DelayedJobWeb, :anchor => false
-    post "/delayed_job" => DelayedJobWeb, :anchor => false
 
     ActiveAdmin.routes(self)
     namespace :superadmin do
