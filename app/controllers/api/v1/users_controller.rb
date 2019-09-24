@@ -28,7 +28,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     if @user.blank?
       respond_with_error "User with id #{params[:id]} not found.", :not_found
 
-    elsif @user.update_attributes(user_params)
+    elsif @user.update(user_params)
       render json: @user
 
     else
