@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.6.2"
+ruby "2.6.3"
 
 gem 'rails', '~> 6.0.0'
 
@@ -42,7 +42,7 @@ gem "font-awesome-sass", "~> 4.3.0"
 # Support for cross-browser css compatibilty
 gem "autoprefixer-rails"
 # forms made easy for rails
-gem "simple_form"
+gem "simple_form", "~>5.0" 
 
 gem 'coffee-script'
 
