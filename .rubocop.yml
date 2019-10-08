@@ -82,8 +82,16 @@ Layout/SpaceAroundEqualsInParameterDefault:
 Layout/SpaceAroundKeyword:
   Enabled: true
 
+# If we enable it then following code indentation fails
+#     @current_row_project_name   = row["Project"]
+#     @current_row_date           = row["Date"]
+#     @current_row_email          = row["Email"]
+#     @current_row_client_name    = row["Client"]
+#     @current_row_task_name      = row["Task"]
+#     @current_row_notes          = row["Notes"]
+#     @current_row_hours          = row["Hours"]
 Layout/SpaceAroundOperators:
-  Enabled: true
+  Enabled: false
 
 Layout/SpaceBeforeComma:
   Enabled: true
