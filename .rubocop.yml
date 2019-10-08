@@ -134,9 +134,10 @@ Style/StringLiterals:
 Layout/Tab:
   Enabled: true
 
-# Blank lines should not have any spaces.
+# This cop looks for trailing blank lines and a final newline in the source code.
+# This is being disabled because the requirement to have a final newline is illogical.
 Layout/TrailingBlankLines:
-  Enabled: true
+  Enabled: false
 
 # No trailing whitespace.
 Layout/TrailingWhitespace:
