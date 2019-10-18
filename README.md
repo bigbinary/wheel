@@ -89,7 +89,6 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * Uses __puma__ as web server.
 * Uses slim for cleaner syntax over erb and better performance over haml.
 * No coffeescript. We prefer JavaScript.
-* Uses [turbolinks](https://github.com/turbolinks/turbolinks).
 * Uses [ActiveAdmin](http://activeadmin.info).
 * When exception is sent to Rollbar then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html) .
 * Uses [DelayedJob](https://github.com/collectiveidea/delayed_job).
