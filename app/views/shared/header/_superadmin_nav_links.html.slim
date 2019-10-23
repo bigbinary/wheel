@@ -4,7 +4,7 @@ ul.nav.navbar-nav
   li.nav-item
     = link_to 'Active Admin', active_admin_root_path, class: 'nav-link'
   li.nav-item
-    = link_to 'DJ', '/delayed_job', "target" => '_blank', class: 'nav-link'
+    = link_to 'Sidekiq', sidekiq_web_path, "target" => '_blank', class: 'nav-link'
   - if user_signed_in?
       = render 'shared/header/user_is_signed_in'
   - else

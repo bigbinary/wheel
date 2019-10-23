@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "sidekiq/web"
+
 Rails.application.routes.draw do
   # Setting path_prefix makes sure that devise routes do not conflict
   # with users resources routes.
@@ -29,13 +31,13 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(u) { u.super_admin? } do
+    mount Sidekiq::Web, at: "/sidekiq"
 
     ActiveAdmin.routes(self)
     namespace :superadmin do
       root to: "users#index"
       resources :users
     end
-
   end
 
   get "pages/about"
