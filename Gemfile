@@ -27,9 +27,6 @@ gem "devise", "~> 4.7"
 # for error tracking
 gem "honeybadger", "~> 3.1"
 
-gem "sinatra", ">= 2.0.2"
-gem "rack-protection", ">= 2.0"
-
 # for using bootstrap framework
 gem "bootstrap", "~> 4.3.1"
 
