@@ -38,6 +38,7 @@ gem "font-awesome-sass", "~> 4.3.0"
 
 # Support for cross-browser css compatibilty
 gem "autoprefixer-rails"
+
 # forms made easy for rails
 gem "simple_form", "~>5.0"
 
@@ -79,12 +80,15 @@ gem "jquery-growl-rails"
 
 # For faster env load times
 gem "bootsnap"
+
+# Simple, efficient background processing for Ruby
 gem "sidekiq"
 
 group :development do
-
   # speeds up development by keeping your application running in the background
   gem "spring"
+
+  # A runtime developer console and IRB alternative with powerful introspection capabilities
   gem "pry"
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -101,18 +105,20 @@ group :development do
 
   # Patch-level verification for Bundler. https://github.com/rubysec/bundler-audit
   gem "bundler-audit", require: false
+
   # vulnerabity checker for Ruby itself. https://github.com/civisanalytics/ruby_audit
   gem "ruby_audit", require: false
 end
 
 group :test do
+  # Complete suite of testing facilities
+  gem "minitest", "5.10.3"
 
   # for test coverage report
   gem "simplecov", require: false
 
   # Minitest reporter plugin for CircleCI. Gerates JUnit xml reports from tests. https://github.com/circleci/minitest-ci
   gem "minitest-ci"
-  gem "minitest", "5.10.3"
 end
 
 group :development, :test do
