@@ -27,10 +27,10 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 
 ## Features
 
-* Uses [Bootstrap](http://getbootstrap.com) .
+* Uses [Bootstrap](http://getbootstrap.com).
 * rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
-* Uses [devise](https://github.com/plataformatec/devise) .
-* Heroku ready. Push to Heroku and it will work .
+* Uses [devise](https://github.com/plataformatec/devise).
+* Heroku ready. Push to Heroku and it will work.
 * Uses [Honeybadger](https://www.honeybadger.io/).
 * Built in superadmin feature.
 * Uses modal box to showcase an example of editing information using modal box.
@@ -39,7 +39,7 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * Uses slim for cleaner syntax over erb and better performance over haml.
 * No coffeescript. We prefer JavaScript.
 * Uses [ActiveAdmin](http://activeadmin.info).
-* When exception is sent to Honeybadger then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html) .
+* When exception is sent to Honeybadger then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html).
 * Uses [Sidekiq](https://github.com/mperham/sidekiq).
 * Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
 * Uses [CircleCI](https://circleci.com) for continuous testing.
@@ -65,4 +65,4 @@ automatically deploys an application for that branch.
 
 ![BigBinary](https://raw.githubusercontent.com/bigbinary/bigbinary-assets/press-assets/PNG/logo-light-solid-small.png?raw=true)
 
-wheel is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js .
+wheel is maintained by [BigBinary](https://www.BigBinary.com). BigBinary is a software consultancy company. We build web and mobile applications using Ruby on Rails, React.js, React Native and Node.js.

@@ -19,7 +19,7 @@ curl -v                                       \
 
 ### Update user information
 
-Using `wrap_parameters` .
+Using `wrap_parameters`.
 
 ```
 curl -v                                      \
@@ -31,7 +31,7 @@ curl -v                                      \
      http://localhost:3000/api/v1/users/john@example.com
 ```
 
-Without using `wrap_parameters` .
+Without using `wrap_parameters`.
 
 ```
 curl -v                                       \
