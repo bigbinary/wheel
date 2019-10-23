@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.6.5"
 
-gem 'rails', '~> 6.0.0'
+gem "rails", "~> 6.0.0"
 
 # friends of Rails
 gem "jquery-rails"
@@ -39,9 +39,9 @@ gem "font-awesome-sass", "~> 4.3.0"
 # Support for cross-browser css compatibilty
 gem "autoprefixer-rails"
 # forms made easy for rails
-gem "simple_form", "~>5.0" 
+gem "simple_form", "~>5.0"
 
-gem 'coffee-script'
+gem "coffee-script"
 
 # admin framework
 gem "activeadmin"
@@ -85,7 +85,7 @@ group :development do
 
   # speeds up development by keeping your application running in the background
   gem "spring"
-  gem 'pry'
+  gem "pry"
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem "web-console", "~> 3.0"
@@ -94,7 +94,7 @@ group :development do
   gem "listen", "~> 3.1.5"
 
   # reports N+1 queries
-  gem 'bullet'
+  gem "bullet"
 
   # A Ruby static code analyzer, based on the community Ruby style guide
   gem "rubocop", require: false
