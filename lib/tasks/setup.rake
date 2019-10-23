@@ -10,7 +10,7 @@ task :not_production do
     puts "you can execute following command."
     puts "DELETE_PRODUCTION_DATA=1 rake setup_sample_data"
     puts " "
-    puts "If you are using heroku then execute command as shown below"
+    puts "If you are using Heroku then execute command as shown below"
     puts "heroku run rake setup_sample_data DELETE_PRODUCTION_DATA=1 -a app_name"
     puts "*" * 50
     puts ""

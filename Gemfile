@@ -47,7 +47,7 @@ gem 'coffee-script'
 gem "activeadmin"
 # gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
-# for logging to work in heroku
+# for logging to work in Heroku
 gem "rails_12factor", group: [:staging, :production]
 
 # for email validation
@@ -71,7 +71,7 @@ gem "puma", "~> 3.2"
 # Attach comments to Active Record queries
 # gem 'marginalia'
 
-# timeout Rails request, needed if running on heroku- https://devcenter.heroku.com/articles/request-timeout
+# timeout Rails request, needed if running on Heroku- https://devcenter.heroku.com/articles/request-timeout
 gem "rack-timeout"
 
 # for displaying notifications

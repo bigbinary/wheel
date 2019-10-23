@@ -30,7 +30,7 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 * Uses [Bootstrap](http://getbootstrap.com) .
 * rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
 * Uses [devise](https://github.com/plataformatec/devise) .
-* Heroku ready. Push to heroku and it will work .
+* Heroku ready. Push to Heroku and it will work .
 * Uses [Honeybadger](https://www.honeybadger.io/).
 * Built in superadmin feature.
 * Uses modal box to showcase an example of editing information using modal box.
@@ -57,7 +57,7 @@ perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
 ## Heroku Review
 
 [Heroku Review](https://devcenter.heroku.com/articles/github-integration-review-apps)
-is enabled on this application. It means when a PR is sent then heroku
+is enabled on this application. It means when a PR is sent then Heroku
 automatically deploys an application for that branch.
 
 
