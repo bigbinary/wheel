@@ -32,7 +32,7 @@ jobs:
 
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
       # Enable if using yarn
-      - run: bin/yarn install
+      - run: bin/yarn install --cache-folder vendor/node_modules
 
       # Store bundle cache
       - save_cache:
@@ -68,7 +68,7 @@ jobs:
       - run: cp config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create db:schema:load --trace
       # Enable if using yarn
-      - run: bin/yarn install
+      - run: bin/yarn install --cache-folder vendor/node_modules
       - run: bin/webpack
       - run: bundle exec rails webpacker:compile
 
