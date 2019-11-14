@@ -30,6 +30,15 @@ jobs:
           - wheel-yarn-deps-{{ .Branch }}
           - wheel-yarn-deps
 
+      - run:
+          name: 'Update Node.js and npm'
+          command: |
+            curl -sSL "https://nodejs.org/dist/v11.12.0/node-v11.12.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v11.12.0-linux-x64/bin/node
+            curl https://www.npmjs.com/install.sh | sudo bash
+      - run:
+          name: Check current version of node
+          command: node -v
+
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
       # Enable if using yarn
       - run: bin/yarn install --cache-folder vendor/node_modules
