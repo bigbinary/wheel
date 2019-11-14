@@ -3,7 +3,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "app/**/*.{js,jsx,scss}": [
+    "app/**/*.{js,jsx,scss,json,yml,css}": [
       "eslint --fix",
       "git add"
     ],
