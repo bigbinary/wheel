@@ -23,12 +23,9 @@ ENV["RAILS_ENV"] ||= "test"
 
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
-require "knapsack"
 require "minitest/ci"
 
 Minitest::Ci.report_dir = "reports" if ENV["CI"]
-knapsack_adapter = Knapsack::Adapters::MinitestAdapter.bind
-knapsack_adapter.set_test_helper_path(__FILE__)
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
