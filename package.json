@@ -12,6 +12,11 @@
       "git add"
     ]
   },
+  "engines": {
+    "node": "11.x",
+    "npm": "6.x",
+    "yarn": "1.x"
+  },
   "devDependencies": {
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
