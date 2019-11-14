@@ -5,7 +5,7 @@
   },
   "env": {
     "SECRET_KEY_BASE":{
-      "required":true
+      "required": false
     },
    "RACK_ENV": {
       "value": "staging"
@@ -14,10 +14,10 @@
       "value": "staging"
     },
     "AWS_ACCESS_KEY_ID": {
-      "required":true
+      "required": false
     },
     "AWS_SECRET_ACCESS_KEY": {
-      "required":true
+      "required": false
     },
     "HEROKU_APP_NAME": {
       "required": true
