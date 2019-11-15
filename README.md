@@ -9,7 +9,7 @@ Install the latest [Node.js](https://nodejs.org) version.
 Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
 
 ```
-./bing/setup
+./bin/setup
 ```
 
 Start the server by executing following command.
