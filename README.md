@@ -5,16 +5,20 @@ Rails application built with opinions of BigBinary style of working.
 
 ## Local Development Setup
 
-Install the latest [Node.js](https://nodejs.org) version. Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
+Install the latest [Node.js](https://nodejs.org) version.
+Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
 
 ```
-bundle install
-bundle exec rake setup
-bin/yarn
-bundle exec rails server
+./bing/setup
 ```
 
-Visit http://localhost:3000 and login with email sam@example.com and password welcome.
+Start the server by executing following command.
+
+```
+foreman start -f Procfile.dev
+```
+
+Visit http://localhost:3000 and login with email `sam@example.com` and password `welcome`.
 
 ## Replace Wheel with your project name
 
