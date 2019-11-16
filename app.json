@@ -28,5 +28,6 @@
   },
   "formation": { },
   "addons": [ "heroku-postgresql" ],
-  "buildpacks": [ ]
+  "buildpacks": [ {"url": "heroku/nodejs"},
+                {"url": "heroku/ruby"}]
 }
