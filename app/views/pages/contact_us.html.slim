@@ -1,12 +1,10 @@
  .form-wrap__center   
-  = simple_form_for @contact, html: { class: 'bootstrap-center-form-medium' } do |f|
-    h1.page-title.mb-4  Contact us
+  = simple_form_for @contact, wrapper: :bootstrap3, html: { class: 'col-12 col-md-6 bootstrap-center-form-medium' } do |f|
+    h1.text-center.mb-5  Contact us
     .form-controls
       = f.input :title, required: true, input_html: { class: 'form-control' }
-    .form-controls
       = f.input :email, required: true, input_html: { class: 'form-control' }
-    .form-controls
-      = f.input :body,  as: :text, input_html: { class: 'form-control', rows: '3' }
+      = f.input :body,label:"Description",  as: :text, input_html: { class: 'form-control', rows: '3' }
     .form-buttons.pt-3
-      = f.button :submit, 'Send message', class: "btn btn-primary"
+      = f.button :submit, 'Send', class: "btn btn-primary"
 

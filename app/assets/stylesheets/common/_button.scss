@@ -1,3 +1,137 @@
 .btn {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  line-height: 1;
+  box-shadow: none !important;
+
   @include font-size(1.6rem);
+
+  white-space: nowrap;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .fa {
+    @include font-size(1.4rem);
+  }
+
+  &.btn-primary {
+    border-color: $c-primary !important;
+    color: $white !important;
+    background-color: $c-primary !important;
+
+    .fa {
+      color: $white;
+
+      @include font-size(1.4rem);
+    }
+
+    &:hover {
+      background-color: $c-primary-hover !important;
+    }
+  }
+
+  &.btn-outline {
+    color: $c-subtext;
+    background: $white;
+    border: 1px solid $c-grey-100;
+
+    .far {
+      color: $c-grey-700;
+    }
+
+    &:hover {
+      color: $c-subtext;
+      border-color: rgba($c-grey-700, 0.5);
+    }
+
+    &--primary {
+      border-color: $c-primary;
+      color: $c-primary;
+      background: $c-primary-lighter;
+
+      &:hover {
+        border-color: rgba($c-primary, 0.5);
+        color: $c-primary;
+        background: $c-primary-lighter;
+      }
+    }
+
+    &--icon {
+      @include font-size(1.4rem);
+
+      color: $c-grey-700;
+      border-radius: 2px;
+      padding: 5px 7px;
+    }
+  }
+
+  &.btn-danger {
+    border-color: $c-danger;
+    background: $white;
+    color: $c-danger;
+  }
+
+  &.btn-default {
+    color: $c-text;
+    background: $white;
+    border: 1px solid $c-grey-100;
+
+    &:hover {
+      border-color: $c-primary-light !important;
+      background: $c-primary-lighter;
+      color: $c-primary;
+
+      > .fa {
+        color: $c-primary;
+      }
+    }
+  }
+
+  &.btn-link {
+    color: $c-primary !important;
+    border: 0 none !important;
+    padding: 0 !important;
+  }
+
+  &.btn-text {
+    color: $c-subtext;
+
+    &:hover {
+      color: $c-primary;
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.processing {
+    animation: btnDisabled 1s forwards infinite;
+    background:
+      linear-gradient(
+        -75deg,
+        $white 10%,
+        $c-primary-light 10%
+      ) !important;
+    color: $c-primary !important;
+    opacity: 0.8 !important;
+    box-shadow: none !important;
+    cursor: default;
+    font-weight: 400;
+    pointer-events: none;
+    border: 1px solid $c-grey-100 !important;
+
+    &:hover {
+      color: $c-primary;
+      background: $c-primary;
+    }
+  }
 }
