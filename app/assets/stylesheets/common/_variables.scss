@@ -1,2 +1,50 @@
+// Primary Color
+$c-primary: #1a88ff;
+$c-primary-hover: #3395ff;
+$c-primary-light: #b3d7ff;
+$c-primary-lighter: #e6f2ff;
+
+// Background Color
+$c-bg-100: #fafafa;
+$c-bg-200: #f9fafc;
+$c-bg-300: #f9f9f9;
+$c-bg-400: #24292e;
+
+$c-state-disabled: #f0f0f0;
+$c-grey-100: #e6ecf1; // border, table border, seperator,
+$c-grey-200: #e2e3e4; // inputs border, checkbox
+$c-grey-300: #d8d8d8; // action dropdown
+$c-grey-700: #818b94; // icon
+
 $c-text: #484b4f;
 $c-subtext: #6f7276;
+$text-color-darkest: #1c1c1c;
+$text-color: #222;
+
+// success, danger, warning - bg color, text color
+$c-success: #76ca54;
+$c-success-light: #e5fbe7;
+$c-success-lighter: #b9df90;
+$c-success-text: #3c763d;
+$c-danger: #f44336;
+$c-danger-light: #ffedeb;
+$c-danger-lighter: #f8d7da;
+$c-danger-text: #a94442;
+$c-warning: #ff8f2f;
+$c-warning-light: #fff0dc;
+$c-warning-lighter: #ffdd86;
+$c-warning-text: #8b6d3b;
+
+//Toast colors
+$c-toast-success: #3c763d;
+$c-toast-warning: #ff8f2f;
+$c-toast-info: #6f7276;
+$c-toast-error: #f44336;
+
+// Media Queries
+$small-device: '(max-width: 575px)';
+$phone: '(max-width: 767px)'; // Only phone
+$tablet: '(max-width: 991px)'; // Phone and tablet
+$laptop-only: '(min-width: 992px) and (max-width: 1200px)'; // Only laptop
+$laptop: '(min-width: 992px)'; // Laptop and desktop
+$desktop: '(min-width: 1200px)'; // Only desktop

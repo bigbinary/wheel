@@ -2,17 +2,17 @@
     = simple_form_for(resource, as: resource_name,                                      \
                                 url: session_path(resource_name),                       \
                                 wrapper: :bootstrap3,                                   \
-      html: { class: 'bootstrap-center-form-medium' }) do |f|
+      html: { class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
 
-      h1.page-title.text-center.mb-4 Sign in
+      h1.text-center.mb-5 Sign In
       .form-controls
         = f.input :email, placeholder: 'Email', label: false, autofocus: true, input_html: { class: 'form-control' }
-        = f.input :password, placeholder: 'Enter your password', label: false, input_html: { class: 'form-control' }
+        = f.input :password, placeholder: 'Password', label: false, input_html: { class: 'form-control' }
       .d-flex.justify-content-between
         .d-flex.align-items-center
           - if devise_mapping.rememberable?
             = f.input :remember_me, input_html: { class: 'mr-2' }, as: :boolean, wrapper: :default
         .form-buttons
-          = f.button :submit, "Sign in", class: 'btn btn-primary'
-      .devise-links.d-flex.justify-content-between.mt-2
-        = render "users/shared/links"
+          = f.button :submit, "Login", class: 'btn btn-primary'
+    .col-12.col-md-6.devise-links.d-flex.justify-content-between.mt-2.px-0
+      = render "users/shared/links"

@@ -1,8 +1,8 @@
 = simple_form_for(resource, as: resource_name,                                                    \
                             url: password_path(resource_name),                                    \
                             wrapper: :bootstrap3,                                                 \
-                            html: { method: :put, class: 'bootstrap-center-form-medium' }) do |f|
-  h2 Change your password
+                            html: { method: :put, class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
+  h1.text-center.mb-5 Change your password
   = f.input :reset_password_token, as: :hidden, input_html: { class: 'form-control' }
   .form-controls
     = f.full_error :reset_password_token
@@ -17,5 +17,5 @@
                                       input_html: { class: 'form-control' }
   .form-buttons
     = f.button :submit, "Change my password", class: 'btn-primary'
-  .devise-links
-    = render "users/shared/links"
+.col-12.col-md-6.devise-links.mt-2.px-0
+  = render "users/shared/links"

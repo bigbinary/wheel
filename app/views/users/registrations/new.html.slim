@@ -2,16 +2,16 @@
   = simple_form_for(resource, as:  resource_name,                                     \
                               url: registration_path(resource_name),                  \
                               wrapper: :bootstrap3,                                   \
-                              html: { class: 'bootstrap-center-form-medium' }) do |f|
-    h1.page-title.text-center.mb-4 Sign up
+                              html: { class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
+    h1.text-center.mb-5 Sign up
     .form-controls
       = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
       = f.input :first_name, required: true, input_html: { class: 'form-control' }
       = f.input :last_name, required: true, input_html: { class: 'form-control' }
       = f.input :password, required: true, input_html: { class: 'form-control' }
-      = f.input :password_confirmation, required: true, input_html: { class: 'form-control' }
+      = f.input :password_confirmation, label:"Confirm password", required: true, input_html: { class: 'form-control' }
     .d-flex.justify-content-between.align-items-center.mt-2  
       .form-buttons
-        = f.button :submit, "Sign up", class: 'btn btn-primary'
-      .devise-links
-        = render "users/shared/links"
+        = f.button :submit, "Create your Wheel account", class: 'btn btn-primary'
+  .col-12.col-md-6.devise-links.mt-2.px-0
+    = render "users/shared/links"

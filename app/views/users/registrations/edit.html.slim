@@ -2,17 +2,14 @@
   = simple_form_for(resource, as:  resource_name,                                                   \
                               url: profile_update_path,                                             \
                               wrapper: :bootstrap3,                                                 \
-                              html: { method: :put, class: 'bootstrap-center-form-medium' }) do |f|
-    h1.page-title.mb-4 
-      | Edit #{resource_name.to_s.humanize}
+                              html: { method: :put, class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
+    h1.text-center.mb-5
+      | Basic Details
     .form-controls
       = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
       = f.input :first_name, required: true, input_html: { class: 'form-control' }
       = f.input :last_name, required: true, input_html: { class: 'form-control' }
-      .form-controls
       = f.input :current_password, required: true, input_html: { class: 'form-control' }
-      small
-      | We need your current password to confirm your changes
     .form-buttons.mt-3
       = f.button :submit, "Update", class: 'btn btn-primary'
 

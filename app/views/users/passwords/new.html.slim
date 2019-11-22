@@ -2,11 +2,12 @@
   = simple_form_for(resource, as:  resource_name,                                                    \
                               url: password_path(resource_name),                                     \
                               wrapper: :bootstrap3,                                                  \
-                              html: { method: :post, class: 'bootstrap-center-form-medium' }) do |f|
-    h1.page-title.text-center.mb-4 Forgot your password?
+                              html: { method: :post, class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
+    h1.text-center.mb-5 Forgot your password?
+    div.field-description.text-center.mb-5  Enter your email address below and we'll send you a link to reset your password.
     .form-controls
       = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
     .form-buttons
-      = f.button :submit, "Send me reset password instructions", class: 'btn btn-primary'
-    .devise-links.d-flex.justify-content-between.mt-2
-      = render "users/shared/links"
+      = f.button :submit, "Send reset password email", class: 'btn btn-primary'
+  .col-12.col-md-6.devise-links.d-flex.justify-content-between.mt-2.px-0
+    = render "users/shared/links"
