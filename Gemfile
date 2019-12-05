@@ -64,7 +64,7 @@ gem "mail_interceptor", group: [:development, :staging]
 gem "email_prefixer"
 
 # application server
-gem "puma", "~> 3.2"
+gem "puma", "~> 3.12"
 
 # Attach comments to Active Record queries
 # gem 'marginalia'
