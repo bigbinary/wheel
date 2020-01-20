@@ -62,8 +62,6 @@ jobs:
           paths:
             - vendor/node_modules
 
-      - run: mkdir reports
-
      # Database setup
       - run: cp config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create db:schema:load --trace
