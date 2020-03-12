@@ -28,7 +28,7 @@ gem "devise", "~> 4.7"
 gem "honeybadger", "~> 3.1"
 
 # Bootstrap framework
-gem "bootstrap", "~> 4.3.1"
+gem "bootstrap", "~> 4.4.1"
 
 # Fonts
 gem "font-awesome-sass", "~> 4.3.0"
