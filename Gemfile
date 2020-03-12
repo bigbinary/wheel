@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.7.0"
 
-gem "rails", "~> 6.0.0"
+gem "rails", "~> 6.0.2.1"
 
 # friends of Rails
 gem "jquery-rails"
