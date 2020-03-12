@@ -3,7 +3,6 @@ jobs:
   build:
     parallelism: 1
     docker:
-      # specify the version you desire here
        - image: circleci/ruby:2.7.0-node-browsers
        - image: circleci/postgres:11.2
     working_directory: ~/wheel
@@ -23,7 +22,6 @@ jobs:
           - gem-cache-{{ checksum "Gemfile.lock" }}
           - gem-cache
 
-      # Enable if using yarn
       - restore_cache:
           keys:
           - wheel-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
@@ -31,7 +29,6 @@ jobs:
           - wheel-yarn-deps
 
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
-      # Enable if using yarn
       - run: bin/yarn install --cache-folder vendor/node_modules
 
       # Store bundle cache
@@ -48,7 +45,7 @@ jobs:
           paths:
             - vendor/bundle
 
-      # Store yarn cache: When using Yarn
+      # Store yarn cache
       - save_cache:
           key: wheel-yarn-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
@@ -62,10 +59,8 @@ jobs:
           paths:
             - vendor/node_modules
 
-     # Database setup
       - run: cp config/database.yml.ci config/database.yml
       - run: bundle exec rake db:create db:schema:load --trace
-      # Enable if using yarn
       - run: bin/yarn install --cache-folder vendor/node_modules
       - run: bin/webpack
       - run: bundle exec rails webpacker:compile
