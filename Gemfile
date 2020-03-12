@@ -12,73 +12,71 @@ gem "sprockets-rails"
 gem "sass-rails", ">= 5.0.3"
 gem "uglifier", ">= 2.7.1"
 
-# Use Webpack to manage app-like JavaScript modules in Rails
 gem "webpacker", "~> 4.0"
 
 # database
 gem "pg"
 
-# for building JSON
+# JSON builder
 gem "jbuilder", ">= 2.2.13"
 
-# for authentication
+# Authentication
 gem "devise", "~> 4.7"
 
-# for error tracking
+# Error tracking
 gem "honeybadger", "~> 3.1"
 
-# for using bootstrap framework
+# Bootstrap framework
 gem "bootstrap", "~> 4.3.1"
 
-# for using font-awesome
+# Fonts
 gem "font-awesome-sass", "~> 4.3.0"
 
-# Support for cross-browser css compatibilty
+# Support cross-browser css compatibilty
 gem "autoprefixer-rails"
 
-# forms made easy for rails
+# Forms made easy for rails
 gem "simple_form", "~>5.0"
 
 gem "coffee-script"
 
-# admin framework
+# Admin framework
 gem "activeadmin"
 # gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
-# for logging to work in Heroku
+# Heroku logging
 gem "rails_12factor", group: [:staging, :production]
 
-# for email validation
+# Email validation
 gem "email_validator"
 
-# templating engine
+# Templating engine
 gem "slim"
-
-# Slim templates generator for Rails 3, 4 and 5
 gem "slim-rails"
 
-# intercepts outgoing emails in non-production environment
+# Intercepts outgoing emails in non-production environment
 gem "mail_interceptor", group: [:development, :staging]
 
 # Adds prefix to subject in emails
 gem "email_prefixer"
 
-# application server
+# Application server
 gem "puma", "~> 3.12"
 
 # Attach comments to Active Record queries
 # gem 'marginalia'
 
-# timeout Rails request, needed if running on Heroku- https://devcenter.heroku.com/articles/request-timeout
+# Rails request timeout, needed if running on Heroku-
+# https://devcenter.heroku.com/articles/request-timeout
 gem "rack-timeout"
 
-# for displaying notifications
+# Display notifications
 gem "jquery-growl-rails"
 
-# For faster env load times
+# Faster env load times
 gem "bootsnap"
 
-# Simple, efficient background processing for Ruby
+# Background jobs
 gem "sidekiq"
 
 group :development do
@@ -100,10 +98,10 @@ group :development do
   # A Ruby static code analyzer, based on the community Ruby style guide
   gem "rubocop", require: false
 
-  # Patch-level verification for Bundler. https://github.com/rubysec/bundler-audit
+  # Patch-level verification for Bundler.
   gem "bundler-audit", require: false
 
-  # vulnerabity checker for Ruby itself. https://github.com/civisanalytics/ruby_audit
+  # vulnerabity checker for Ruby itself.
   gem "ruby_audit", require: false
 end
 
@@ -114,6 +112,6 @@ group :test do
   # for test coverage report
   gem "simplecov", require: false
 
-  # Minitest reporter plugin for CircleCI. Gerates JUnit xml reports from tests. https://github.com/circleci/minitest-ci
+  # Minitest reporter plugin for CircleCI.
   gem "minitest-ci"
 end
