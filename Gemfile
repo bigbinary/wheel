@@ -45,9 +45,6 @@ gem "coffee-script"
 gem "activeadmin"
 # gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
-# Heroku logging
-gem "rails_12factor", group: [:staging, :production]
-
 # Email validation
 gem "email_validator"
 
