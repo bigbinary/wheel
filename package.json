@@ -19,15 +19,16 @@
     "eslint-plugin-react": "^7.14.3",
     "husky": "^0.14.3",
     "lint-staged": "^4.1.0",
+    "node-sass": "^4.13.0",
     "prettier": "^1.6.1",
-    "webpack-dev-server": "^3.2.1",
-    "node-sass": "^4.13.0"
+    "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
+    "core-js": "3",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
