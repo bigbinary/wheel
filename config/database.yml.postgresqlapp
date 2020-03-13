@@ -7,14 +7,18 @@
 # If you prefer to have branch name in the database name then use following
 # database: <%= "#{repository_name}_development_#{branch_name}"[0...63] %>
 
-development:
+default: &default
   adapter: postgresql
-  database: <%= "#{repository_name}_development"[0...63] %>
+  encoding: unicode
   host: localhost
+  username: postgres
+  password:
   pool: 5
 
+development:
+  <<: *default
+  database: <%= "#{repository_name}_development"[0...63] %>
+
 test:
-  adapter: postgresql
+  <<: *default
   database: <%= "#{repository_name}_test"[0...63] %>
-  host: localhost
-  pool: 5
