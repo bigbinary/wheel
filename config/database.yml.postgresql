@@ -1,18 +1,23 @@
 <% branch_name = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '') %>
 <% repository_name = `git rev-parse --show-toplevel`.split('/').last.strip %>
 
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: <%= repository_name %>_development
-  pool: 5
+  host: localhost
   username: postgres
   password:
+  pool: 5
+
+
+development:
+  <<: *default
+  database: <%= repository_name %>_development
+
+staging:
+  <<: *default
+  database: <%= "#{repository_name}_staging" %>
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: <%= repository_name %>_test
-  pool: 5
-  username: postgres
-  password:
