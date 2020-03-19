@@ -15,7 +15,7 @@ jobs:
 
       - checkout
 
-      # Download and cache dependencies
+      # Download cache dependencies
       - restore_cache:
           keys:
           - gem-cache-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
@@ -28,6 +28,7 @@ jobs:
           - wheel-yarn-deps-{{ .Branch }}
           - wheel-yarn-deps
 
+      # Bundle install
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
 
       # Store bundle cache
@@ -49,6 +50,11 @@ jobs:
           shell: /bin/bash
           command: bundle exec bundle-audit check --update
 
+      # Setup database
+      - run: cp config/database.yml.ci config/database.yml
+      - run: bundle exec rake db:create db:schema:load --trace
+
+      # Yarn install
       - run: bin/yarn install --cache-folder vendor/node_modules
 
       # Store yarn cache
@@ -65,9 +71,7 @@ jobs:
           paths:
             - vendor/node_modules
 
-      - run: cp config/database.yml.ci config/database.yml
-      - run: bundle exec rake db:create db:schema:load --trace
-      - run: bin/yarn install --cache-folder vendor/node_modules
+      # Generate assets
       - run: bin/webpack
       - run: bundle exec rails webpacker:compile
 
