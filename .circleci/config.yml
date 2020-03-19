@@ -29,6 +29,12 @@ jobs:
           - wheel-yarn-deps
 
       - run: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+
+      # Bundler audit
+      - run:
+          shell: /bin/bash
+          command: bundle exec bundle-audit check --update
+
       - run: bin/yarn install --cache-folder vendor/node_modules
 
       # Store bundle cache
@@ -70,11 +76,6 @@ jobs:
       - run:
           shell: /bin/bash
           command: bundle exec rake test --trace
-
-      # Bundler audit
-      - run:
-          shell: /bin/bash
-          command: bundle exec bundle-audit check --update
 workflows:
   version: 2
   commit:
