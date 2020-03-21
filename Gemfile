@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.7.0"
 
-gem "rails", "~> 6.0.2.1"
+gem "rails", "~> 6.0.2.2"
 gem "sprockets", "~> 3.7.2"
 
 # friends of Rails
@@ -43,7 +43,6 @@ gem "coffee-script"
 
 # Admin framework
 gem "activeadmin"
-# gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # Email validation
 gem "email_validator"
@@ -60,9 +59,6 @@ gem "email_prefixer"
 
 # Application server
 gem "puma", "~> 3.12"
-
-# Attach comments to Active Record queries
-# gem 'marginalia'
 
 # Rails request timeout, needed if running on Heroku-
 # https://devcenter.heroku.com/articles/request-timeout
