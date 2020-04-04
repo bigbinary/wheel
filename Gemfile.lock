@@ -124,7 +124,7 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
-    honeybadger (3.3.1)
+    honeybadger (4.6.0)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.11.0)
@@ -337,7 +337,7 @@ DEPENDENCIES
   email_prefixer
   email_validator
   font-awesome-sass (~> 4.3.0)
-  honeybadger (~> 3.1)
+  honeybadger
   jbuilder (>= 2.2.13)
   jquery-growl-rails
   jquery-rails
