@@ -25,7 +25,7 @@ gem "jbuilder", ">= 2.2.13"
 gem "devise", "~> 4.7"
 
 # Error tracking
-gem "honeybadger", "~> 3.1"
+gem "honeybadger"
 
 # Bootstrap framework
 gem "bootstrap", "~> 4.4.1"
