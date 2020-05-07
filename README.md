@@ -26,7 +26,7 @@ Let's say that the project name is `Pump`. Execute the command below to
 replace all occurrences of `Wheel` with `Pump`.
 
 ```
-perl -e "s/Wheel/Pump/g;" -pi $(find . -type f)
+perl -e "s/Wheel/Pump/g;" -pi $(git ls-files)
 ```
 
 ## Features
