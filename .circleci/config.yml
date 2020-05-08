@@ -3,7 +3,7 @@ jobs:
   build:
     parallelism: 1
     docker:
-       - image: circleci/ruby:2.7.0-node-browsers
+       - image: circleci/ruby:2.7.1-node-browsers
        - image: circleci/postgres:11.2
     working_directory: ~/wheel
     environment:
