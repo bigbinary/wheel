@@ -5,7 +5,7 @@
   },
   "env": {
     "SECRET_KEY_BASE":{
-      "required": false
+      "generator": "secret"
     },
    "RACK_ENV": {
       "value": "staging"
