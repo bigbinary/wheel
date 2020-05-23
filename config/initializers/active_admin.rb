@@ -210,4 +210,5 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+  config.use_webpacker = true
 end
