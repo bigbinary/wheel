@@ -58,7 +58,7 @@ gem "mail_interceptor", group: [:development, :staging]
 gem "email_prefixer"
 
 # Application server
-gem "puma", "~> 3.12"
+gem "puma"
 
 # Rails request timeout, needed if running on Heroku-
 # https://devcenter.heroku.com/articles/request-timeout
