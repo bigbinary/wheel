@@ -4,7 +4,9 @@ jobs:
     parallelism: 1
     docker:
        - image: circleci/ruby:2.7.1-node-browsers
-       - image: circleci/postgres:11.2
+       - image: circleci/postgres:12.2
+         environment:
+           POSTGRES_HOST_AUTH_METHOD: trust
     working_directory: ~/wheel
     environment:
       TZ: "/usr/share/zoneinfo/America/New_York"
