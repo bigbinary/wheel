@@ -90,7 +90,7 @@ group :development do
   gem "bullet"
 
   # A Ruby static code analyzer, based on the community Ruby style guide
-  gem "rubocop", require: false
+  gem 'rubocop', '~> 0.82.0', require: false
 
   # Patch-level verification for Bundler.
   gem "bundler-audit", require: false
