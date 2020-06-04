@@ -240,6 +240,10 @@ GEM
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.10.1)
     ruby_audit (1.2.0)
       bundler-audit (~> 0.6.0)
@@ -341,6 +345,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 6.0.3)
   rubocop (~> 0.82.0)
+  rubocop-rails
   ruby_audit
   sass-rails (>= 5.0.3)
   sidekiq
