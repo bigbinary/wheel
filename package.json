@@ -10,6 +10,10 @@
     "{app,test}/**/*.rb": [
       "bundle exec rubocop -a",
       "git add"
+    ],
+   "Gemfile": [
+      "bundle exec rubocop -a",
+      "git add"
     ]
   },
   "devDependencies": {
