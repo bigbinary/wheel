@@ -11,7 +11,7 @@
       "bundle exec rubocop -a",
       "git add"
     ],
-   "Gemfile": [
+    "Gemfile": [
       "bundle exec rubocop -a",
       "git add"
     ]
@@ -30,6 +30,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4.0.2",
+    "babel-eslint": "^10.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
     "core-js": "3",
