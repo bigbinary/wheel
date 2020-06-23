@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.7.1"
 
-gem "rails", "~> 6.0.3"
+gem "rails", "~> 6.0.3.2"
 gem "sprockets", "~> 3.7.2"
 
 # friends of Rails
