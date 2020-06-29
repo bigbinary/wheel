@@ -20,13 +20,13 @@ foreman start -f Procfile.dev
 
 Visit http://localhost:3000 and login with email `sam@example.com` and password `welcome`.
 
-## Replace Wheel with your project name
+## Replace TestMergify with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
-replace all occurrences of `Wheel` with `Pump`.
+replace all occurrences of `TestMergify` with `Pump`.
 
 ```
-perl -e "s/Wheel/Pump/g;" -pi $(git ls-files)
+perl -e "s/TestMergify/Pump/g;" -pi $(git ls-files)
 ```
 
 ## Features
