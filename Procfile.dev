@@ -1,2 +1,4 @@
-web:  bundle exec puma -C config/puma.rb
+web:  bundle exec rails server -p 3000 -b localhost
+webpacker: ./bin/webpack-dev-server
+worker: redis-server
 worker: bundle exec sidekiq -q default
