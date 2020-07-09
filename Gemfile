@@ -60,10 +60,6 @@ gem "email_prefixer"
 # Application server
 gem "puma", "~> 3.12"
 
-# Rails request timeout, needed if running on Heroku-
-# https://devcenter.heroku.com/articles/request-timeout
-gem "rack-timeout"
-
 # Display notifications
 gem "jquery-growl-rails"
 
