@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  minitest:
     parallelism: 1
     docker:
        - image: circleci/ruby:2.7.1-node-browsers
@@ -85,7 +85,7 @@ workflows:
   version: 2
   commit:
     jobs:
-      - build
+      - minitest
   nightly:
     triggers:
       - schedule:
@@ -95,4 +95,4 @@ workflows:
               only:
                 - master
     jobs:
-      - build
+      - minitest
