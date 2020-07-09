@@ -15,7 +15,7 @@ Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
 Start the server by executing following command.
 
 ```
-foreman start -f Procfile.dev
+bundle exec rails server
 ```
 
 Visit http://localhost:3000 and login with email `sam@example.com` and password `welcome`.
