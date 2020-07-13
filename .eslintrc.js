@@ -3,7 +3,7 @@ module.exports = {
     "browser": true,
     "es6": true
   },
-  "extends": ["plugin:prettier/recommended", "eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
   "settings": {
     "react": {
       "version": "detect"
@@ -20,12 +20,12 @@ module.exports = {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "parser": "babel-eslint",
   "plugins": [
     "react"
   ],
   "rules": {
     "semi": ["error", "always"],
-    "prettier/prettier": ["error", { "trailingComma": "es5" }],
-    "no-console": 2
+    "no-console": "error"
   }
 };
