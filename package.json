@@ -3,7 +3,7 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "app/**/*.{js,jsx,json,yml}": [
+    "app/**/*.{html,md,js,jsx,json,yml}": [
       "prettier --write",
       "eslint --fix",
       "git add"
