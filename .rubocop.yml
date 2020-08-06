@@ -172,7 +172,7 @@ Lint/ParenthesesAsGroupedExpression:
 
 # Enabled Rails cops for the command rubocop -a
 Rails:
-  Enabled: true
+  Enabled: false
 
 # Correct usage of Date methods in Rails
 Rails/Date:
