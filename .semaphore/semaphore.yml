@@ -1,0 +1,51 @@
+version: v1.0
+name: Wheel
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+global_job_config:
+  prologue:
+    commands:
+      - checkout
+      - sem-version ruby 2.7.1
+      - sem-service postgres 9.6
+      - cache restore
+      - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+      - yarn install
+      - cache store
+      - cp config/database.yml.ci config/database.yml
+      - bundle exec rake db:create db:schema:load --trace
+
+  epilogue:
+    commands:
+      - artifact push job reports
+
+  env_vars:
+    - name: TZ
+      value: "/usr/share/zoneinfo/America/New_York"
+    - name: RAILS_ENV
+      value: "test"
+    - name: RACK_ENV
+      value: "test"
+
+blocks:
+  - name: Static Code Analysis
+    task:
+      jobs:
+        - name: Ruby Audit
+          commands:
+            - bundle exec ruby-audit check
+
+        - name: Rubocop
+          commands:
+            - bundle exec rubocop
+
+  - name: Tests
+    task:
+      jobs:
+        - name: Minitests
+          commands:
+            - bin/webpack
+            - bundle exec rails test
