@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/bigbinary/wheel.png?style=badge)](https://circleci.com/gh/bigbinary/wheel)
+[![Semaphore CI](https://bigbinary.semaphoreci.com/badges/wheel.svg)](https://bigbinary.semaphoreci.com/projects/wheel)
 
 Made by the team at [BigBinary](https://bigbinary.com), this is a base project to quickly spin up a
 Rails application built with opinions of BigBinary style of working.
