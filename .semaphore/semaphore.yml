@@ -1,5 +1,5 @@
 version: v1.0
-name: Wheel
+name: wheel
 agent:
   machine:
     type: e1-standard-2
@@ -10,7 +10,8 @@ global_job_config:
     commands:
       - checkout
       - sem-version ruby 2.7.1
-      - sem-service postgres 9.6
+      - sem-version node 12.16.0
+      - sem-service start postgres 9.6
       - cache restore
       - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
       - yarn install
@@ -31,7 +32,7 @@ global_job_config:
       value: "test"
 
 blocks:
-  - name: Static Code Analysis
+  - name: Checking a few things before running minitest
     task:
       jobs:
         - name: Ruby Audit
@@ -45,7 +46,7 @@ blocks:
   - name: Tests
     task:
       jobs:
-        - name: Minitests
+        - name: minitest 
           commands:
             - bin/webpack
             - bundle exec rails test
