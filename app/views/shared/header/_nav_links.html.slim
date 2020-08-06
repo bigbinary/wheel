@@ -1,12 +1,12 @@
-ul.nav.navbar-nav
-  li.nav-item
-    = link_to 'Home', root_path, class: 'nav-link'
-  li.nav-item
-    = link_to 'About', pages_about_path, class: 'nav-link'
-  li.nav-item
-    = link_to 'Contact', pages_contact_us_path, class: 'nav-link bg-red-500'
+.flex.ml-auto.items-center
+  .nav-item
+    = link_to 'Home', root_path, class: 'nav-link ml-4 hover:text-blue-700'
+  .nav-item
+    = link_to 'About', pages_about_path, class: 'nav-link ml-4 hover:text-blue-700'
+  .nav-item
+    = link_to 'Contact', pages_contact_us_path, class: 'nav-link ml-4 hover:text-blue-700'
   - if user_signed_in?
       = render 'shared/header/user_is_signed_in'
   - else
-    li.nav-item
-      = link_to 'Sign In', new_session_path(:user), class: 'nav-link'
+    .nav-item
+      = link_to 'Sign In', new_session_path(:user), class: 'nav-link ml-4 hover:text-blue-700'

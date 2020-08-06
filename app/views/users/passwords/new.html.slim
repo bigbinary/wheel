@@ -1,13 +1,18 @@
-.form-wrap__center  
+.flex.flex-col.w-full.items-center.lg:w-1/2.mx-auto.py-20
   = simple_form_for(resource, as:  resource_name,                                                    \
                               url: password_path(resource_name),                                     \
                               wrapper: :bootstrap3,                                                  \
-                              html: { method: :post, class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
-    h1.text-center.mb-5 Forgot your password?
-    div.field-description.text-center.mb-5  Enter your email address below and we'll send you a link to reset your password.
-    .form-controls
-      = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
+                              html: { class: 'bg-white / border shadow-sm / rounded-lg px-8 pt-6 pb-8 mb-4 / w-full' }) do |f|
+
+    h2.text-2xl.text-center.font-semibold.mb-1.text-black Forgot your password?
+    .text-center.text-gray-600.mb-10 Enter your email address below and we'll send you a link to reset your password.
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Email
+      = f.input_field :email, required: true, autofocus: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
     .form-buttons
-      = f.button :submit, "Send reset password email", class: 'btn btn-primary'
-  .col-12.col-md-6.devise-links.d-flex.justify-content-between.mt-2.px-0
+      = f.button :submit, "Send reset password email", class: 'font-semibold text-base text-white / px-5 py-2 rounded-md / bg-blue-700 border border-blue-700 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out'
+
+  .flex.w-full.justify-center.py-2
     = render "users/shared/links"

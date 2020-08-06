@@ -17,16 +17,16 @@ html lang="en"
     link href="https://fonts.gstatic.com/" rel="preconnect"  crossorigin="anonymous" /
     link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet" /
 
-  body
+  body.bg-gray-200.min-h-screen.flex.flex-col
     = render 'shared/header/nav'
     = render 'shared/bootstrap_flash'
 
-    .wrapper.flex-grow-1
-      .container.py-5
+    .wrapper.flex.flex-grow
+      .flex.flex-grow.flex-col.container.mx-auto.px-4
         = yield
 
-    .footer.box-shadow.box-shadow--top
-      .container.footer-text.py-3
+    .footer.bg-white.border-t-2.bg-white.py-2.mt-6
+      .flex.flex-grow-1.flex-col.container.mx-auto.px-4.text-center
         = render 'shared/footer'
 
   = stylesheet_pack_tag "application"

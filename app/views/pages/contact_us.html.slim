@@ -1,10 +1,20 @@
- .form-wrap__center   
-  = simple_form_for @contact, wrapper: :bootstrap3, html: { class: 'col-12 col-md-6 bootstrap-center-form-medium' } do |f|
-    h1.text-center.mb-5  Contact us
-    .form-controls
-      = f.input :title, required: true, input_html: { class: 'form-control' }
-      = f.input :email, required: true, input_html: { class: 'form-control' }
-      = f.input :body,label:"Description",  as: :text, input_html: { class: 'form-control', rows: '3' }
-    .form-buttons.pt-3
-      = f.button :submit, 'Send', class: "btn btn-primary"
+.flex.flex-col.w-full.items-center.lg:w-1/2.mx-auto.py-20
+  = simple_form_for @contact, wrapper: :bootstrap3, html: { class: 'bg-white / border shadow-sm / rounded-lg px-8 pt-6 pb-8 mb-4 / w-full' } do |f|
+    h2.text-2xl.text-center.font-semibold.mb-10.text-black Contact us
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Title
+      = f.input_field :title, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Email
+      = f.input_field  :email, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Description
+      = f.input_field :body,label:"Description",  as: :text, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .flex.justify-between.items-center
+      .form-buttons
+      = f.button :submit, 'Send', class: 'font-semibold text-base text-white / px-5 py-2 rounded-md / bg-blue-700 border border-blue-700 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out'
 

@@ -1,17 +1,34 @@
-.form-wrap__center   
+.flex.flex-col.w-full.items-center.lg:w-1/2.mx-auto.py-20
   = simple_form_for(resource, as:  resource_name,                                     \
                               url: registration_path(resource_name),                  \
                               wrapper: :bootstrap3,                                   \
-                              html: { class: 'col-12 col-md-6 bootstrap-center-form-medium' }) do |f|
-    h1.text-center.mb-5 Sign up
-    .form-controls
-      = f.input :email, required: true, autofocus: true, input_html: { class: 'form-control' }
-      = f.input :first_name, required: true, input_html: { class: 'form-control' }
-      = f.input :last_name, required: true, input_html: { class: 'form-control' }
-      = f.input :password, required: true, input_html: { class: 'form-control' }
-      = f.input :password_confirmation, label:"Confirm password", required: true, input_html: { class: 'form-control' }
-    .d-flex.justify-content-between.align-items-center.mt-2  
+                              html: { class: 'bg-white / border shadow-sm / rounded-lg px-8 pt-6 pb-8 mb-4 / w-full' }) do |f|
+    
+    h2.text-2xl.text-center.font-semibold.mb-10.text-black Create account
+    
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Email
+      = f.input_field :email, required: true, autofocus: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black First name
+      = f.input_field :first_name, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Last name
+      = f.input_field :last_name, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Password
+      = f.input_field :password, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .mb-8
+      label.block.font-semibold.mb-1.text-black Password confirmation
+      = f.input_field :password_confirmation, label:"Confirm password", required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+
+    .flex.justify-between.items-center
       .form-buttons
-        = f.button :submit, "Create your Wheel account", class: 'btn btn-primary'
-  .col-12.col-md-6.devise-links.mt-2.px-0
+        = f.button :submit, "Create your Wheel account", class: 'font-semibold text-base text-white / px-5 py-2 rounded-md / bg-blue-700 border border-blue-700 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out'
+  
+  .flex.w-full.justify-center.py-2
     = render "users/shared/links"
