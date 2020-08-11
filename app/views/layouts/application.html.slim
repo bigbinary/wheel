@@ -22,10 +22,10 @@ html lang="en"
     = render 'shared/bootstrap_flash'
 
     .wrapper.flex.flex-grow
-      .flex.flex-grow.flex-col.container.mx-auto.px-4
+      .flex-col.container.mx-auto.px-4
         = yield
 
-    .footer.bg-white.border-t-2.bg-white.py-2.mt-6
+    .footer.bg-white.border-t.shadow-sm.bg-white.py-2.mt-6
       .flex.flex-grow-1.flex-col.container.mx-auto.px-4.text-center
         = render 'shared/footer'
 

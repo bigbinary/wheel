@@ -1,11 +1,8 @@
-.header
-  nav.navbar.navbar-expand-lg
-    .container
-      = link_to 'Wheel', root_path, class: 'navbar-brand'
+.header.bg-white.border-b-2.bg-white.shadow-sm.py-4.mb-6
+  .container.mx-auto.flex.flex-grow-1.px-4
+    = link_to 'Wheel', root_path, class: 'text-2xl font-semibold'
 
-      button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
-        span.navbar-toggler-icon
+    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
+      span.navbar-toggler-icon
 
-      .collapse.navbar-collapse#navbarSupportedContent
-        .navbar-nav.ml-auto
-          = render 'shared/header/superadmin_nav_links'
+    = render 'shared/header/superadmin_nav_links'
