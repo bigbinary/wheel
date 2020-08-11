@@ -27,9 +27,6 @@ gem "devise", "~> 4.7"
 # Error tracking
 gem "honeybadger"
 
-# Bootstrap framework
-gem "bootstrap", "~> 4.4.1"
-
 # Fonts
 gem "font-awesome-sass", "~> 4.3.0"
 

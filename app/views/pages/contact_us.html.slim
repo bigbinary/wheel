@@ -10,7 +10,7 @@ div class=formContainer
   h2 class=formHeading
     | Contact us 
   
-  = simple_form_for @contact, wrapper: :bootstrap3, html: { class: formWrapper } do |f|
+  = simple_form_for @contact, html: { class: formWrapper } do |f|
     label class=labelStyle Title
     = f.input_field :title, required: true, class: inputStyle
 
