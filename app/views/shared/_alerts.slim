@@ -1,0 +1,9 @@
+div data-behavior="alert-container"
+  - flash.each do |name, message|
+    - if message.present?
+      .container.mx-auto.flex.justify-center
+        div class="w-1/2 rounded-lg border py-2 px-4 #{name.to_s == 'alert' ? "bg-red-200 border-red-600" : "bg-green-200 border-green-700"}"
+          div class="flex flex-row items-center font-medium justify-between w-full #{name.to_s == 'alert' ? "text-red-600" : "text-green-700"}"
+            = content_tag :div, message, id: "flash_#{name}" if message.is_a?(String)
+            a class="cursor-pointer text-2xl leading-none relative -mt-1" data-behavior="alert-close" ×
+

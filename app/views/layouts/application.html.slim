@@ -19,14 +19,12 @@ html lang="en"
 
   body.bg-gray-100.min-h-screen.flex.flex-col.antialiased
     = render 'shared/header/nav'
-    = render 'shared/bootstrap_flash'
+    = render 'shared/alerts'
 
     .wrapper.flex.flex-grow
       .flex-col.container.mx-auto.px-4
         = yield
 
-    .footer.bg-white.border-t.shadow-sm.bg-white.py-2.mt-6
-      .flex.flex-grow-1.flex-col.container.mx-auto.px-4.text-center
-        = render 'shared/footer'
+    = render 'shared/footer'
 
   = stylesheet_pack_tag "application"
