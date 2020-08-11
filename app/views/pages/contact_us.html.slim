@@ -1,20 +1,26 @@
-.flex.flex-col.w-full.items-center.lg:w-1/2.mx-auto.py-20
-  = simple_form_for @contact, wrapper: :bootstrap3, html: { class: 'bg-white / border shadow-sm / rounded-lg px-8 pt-6 pb-8 mb-4 / w-full' } do |f|
-    h2.text-2xl.text-center.font-semibold.mb-10.text-black Contact us
+- formContainer = "flex flex-col flex-grow h-full w-full items-center justify-center lg:w-5/12 mx-auto py-20"
+- formHeading = "text-2xl text-center font-medium mb-5 text-gray-800"
+- formWrapper = "bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full"
+- labelStyle = "block mb-1 font-medium text-gray-600 text-sm tracking"
+- inputStyle = "border border-gray-400 text-gray-800 focus:text-black / w-full px-3 py-2 mb-8 rounded-md / hover:border-gray-600 focus:border-gray-600 focus:outline-none / transition duration-200 ease-in-out"
+- buttonStyle = "btn font-semibold text-base text-white / px-4 py-2 w-full rounded-md / bg-teal-600 border border-teal-600 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out"
 
-    .mb-8
-      label.block.font-semibold.mb-1.text-black Title
-      = f.input_field :title, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
 
-    .mb-8
-      label.block.font-semibold.mb-1.text-black Email
-      = f.input_field  :email, required: true, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+div class=formContainer
+  h2 class=formHeading
+    | Contact us 
+  
+  = simple_form_for @contact, wrapper: :bootstrap3, html: { class: formWrapper } do |f|
+    label class=labelStyle Title
+    = f.input_field :title, required: true, class: inputStyle
 
-    .mb-8
-      label.block.font-semibold.mb-1.text-black Description
-      = f.input_field :body,label:"Description",  as: :text, class: 'border / w-full px-3 py-2 rounded-md / hover:border-blue-500 focus:border-blue-500 focus:outline-none / transition duration-200 ease-in-out'
+    label class=labelStyle Email
+    = f.input_field  :email, required: true, class: inputStyle
+
+    label class=labelStyle Description
+    = f.input_field :body,label:"Description",  as: :text, class: inputStyle
 
     .flex.justify-between.items-center
       .form-buttons
-      = f.button :submit, 'Send', class: 'font-semibold text-base text-white / px-5 py-2 rounded-md / bg-blue-700 border border-blue-700 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out'
+      = f.button :submit, 'Send', class: buttonStyle
 
