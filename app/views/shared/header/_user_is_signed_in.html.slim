@@ -4,7 +4,7 @@ div class="dropdown inline-block relative ml-4"
     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
 
   div data-behavior="dropdown-menu" class="overflow-hidden hidden"
-    .dropdown-overlay  class="bg-transparent top-0 left-0 w-full h-full fixed z-10"
+    .dropdown-overlay  class="bg-transparent top-0 left-0 w-full h-full fixed z-10" data-behavior="dropdown-toggle"
     ul class="dropdown-menu bg-white shadow-md border absolute right-0 text-gray-700 pt-1 mt-2 rounded-md z-20"
       - if super_admin_signed_in?
         li
