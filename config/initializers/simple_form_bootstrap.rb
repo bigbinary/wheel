@@ -15,7 +15,7 @@ SimpleForm.setup do |config|
 
   config.wrappers :bootstrap3,
     tag: "div",
-    class: "form-group",
+    class: "form-group mb-8",
     error_class: "has-error" do |b|
 
     b.use :html5
@@ -23,7 +23,7 @@ SimpleForm.setup do |config|
     b.use :label, wrap_with: { tag: "div" }
     b.wrapper tag: "div", class: "controls" do |ba|
       ba.use :input
-      ba.use :error, wrap_with: { tag: "span", class: "help-block" }
+      ba.use :error, wrap_with: { tag: "div", class: "help-block bg-red-200 rounded-b text-red-600 pt-1 px-3 text-sm -mt-1" }
       ba.use :hint,  wrap_with: { tag: "p", class: "help-block" }
     end
   end
@@ -58,5 +58,5 @@ SimpleForm.setup do |config|
   # Check the Bootstrap docs (http://twitter.github.com/bootstrap)
   # to learn about the different styles for forms and inputs,
   # buttons and other elements.
-  config.default_wrapper = :bootstrap
+  config.default_wrapper = :bootstrap3
 end

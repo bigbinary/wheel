@@ -3,7 +3,7 @@
 - formSubHeading = "text-center text-gray-600 mb-5 w-2/3 -mt-4"
 - formWrapper = "bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full"
 - labelStyle = "block mb-1 font-medium text-gray-600 text-sm tracking"
-- inputStyle = "border border-gray-400 text-gray-800 focus:text-black / w-full px-3 py-2 mb-8 rounded-md / hover:border-gray-600 focus:border-gray-600 focus:outline-none / transition duration-200 ease-in-out"
+- inputStyle = "form-control border border-gray-400 text-gray-800 focus:text-black / w-full px-3 py-2 rounded-md / hover:border-gray-600 focus:border-gray-600 focus:outline-none / transition duration-200 ease-in-out"
 - buttonStyle = "btn font-semibold text-base text-white / px-4 py-2 w-full rounded-md / bg-teal-600 border border-teal-600 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out"
 
 
@@ -17,8 +17,7 @@ div class=formContainer
                               html: { class: formWrapper }) do |f|
 
 
-    label class=labelStyle Email
-    = f.input_field :email, required: true, autofocus: true, class: inputStyle
+    = f.input :email, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.button :submit, "Send reset password email", class: buttonStyle
 
