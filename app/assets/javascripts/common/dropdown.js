@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("[data-behavior~=dropdown-toggle]").on("click", function() {
-    const dropdownMenu = $("[data-behavior~=dropdown-toggle]").siblings(
+    let dropdownMenu = $("[data-behavior~=dropdown-toggle]").siblings(
       "[data-behavior~=dropdown-menu]"
     );
 
