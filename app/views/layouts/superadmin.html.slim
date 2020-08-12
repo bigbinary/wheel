@@ -9,14 +9,18 @@ html lang="en"
     /! Le HTML5 shim, for IE6-8 support of HTML elements
     /![if lt IE 9]
       | <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script
-    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': 'reload'
-    = javascript_include_tag "application", 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = javascript_pack_tag 'application'
     /! <link rel="icon" href="/favicon.ico" type="image/x-icon"
     /! <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
-  body
-    = render 'shared/header/nav_superadmin'
-    = render 'shared/bootstrap_flash'
 
-    .content
-      .container.main-content
+  body.bg-gray-100.min-h-screen.flex.flex-col.antialiased
+    = render 'shared/header/nav_superadmin'
+    = render 'shared/alerts'
+
+    .wrapper.flex.flex-grow
+      .flex-col.container.mx-auto.px-4
         = yield
+
+  = stylesheet_pack_tag "application"

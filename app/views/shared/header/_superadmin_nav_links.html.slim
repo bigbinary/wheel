@@ -1,12 +1,14 @@
-ul.nav.navbar-nav
-  li.nav-item
-    = link_to 'Users', superadmin_users_path, class: 'nav-link'
-  li.nav-item
-    = link_to 'Active Admin', active_admin_root_path, class: 'nav-link'
-  li.nav-item
-    = link_to 'Sidekiq', sidekiq_web_path, "target" => '_blank', class: 'nav-link'
+- navLinkStyle = 'nav-link text-base text-gray-800 ml-6 hover:text-teal-600'
+
+.flex.ml-auto.items-center
+  .nav-item
+    = link_to 'Users', superadmin_users_path, class: navLinkStyle
+  .nav-item
+    = link_to 'Active Admin', active_admin_root_path, class: navLinkStyle
+  .nav-item
+    = link_to 'Sidekiq', sidekiq_web_path, "target" => '_blank', class: navLinkStyle
   - if user_signed_in?
       = render 'shared/header/user_is_signed_in'
   - else
-    li.nav-item
-      = link_to 'Sign in', new_session_path(:user), class: 'nav-link'
+    .nav-item
+      = link_to 'Sign in', new_session_path(:user), class: navLinkStyle

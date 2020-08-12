@@ -17,14 +17,14 @@ html lang="en"
     link href="https://fonts.gstatic.com/" rel="preconnect"  crossorigin="anonymous" /
     link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700&display=swap" rel="stylesheet" /
 
-  body
+  body.bg-gray-100.min-h-screen.flex.flex-col.antialiased
     = render 'shared/header/nav'
-    = render 'shared/bootstrap_flash'
+    = render 'shared/alerts'
 
-    .wrapper.flex-grow-1
-      .container.py-5
+    .wrapper.flex.flex-grow
+      .flex-col.container.mx-auto.px-4
         = yield
 
-    .footer.box-shadow.box-shadow--top
-      .container.footer-text.py-3
-        = render 'shared/footer'
+    = render 'shared/footer'
+
+  = stylesheet_pack_tag "application"

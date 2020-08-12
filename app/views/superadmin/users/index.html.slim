@@ -1,14 +1,15 @@
-table.table.table-striped
+table.table-auto.text-left.bg-white.border.w-full
   thead
     tr
-      th Name
-      th Email
-      th Last signed in 
-  - @users.each do |user|
-    tr
-      td
-        = user.name
-      td
-        = user.email
-      td
-        = user.last_sign_in_at
+      th class="w-1/3 p-3" Name 
+      th class="w-1/3 p-3" Email
+      th class="w-1/3 p-3" Last signed in 
+  tbody class="border-t text-gray-800"
+    - @users.each do |user|
+      tr
+        td class="p-3"
+          = user.name
+        td class="p-3"
+          = user.email
+        td class="p-3"
+          = user.last_sign_in_at
