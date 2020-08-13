@@ -14,7 +14,7 @@ div class=formContainer
   = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
     = devise_error_messages!
 
-    = f.input :email, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
+    = f.input :email, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.submit "Resend unlock instructions", class: buttonStyle
 

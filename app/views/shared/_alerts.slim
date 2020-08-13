@@ -1,9 +1,9 @@
-div data-behavior="alert-container"
+div data-behavior="alert-container" class="fixed bottom-0 left-0 w-full flex items-center justify-center mb-6 px-4"
   - flash.each do |name, message|
     - if message.present?
-      .container.mx-auto.flex.justify-center.px-4
-        div class="w-full md:w-1/2 rounded-lg border py-2 px-4 #{name.to_s == 'alert' ? "bg-red-200 border-red-600" : "bg-green-200 border-green-700"}"
-          div class="flex flex-row items-center font-medium justify-between w-full #{name.to_s == 'alert' ? "text-red-600" : "text-green-700"}"
-            = content_tag :div, message, id: "flash_#{name}" if message.is_a?(String)
-            a class="cursor-pointer text-2xl leading-none relative -mt-1" data-behavior="alert-close" ×
+      div class="relative w-full md:w-1/3 rounded-lg border py-2 px-4 mx-auto overflow-hidden #{name.to_s == 'alert' ? "bg-red-200 border-red-600" : "bg-green-200 border-green-700"}" data-behavior="#{name.to_s == 'alert' ? "alert-error" : "alert-info"}"
+        .alertDisappearing class="absolute bottom-0 left-0 w-full h-1 #{name.to_s == 'alert' ? "bg-transparent" : "bg-green-700"}"
+        div class="flex flex-row items-center font-medium justify-between w-full #{name.to_s == 'alert' ? "text-red-600" : "text-green-700"}"
+          = content_tag :div, message, id: "flash_#{name}" if message.is_a?(String)
+          a class="cursor-pointer text-2xl leading-none relative -mt-1" data-behavior="alert-close" ×
 

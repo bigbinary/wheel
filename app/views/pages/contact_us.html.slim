@@ -11,7 +11,7 @@ div class=formContainer
     | Contact us 
   
   = simple_form_for @contact, html: { wrapper: "bootstrap3", class: formWrapper } do |f|
-    = f.input :title, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
+    = f.input :title, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.input :email, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
