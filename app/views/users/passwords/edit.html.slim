@@ -18,7 +18,7 @@ div class=formContainer
     = f.input :reset_password_token, as: :hidden
     = f.full_error :reset_password_token
 
-    = f.input :password, label: "New password", required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
+    = f.input :password, label: "New password", autofocus: true, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.input :password_confirmation, label: "Confirm new password", required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 

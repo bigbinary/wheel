@@ -16,7 +16,7 @@ div class=formContainer
                               html: { method: :put, class: formWrapper }) do |f|
 
 
-    = f.input :email, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
+    = f.input :email, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.input :first_name, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 

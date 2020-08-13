@@ -14,7 +14,7 @@ div class=formContainer
                               wrapper: :bootstrap3,                                   \
                               html: { class: formWrapper }) do |f|
     
-    = f.input :email, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
+    = f.input :email, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.input :first_name, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
@@ -25,7 +25,7 @@ div class=formContainer
     = f.input :password_confirmation, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
 
-    = f.button :submit, "Create your Wheel account", class: buttonStyle
+    = f.button :submit, "Get started", class: buttonStyle
   
   
   = render "users/shared/links"

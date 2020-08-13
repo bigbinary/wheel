@@ -17,7 +17,7 @@ div class=formContainer
                               html: { class: formWrapper }) do |f|
 
 
-    = f.input :email, required: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
+    = f.input :email, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
     = f.button :submit, "Send reset password email", class: buttonStyle
 

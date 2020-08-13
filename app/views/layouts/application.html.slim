@@ -19,12 +19,13 @@ html lang="en"
 
   body.bg-gray-100.min-h-screen.flex.flex-col.antialiased
     = render 'shared/header/nav'
-    = render 'shared/alerts'
 
     .wrapper.flex.flex-grow
       .flex-col.container.mx-auto.px-4
         = yield
 
+
+    = render 'shared/alerts'
     = render 'shared/footer'
 
   = stylesheet_pack_tag "application"

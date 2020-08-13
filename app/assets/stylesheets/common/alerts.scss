@@ -1,0 +1,9 @@
+.alertDisappearing {
+  transition: animation 4000ms ease-in;
+  animation: alertDisappearing 4000ms forwards ease-in;
+}
+
+@keyframes alertDisappearing {
+  from { width: 100%}
+  to { width: 0}
+}
