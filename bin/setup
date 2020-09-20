@@ -36,12 +36,12 @@ chdir APP_ROOT do
     cp "config/database.yml.postgresql", "config/database.yml"
   end
 
-  puts "\n== Setting up the app =="
+  puts "\n== Executing rake setup =="
   system! "bundle exec rake setup"
 
-  puts "\n== Removing old logs and tempfiles =="
+  puts "\n== Removing logs and tempfiles =="
   system! "bin/rails log:clear tmp:clear"
 
   puts"\n== Start the application using following command =="
-  puts"\n foreman start -f Procfile.dev"
+  puts"\n bundle exec rails server"
 end
