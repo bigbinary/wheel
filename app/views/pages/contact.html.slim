@@ -5,11 +5,10 @@
 - inputStyle = "form-control border border-gray-400 text-gray-800 focus:text-black / w-full px-3 py-2 rounded-md / hover:border-gray-600 focus:border-gray-600 focus:outline-none / transition duration-200 ease-in-out"
 - buttonStyle = "btn font-semibold text-base text-white / px-4 py-2 w-full rounded-md / bg-teal-600 border border-teal-600 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out"
 
-
 div class=formContainer
   h2 class=formHeading
-    | Contact us 
-  
+    | Contact us
+
   = simple_form_for @contact, html: { wrapper: "bootstrap3", class: formWrapper } do |f|
     = f.input :title, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
 
