@@ -22,7 +22,7 @@ gem "pg"
 gem "puma", "~> 4.1"
 
 # JSON builder
-gem "jbuilder", ">= 2.2.13"
+gem "jbuilder", ">= 2.7"
 
 # Authentication
 gem "devise", "~> 4.7"

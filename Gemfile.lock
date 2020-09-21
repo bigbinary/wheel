@@ -326,7 +326,7 @@ DEPENDENCIES
   email_validator
   font-awesome-sass (~> 4.3.0)
   honeybadger
-  jbuilder (>= 2.2.13)
+  jbuilder (>= 2.7)
   jquery-growl-rails
   jquery-rails
   listen (~> 3.1.5)
