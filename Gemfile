@@ -69,15 +69,16 @@ gem "sidekiq"
 group :development do
   # speeds up development by keeping your application running in the background
   gem "spring"
+  gem 'spring-watcher-listen', '~> 2.0.0'
 
   # A runtime developer console and IRB alternative with powerful introspection capabilities
   gem "pry"
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem "web-console", "~> 3.0"
+  gem "web-console", "~> 3.3.0"
 
   # Reenable after https://github.com/rails/rails/issues/26158 is fixed
-  gem "listen", "~> 3.1.5"
+  gem "listen", "~> 3.2"
 
   # reports N+1 queries
   gem "bullet"
@@ -95,7 +96,7 @@ end
 
 group :test do
   # Complete suite of testing facilities
-  gem "minitest", "5.10.3"
+  gem "minitest"
 
   # for test coverage report
   gem "simplecov", require: false

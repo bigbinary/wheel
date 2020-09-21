@@ -74,7 +74,6 @@ GEM
     autoprefixer-rails (9.7.6)
       execjs
     bcrypt (3.1.13)
-    bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -92,6 +91,7 @@ GEM
     concurrent-ruby (1.1.7)
     connection_pool (2.2.3)
     crass (1.0.6)
+    debug_inspector (0.0.3)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -144,10 +144,9 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    listen (3.1.5)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
-      ruby_dep (~> 1.2)
+    listen (3.2.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -161,7 +160,7 @@ GEM
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.10.3)
+    minitest (5.14.2)
     minitest-ci (3.4.0)
       minitest (>= 5.0.6)
     msgpack (1.3.3)
@@ -244,7 +243,6 @@ GEM
     ruby2_keywords (0.0.2)
     ruby_audit (1.2.0)
       bundler-audit (~> 0.6.0)
-    ruby_dep (1.5.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -280,6 +278,9 @@ GEM
       railties (>= 3.1)
       slim (>= 3.0, < 5.0)
     spring (2.1.0)
+    spring-watcher-listen (2.0.1)
+      listen (>= 2.7, < 4.0)
+      spring (>= 1.2, < 3.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -299,10 +300,10 @@ GEM
     uniform_notifier (1.13.0)
     warden (1.2.8)
       rack (>= 2.0.6)
-    web-console (3.7.0)
+    web-console (3.3.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
-      bindex (>= 0.4.0)
+      debug_inspector
       railties (>= 5.0)
     webpacker (4.2.2)
       activesupport (>= 4.2)
@@ -331,9 +332,9 @@ DEPENDENCIES
   jbuilder (>= 2.7)
   jquery-growl-rails
   jquery-rails
-  listen (~> 3.1.5)
+  listen (~> 3.2)
   mail_interceptor
-  minitest (= 5.10.3)
+  minitest
   minitest-ci
   pg
   pry
@@ -349,10 +350,11 @@ DEPENDENCIES
   slim
   slim-rails
   spring
+  spring-watcher-listen (~> 2.0.0)
   sprockets (~> 3.7.2)
   sprockets-rails
   uglifier (>= 2.7.1)
-  web-console (~> 3.0)
+  web-console (~> 3.3.0)
   webpacker (~> 4.0)
 
 RUBY VERSION
