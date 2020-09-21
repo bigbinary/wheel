@@ -4,7 +4,7 @@ require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   def test_contact_success
-    get pages_contact_url
+    get '/contact'
 
     assert_response :success
   end
