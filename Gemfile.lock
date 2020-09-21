@@ -177,7 +177,8 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    puma (3.12.6)
+    puma (4.3.6)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -334,7 +335,7 @@ DEPENDENCIES
   minitest-ci
   pg
   pry
-  puma (~> 3.12)
+  puma (~> 4.1)
   rails (~> 6.0.3.3)
   rubocop (~> 0.82.0)
   rubocop-rails

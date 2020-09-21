@@ -18,6 +18,9 @@ gem "webpacker", "~> 4.0"
 # database
 gem "pg"
 
+# Application server
+gem "puma", "~> 4.1"
+
 # JSON builder
 gem "jbuilder", ">= 2.2.13"
 
@@ -53,9 +56,6 @@ gem "mail_interceptor", group: [:development, :staging]
 
 # Adds prefix to subject in emails
 gem "email_prefixer"
-
-# Application server
-gem "puma", "~> 3.12"
 
 # Display notifications
 gem "jquery-growl-rails"
