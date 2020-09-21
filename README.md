@@ -31,8 +31,8 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 
 ## Features
 
-* Uses [Bootstrap](http://getbootstrap.com).
-* rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
+* Uses [Tailwind CSS](https://tailwindcss.com).
+* `rake setup` to set sensible sample data including user `sam@example.com` with password `welcome`.
 * Uses [devise](https://github.com/plataformatec/devise).
 * Heroku ready. Push to Heroku and it will work.
 * Uses [Honeybadger](https://www.honeybadger.io/).
