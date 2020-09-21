@@ -39,10 +39,8 @@ gem "autoprefixer-rails"
 # Forms made easy for rails
 gem "simple_form", "~>5.0"
 
-gem "coffee-script"
-
 # Admin framework
-gem "activeadmin"
+# gem "activeadmin"
 
 # Email validation
 gem "email_validator"
