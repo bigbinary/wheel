@@ -40,7 +40,7 @@ gem "autoprefixer-rails"
 gem "simple_form", "~>5.0"
 
 # Admin framework
-# gem "activeadmin"
+gem "activeadmin"
 
 # Email validation
 gem "email_validator"
