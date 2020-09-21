@@ -31,8 +31,8 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 
 ## Features
 
-* Uses [Bootstrap](http://getbootstrap.com).
-* rake setup to set sensible sample data including user `sam@example.com` with password `welcome`.
+* Uses [Tailwind CSS](https://tailwindcss.com).
+* `rake setup` to set sensible sample data including user `sam@example.com` with password `welcome`.
 * Uses [devise](https://github.com/plataformatec/devise).
 * Heroku ready. Push to Heroku and it will work.
 * Uses [Honeybadger](https://www.honeybadger.io/).
@@ -49,7 +49,6 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 * Uses [SemaphoreCI](https://semaphoreci.com/) for continuous testing.
 * Has a bunch of tests to make it easier to get started with new tests.
 * Uses PostgreSQL.
-* Built in support for [carrierwave](https://github.com/carrierwaveuploader/carrierwave) to easily upload items to s3.
 * Built in support for "variants" so the pages can be customized for tablet or phone easily.
 * Uses [simple_form](https://github.com/plataformatec/simple_form).
 * Built in support for [Mailgun](http://mailgun.com).
