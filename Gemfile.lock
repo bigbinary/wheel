@@ -340,7 +340,7 @@ DEPENDENCIES
   rubocop (~> 0.82.0)
   rubocop-rails
   ruby_audit
-  sass-rails (>= 5.0.3)
+  sass-rails (>= 6)
   sidekiq
   simple_form (~> 5.0)
   simplecov
