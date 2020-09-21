@@ -10,7 +10,7 @@ gem "sprockets", "~> 3.7.2"
 # friends of Rails
 gem "jquery-rails"
 gem "sprockets-rails"
-gem "sass-rails", ">= 5.0.3"
+gem "sass-rails", ">= 6"
 gem "uglifier", ">= 2.7.1"
 
 gem "webpacker", "~> 4.0"
