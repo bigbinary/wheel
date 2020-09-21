@@ -5,11 +5,11 @@ class PagesController < ApplicationController
     render
   end
 
-  def contact_us
+  def contact
     @contact = Contact.new
   end
 
-  def about
+  def features
     render
   end
 end

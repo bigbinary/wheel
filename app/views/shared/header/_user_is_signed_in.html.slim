@@ -11,7 +11,9 @@ div class="dropdown inline-block relative ml-6"
     ul class="dropdown-menu bg-white shadow-md border absolute right-0 text-gray-700 pt-1 mt-2 rounded-md z-20"
       - if super_admin_signed_in?
         li
-          = link_to 'Superadmin', superadmin_root_path, class: drodownLinkStyle
+          = link_to 'Active Admin', active_admin_root_path, class: drodownLinkStyle
+        li
+          = link_to 'Sidekiq', sidekiq_web_path, "target" => '_blank', class: drodownLinkStyle
       li
         = link_to 'My Account', profile_path, class: drodownLinkStyle
       li

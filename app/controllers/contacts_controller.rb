@@ -4,11 +4,11 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.valid?
-      Mailer.contact_us_email(@contact.title, @contact.email, @contact.body).deliver_later
+      Mailer.contact_email(@contact.title, @contact.email, @contact.body).deliver_later
       flash[:notice] = "Thank you for your message. We will contact you soon!"
-      redirect_to pages_contact_us_path
+      redirect_to pages_contact_path
     else
-      render template: "pages/contact_us"
+      render template: "pages/contact"
     end
   end
 

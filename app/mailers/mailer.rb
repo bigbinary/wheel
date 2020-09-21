@@ -7,7 +7,7 @@ class Mailer < ActionMailer::Base
 
   default_url_options[:host] = Rails.application.secrets.host
 
-  def contact_us_email(title, email, body)
+  def contact_email(title, email, body)
     @email = email
     @title = title
     @body  = body
