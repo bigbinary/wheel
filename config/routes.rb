@@ -40,8 +40,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get "pages/about"
-  get "pages/contact_us"
   resources :contacts, only: [:create]
 
   authenticated :user do
@@ -64,5 +62,7 @@ Rails.application.routes.draw do
     end
   end
 
-  root "pages#index"
+  get "/features" => "pages#features"
+  get "/contact" => "pages#contact"
+  root "home#index"
 end
