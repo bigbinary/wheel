@@ -20,6 +20,7 @@ AllCops:
     - "config/environment.rb"
     - "config/environments/*.rb"
     - "config/routes.rb"
+    - "config/initializers/*"
 
 # Prefer &&/|| over and/or.
 Style/AndOr:
