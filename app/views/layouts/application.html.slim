@@ -13,12 +13,11 @@ html lang="en"
     /! <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
 
   body.bg-gray-100.min-h-screen.flex.flex-col.antialiased
-    = render 'shared/header/nav'
+    = render 'shared/header/tabs'
 
     .wrapper.flex.flex-grow
       .flex-col.container.mx-auto.px-4
         = yield
-
 
     = render 'shared/alerts'
     = render 'shared/footer'
