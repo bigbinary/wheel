@@ -36,23 +36,13 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 * Uses [devise](https://github.com/plataformatec/devise).
 * Heroku ready. Push to Heroku and it will work.
 * Uses [Honeybadger](https://www.honeybadger.io/).
-* Built in superadmin feature.
-* Uses modal box to showcase an example of editing information using modal box.
-* Enables __strict mode__ for all JavaScript code.
-* Uses __puma__ as web server.
 * Uses slim for cleaner syntax over erb and better performance over haml.
-* No coffeescript. We prefer JavaScript.
 * Uses [ActiveAdmin](http://activeadmin.info).
-* When exception is sent to Honeybadger then uuid is also sent for [debugging](http://videos.bigbinary.com/rubyonrails/use-uuid-x-request-id-to-debug-rails-application.html).
 * Uses [Sidekiq](https://github.com/mperham/sidekiq).
 * Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
 * Uses [SemaphoreCI](https://semaphoreci.com/) for continuous testing.
-* Has a bunch of tests to make it easier to get started with new tests.
 * Uses PostgreSQL.
-* Built in support for "variants" so the pages can be customized for tablet or phone easily.
 * Uses [simple_form](https://github.com/plataformatec/simple_form).
-* Built in support for [Mailgun](http://mailgun.com).
-* Easy to generate "test coverage".
 * Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
 * Auto-formats Ruby code with [rubocop](https://github.com/bbatsov/rubocop).
 * Auto-formats JavaScript and CSS code with [prettier](https://github.com/prettier/prettier).
