@@ -60,8 +60,8 @@ gem "email_prefixer"
 # Display notifications
 gem "jquery-growl-rails"
 
-# Faster env load times
-gem "bootsnap"
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
 
 # Background jobs
 gem "sidekiq"

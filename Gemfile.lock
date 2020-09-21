@@ -320,7 +320,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   autoprefixer-rails
-  bootsnap
+  bootsnap (>= 1.4.2)
   bullet
   bundler-audit
   coffee-script
