@@ -2,8 +2,6 @@
 
 ActiveAdmin.register User do
 
-  permit_params :email, :password, :password_confirmation
-
   index do
     column :email
     column :current_sign_in_at
@@ -12,14 +10,5 @@ ActiveAdmin.register User do
   end
 
   filter :email
-
-  form do |f|
-    f.inputs "Admin Details" do
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
-    end
-    f.actions
-  end
 
 end
