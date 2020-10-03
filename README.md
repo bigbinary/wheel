@@ -18,7 +18,7 @@ Start the server by executing following command.
 bundle exec rails server
 ```
 
-Visit http://localhost:3000 and login with email `sam@example.com` and password `welcome`.
+Visit http://localhost:3000 and login with email `oliver@example.com` and password `welcome`.
 
 ## Replace Wheel with your project name
 
@@ -32,7 +32,7 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 ## Features
 
 * Uses [Tailwind CSS](https://tailwindcss.com).
-* `rake setup` to set sensible sample data including user `sam@example.com` with password `welcome`.
+* `rake setup` to set sensible sample data including user `oliver@example.com` with password `welcome`.
 * Uses [devise](https://github.com/plataformatec/devise).
 * Heroku ready. Push to Heroku and it will work.
 * Uses [Honeybadger](https://www.honeybadger.io/).
