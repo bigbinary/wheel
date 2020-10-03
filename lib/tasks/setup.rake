@@ -44,8 +44,8 @@ task setup_sample_data: [:environment, :not_production] do
 end
 
 def create_user(options = {})
-  user_attributes = { password: "welcome"
-                      first_name: "Sam",
+  user_attributes = { password: "welcome",
+                      first_name: "Oliver",
                       last_name: "Smith",
                       role: "super_admin" }
   attributes = user_attributes.merge options
