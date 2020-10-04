@@ -34,7 +34,7 @@ gem "honeybadger"
 gem "font-awesome-sass", "~> 4.3.0"
 
 # Support cross-browser css compatibilty
-gem "autoprefixer-rails"
+gem "autoprefixer-rails", "= 9.7.6"
 
 # Forms made easy for rails
 gem "simple_form", "~>5.0"
