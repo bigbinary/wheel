@@ -71,7 +71,7 @@ GEM
       activesupport (>= 3.0.0, < 6.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
     ast (2.4.1)
-    autoprefixer-rails (10.0.1.0)
+    autoprefixer-rails (9.7.6)
       execjs
     bcrypt (3.1.16)
     bootsnap (1.4.8)
@@ -312,7 +312,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
-  autoprefixer-rails
+  autoprefixer-rails (= 9.7.6)
   bootsnap (>= 1.4.2)
   bullet
   bundler-audit
