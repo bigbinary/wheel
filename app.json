@@ -33,6 +33,9 @@
       "options": {
         "version": "12"
       }
+    },
+    {
+      "plan": "heroku-redis:hobby-dev"
     }
   ],
   "buildpacks": [
