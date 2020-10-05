@@ -11,7 +11,7 @@ global_job_config:
       - checkout
       - sem-version ruby 2.7.1
       - sem-version node 12.16.0
-      - sem-service start postgres 9.6
+      - sem-service start postgres 12
       - cache restore
       - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
       - yarn install
@@ -46,7 +46,7 @@ blocks:
   - name: Tests
     task:
       jobs:
-        - name: minitest 
+        - name: minitest
           commands:
             - bin/webpack
             - bundle exec rails test
