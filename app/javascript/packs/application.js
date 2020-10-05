@@ -1,4 +1,5 @@
 /* eslint no-console:0 */
+/* global require */
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -8,4 +9,8 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import "stylesheets/application";
-console.log("Hello World from Webpacker");
+
+// Support component names relative to this directory:
+var componentRequireContext = require.context("src", true);
+var ReactRailsUJS = require("react_ujs");
+ReactRailsUJS.useContext(componentRequireContext);

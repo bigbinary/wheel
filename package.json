@@ -26,18 +26,19 @@
     "lint-staged": "^4.1.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.6.1",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.0.0",
-    "@rails/webpacker": "^4.0.2",
+    "@babel/preset-react": "^7.10.4",
+    "@rails/webpacker": "4.3.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
     "core-js": "3",
     "postcss-cssnext": "^3.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react_ujs": "^2.6.1",
     "tailwindcss": "^1.6.0"
   }
 }

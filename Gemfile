@@ -15,6 +15,9 @@ gem "uglifier", ">= 2.7.1"
 
 gem "webpacker", "~> 4.0"
 
+# React
+gem "react-rails"
+
 # database
 gem "pg"
 
