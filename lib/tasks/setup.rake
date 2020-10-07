@@ -24,26 +24,19 @@ task setup: [:environment, :not_production, "db:drop", "db:create", "db:migrate"
 end
 
 def delete_all_records_from_all_tables
-  ActiveRecord::Base.connection.schema_cache.clear!
-
-  Dir.glob(Rails.root + "app/models/*.rb").each { |file| require file }
-
-  ApplicationRecord.descendants.each do |klass|
-    klass.reset_column_information
-    klass.delete_all
-  end
+  Rake::Task["db:schema:load"].invoke
 end
 
 desc "Deletes all records and populates sample data"
 task setup_sample_data: [:environment, :not_production] do
   delete_all_records_from_all_tables
 
-  create_user email: "oliver@example.com"
+  create_user! email: "oliver@example.com"
 
-  puts "sample data was added successfully"
+  puts "sample data has been added."
 end
 
-def create_user(options = {})
+def create_user!(options = {})
   user_attributes = { password: "welcome",
                       first_name: "Oliver",
                       last_name: "Smith",
