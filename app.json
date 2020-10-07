@@ -8,10 +8,10 @@
       "generator": "secret"
     },
    "RACK_ENV": {
-      "value": "staging"
+      "value": "heroku"
     },
     "RAILS_ENV": {
-      "value": "staging"
+      "value": "heroku"
     },
     "AWS_ACCESS_KEY_ID": {
       "required": false
