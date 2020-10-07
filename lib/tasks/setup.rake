@@ -20,7 +20,7 @@ end
 
 desc "Sets up the project by running migration and populating sample data"
 task setup: [:environment, :not_production, "db:drop", "db:create", "db:migrate"] do
-  ["setup_sample_data"].each { |cmd| system "rake #{cmd}" }
+  Rake::Task["setup_sample_data"].invoke
 end
 
 def delete_all_records_from_all_tables
