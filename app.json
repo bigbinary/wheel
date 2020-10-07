@@ -1,7 +1,7 @@
 {
   "name": "wheel",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && bundle exec rake setup_sample_data"
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
     "SECRET_KEY_BASE":{
