@@ -8,27 +8,21 @@ Rails.application.routes.draw do
   #
   # More details available here:
   # https://github.com/plataformatec/devise/wiki/How-To:-Manage-users-through-a-CRUD-interface
-  devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
-
-  # Authentication
-  devise_scope :user do
-    get "/login" => "devise/sessions#new", as: :login
-    get "/logout" => "sessions#destroy", :as => :logout
-    get "/signup" => "registrations#new", :as => :signup
-    scope "my" do
-      get "profile", to: "registrations#edit"
-      put "profile/update", to: "registrations#update"
-      get "password/edit", to: "registrations#edit_password"
-      put "password/update", to: "registrations#update_password"
+  scope "api/v1" do
+    devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
+    # Authentication
+    devise_scope :user do
+      scope "my" do
+        get "profile", to: "registrations#edit"
+        put "profile/update", to: "registrations#update"
+        get "password/edit", to: "registrations#edit_password"
+        put "password/update", to: "registrations#update_password"
+      end
     end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with 'rake routes'.
-
-  unauthenticated do
-    get "/logout" => redirect("/")
-  end
 
   authenticate :user, ->(u) { u.super_admin? } do
     mount Sidekiq::Web, at: "/sidekiq"
@@ -40,29 +34,18 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts, only: [:create]
-
-  authenticated :user do
-    get "/pages" => "pages#index", as: :pages
-  end
-
-  unauthenticated do
-    as :user do
-      root to: "devise/sessions#new", as: :unauthenticated_root
-    end
-  end
-
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       devise_scope :user do
         post "login" => "sessions#create", as: "login"
+        delete "logout" => "sessions#destroy", as: "logout"
       end
 
       resources :users, only: [:show, :create, :update, :destroy], constraints: { id: /.*/ }
+      resources :contacts, only: [:create]
     end
   end
 
-  get "/features" => "pages#features"
-  get "/contact" => "pages#contact"
   root "home#index"
+  get '*path', to: 'home#index', via: :all
 end
