@@ -3,7 +3,9 @@ module.exports = {
     enabled: process.env.NODE_ENV === "production" ? true : false,
     content: [
       "./app/javascript/**/*.js",
-      "./app/views/**/*.slim",
+      "./app/javascript/**/**/*.js",
+      "./app/javascript/**/**/*/*.js",
+      "./app/javascript/**/*.js",
       "./app/views/**/**/*.slim",
       "./app/views/**/**/*/*.slim",
     ],
