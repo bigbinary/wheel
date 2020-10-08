@@ -9,6 +9,8 @@ desc "Deletes all records and populates sample data"
 task setup_sample_data: [:environment] do
   if Rails.env.production?
     puts "Skipping deleting and populating sample data"
+  elsif Rails.env.staging?
+    puts "Skipping deleting and populating sample data"
   else
     delete_and_populate_sample_data
   end
