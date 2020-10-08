@@ -50,7 +50,7 @@ gem "slim"
 gem "slim-rails"
 
 # Intercepts outgoing emails in non-production environment
-gem "mail_interceptor", group: [:development, :staging]
+gem "mail_interceptor", group: [:development, :staging, :heroku]
 
 # Adds prefix to subject in emails
 gem "email_prefixer"

@@ -4,6 +4,9 @@ default: &default
 development:
   <<: *default
 
+heroku:
+  <<: *default
+
 staging:
   <<: *default
 
