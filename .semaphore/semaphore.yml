@@ -9,7 +9,7 @@ global_job_config:
   prologue:
     commands:
       - checkout
-      - sem-version ruby 2.7.1
+      - sem-version ruby 2.7.2
       - sem-version node 12.16.0
       - sem-service start postgres 12
       - cache restore
