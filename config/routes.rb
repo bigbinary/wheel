@@ -8,16 +8,16 @@ Rails.application.routes.draw do
   #
   # More details available here:
   # https://github.com/plataformatec/devise/wiki/How-To:-Manage-users-through-a-CRUD-interface
-  scope "api/v1" do
-    devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
-    # Authentication
-    devise_scope :user do
-      scope "my" do
-        get "profile", to: "registrations#edit"
-        put "profile/update", to: "registrations#update"
-        get "password/edit", to: "registrations#edit_password"
-        put "password/update", to: "registrations#update_password"
-      end
+
+  devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
+  # Authentication
+  get "/logout" => "sessions#destroy", :as => :logout
+  devise_scope :user do
+    scope "my" do
+      get "profile", to: "registrations#edit"
+      put "profile/update", to: "registrations#update"
+      get "password/edit", to: "registrations#edit_password"
+      put "password/update", to: "registrations#update_password"
     end
   end
 
@@ -32,6 +32,10 @@ Rails.application.routes.draw do
       root to: "users#index"
       resources :users
     end
+  end
+
+  authenticate :user, ->(u) { !u.super_admin? } do
+    get "/active_admin" => redirect("/")
   end
 
   namespace :api, defaults: { format: :json } do
