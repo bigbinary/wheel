@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 
+import { contact } from "apis/contacts";
+
 const Contact = () => {
   const [title, setTitle] = useState("");
   const [email, setEmail] = useState("");
-  const [description, setDescription] = useState("");
+  const [body, setBody] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    try {
+      setLoading(true);
+      const { data } = await contact({
+        contact: { title, email, body },
+      });
+      alert(data.message);
+    } catch (error) {
+      alert(error.response.data.error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="wrapper flex flex-grow">
@@ -13,7 +31,10 @@ const Contact = () => {
             Contact us
           </h2>
 
-          <form className="simple_form bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full">
+          <form
+            className="simple_form bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full"
+            onSubmit={handleSubmit}
+          >
             <div className="form-group mb-8 string required contact_title">
               <div>
                 <label
@@ -78,8 +99,8 @@ const Contact = () => {
                   type="text"
                   name="body"
                   id="contact_body"
-                  value={description}
-                  onChange={e => setDescription(e.target.value)}
+                  value={body}
+                  onChange={e => setBody(e.target.value)}
                 />
               </div>
             </div>
@@ -89,7 +110,8 @@ const Contact = () => {
               <input
                 type="submit"
                 name="commit"
-                value="Send"
+                value={loading ? "Loading..." : "Send"}
+                disabled={loading}
                 className="btn btn font-semibold text-base text-white / px-4 py-2 w-full rounded-md / bg-teal-600 border border-teal-600 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out"
                 data-disable-with="Send"
               />
