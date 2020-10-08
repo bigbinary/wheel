@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
 desc "Sets up the project by running migration and populating sample data"
-task setup: [:environment, :not_production, "db:drop", "db:create", "db:migrate"] do
-  Rake::Task["setup_sample_data"].invoke
+task setup: [:environment, "db:drop", "db:create", "db:migrate"] do
+  Rake::Task["setup_sample_data"].invoke unless Rails.env.production?
+end
+
+desc "Populates sample data without delete data"
+task populate_sample_data: [:environment] do
+  create_sample_data!
+  puts "sample data has been added."
 end
 
 desc "Deletes all records and populates sample data"
@@ -12,21 +18,20 @@ task setup_sample_data: [:environment] do
   elsif Rails.env.staging?
     puts "Skipping deleting and populating sample data"
   else
-    delete_and_populate_sample_data
+    delete_all_records_from_all_tables
+    Rake::Task["populate_sample_data"].invoke
   end
 end
 
 def delete_and_populate_sample_data
   delete_all_records_from_all_tables
-  create_sample_data
-  puts "sample data has been added."
 end
 
 def delete_all_records_from_all_tables
   Rake::Task["db:schema:load"].invoke
 end
 
-def create_sample_data
+def create_sample_data!
   create_user! email: "oliver@example.com"
 end
 
