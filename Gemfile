@@ -2,9 +2,9 @@
 
 source "https://rubygems.org"
 
-ruby "2.7.1"
+ruby "2.7.2"
 
-gem "rails", "~> 6.0.3.3"
+gem "rails", "~> 6.0.3.4"
 gem "sprockets", "~> 3.7.2"
 
 # friends of Rails

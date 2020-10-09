@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AddDeviseToUsers < ActiveRecord::Migration[5.1]
+class AddDeviseToUsers < ActiveRecord::Migration[6.0]
   def self.up
     create_table(:users) do |t|
       ## Database authenticatable
