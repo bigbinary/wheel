@@ -47,6 +47,7 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 * Auto-formats Ruby code with [rubocop](https://github.com/bbatsov/rubocop).
 * Auto-formats JavaScript and CSS code with [prettier](https://github.com/prettier/prettier).
 * Performs backgroung job processing "inline" for heroku env. It means heroku can deliver emails.
+* Letter opener gem for development.
 
 ## Heroku Review
 
