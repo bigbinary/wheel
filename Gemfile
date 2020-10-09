@@ -64,6 +64,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Background jobs
 gem "sidekiq"
 
+# Preview email in browser
+gem "letter_opener", group: :development
+
 group :development do
   # speeds up development by keeping your application running in the background
   gem "spring"
