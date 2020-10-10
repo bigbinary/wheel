@@ -3,4 +3,4 @@
 if Rails.env.heroku?
   require 'sidekiq/testing'
   Sidekiq::Testing.inline!
- end
+end
