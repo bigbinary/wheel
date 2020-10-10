@@ -34,6 +34,7 @@
     "axios": "^0.20.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.6",
     "core-js": "3",
     "nitroui": "https://github.com/bigbinary/nitroui.git",
     "postcss-cssnext": "^3.1.0",

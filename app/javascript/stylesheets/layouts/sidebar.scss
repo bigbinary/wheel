@@ -1,0 +1,33 @@
+$sidebar-width: 72px;
+
+.nh-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: $sidebar-width;
+  height: 100vh;
+  transition: width 0.3s;
+}
+
+.nh-main-wrapper {
+  max-width: calc(100vw - #{$sidebar-width});
+}
+
+.nh-action-sidebar {
+  width: 400px;
+  min-width: 400px;
+  height: calc(100vh - #{$main-header-height} - #{$sub-header-height});
+  overflow-y: auto;
+  position: fixed;
+  top: calc(#{$main-header-height} + #{$sub-header-height});
+  right: 0;
+  background-color: theme("colors.gray.100");
+  border-left: thin solid theme("colors.gray.200");
+  padding: 16px 24px;
+}
+
+.nh-logo {
+  min-height: 72px;
+  @apply flex items-center justify-center w-full px-3 py-2 border-b;
+}

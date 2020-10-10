@@ -1,51 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
+import NavItem from "./NavItem";
+import { withRouter } from "react-router-dom";
 
-import { useAuthState } from "contexts/auth-context";
-import AccountDropdown from "./AccountDropdown";
-
-const Navbar = () => {
-  const { isLoggedIn } = useAuthState();
-
-  return (
-    <div className="header bg-white border-b shadow-sm py-4 mb-6">
-      <nav className="container mx-auto flex flex-grow-1 px-4">
-        <Link className="text-2xl font-semibold hover:text-teal-600" to="/">
-          Wheel
-        </Link>
-        <div className="flex ml-auto items-center">
-          <div className="nav-item">
-            <Link
-              className="nav-link text-base text-gray-800 ml-6 hover:text-teal-600"
-              to="/features"
-            >
-              Features
-            </Link>
+class NavBar extends Component {
+  render() {
+    return (
+      <div className="bg-gray-100 nh-sidebar" key="sidebar">
+        <div className="nh-logo">
+          <div className="flex items-center justify-center w-8 h-8 rounded-md">
+            <i className="text-purple-500 ri-flashlight-fill ri-2x" />
           </div>
-          <div className="nav-item">
-            <Link
-              className="nav-link text-base text-gray-800 ml-6 hover:text-teal-600"
-              to="/contact"
-            >
-              Contact
-            </Link>
-          </div>
-          {isLoggedIn ? (
-            <AccountDropdown />
-          ) : (
-            <div className="nav-item">
-              <Link
-                className="nav-link text-base text-gray-800 ml-6 hover:text-teal-600"
-                to="/login"
-              >
-                Sign In
-              </Link>
-            </div>
-          )}
         </div>
-      </nav>
-    </div>
-  );
-};
+        <div className="flex flex-col items-center justify-start w-full pt-4">
+          <NavItem link="/features" icon="ri-coupon-2-line" />
+          <NavItem link="/contact" icon="ri-user-line" />
+        </div>
+      </div>
+    );
+  }
+}
 
-export default Navbar;
+export default withRouter(NavBar);

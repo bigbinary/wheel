@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { ToastContainer } from "react-toastify";
 
@@ -21,7 +21,7 @@ const App = props => {
     userDispatch({ type: "SET_USER", payload: { user: props.user } });
   }, []);
   return (
-    <>
+    <BrowserRouter>
       <ToastContainer />
       <Switch>
         <Route exact path="/users/password/new" component={PasswordReset} />
@@ -34,7 +34,7 @@ const App = props => {
           component={Dashboard}
         />
       </Switch>
-    </>
+    </BrowserRouter>
   );
 };
 
