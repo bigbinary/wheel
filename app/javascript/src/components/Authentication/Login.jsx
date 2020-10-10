@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { showErrorToastr } from "nitroui";
+import { showToastr, showErrorToastr } from "common";
 
 import { login } from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth-context";
@@ -18,7 +18,6 @@ const Login = ({ history }) => {
   const handleSubmit = async event => {
     event.preventDefault();
     try {
-      showErrorToastr("dddyrtdytdytdte65456");
       setLoading(true);
       const {
         data: { auth_token, user, is_admin },
@@ -26,6 +25,7 @@ const Login = ({ history }) => {
       authDispatch({ type: "LOGIN", payload: { auth_token, email, is_admin } });
       userDispatch({ type: "SET_USER", payload: { user } });
       history.push("/");
+      showToastr("Logged in successfully.");
     } catch (error) {
       showErrorToastr(error);
     } finally {

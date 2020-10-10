@@ -2,5 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "react-toastify/dist/ReactToastify.min.css";
+
+
 @import "variables.scss";
 @import "./layouts/sidebar.scss";

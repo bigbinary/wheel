@@ -6099,8 +6099,8 @@ nice-try@^1.0.4:
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
 "nitroui@https://github.com/bigbinary/nitroui.git":
-  version "0.1.3"
-  resolved "https://github.com/bigbinary/nitroui.git#70704666666bb6ddafda0a377983da45879a9fdf"
+  version "0.3.0"
+  resolved "https://github.com/bigbinary/nitroui.git#8b2bb50df656b1db8ab7d77ba7b7355d3016fc36"
   dependencies:
     "@blueprintjs/core" "^3.33.0"
     "@tailwindcss/ui" "^0.6.2"
@@ -6112,7 +6112,6 @@ nice-try@^1.0.4:
     react-select "^3.1.0"
     react-spinners "^0.9.0"
     react-spring "^8.0.27"
-    react-toastify "^6.0.9"
     sass "^1.26.11"
     sass-loader "^10.0.2"
     style-loader "^1.2.1"
