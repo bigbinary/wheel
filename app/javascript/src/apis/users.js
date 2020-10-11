@@ -1,3 +1,3 @@
-import http from "./axios";
+import axios from "axios";
 
-export const signup = payload => http.post("api/v1/users", payload);
+export const signup = payload => axios.post("api/v1/users", payload);

@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "babel-plugin-js-logger": "^1.0.17",
     "eslint": "^6.4.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-react": "^7.14.3",
@@ -36,6 +37,7 @@
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.6",
     "core-js": "3",
+    "js-logger": "^1.6.0",
     "nitroui": "https://github.com/bigbinary/nitroui.git",
     "postcss-cssnext": "^3.1.0",
     "prop-types": "^15.7.2",

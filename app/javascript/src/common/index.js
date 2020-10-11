@@ -1,9 +1,9 @@
 import React from "react";
-import { Toastr } from "nitroui";
+import { Toastr as ToastrComponent } from "nitroui";
 import { toast, Slide } from "react-toastify";
 
-export const showToastr = message => {
-  toast.success(<Toastr type="success" message={message} />, {
+const showToastr = message => {
+  toast.success(<ToastrComponent type="success" message={message} />, {
     position: toast.POSITION.BOTTOM_CENTER,
     transition: Slide,
   });
@@ -11,13 +11,18 @@ export const showToastr = message => {
 
 const isError = e => e && e.stack && e.message;
 
-export const showErrorToastr = error => {
+const showErrorToastr = error => {
   let errorMessage = error;
   if (isError(error)) {
     errorMessage = error.message;
   }
-  toast.error(<Toastr type="error" message={errorMessage} />, {
+  toast.error(<ToastrComponent type="error" message={errorMessage} />, {
     position: toast.POSITION.BOTTOM_CENTER,
     transition: Slide,
   });
+};
+
+export const Toastr = {
+  success: showToastr,
+  error: showErrorToastr,
 };

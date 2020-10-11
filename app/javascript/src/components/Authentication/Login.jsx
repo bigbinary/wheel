@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { showToastr, showErrorToastr } from "common";
+import { Toastr } from "common";
 
 import { login } from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth";
@@ -25,9 +25,9 @@ const Login = ({ history }) => {
       authDispatch({ type: "LOGIN", payload: { auth_token, email, is_admin } });
       userDispatch({ type: "SET_USER", payload: { user } });
       history.push("/");
-      showToastr("Logged in successfully.");
+      Toastr.success("Logged in successfully.");
     } catch (error) {
-      showErrorToastr(error);
+      logger.error(error);
     } finally {
       setLoading(false);
     }
