@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { showToastr, showErrorToastr } from "common";
 
 import { login } from "apis/authentication";
-import { useAuthDispatch } from "contexts/auth-context";
-import { useUserDispatch } from "contexts/user-context";
+import { useAuthDispatch } from "contexts/auth";
+import { useUserDispatch } from "contexts/user";
 
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { useUserState } from "contexts/user-context";
+import { useUserState } from "contexts/user";
 
 const Profile = () => {
   const { user } = useUserState();

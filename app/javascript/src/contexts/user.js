@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import userReducer from "reducers/user-reducer";
+import userReducer from "reducers/user";
 
 const UserStateContext = React.createContext();
 const UserDispatchContext = React.createContext();

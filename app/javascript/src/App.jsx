@@ -10,8 +10,8 @@ import PasswordReset from "components/Authentication/ResetPassword";
 import Login from "components/Authentication/Login";
 import Signup from "components/Authentication/Signup";
 
-import { useAuthState } from "contexts/auth-context";
-import { useUserDispatch } from "contexts/user-context";
+import { AuthProvider, useAuthState } from "contexts/auth";
+import { UserProvider, useUserDispatch } from "contexts/user";
 
 const App = props => {
   const { authToken } = useAuthState();
@@ -21,20 +21,24 @@ const App = props => {
     userDispatch({ type: "SET_USER", payload: { user: props.user } });
   }, []);
   return (
-    <BrowserRouter>
-      <ToastContainer />
-      <Switch>
-        <Route exact path="/users/password/new" component={PasswordReset} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
-        <PrivateRoute
-          path="/"
-          redirectRoute="/login"
-          condition={!!authToken}
-          component={Dashboard}
-        />
-      </Switch>
-    </BrowserRouter>
+    <AuthProvider>
+      <UserProvider>
+        <BrowserRouter>
+          <ToastContainer />
+          <Switch>
+            <Route exact path="/users/password/new" component={PasswordReset} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/login" component={Login} />
+            <PrivateRoute
+              path="/"
+              redirectRoute="/login"
+              condition={!!authToken}
+              component={Dashboard}
+            />
+          </Switch>
+        </BrowserRouter>
+      </UserProvider>
+    </AuthProvider>
   );
 };
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-import { useAuthDispatch } from "contexts/auth-context";
-import { useUserState } from "contexts/user-context";
+import { useAuthDispatch } from "contexts/auth";
+import { useUserState } from "contexts/user";
 import { logout } from "apis/authentication";
 
 const AccountDropdown = () => {

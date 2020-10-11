@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { signup } from "apis/users";
-import { useAuthDispatch } from "contexts/auth-context";
-import { useUserDispatch } from "contexts/user-context";
+import { useAuthDispatch } from "contexts/auth";
+import { useUserDispatch } from "contexts/user";
 
 const Signup = ({ history }) => {
   const [email, setEmail] = useState("");
