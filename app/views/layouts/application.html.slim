@@ -9,17 +9,11 @@ html lang="en"
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = javascript_pack_tag 'application'
+    = stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all"
     /! <link rel="icon" href="/favicon.ico" type="image/x-icon"
     /! <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
 
-  body.bg-gray-100.min-h-screen.flex.flex-col.antialiased
-    = render 'shared/header/tabs'
-
-    .wrapper.flex.flex-grow
-      .flex-col.container.mx-auto.px-4
-        = yield
-
-    = render 'shared/alerts'
-    = render 'shared/footer'
+  body.min-h-screen.flex.flex-col.antialiased
+    = yield
 
   = stylesheet_pack_tag "application"

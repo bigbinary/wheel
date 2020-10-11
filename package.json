@@ -26,18 +26,26 @@
     "lint-staged": "^4.1.0",
     "node-sass": "^4.13.0",
     "prettier": "^1.6.1",
-    "webpack-dev-server": "^3.2.1"
+    "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/preset-react": "^7.0.0",
-    "@rails/webpacker": "^4.0.2",
+    "@babel/preset-react": "^7.10.4",
+    "@rails/webpacker": "4.3.0",
+    "axios": "^0.20.0",
+    "babel-plugin-js-logger": "^1.0.17",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.6",
     "core-js": "3",
+    "js-logger": "^1.6.0",
+    "nitroui": "https://github.com/bigbinary/nitroui.git",
     "postcss-cssnext": "^3.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-toastify": "^6.0.9",
+    "react_ujs": "^2.6.1",
     "tailwindcss": "^1.6.0"
   }
 }

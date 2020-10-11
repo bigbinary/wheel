@@ -11,7 +11,8 @@ module.exports = {
   },
   "globals": {
     "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "SharedArrayBuffer": "readonly",
+    "logger": true
   },
   "parserOptions": {
     "ecmaFeatures": {
@@ -26,6 +27,7 @@ module.exports = {
   ],
   "rules": {
     "semi": ["error", "always"],
-    "no-console": "error"
+    "no-console": "error",
+    "react/prop-types": 0
   }
 };

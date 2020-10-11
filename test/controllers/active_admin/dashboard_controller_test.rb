@@ -17,9 +17,8 @@ class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
 
   def test_index_for_non_super_admin
     sign_in users(:nancy)
+    get active_admin_root_url
 
-    assert_raises ActionController::RoutingError do
-      get active_admin_root_url
-    end
+    assert_redirected_to root_path
   end
 end
