@@ -17,11 +17,6 @@
       "git add"
     ]
   },
-  "engines": {
-    "node": "14.x",
-    "npm": "6.x",
-    "yarn": "1.22.x"
-  },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.4.0",
