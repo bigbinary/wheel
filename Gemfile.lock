@@ -349,7 +349,7 @@ DEPENDENCIES
   pg
   pry
   puma (~> 4.1)
-  rails (~> 6.0.3.3)
+  rails (~> 6.0.3.4)
   react-rails
   rubocop (~> 0.82.0)
   rubocop-rails
