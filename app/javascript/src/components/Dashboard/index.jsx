@@ -3,9 +3,9 @@ import { Route, Redirect, Switch } from "react-router-dom";
 
 import Navbar from "components/Common/Navbar";
 
-import PasswordEdit from "./Users/Passwords/Edit";
+import PasswordEdit from "./Account/Passwords/Edit";
 import Contact from "./Contact";
-import Profile from "./Users/Profile";
+import Profile from "./Account/Profile";
 import Features from "./Features";
 
 const Home = () => {

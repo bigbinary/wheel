@@ -26,12 +26,13 @@ const NavBar = props => {
       </div>
       <div className="flex flex-col items-center justify-between w-full h-full">
         <div className="flex flex-col items-center justify-start w-full pt-4">
+          <NavItem title="Features" link="/features" icon="ri-star-line" />
+          <NavItem title="Users" link="/users" icon="ri-group-line" />
           <NavItem
-            title="Features"
-            link="/features"
-            icon="ri-shield-star-line"
+            title="Contact"
+            link="/contact"
+            icon="ri-contacts-book-2-line"
           />
-          <NavItem title="Contact" link="/contact" icon="ri-user-line" />
           <NavItem
             title="Settings"
             link="/settings"
