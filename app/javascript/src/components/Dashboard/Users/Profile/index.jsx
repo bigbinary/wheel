@@ -19,8 +19,8 @@ const Profile = () => {
   }, [user]);
 
   return (
-    <div className="w-full flex flex-grow wrapper">
-      <div className="px-4">
+    <div className="flex flex-grow w-full wrapper">
+      <div className="w-full px-4">
         <div className="flex flex-col items-center justify-center flex-grow w-full h-full py-20 mx-auto lg:w-5/12">
           <h2 className="mb-5 text-2xl font-medium text-center text-gray-800">
             Basic Details
