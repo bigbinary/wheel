@@ -16,7 +16,11 @@ export default function index() {
         title="Users"
         rightButton={() => <Button label="Add new user" icon="ri-add-line" />}
       />
-      <SubHeading searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <SubHeading
+        selectedRowIds={selectedRowIds}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
       <UserTable
         selectedRowIds={selectedRowIds}
         setSelectedRowIds={setSelectedRowIds}

@@ -1,7 +1,11 @@
 import React from "react";
 import { Button, Input } from "nitroui";
 
-export default function SubHeading({ searchTerm, setSearchTerm }) {
+export default function SubHeading({
+  selectedRowIds,
+  searchTerm,
+  setSearchTerm,
+}) {
   return (
     <div className="py-1 nui-subheader">
       <div className="flex flex-row items-center justify-start">
@@ -15,7 +19,12 @@ export default function SubHeading({ searchTerm, setSearchTerm }) {
       </div>
       <div className="flex flex-row items-center justify-end w-full">
         <div className="flex flex-row items-center justify-start py-1 pr-4 mr-4 border-r border-gray-300">
-          <Button style="text" label="Delete" icon="ri-delete-bin-line" />
+          <Button
+            disabled={!selectedRowIds.length}
+            style="text"
+            label="Delete"
+            icon="ri-delete-bin-line"
+          />
         </div>
         {/* <Pagination
           count={totalCount}
