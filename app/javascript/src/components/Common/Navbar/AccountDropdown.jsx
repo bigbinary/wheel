@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 import AuthenticationAPI from "apis/authentication";
+import { resetAuthTokens } from "apis/axios";
 
 const AccountDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,7 @@ const AccountDropdown = () => {
     try {
       await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
+      resetAuthTokens();
       history.push("/login");
     } catch (error) {
       alert(error.response.data.error);

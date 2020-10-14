@@ -18,7 +18,7 @@ export default function index() {
       try {
         setLoading(true);
         const response = await ContactsAPI.fetch();
-        setContacts(response.data);
+        setContacts(response.data?.contacts);
       } catch (error) {
         logger.error(error);
       } finally {

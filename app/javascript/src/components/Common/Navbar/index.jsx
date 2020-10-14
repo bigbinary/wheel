@@ -3,6 +3,7 @@ import NavItem from "./NavItem";
 import { withRouter } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
 import AuthenticationAPI from "apis/authentication";
+import { resetAuthTokens } from "apis/axios";
 import { Toastr } from "common";
 
 const NavBar = props => {
@@ -11,6 +12,7 @@ const NavBar = props => {
     try {
       await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
+      resetAuthTokens();
       props.history.push("/login");
     } catch (error) {
       Toastr.error(error);

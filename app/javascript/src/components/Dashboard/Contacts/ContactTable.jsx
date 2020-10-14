@@ -4,7 +4,7 @@ import { Avatar, Checkbox } from "nitroui";
 export default function ContactTable({
   selectedRowIds,
   setSelectedRowIds,
-  contacts,
+  contacts = [],
 }) {
   return (
     <table className="nui-table nui-table--checkbox nui-table--avatar">

@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class Api::V1::ContactsController < Api::V1::BaseController
+  before_action :load_contact, only: [:show, :delete]
+
   def index
+    contacts = current_user.contacts
+    render json: { contacts: contacts }
   end
 
   def create
@@ -18,5 +22,9 @@ class Api::V1::ContactsController < Api::V1::BaseController
 
     def contact_params
       params.require(:contact).permit([ :email, :title, :body]).to_h
+    end
+
+    def load_contact
+      @contact = Contact.find(params[:id])
     end
 end

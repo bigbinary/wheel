@@ -2,20 +2,25 @@ import axios from "axios";
 import { Toastr } from "common";
 
 axios.defaults.baseURL = "/";
-axios.defaults.headers = {
-  Accept: "applicaion/json",
-  "Content-Type": "application/json",
-  "X-CSRF-TOKEN": document.querySelector('[name="csrf-token"]').content,
-};
 
-const handleRequest = config => {
+export const setAuthHeaders = setLoading => {
+  axios.defaults.headers = {
+    Accept: "applicaion/json",
+    "Content-Type": "application/json",
+    "X-CSRF-TOKEN": document.querySelector('[name="csrf-token"]').content,
+  };
   const token = JSON.parse(localStorage.getItem("authToken"));
   const email = JSON.parse(localStorage.getItem("authEmail"));
   if (token && email) {
-    config.headers["X-Auth-Email"] = email;
-    config.headers["X-Auth-Token"] = token;
+    axios.defaults.headers["X-Auth-Email"] = email;
+    axios.defaults.headers["X-Auth-Token"] = token;
   }
-  return config;
+  setLoading(false);
+};
+
+export const resetAuthTokens = () => {
+  delete axios.defaults.headers["X-Auth-Email"];
+  delete axios.defaults.headers["X-Auth-Token"];
 };
 
 const handleSuccessResponse = response => {
@@ -39,7 +44,6 @@ const handleErrorResponse = (error, authDispatch) => {
 };
 
 export const registerIntercepts = authDispatch => {
-  axios.interceptors.request.use(handleRequest);
   axios.interceptors.response.use(handleSuccessResponse, error =>
     handleErrorResponse(error, authDispatch)
   );
