@@ -83,7 +83,7 @@ const Login = ({ history }) => {
             </Link>
             <Link
               className="block mt-2 text-teal-600 hover:text-black"
-              to="/users/password/new"
+              to="/my/password/new"
             >
               Forgot password?
             </Link>

@@ -29,7 +29,7 @@ const App = props => {
     <BrowserRouter>
       <ToastContainer />
       <Switch>
-        <Route exact path="/users/password/new" component={PasswordReset} />
+        <Route exact path="/my/password/new" component={PasswordReset} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
         <PrivateRoute

@@ -7,3 +7,15 @@
 
 @import "variables.scss";
 @import "./layouts/sidebar.scss";
+
+.content-main {
+  padding: 0 16px 16px;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  max-height: 100vh;
+  overflow-y: auto;
+  z-index: 2;
+  display: flex;
+  flex-flow: column;
+}

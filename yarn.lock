@@ -6133,8 +6133,8 @@ nice-try@^1.0.4:
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
 "nitroui@https://github.com/bigbinary/nitroui.git":
-  version "0.3.5"
-  resolved "https://github.com/bigbinary/nitroui.git#056467ba0bad61be486f6bbbe67afe95c8fd0ff3"
+  version "0.3.6"
+  resolved "https://github.com/bigbinary/nitroui.git#879af6674aa859493b1117be260433d29a9fa59e"
   dependencies:
     "@blueprintjs/core" "^3.33.0"
     "@tailwindcss/ui" "^0.6.2"
