@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Api::V1::ContactsController < Api::V1::BaseController
+  def index
+  end
+
   def create
     @contact = Contact.new(contact_params)
     if @contact.valid?

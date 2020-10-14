@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Button, Input } from "nitroui";
 import { Toastr } from "common";
 
-import { login } from "apis/authentication";
+import AuthenticationAPI from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 
@@ -22,7 +22,7 @@ const Login = ({ history }) => {
       setLoading(true);
       const {
         data: { auth_token, user, is_admin },
-      } = await login({ user: { email, password } });
+      } = await AuthenticationAPI.login({ user: { email, password } });
       authDispatch({ type: "LOGIN", payload: { auth_token, email, is_admin } });
       userDispatch({ type: "SET_USER", payload: { user } });
       history.push("/");

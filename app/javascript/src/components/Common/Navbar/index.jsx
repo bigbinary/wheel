@@ -2,14 +2,14 @@ import React from "react";
 import NavItem from "./NavItem";
 import { withRouter } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
-import { logout } from "apis/authentication";
+import AuthenticationAPI from "apis/authentication";
 import { Toastr } from "common";
 
 const NavBar = props => {
   const authDispatch = useAuthDispatch();
   const handleLogout = async () => {
     try {
-      await logout();
+      await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
       props.history.push("/login");
     } catch (error) {
@@ -26,11 +26,9 @@ const NavBar = props => {
       </div>
       <div className="flex flex-col items-center justify-between w-full h-full">
         <div className="flex flex-col items-center justify-start w-full pt-4">
-          <NavItem title="Features" link="/features" icon="ri-star-line" />
-          <NavItem title="Users" link="/users" icon="ri-group-line" />
           <NavItem
-            title="Contact"
-            link="/contact"
+            title="Contacts"
+            link="/contacts"
             icon="ri-contacts-book-2-line"
           />
           <NavItem

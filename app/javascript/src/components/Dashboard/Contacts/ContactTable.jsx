@@ -1,10 +1,10 @@
 import React from "react";
 import { Avatar, Checkbox } from "nitroui";
 
-export default function UserTable({
+export default function ContactTable({
   selectedRowIds,
   setSelectedRowIds,
-  users,
+  contacts,
 }) {
   return (
     <table className="nui-table nui-table--checkbox nui-table--avatar">
@@ -13,14 +13,15 @@ export default function UserTable({
           <th className="px-2">
             <Checkbox
               checked={
-                selectedRowIds.length === users.map(user => user.id).length
+                selectedRowIds.length ===
+                contacts.map(contact => contact.id).length
               }
               onClick={() => {
-                const userIds = users.map(user => user.id);
-                if (selectedRowIds.length === userIds.length) {
+                const contactIds = contacts.map(contact => contact.id);
+                if (selectedRowIds.length === contactIds.length) {
                   setSelectedRowIds([]);
                 } else {
-                  setSelectedRowIds(userIds);
+                  setSelectedRowIds(contactIds);
                 }
               }}
             />
@@ -30,17 +31,17 @@ export default function UserTable({
         </tr>
       </thead>
       <tbody>
-        {users.map(user => (
+        {contacts.map(contact => (
           <tr
-            key={user.id}
+            key={contact.id}
             className={"cursor-pointer bg-white hover:bg-gray-50"}
           >
             <td>
               <Checkbox
-                checked={selectedRowIds.includes(user.id)}
+                checked={selectedRowIds.includes(contact.id)}
                 onClick={event => {
                   event.stopPropagation();
-                  const index = selectedRowIds.indexOf(user.id);
+                  const index = selectedRowIds.indexOf(contact.id);
 
                   if (index > -1) {
                     setSelectedRowIds([
@@ -48,18 +49,18 @@ export default function UserTable({
                       ...selectedRowIds.slice(index + 1),
                     ]);
                   } else {
-                    setSelectedRowIds([...selectedRowIds, user.id]);
+                    setSelectedRowIds([...selectedRowIds, contact.id]);
                   }
                 }}
               />
             </td>
             <td>
               <div className="flex flex-row items-center justify-start text-gray-900">
-                <Avatar size={36} className="mr-3" contact={user} />
-                {user.name}
+                <Avatar size={36} className="mr-3" contact={contact} />
+                {contact.name}
               </div>
             </td>
-            <td>{user.email}</td>
+            <td>{contact.email}</td>
           </tr>
         ))}
       </tbody>
