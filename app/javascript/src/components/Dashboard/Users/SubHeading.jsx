@@ -15,13 +15,7 @@ export default function SubHeading({ searchTerm, setSearchTerm }) {
       </div>
       <div className="flex flex-row items-center justify-end w-full">
         <div className="flex flex-row items-center justify-start py-1 pr-4 mr-4 border-r border-gray-300">
-          <Button style="text" label="Activate" icon="ri-lock-unlock-line" />
-          <Button
-            style="text"
-            label="Deactivate"
-            icon="ri-lock-line"
-            className="ml-4"
-          />
+          <Button style="text" label="Delete" icon="ri-delete-bin-line" />
         </div>
         {/* <Pagination
           count={totalCount}
