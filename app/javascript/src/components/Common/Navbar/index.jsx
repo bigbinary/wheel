@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
 import AuthenticationAPI from "apis/authentication";
 import { resetAuthTokens } from "apis/axios";
-import { Toastr } from "common";
+import { Toastr } from "nitroui";
 
 const NavBar = props => {
   const authDispatch = useAuthDispatch();
