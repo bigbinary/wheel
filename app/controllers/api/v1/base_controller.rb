@@ -28,11 +28,8 @@ class Api::V1::BaseController < ApplicationController
     end
 
     def authenticate_user_using_x_auth_token
-      p "============="
       user_email = request.headers["X-Auth-Email"]
       auth_token = request.headers["X-Auth-Token"].presence
-      p user_email
-      p auth_token
       user = user_email && User.find_by_email(user_email)
 
       if user && Devise.secure_compare(user.authentication_token, auth_token)

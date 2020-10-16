@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Button, Input } from "nitroui";
 import { Toastr } from "nitroui";
+import { setAuthHeaders } from "apis/axios";
 
 import AuthenticationAPI from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth";
@@ -25,6 +26,7 @@ const Login = ({ history }) => {
       } = await AuthenticationAPI.login({ user: { email, password } });
       authDispatch({ type: "LOGIN", payload: { auth_token, email, is_admin } });
       userDispatch({ type: "SET_USER", payload: { user } });
+      setAuthHeaders();
       history.push("/");
       Toastr.success("Logged in successfully.");
     } catch (error) {

@@ -6,14 +6,14 @@ import AuthenticationAPI from "apis/authentication";
 import { resetAuthTokens } from "apis/axios";
 import { Toastr } from "nitroui";
 
-const NavBar = props => {
+const NavBar = () => {
   const authDispatch = useAuthDispatch();
   const handleLogout = async () => {
     try {
       await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
       resetAuthTokens();
-      props.history.push("/login");
+      window.location.href = "/login";
     } catch (error) {
       Toastr.error(error);
     }

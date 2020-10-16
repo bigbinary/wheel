@@ -16,7 +16,7 @@ const Home = () => {
           <Route exact path="/contacts" component={Contacts} />
           <Route exact path="/my/password/edit" component={PasswordEdit} />
           <Route exact path="/my/profile" component={Profile} />
-          <Redirect from="/" to="/features" />
+          <Redirect from="/" to="/contacts" />
         </Switch>
       </div>
     </div>

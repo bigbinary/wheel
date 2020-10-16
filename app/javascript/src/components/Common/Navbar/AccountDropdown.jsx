@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
@@ -10,14 +10,13 @@ const AccountDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const authDispatch = useAuthDispatch();
   const { user } = useUserState();
-  const history = useHistory();
 
   const handleLogout = async () => {
     try {
       await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
       resetAuthTokens();
-      history.push("/login");
+      window.location.href = "/";
     } catch (error) {
       alert(error.response.data.error);
     }

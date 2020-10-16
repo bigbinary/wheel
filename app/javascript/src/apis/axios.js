@@ -1,9 +1,9 @@
 import axios from "axios";
-import { Toastr } from "common";
+import { Toastr } from "nitroui";
 
 axios.defaults.baseURL = "/";
 
-export const setAuthHeaders = setLoading => {
+export const setAuthHeaders = (setLoading = () => null) => {
   axios.defaults.headers = {
     Accept: "applicaion/json",
     "Content-Type": "application/json",
