@@ -3,17 +3,25 @@ import * as yup from "yup";
 import { Formik, Form } from "formik";
 import { Input } from "nitroui/formik";
 import { Button } from "nitroui";
+import ContactsAPI from "apis/contacts";
 
-export default function NewContactForm({ onClose }) {
+export default function NewContactForm({ onClose, refetch }) {
+  const handleSubmit = async values => {
+    try {
+      await ContactsAPI.create(values);
+      refetch();
+      onClose();
+    } catch (err) {
+      logger.error(err);
+    }
+  };
   return (
     <Formik
       initialValues={{
         name: "",
         email: "",
       }}
-      onSubmit={values => {
-        logger.log(values);
-      }}
+      onSubmit={handleSubmit}
       validationSchema={yup.object({
         name: yup.string().required("Name is required"),
         email: yup

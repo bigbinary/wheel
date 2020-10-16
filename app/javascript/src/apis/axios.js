@@ -38,7 +38,7 @@ const handleErrorResponse = (error, authDispatch) => {
     authDispatch({ type: "LOGOUT" });
     Toastr.error(error.response?.data?.error);
   } else {
-    Toastr.error(error.response?.data?.message || error.message);
+    Toastr.error(error.response?.data?.error || error.message);
   }
   return Promise.reject(error);
 };
