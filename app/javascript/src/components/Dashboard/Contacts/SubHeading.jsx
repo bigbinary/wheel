@@ -2,10 +2,9 @@ import React from "react";
 import { Button, Input } from "nitroui";
 
 export default function SubHeading({
-  selectedContactIds,
+  selectedRowIds,
   searchTerm,
   setSearchTerm,
-  setShowDeleteAlert,
 }) {
   return (
     <div className="py-1 nui-subheader">
@@ -19,12 +18,11 @@ export default function SubHeading({
         />
       </div>
       <div className="flex flex-row items-center justify-end w-full">
-        <div className="flex flex-row items-center justify-start py-1 pr-4">
+        <div className="flex flex-row items-center justify-start py-1 pr-4 mr-4 border-r border-gray-300">
           <Button
-            disabled={!selectedContactIds.length}
+            disabled={!selectedRowIds.length}
             style="text"
             label="Delete"
-            onClick={() => setShowDeleteAlert(true)}
             icon="ri-delete-bin-line"
           />
         </div>
