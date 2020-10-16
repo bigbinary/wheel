@@ -3,22 +3,22 @@ import { Route, Redirect, Switch } from "react-router-dom";
 
 import Navbar from "components/Common/Navbar";
 
-import PasswordEdit from "./Users/Passwords/Edit";
-import Contact from "./Contact";
-import Profile from "./Users/Profile";
-import Features from "./Features";
+import PasswordEdit from "./Account/Passwords/Edit";
+import Profile from "./Account/Profile";
+import Contacts from "./Contacts";
 
 const Home = () => {
   return (
     <div className="flex h-screen">
       <Navbar />
-      <Switch>
-        <Route exact path="/features" component={Features} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/my/password/edit" component={PasswordEdit} />
-        <Route exact path="/my/profile" component={Profile} />
-        <Redirect from="/" to="/features" />
-      </Switch>
+      <div className="content-main">
+        <Switch>
+          <Route exact path="/contacts" component={Contacts} />
+          <Route exact path="/my/password/edit" component={PasswordEdit} />
+          <Route exact path="/my/profile" component={Profile} />
+          <Redirect from="/" to="/contacts" />
+        </Switch>
+      </div>
     </div>
   );
 };

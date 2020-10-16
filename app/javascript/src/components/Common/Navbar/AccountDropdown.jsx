@@ -1,30 +1,31 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
-import { logout } from "apis/authentication";
+import AuthenticationAPI from "apis/authentication";
+import { resetAuthTokens } from "apis/axios";
 
 const AccountDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const authDispatch = useAuthDispatch();
   const { user } = useUserState();
-  const history = useHistory();
 
   const handleLogout = async () => {
     try {
-      await logout();
+      await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
-      history.push("/login");
+      resetAuthTokens();
+      window.location.href = "/";
     } catch (error) {
       alert(error.response.data.error);
     }
   };
 
   return (
-    <div className="dropdown inline-block relative ml-6">
+    <div className="relative inline-block ml-6 dropdown">
       <button
-        className="nav-link text-base text-gray-800 flex items-center hover:text-teal-600 focus:outline-none"
+        className="flex items-center text-base text-gray-800 nav-link hover:text-teal-600 focus:outline-none"
         data-behavior="dropdown-toggle"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -32,7 +33,7 @@ const AccountDropdown = () => {
           {user && user.first_name + " " + user.last_name}
         </div>
         <svg
-          className="fill-current h-4 w-4"
+          className="w-4 h-4 fill-current"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
         >
@@ -45,14 +46,14 @@ const AccountDropdown = () => {
           data-behavior="dropdown-menu"
         >
           <div
-            className="dropdown-overlay bg-transparent top-0 left-0 w-full h-full fixed z-10"
+            className="fixed top-0 left-0 z-10 w-full h-full bg-transparent dropdown-overlay"
             data-behavior="dropdown-toggle"
             onClick={() => setIsOpen(false)}
           ></div>
-          <ul className="dropdown-menu bg-white shadow-md border absolute right-0 text-gray-700 pt-1 mt-2 rounded-md z-20">
+          <ul className="absolute right-0 z-20 pt-1 mt-2 text-gray-700 bg-white border rounded-md shadow-md dropdown-menu">
             <li>
               <Link
-                className="rounded-t hover:bg-gray-200 hover:text-gray-800 py-2 px-4 block whitespace-no-wrap"
+                className="block px-4 py-2 whitespace-no-wrap rounded-t hover:bg-gray-200 hover:text-gray-800"
                 to="/my/profile"
               >
                 My Account
@@ -60,7 +61,7 @@ const AccountDropdown = () => {
             </li>
             <li>
               <Link
-                className="rounded-t hover:bg-gray-200 hover:text-gray-800 py-2 px-4 block whitespace-no-wrap"
+                className="block px-4 py-2 whitespace-no-wrap rounded-t hover:bg-gray-200 hover:text-gray-800"
                 to="/my/password/edit"
               >
                 Change Password
@@ -68,7 +69,7 @@ const AccountDropdown = () => {
             </li>
             <li>
               <button
-                className="w-full text-left rounded-t hover:bg-gray-200 hover:text-gray-800 py-2 px-4 block whitespace-no-wrap"
+                className="block w-full px-4 py-2 text-left whitespace-no-wrap rounded-t hover:bg-gray-200 hover:text-gray-800"
                 onClick={handleLogout}
               >
                 Logout

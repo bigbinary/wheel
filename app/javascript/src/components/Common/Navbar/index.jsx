@@ -2,16 +2,18 @@ import React from "react";
 import NavItem from "./NavItem";
 import { withRouter } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
-import { logout } from "apis/authentication";
-import { Toastr } from "common";
+import AuthenticationAPI from "apis/authentication";
+import { resetAuthTokens } from "apis/axios";
+import { Toastr } from "nitroui";
 
-const NavBar = props => {
+const NavBar = () => {
   const authDispatch = useAuthDispatch();
   const handleLogout = async () => {
     try {
-      await logout();
+      await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
-      props.history.push("/login");
+      resetAuthTokens();
+      window.location.href = "/login";
     } catch (error) {
       Toastr.error(error);
     }
@@ -27,11 +29,10 @@ const NavBar = props => {
       <div className="flex flex-col items-center justify-between w-full h-full">
         <div className="flex flex-col items-center justify-start w-full pt-4">
           <NavItem
-            title="Features"
-            link="/features"
-            icon="ri-shield-star-line"
+            title="Contacts"
+            link="/contacts"
+            icon="ri-contacts-book-2-line"
           />
-          <NavItem title="Contact" link="/contact" icon="ri-user-line" />
           <NavItem
             title="Settings"
             link="/settings"

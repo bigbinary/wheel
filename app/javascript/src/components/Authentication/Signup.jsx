@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Button, Input } from "nitroui";
 
-import { signup } from "apis/users";
+import AuthenticationAPI from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 
@@ -24,7 +24,7 @@ const Signup = ({ history }) => {
       setLoading(true);
       const {
         data: { user, auth_token },
-      } = await signup({
+      } = await AuthenticationAPI.signup({
         user: {
           email,
           first_name: firstName,

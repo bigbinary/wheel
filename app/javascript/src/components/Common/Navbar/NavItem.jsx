@@ -23,7 +23,7 @@ export default function NavItem({
       onClick={() => (onClick ? onClick() : history.push(link))}
       className={classnames(
         [
-          "w-12 h-12 rounded-md text-2xl flex items-center justify-center opacity-100 my-1",
+          "w-12 h-12 rounded-md text-2xl flex items-center justify-center opacity-100",
           className,
         ],
         {
@@ -48,9 +48,11 @@ export default function NavItem({
     );
   } else {
     return (
-      <Tooltip content={title} position="right">
-        <NavButton />
-      </Tooltip>
+      <div className="mb-6">
+        <Tooltip content={title} position="right">
+          <NavButton />
+        </Tooltip>
+      </div>
     );
   }
 }
