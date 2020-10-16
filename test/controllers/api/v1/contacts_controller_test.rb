@@ -57,4 +57,37 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     response_json = response.parsed_body
     assert_equal response_json["error"], "Email can't be blank and Email is invalid"
   end
+
+  def test_delete_single_contact
+    initial_contacts_count = @admin.contacts.size
+    peter = contacts(:peter)
+
+    post bulk_delete_api_v1_contacts_path, params: { ids: [peter.id] },
+        headers: @headers
+    assert_response :success
+    assert_equal @admin.contacts.size, initial_contacts_count-1
+  end
+
+  def test_delete_multiple_contact
+    initial_contacts_count = @admin.contacts.size
+    peter = contacts(:peter)
+    meg = contacts(:meg)
+    stewie = contacts(:stewie)
+
+    post bulk_delete_api_v1_contacts_path, params: { ids: [peter.id, meg.id, stewie.id] },
+        headers: @headers
+    assert_response :success
+    assert_equal @admin.contacts.size, initial_contacts_count-3
+  end
+
+  def test_delete_invalid_id
+    initial_contacts_count = @admin.contacts.size
+    post bulk_delete_api_v1_contacts_path, params: { ids: ["random_id"] },
+        headers: @headers
+    response_json = response.parsed_body
+
+    assert_response :unprocessable_entity
+    assert_equal response_json["error"], "No users found with those IDs"
+    assert_equal @admin.contacts.size, initial_contacts_count
+  end
 end

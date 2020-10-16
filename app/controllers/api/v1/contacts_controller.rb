@@ -19,9 +19,13 @@ class Api::V1::ContactsController < Api::V1::BaseController
 
   def bulk_delete
     contacts = Contact.where(id: params[:ids], user: current_user)
-    contacts_count = contacts.size
-    contacts.destroy_all
-    render json: { notice: "#{contacts_count} contacts has been added deleted." }
+    if contacts.empty?
+      render json: { error: "No users found with those IDs" }, status: 422
+    else
+      contacts_count = contacts.size
+      contacts.destroy_all
+      render json: { notice: "#{contacts_count} contacts has been added deleted." }
+    end
   end
 
   private
