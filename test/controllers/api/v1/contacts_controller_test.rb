@@ -30,4 +30,31 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     assert_equal contact["email"], persisted_contact.email
     assert_equal contact["id"], persisted_contact.id
   end
+
+  def test_create_contact_with_invalid_email
+    post api_v1_contacts_url, params: { contact: { name: "Zach", email: "zach.com" } },
+        headers: @headers
+    assert_response :unprocessable_entity
+
+    response_json = response.parsed_body
+    assert_equal response_json["error"], "Email is invalid"
+  end
+
+  def test_create_contact_with_blank_name
+    post api_v1_contacts_url, params: { contact: { name: "", email: "zach@example.com" } },
+        headers: @headers
+    assert_response :unprocessable_entity
+
+    response_json = response.parsed_body
+    assert_equal response_json["error"], "Name can't be blank"
+  end
+
+  def test_create_contact_with_blank_email
+    post api_v1_contacts_url, params: { contact: { name: "Zach", email: "" } },
+        headers: @headers
+    assert_response :unprocessable_entity
+
+    response_json = response.parsed_body
+    assert_equal response_json["error"], "Email can't be blank and Email is invalid"
+  end
 end
