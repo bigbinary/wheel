@@ -3,19 +3,26 @@
 require "test_helper"
 
 class ContactTest < ActiveSupport::TestCase
+  def setup
+    @owner = User.find_by(email: "admin@example.com")
+  end
+
   def test_valid_contact
-    valid_contact = { email: "oliver@exmaple.com",
+    valid_contact = { email: "oliver@example.com",
                       name: "Oliver Smith",
+                      user: @owner
                     }
 
     contact = Contact.new(valid_contact)
-
+    p contact.errors
     assert contact.valid?
   end
 
   def test_invalid_contact
     invalid_contact = { email: "bob",
-                        name: "" }
+                        name: "",
+                        user: @owner
+                      }
 
     contact = Contact.new(invalid_contact)
 
