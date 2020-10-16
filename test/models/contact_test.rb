@@ -14,7 +14,6 @@ class ContactTest < ActiveSupport::TestCase
                     }
 
     contact = Contact.new(valid_contact)
-    p contact.errors
     assert contact.valid?
   end
 
