@@ -2,8 +2,8 @@ import React from "react";
 import { Avatar, Checkbox } from "nitroui";
 
 export default function ContactTable({
-  selectedRowIds,
-  setSelectedRowIds,
+  selectedContactIds,
+  setSelectedContactIds,
   contacts = [],
 }) {
   return (
@@ -13,15 +13,15 @@ export default function ContactTable({
           <th className="px-2">
             <Checkbox
               checked={
-                selectedRowIds.length ===
+                selectedContactIds.length ===
                 contacts.map(contact => contact.id).length
               }
               onClick={() => {
                 const contactIds = contacts.map(contact => contact.id);
-                if (selectedRowIds.length === contactIds.length) {
-                  setSelectedRowIds([]);
+                if (selectedContactIds.length === contactIds.length) {
+                  setSelectedContactIds([]);
                 } else {
-                  setSelectedRowIds(contactIds);
+                  setSelectedContactIds(contactIds);
                 }
               }}
             />
@@ -38,18 +38,18 @@ export default function ContactTable({
           >
             <td>
               <Checkbox
-                checked={selectedRowIds.includes(contact.id)}
+                checked={selectedContactIds.includes(contact.id)}
                 onClick={event => {
                   event.stopPropagation();
-                  const index = selectedRowIds.indexOf(contact.id);
+                  const index = selectedContactIds.indexOf(contact.id);
 
                   if (index > -1) {
-                    setSelectedRowIds([
-                      ...selectedRowIds.slice(0, index),
-                      ...selectedRowIds.slice(index + 1),
+                    setSelectedContactIds([
+                      ...selectedContactIds.slice(0, index),
+                      ...selectedContactIds.slice(index + 1),
                     ]);
                   } else {
-                    setSelectedRowIds([...selectedRowIds, contact.id]);
+                    setSelectedContactIds([...selectedContactIds, contact.id]);
                   }
                 }}
               />
