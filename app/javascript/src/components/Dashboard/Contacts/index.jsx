@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { PageHeading } from "nitroui/layouts";
 import { Button, PageLoader } from "nitroui";
 import ContactsAPI from "apis/contacts";
+import EmptyState from "components/Common/EmptyState";
 import SubHeading from "./SubHeading";
 import ContactTable from "./ContactTable";
 import NewContactPane from "./NewContactPane";
 import DeleteAlert from "./DeleteAlert";
+import EmptyContactsListImage from "images/EmptyContactsList";
 
 export default function index() {
   const [loading, setLoading] = useState(true);
@@ -46,18 +48,30 @@ export default function index() {
           />
         )}
       />
-      <SubHeading
-        loading={loading}
-        selectedContactIds={selectedContactIds}
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        setShowDeleteAlert={setShowDeleteAlert}
-      />
-      <ContactTable
-        selectedContactIds={selectedContactIds}
-        setSelectedContactIds={setSelectedContactIds}
-        contacts={contacts}
-      />
+      {contacts.length ? (
+        <>
+          <SubHeading
+            loading={loading}
+            selectedContactIds={selectedContactIds}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            setShowDeleteAlert={setShowDeleteAlert}
+          />
+          <ContactTable
+            selectedContactIds={selectedContactIds}
+            setSelectedContactIds={setSelectedContactIds}
+            contacts={contacts}
+          />
+        </>
+      ) : (
+        <EmptyState
+          image={EmptyContactsListImage}
+          title="Looks like you don't have any contacts!"
+          subtitle="Add your contacts to send customized emails to them."
+          primaryAction={() => setShowNewContactPane(true)}
+          primaryActionLabel="Add new contact"
+        />
+      )}
       <NewContactPane
         showPane={showNewContactPane}
         setShowPane={setShowNewContactPane}
