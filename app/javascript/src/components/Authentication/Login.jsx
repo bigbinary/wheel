@@ -54,7 +54,7 @@ const Login = ({ history }) => {
                 type="email"
                 value={email}
                 label="Email"
-                placeholder="sam@example.com"
+                placeholder="oliver@example.com"
                 id="user_email"
                 onChange={e => setEmail(e.target.value)}
               />
