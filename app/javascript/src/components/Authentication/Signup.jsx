@@ -64,7 +64,7 @@ const Signup = ({ history }) => {
                 aria-required="true"
                 type="email"
                 label="Email"
-                placeholder="sam@example.com"
+                placeholder="oliver@example.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 name="email"
