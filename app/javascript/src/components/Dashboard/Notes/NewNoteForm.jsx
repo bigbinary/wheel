@@ -3,12 +3,12 @@ import * as yup from "yup";
 import { Formik, Form } from "formik";
 import { Input } from "nitroui/formik";
 import { Button } from "nitroui";
-import ContactsAPI from "apis/contacts";
+import NotesAPI from "apis/notes";
 
-export default function NewContactForm({ onClose, refetch }) {
+export default function NewNoteForm({ onClose, refetch }) {
   const handleSubmit = async values => {
     try {
-      await ContactsAPI.create(values);
+      await NotesAPI.create(values);
       refetch();
       onClose();
     } catch (err) {
@@ -18,22 +18,19 @@ export default function NewContactForm({ onClose, refetch }) {
   return (
     <Formik
       initialValues={{
-        name: "",
-        email: "",
+        title: "",
+        description: "",
       }}
       onSubmit={handleSubmit}
       validationSchema={yup.object({
-        name: yup.string().required("Name is required"),
-        email: yup
-          .string()
-          .email()
-          .required("Email is required"),
+        title: yup.string().required("Title is required"),
+        description: yup.string().required("Description is required"),
       })}
     >
       {({ isSubmitting }) => (
         <Form>
-          <Input label="Name" name="name" className="mb-3" />
-          <Input label="Email" name="email" />
+          <Input label="Title" name="title" className="mb-3" />
+          <Input label="Description" name="description" />
           <div className="absolute bottom-0 left-0 w-full bg-white nui-pane--footer">
             <Button
               onClick={onClose}

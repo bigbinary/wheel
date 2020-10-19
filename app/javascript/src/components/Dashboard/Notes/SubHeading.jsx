@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Input } from "nitroui";
 
 export default function SubHeading({
-  selectedContactIds,
+  selectedNoteIds,
   searchTerm,
   setSearchTerm,
   setShowDeleteAlert,
@@ -21,7 +21,7 @@ export default function SubHeading({
       <div className="flex flex-row items-center justify-end w-full">
         <div className="flex flex-row items-center justify-start py-1 pr-4">
           <Button
-            disabled={!selectedContactIds.length}
+            disabled={!selectedNoteIds.length}
             style="text"
             label="Delete"
             onClick={() => setShowDeleteAlert(true)}

@@ -28,11 +28,7 @@ const NavBar = () => {
       </div>
       <div className="flex flex-col items-center justify-between w-full h-full">
         <div className="flex flex-col items-center justify-start w-full pt-4">
-          <NavItem
-            title="Contacts"
-            link="/contacts"
-            icon="ri-contacts-book-2-line"
-          />
+          <NavItem title="Notes" link="/notes" icon="ri-file-text-line" />
           <NavItem
             title="Settings"
             link="/settings"

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Modal } from "nitroui";
-import ContactsAPI from "apis/contacts";
+import NotesAPI from "apis/notes";
 
-export default function DeleteAlert({ refetch, onClose, selectedContactIds }) {
+export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {
   const [deleting, setDeleting] = useState(false);
   const handleDelete = async () => {
     try {
       setDeleting(true);
-      await ContactsAPI.destroy({ ids: selectedContactIds });
+      await NotesAPI.destroy({ ids: selectedNoteIds });
       onClose();
       refetch();
     } catch (error) {
@@ -37,7 +37,7 @@ export default function DeleteAlert({ refetch, onClose, selectedContactIds }) {
 
         <div className="ml-4">
           <h3 className="mb-2 text-lg font-medium text-gray-700">
-            Delete {selectedContactIds.length} contacts?
+            Delete {selectedNoteIds.length} notes?
           </h3>
           <div className="text-sm leading-5 text-gray-500">
             Are you sure you want to continue? This cannot be undone.
