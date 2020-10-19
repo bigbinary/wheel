@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       end
 
       resources :users, only: [:show, :create, :update, :destroy], constraints: { id: /.*/ }
-      resources :contacts, only: [:index, :create] do
+      resources :notes, only: [:index, :create] do
         collection do
           post 'bulk_delete'
         end

@@ -5,7 +5,7 @@ import Navbar from "components/Common/Navbar";
 
 import PasswordEdit from "./Account/Passwords/Edit";
 import Profile from "./Account/Profile";
-import Contacts from "./Contacts";
+import Notes from "./Notes";
 
 const Home = () => {
   return (
@@ -13,10 +13,10 @@ const Home = () => {
       <Navbar />
       <div className="content-main">
         <Switch>
-          <Route exact path="/contacts" component={Contacts} />
+          <Route exact path="/notes" component={Notes} />
           <Route exact path="/my/password/edit" component={PasswordEdit} />
           <Route exact path="/my/profile" component={Profile} />
-          <Redirect from="/" to="/contacts" />
+          <Redirect from="/" to="/notes" />
         </Switch>
       </div>
     </div>

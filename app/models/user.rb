@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable, :rememberable
 
-  has_many :contacts, dependent: :delete_all
+  has_many :notes, dependent: :delete_all
 
   before_save :ensure_authentication_token_is_present
 
