@@ -24,6 +24,15 @@
     },
     "LOG_LEVEL": {
       "value": "DEBUG"
+    },
+    "YARN_PRODUCTION": {
+      "value": "true"
+    },
+    "YARN_CACHE": {
+      "value": "true"
+    },
+    "NODE_MODULES_CACHE": {
+      "value": "true"
     }
   },
   "formation": { },
