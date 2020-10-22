@@ -30,9 +30,6 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     nancy = users :nancy
     sign_in nancy
 
-    get password_edit_url
-    assert_response :success
-
     valid_user_data = { password: "new password", password_confirmation: "new password", current_password: "welcome" }
     put password_update_url, params: { user: valid_user_data }
     assert_redirected_to root_path
@@ -42,9 +39,6 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     nancy = users :nancy
     old_password = nancy.encrypted_password
     sign_in nancy
-
-    get password_edit_url
-    assert_response :success
 
     invalid_user_data = { password: "new password", password_confirmation: "new not matching password", current_password: "welcome" }
 
@@ -58,9 +52,6 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   def test_updates_user_profile_given_valid_data
     nancy = users :nancy
     sign_in nancy
-
-    get edit_user_registration_url
-    assert_response :success
 
     valid_user_data = { first_name: "John2", current_password: "welcome" }
     patch user_registration_url(nancy, format: :html), params: { user: valid_user_data }
