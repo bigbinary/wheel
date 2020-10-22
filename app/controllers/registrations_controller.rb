@@ -13,7 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      respond_with_error "Couldnt' update the password! Please try again."
+      render json: { error: "Couldnt' update the password! Please try again." }, status: 422
     end
   end
 
