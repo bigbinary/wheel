@@ -8,7 +8,7 @@ export default function AccountDropdown({ handleLogout }) {
   const name = `${user.first_name} ${user.last_name}`;
   return (
     <Dropdown
-      popoverClassName="pl-4"
+      popoverClassName="pl-6"
       position="right-top"
       interactionKind="hover"
       customTarget={() => (
