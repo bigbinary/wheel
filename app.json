@@ -27,12 +27,6 @@
     },
     "YARN_PRODUCTION": {
       "value": "true"
-    },
-    "YARN_CACHE": {
-      "value": "true"
-    },
-    "NODE_MODULES_CACHE": {
-      "value": "false"
     }
   },
   "formation": { },
