@@ -5,7 +5,7 @@ import { useUserState } from "contexts/user";
 
 export default function AccountDropdown({ handleLogout }) {
   const { user } = useUserState();
-  const name = `${user.first_name} ${user.last_name}`;
+  const name = user ? `${user.first_name} ${user.last_name}` : "";
   return (
     <Dropdown
       popoverClassName="pl-4"
