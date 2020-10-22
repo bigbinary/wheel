@@ -1,4 +1,5 @@
 import React from "react";
+import AccountDropdown from "./AccountDropdown";
 import NavItem from "./NavItem";
 import { withRouter } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
@@ -39,12 +40,9 @@ const NavBar = () => {
             ]}
           />
         </div>
-        <NavItem
-          title="Logout"
-          onClick={handleLogout}
-          className="mb-4"
-          icon="ri-logout-circle-line"
-        />
+        <div className="mb-4">
+          <AccountDropdown handleLogout={handleLogout} />
+        </div>
       </div>
     </div>
   );
