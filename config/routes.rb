@@ -14,9 +14,7 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy", :as => :logout
   devise_scope :user do
     scope "my" do
-      get "profile", to: "registrations#edit"
       put "profile/update", to: "registrations#update"
-      get "password/edit", to: "registrations#edit_password"
       put "password/update", to: "registrations#update_password"
     end
   end
