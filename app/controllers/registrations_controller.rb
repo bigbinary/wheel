@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
-  prepend_before_action :authenticate_scope!, only: [:edit, :update, :edit_password, :update_password, :destroy]
-  before_action :load_resource, only: [:edit_password, :update_password]
-
-  def edit_password
-    respond_with resource
-  end
+  prepend_before_action :authenticate_scope!, only: [:edit, :update, :update_password, :destroy]
+  before_action :load_resource, only: [:update_password]
 
   def update_password
     if update_resource(resource, password_update_params)
@@ -17,7 +13,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      respond_with(resource, action: "edit_password")
+      respond_with_error "Couldnt' update the password! Please try again."
     end
   end
 
