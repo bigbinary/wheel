@@ -5,14 +5,16 @@ import { useUserState } from "contexts/user";
 
 export default function AccountDropdown({ handleLogout }) {
   const { user } = useUserState();
-  const name = user ? `${user.first_name} ${user.last_name}` : "";
+  const contact = user
+    ? { name: `${user.first_name} ${user.last_name}` }
+    : null;
   return (
     <Dropdown
       popoverClassName="pl-6"
       position="right-top"
       interactionKind="hover"
       customTarget={() => (
-        <Avatar className="cursor-pointer" size={32} contact={{ name }} />
+        <Avatar className="cursor-pointer" size={32} contact={contact} />
       )}
       closeOnSelect
     >

@@ -5888,8 +5888,8 @@ nice-try@^1.0.4:
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
 "nitroui@https://github.com/bigbinary/nitroui.git":
-  version "0.5.0"
-  resolved "https://github.com/bigbinary/nitroui.git#fc74852a67b3286a12e15aa3001440622daa35cc"
+  version "0.5.5"
+  resolved "https://github.com/bigbinary/nitroui.git#2bae687bab87cda0e902efdf605259aa24280ee4"
 
 node-emoji@^1.8.1:
   version "1.10.0"
