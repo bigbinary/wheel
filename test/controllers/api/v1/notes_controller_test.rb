@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
+class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @admin = users(:admin)
     @headers = headers(@admin)

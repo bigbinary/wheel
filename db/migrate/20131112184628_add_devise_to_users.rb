@@ -2,7 +2,7 @@
 
 class AddDeviseToUsers < ActiveRecord::Migration[6.0]
   def self.up
-    create_table(:users) do |t|
+    create_table :users, id: :uuid do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -20,6 +20,12 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.0]
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
+
+      # Custom attributes
+      t.string :first_name
+      t.string :last_name
+      t.string :role, default: "standard"
+      t.string :authentication_token
 
       t.timestamps
     end
