@@ -12,7 +12,6 @@ import PrivateRoute from "components/Common/PrivateRoute";
 import PasswordReset from "components/Authentication/ResetPassword";
 import Login from "components/Authentication/Login";
 import Signup from "components/Authentication/Signup";
-import EUI from "components/EUI";
 
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
@@ -43,7 +42,6 @@ const App = props => {
         <Route exact path="/my/password/new" component={PasswordReset} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/eui" component={EUI} />
         <PrivateRoute
           path="/"
           redirectRoute="/login"
