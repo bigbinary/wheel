@@ -16,7 +16,7 @@ import Signup from "components/Authentication/Signup";
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 
-const App = props => {
+const Main = props => {
   const [loading, setLoading] = useState(true);
   const { authToken } = useAuthState();
   const userDispatch = useUserDispatch();
@@ -53,8 +53,8 @@ const App = props => {
   );
 };
 
-App.propTypes = {
+Main.propTypes = {
   user: PropTypes.object,
 };
 
-export default App;
+export default Main;
