@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import { AuthProvider } from "contexts/auth";
 import { UserProvider } from "contexts/user";
 
-const index = props => {
+const App = props => {
   return (
     <AuthProvider>
       <UserProvider>
@@ -15,4 +15,4 @@ const index = props => {
   );
 };
 
-export default index;
+export default App;
