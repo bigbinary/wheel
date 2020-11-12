@@ -27,6 +27,7 @@ replace all occurrences of `Wheel` with `Pump`.
 
 ```
 perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
+perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 ```
 
 ## Features
