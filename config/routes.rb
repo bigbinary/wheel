@@ -3,14 +3,8 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  # Setting path_prefix makes sure that devise routes do not conflict
-  # with users resources routes.
-  #
-  # More details available here:
-  # https://github.com/plataformatec/devise/wiki/How-To:-Manage-users-through-a-CRUD-interface
 
   devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
-  # Authentication
   get "/logout" => "sessions#destroy", :as => :logout
   devise_scope :user do
     scope "my" do
@@ -18,9 +12,6 @@ Rails.application.routes.draw do
       put "password/update", to: "registrations#update_password"
     end
   end
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with 'rake routes'.
 
   authenticate :user, ->(u) { u.super_admin? } do
     mount Sidekiq::Web, at: "/sidekiq"
