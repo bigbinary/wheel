@@ -1,10 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :set_layout_carrier
   before_action :set_honeybadger_context
 
   private
@@ -15,10 +12,6 @@ class ApplicationController < ActionController::Base
       unless current_user.super_admin?
         redirect_to root_path, status: :forbidden, alert: "Unauthorized Access!"
       end
-    end
-
-    def set_layout_carrier
-      @layout_carrier = LayoutCarrier.new
     end
 
     def set_honeybadger_context
