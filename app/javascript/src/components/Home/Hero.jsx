@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <div className="flex flex-col items-center max-w-screen-xl mt-10 mx-auto pt-8 px-4">
       <div className="text-center">
-        <p className="mt-1 text-4xl font-medium underline">
+        <p className="mt-1 text-4xl font-medium">
           Wheel
         </p>
         <p className="max-w-xl mt-5 mx-auto text-xl leading-7 text-gray-800">
