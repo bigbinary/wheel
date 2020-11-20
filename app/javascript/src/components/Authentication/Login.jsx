@@ -71,7 +71,7 @@ const Login = ({ history }) => {
               />
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-center">
               <Button type="submit" loading={loading} label="Login" />
             </div>
           </form>

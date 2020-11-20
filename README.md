@@ -47,7 +47,7 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 * Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
 * Auto-formats Ruby code with [rubocop](https://github.com/bbatsov/rubocop).
 * Auto-formats JavaScript and CSS code with [prettier](https://github.com/prettier/prettier).
-* Performs backgroung job processing "inline" for heroku env. It means heroku can deliver emails.
+* Performs background job processing "inline" for heroku env. It means heroku can deliver emails.
 * Letter opener gem for development.
 
 ## Heroku Review
