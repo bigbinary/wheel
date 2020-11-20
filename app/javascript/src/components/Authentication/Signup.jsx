@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Button, Input } from "nitroui";
+import { Button, Input } from "neetoui";
 
 import AuthenticationAPI from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth";

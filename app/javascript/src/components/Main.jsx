@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 import { initializeLogger } from "common/logger";
 import { setAuthHeaders, registerIntercepts } from "apis/axios";
-import { PageLoader } from "nitroui";
+import { PageLoader } from "neetoui";
 import Dashboard from "components/Dashboard";
 
 import PrivateRoute from "components/Common/PrivateRoute";

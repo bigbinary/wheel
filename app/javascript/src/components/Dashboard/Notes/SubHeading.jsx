@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Input } from "nitroui";
+import { Button, Input } from "neetoui";
 
 export default function SubHeading({
   selectedNoteIds,

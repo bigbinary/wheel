@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Toastr } from "nitroui";
+import { Toastr } from "neetoui";
 
 axios.defaults.baseURL = "/";
 
