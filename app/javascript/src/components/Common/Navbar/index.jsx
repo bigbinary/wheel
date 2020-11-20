@@ -14,7 +14,7 @@ const NavBar = () => {
       await AuthenticationAPI.logout();
       authDispatch({ type: "LOGOUT" });
       resetAuthTokens();
-      window.location.href = "/login";
+      window.location.href = "/";
     } catch (error) {
       Toastr.error(error);
     }
