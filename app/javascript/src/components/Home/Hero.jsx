@@ -16,10 +16,6 @@ export default function Hero() {
     "Letter opener gem for development.",
   ];
 
-  const featureLists = features.map((feature, index) => (
-    <li key={index}>{feature}</li>
-  ));
-
   return (
     <div className="flex flex-col items-center max-w-screen-xl mt-10 mx-auto pt-8 px-4">
       <div className="text-center">
@@ -30,17 +26,24 @@ export default function Hero() {
           Don't reinvent the wheel. Use sane defaults to bootstrap your react-rails project!
         </p>
       </div>
-      <ul className="list-disc ml-12 mt-6 text-gray-600 leading-relaxed tracking-wide">
-        {featureLists}
-      </ul>
+      <Features features={features} />
       <div className="mt-6 flex justify-center items-center">
         <Button
-          className="ml-2"
           type="primary"
-          onClick={() => { window.location.href = "/login" }}
+          to="/login"
           label="Login"
         />
       </div>
     </div>
   )
 }
+
+const Features = ({ features }) => {
+  return (
+    <ul className="list-disc ml-12 mt-6 text-gray-600 leading-relaxed tracking-wide">
+      {features.map((feature, index) => (
+        <li key={index}>{feature}</li>
+      ))}
+    </ul>
+  );
+};

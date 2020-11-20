@@ -3,7 +3,7 @@ import { Toastr } from "neetoui";
 
 axios.defaults.baseURL = "/";
 
-export const setAuthHeaders = (setLoading = (e = null) => e) => {
+export const setAuthHeaders = (setLoading = () => null) => {
   axios.defaults.headers = {
     Accept: "applicaion/json",
     "Content-Type": "application/json",
