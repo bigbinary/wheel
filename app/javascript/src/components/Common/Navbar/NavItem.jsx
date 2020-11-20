@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Dropdown, Tooltip } from "nitroui";
+import { Button, Dropdown, Tooltip } from "neetoui";
 import classnames from "classnames";
 import { useHistory, useLocation } from "react-router-dom";
 import SubMenu from "./SubMenu";

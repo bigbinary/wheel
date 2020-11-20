@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Dropdown } from "nitroui";
+import { Avatar, Dropdown } from "neetoui";
 import { NavLink } from "react-router-dom";
 import { useUserState } from "contexts/user";
 

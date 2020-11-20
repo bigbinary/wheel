@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { PageHeading } from "nitroui/layouts";
-import { Button, PageLoader } from "nitroui";
+import { PageHeading } from "neetoui/layouts";
+import { Button, PageLoader } from "neetoui";
 import NotesAPI from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 import SubHeading from "./SubHeading";

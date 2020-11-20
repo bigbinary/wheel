@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "nitroui";
+import { Modal } from "neetoui";
 import NotesAPI from "apis/notes";
 
 export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {

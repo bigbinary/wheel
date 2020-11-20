@@ -1,8 +1,8 @@
 import React from "react";
 import * as yup from "yup";
 import { Formik, Form } from "formik";
-import { Input } from "nitroui/formik";
-import { Button } from "nitroui";
+import { Input } from "neetoui/formik";
+import { Button } from "neetoui";
 import NotesAPI from "apis/notes";
 
 export default function NewNoteForm({ onClose, refetch }) {
