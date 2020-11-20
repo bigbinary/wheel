@@ -1,25 +1,35 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import PropTypes from "prop-types";
+import { either, isEmpty, isNil } from "ramda";
+
+import Hero from "components/Home/Hero";
 
 const PrivateRoute = ({
   component: Component,
   condition,
   path,
-  redirectRoute,
+  redirectRoute = null,
   ...props
 }) => {
-  if (!condition) {
+  if (condition) {
+    return <Route path={path} component={Component} {...props} />;
+  }
+
+  if (either(isNil, isEmpty)(redirectRoute)) {
+    return <Hero />;
+  } else {
     return (
       <Redirect
         to={{
           pathname: redirectRoute,
-          from: props.location,
+          state: {
+            from: props.location,
+          }
         }}
       />
     );
   }
-  return <Route path={path} component={Component} {...props} />;
 };
 
 PrivateRoute.propTypes = {

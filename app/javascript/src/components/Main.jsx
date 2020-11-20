@@ -15,7 +15,6 @@ import Signup from "components/Authentication/Signup";
 
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
-import Hero from "./Home/Hero";
 
 const Main = props => {
   const [loading, setLoading] = useState(true);
@@ -43,10 +42,8 @@ const Main = props => {
         <Route exact path="/my/password/new" component={PasswordReset} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/login" component={Login} />
-        <Route exact path="/" component={Hero} />
         <PrivateRoute
           path="/"
-          redirectRoute="/"
           condition={!!authToken}
           component={Dashboard}
         />
