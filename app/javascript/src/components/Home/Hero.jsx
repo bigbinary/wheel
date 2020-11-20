@@ -2,8 +2,6 @@ import React from 'react';
 import { Button } from "neetoui";
 
 export default function Hero() {
-  const bullet = `\u2022`;
-
   const features = [
     "Uses Rails, React, Tailwind CSS and Webpacker.",
     "Uses Devise, Honeybadger, Sidekiq, PostgreSQL, ActiveAdmin.",
@@ -19,7 +17,7 @@ export default function Hero() {
   ];
 
   const featureLists = features.map((feature, index) => (
-    <li key={index}>{`${bullet} ${feature}`}</li>
+    <li key={index}>{feature}</li>
   ));
 
   return (
@@ -32,7 +30,7 @@ export default function Hero() {
           Don't reinvent the wheel. Use sane defaults to bootstrap your react-rails project!
         </p>
       </div>
-      <ul className="ml-12 mt-6 text-gray-600 leading-relaxed tracking-wide">
+      <ul className="list-disc ml-12 mt-6 text-gray-600 leading-relaxed tracking-wide">
         {featureLists}
       </ul>
       <div className="mt-6 flex justify-center items-center">
