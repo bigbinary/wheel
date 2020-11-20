@@ -8,7 +8,6 @@ gem "rails", "~> 6.0.3.4"
 gem "sprockets", "~> 3.7.2"
 
 # friends of Rails
-gem "jquery-rails"
 gem "sprockets-rails"
 gem "sass-rails", ">= 6"
 gem "uglifier", ">= 2.7.1"
@@ -59,7 +58,6 @@ gem "mail_interceptor", group: [:development, :staging, :heroku]
 gem "email_prefixer"
 
 # Display notifications
-gem "jquery-growl-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
