@@ -5,15 +5,12 @@ class RegistrationsController < Devise::RegistrationsController
   before_action :load_resource, only: [:update_password]
 
   def update_password
-    if update_resource(resource, password_update_params)
-      if is_flashing_format?
-        set_flash_message :notice, :updated
-        bypass_sign_in(resource)
-        respond_with(resource, location: after_update_path_for(resource))
-      end
+    if resource.update_with_password(password_update_params)
+      bypass_sign_in resource, scope: :user
+      render json: { notice: 'Successfully updated password' }, status: :ok
     else
       clean_up_passwords resource
-      render json: { error: "Couldnt' update the password! Please try again." }, status: 422
+      render json: { error: "Couldn't update the password! Make sure you entered your current password correctly." }, status: 422
     end
   end
 
