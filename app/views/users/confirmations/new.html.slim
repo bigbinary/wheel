@@ -10,14 +10,13 @@ div class=formContainer
   h2 class=formHeading
     | Resend confirmation instructions
 
-  = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: formWrapper }) do |f|
+  = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: formWrapper }) do |f|
 
     = f.error_notification
     = f.full_error :confirmation_token
 
     = f.input :email, required: true, autofocus: true, input_html: { class: inputStyle }, label_html: { class: labelStyle }
-    
+
     = f.button :submit, "Resend confirmation instructions", class: buttonStyle
 
   = render "users/shared/links"
-

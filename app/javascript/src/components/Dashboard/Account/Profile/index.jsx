@@ -26,7 +26,7 @@ const Profile = () => {
             Basic Details
           </h2>
           <form
-            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm simple_form /"
+            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm"
             id="edit_user"
           >
             <div className="mb-8 form-group email required user_email">

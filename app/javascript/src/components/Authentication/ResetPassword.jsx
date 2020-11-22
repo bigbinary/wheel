@@ -16,7 +16,7 @@ const New = () => {
             reset your password.
           </div>
           <form
-            className="simple_form bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full"
+            className="bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full"
             id="new_user"
           >
             <div className="form-group mb-8 email required user_email">

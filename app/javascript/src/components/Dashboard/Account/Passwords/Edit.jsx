@@ -13,7 +13,7 @@ const Edit = () => {
             Change password
           </h2>
           <form
-            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm simple_form /"
+            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm"
             id="edit_user"
           >
             <div className="mb-8 form-group password required user_current_password">
