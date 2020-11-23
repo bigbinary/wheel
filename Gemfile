@@ -36,7 +36,7 @@ gem "honeybadger"
 gem "font-awesome-sass", "~> 4.3.0"
 
 # Support cross-browser css compatibilty
-gem "autoprefixer-rails", "= 9.7.6"
+gem "autoprefixer-rails"
 
 # Admin framework
 gem "activeadmin"
@@ -83,8 +83,8 @@ group :development do
   gem "bullet"
 
   # A Ruby static code analyzer, based on the community Ruby style guide
-  gem "rubocop", "~> 0.82.0", require: false
-  gem "rubocop-rails"
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 
   # Patch-level verification for Bundler.
   gem "bundler-audit", require: false
