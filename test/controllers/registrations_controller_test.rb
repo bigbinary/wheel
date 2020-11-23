@@ -32,7 +32,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
 
     valid_user_data = { password: "new password", password_confirmation: "new password", current_password: "welcome" }
     put password_update_url, params: { user: valid_user_data }
-    assert_redirected_to root_path
+    assert_response :success
   end
 
   def test_does_not_update_password_given_invalid_data
