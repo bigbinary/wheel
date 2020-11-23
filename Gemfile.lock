@@ -80,6 +80,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.16)
+    bindex (0.8.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -93,7 +94,6 @@ GEM
     concurrent-ruby (1.1.7)
     connection_pool (2.2.3)
     crass (1.0.6)
-    debug_inspector (0.0.3)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -108,8 +108,8 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.13.1)
-    font-awesome-sass (4.3.2.1)
-      sass (~> 3.2)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -182,7 +182,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.6)
-    puma (4.3.6)
+    puma (5.0.4)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-proxy (0.6.5)
@@ -256,11 +256,6 @@ GEM
     ruby2_keywords (0.0.2)
     ruby_audit (1.3.0)
       bundler-audit (~> 0.7.0)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -271,6 +266,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    semantic_range (2.3.0)
     sidekiq (6.1.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -309,15 +305,16 @@ GEM
     uniform_notifier (1.13.0)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (3.3.1)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
-      debug_inspector
-      railties (>= 5.0)
-    webpacker (4.3.0)
-      activesupport (>= 4.2)
+    web-console (4.1.0)
+      actionview (>= 6.0.0)
+      activemodel (>= 6.0.0)
+      bindex (>= 0.4.0)
+      railties (>= 6.0.0)
+    webpacker (5.2.1)
+      activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
-      railties (>= 4.2)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -335,7 +332,7 @@ DEPENDENCIES
   devise (~> 4.7)
   email_prefixer
   email_validator
-  font-awesome-sass (~> 4.3.0)
+  font-awesome-sass
   honeybadger
   jbuilder (>= 2.7)
   letter_opener
@@ -345,7 +342,7 @@ DEPENDENCIES
   minitest-ci
   pg
   pry
-  puma (~> 4.1)
+  puma
   rails (~> 6.0.3.4)
   react-rails
   rubocop
@@ -361,8 +358,8 @@ DEPENDENCIES
   sprockets (~> 3.7.2)
   sprockets-rails
   uglifier (>= 2.7.1)
-  web-console (~> 3.3.0)
-  webpacker (~> 4.0)
+  web-console
+  webpacker
 
 RUBY VERSION
    ruby 2.7.2p137

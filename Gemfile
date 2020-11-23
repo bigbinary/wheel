@@ -12,7 +12,7 @@ gem "sprockets-rails"
 gem "sass-rails", ">= 6"
 gem "uglifier", ">= 2.7.1"
 
-gem "webpacker", "~> 4.0"
+gem "webpacker"
 
 # React
 gem "react-rails"
@@ -21,7 +21,7 @@ gem "react-rails"
 gem "pg"
 
 # Application server
-gem "puma", "~> 4.1"
+gem "puma"
 
 # JSON builder
 gem "jbuilder", ">= 2.7"
@@ -33,7 +33,7 @@ gem "devise", "~> 4.7"
 gem "honeybadger"
 
 # Fonts
-gem "font-awesome-sass", "~> 4.3.0"
+gem "font-awesome-sass"
 
 # Support cross-browser css compatibilty
 gem "autoprefixer-rails"
@@ -74,7 +74,7 @@ group :development do
   gem "pry"
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem "web-console", "~> 3.3.0"
+  gem "web-console"
 
   # Reenable after https://github.com/rails/rails/issues/26158 is fixed
   gem "listen", "~> 3.2"
