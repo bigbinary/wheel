@@ -71,10 +71,11 @@ const Edit = () => {
                 id="password_confirmation"
                 label="Confirm password"
               />
-              <div className="flex justify-center items-center w-full p-2">
+              <div className="flex justify-center items-center w-full pt-2">
                 <Button
                   name="submit"
                   type="submit"
+                  className="w-full"
                   label="Login"
                 />
               </div>
