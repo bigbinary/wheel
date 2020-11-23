@@ -26,7 +26,7 @@ const Profile = () => {
             Basic Details
           </h2>
           <form
-            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm simple_form /"
+            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm"
             id="edit_user"
           >
             <div className="mb-8 form-group email required user_email">
@@ -40,7 +40,7 @@ const Profile = () => {
               </div>
               <div className="controls">
                 <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md string email required form-control focus:text-black / hover:border-gray-600 focus:border-gray-600 focus:outline-none"
+                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md string email required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
                   autoFocus
                   required
                   aria-required="true"
@@ -63,7 +63,7 @@ const Profile = () => {
               </div>
               <div className="controls">
                 <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md string required form-control focus:text-black / hover:border-gray-600 focus:border-gray-600 focus:outline-none"
+                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md string required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
                   required
                   aria-required="true"
                   type="text"
@@ -85,7 +85,7 @@ const Profile = () => {
               </div>
               <div className="controls">
                 <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md string required form-control focus:text-black / hover:border-gray-600 focus:border-gray-600 focus:outline-none"
+                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md string required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
                   required
                   aria-required="true"
                   type="text"
@@ -107,7 +107,7 @@ const Profile = () => {
               </div>
               <div className="controls">
                 <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md password required form-control focus:text-black / hover:border-gray-600 focus:border-gray-600 focus:outline-none"
+                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md password required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
                   required
                   aria-required="true"
                   type="password"
@@ -122,7 +122,7 @@ const Profile = () => {
               type="submit"
               name="commit"
               value="Update"
-              className="w-full px-4 py-2 text-base font-semibold text-white transition duration-200 ease-in-out bg-teal-600 border border-teal-600 rounded-md cursor-pointer btn / hover:opacity-75"
+              className="w-full px-4 py-2 text-base font-semibold text-white transition duration-200 ease-in-out bg-teal-600 border border-teal-600 rounded-md cursor-pointer btn hover:opacity-75"
               data-disable-with="Update"
             />
           </form>

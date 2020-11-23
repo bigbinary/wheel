@@ -55,7 +55,7 @@ const Signup = ({ history }) => {
           </h2>
 
           <form
-            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm simple_form"
+            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm"
             onSubmit={handleSubmit}
           >
             <div className="mb-4 form-group email required user_email">

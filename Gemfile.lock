@@ -232,7 +232,7 @@ GEM
       execjs
       railties (>= 3.2)
       tilt
-    redis (4.2.4)
+    redis (4.2.5)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -272,9 +272,6 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
-    simple_form (5.0.3)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
     simplecov (0.19.1)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -353,7 +350,6 @@ DEPENDENCIES
   ruby_audit
   sass-rails (>= 6)
   sidekiq
-  simple_form (~> 5.0)
   simplecov
   slim
   slim-rails

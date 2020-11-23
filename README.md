@@ -43,7 +43,6 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 * Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
 * Uses [SemaphoreCI](https://semaphoreci.com/) for continuous testing.
 * Uses PostgreSQL.
-* Uses [simple_form](https://github.com/plataformatec/simple_form).
 * Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
 * Auto-formats Ruby code with [rubocop](https://github.com/bbatsov/rubocop).
 * Auto-formats JavaScript and CSS code with [prettier](https://github.com/prettier/prettier).
