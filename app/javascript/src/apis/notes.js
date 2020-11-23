@@ -6,8 +6,10 @@ const create = payload => axios.post("api/v1/notes", payload);
 
 const destroy = payload => axios.post("api/v1/notes/bulk_delete", payload);
 
-export default {
+const notesApi = {
   fetch,
   create,
   destroy,
 };
+
+export default notesApi;

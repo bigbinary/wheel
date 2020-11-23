@@ -6,4 +6,10 @@ const logout = () => axios.delete("api/v1/logout");
 
 const signup = payload => axios.post("api/v1/users", payload);
 
-export default { login, logout, signup };
+const authenticationApi = {
+  login,
+  logout,
+  signup,
+};
+
+export default authenticationApi;

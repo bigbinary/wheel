@@ -3,12 +3,12 @@ import * as yup from "yup";
 import { Formik, Form } from "formik";
 import { Input } from "neetoui/formik";
 import { Button } from "neetoui";
-import NotesAPI from "apis/notes";
+import notesApi from "apis/notes";
 
 export default function NewNoteForm({ onClose, refetch }) {
   const handleSubmit = async values => {
     try {
-      await NotesAPI.create(values);
+      await notesApi.create(values);
       refetch();
       onClose();
     } catch (err) {

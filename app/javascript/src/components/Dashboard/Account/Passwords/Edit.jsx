@@ -1,9 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
+import { Input as FormikInput } from "neetoui/formik";
+import { Button, Toastr } from "neetoui";
+
+import registrationsApi from "apis/registrations";
 
 const Edit = () => {
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const validationSchema = Yup.object({
+    currentPassword: Yup.string().required("Current password is required"),
+    password: Yup.string().required("New password is required"),
+    passwordConfirmation: Yup.string()
+      .required("Password confirmation is required")
+      .oneOf([Yup.ref("password"), null], "Passwords must match"),
+  });
+
+  const formikInputAttrs = {
+    type: "password",
+    "aria-required": "true",
+    placeholder: "******",
+  };
+
+  const handleSubmit = async data => {
+    try {
+      await registrationsApi.updatePassword({
+        user: {
+          current_password: data.currentPassword,
+          password: data.password,
+          password_confirmation: data.passwordConfirmation,
+        },
+      });
+      Toastr.success("Password updated successfully");
+    } catch (error) {
+      logger.error(error);
+    }
+  };
 
   return (
     <div className="flex flex-grow w-full wrapper">
@@ -12,85 +43,44 @@ const Edit = () => {
           <h2 className="mb-5 text-2xl font-medium text-center text-gray-800">
             Change password
           </h2>
-          <form
-            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm"
-            id="edit_user"
+          <Formik
+            initialValues={{
+              currentPassword: "",
+              password: "",
+              passwordConfirmation: "",
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
           >
-            <div className="mb-8 form-group password required user_current_password">
-              <div>
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-600 password required control-label tracking"
-                  htmlFor="user_current_password"
-                >
-                  Current password
-                </label>
-              </div>
-              <div className="controls">
-                <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md password required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
-                  autoFocus
-                  required
-                  aria-required="true"
-                  type="password"
-                  name="current_password"
-                  id="user_current_password"
-                  value={currentPassword}
-                  onChange={e => setCurrentPassword(e.target.value)}
+            <Form className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm">
+              <FormikInput
+                {...formikInputAttrs}
+                name="currentPassword"
+                id="current_password"
+                label="Current password"
+              />
+              <FormikInput
+                {...formikInputAttrs}
+                name="password"
+                id="password"
+                label="New password"
+              />
+              <FormikInput
+                {...formikInputAttrs}
+                name="passwordConfirmation"
+                id="password_confirmation"
+                label="Confirm password"
+              />
+              <div className="flex justify-center items-center w-full pt-2">
+                <Button
+                  name="submit"
+                  type="submit"
+                  className="w-full"
+                  label="Login"
                 />
               </div>
-            </div>
-            <div className="mb-8 form-group password required user_password">
-              <div>
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-600 password required control-label tracking"
-                  htmlFor="user_password"
-                >
-                  New password
-                </label>
-              </div>
-              <div className="controls">
-                <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md password required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
-                  required
-                  aria-required="true"
-                  type="password"
-                  name="password"
-                  id="user_password"
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                />
-              </div>
-            </div>
-            <div className="mb-8 form-group password required user_password_confirmation">
-              <div>
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-600 password required control-label tracking"
-                  htmlFor="user_password_confirmation"
-                >
-                  Confirm new password
-                </label>
-              </div>
-              <div className="controls">
-                <input
-                  className="w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out border border-gray-400 rounded-md password required form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none"
-                  required
-                  aria-required="true"
-                  type="password"
-                  name="password_confirmation"
-                  id="user_password_confirmation"
-                  value={passwordConfirmation}
-                  onChange={e => setPasswordConfirmation(e.target.value)}
-                />
-              </div>
-            </div>
-            <input
-              type="submit"
-              name="commit"
-              value="Update"
-              className="w-full px-4 py-2 text-base font-semibold text-white transition duration-200 ease-in-out bg-teal-600 border border-teal-600 rounded-md cursor-pointer btn hover:opacity-75"
-              data-disable-with="Update"
-            />
-          </form>
+            </Form>
+          </Formik>
         </div>
       </div>
     </div>
