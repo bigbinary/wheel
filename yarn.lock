@@ -5589,8 +5589,11 @@ natural-compare@^1.4.0:
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
 "neetoui@https://github.com/bigbinary/neeto-ui.git":
-  version "0.7.0"
-  resolved "https://github.com/bigbinary/neeto-ui.git#60bcbe3372b78dfb0b178c987a5a9c581486f88a"
+  version "0.7.1"
+  resolved "https://github.com/bigbinary/neeto-ui.git#ad50000d9354582a17c428d0cacffd92713537f8"
+  dependencies:
+    moment "^2.29.1"
+    yup "^0.30.0"
 
 negotiator@0.6.2:
   version "0.6.2"
