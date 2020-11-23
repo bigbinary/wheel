@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { PageHeading } from "neetoui/layouts";
 import { Button, PageLoader } from "neetoui";
-import NotesAPI from "apis/notes";
+import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 import SubHeading from "./SubHeading";
 import NoteTable from "./NoteTable";
@@ -24,7 +24,7 @@ export default function index() {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const response = await NotesAPI.fetch();
+      const response = await notesApi.fetch();
       setNotes(response.data);
     } catch (error) {
       logger.error(error);

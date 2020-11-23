@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Modal } from "neetoui";
-import NotesAPI from "apis/notes";
+import notesApi from "apis/notes";
 
 export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {
   const [deleting, setDeleting] = useState(false);
   const handleDelete = async () => {
     try {
       setDeleting(true);
-      await NotesAPI.destroy({ ids: selectedNoteIds });
+      await notesApi.destroy({ ids: selectedNoteIds });
       onClose();
       refetch();
     } catch (error) {

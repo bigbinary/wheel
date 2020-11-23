@@ -3,7 +3,7 @@ import AccountDropdown from "./AccountDropdown";
 import NavItem from "./NavItem";
 import { withRouter } from "react-router-dom";
 import { useAuthDispatch } from "contexts/auth";
-import AuthenticationAPI from "apis/authentication";
+import authenticationApi from "apis/authentication";
 import { resetAuthTokens } from "apis/axios";
 import { Toastr } from "neetoui";
 
@@ -11,7 +11,7 @@ const NavBar = () => {
   const authDispatch = useAuthDispatch();
   const handleLogout = async () => {
     try {
-      await AuthenticationAPI.logout();
+      await authenticationApi.logout();
       authDispatch({ type: "LOGOUT" });
       resetAuthTokens();
       window.location.href = "/";
