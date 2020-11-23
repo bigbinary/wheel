@@ -16,7 +16,7 @@ const New = () => {
             reset your password.
           </div>
           <form
-            className="bg-white / border shadow-sm / rounded-lg px-10 py-8 / w-full"
+            className="bg-white border shadow-sm rounded-lg px-10 py-8 w-full"
             id="new_user"
           >
             <div className="form-group mb-8 email required user_email">
@@ -30,7 +30,7 @@ const New = () => {
               </div>
               <div className="controls">
                 <input
-                  className="string email required form-control border border-gray-400 text-gray-800 focus:text-black / w-full px-3 py-2 rounded-md hover:border-gray-600 focus:border-gray-600 focus:outline-none transition duration-200 ease-in-out"
+                  className="string email required form-control border border-gray-400 text-gray-800 focus:text-black w-full px-3 py-2 rounded-md hover:border-gray-600 focus:border-gray-600 focus:outline-none transition duration-200 ease-in-out"
                   autoFocus
                   required
                   aria-required="true"
@@ -46,7 +46,7 @@ const New = () => {
               type="submit"
               name="commit"
               value="Send reset password email"
-              className="btn btn font-semibold text-base text-white / px-4 py-2 w-full rounded-md / bg-teal-600 border border-teal-600 / cursor-pointer / hover:opacity-75 / transition duration-200 ease-in-out"
+              className="btn btn font-semibold text-base text-white px-4 py-2 w-full rounded-md bg-teal-600 border border-teal-600 cursor-pointer hover:opacity-75 transition duration-200 ease-in-out"
               data-disable-with="Send reset password email"
             />
           </form>
