@@ -355,7 +355,7 @@ DEPENDENCIES
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
-  sprockets
+  sprockets (~> 4.0.0)
   sprockets-rails
   uglifier (>= 2.7.1)
   web-console
