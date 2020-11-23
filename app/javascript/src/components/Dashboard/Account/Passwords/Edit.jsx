@@ -2,16 +2,16 @@ import React from "react";
 import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import { Input as FormikInput } from "neetoui/formik";
-import { Button } from "neetoui";
+import { Button, Toastr } from "neetoui";
 
 import registrationsApi from "apis/registrations";
 
 const Edit = () => {
   const validationSchema = Yup.object({
-    currentPassword: Yup.string().required("Current Password is required"),
-    password: Yup.string().required("New Password is required"),
+    currentPassword: Yup.string().required("Current password is required"),
+    password: Yup.string().required("New password is required"),
     passwordConfirmation: Yup.string()
-      .required("Confirmation Password is required")
+      .required("Password confirmation is required")
       .oneOf([Yup.ref("password"), null], "Passwords must match"),
   });
 
@@ -19,8 +19,6 @@ const Edit = () => {
     type: "password",
     "aria-required": "true",
     placeholder: "******",
-    className:
-      "w-full px-3 py-2 text-gray-800 transition duration-200 ease-in-out rounded-md form-control focus:text-black hover:border-gray-600 focus:border-gray-600 focus:outline-none",
   };
 
   const handleSubmit = async data => {
@@ -32,6 +30,7 @@ const Edit = () => {
           password_confirmation: data.passwordConfirmation,
         },
       });
+      Toastr.success("Password updated successfully");
     } catch (error) {
       logger.error(error);
     }
@@ -58,25 +57,24 @@ const Edit = () => {
                 {...formikInputAttrs}
                 name="currentPassword"
                 id="current_password"
-                label="Current Password"
+                label="Current password"
               />
               <FormikInput
                 {...formikInputAttrs}
                 name="password"
                 id="password"
-                label="New Password"
+                label="New password"
               />
               <FormikInput
                 {...formikInputAttrs}
                 name="passwordConfirmation"
                 id="password_confirmation"
-                label="Confirm Password"
+                label="Confirm password"
               />
               <div className="flex justify-center items-center w-full p-2">
                 <Button
                   name="submit"
                   type="submit"
-                  className="flex justify-center items-center w-full text-base font-semibold text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:opacity-75"
                   label="Login"
                 />
               </div>
