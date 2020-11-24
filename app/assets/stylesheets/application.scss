@@ -1,8 +1,4 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-@import "common/alerts";
-
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "./common/alerts";
