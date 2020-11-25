@@ -6,7 +6,7 @@ html lang="en"
     meta content="width=device-width, initial-scale=1.0" name="viewport"
     title= content_for?(:title) ? yield(:title) : "Wheel"
     = csrf_meta_tags
-    = stylesheet_link_tag "application"
+    = stylesheet_pack_tag "application"
     = javascript_pack_tag 'application'
     = stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all"
     /! <link rel="icon" href="/favicon.ico" type="image/x-icon"
@@ -14,5 +14,3 @@ html lang="en"
 
   body.min-h-screen.flex.flex-col.antialiased
     = yield
-
-  = stylesheet_pack_tag "application"
