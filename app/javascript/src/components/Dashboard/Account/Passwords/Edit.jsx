@@ -75,8 +75,8 @@ const Edit = () => {
                 <Button
                   name="submit"
                   type="submit"
-                  className="w-full"
-                  label="Login"
+                  className="w-full flex justify-center items-center"
+                  label="Update"
                 />
               </div>
             </Form>
