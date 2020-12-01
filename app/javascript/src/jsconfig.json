@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "module": "commonJS",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*"
+      ],
+    },
+    "pretty": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "checkJs": true,
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/.*/"
+  ],
+  "include": [
+    "./**/*.js",
+    "./**/*.jsx"
+  ]
+}
