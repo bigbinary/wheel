@@ -54,8 +54,6 @@ Sessionx.vim
 .netrwhist
 ## Backup and swap files
 *~
-## Auto-generated tag files
-tags
 # Vscode
 .vscode/*
 .vscode-test
