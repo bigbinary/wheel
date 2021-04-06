@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Dropdown, Tooltip } from "neetoui";
 import classnames from "classnames";
 import { useHistory, useLocation } from "react-router-dom";
+
 import SubMenu from "./SubMenu";
 
 export default function NavItem({
@@ -37,7 +38,6 @@ export default function NavItem({
   if (subLinks) {
     return (
       <Dropdown
-        popoverClassName="pl-4"
         position="right-top"
         interactionKind="hover"
         customTarget={() => <NavButton />}

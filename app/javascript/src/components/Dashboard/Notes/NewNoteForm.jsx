@@ -31,7 +31,7 @@ export default function NewNoteForm({ onClose, refetch }) {
         <Form>
           <Input label="Title" name="title" className="mb-3" />
           <Input label="Description" name="description" />
-          <div className="absolute bottom-0 left-0 w-full bg-white nui-pane--footer">
+          <div className="nui-pane__footer nui-pane__footer--absolute">
             <Button
               onClick={onClose}
               label="Cancel"

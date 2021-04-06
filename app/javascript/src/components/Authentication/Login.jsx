@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { Button, Input, Toastr } from "neetoui";
+import { Link } from "react-router-dom";
 import { setAuthHeaders } from "apis/axios";
-
-import authenticationApi from "apis/authentication";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
+import { Button, Input, Toastr } from "neetoui";
+import authenticationApi from "apis/authentication";
 
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -15,6 +14,9 @@ const Login = ({ history }) => {
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
+
+  const linkBaseClass =
+    "block mt-2 text-base text-indigo-500 no-underline transition-all duration-300 ease-in-out hover:text-indigo-600";
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -36,59 +38,39 @@ const Login = ({ history }) => {
   };
 
   return (
-    <div className="flex flex-grow wrapper">
-      <div className="container flex-col px-4 mx-auto">
-        <div className="flex flex-col items-center justify-center flex-grow w-full h-full py-20 mx-auto lg:w-5/12">
-          <h2 className="mb-5 text-2xl font-medium text-center text-gray-800">
-            Sign In
-          </h2>
-
-          <form
-            className="w-full px-10 py-8 bg-white border rounded-lg shadow-sm"
-            onSubmit={handleSubmit}
-          >
-            <div className="mb-4 form-group email required user_email">
-              <Input
-                required
-                type="email"
-                value={email}
-                label="Email"
-                placeholder="oliver@example.com"
-                id="user_email"
-                onChange={e => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div className="mb-4 form-group password required user_password">
-              <Input
-                type="password"
-                name="password"
-                id="user_password"
-                label="Password"
-                placeholder="******"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-              />
-            </div>
-
-            <div className="flex items-center justify-center">
-              <Button type="submit" loading={loading} label="Login" />
-            </div>
-          </form>
-          <div className="mt-2 text-center">
-            <Link
-              className="block mt-2 text-teal-600 hover:text-black"
-              to="/signup"
-            >
-              Signup
-            </Link>
-            <Link
-              className="block mt-2 text-teal-600 hover:text-black"
-              to="/my/password/new"
-            >
-              Forgot password?
-            </Link>
-          </div>
+    <div className="w-screen h-screen bg-gray-100">
+      <div className="flex flex-col items-center justify-center h-full mx-auto lg:w-4/12">
+        <h2 className="mb-5 text-3xl font-semibold text-center text-gray-800">
+          Sign In
+        </h2>
+        <form
+          className="w-full p-8 space-y-4 bg-white border rounded-md shadow"
+          onSubmit={handleSubmit}
+        >
+          <Input
+            required
+            type="email"
+            value={email}
+            label="Email"
+            placeholder="oliver@example.com"
+            onChange={e => setEmail(e.target.value)}
+          />
+          <Input
+            type="password"
+            label="Password"
+            placeholder="******"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <Button type="submit" loading={loading} fullWidth label="Login" />
+        </form>
+        <div className="mt-2 text-center">
+          <Link className={linkBaseClass} to="/signup">
+            Signup
+          </Link>
+          <Link className={linkBaseClass} to="/my/password/new">
+            Forgot password?
+          </Link>
         </div>
       </div>
     </div>
