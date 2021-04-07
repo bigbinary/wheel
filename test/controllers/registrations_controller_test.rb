@@ -27,7 +27,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_updates_password_given_valid_data
-    nancy = users :nancy
+    nancy = create(:user, :nancy)
     sign_in nancy
 
     valid_user_data = { password: "new password", password_confirmation: "new password", current_password: "welcome" }
@@ -36,7 +36,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_does_not_update_password_given_invalid_data
-    nancy = users :nancy
+    nancy = create(:user, :nancy)
     old_password = nancy.encrypted_password
     sign_in nancy
 
@@ -50,7 +50,7 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_updates_user_profile_given_valid_data
-    nancy = users :nancy
+    nancy = create(:user, :nancy)
     sign_in nancy
 
     valid_user_data = { first_name: "John2", current_password: "welcome" }

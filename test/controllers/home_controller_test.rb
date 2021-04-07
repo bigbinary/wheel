@@ -4,7 +4,7 @@ require "test_helper"
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
   def test_index_renders_message
-    admin = users :admin
+    admin = create(:user, :admin)
     sign_in admin
 
     get "/"
