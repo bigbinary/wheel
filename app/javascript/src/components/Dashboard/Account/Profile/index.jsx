@@ -29,21 +29,18 @@ const Profile = () => {
             type="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
-            name="email"
             required
           />
           <Input
             label="First Name"
             value={firstName}
             onChange={e => setFirstName(e.target.value)}
-            name="first_name"
             required
           />
           <Input
             label="Last name"
             value={lastName}
             onChange={e => setLastName(e.target.value)}
-            name="last_name"
             required
           />
           <Input

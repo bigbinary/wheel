@@ -9,7 +9,7 @@ import NoteTable from "./NoteTable";
 import NewNotePane from "./NewNotePane";
 import DeleteAlert from "./DeleteAlert";
 
-export default function index() {
+const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
@@ -37,7 +37,7 @@ export default function index() {
     return <PageLoader />;
   }
   return (
-    <div>
+    <>
       <PageHeading
         title="Notes"
         rightButton={() => (
@@ -88,6 +88,8 @@ export default function index() {
           refetch={fetchNotes}
         />
       )}
-    </div>
+    </>
   );
-}
+};
+
+export default Notes;

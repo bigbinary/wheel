@@ -53,19 +53,16 @@ const Edit = () => {
             <FormikInput
               {...formikInputAttrs}
               name="currentPassword"
-              id="current_password"
               label="Current password"
             />
             <FormikInput
               {...formikInputAttrs}
               name="password"
-              id="password"
               label="New password"
             />
             <FormikInput
               {...formikInputAttrs}
               name="passwordConfirmation"
-              id="password_confirmation"
               label="Confirm password"
             />
             <Button name="submit" type="submit" label="Update" fullWidth />
