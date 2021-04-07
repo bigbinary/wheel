@@ -4,7 +4,7 @@ require "test_helper"
 
 class NoteTest < ActiveSupport::TestCase
   def setup
-    @admin = users(:admin)
+    @admin = build(:user, :admin)
   end
 
   def test_valid_note

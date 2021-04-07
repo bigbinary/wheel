@@ -65,13 +65,23 @@ gem "sidekiq"
 # Preview email in browser
 gem "letter_opener", group: :development
 
+# yanked v0.3.5
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
+group :development, :test do
+  # Rails integration for factory-bot
+  gem "factory_bot_rails"
+
+  # A runtime developer console and IRB alternative with powerful introspection capabilities
+  gem "pry"
+end
+
 group :development do
   # speeds up development by keeping your application running in the background
   gem "spring"
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  # A runtime developer console and IRB alternative with powerful introspection capabilities
-  gem "pry"
+
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem "web-console"

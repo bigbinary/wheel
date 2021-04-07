@@ -3,10 +3,9 @@
 require "test_helper"
 
 class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
-  fixtures :all
-
   def setup
-    sign_in users(:admin)
+    user = create(:user, :admin)
+    sign_in user
   end
 
   def test_index_success_for_super_admin
@@ -16,7 +15,8 @@ class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_for_non_super_admin
-    sign_in users(:nancy)
+    nancy = create(:user, :nancy)
+    sign_in nancy
     get active_admin_root_url
 
     assert_redirected_to root_path

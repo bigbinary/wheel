@@ -4,7 +4,7 @@ require "test_helper"
 
 class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @admin = users(:admin)
+    @admin = create(:user, :admin)
     @headers = headers(@admin)
   end
   def test_list_all_notes_for_a_user
@@ -50,8 +50,9 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_delete_single_note
+    milk = create(:note, :milk, user: @admin)
+    bulbs = create(:note, :bulbs, user: @admin)
     initial_notes_count = @admin.notes.size
-    milk = notes(:milk)
 
     post bulk_delete_api_v1_notes_path, params: { ids: [milk.id] },
         headers: @headers
@@ -60,10 +61,10 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_delete_multiple_note
+    milk = create(:note, :milk, user: @admin)
+    bulbs = create(:note, :bulbs, user: @admin)
+    rent = create(:note, :rent, user: @admin)
     initial_notes_count = @admin.notes.size
-    milk = notes(:milk)
-    bulbs = notes(:bulbs)
-    rent = notes(:rent)
 
     post bulk_delete_api_v1_notes_path, params: { ids: [milk.id, bulbs.id, rent.id] },
         headers: @headers
