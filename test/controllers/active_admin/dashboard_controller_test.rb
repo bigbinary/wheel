@@ -3,7 +3,6 @@
 require "test_helper"
 
 class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
-
   def setup
     user = create(:user, :admin)
     sign_in user

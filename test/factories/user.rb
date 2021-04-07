@@ -5,7 +5,7 @@ FactoryBot.define do
 
     trait :admin do
       email { 'admin@example.com' }
-      first_name { 'Adam'}
+      first_name { 'Adam' }
       last_name { 'Smith' }
       password { 'welcome' }
       role { 'super_admin' }
@@ -13,7 +13,7 @@ FactoryBot.define do
 
     trait :nancy do
       email { 'nancy.smith@example.com' }
-      first_name { 'Nancy'}
+      first_name { 'Nancy' }
       last_name { 'Smith' }
       password { 'welcome' }
     end
