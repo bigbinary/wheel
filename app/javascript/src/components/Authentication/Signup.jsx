@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Button, Input } from "neetoui";
 
@@ -17,9 +16,6 @@ const Signup = ({ history }) => {
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
-
-  const linkBaseClass =
-    "block mt-2 text-base text-indigo-500 no-underline transition-all duration-300 ease-in-out hover:text-indigo-600";
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -101,10 +97,13 @@ const Signup = ({ history }) => {
           />
           <Button type="submit" loading={loading} label="Signup" fullWidth />
         </form>
-        <div className="mt-2 text-center">
-          <Link className={linkBaseClass} to="/login">
-            Sign in instead
-          </Link>
+        <div className="mt-4 text-center">
+          <Button
+            label="Sign in instead"
+            style="link"
+            to="/login"
+            className="justify-center"
+          />
         </div>
       </div>
     </div>

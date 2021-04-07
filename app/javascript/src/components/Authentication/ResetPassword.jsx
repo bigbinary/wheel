@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import { Button, Input } from "neetoui";
-import { Link } from "react-router-dom";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
-
-  const linkBaseClass =
-    "block mt-2 text-base text-indigo-500 no-underline transition-all duration-300 ease-in-out hover:text-indigo-600";
 
   return (
     <div className="w-screen h-screen bg-gray-100">
@@ -28,13 +24,19 @@ const ResetPassword = () => {
           />
           <Button type="submit" label="Send reset password email" fullWidth />
         </form>
-        <div className="mt-2 text-center">
-          <Link className={linkBaseClass} to="/login">
-            Sign in instead
-          </Link>
-          <Link className={linkBaseClass} to="/signup">
-            Signup
-          </Link>
+        <div className="mt-4 space-y-2">
+          <Button
+            label="Sign in instead"
+            style="link"
+            to="/login"
+            className="justify-center"
+          />
+          <Button
+            label="Signup"
+            style="link"
+            to="/signup"
+            className="justify-center"
+          />
         </div>
       </div>
     </div>

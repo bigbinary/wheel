@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { setAuthHeaders } from "apis/axios";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
@@ -14,9 +13,6 @@ const Login = ({ history }) => {
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
-
-  const linkBaseClass =
-    "block mt-2 text-base text-indigo-500 no-underline transition-all duration-300 ease-in-out hover:text-indigo-600";
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -64,13 +60,19 @@ const Login = ({ history }) => {
           />
           <Button type="submit" loading={loading} fullWidth label="Login" />
         </form>
-        <div className="mt-2 text-center">
-          <Link className={linkBaseClass} to="/signup">
-            Signup
-          </Link>
-          <Link className={linkBaseClass} to="/my/password/new">
-            Forgot password?
-          </Link>
+        <div className="mt-4 space-y-2">
+          <Button
+            label="Signup"
+            style="link"
+            to="/signup"
+            className="justify-center"
+          />
+          <Button
+            label="Forgot password?"
+            style="link"
+            to="/my/password/new"
+            className="justify-center"
+          />
         </div>
       </div>
     </div>
