@@ -65,6 +65,9 @@ gem "sidekiq"
 # Preview email in browser
 gem "letter_opener", group: :development
 
+# yanked v0.3.5
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
+
 group :development, :test do
   # Rails integration for factory-bot
   gem "factory_bot_rails"
