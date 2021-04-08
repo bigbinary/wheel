@@ -46,14 +46,14 @@ const Signup = ({ history }) => {
   };
 
   return (
-    <div className="w-screen h-screen bg-gray-100">
-      <div className="flex flex-col items-center justify-center h-full mx-auto lg:w-4/12">
-        <h2 className="mb-5 text-3xl font-semibold text-center text-gray-800">
+    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 bg-gray-100">
+      <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
+        <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
           Signup
         </h2>
 
         <form
-          className="w-full p-8 space-y-4 bg-white border rounded-md shadow"
+          className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
           onSubmit={handleSubmit}
         >
           <Input
@@ -97,12 +97,12 @@ const Signup = ({ history }) => {
           />
           <Button type="submit" loading={loading} label="Signup" fullWidth />
         </form>
-        <div className="mt-4 text-center">
+        <div className="flex flex-row items-center justify-start mt-4 space-x-1">
+          <p className="font-normal text-gray-600">Already have an account?</p>
           <Button
-            label="Sign in instead"
+            label="Login"
             style="link"
             to="/login"
-            className="justify-center"
           />
         </div>
       </div>
