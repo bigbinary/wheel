@@ -44,14 +44,16 @@ const Login = ({ history }) => {
           onSubmit={handleSubmit}
         >
           <Input
-            required
+            id="user_email"
             type="email"
             value={email}
             label="Email"
             placeholder="oliver@example.com"
             onChange={e => setEmail(e.target.value)}
+            required
           />
           <Input
+            id="user_password"
             type="password"
             label="Password"
             placeholder="******"

@@ -57,43 +57,49 @@ const Signup = ({ history }) => {
           onSubmit={handleSubmit}
         >
           <Input
-            required
+            id="user_email"
             type="email"
             label="Email"
             placeholder="oliver@example.com"
             value={email}
             onChange={e => setEmail(e.target.value)}
+            required
           />
           <Input
-            required
+            id="user_first_name"
             type="text"
             label="First name"
             placeholder="Sam"
             value={firstName}
             onChange={e => setFirstName(e.target.value)}
+            required
           />
           <Input
-            required
+            id="user_last_name"
+            type="text"
             placeholder="Smith"
             label="Last name"
             value={lastName}
             onChange={e => setLastName(e.target.value)}
+            required
           />
           <Input
-            required
+            id="user_password"
             type="password"
             label="Password"
             placeholder="******"
             value={password}
             onChange={e => setPassword(e.target.value)}
+            required
           />
           <Input
-            required
+            id="user_password_confirmation"
             type="password"
             label="Confirm password"
             placeholder="******"
             value={passwordConfirmation}
             onChange={e => setPasswordConfirmation(e.target.value)}
+            required
           />
           <Button type="submit" loading={loading} label="Signup" fullWidth />
         </form>

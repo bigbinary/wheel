@@ -14,8 +14,9 @@ const ResetPassword = () => {
           Enter your email address below and we&apos;ll send you a link to reset
           your password.
         </div>
-        <form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+        <form className="w-full p-8 space-y-6 bg-white border rounded-md shadow" id="new_user">
           <Input
+            id="user_email"
             label="Email"
             type="email"
             required
@@ -23,12 +24,16 @@ const ResetPassword = () => {
             onChange={e => setEmail(e.target.value)}
           />
           <div className="flex flex-col items-center justify-center space-y-2">
-            <Button type="submit" label="Send reset password email" fullWidth />
+            <Button
+              type="submit"
+              label="Send reset password email"
+              data-disable-with="Send reset password email"
+              fullWidth
+            />
             <Button
               label="Back"
               style="link"
               to="/login"
-              className="justify-center"
             />
           </div>
         </form>
