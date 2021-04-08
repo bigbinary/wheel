@@ -10,7 +10,6 @@ export default function AccountDropdown({ handleLogout }) {
     : null;
   return (
     <Dropdown
-      popoverClassName="pl-6"
       position="right-top"
       interactionKind="hover"
       customTarget={() => (
@@ -19,7 +18,7 @@ export default function AccountDropdown({ handleLogout }) {
       closeOnSelect
     >
       <li className="font-semibold text-gray-800 pointer-events-none">
-        {name}
+        Account Settings
       </li>
       <div>
         <NavLink

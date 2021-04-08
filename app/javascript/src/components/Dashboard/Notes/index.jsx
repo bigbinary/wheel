@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { PageHeading } from "neetoui/layouts";
-import { Button, PageLoader } from "neetoui";
 import notesApi from "apis/notes";
+import { Button, PageLoader } from "neetoui";
 import EmptyState from "components/Common/EmptyState";
-import SubHeading from "./SubHeading";
+import EmptyNotesListImage from "images/EmptyNotesList";
+import { PageHeading, SubHeader } from "neetoui/layouts";
+
 import NoteTable from "./NoteTable";
 import NewNotePane from "./NewNotePane";
 import DeleteAlert from "./DeleteAlert";
-import EmptyNotesListImage from "images/EmptyNotesList";
 
-export default function index() {
+const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
@@ -37,7 +37,7 @@ export default function index() {
     return <PageLoader />;
   }
   return (
-    <div>
+    <>
       <PageHeading
         title="Notes"
         rightButton={() => (
@@ -50,12 +50,16 @@ export default function index() {
       />
       {notes.length ? (
         <>
-          <SubHeading
-            loading={loading}
-            selectedNoteIds={selectedNoteIds}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            setShowDeleteAlert={setShowDeleteAlert}
+          <SubHeader
+            searchProps={{
+              value: searchTerm,
+              onChange: e => setSearchTerm(e.target.value),
+              clear: () => setSearchTerm(""),
+            }}
+            deleteButtonProps={{
+              onClick: () => setShowDeleteAlert(true),
+              disabled: !selectedNoteIds.length,
+            }}
           />
           <NoteTable
             selectedNoteIds={selectedNoteIds}
@@ -84,6 +88,8 @@ export default function index() {
           refetch={fetchNotes}
         />
       )}
-    </div>
+    </>
   );
-}
+};
+
+export default Notes;

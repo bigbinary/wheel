@@ -8,10 +8,9 @@
 @import "./layouts/sidebar.scss";
 
 .content-main {
-  padding: 0 16px 16px;
-  height: 100vh;
+  min-height: 100vh !important;
   width: 100%;
-  background: #fff;
+  background: #FFF;
   max-height: 100vh;
   overflow-y: auto;
   z-index: 2;
