@@ -29,7 +29,7 @@ chdir APP_ROOT do
 
   puts "\n== Checking if config/database.yml is present =="
   unless File.exist?("config/database.yml")
-    raise "config/database.yml is missing"
+    system! "cp config/database.yml.postgresql config/database.yml"
   end
 
   puts "\n== Executing rake setup =="
