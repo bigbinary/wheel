@@ -81,9 +81,7 @@ group :development do
   gem "spring"
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-
-
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code
   gem "web-console"
 
   # Reenable after https://github.com/rails/rails/issues/26158 is fixed
@@ -96,10 +94,10 @@ group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 
-  # Patch-level verification for Bundler.
+  # Patch-level verification for Bundler
   gem "bundler-audit", require: false
 
-  # vulnerabity checker for Ruby itself.
+  # vulnerability checker for Ruby itself
   gem "ruby_audit", require: false
 end
 
