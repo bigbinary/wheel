@@ -49,6 +49,28 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 * Performs background job processing "inline" for heroku env. It means heroku can deliver emails.
 * Letter opener gem for development.
 
+## Making new application out of wheel
+
+I'm assuming that the name of the new application is timbaktu
+and the name of the repo is timbaktu-web.
+
+```
+git clone git@github.com:bigbinary/wheel.git
+
+mv wheel timbaktu-web
+
+cd timbaktu-web
+
+open .git/config file
+code .git/config
+Change `bigbinary/wheel.git` to  `bigbinary/timbaktu-web.git`.
+Save the file.
+
+In github create a new repo called `timbaktu-web`.
+
+git push origin master
+```
+
 ## Heroku Review
 
 [Heroku Review](https://devcenter.heroku.com/articles/github-integration-review-apps)
