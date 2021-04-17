@@ -54,20 +54,22 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 I'm assuming that the name of the new application is timbaktu
 and the name of the repo is timbaktu-web.
 
-```
-git clone git@github.com:bigbinary/wheel.git
-
-mv wheel timbaktu-web
-
-cd timbaktu-web
-
-open .git/config file
-code .git/config
-Change `bigbinary/wheel.git` to  `bigbinary/timbaktu-web.git`.
-Save the file.
-
 In github create a new repo called `timbaktu-web`.
 
+```
+git clone git@github.com:bigbinary/wheel.git
+mv wheel timbaktu-web
+cd timbaktu-web
+```
+Open `.git/config` file.
+
+```
+code .git/config
+```
+
+Change `bigbinary/wheel.git` to  `bigbinary/timbaktu-web.git` and save the file.
+
+```
 git push origin master
 ```
 
