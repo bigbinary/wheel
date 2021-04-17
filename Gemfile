@@ -35,7 +35,7 @@ gem "honeybadger"
 # Fonts
 gem "font-awesome-sass"
 
-# Support cross-browser css compatibilty
+# Support cross-browser css compatibility
 gem "autoprefixer-rails"
 
 # Admin framework
