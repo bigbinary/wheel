@@ -87,6 +87,16 @@ Change `bigbinary/wheel.git` to  `bigbinary/timbaktu-web.git` and save the file.
 git push origin master
 ```
 
+## Deploying application to Heroku
+
+- [ ] Login to heroku and click on "New" at the top right corner.
+- [ ] Name of the application should be "#{reponame}-staging". In this case it would be `timbaktu-web-staging`.
+- [ ] Click on "Deploy" tab. Choose "BigBinary" in the org name dropdown. Put "timbaktu-web-staging" in the app. Connect the app.
+- [ ] Install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
+- [ ] Change `RAILS_ENV` and `RACK_ENV` to `staging`.
+- [ ] Execute command `heroku run rake populate_sample_data -a timbaktu-web-staging` to populate sample data in the staging application.
+- [ ] Now you should be able to login to the deployed application.
+
 ## Heroku Review
 
 [Heroku Review](https://devcenter.heroku.com/articles/github-integration-review-apps)
