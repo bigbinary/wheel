@@ -114,6 +114,17 @@ git push origin master
 - [ ] In the Unique Identifier put ther reponame which in this case would be "timbaktu-web".
 - [ ] Click on "Update URL pattern"
 
+## Creating Heroku team
+
+- [ ] Click On "Personal".
+- [ ] In the pull down there you will have an option to create a new team. Click on that.
+- [ ] Team name should "reponame-team". In this case it would be "lexcel-web-team".
+- [ ] Click on "Add credit card".
+- [ ] Now click on "Transfer existing app". Select "lexcel-web-staging".
+- [ ] Invite other team members to the team. Make everyone "Admin"
+- [ ] Click on Person. Go to the pipeline. Go to settings. Scroll to the to bottom. Select "timbaktu-web-team" in the "Choose a pipeline owner".
+
+
 ## Heroku Review
 
 [Heroku Review](https://devcenter.heroku.com/articles/github-integration-review-apps)
