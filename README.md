@@ -49,12 +49,26 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 * Performs background job processing "inline" for heroku env. It means heroku can deliver emails.
 * Letter opener gem for development.
 
-## Making new application out of wheel
 
-I'm assuming that the name of the new application is `timbaktu`
-and the name of the repo is `timbaktu-web`.
 
-In Github create a new repo called `timbaktu-web`.
+## Checklist
+
+For this checklist we will assume that the name of the application is `timbaktu` and 
+the name of the repo is `timbaktu-web`.
+
+- [ ] Create a new repo called `timbaktu-web`.
+- [ ] Push wheel code to the new repo.
+- [ ] Create a new virtual credit card for this project using [Brex](https://www.brex.com/).This step is specific to BigBinary.
+- [ ] Signup for a free [honeybadger.io account](http://honeybader.io).
+- [ ] Update `config/honeybadger.yml` with the honeybadger key
+- [ ] In Heroku build and deploy application named `timbaktu-web-staging`.
+- [ ] Setup Heroku Review and a team.
+- [ ] Signup for Semaphore CI.
+- [ ] Update semaphore CI badge in README.
+- [ ] Configure Honeybadger to automatically create issues in Github.
+
+
+## Push Wheel code to the new repo
 
 ```
 git clone git@github.com:bigbinary/wheel.git
@@ -72,13 +86,6 @@ Change `bigbinary/wheel.git` to  `bigbinary/timbaktu-web.git` and save the file.
 ```
 git push origin master
 ```
-
-## Checklist
-
-- [ ] Create a new repo. 
-- [ ] Create a new virtual credit card for this project using [Brex](https://www.brex.com/).This step is specific to BigBinary.
-- [ ] Signup for a free [honeybadger.io account](http://honeybader.io).
-- [ ] Update `config/honeybadger.yml` with the honeybadger key
 
 ## Heroku Review
 
