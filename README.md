@@ -98,31 +98,31 @@ git push origin master
 
 ## Creating Heroku pipeline
 
-- [ ] Click on Personal at the top left corner.
-- [ ] Click on "New pipeline" a the top right corner
-- [ ] Pipeline name should be "#{reponame}-pipeline". In this case it would be `timbaktu-web-pipeline`.
-- [ ] In the "Staging" column click on "Add app" and select `timbaktu-web-staging`.
-- [ ] Click on "Enable Review Apps" button.
-- [ ] Check "Create new review apps for new pull requests automaticallY'
-- [ ] Check "Destroy stale review apps automatically". In the dropdown select "After 5 Days". 
-- [ ] We are not using Heroku CI so leave CI unchecked.
-- [ ] Click on "Enable review apps" button.
-- [ ] Click on "Configure" link.
-- [ ] Click on "More settings".
-- [ ] Click on button "Update URL pattern".
-- [ ] Ensure that "Predictable" radio button is selected.
-- [ ] In the Unique Identifier put ther reponame which in this case would be "timbaktu-web".
-- [ ] Click on "Update URL pattern"
+* Click on Personal at the top left corner.
+* Click on "New pipeline" a the top right corner
+* Pipeline name should be "#{reponame}-pipeline". In this case it would be `timbaktu-web-pipeline`.
+* In the "Staging" column click on "Add app" and select `timbaktu-web-staging`.
+* Click on "Enable Review Apps" button.
+* Check "Create new review apps for new pull requests automaticallY'
+* Check "Destroy stale review apps automatically". In the dropdown select "After 5 Days". 
+* We are not using Heroku CI so leave CI unchecked.
+* Click on "Enable review apps" button.
+* Click on "Configure" link.
+* Click on "More settings".
+* Click on button "Update URL pattern".
+* Ensure that "Predictable" radio button is selected.
+* In the Unique Identifier put ther reponame which in this case would be "timbaktu-web".
+* Click on "Update URL pattern"
 
 ## Creating Heroku team
 
-- [ ] Click On "Personal".
-- [ ] In the pull down there you will have an option to create a new team. Click on that.
-- [ ] Team name should "reponame-team". In this case it would be "lexcel-web-team".
-- [ ] Click on "Add credit card".
-- [ ] Now click on "Transfer existing app". Select "lexcel-web-staging".
-- [ ] Invite other team members to the team. Make everyone "Admin"
-- [ ] Click on Person. Go to the pipeline. Go to settings. Scroll to the to bottom. Select "timbaktu-web-team" in the "Choose a pipeline owner".
+* Click On "Personal".
+* In the pull down there you will have an option to create a new team. Click on that.
+* Team name should "reponame-team". In this case it would be "lexcel-web-team".
+* Click on "Add credit card".
+* Now click on "Transfer existing app". Select "lexcel-web-staging".
+* Invite other team members to the team. Make everyone "Admin"
+* Click on Person. Go to the pipeline. Go to settings. Scroll to the to bottom. Select "timbaktu-web-team" in the "Choose a pipeline owner".
 
 
 ## Heroku Review
