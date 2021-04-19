@@ -50,7 +50,6 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 * Letter opener gem for development.
 
 
-
 ## Checklist
 
 For this checklist we will assume that the name of the application is `timbaktu` and 
@@ -96,6 +95,24 @@ git push origin master
 - [ ] Change `RAILS_ENV` and `RACK_ENV` to `staging`.
 - [ ] Execute command `heroku run rake populate_sample_data -a timbaktu-web-staging` to populate sample data in the staging application.
 - [ ] Now you should be able to login to the deployed application.
+
+## Creating Heroku pipeline
+
+- [ ] Click on Personal at the top left corner.
+- [ ] Click on "New pipeline" a the top right corner
+- [ ] Pipeline name should be "#{reponame}-pipeline". In this case it would be `timbaktu-web-pipeline`.
+- [ ] In the "Staging" column click on "Add app" and select `timbaktu-web-staging`.
+- [ ] Click on "Enable Review Apps" button.
+- [ ] Check "Create new review apps for new pull requests automaticallY'
+- [ ] Check "Destroy stale review apps automatically". In the dropdown select "After 5 Days". 
+- [ ] We are not using Heroku CI so leave CI unchecked.
+- [ ] Click on "Enable review apps" button.
+- [ ] Click on "Configure" link.
+- [ ] Click on "More settings".
+- [ ] Click on button "Update URL pattern".
+- [ ] Ensure that "Predictable" radio button is selected.
+- [ ] In the Unique Identifier put ther reponame which in this case would be "timbaktu-web".
+- [ ] Click on "Update URL pattern"
 
 ## Heroku Review
 
