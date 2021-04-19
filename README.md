@@ -51,10 +51,10 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 
 ## Making new application out of wheel
 
-I'm assuming that the name of the new application is timbaktu
-and the name of the repo is timbaktu-web.
+I'm assuming that the name of the new application is `timbaktu`
+and the name of the repo is `timbaktu-web`.
 
-In github create a new repo called `timbaktu-web`.
+In Github create a new repo called `timbaktu-web`.
 
 ```
 git clone git@github.com:bigbinary/wheel.git
@@ -72,6 +72,13 @@ Change `bigbinary/wheel.git` to  `bigbinary/timbaktu-web.git` and save the file.
 ```
 git push origin master
 ```
+
+## Checklist
+
+- [ ] Create a new repo. 
+- [ ] Create a new virtual credit card for this project using [Brex](https://www.brex.com/).This step is specific to BigBinary.
+- [ ] Signup for a free [honeybadger.io account](http://honeybader.io).
+- [ ] Update `config/honeybadger.yml` with the honeybadger key
 
 ## Heroku Review
 
