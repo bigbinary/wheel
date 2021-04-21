@@ -6,6 +6,7 @@ module.exports = {
       components: "src/components",
       contexts: "src/contexts",
       reducers: "src/reducers",
+      neetoui: "@bigbinary/neetoui",
     },
   },
 };
