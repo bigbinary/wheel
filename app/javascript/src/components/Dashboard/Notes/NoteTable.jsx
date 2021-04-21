@@ -7,7 +7,7 @@ export default function NoteTable({
   notes = [],
 }) {
   return (
-    <div className="w-full px-6">
+    <div className="w-full px-4">
       <table className="nui-table nui-table--checkbox">
         <thead>
           <tr>

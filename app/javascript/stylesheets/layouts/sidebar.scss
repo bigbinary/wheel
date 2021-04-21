@@ -28,6 +28,12 @@ $sidebar-width: 72px;
 }
 
 .nh-logo {
+  width: 100%;
   min-height: 72px;
-  @apply flex items-center justify-center w-full px-3 py-2 border-b;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-bottom: thin solid theme("colors.gray.300");
+  padding: 8px 12px;
 }
