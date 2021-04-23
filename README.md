@@ -90,7 +90,9 @@ git push origin master
 
 - [ ] Login to heroku and click on "New" at the top right corner.
 - [ ] Name of the application should be "#{reponame}-staging". In this case it would be `timbaktu-web-staging`.
-- [ ] Click on "Deploy" tab. Click on "Github" tab. Choose "BigBinary" in the org name dropdown. Put "timbaktu-web-staging" in the app. Connect the app.
+- [ ] Click on "Deploy" tab and then click on "Github" tab. 
+- [ ] You will see a dropdown with the label "Searh for a repository to connect to". Select BigBinary in the dropdown.
+- [ ] Put "timbaktu-web-staging" in the app. Connect the app.
 - [ ] Install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
 - [ ] Change `RAILS_ENV` and `RACK_ENV` to `staging`.
 - [ ] Execute command `heroku run rake populate_sample_data -a timbaktu-web-staging` to populate sample data in the staging application.
