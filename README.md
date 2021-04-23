@@ -93,8 +93,12 @@ git push origin master
 - [ ] Click on "Deploy" tab and then click on "Github" tab. 
 - [ ] You will see a dropdown with the label "Searh for a repository to connect to". Select BigBinary in the dropdown.
 - [ ] Put "timbaktu-web-staging" in the app. Connect the app.
-- [ ] Install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
+- [ ] Scroll to the bottom of the page and click on button "Deploy Branch". 
+- [ ] Wait and do not do anything until deployment is complete.
+- [ ] Click on tab "Settings".
+- [ ] Click on link "Reveal Config Vars".
 - [ ] Change `RAILS_ENV` and `RACK_ENV` to `staging`.
+- [ ] Install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
 - [ ] Execute command `heroku run rake populate_sample_data -a timbaktu-web-staging` to populate sample data in the staging application.
 - [ ] Now you should be able to login to the deployed application.
 
