@@ -101,6 +101,10 @@ git push origin master
 - [ ] Install [heroku cli](https://devcenter.heroku.com/articles/heroku-cli).
 - [ ] Execute command `heroku run rake populate_sample_data -a timbaktu-web-staging` to populate sample data in the staging application.
 - [ ] Now you should be able to login to the deployed application.
+- [ ] Click on tab "Resources".
+- [ ] Click on "Change Dyno Type".
+- [ ] Select "Hobby" plan.
+- [ ] If you need to enable sidekiq worker then enable that also.
 
 ## Creating Heroku pipeline
 
