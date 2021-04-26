@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname $0)/_/husky.sh"
+. "$(dirname $0)/helpers/lint_staged.sh"
+. "$(dirname $0)/helpers/prevent_pushing_to_master.sh"
+
+prevent_pushing_to_master
+lint_staged_files
