@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "precommit": "lint-staged"
+    "prepare": "npx husky install"
   },
   "lint-staged": {
     "app/**/*.{html,md,js,jsx,json,yml}": [
