@@ -3,7 +3,11 @@ module.exports = {
     "browser": true,
     "es6": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "settings": {
     "react": {
       "version": "detect"
@@ -12,7 +16,8 @@ module.exports = {
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly",
-    "logger": true
+    "logger": true,
+    "module": true
   },
   "parserOptions": {
     "ecmaFeatures": {
