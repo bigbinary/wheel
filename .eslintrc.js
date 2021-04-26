@@ -4,6 +4,7 @@ module.exports = {
     "es6": true
   },
   "extends": [
+    "plugin:json/recommended",
     "plugin:prettier/recommended",
     "eslint:recommended",
     "plugin:react/recommended"
@@ -31,8 +32,10 @@ module.exports = {
     "react"
   ],
   "rules": {
+    "indent": ["error", 2],
     "semi": ["error", "always"],
     "no-console": "error",
+    "import/prefer-default-export": "off",
     "react/prop-types": 0
   }
 };

@@ -3,7 +3,7 @@
     "prepare": "npx husky install"
   },
   "lint-staged": {
-    "app/**/*.{html,md,js,jsx,json,yml}": [
+    "app/**/*.{html,md,js,jsx,json}": [
       "prettier --write",
       "eslint --fix",
       "git add"
@@ -23,6 +23,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "husky": "^6.0.0",

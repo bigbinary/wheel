@@ -6,9 +6,7 @@
     "module": "commonJS",
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "*"
-      ],
+      "*": ["*"]
     },
     "pretty": true,
     "experimentalDecorators": true,
@@ -16,12 +14,9 @@
     "checkJs": true,
     "jsx": "preserve"
   },
-  "exclude": [
-    "**/node_modules",
-    "**/.*/"
-  ],
-  "include": [
-    "./**/*.js",
-    "./**/*.jsx"
-  ]
+  "exclude": ["**/node_modules", "**/.*/"],
+  "include": ["./**/*.js", "./**/*.jsx"],
+  "paths": {
+    "neetoui": "@bigbinary/neetoui"
+  }
 }
