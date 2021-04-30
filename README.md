@@ -59,7 +59,7 @@ the name of the repo is `timbaktu-web`.
 - [ ] Push wheel code to the new repo.
 - [ ] In Heroku build and deploy application named `timbaktu-web-staging`.
 - [ ] Create a new virtual credit card for this project using [Brex](https://www.brex.com/).This step is specific to BigBinary.
-- [ ] Signup for a free [honeybadger.io account](https://honeybader.io).
+- [ ] Signup for a free [honeybadger.io account](https://www.honeybadger.io/).
 - [ ] Update `config/honeybadger.yml` with the honeybadger key
 - [ ] Setup Heroku Review and a team.
 - [ ] Signup for Semaphore CI.
