@@ -3,7 +3,7 @@ import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import { Input as FormikInput } from "neetoui/formik";
 import { Button, Toastr } from "neetoui";
-import { PageHeading } from "neetoui/layouts";
+import { Header } from "neetoui/layouts";
 import registrationsApi from "apis/registrations";
 
 const Edit = () => {
@@ -38,8 +38,8 @@ const Edit = () => {
 
   return (
     <>
-      <PageHeading title="Change Password" />
-      <div className="flex flex-col items-center justify-center flex-grow w-full h-full py-20 mx-auto lg:w-5/12">
+      <Header title="Change Password" className="border-b border-gray-200" />
+      <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
         <Formik
           initialValues={{
             currentPassword: "",
@@ -49,7 +49,7 @@ const Edit = () => {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          <Form className="w-full px-10 py-8 space-y-4 bg-white border rounded-lg shadow-sm">
+          <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
             <FormikInput
               {...formikInputAttrs}
               name="currentPassword"

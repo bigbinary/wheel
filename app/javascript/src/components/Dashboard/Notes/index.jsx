@@ -3,7 +3,7 @@ import notesApi from "apis/notes";
 import { Button, PageLoader } from "neetoui";
 import EmptyState from "components/Common/EmptyState";
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { PageHeading, SubHeader } from "neetoui/layouts";
+import { Header, SubHeader } from "neetoui/layouts";
 
 import NoteTable from "./NoteTable";
 import NewNotePane from "./NewNotePane";
@@ -38,15 +38,15 @@ const Notes = () => {
   }
   return (
     <>
-      <PageHeading
+      <Header
         title="Notes"
-        rightButton={() => (
+        actionBlock={
           <Button
             onClick={() => setShowNewNotePane(true)}
-            label="Add new note"
+            label="Add New Note"
             icon="ri-add-line"
           />
-        )}
+        }
       />
       {notes.length ? (
         <>
@@ -73,7 +73,7 @@ const Notes = () => {
           title="Looks like you don't have any notes!"
           subtitle="Add your notes to send customized emails to them."
           primaryAction={() => setShowNewNotePane(true)}
-          primaryActionLabel="Add new note"
+          primaryActionLabel="Add New Note"
         />
       )}
       <NewNotePane
