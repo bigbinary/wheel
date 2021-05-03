@@ -1,7 +1,7 @@
 import React from "react";
 import * as yup from "yup";
 import { Formik, Form } from "formik";
-import { Input } from "neetoui/formik";
+import { Input, Textarea } from "neetoui/formik";
 import { Button } from "neetoui";
 import notesApi from "apis/notes";
 
@@ -29,8 +29,8 @@ export default function NewNoteForm({ onClose, refetch }) {
     >
       {({ isSubmitting }) => (
         <Form>
-          <Input label="Title" name="title" className="mb-3" />
-          <Input label="Description" name="description" />
+          <Input label="Title" name="title" className="mb-6" />
+          <Textarea label="Description" name="description" rows={8} />
           <div className="nui-pane__footer nui-pane__footer--absolute">
             <Button
               onClick={onClose}

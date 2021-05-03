@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Input, Button } from "neetoui";
-import { PageHeading } from "neetoui/layouts";
+import { Header } from "neetoui/layouts";
 import { useUserState } from "contexts/user";
 
 const Profile = () => {
@@ -21,9 +21,9 @@ const Profile = () => {
 
   return (
     <>
-      <PageHeading title="My Profile" />
-      <div className="flex flex-col items-center justify-center flex-grow w-full h-full py-20 mx-auto lg:w-5/12">
-        <form className="w-full px-10 py-8 space-y-4 bg-white border rounded-lg shadow-sm">
+      <Header title="My Profile" className="border-b border-gray-200" />
+      <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
+        <form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
           <Input
             label="Email"
             type="email"
