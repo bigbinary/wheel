@@ -5,9 +5,9 @@ module.exports = {
   },
   "extends": [
     "plugin:json/recommended",
-    "plugin:prettier/recommended",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "settings": {
     "react": {
@@ -32,7 +32,7 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "indent": ["error", 2, { "ignoredNodes": ["ConditionalExpression"] }],
+    "indent": ["error", 2],
     "semi": ["error", "always"],
     "no-console": "error",
     "import/prefer-default-export": "off",
