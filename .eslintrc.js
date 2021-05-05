@@ -5,9 +5,9 @@ module.exports = {
   },
   "extends": [
     "plugin:json/recommended",
-    "plugin:prettier/recommended",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "settings": {
     "react": {
