@@ -5,7 +5,7 @@ const ResetPassword = () => {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 bg-gray-100">
+    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 bg-gray-100 overflow-y-auto overflow-x-hidden">
       <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
         <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
           Forgot your password?
