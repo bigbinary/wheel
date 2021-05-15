@@ -10,23 +10,6 @@ $sidebar-width: 72px;
   transition: width 0.3s;
 }
 
-.nh-main-wrapper {
-  max-width: calc(100vw - #{$sidebar-width});
-}
-
-.nh-action-sidebar {
-  width: 400px;
-  min-width: 400px;
-  height: calc(100vh - #{$main-header-height} - #{$sub-header-height});
-  overflow-y: auto;
-  position: fixed;
-  top: calc(#{$main-header-height} + #{$sub-header-height});
-  right: 0;
-  background-color: theme("colors.gray.100");
-  border-left: thin solid theme("colors.gray.200");
-  padding: 16px 24px;
-}
-
 .nh-logo {
   width: 100%;
   min-height: 72px;
