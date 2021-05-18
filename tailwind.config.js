@@ -1,13 +1,19 @@
 module.exports = {
   important: true,
-  purge: [
-    "./app/javascript/**/*.js",
-    "./app/javascript/**/**/*.js",
-    "./app/javascript/**/**/*/*.js",
-    "./app/javascript/**/*.js",
-    "./app/views/**/**/*.slim",
-    "./app/views/**/**/*/*.slim",
-  ],
+  purge: {
+    enabled: process.env.NODE_ENV === "production" ? true : false,
+    content: [
+      "./app/javascript/**/*.js",
+      "./app/javascript/**/**/*.js",
+      "./app/javascript/**/**/**/*.js",
+      "./app/javascript/**/*.jsx",
+      "./app/javascript/**/**/*.jsx",
+      "./app/javascript/**/**/**/*.jsx",
+      "./app/views/**/**/*.slim",
+      "./app/views/**/**/*/*.slim",
+    ],
+    defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+  },
   theme: {
     extend: {
       colors: {
