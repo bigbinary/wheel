@@ -57,7 +57,7 @@ gem "email_prefixer"
 # Display notifications
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootsnap', '>= 1.7.4', require: false
 
 # Background jobs
 gem "sidekiq"
