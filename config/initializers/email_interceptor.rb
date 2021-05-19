@@ -4,7 +4,7 @@ interceptors = Rails.application.secrets.intercept_and_forward_emails_to || ["in
 
 options = {
             forward_emails_to: interceptors,
-            deliver_emails_to: ["deliver@bigbinary.com"]
+            deliver_emails_to: ["@bigbinary.com"]
           }
 
 unless (Rails.env.test? || Rails.env.production?)
