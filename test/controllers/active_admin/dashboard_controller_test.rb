@@ -8,12 +8,6 @@ class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
     sign_in user
   end
 
-  def test_index_success_for_super_admin
-    get active_admin_root_url
-
-    assert_response :success
-  end
-
   def test_index_for_non_super_admin
     nancy = create(:user, :nancy)
     sign_in nancy

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Button } from "neetoui";
 
 export default function Hero() {
@@ -17,32 +17,27 @@ export default function Hero() {
   ];
 
   return (
-    <div className="flex flex-col items-center max-w-screen-xl mt-10 mx-auto pt-8 px-4">
-      <div className="text-center">
-        <p className="mt-1 text-4xl font-medium">
-          Wheel
-        </p>
-        <p className="max-w-xl mt-5 mx-auto text-xl leading-7 text-gray-800">
-          Don't reinvent the wheel. Use sane defaults to bootstrap your react-rails project!
-        </p>
-      </div>
+    <div className="flex flex-col items-center justify-center h-screen max-w-3xl p-8 m-auto">
+      <h1 className="mb-3 text-4xl font-bold">Wheel</h1>
+      <p className="mx-auto mb-6 text-lg text-center text-gray-800">
+        Don&apos;t reinvent the wheel. Use sane defaults to bootstrap your
+        react-rails project!
+      </p>
       <Features features={features} />
-      <div className="mt-6 flex justify-center items-center">
-        <Button
-          type="primary"
-          to="/login"
-          label="Login"
-        />
+      <div className="flex items-center justify-center mt-6">
+        <Button size="large" type="primary" to="/login" label="Login" />
       </div>
     </div>
-  )
+  );
 }
 
 const Features = ({ features }) => {
   return (
-    <ul className="list-disc ml-12 mt-6 text-gray-600 leading-relaxed tracking-wide">
+    <ul className="list-disc">
       {features.map((feature, index) => (
-        <li key={index}>{feature}</li>
+        <li key={index} className="py-4 border-b border-gray-100 last:border-0">
+          {feature}
+        </li>
       ))}
     </ul>
   );

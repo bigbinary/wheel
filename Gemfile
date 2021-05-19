@@ -32,9 +32,6 @@ gem "devise", "~> 4.7"
 # Error tracking
 gem "honeybadger"
 
-# Fonts
-gem "font-awesome-sass"
-
 # Support cross-browser css compatibility
 gem "autoprefixer-rails"
 
