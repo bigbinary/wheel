@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/mimemagicrb/mimemagic.git
-  revision: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
-  ref: 01f92d86d15d85cfd0f20dabd025dcbd36a8a60f
-  specs:
-    mimemagic (0.3.5)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -346,7 +339,6 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.2)
   mail_interceptor
-  mimemagic!
   minitest
   minitest-ci
   pg
@@ -371,7 +363,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 3.0.1p64
 
 BUNDLED WITH
-   2.1.4
+   2.2.17

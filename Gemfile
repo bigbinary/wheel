@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.7.2"
+ruby "3.0.1"
 
 gem "rails", "~> 6.1.3.2"
 gem "sprockets"
@@ -61,9 +61,6 @@ gem "sidekiq"
 
 # Preview email in browser
 gem "letter_opener", group: :development
-
-# yanked v0.3.5
-gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 
 group :development, :test do
   # Rails integration for factory-bot
