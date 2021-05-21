@@ -20,6 +20,8 @@ bundle exec rails server
 
 Visit http://localhost:3000 and login with email `oliver@example.com` and password `welcome`.
 
+**Note:** The `ENV` variables for local development can be set in `.env.local` and it will be automatically loaded. Example: `APP_URL` is set to `localhost:3000` in this file by default and is used by `secrets.yml` to define `host`.
+
 ## Replace Wheel with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
