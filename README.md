@@ -20,6 +20,44 @@ bundle exec rails server
 
 Visit http://localhost:3000 and login with email `oliver@example.com` and password `welcome`.
 
+## Docker for development environment
+
+1. Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`
+2. `cd wheel`
+3. If using it for the first time, run `docker-compose build` to build the images.
+4. Run `docker-compose run --rm web rails setup` to create and seed the database.
+5. Run `docker-compose up` to start the application and get things up and running.
+6. From now onwards, we can just run `docker-compose up` from within the root of the `wheel` directory to bring up the application.
+
+### Fixing Docker Cache Issues
+While re-building images, docker tries to find it's layers in the cache, which might bring-in stale layers.
+
+#### Build images without using cache
+```bash
+# this forces docker to not use cached image layers
+docker-compose build --no-cache
+```
+
+### Steps to remove docker data related to wheel:
+- Run `docker ps -a | grep wheel` to get continers related to wheel, verify it and then run `docker rm -f $(docker ps -a | grep wheel | awk '{print $1}')` to delete them.
+
+- Run `docker images | grep wheel` to get images related to wheel, verify it and then run `docker rmi -f $(docker images | grep wheel | awk '{print $3}')` to delete them.
+
+- Run `docker volume ls | grep wheel` to get volumes related to wheel, verify it and then run `docker volume rm -f $(docker volume ls | grep wheel | awk '{print $2}')` to delete them.
+
+
+If you want to try out something slightly more daring, yet effective, then run the following single line command to wipe all of the docker data, which includes containers+images+volumes and then did docker-compose up --build and things started working for me in wheel.
+
+**Warning: The following command will wipe all of docker data of all local docker projects and containers:**
+
+```bash
+docker rm -f $(docker ps -a -q) && docker rmi -f $(docker images -q) && docker volume rm -f $(docker volume ls -q)
+
+```
+
+> **Warning:** <br/>
+Run `docker system prune -a -f --volumes` to remove all containers, networks, images (both dangling and unreferenced), and volumes.
+
 ## Replace Wheel with your project name
 
 Let's say that the project name is `Pump`. Execute the command below to
