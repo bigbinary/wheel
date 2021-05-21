@@ -1,0 +1,94 @@
+version: "3.7"
+networks:
+  development:
+volumes:
+  db_data:
+  gem_cache:
+  node_modules:
+  redis_data:
+  packs:
+services:
+  db:
+    image: postgres:12.5-alpine
+    container_name: wheel_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    networks:
+      - development
+    ports:
+      - 5432
+  redis:
+    image: redis:6.2.3-alpine
+    networks:
+      - development
+    ports:
+      - 6379
+    volumes:
+      - redis_data:/var/lib/redis/data
+  sidekiq:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: wheel_sidekiq
+    networks:
+      - development
+    depends_on:
+      - web
+      - db
+      - redis
+    volumes:
+      - .:/var/app
+      - gem_cache:/usr/local/bundle/gems
+      - node_modules:/var/app/node_modules
+    environment:
+      RAILS_ENV: development
+    entrypoint: docker-entrypoint.sh
+    command: ["sidekiq"]
+  webpacker:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ./bin/webpack-dev-server
+    ports:
+      - 3035:3035
+    networks:
+      - development
+    volumes:
+      - .:/var/app:cached
+      - gem_cache:/usr/local/bundle/gems
+      - node_modules:/var/app/node_modules
+    environment:
+      NODE_ENV: development
+      RAILS_ENV: development
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: wheel_app
+    image: wheel-dev:1.0.0
+    volumes:
+      - .:/var/app:cached
+      - gem_cache:/usr/local/bundle/gems
+      - node_modules:/var/app/node_modules
+    networks:
+      - development
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    entrypoint: docker-entrypoint.sh
+    command: ["rails", "server", "-p", "3000", "-b", "0.0.0.0"]
+    environment:
+      RAILS_ENV: development
+      NODE_ENV: development
+      PG_USER: postgres
+      PG_PASSWORD: password
+      PG_HOST: db
+      WEBPACKER_DEV_SERVER_HOST: webpacker
+    depends_on:
+      - db
+      - webpacker
