@@ -5,7 +5,7 @@ import { Input, Textarea } from "neetoui/formik";
 import { Button } from "neetoui";
 import notesApi from "apis/notes";
 
-export default function NewNoteForm({ onClose, refetch }) {
+export default function NewNoteForm({ onClose, refetch, noteToEdit }) {
   const handleSubmit = async values => {
     try {
       await notesApi.create(values);
@@ -15,12 +15,20 @@ export default function NewNoteForm({ onClose, refetch }) {
       logger.error(err);
     }
   };
+
+  const initialValues = {
+    id: noteToEdit.id ?? "",
+    title: noteToEdit.title ?? "",
+    description: noteToEdit.description ?? "",
+    tag: noteToEdit.tag ?? "",
+    createdDate: noteToEdit.createdDate ?? "",
+    dueDate: noteToEdit.dueDate ?? "",
+    contact: noteToEdit.contact ?? "",
+  };
+
   return (
     <Formik
-      initialValues={{
-        title: "",
-        description: "",
-      }}
+      initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={yup.object({
         title: yup.string().required("Title is required"),
@@ -29,8 +37,8 @@ export default function NewNoteForm({ onClose, refetch }) {
     >
       {({ isSubmitting }) => (
         <Form>
-          <Input label="Title" name="title" className="mb-6" />
-          <Textarea label="Description" name="description" rows={8} />
+          <Input label="Note Title" name="title" className="mb-6" />
+          <Textarea label="Note Description" name="description" rows={8} />
           <div className="nui-pane__footer nui-pane__footer--absolute">
             <Button
               onClick={onClose}

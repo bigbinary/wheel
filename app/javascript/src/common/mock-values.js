@@ -1,5 +1,6 @@
 export const notes = [
   {
+    id: 1,
     title: "Change support email",
     description:
       "forward all internal mails to Amaljith K. This needs to be a very long text that won't fit inside a normal description cell",
@@ -9,6 +10,7 @@ export const notes = [
     contact: "Neeraj S",
   },
   {
+    id: 2,
     title: "Feedback",
     description: "Feedback 1.0",
     tag: { name: "Agile workflow", color: "green" },
@@ -17,6 +19,7 @@ export const notes = [
     contact: "Vinay chandran",
   },
   {
+    id: 3,
     title: "Feedback hover",
     description: "Feedback 2.0 hover experience",
     tag: { name: "Bug", color: "red" },

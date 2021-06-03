@@ -1,11 +1,18 @@
 import React from "react";
-import { Checkbox, Badge, Avatar } from "neetoui";
+import { Checkbox, Badge, Avatar, Button, Tooltip } from "neetoui";
 
 export default function NoteTable({
   selectedNoteIds,
   setSelectedNoteIds,
   notes = [],
+  setShowDeleteAlert,
+  setNoteToEdit,
 }) {
+  const deleteSingleNote = id => () => {
+    setSelectedNoteIds([id]);
+    setShowDeleteAlert(true);
+  };
+
   return (
     <div className="w-full px-4">
       <table className="nui-table nui-table--checkbox">
@@ -64,7 +71,12 @@ export default function NoteTable({
                   {note.title}
                 </div>
               </td>
-              <td>{note.description}</td>
+              <td
+                className="overflow-ellipsis truncate"
+                style={{ maxWidth: 200 }}
+              >
+                {note.description}
+              </td>
               <td className="text-center">
                 <Badge color={note.tag.color}>{note.tag.name}</Badge>
               </td>
@@ -76,6 +88,24 @@ export default function NoteTable({
                   contact={{ name: note.contact }}
                   bgClassName="bg-blue-300"
                 />
+              </td>
+              <td className="hover:opacity-100 opacity-0">
+                <div className="flex flex-row space-x-3 items-center">
+                  <Tooltip content="Edit" position="bottom">
+                    <Button
+                      style="icon"
+                      icon="ri-pencil-line"
+                      onClick={() => setNoteToEdit(note)}
+                    />
+                  </Tooltip>
+                  <Tooltip content="delete" position="bottom">
+                    <Button
+                      style="icon"
+                      icon="ri-delete-bin-line"
+                      onClick={deleteSingleNote(note.id)}
+                    />
+                  </Tooltip>
+                </div>
               </td>
             </tr>
           ))}

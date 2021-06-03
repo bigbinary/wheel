@@ -21,10 +21,13 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState(hardCodedNotes);
+  const [noteToEdit, setNoteToEdit] = useState(null);
 
   useEffect(() => {
     fetchNotes();
   }, []);
+
+  useEffect(() => setShowNewNotePane(!!noteToEdit), [noteToEdit]);
 
   const fetchNotes = async () => {
     try {
@@ -73,6 +76,8 @@ const Notes = () => {
             selectedNoteIds={selectedNoteIds}
             setSelectedNoteIds={setSelectedNoteIds}
             notes={notes}
+            setShowDeleteAlert={setShowDeleteAlert}
+            setNoteToEdit={setNoteToEdit}
           />
         </>
       ) : (
@@ -88,6 +93,7 @@ const Notes = () => {
         showPane={showNewNotePane}
         setShowPane={setShowNewNotePane}
         fetchNotes={fetchNotes}
+        noteToEdit={noteToEdit}
       />
       {showDeleteAlert && (
         <DeleteAlert
