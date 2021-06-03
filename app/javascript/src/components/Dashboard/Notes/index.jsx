@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import notesApi from "apis/notes";
 import { Button, PageLoader } from "neetoui";
+import { notes as hardCodedNotes } from "common/mock-values";
 import EmptyState from "components/Common/EmptyState";
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Header, SubHeader } from "neetoui/layouts";
@@ -15,7 +16,7 @@ const Notes = () => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(hardCodedNotes);
 
   useEffect(() => {
     fetchNotes();
@@ -24,8 +25,8 @@ const Notes = () => {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const response = await notesApi.fetch();
-      setNotes(response.data);
+      await notesApi.fetch();
+      setNotes(hardCodedNotes);
     } catch (error) {
       logger.error(error);
     } finally {
@@ -60,6 +61,21 @@ const Notes = () => {
               onClick: () => setShowDeleteAlert(true),
               disabled: !selectedNoteIds.length,
             }}
+            sortProps={{
+              option: { value: "title", label: "Name" },
+              options: [
+                { value: "id", label: "Index" },
+                { value: "title", label: "Name" },
+              ],
+              onClick: () => {},
+            }}
+            paginationProps={{
+              count: 254,
+              pageNo: 1,
+              pageSize: 20,
+              navigate: () => {},
+            }}
+            toggleFilter={() => {}}
           />
           <NoteTable
             selectedNoteIds={selectedNoteIds}

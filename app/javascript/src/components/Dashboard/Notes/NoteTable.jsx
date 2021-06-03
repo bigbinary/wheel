@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox } from "neetoui";
+import { Checkbox, Badge, Avatar } from "neetoui";
 
 export default function NoteTable({
   selectedNoteIds,
@@ -28,6 +28,11 @@ export default function NoteTable({
             </th>
             <th className="text-left">Title</th>
             <th className="text-left">Description</th>
+            <th className="text-center">Tags</th>
+            <th className="text-center">Created Date</th>
+            <th className="text-center">Due Date</th>
+            <th className="text-center">Contact</th>
+            <th />
           </tr>
         </thead>
         <tbody>
@@ -60,6 +65,18 @@ export default function NoteTable({
                 </div>
               </td>
               <td>{note.description}</td>
+              <td className="text-center">
+                <Badge color={note.tag.color}>{note.tag.name}</Badge>
+              </td>
+              <td className="text-center">{note.createdDate}</td>
+              <td className="text-center">{note.dueDate || "--"}</td>
+              <td className="flex justify-center items-center">
+                <Avatar
+                  size={36}
+                  contact={{ name: note.contact }}
+                  bgClassName="bg-blue-300"
+                />
+              </td>
             </tr>
           ))}
         </tbody>
