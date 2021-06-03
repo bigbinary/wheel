@@ -1,7 +1,8 @@
 export const notes = [
   {
     title: "Change support email",
-    description: "forward all internal mails to Amaljith K",
+    description:
+      "forward all internal mails to Amaljith K. This needs to be a very long text that won't fit inside a normal description cell",
     tag: { name: "Internal", color: "blue" },
     createdDate: "Apr 10, 2021",
     dueDate: null,
@@ -24,3 +25,19 @@ export const notes = [
     contact: "Charan Sam",
   },
 ];
+
+export const sortProps = {
+  option: { value: "title", label: "Name" },
+  options: [
+    { value: "id", label: "Index" },
+    { value: "title", label: "Name" },
+  ],
+  onClick: () => {},
+};
+
+export const paginationProps = {
+  count: 254,
+  pageNo: 1,
+  pageSize: 20,
+  navigate: () => {},
+};

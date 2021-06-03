@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import notesApi from "apis/notes";
 import { Button, PageLoader } from "neetoui";
-import { notes as hardCodedNotes } from "common/mock-values";
+import {
+  notes as hardCodedNotes,
+  paginationProps as mockPaginationProps,
+  sortProps as mockSortProps,
+} from "common/mock-values";
 import EmptyState from "components/Common/EmptyState";
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Header, SubHeader } from "neetoui/layouts";
@@ -61,20 +65,8 @@ const Notes = () => {
               onClick: () => setShowDeleteAlert(true),
               disabled: !selectedNoteIds.length,
             }}
-            sortProps={{
-              option: { value: "title", label: "Name" },
-              options: [
-                { value: "id", label: "Index" },
-                { value: "title", label: "Name" },
-              ],
-              onClick: () => {},
-            }}
-            paginationProps={{
-              count: 254,
-              pageNo: 1,
-              pageSize: 20,
-              navigate: () => {},
-            }}
+            sortProps={mockSortProps}
+            paginationProps={mockPaginationProps}
             toggleFilter={() => {}}
           />
           <NoteTable
