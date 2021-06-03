@@ -53,6 +53,7 @@
     "react-router-nav-prompt": "^0.4.0",
     "react-toastify": "^6.1.0",
     "react_ujs": "^2.6.1",
+    "remixicon": "^2.5.0",
     "yup": "^0.31.0"
   }
 }
