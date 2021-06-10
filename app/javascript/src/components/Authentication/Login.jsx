@@ -7,14 +7,17 @@ import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 import { Button, Toastr } from "neetoui";
 import authenticationApi from "apis/authentication";
+import formInitialValues from "constants/formInitialValues";
+import formValidationSchemas from "constants/formValidationSchemas";
 
 const Login = ({ history }) => {
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
-  const handleSubmit = async ({ email, password }) => {
+  const onSubmit = async ({ email, password }) => {
     try {
       setLoading(true);
       const {
@@ -39,29 +42,41 @@ const Login = ({ history }) => {
           Sign In
         </h2>
         <Formik
-          initialValues={{
-            email: "",
-            password: "",
-          }}
-          onSubmit={handleSubmit}
+          initialValues={formInitialValues.loginForm}
+          validateOnBlur={submitted}
+          validateOnChange={submitted}
+          onSubmit={onSubmit}
+          validationSchema={formValidationSchemas.loginForm}
         >
-          <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
-            <FormikInput
-              name="email"
-              type="email"
-              placeholder="oliver@example.com"
-              required
-              label="Email"
-            />
-            <FormikInput
-              name="password"
-              type="password"
-              placeholder="******"
-              required
-              label="Password"
-            />
-            <Button type="submit" loading={loading} fullWidth label="Login" />
-          </Form>
+          {({ handleSubmit }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+              <FormikInput
+                name="email"
+                type="email"
+                placeholder="oliver@example.com"
+                required
+                label="Email"
+              />
+              <FormikInput
+                name="password"
+                type="password"
+                placeholder="******"
+                required
+                label="Password"
+              />
+              <Button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  setSubmitted(true);
+                  handleSubmit();
+                }}
+                loading={loading}
+                fullWidth
+                label="Login"
+              />
+            </Form>
+          )}
         </Formik>
         <div className="flex flex-col items-center justify-center mt-4 space-y-2">
           <div className="flex flex-row items-center justify-start space-x-1">

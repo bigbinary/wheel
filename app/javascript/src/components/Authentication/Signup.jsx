@@ -8,14 +8,17 @@ import authenticationApi from "apis/authentication";
 import { setAuthHeaders } from "apis/axios";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
+import formInitialValues from "constants/formInitialValues";
+import formValidationSchemas from "constants/formValidationSchemas";
 
 const Signup = ({ history }) => {
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
-  const handleSubmit = async formData => {
+  const onSubmit = async formData => {
     const {
       email,
       firstName,
@@ -57,53 +60,62 @@ const Signup = ({ history }) => {
           Signup
         </h2>
         <Formik
-          initialValues={{
-            email: "",
-            firstName: "",
-            lastName: "",
-            password: "",
-            passwordConfirmation: "",
-          }}
-          onSubmit={handleSubmit}
+          initialValues={formInitialValues.signupForm}
+          validateOnBlur={submitted}
+          validateOnChange={submitted}
+          onSubmit={onSubmit}
+          validationSchema={formValidationSchemas.signupForm}
         >
-          <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
-            <FormikInput
-              name="email"
-              type="email"
-              label="Email"
-              placeholder="oliver@example.com"
-              required
-            />
-            <FormikInput
-              name="firstName"
-              type="text"
-              label="First name"
-              placeholder="Sam"
-              required
-            />
-            <FormikInput
-              name="lastName"
-              type="text"
-              placeholder="Smith"
-              label="Last name"
-              required
-            />
-            <FormikInput
-              name="password"
-              type="password"
-              label="Password"
-              placeholder="******"
-              required
-            />
-            <FormikInput
-              name="passwordConfirmation"
-              type="password"
-              label="Confirm password"
-              placeholder="******"
-              required
-            />
-            <Button type="submit" loading={loading} label="Signup" fullWidth />
-          </Form>
+          {({ handleSubmit }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+              <FormikInput
+                name="email"
+                type="email"
+                label="Email"
+                placeholder="oliver@example.com"
+                required
+              />
+              <FormikInput
+                name="firstName"
+                type="text"
+                label="First name"
+                placeholder="Sam"
+                required
+              />
+              <FormikInput
+                name="lastName"
+                type="text"
+                placeholder="Smith"
+                label="Last name"
+                required
+              />
+              <FormikInput
+                name="password"
+                type="password"
+                label="Password"
+                placeholder="******"
+                required
+              />
+              <FormikInput
+                name="passwordConfirmation"
+                type="password"
+                label="Confirm password"
+                placeholder="******"
+                required
+              />
+              <Button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  setSubmitted(true);
+                  handleSubmit();
+                }}
+                loading={loading}
+                label="Signup"
+                fullWidth
+              />
+            </Form>
+          )}
         </Formik>
         <div className="flex flex-row items-center justify-start mt-4 space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>

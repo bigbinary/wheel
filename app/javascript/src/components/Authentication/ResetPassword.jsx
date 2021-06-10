@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Formik } from "formik";
 import { Input as FormikInput } from "neetoui/formik";
 import { Button } from "neetoui";
+import formInitialValues from "constants/formInitialValues";
+import formValidationSchemas from "constants/formValidationSchemas";
 
 const ResetPassword = () => {
-  const handleSubmit = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit = () => {
     // trigger api call for reset password
   };
 
@@ -19,26 +23,34 @@ const ResetPassword = () => {
           your password.
         </div>
         <Formik
-          initialValues={{
-            email: "",
-          }}
-          onSubmit={handleSubmit}
+          initialValues={formInitialValues.resetPasswordForm}
+          validateOnBlur={submitted}
+          validateOnChange={submitted}
+          onSubmit={onSubmit}
+          validationSchema={formValidationSchemas.resetPasswordForm}
         >
-          <Form
-            className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
-            id="new_user"
-          >
-            <FormikInput name="email" label="Email" type="email" required />
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <Button
-                type="submit"
-                label="Send reset password email"
-                data-disable-with="Send reset password email"
-                fullWidth
-              />
-              <Button label="Back" style="link" to="/login" />
-            </div>
-          </Form>
+          {({ handleSubmit }) => (
+            <Form
+              className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
+              id="new_user"
+            >
+              <FormikInput name="email" label="Email" type="email" required />
+              <div className="flex flex-col items-center justify-center space-y-2">
+                <Button
+                  type="submit"
+                  onClick={e => {
+                    e.preventDefault();
+                    setSubmitted(true);
+                    handleSubmit();
+                  }}
+                  label="Send reset password email"
+                  data-disable-with="Send reset password email"
+                  fullWidth
+                />
+                <Button label="Back" style="link" to="/login" />
+              </div>
+            </Form>
+          )}
         </Formik>
         <div className="flex flex-row items-center justify-start mt-4 space-x-1">
           <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
