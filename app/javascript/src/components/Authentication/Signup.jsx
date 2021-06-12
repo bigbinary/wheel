@@ -1,24 +1,31 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Button, Input } from "neetoui";
+import { Form, Formik } from "formik";
+import { Input as FormikInput } from "neetoui/formik";
+import { Button } from "neetoui";
 
 import authenticationApi from "apis/authentication";
+import { setAuthHeaders } from "apis/axios";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
+import formInitialValues from "constants/formInitialValues";
+import formValidationSchemas from "constants/formValidationSchemas";
 
 const Signup = ({ history }) => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
-  const handleSubmit = async event => {
-    event.preventDefault();
+  const onSubmit = async formData => {
+    const {
+      email,
+      firstName,
+      lastName,
+      password,
+      passwordConfirmation,
+    } = formData;
     try {
       setLoading(true);
       const {
@@ -28,7 +35,7 @@ const Signup = ({ history }) => {
           email,
           first_name: firstName,
           last_name: lastName,
-          password: password,
+          password,
           password_confirmation: passwordConfirmation,
         },
       });
@@ -37,6 +44,7 @@ const Signup = ({ history }) => {
         payload: { auth_token, email, is_admin: false },
       });
       userDispatch({ type: "SET_USER", payload: { user } });
+      setAuthHeaders();
       history.push("/");
     } catch (error) {
       alert(error.response.data.error);
@@ -51,65 +59,67 @@ const Signup = ({ history }) => {
         <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
           Signup
         </h2>
-
-        <form
-          className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
-          onSubmit={handleSubmit}
+        <Formik
+          initialValues={formInitialValues.signupForm}
+          validateOnBlur={submitted}
+          validateOnChange={submitted}
+          onSubmit={onSubmit}
+          validationSchema={formValidationSchemas.signupForm}
         >
-          <Input
-            id="user_email"
-            type="email"
-            label="Email"
-            placeholder="oliver@example.com"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-          <Input
-            id="user_first_name"
-            type="text"
-            label="First name"
-            placeholder="Sam"
-            value={firstName}
-            onChange={e => setFirstName(e.target.value)}
-            required
-          />
-          <Input
-            id="user_last_name"
-            type="text"
-            placeholder="Smith"
-            label="Last name"
-            value={lastName}
-            onChange={e => setLastName(e.target.value)}
-            required
-          />
-          <Input
-            id="user_password"
-            type="password"
-            label="Password"
-            placeholder="******"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-          <Input
-            id="user_password_confirmation"
-            type="password"
-            label="Confirm password"
-            placeholder="******"
-            value={passwordConfirmation}
-            onChange={e => setPasswordConfirmation(e.target.value)}
-            required
-          />
-          <Button type="submit" loading={loading} label="Signup" fullWidth />
-        </form>
+          {({ handleSubmit }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+              <FormikInput
+                name="email"
+                type="email"
+                label="Email"
+                placeholder="oliver@example.com"
+                required
+              />
+              <FormikInput
+                name="firstName"
+                type="text"
+                label="First name"
+                placeholder="Sam"
+                required
+              />
+              <FormikInput
+                name="lastName"
+                type="text"
+                placeholder="Smith"
+                label="Last name"
+                required
+              />
+              <FormikInput
+                name="password"
+                type="password"
+                label="Password"
+                placeholder="******"
+                required
+              />
+              <FormikInput
+                name="passwordConfirmation"
+                type="password"
+                label="Confirm password"
+                placeholder="******"
+                required
+              />
+              <Button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  setSubmitted(true);
+                  handleSubmit();
+                }}
+                loading={loading}
+                label="Signup"
+                fullWidth
+              />
+            </Form>
+          )}
+        </Formik>
         <div className="flex flex-row items-center justify-start mt-4 space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>
-          <Button
-            label="Login"
-            style="link"
-            to="/login"
-          />
+          <Button label="Login" style="link" to="/login" />
         </div>
       </div>
     </div>

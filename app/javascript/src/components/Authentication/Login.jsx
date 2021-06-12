@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Form, Formik } from "formik";
+import { Input as FormikInput } from "neetoui/formik";
 import { setAuthHeaders } from "apis/axios";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
-import { Button, Input, Toastr } from "neetoui";
+import { Button, Toastr } from "neetoui";
 import authenticationApi from "apis/authentication";
+import formInitialValues from "constants/formInitialValues";
+import formValidationSchemas from "constants/formValidationSchemas";
 
 const Login = ({ history }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
-  const handleSubmit = async event => {
-    event.preventDefault();
+  const onSubmit = async ({ email, password }) => {
     try {
       setLoading(true);
       const {
@@ -39,43 +41,49 @@ const Login = ({ history }) => {
         <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
           Sign In
         </h2>
-        <form
-          className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
-          onSubmit={handleSubmit}
+        <Formik
+          initialValues={formInitialValues.loginForm}
+          validateOnBlur={submitted}
+          validateOnChange={submitted}
+          onSubmit={onSubmit}
+          validationSchema={formValidationSchemas.loginForm}
         >
-          <Input
-            id="user_email"
-            type="email"
-            value={email}
-            label="Email"
-            placeholder="oliver@example.com"
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-          <Input
-            id="user_password"
-            type="password"
-            label="Password"
-            placeholder="******"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-          <Button type="submit" loading={loading} fullWidth label="Login" />
-        </form>
+          {({ handleSubmit }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+              <FormikInput
+                name="email"
+                type="email"
+                placeholder="oliver@example.com"
+                required
+                label="Email"
+              />
+              <FormikInput
+                name="password"
+                type="password"
+                placeholder="******"
+                required
+                label="Password"
+              />
+              <Button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  setSubmitted(true);
+                  handleSubmit();
+                }}
+                loading={loading}
+                fullWidth
+                label="Login"
+              />
+            </Form>
+          )}
+        </Formik>
         <div className="flex flex-col items-center justify-center mt-4 space-y-2">
           <div className="flex flex-row items-center justify-start space-x-1">
-            <p className="font-normal text-gray-600">Don't have an account?</p>
-            <Button
-              label="Signup"
-              style="link"
-              to="/signup"
-            />
+            <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
+            <Button label="Signup" style="link" to="/signup" />
           </div>
-          <Button
-            label="Forgot password?"
-            style="link"
-            to="/my/password/new"
-          />
+          <Button label="Forgot password?" style="link" to="/my/password/new" />
         </div>
       </div>
     </div>

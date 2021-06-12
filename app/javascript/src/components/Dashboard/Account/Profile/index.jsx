@@ -1,57 +1,59 @@
-import React, { useEffect, useState } from "react";
-import { Input, Button } from "neetoui";
+import React, { useState } from "react";
+import { Button } from "neetoui";
+import { Form, Formik } from "formik";
+import { Input as FormikInput } from "neetoui/formik";
 import { Header } from "neetoui/layouts";
 import { useUserState } from "contexts/user";
+import formValidationSchemas from "constants/formValidationSchemas";
 
 const Profile = () => {
   const { user } = useUserState();
+  const [submitted, setSubmitted] = useState(false);
 
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [currentPassword, setCurrentPassword] = useState("");
-
-  useEffect(() => {
-    if (user) {
-      setEmail(user.email);
-      setFirstName(user.first_name);
-      setLastName(user.last_name);
-    }
-  }, [user]);
+  const onSubmit = () => {
+    // submit form
+  };
 
   return (
     <>
       <Header title="My Profile" className="border-b border-gray-200" />
       <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
-        <form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
-          <Input
-            label="Email"
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-          <Input
-            label="First Name"
-            value={firstName}
-            onChange={e => setFirstName(e.target.value)}
-            required
-          />
-          <Input
-            label="Last name"
-            value={lastName}
-            onChange={e => setLastName(e.target.value)}
-            required
-          />
-          <Input
-            label="Current password"
-            type="password"
-            value={currentPassword}
-            onChange={e => setCurrentPassword(e.target.value)}
-            required
-          />
-          <Button type="submit" label="Update" fullWidth />
-        </form>
+        <Formik
+          initialValues={{
+            email: user.email,
+            firstName: user.first_name,
+            lastName: user.last_name,
+            password: "",
+          }}
+          onSubmit={onSubmit}
+          validateOnBlur={submitted}
+          validateOnChange={submitted}
+          validationSchema={formValidationSchemas.profileForm}
+        >
+          {({ handleSubmit }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+              <FormikInput name="email" label="Email" type="email" required />
+              <FormikInput name="firstName" label="First Name" required />
+              <FormikInput name="lastName" label="Last name" required />
+              <FormikInput
+                name="password"
+                label="Current password"
+                type="password"
+                required
+              />
+              <Button
+                type="submit"
+                onClick={e => {
+                  e.preventDefault();
+                  setSubmitted(true);
+                  handleSubmit();
+                }}
+                label="Update"
+                fullWidth
+              />
+            </Form>
+          )}
+        </Formik>
       </div>
     </>
   );
