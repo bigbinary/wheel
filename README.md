@@ -46,13 +46,15 @@ Run `docker images | grep wheel` to get images related to wheel. Then run `docke
 
 Run `docker volume ls | grep wheel` to get volumes related to wheel. Then run `docker volume rm -f $(docker volume ls | grep wheel | awk '{print $2}')` to delete them.
 
+### Steps to nuke all data and start fresh
 
-If you want to try out something slightly more daring, yet effective, then run the following single line command to wipe all of the docker data, which includes containers+images+volumes and then did docker-compose up --build and things started working for me in wheel.
+If you want to try out something slightly more daring, yet effective, then run the following single line command to wipe all of the docker data including containers, images, volumes. 
 
 **Warning: The following command will wipe all of docker data of all local docker projects and containers:**
 
 ```bash
 docker rm -f $(docker ps -a -q) && docker rmi -f $(docker images -q) && docker volume rm -f $(docker volume ls -q)
+docker-compose up --build
 ```
 Run `docker system prune -a -f --volumes` to remove all containers, networks, images (both dangling and unreferenced), and volumes.
 
