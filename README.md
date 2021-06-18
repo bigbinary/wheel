@@ -30,10 +30,10 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 * Run `docker-compose up` to start the application and get things up and running.
 * From now onwards, we can just run `docker-compose up` from within the root of the `wheel` directory to bring up the application.
 
-### Fixing Docker Cache Issues
+#### Build images without using cache
+
 While re-building images, docker tries to find it's layers in the cache, which might bring-in stale layers.
 
-#### Build images without using cache
 ```bash
 # this forces docker to not use cached image layers
 docker-compose build --no-cache
