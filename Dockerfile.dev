@@ -33,6 +33,7 @@ COPY Gemfile Gemfile.lock ./
 COPY package.json yarn.lock ./
 
 RUN bundle check || bundle install --jobs=8
+RUN apk add g++ make py3-pip
 RUN yarn install --check-files
 
 COPY . .

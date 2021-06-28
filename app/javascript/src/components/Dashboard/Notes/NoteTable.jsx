@@ -1,14 +1,31 @@
 import React from "react";
-import { Checkbox } from "neetoui";
+import { Checkbox, Avatar, Badge, Button } from "neetoui";
+
+const GetBadgeColor = tag => {
+  switch (tag) {
+  case "Agile Workflow":
+    return "green";
+  case "Bug":
+    return "red";
+  default:
+    return "blue";
+  }
+};
 
 export default function NoteTable({
   selectedNoteIds,
   setSelectedNoteIds,
+  setShowDeleteAlert,
   notes = [],
 }) {
+  const handleDeleteNote = noteId => {
+    setSelectedNoteIds([noteId]);
+    setShowDeleteAlert(true);
+  };
+
   return (
     <div className="w-full px-4">
-      <table className="nui-table nui-table--checkbox">
+      <table className="nui-table nui-table--checkbox nui-table--actions">
         <thead>
           <tr>
             <th>
@@ -26,8 +43,13 @@ export default function NoteTable({
                 }}
               />
             </th>
-            <th className="text-left">Title</th>
-            <th className="text-left">Description</th>
+            <th className="text-left text-gray-400">title</th>
+            <th className="text-left text-gray-400">description</th>
+            <th className="text-center text-gray-400">tags</th>
+            <th className="text-center text-gray-400">created date</th>
+            <th className="text-center text-gray-400">due date</th>
+            <th className="text-center text-gray-400">contact</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +82,31 @@ export default function NoteTable({
                 </div>
               </td>
               <td>{note.description}</td>
+              <td className="text-center">
+                <Badge color={GetBadgeColor(note.tag)}>{note.tag}</Badge>
+              </td>
+              <td className="text-center">{note.createdDate}</td>
+              <td className="text-center">
+                {note.isDueDate ? note.dueDate : "--"}
+              </td>
+              <td>
+                <Avatar
+                  contact={{ name: note.contact }}
+                  bgClassName="bg-purple-300"
+                  className="m-auto"
+                />
+              </td>
+              <td>
+                <div className="flex flex-row">
+                  <Button style="icon" icon="ri-edit-line" className="mx-2" />
+                  <Button
+                    style="icon"
+                    icon="ri-delete-bin-5-line"
+                    className="mx-2"
+                    onClick={() => handleDeleteNote(note.id)}
+                  />
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>
