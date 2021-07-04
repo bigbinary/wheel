@@ -61,7 +61,13 @@ export default function NoteTable({
               </td>
               <td>
                 <div className="flex flex-row items-center justify-start">
-                  {note.title}
+                  <Button
+                    type="link"
+                    label={note.title}
+                    style="text"
+                    href="https://www.bigbinary.com"
+                    className="text-blue-600 hover:underline"
+                  />
                 </div>
               </td>
               <td>
