@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import notesApi from "apis/notes";
 import { Button, PageLoader } from "neetoui";
 import EmptyState from "components/Common/EmptyState";
 import EmptyNotesListImage from "images/EmptyNotesList";
@@ -15,7 +14,35 @@ const Notes = () => {
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([
+    {
+      id: 1,
+      title: "Change support email",
+      description: "forward all internal mails...",
+      tags: { text: "Internal", color: "blue" },
+      createdDate: new Date(),
+      dueDate: new Date(),
+      contact: "Karthik Menon",
+    },
+    {
+      id: 2,
+      title: "Feedback",
+      description: "Feedback V1.0......",
+      tags: { text: "Agile Workflow", color: "green" },
+      createdDate: new Date(),
+      dueDate: new Date(),
+      contact: "Karthik Menon",
+    },
+    {
+      id: 3,
+      title: "feedback Hover",
+      description: "Feedback V2.0......",
+      tags: { text: "Bug", color: "red" },
+      createdDate: new Date(),
+      dueDate: new Date(),
+      contact: "Amal Dinesh",
+    },
+  ]);
 
   useEffect(() => {
     fetchNotes();
@@ -24,8 +51,8 @@ const Notes = () => {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const response = await notesApi.fetch();
-      setNotes(response.data);
+      // const response = await notesApi.fetch();
+      // setNotes(response.data);
     } catch (error) {
       logger.error(error);
     } finally {
@@ -60,6 +87,18 @@ const Notes = () => {
               onClick: () => setShowDeleteAlert(true),
               disabled: !selectedNoteIds.length,
             }}
+            sortProps={{
+              options: [
+                { label: "Name", value: "name" },
+                { label: "Age", value: "age" },
+              ],
+            }}
+            paginationProps={{
+              count: 241,
+              pageNo: 1,
+              pageSize: 50,
+            }}
+            toggleFilter={() => {}}
           />
           <NoteTable
             selectedNoteIds={selectedNoteIds}
@@ -70,8 +109,8 @@ const Notes = () => {
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
-          title="Looks like you don't have any notes!"
-          subtitle="Add your notes to send customized emails to them."
+          title="Your Notes list is empty"
+          // subtitle="Add your notes to send customized emails to them."
           primaryAction={() => setShowNewNotePane(true)}
           primaryActionLabel="Add New Note"
         />

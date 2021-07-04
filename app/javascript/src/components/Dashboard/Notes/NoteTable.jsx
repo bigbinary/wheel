@@ -1,14 +1,17 @@
 import React from "react";
-import { Checkbox } from "neetoui";
+import { Checkbox, Badge, Avatar, Button, Tooltip } from "neetoui";
+import dayjs from "dayjs";
 
 export default function NoteTable({
   selectedNoteIds,
   setSelectedNoteIds,
-  notes = [],
+  notes,
 }) {
+  const editPopup = <span>Edit</span>;
+  const deletePopup = <span>Delete</span>;
   return (
     <div className="w-full px-4">
-      <table className="nui-table nui-table--checkbox">
+      <table className="nui-table nui-table--checkbox nui-table--actions">
         <thead>
           <tr>
             <th>
@@ -28,14 +31,16 @@ export default function NoteTable({
             </th>
             <th className="text-left">Title</th>
             <th className="text-left">Description</th>
+            <th className="text-center">Tag</th>
+            <th className="text-center">Created Date</th>
+            <th className="text-center">Due Date</th>
+            <th className="text-center">Contact</th>
+            <th className="text-center"></th>
           </tr>
         </thead>
         <tbody>
           {notes.map(note => (
-            <tr
-              key={note.id}
-              className={"cursor-pointer bg-white hover:bg-gray-50"}
-            >
+            <tr key={note.id}>
               <td>
                 <Checkbox
                   checked={selectedNoteIds.includes(note.id)}
@@ -55,11 +60,49 @@ export default function NoteTable({
                 />
               </td>
               <td>
-                <div className="flex flex-row items-center justify-start text-gray-900">
+                <div className="flex flex-row items-center justify-start">
                   {note.title}
                 </div>
               </td>
-              <td>{note.description}</td>
+              <td>
+                <div className="flex flex-row items-center justify-start">
+                  {note.description}
+                </div>
+              </td>
+              <td>
+                <div className="flex flex-row items-center justify-center">
+                  <Badge color={note.tags.color}>{note.tags.text}</Badge>
+                </div>
+              </td>
+              <td>
+                <div className="flex flex-row items-center justify-center">
+                  {note.createdDate
+                    ? dayjs(note.createdDate).format("MMM D, YYYY")
+                    : "--"}
+                </div>
+              </td>
+              <td>
+                <div className="flex flex-row items-center justify-center">
+                  {note.dueDate
+                    ? dayjs(note.dueDate).format("MMM D, YYYY")
+                    : "--"}
+                </div>
+              </td>
+              <td>
+                <div className="flex flex-row items-center justify-center">
+                  <Avatar size={30} contact={{ name: note.contact }} />
+                </div>
+              </td>
+              <td>
+                <div className="flex flex-row items-end justify-center space-x-4">
+                  <Tooltip content={editPopup} position="bottom">
+                    <Button style="icon" icon="ri-pencil-line" />
+                  </Tooltip>
+                  <Tooltip content={deletePopup} position="bottom">
+                    <Button style="icon" icon="ri-delete-bin-line" />
+                  </Tooltip>
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>

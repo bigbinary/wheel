@@ -30,6 +30,7 @@ const NavBar = () => {
       <div className="flex flex-col items-center justify-between w-full h-full">
         <div className="flex flex-col items-center justify-start w-full pt-4">
           <NavItem title="Notes" link="/notes" icon="ri-file-text-line" />
+          <NavItem title="Contacts" link="/contacts" icon="ri-group-line" />
           <NavItem
             title="Settings"
             link="/settings"

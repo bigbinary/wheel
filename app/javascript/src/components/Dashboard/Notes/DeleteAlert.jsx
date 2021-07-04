@@ -40,7 +40,7 @@ export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {
             Delete {selectedNoteIds.length} notes?
           </h3>
           <div className="text-sm leading-5 text-gray-500">
-            Are you sure you want to continue? This cannot be undone.
+          Are you sure you want to delete the note? All of your data will be permanently removed from our database forever. This action cannot be undone.
           </div>
         </div>
       </div>
