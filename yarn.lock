@@ -939,7 +939,7 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@bigbinary/neetoui@^1.0.27":
+"@bigbinary/neetoui@^1.20.18":
   version "1.20.18"
   resolved "https://registry.yarnpkg.com/@bigbinary/neetoui/-/neetoui-1.20.18.tgz#d567ed9315b29c22a896401f3c129650aca80497"
   integrity sha512-gT+tKft/Eb9XBi7sTUfCfHBUS0gWntZMoIcyv070/SaOpXShfo0zEvY0a4EEXkSJmULLUEsA2yengQdUH19BAw==

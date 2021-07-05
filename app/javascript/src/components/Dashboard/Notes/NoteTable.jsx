@@ -69,9 +69,7 @@ export default function NoteTable({
                 </div>
               </td>
               <td>
-                <div className="flex flex-row items-center justify-start truncate">
-                  {note.description}
-                </div>
+                <div className="max-w-xs truncate">{note.description}</div>
               </td>
               <td>
                 <div className="flex flex-row items-center justify-center">

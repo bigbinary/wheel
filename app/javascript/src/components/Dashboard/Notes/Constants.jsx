@@ -4,7 +4,8 @@ export const NOTES = [
   {
     id: 1,
     title: "Change support email",
-    description: "forward all internal mails",
+    description:
+      "Forward all internal mails Forward all internal mails Forward all internal mails Forward all internal mails",
     tags: { text: "Internal", color: "blue" },
     createdDate: new Date(),
     dueDate: new Date(),
