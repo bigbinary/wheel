@@ -3,6 +3,12 @@ import * as yup from "yup";
 import { Formik, Form } from "formik";
 import { Input, Textarea, Select } from "neetoui/formik";
 import { Button, DateInput, Switch, Toastr } from "neetoui";
+import {
+  TAG_OPTIONS,
+  CONTACT_OPTIONS,
+  FORM_INITIAL_VALUES,
+  VALIDATION_SCHEMA,
+} from "./Constants";
 
 export default function NewNoteForm({ onClose, refetch }) {
   const [dueDateCheck, setDueDateCheck] = useState(false);
@@ -18,59 +24,34 @@ export default function NewNoteForm({ onClose, refetch }) {
     }
   };
 
-  const tagOptions = [
-    { label: "Internal", value: "internal" },
-    { label: "External", value: "external" },
-  ];
-
-  const contactOptions = [
-    { label: "Amal Dinesh", value: "amaldinesh" },
-    { label: "Karthik Menon", value: "karthikmenon" },
-  ];
   return (
     <Formik
-      initialValues={{
-        title: "React Onboarding Challenge",
-        tags: tagOptions[0],
-        description: "Please use neeto-ui and tailwindCSS.",
-        assignedContact: contactOptions[0],
-      }}
+      initialValues={FORM_INITIAL_VALUES}
       onSubmit={handleSubmit}
-      validationSchema={yup.object({
-        title: yup.string().required("Title is required"),
-        tags: yup.object().required("Tag is required"),
-        description: yup.string().required("Description is required"),
-        assignedContact: yup.object().required("Contact is required"),
-      })}
+      validationSchema={VALIDATION_SCHEMA}
     >
       {({ isSubmitting }) => (
-        <Form>
-          <Input label="Note Title" name="title" className="mb-6" />
+        <Form className="space-y-4">
+          <Input label="Note Title" name="title" />
           <Select
             label="Tags"
             isCreateable
             defaultValue={[{ value: "internal", label: "Internal" }]}
             placeholder="Select an Option"
             name="tags"
-            defaultOptions={tagOptions}
-            className="mb-6"
+            defaultOptions={TAG_OPTIONS}
           />
-          <Textarea
-            label="Note Description"
-            name="description"
-            rows={8}
-            className="mb-6"
-          />
+          <Textarea label="Note Description" name="description" rows={8} />
           <Select
             label="Assigned Contact"
             isCreateable
             defaultValue={{ value: "internal", label: "Internal" }}
             placeholder="Select a Contact"
             name="assignedContact"
-            defaultOptions={contactOptions}
+            defaultOptions={CONTACT_OPTIONS}
           />
            
-          <div className="flex justify-between mb-6">
+          <div className="flex justify-between">
             <label>Add Due Date to Note</label>
             <Switch
               checked={dueDateCheck}

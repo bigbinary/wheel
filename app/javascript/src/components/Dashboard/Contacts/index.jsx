@@ -8,28 +8,15 @@ import ContactTable from "./ContactTable";
 import NewContactPane from "./NewContactPane";
 import DeleteAlert from "./DeleteAlert";
 
+import { CONTACTS } from "./Constants";
+
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedContactIds, setSelectedContactIds] = useState([]);
-  const [contacts, setContacts] = useState([
-    {
-      id: 1,
-      name: "Neeraj Singh",
-      email: "neeraj@bigbinary.com",
-      department: "Engineering",
-      contactNumber: "(555)-390-102",
-    },
-    {
-      id: 2,
-      name: "Vinay Chandran",
-      email: "vinay@bigbinary.com",
-      department: "Engineering",
-      contactNumber: "99210011001",
-    },
-  ]);
+  const [contacts, setContacts] = useState(CONTACTS);
 
   useEffect(() => {
     fetchContacts();

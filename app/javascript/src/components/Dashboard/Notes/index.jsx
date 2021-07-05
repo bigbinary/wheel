@@ -8,41 +8,15 @@ import NoteTable from "./NoteTable";
 import NewNotePane from "./NewNotePane";
 import DeleteAlert from "./DeleteAlert";
 
+import { NOTES } from "./Constants";
+
 const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [notes, setNotes] = useState([
-    {
-      id: 1,
-      title: "Change support email",
-      description: "forward all internal mails...",
-      tags: { text: "Internal", color: "blue" },
-      createdDate: new Date(),
-      dueDate: new Date(),
-      contact: "Karthik Menon",
-    },
-    {
-      id: 2,
-      title: "Feedback",
-      description: "Feedback V1.0......",
-      tags: { text: "Agile Workflow", color: "green" },
-      createdDate: new Date(),
-      dueDate: new Date(),
-      contact: "Karthik Menon",
-    },
-    {
-      id: 3,
-      title: "feedback Hover",
-      description: "Feedback V2.0......",
-      tags: { text: "Bug", color: "red" },
-      createdDate: new Date(),
-      dueDate: new Date(),
-      contact: "Amal Dinesh",
-    },
-  ]);
+  const [notes, setNotes] = useState(NOTES);
 
   useEffect(() => {
     fetchNotes();
