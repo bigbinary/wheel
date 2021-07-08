@@ -41,10 +41,6 @@ gem "activeadmin"
 # Email validation
 gem "email_validator"
 
-# Templating engine
-gem "slim"
-gem "slim-rails"
-
 # Intercepts outgoing emails in non-production environment
 gem "mail_interceptor", group: [:development, :staging, :heroku]
 
