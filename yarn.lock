@@ -1186,7 +1186,7 @@
   dependencies:
     mkdirp "^1.0.4"
 
-"@rails/webpacker@^5.4.0":
+"@rails/webpacker@5.4.0":
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-5.4.0.tgz#2c64a9ea7e85d2a33e50e86319fe6751df0c47e8"
   integrity sha512-J973mzTUJbkbBu+sMwKgWRahoSfwdp5uHT80iDWr6hi8YAC7kj47HapQnn2SGPmv/onTT8WC3jFM62Hkh213yQ==
