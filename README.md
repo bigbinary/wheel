@@ -9,19 +9,19 @@ Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`.
 
 Install the [Node.js](https://nodejs.org) version `v16.4.2` which we have specified inside the `.node-version` file.
 
-```
+```bash
 nvm install
 ```
 
-Make sure that [npm](https://www.npmjs.com/) is installed with it as well.
+Make sure that [yarn](https://yarnpkg.com) is installed with it as well.
 
-```
+```bash
 ./bin/setup
 ```
 
 Start the server by executing following command.
 
-```
+```bash
 bundle exec rails server
 ```
 
@@ -72,7 +72,7 @@ Run `docker system prune -a -f --volumes` to remove all containers, networks, im
 Let's say that the project name is `Pump`. Execute the command below to
 replace all occurrences of `Wheel` with `Pump`.
 
-```
+```bash
 perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 ```
