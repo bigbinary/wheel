@@ -90,7 +90,7 @@ Layout/SpaceAroundKeyword:
 #     @current_row_notes          = row["Notes"]
 #     @current_row_hours          = row["Hours"]
 Layout/SpaceAroundOperators:
-  Enabled: false
+  Enabled: true
 
 Layout/SpaceBeforeComma:
   Enabled: true

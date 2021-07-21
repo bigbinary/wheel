@@ -57,7 +57,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     post bulk_delete_api_v1_notes_path, params: { ids: [milk.id] },
         headers: @headers
     assert_response :success
-    assert_equal @admin.notes.size, initial_notes_count-1
+    assert_equal @admin.notes.size, initial_notes_count - 1
   end
 
   def test_delete_multiple_note
@@ -69,7 +69,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     post bulk_delete_api_v1_notes_path, params: { ids: [milk.id, bulbs.id, rent.id] },
         headers: @headers
     assert_response :success
-    assert_equal @admin.notes.size, initial_notes_count-3
+    assert_equal @admin.notes.size, initial_notes_count - 3
   end
 
   def test_delete_invalid_id

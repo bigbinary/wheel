@@ -5,16 +5,13 @@
   "lint-staged": {
     "app/**/*.{html,md,js,jsx,json}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "{app,test}/**/*.rb": [
-      "bundle exec rubocop -a",
-      "git add"
+      "bundle exec rubocop -a"
     ],
     "Gemfile": [
-      "bundle exec rubocop -a",
-      "git add"
+      "bundle exec rubocop -a"
     ]
   },
   "devDependencies": {
