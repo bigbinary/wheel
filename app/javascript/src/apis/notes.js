@@ -9,7 +9,7 @@ const destroy = payload => axios.post("api/v1/notes/bulk_delete", payload);
 const notesApi = {
   fetch,
   create,
-  destroy,
+  destroy
 };
 
 export default notesApi;

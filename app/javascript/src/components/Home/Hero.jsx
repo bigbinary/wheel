@@ -13,7 +13,7 @@ export default function Hero() {
     "Auto-formats Ruby code with rubocop.",
     "Auto-formats JavaScript and CSS code with prettier.",
     "Performs background job processing 'inline' for heroku env. It means heroku can deliver emails.",
-    "Letter opener gem for development.",
+    "Letter opener gem for development."
   ];
 
   return (

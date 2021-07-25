@@ -12,13 +12,13 @@ const Edit = () => {
     password: Yup.string().required("New password is required"),
     passwordConfirmation: Yup.string()
       .required("Password confirmation is required")
-      .oneOf([Yup.ref("password"), null], "Passwords must match"),
+      .oneOf([Yup.ref("password"), null], "Passwords must match")
   });
 
   const formikInputAttrs = {
     type: "password",
     "aria-required": "true",
-    placeholder: "******",
+    placeholder: "******"
   };
 
   const handleSubmit = async data => {
@@ -27,8 +27,8 @@ const Edit = () => {
         user: {
           current_password: data.currentPassword,
           password: data.password,
-          password_confirmation: data.passwordConfirmation,
-        },
+          password_confirmation: data.passwordConfirmation
+        }
       });
       Toastr.success("Password updated successfully");
     } catch (error) {
@@ -44,7 +44,7 @@ const Edit = () => {
           initialValues={{
             currentPassword: "",
             password: "",
-            passwordConfirmation: "",
+            passwordConfirmation: ""
           }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}

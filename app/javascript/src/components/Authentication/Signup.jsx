@@ -19,29 +19,24 @@ const Signup = ({ history }) => {
   const userDispatch = useUserDispatch();
 
   const onSubmit = async formData => {
-    const {
-      email,
-      firstName,
-      lastName,
-      password,
-      passwordConfirmation,
-    } = formData;
+    const { email, firstName, lastName, password, passwordConfirmation } =
+      formData;
     try {
       setLoading(true);
       const {
-        data: { user, auth_token },
+        data: { user, auth_token }
       } = await authenticationApi.signup({
         user: {
           email,
           first_name: firstName,
           last_name: lastName,
           password,
-          password_confirmation: passwordConfirmation,
-        },
+          password_confirmation: passwordConfirmation
+        }
       });
       authDispatch({
         type: "LOGIN",
-        payload: { auth_token, email, is_admin: false },
+        payload: { auth_token, email, is_admin: false }
       });
       userDispatch({ type: "SET_USER", payload: { user } });
       setAuthHeaders();
@@ -127,7 +122,7 @@ const Signup = ({ history }) => {
 };
 
 Signup.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object
 };
 
 export default Signup;

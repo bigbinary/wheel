@@ -54,11 +54,11 @@ const Notes = () => {
             searchProps={{
               value: searchTerm,
               onChange: e => setSearchTerm(e.target.value),
-              clear: () => setSearchTerm(""),
+              clear: () => setSearchTerm("")
             }}
             deleteButtonProps={{
               onClick: () => setShowDeleteAlert(true),
-              disabled: !selectedNoteIds.length,
+              disabled: !selectedNoteIds.length
             }}
           />
           <NoteTable

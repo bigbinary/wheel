@@ -21,7 +21,7 @@ const Login = ({ history }) => {
     try {
       setLoading(true);
       const {
-        data: { auth_token, user, is_admin },
+        data: { auth_token, user, is_admin }
       } = await authenticationApi.login({ user: { email, password } });
       authDispatch({ type: "LOGIN", payload: { auth_token, email, is_admin } });
       userDispatch({ type: "SET_USER", payload: { user } });
@@ -91,7 +91,7 @@ const Login = ({ history }) => {
 };
 
 Login.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object
 };
 
 export default Login;

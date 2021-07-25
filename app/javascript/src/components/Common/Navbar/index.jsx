@@ -36,7 +36,7 @@ const NavBar = () => {
             icon="ri-settings-2-line"
             subLinks={[
               { title: "Change password", link: "/my/password/edit" },
-              { title: "My Profile", link: "/my/profile" },
+              { title: "My Profile", link: "/my/profile" }
             ]}
           />
         </div>
