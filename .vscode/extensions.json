@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "kaiwood.endwise",
+    "rebornix.ruby",
+    "redhat.vscode-yaml",
+    "editorconfig.editorconfig",
+    "misogi.ruby-rubocop"
+  ]
+}
