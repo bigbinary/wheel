@@ -7,7 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
   def update_password
     if resource.update_with_password(password_update_params)
       bypass_sign_in resource, scope: :user
-      render json: { notice: 'Password has been successfully updated' }, status: :ok
+      render json: { notice: "Password has been successfully updated" }, status: :ok
     else
       clean_up_passwords resource
       render json: { error: "Couldn't update the password! Please try again." }, status: :unprocessable_entity

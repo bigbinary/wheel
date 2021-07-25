@@ -9,7 +9,7 @@ const signup = payload => axios.post("api/v1/users", payload);
 const authenticationApi = {
   login,
   logout,
-  signup,
+  signup
 };
 
 export default authenticationApi;

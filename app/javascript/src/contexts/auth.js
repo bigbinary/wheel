@@ -11,7 +11,7 @@ const email = JSON.parse(localStorage.getItem("authEmail"));
 const initialState = {
   isLoggedIn: !!token,
   authToken: token ? token : null,
-  authEmail: email ? email : null,
+  authEmail: email ? email : null
 };
 
 const AuthProvider = ({ children }) => {
@@ -46,7 +46,7 @@ const useAuth = () => {
 };
 
 AuthProvider.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 export { AuthProvider, useAuthState, useAuthDispatch, useAuth };

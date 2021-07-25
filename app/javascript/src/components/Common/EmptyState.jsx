@@ -5,7 +5,7 @@ export default function EmptyState({
   title,
   subtitle,
   primaryAction,
-  primaryActionLabel,
+  primaryActionLabel
 }) {
   return (
     <div className="flex flex-row items-start justify-start w-full h-full">

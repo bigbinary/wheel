@@ -1,41 +1,41 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es6": true
+  env: {
+    browser: true,
+    es6: true
   },
-  "extends": [
+  extends: [
     "plugin:json/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
     "prettier"
   ],
-  "settings": {
-    "react": {
-      "version": "detect"
+  settings: {
+    react: {
+      version: "detect"
     }
   },
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly",
-    "logger": true,
-    "module": true
+  globals: {
+    Atomics: "readonly",
+    SharedArrayBuffer: "readonly",
+    logger: true,
+    module: true
   },
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
     },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+    ecmaVersion: 2018,
+    sourceType: "module"
   },
-  "parser": "babel-eslint",
-  "plugins": [
-    "react"
-  ],
-  "rules": {
-    "indent": ["error", 2],
-    "semi": ["error", "always"],
+  parser: "babel-eslint",
+  plugins: ["react", "prettier"],
+  rules: {
+    "prettier/prettier": "error",
+    indent: ["error", 2, { SwitchCase: 1 }],
     "no-console": "error",
     "import/prefer-default-export": "off",
-    "react/prop-types": 0
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off"
   }
 };

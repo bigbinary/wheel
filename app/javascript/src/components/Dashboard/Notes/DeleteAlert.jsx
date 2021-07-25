@@ -26,7 +26,7 @@ export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {
         style: "danger",
         label: "Continue anyway",
         loading: deleting,
-        onClick: handleDelete,
+        onClick: handleDelete
       }}
       onClose={onClose}
     >

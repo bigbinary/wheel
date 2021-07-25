@@ -54,10 +54,7 @@ Sessionx.vim
 ## Auto-generated tag files
 tags
 # Vscode
-.vscode/*
 .vscode-test
-!.vscode/tasks.json #included for running custom tasks
-!.vscode/launch.json #included for common debugger options
 
 #---------------------------------------#
 # Linux Ignores                         #

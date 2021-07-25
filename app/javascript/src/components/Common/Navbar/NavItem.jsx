@@ -11,7 +11,7 @@ export default function NavItem({
   title,
   subLinks,
   onClick,
-  className,
+  className
 }) {
   const history = useHistory();
   const location = useLocation();
@@ -25,11 +25,13 @@ export default function NavItem({
       className={classnames(
         [
           "w-12 h-12 rounded-md text-2xl flex items-center justify-center opacity-100",
-          className,
+          className
         ],
         {
-          "text-white bg-purple-500 hover:bg-purple-600 hover:text-white": isActive,
-          "text-cool-gray-600  hover:bg-cool-gray-300  hover:text-cool-gray-600 ": !isActive,
+          "text-white bg-purple-500 hover:bg-purple-600 hover:text-white":
+            isActive,
+          "text-cool-gray-600  hover:bg-cool-gray-300  hover:text-cool-gray-600 ":
+            !isActive
         }
       )}
     />

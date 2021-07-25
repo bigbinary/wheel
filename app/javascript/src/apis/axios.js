@@ -9,7 +9,7 @@ export const setAuthHeaders = (setLoading = () => null) => {
     "Content-Type": "application/json",
     "X-CSRF-TOKEN": document
       .querySelector('[name="csrf-token"]')
-      .getAttribute("content"),
+      .getAttribute("content")
   };
   const token = JSON.parse(localStorage.getItem("authToken"));
   const email = JSON.parse(localStorage.getItem("authEmail"));
