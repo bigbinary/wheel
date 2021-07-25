@@ -28,12 +28,14 @@ module.exports = {
     sourceType: "module"
   },
   parser: "babel-eslint",
-  plugins: ["react"],
+  plugins: ["react", "prettier"],
   rules: {
+    "prettier/prettier": "error",
     indent: ["error", 2, { SwitchCase: 1 }],
-    semi: ["error", "always"],
     "no-console": "error",
     "import/prefer-default-export": "off",
-    "react/prop-types": 0
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off"
   }
 };
