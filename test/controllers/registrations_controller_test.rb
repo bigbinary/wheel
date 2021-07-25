@@ -38,7 +38,11 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     nancy = create(:user, :nancy)
     sign_in nancy
 
-    valid_user_data = { password: "new password", password_confirmation: "new password", current_password: "welcome" }
+    valid_user_data = {
+      password: "new password",
+      password_confirmation: "new password",
+      current_password: "welcome"
+    }
     put password_update_url, params: { user: valid_user_data }
     assert_response :success
   end
@@ -48,7 +52,11 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     old_password = nancy.encrypted_password
     sign_in nancy
 
-    invalid_user_data = { password: "new password", password_confirmation: "new not matching password", current_password: "welcome" }
+    invalid_user_data = {
+      password: "new password",
+      password_confirmation: "new not matching password",
+      current_password: "welcome"
+    }
 
     put password_update_url, params: { user: invalid_user_data }
 

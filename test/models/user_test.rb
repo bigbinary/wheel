@@ -22,7 +22,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   def test_as_json
-    expected = { "email" => "admin@example.com", "current_sign_in_at" => nil, "last_name" => "Smith", "first_name" => "Adam" }
+    expected = {
+      "email" => "admin@example.com",
+      "current_sign_in_at" => nil,
+      "last_name" => "Smith",
+      "first_name" => "Adam"
+    }
     assert_equal expected, @user.as_json
   end
 end
