@@ -8,20 +8,22 @@ class NoteTest < ActiveSupport::TestCase
   end
 
   def test_valid_note
-    valid_note = { description: "oliver@example.com",
-                      title: "Oliver Smith",
-                      user: @admin
-                    }
+    valid_note = {
+      description: "oliver@example.com",
+      title: "Oliver Smith",
+      user: @admin
+    }
 
     note = Note.new(valid_note)
     assert note.valid?
   end
 
   def test_invalid_note
-    invalid_note = { description: "",
-                        title: "",
-                        user: @admin
-                      }
+    invalid_note = {
+      description: "",
+      title: "",
+      user: @admin
+    }
 
     note = Note.new(invalid_note)
 

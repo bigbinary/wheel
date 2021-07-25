@@ -7,7 +7,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     admin = admin_user
 
     get api_v1_user_url(admin), params: { format: :json },
-        headers: headers(admin)
+                                headers: headers(admin)
 
     assert_response :success
     json = response.parsed_body
@@ -19,7 +19,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     an_invalid_email = { "X-Auth-Email" => "this_email_is_not_present_in_db@example.com" }
 
     get api_v1_user_url(admin), params: { format: :json },
-        headers: headers(admin, an_invalid_email)
+                                headers: headers(admin, an_invalid_email)
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
@@ -29,12 +29,14 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   def test_create_user_with_valid_info
     valid_email = "john@example.com"
 
-    valid_user_json = { email: valid_email,
-                        first_name: "John",
-                        last_name: "Smith",
-                        password: "welcome",
-                        password_confirmation: "welcome",
-                        phone_number: "1(555)555-5555" }
+    valid_user_json = {
+      email: valid_email,
+      first_name: "John",
+      last_name: "Smith",
+      password: "welcome",
+      password_confirmation: "welcome",
+      phone_number: "1(555)555-5555"
+    }
 
     # Ensure that there are no users with this email in db
     User.where(email: valid_email).delete_all
@@ -49,11 +51,12 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   def test_create_user_should_return_error_for_invalid_data
     valid_email = "john@example.com"
 
-    invalid_user_json = { email: valid_email,
-                          first_name: "John",
-                          last_name: "Smith",
-                          password: nil # Invalid password
-                        }
+    invalid_user_json = {
+      email: valid_email,
+      first_name: "John",
+      last_name: "Smith",
+      password: nil # Invalid password
+    }
 
     # Ensure that there are no users with this email in db
     User.where(email: valid_email).delete_all
@@ -78,7 +81,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     an_invalid_email = { "X-Auth-Email" => "this_email_is_not_present_in_db@example.com" }
 
     put api_v1_user_url(admin), params: { format: :json },
-        headers: headers(admin, an_invalid_email)
+                                headers: headers(admin, an_invalid_email)
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
@@ -89,9 +92,11 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     admin = admin_user
     new_first_name = "John2"
 
-    put api_v1_user_url(admin), params: { format: :json,
-                                          user: { first_name: new_first_name } },
-        headers: headers(admin)
+    put api_v1_user_url(admin), params: {
+      format: :json,
+      user: { first_name: new_first_name }
+    },
+                                headers: headers(admin)
 
     assert_response :success
     admin.reload
@@ -101,11 +106,15 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   def test_update_user_should_return_error_for_invalid_data
     admin = admin_user
 
-    put api_v1_user_url(admin), params: { format: :json,
-                                          user: { password: "new test password",
-                                                  password_confirmation:
-                                                    "not matching confirmation" } },
-        headers: headers(admin)
+    put api_v1_user_url(admin), params: {
+      format: :json,
+      user: {
+        password: "new test password",
+        password_confirmation:
+                                                    "not matching confirmation"
+      }
+    },
+                                headers: headers(admin)
 
     assert_response 422
     assert_equal "Password confirmation doesn't match Password",
@@ -127,7 +136,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     admin = admin_user
     assert_difference "User.count", -1 do
       delete api_v1_user_url(admin), params: { format: :json },
-             headers: headers(admin)
+                                     headers: headers(admin)
 
       assert_response :success
     end
@@ -146,6 +155,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
+
     def admin_user
       create(:user, :admin)
     end

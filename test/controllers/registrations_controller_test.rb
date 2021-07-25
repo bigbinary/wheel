@@ -5,12 +5,16 @@ require "test_helper"
 class RegistrationsControllerTest < ActionDispatch::IntegrationTest
   def test_successfull_user_registration
     assert_difference("User.count") do
-      post user_registration_url, params: { user: { email: "nancy@test.example.com",
-                                                    first_name: "Nancy",
-                                                    last_name: "Smith",
-                                                    password: "welcome",
-                                                    phone_number: "1(555)555-5555",
-                                                    password_confirmation: "welcome" } }
+      post user_registration_url, params: {
+        user: {
+          email: "nancy@test.example.com",
+          first_name: "Nancy",
+          last_name: "Smith",
+          password: "welcome",
+          phone_number: "1(555)555-5555",
+          password_confirmation: "welcome"
+        }
+      }
     end
 
     assert_redirected_to root_path
@@ -18,9 +22,13 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
 
   def test_required_parameters
     assert_no_difference("User.count") do
-      post user_registration_url, params: { user: { email: "steve@example.com",
-                                                    password: "welcome",
-                                                    password_confirmation: "welcome" } }
+      post user_registration_url, params: {
+        user: {
+          email: "steve@example.com",
+          password: "welcome",
+          password_confirmation: "welcome"
+        }
+      }
     end
 
     assert_response :success

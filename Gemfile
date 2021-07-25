@@ -50,7 +50,7 @@ gem "email_prefixer"
 # Display notifications
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.7.4', require: false
+gem "bootsnap", ">= 1.7.4", require: false
 
 # Background jobs
 gem "sidekiq"
@@ -69,7 +69,7 @@ end
 group :development do
   # speeds up development by keeping your application running in the background
   gem "spring"
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "spring-watcher-listen", "~> 2.0.0"
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code
   gem "web-console"
@@ -81,8 +81,8 @@ group :development do
   gem "bullet"
 
   # A Ruby static code analyzer, based on the community Ruby style guide
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
 
   # Patch-level verification for Bundler
   gem "bundler-audit", require: false

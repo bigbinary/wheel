@@ -19,7 +19,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_create_a_valid_note
     post api_v1_notes_url, params: { note: { title: "Zach", description: "zach@example.com" } },
-        headers: @headers
+                           headers: @headers
     assert_response :success
     response_json = response.parsed_body
     assert_equal response_json["notice"], "Zach has been added to your notes!"
@@ -33,7 +33,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_create_note_with_blank_title
     post api_v1_notes_url, params: { note: { title: "", description: "zach@example.com" } },
-        headers: @headers
+                           headers: @headers
     assert_response :unprocessable_entity
 
     response_json = response.parsed_body
@@ -42,7 +42,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_create_note_with_blank_description
     post api_v1_notes_url, params: { note: { title: "Zach", description: "" } },
-        headers: @headers
+                           headers: @headers
     assert_response :unprocessable_entity
 
     response_json = response.parsed_body
@@ -55,7 +55,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     initial_notes_count = @admin.notes.size
 
     post bulk_delete_api_v1_notes_path, params: { ids: [milk.id] },
-        headers: @headers
+                                        headers: @headers
     assert_response :success
     assert_equal @admin.notes.size, initial_notes_count - 1
   end
@@ -67,7 +67,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     initial_notes_count = @admin.notes.size
 
     post bulk_delete_api_v1_notes_path, params: { ids: [milk.id, bulbs.id, rent.id] },
-        headers: @headers
+                                        headers: @headers
     assert_response :success
     assert_equal @admin.notes.size, initial_notes_count - 3
   end
@@ -75,7 +75,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   def test_delete_invalid_id
     initial_notes_count = @admin.notes.size
     post bulk_delete_api_v1_notes_path, params: { ids: ["random_id"] },
-        headers: @headers
+                                        headers: @headers
     response_json = response.parsed_body
 
     assert_response :unprocessable_entity
