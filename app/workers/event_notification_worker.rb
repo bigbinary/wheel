@@ -7,3 +7,4 @@ class EventNotificationWorker < BaseWorker
     # do the business stuff
   end
 end
+

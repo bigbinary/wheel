@@ -17,3 +17,4 @@ class Mailer < ActionMailer::Base
     end
   end
 end
+

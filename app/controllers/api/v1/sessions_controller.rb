@@ -26,3 +26,4 @@ class Api::V1::SessionsController < Api::V1::BaseController
       user.blank? || !user.valid_password?(params[:user][:password])
     end
 end
+
