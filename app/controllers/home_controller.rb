@@ -5,3 +5,4 @@ class HomeController < ApplicationController
     render
   end
 end
+
