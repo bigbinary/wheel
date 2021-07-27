@@ -213,7 +213,6 @@ Layout/FirstArgumentIndentation:
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
 
-
 # ====================================================================================================
 # All Hash related rules
 # ====================================================================================================
@@ -293,7 +292,6 @@ Layout/SpaceInsideHashLiteralBraces:
 # `no_comma`: Does not requires a comma after the last item in a hash
 Style/TrailingCommaInHashLiteral:
   Enabled: true
-
 
 # ====================================================================================================
 # All misc whitespace related rules
@@ -454,6 +452,7 @@ Layout/IndentationStyle:
 # end
 Style/ParenthesesAroundCondition:
   Enabled: true
+  EnforcedStyle: double_quotes
 
 # Enforce string literals to use double quotes everywhere
 Style/StringLiterals:
