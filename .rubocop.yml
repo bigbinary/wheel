@@ -95,6 +95,8 @@ Layout/EmptyLineAfterMagicComment:
 Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
+  Safe: true
+  SafeAutoCorrect: true
 
 # ====================================================================================================
 # All Class related rules
@@ -395,6 +397,8 @@ Layout/EmptyLineAfterGuardClause:
 Layout/TrailingEmptyLines:
   Enabled: true
   EnforcedStyle: final_newline
+  Safe: true
+  SafeAutoCorrect: true
 
 # This cop checks for two or more consecutive blank lines.
 # This rule is not same as TrailingEmptyLines, cause of two
@@ -413,6 +417,8 @@ Layout/TrailingEmptyLines:
 # some_method
 Layout/EmptyLines:
   Enabled: true
+  Safe: true
+  SafeAutoCorrect: true
 
 # ====================================================================================================
 # All misc rules that don't fall into other categories
