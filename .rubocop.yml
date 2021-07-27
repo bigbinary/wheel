@@ -380,18 +380,14 @@ Layout/EmptyLinesAroundModuleBody:
 Layout/EmptyLineAfterGuardClause:
   Enabled: true
 
-# Requires a single final new line to the file
-# `final_newline` looks for one newline at the end of files.
-# # bad
-# class Foo; end
-#
-# # EOF
-#
+# Requires a single final blank line to the file.
+# `final_blank_line` ensures a blank line at EOF.
 # # bad
 # class Foo; end # EOF
 #
 # # good
 # class Foo; end
+#
 # # EOF
 Layout/TrailingEmptyLines:
   Enabled: true
