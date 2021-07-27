@@ -83,3 +83,4 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @admin.notes.size, initial_notes_count
   end
 end
+

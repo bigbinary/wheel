@@ -32,3 +32,4 @@ class NoteTest < ActiveSupport::TestCase
     assert_includes note.errors.full_messages, "Description can't be blank"
   end
 end
+

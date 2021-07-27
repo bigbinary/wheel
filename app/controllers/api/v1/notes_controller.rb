@@ -38,3 +38,4 @@ class Api::V1::NotesController < Api::V1::BaseController
       @note = Note.find(params[:id])
     end
 end
+

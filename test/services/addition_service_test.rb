@@ -8,3 +8,4 @@ class AdditionServiceTest < ActiveSupport::TestCase
     assert_equal 15, service.process
   end
 end
+

@@ -16,3 +16,4 @@ class ActiveAdmin::DashboardControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to root_path
   end
 end
+
