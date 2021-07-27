@@ -381,7 +381,7 @@ Layout/EmptyLineAfterGuardClause:
   Enabled: true
 
 # Requires a single final blank line to the file.
-# `final_blank_line` ensures a blank line at EOF.
+# `final_blank_line` ensures a blank line before EOF.
 # # bad
 # class Foo; end # EOF
 #
