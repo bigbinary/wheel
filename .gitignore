@@ -25,6 +25,7 @@ node_modules
 storage/
 vendor/
 test/reports
+test/fixtures
 /public/packs
 /public/assets
 /public/packs-test

@@ -213,7 +213,6 @@ Layout/FirstArgumentIndentation:
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
 
-
 # ====================================================================================================
 # All Hash related rules
 # ====================================================================================================
@@ -293,7 +292,6 @@ Layout/SpaceInsideHashLiteralBraces:
 # `no_comma`: Does not requires a comma after the last item in a hash
 Style/TrailingCommaInHashLiteral:
   Enabled: true
-
 
 # ====================================================================================================
 # All misc whitespace related rules
@@ -392,7 +390,6 @@ Layout/EmptyLineAfterGuardClause:
 Layout/TrailingEmptyLines:
   Enabled: true
   EnforcedStyle: final_blank_line
-  SafeAutoCorrect: true
 
 # This cop checks for two or more consecutive blank lines.
 # This rule is not same as TrailingEmptyLines, because:
@@ -409,7 +406,6 @@ Layout/TrailingEmptyLines:
 # some_method
 Layout/EmptyLines:
   Enabled: true
-  SafeAutoCorrect: true
 
 # ====================================================================================================
 # All misc rules that don't fall into other categories
