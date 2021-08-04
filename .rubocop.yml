@@ -195,9 +195,9 @@ Layout/IndentationConsistency:
 #
 #   # do something
 # end
-Layout/MultilineMethodCallIndentation:
-  Enabled: true
-  EnforcedStyle: indented
+# Layout/MultilineMethodCallIndentation:
+#   Enabled: true
+#   EnforcedStyle: indented_relative_to_receiver
 
 # This cop ensures the indentation of the first parameter in a method definition.
 Layout/FirstParameterIndentation:
@@ -389,7 +389,6 @@ Layout/EmptyLineAfterGuardClause:
 # # EOF
 Layout/TrailingEmptyLines:
   Enabled: true
-  EnforcedStyle: final_blank_line
 
 # This cop checks for two or more consecutive blank lines.
 # This rule is not same as TrailingEmptyLines, because:

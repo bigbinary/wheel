@@ -12,4 +12,3 @@ class ApiInvalidJsonDataTest < ActionDispatch::IntegrationTest
     assert response.body.include?("Something went wrong. Please try again later."), response.body
   end
 end
-
