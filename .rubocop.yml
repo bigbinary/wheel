@@ -432,6 +432,12 @@ Layout/IndentationStyle:
   Enabled: true
   EnforcedStyle: spaces
 
+# Remove extra/unnecessary whitespace which's used for alignment.
+# A developer shouldn't waste time indenting code with whitespaces.
+Layout/ExtraSpacing:
+  Enabled: true
+  AllowForAlignment: false
+
 # Helps in removing unwanted parentheses.
 # # bad
 # x += 1 while (x < 10)
