@@ -47,6 +47,10 @@ AllCops:
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: true
 
+Layout/DotPosition:
+  Enabled: true
+  EnforcedStyle: leading
+
 # This cop checks for redundant access modifiers, including those with no code,
 # those which are repeated, and leading `public` modifiers in a class or module body.
 Lint/UselessAccessModifier:
@@ -195,9 +199,9 @@ Layout/IndentationConsistency:
 #
 #   # do something
 # end
-# Layout/MultilineMethodCallIndentation:
-#   Enabled: true
-#   EnforcedStyle: indented_relative_to_receiver
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
 
 # This cop ensures the indentation of the first parameter in a method definition.
 Layout/FirstParameterIndentation:
