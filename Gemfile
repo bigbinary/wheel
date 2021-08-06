@@ -41,13 +41,8 @@ gem "activeadmin"
 # Email validation
 gem "email_validator"
 
-# Intercepts outgoing emails in non-production environment
-gem "mail_interceptor", group: [:development, :staging, :heroku]
-
 # Adds prefix to subject in emails
 gem "email_prefixer"
-
-# Display notifications
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.7.4", require: false
@@ -55,15 +50,17 @@ gem "bootsnap", ">= 1.7.4", require: false
 # Background jobs
 gem "sidekiq"
 
-# Preview email in browser
-gem "letter_opener", group: :development
-
 group :development, :test do
   # Rails integration for factory-bot
   gem "factory_bot_rails"
 
   # A runtime developer console and IRB alternative with powerful introspection capabilities
   gem "pry"
+end
+
+group :development, :staging, :heroku do
+  # Intercepts outgoing emails in non-production environment
+  gem "mail_interceptor"
 end
 
 group :development do
@@ -89,6 +86,9 @@ group :development do
 
   # vulnerability checker for Ruby itself
   gem "ruby_audit", require: false
+
+  # Preview email in browser
+  gem "letter_opener"
 end
 
 group :test do
