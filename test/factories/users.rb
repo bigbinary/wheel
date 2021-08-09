@@ -2,12 +2,16 @@
 
 FactoryBot.define do
   factory :user do
+    email { "john.doe@example.com" }
+    first_name { "John" }
+    last_name { "Doe" }
+    role { "standard" }
+    password { "welcome" }
 
     trait :admin do
       email { "admin@example.com" }
       first_name { "Adam" }
       last_name { "Smith" }
-      password { "welcome" }
       role { "super_admin" }
     end
 
@@ -15,7 +19,6 @@ FactoryBot.define do
       email { "nancy.smith@example.com" }
       first_name { "Nancy" }
       last_name { "Smith" }
-      password { "welcome" }
     end
   end
 end
