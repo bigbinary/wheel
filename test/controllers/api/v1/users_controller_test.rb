@@ -160,4 +160,3 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
       create(:user, :admin)
     end
 end
-

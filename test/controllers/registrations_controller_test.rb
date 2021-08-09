@@ -76,4 +76,3 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
     assert_equal nancy.first_name, valid_user_data[:first_name]
   end
 end
-

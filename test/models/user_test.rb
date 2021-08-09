@@ -31,4 +31,3 @@ class UserTest < ActiveSupport::TestCase
     assert_equal expected, @user.as_json
   end
 end
-

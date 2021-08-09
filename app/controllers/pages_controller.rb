@@ -9,4 +9,3 @@ class PagesController < ApplicationController
     render
   end
 end
-

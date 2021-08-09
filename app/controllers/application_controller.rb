@@ -20,4 +20,3 @@ class ApplicationController < ActionController::Base
       Honeybadger.context hash
     end
 end
-

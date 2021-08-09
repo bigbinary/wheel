@@ -44,4 +44,3 @@ def headers(user, options = {})
     "X-Auth-Email" => user.email
   }.merge(options)
 end
-

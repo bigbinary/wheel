@@ -30,4 +30,3 @@ class Api::V1::SessionsControllerTest < ActionDispatch::IntegrationTest
     assert response.parsed_body["auth_token"]
   end
 end
-

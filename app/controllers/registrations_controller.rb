@@ -36,4 +36,3 @@ class RegistrationsController < Devise::RegistrationsController
       self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     end
 end
-
