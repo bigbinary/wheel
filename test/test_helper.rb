@@ -44,3 +44,7 @@ def headers(user, options = {})
     "X-Auth-Email" => user.email
   }.merge(options)
 end
+
+def response_json
+  @_response_json ||= JSON.parse(response.body)
+end

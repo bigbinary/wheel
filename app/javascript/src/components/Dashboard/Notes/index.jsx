@@ -25,7 +25,7 @@ const Notes = () => {
     try {
       setLoading(true);
       const response = await notesApi.fetch();
-      setNotes(response.data);
+      setNotes(response.data.notes);
     } catch (error) {
       logger.error(error);
     } finally {
