@@ -1,40 +1,49 @@
 # frozen_string_literal: true
 
 class Api::V1::NotesController < Api::V1::BaseController
-  before_action :load_note, only: [:show, :delete]
+  before_action :load_note!, only: [:show, :delete]
+  before_action :load_notes!, only: :bulk_delete
 
   def index
-    notes = current_user.notes
-    render json: notes
+    render json: { notes: current_user.notes }
   end
 
   def create
-    @note = Note.new(note_params.merge(user: current_user))
+    @note = current_user.notes.new note_params
+
     if @note.save
-      render json: { note: @note, notice: "#{@note.title.humanize} has been added to your notes!" }
+      render json: {
+        note: @note,
+        notice: "#{@note.title.humanize} has been added to your notes!"
+      }
     else
-      render json: { error: @note.errors.full_messages.to_sentence }, status: 422
+      render json: {
+        error: @note.errors.full_messages.to_sentence
+      }, status: :unprocessable_entity
     end
   end
 
   def bulk_delete
-    notes = Note.where(id: params[:ids], user: current_user)
-    if notes.empty?
-      render json: { error: "No users found with those IDs" }, status: 422
+    if @notes.destroy_all
+      render json: {
+        notice: I18n.t("notice.note", count: @notes.size, action: "deleted")
+      }
     else
-      notes_count = notes.size
-      notes.destroy_all
-      render json: { notice: "#{notes_count} notes has been added deleted." }
+      render json: { error: "Something went wrong!" }, status: :unprocessable_entity
     end
   end
 
   private
 
     def note_params
-      params.require(:note).permit([ :title, :description]).to_h
+      params.require(:note).permit(:title, :description)
     end
 
-    def load_note
-      @note = Note.find(params[:id])
+    def load_note!
+      @note = current_user.notes.find(params[:id])
+    end
+
+    def load_notes!
+      @notes = current_user.notes.where(id: params[:ids])
     end
 end
