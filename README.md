@@ -25,7 +25,7 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 1. Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`
 2. `cd wheel`
 3. If using it for the first time, run `docker-compose build` to build the images.
-4. Run `docker-compose run --rm web rails setup` to create and seed the database.
+4. Run `docker-compose run --rm web bin/setup` to create and seed the database.
 5. Run `docker-compose up` to start the application and get things up and running.
 6. From now onwards, we can just run `docker-compose up` from within the root of the `wheel` directory to bring up the application.
 
