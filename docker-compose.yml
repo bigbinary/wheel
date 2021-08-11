@@ -19,13 +19,13 @@ services:
     networks:
       - development
     ports:
-      - 5432
+      - 5432:5432
   redis:
     image: redis:6.2.3-alpine
     networks:
       - development
     ports:
-      - 6379
+      - 6379:6379
     volumes:
       - redis_data:/var/lib/redis/data
   sidekiq:
