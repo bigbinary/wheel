@@ -25,7 +25,7 @@ const Notes = () => {
     try {
       setLoading(true);
       const response = await notesApi.fetch();
-      setNotes(response.data);
+      setNotes(response.data.notes);
     } catch (error) {
       logger.error(error);
     } finally {
@@ -54,11 +54,11 @@ const Notes = () => {
             searchProps={{
               value: searchTerm,
               onChange: e => setSearchTerm(e.target.value),
-              clear: () => setSearchTerm(""),
+              clear: () => setSearchTerm("")
             }}
             deleteButtonProps={{
               onClick: () => setShowDeleteAlert(true),
-              disabled: !selectedNoteIds.length,
+              disabled: !selectedNoteIds.length
             }}
           />
           <NoteTable

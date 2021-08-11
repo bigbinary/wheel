@@ -41,26 +41,14 @@ gem "activeadmin"
 # Email validation
 gem "email_validator"
 
-# Templating engine
-gem "slim"
-gem "slim-rails"
-
-# Intercepts outgoing emails in non-production environment
-gem "mail_interceptor", group: [:development, :staging, :heroku]
-
 # Adds prefix to subject in emails
 gem "email_prefixer"
 
-# Display notifications
-
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.7.4', require: false
+gem "bootsnap", ">= 1.7.4", require: false
 
 # Background jobs
 gem "sidekiq"
-
-# Preview email in browser
-gem "letter_opener", group: :development
 
 group :development, :test do
   # Rails integration for factory-bot
@@ -70,10 +58,15 @@ group :development, :test do
   gem "pry"
 end
 
+group :development, :staging, :heroku do
+  # Intercepts outgoing emails in non-production environment
+  gem "mail_interceptor"
+end
+
 group :development do
   # speeds up development by keeping your application running in the background
   gem "spring"
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "spring-watcher-listen", "~> 2.0.0"
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code
   gem "web-console"
@@ -85,14 +78,17 @@ group :development do
   gem "bullet"
 
   # A Ruby static code analyzer, based on the community Ruby style guide
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
+  gem "rubocop", require: false
+  gem "rubocop-rails", require: false
 
   # Patch-level verification for Bundler
   gem "bundler-audit", require: false
 
   # vulnerability checker for Ruby itself
   gem "ruby_audit", require: false
+
+  # Preview email in browser
+  gem "letter_opener"
 end
 
 group :test do

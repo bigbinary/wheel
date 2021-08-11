@@ -6,7 +6,7 @@ const authReducer = (state, { type, payload }) => {
       return {
         isLoggedIn: true,
         authToken: payload.auth_token,
-        authEmail: payload.email,
+        authEmail: payload.email
       };
     }
     case "LOGOUT": {

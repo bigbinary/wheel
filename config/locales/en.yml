@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  notice:
+    note:
+      one: "Note has been successfully %{action}."
+      other: "Notes have been successfully %{action}."
+

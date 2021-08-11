@@ -1,0 +1,21 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ruby]": {
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "misogi.ruby-rubocop"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "editor.formatOnSave": true,
+  "yaml.format.enable": true,
+  "ruby.rubocop.useBundler": true
+}

@@ -10,9 +10,9 @@ class Mailer < ActionMailer::Base
   def contact_email(title, email, body)
     @email = email
     @title = title
-    @body  = body
+    @body = body
     subject = "Contact us message from #{@email}"
-    mail(to: Rails.application.secrets.support_email, from: @email,  subject: subject) do |format|
+    mail(to: Rails.application.secrets.support_email, from: @email, subject: subject) do |format|
       format.html
     end
   end
