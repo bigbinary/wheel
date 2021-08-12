@@ -30,8 +30,7 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 
 ## Using docker for development
 
-Follow the instructions mentioned [here](https://github.com/bigbinary/wheel/blob/master/doc/using_docker.md) to use
-docker for development.
+Follow the instructions mentioned [here](https://github.com/bigbinary/wheel/blob/master/docs/using_docker.md) to use docker for development.
 
 ## Replace Wheel with your project name
 
