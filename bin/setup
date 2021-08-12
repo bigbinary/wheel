@@ -27,11 +27,9 @@ chdir APP_ROOT do
   puts "\n== Executing yarn =="
   system!("bin/yarn")
 
-  puts "\n== Checking if config/database.yml is present =="
-  unless File.exist?("config/database.yml")
-  end
+  puts "\n== Creating config/database.yml file =="
   if !ENV["DOCKER_ENV"]
-    system! "rm config/database.yml"
+    system! "rm -f config/database.yml"
     system! "cp config/database.yml.postgresql config/database.yml"
   end
 
