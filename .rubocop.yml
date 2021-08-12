@@ -216,6 +216,21 @@ Layout/FirstArgumentIndentation:
   Enabled: true
   EnforcedStyle: consistent
 
+# Alignment of args from second argument onwards should be indented
+# # bad
+# json.extract! comment,
+# :id,
+# :content,
+# :created_at
+# # good
+# json.extract! comment,
+#   :id,
+#   :content,
+#   :created_at
+Layout/ArgumentAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
 # In a regular method definition, no empty lines around the body.
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
