@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "sidekiq/web"
-
 Rails.application.routes.draw do
 
   devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
@@ -14,14 +12,14 @@ Rails.application.routes.draw do
   end
 
   authenticate :user, ->(u) { u.super_admin? } do
-    mount Sidekiq::Web, at: "/sidekiq"
-
     ActiveAdmin.routes(self)
     namespace :superadmin do
       root to: "users#index"
       resources :users
     end
   end
+
+  draw :sidekiq
 
   authenticate :user, ->(u) { !u.super_admin? } do
     get "/active_admin" => redirect("/")
@@ -37,12 +35,12 @@ Rails.application.routes.draw do
       resources :users, only: [:show, :create, :update, :destroy], constraints: { id: /.*/ }
       resources :notes, only: [:index, :create] do
         collection do
-          post 'bulk_delete'
+          post "bulk_delete"
         end
       end
     end
   end
 
   root "home#index"
-  get '*path', to: 'home#index', via: :all
+  get "*path", to: "home#index", via: :all
 end
