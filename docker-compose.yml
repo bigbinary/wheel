@@ -45,6 +45,7 @@ services:
       - node_modules:/var/app/node_modules
     environment:
       RAILS_ENV: development
+      REDIS_URL: redis://redis:6379/0
     entrypoint: docker-entrypoint.sh
     command: ["sidekiq"]
   webpacker:
