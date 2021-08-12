@@ -14,7 +14,6 @@ AllCops:
   Exclude:
     - "app/javascript/**/*"
     - "app/assets/**/*"
-    - "app/views/**/*"
     - "app/views/**/*.erb"
     - "lib/tasks/**/*"
     - ".vscode/**/*"
