@@ -11,7 +11,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
     else
       sign_in(user)
       render json: { auth_token: user.authentication_token, user: user, is_admin: user.super_admin? },
-             location: root_path, status: :created
+        location: root_path, status: :created
     end
   end
 
