@@ -5,7 +5,7 @@ def secure_compare(string, key)
     ::Digest::SHA256.hexdigest(string),
     ::Digest::SHA256.hexdigest(Rails.application.secrets.sidekiq[key])
   )
-      end
+end
 
 require "sidekiq/web"
 mount Sidekiq::Web => "/sidekiq"
