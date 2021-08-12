@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  def draw(routes_name)
+    instance_eval(File.read(Rails.root.join("config/routes/#{routes_name}.rb")))
+  end
 
   devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
   get "/logout" => "sessions#destroy", :as => :logout
@@ -11,15 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
-  authenticate :user, ->(u) { u.super_admin? } do
-    ActiveAdmin.routes(self)
-  end
-
   draw :sidekiq
-
-  authenticate :user, ->(u) { !u.super_admin? } do
-    get "/active_admin" => redirect("/")
-  end
+  draw :active_admin
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
