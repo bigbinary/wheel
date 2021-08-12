@@ -14,7 +14,6 @@ AllCops:
   Exclude:
     - "app/javascript/**/*"
     - "app/assets/**/*"
-    - "app/views/**/*"
     - "app/views/**/*.erb"
     - "lib/tasks/**/*"
     - ".vscode/**/*"
@@ -173,7 +172,6 @@ Layout/SpaceAroundEqualsInParameterDefault:
 # # bad
 # method(foo, bar,
 #   baz)
-#
 # # good
 # method(
 #   foo, bar,
@@ -216,6 +214,21 @@ Layout/FirstArgumentIndentation:
   Enabled: true
   EnforcedStyle: consistent
 
+# Alignment of args from second argument onwards should be indented
+# # bad
+# json.extract! comment,
+# :id,
+# :content,
+# :created_at
+# # good
+# json.extract! comment,
+#   :id,
+#   :content,
+#   :created_at
+Layout/ArgumentAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
 # In a regular method definition, no empty lines around the body.
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
@@ -254,7 +267,6 @@ Layout/HashAlignment:
 # # bad
 # { a: 1,
 #   b: 2}
-#
 # # good
 # {
 #   a: 1,
@@ -276,7 +288,6 @@ Layout/MultilineHashBraceLayout:
 # but_in_a_method_call({
 #                        its_like: :this
 #                       })
-#
 # # good
 # hash = {
 #   key: :value

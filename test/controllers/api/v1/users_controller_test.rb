@@ -23,7 +23,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
-                 response.parsed_body["error"]
+      response.parsed_body["error"]
   end
 
   def test_create_user_with_valid_info
@@ -85,7 +85,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
-                 response.parsed_body["error"]
+      response.parsed_body["error"]
   end
 
   def test_update_user_should_succeed_for_valid_data
@@ -118,8 +118,8 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 422
     assert_equal "Password confirmation doesn't match Password",
-                 response.parsed_body["error"],
-                 response.parsed_body
+      response.parsed_body["error"],
+      response.parsed_body
   end
 
   def test_destroy_should_not_be_invokable_without_authentication
@@ -129,7 +129,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
-                 response.parsed_body["error"]
+      response.parsed_body["error"]
   end
 
   def test_destroy_should_destroy_user
@@ -151,7 +151,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_response 401
     assert_equal "Could not authenticate with the provided credentials",
-                 response.parsed_body["error"]
+      response.parsed_body["error"]
   end
 
   private
