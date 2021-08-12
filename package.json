@@ -4,10 +4,12 @@
   },
   "lint-staged": {
     "app/**/*.{html,md,js,jsx,json}": [
-      "prettier-eslint --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "{package.json,.eslintrc.js,.prettierrc.js}": [
-      "prettier-eslint --write"
+      "prettier --write",
+      "eslint --fix"
     ],
     "./**/*.rb": [
       "bundle exec rubocop -a"
@@ -28,7 +30,6 @@
     "lint-staged": "^10.5.4",
     "postcss": "^8.2.15",
     "prettier": "^2.3.2",
-    "prettier-eslint-cli": "^5.0.1",
     "tailwindcss": "^2.1.2",
     "webpack-dev-server": "^3.11.0"
   },

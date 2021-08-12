@@ -173,7 +173,6 @@ Layout/SpaceAroundEqualsInParameterDefault:
 # # bad
 # method(foo, bar,
 #   baz)
-#
 # # good
 # method(
 #   foo, bar,
@@ -269,7 +268,6 @@ Layout/HashAlignment:
 # # bad
 # { a: 1,
 #   b: 2}
-#
 # # good
 # {
 #   a: 1,
@@ -291,7 +289,6 @@ Layout/MultilineHashBraceLayout:
 # but_in_a_method_call({
 #                        its_like: :this
 #                       })
-#
 # # good
 # hash = {
 #   key: :value
