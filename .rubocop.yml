@@ -26,19 +26,10 @@ AllCops:
     - "**/tmp/**/*"
     - "**/templates/**/*"
     - "**/vendor/**/*"
-    - "db/schema.rb"
-    - "db/migrate/**/*"
     - "node_modules/**/*"
     - "bin/**/*"
     - "config/webpack/**/*"
-    - "config/application.rb"
-    - "config/boot.rb"
-    - "config/puma.rb"
-    - "config/environment.rb"
-    - "config/environments/*.rb"
-    - "config/routes.rb"
-    - "config/initializers/*"
-    - "actionpack/lib/action_dispatch/journey/parser.rb"
+    - "db/schema.rb"
 
 # ====================================================================================================
 # All access modifier related rules
