@@ -41,7 +41,9 @@ blocks:
 
         - name: Rubocop
           commands:
-            - bundle exec rubocop
+            - git log
+            - git branch -r --all --sort=-committerdate
+            - git diff-tree -r --no-commit-id --name-only HEAD master | xargs bundle exec rubocop --force-exclusion
 
   - name: Tests
     task:
