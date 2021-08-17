@@ -2,6 +2,8 @@ import React from "react";
 
 import Main from "./components/Main";
 
+require("moment");
+
 import { AuthProvider } from "contexts/auth";
 import { UserProvider } from "contexts/user";
 

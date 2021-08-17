@@ -31,13 +31,11 @@ module.exports = {
   parser: "babel-eslint",
   plugins: ["react", "prettier"],
   rules: {
-    "prettier/prettier": "error",
     indent: ["error", 2, { SwitchCase: 1 }],
+    "prettier/prettier": "error",
     "no-console": "error",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-    "no-unused-vars": "off",
-    "no-undef": "off",
     "react/no-unescaped-entities": "off"
   }
 };
