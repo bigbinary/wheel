@@ -36,6 +36,8 @@ module.exports = {
     "no-console": "error",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
+    "no-unused-vars": "off",
+    "no-undef": "off",
     "react/no-unescaped-entities": "off"
   }
 };
