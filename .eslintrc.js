@@ -31,8 +31,8 @@ module.exports = {
   parser: "babel-eslint",
   plugins: ["react", "prettier"],
   rules: {
-    indent: ["error", 2, { SwitchCase: 1 }],
     "prettier/prettier": "error",
+    indent: ["error", 2, { SwitchCase: 1 }],
     "no-console": "error",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
