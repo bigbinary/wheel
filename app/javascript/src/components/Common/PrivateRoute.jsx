@@ -25,9 +25,9 @@ const PrivateRoute = ({
 PrivateRoute.propTypes = {
   component: PropTypes.func,
   condition: PropTypes.bool,
+  location: PropTypes.object,
   path: PropTypes.string,
-  redirectRoute: PropTypes.string,
-  location: PropTypes.object
+  redirectRoute: PropTypes.string
 };
 
 export default PrivateRoute;

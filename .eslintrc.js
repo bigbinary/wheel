@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    commonjs: true,
     node: true
   },
   extends: [
@@ -29,16 +30,37 @@ module.exports = {
     sourceType: "module"
   },
   parser: "babel-eslint",
-  plugins: ["react", "prettier", "import"],
+  plugins: ["react", "prettier", "import", "react-hooks"],
   rules: {
     "prettier/prettier": "error",
     indent: ["error", 2, { SwitchCase: 1 }],
-    "no-console": "error",
-    "import/prefer-default-export": "off",
-    "react/prop-types": "off",
     "no-unused-vars": "error",
     "no-undef": "error",
+    "no-console": "error",
+    "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
+    "react/display-name": "error",
+    "react/no-access-state-in-setstate": "error",
+    "react/no-danger": "error",
+    "react/no-danger-with-children": "error",
+    "react/no-unused-prop-types": "error",
+    "react/sort-prop-types": [
+      "error",
+      {
+        callbacksLast: true,
+        requiredFirst: true,
+        sortShapeProp: true
+      }
+    ],
+    "react/jsx-key": "error",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
+    "react/jsx-pascal-case": ["error", { allowNamespace: true }],
+    "react/jsx-uses-vars": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "import/prefer-default-export": "off",
     "import/no-cycle": ["error", { maxDepth: 1, ignoreExternal: true }],
     "import/no-useless-path-segments": ["error", { noUselessIndex: true }],
     "import/export": "error",
@@ -85,7 +107,8 @@ module.exports = {
         "*.json"
       ],
       rules: {
-        "import/order": "off"
+        "import/order": "off",
+        "react-hooks/rules-of-hooks": "off"
       }
     },
     {
