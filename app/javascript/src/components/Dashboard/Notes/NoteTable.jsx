@@ -1,5 +1,5 @@
-import React from "react";
 import { Checkbox } from "neetoui";
+import React from "react";
 
 export default function NoteTable({
   selectedNoteIds,

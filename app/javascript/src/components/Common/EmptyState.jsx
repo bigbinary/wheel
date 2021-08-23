@@ -1,5 +1,6 @@
-import React from "react";
 import { Button } from "neetoui";
+import React from "react";
+
 export default function EmptyState({
   image,
   title,

@@ -3,7 +3,7 @@ import { Toastr } from "neetoui";
 
 axios.defaults.baseURL = "/";
 
-export const setAuthHeaders = (setLoading = () => null) => {
+const setAuthHeaders = (setLoading = () => null) => {
   axios.defaults.headers = {
     Accept: "application/json",
     "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const setAuthHeaders = (setLoading = () => null) => {
   setLoading(false);
 };
 
-export const resetAuthTokens = () => {
+const resetAuthTokens = () => {
   delete axios.defaults.headers["X-Auth-Email"];
   delete axios.defaults.headers["X-Auth-Token"];
 };
@@ -45,8 +45,10 @@ const handleErrorResponse = (error, authDispatch) => {
   return Promise.reject(error);
 };
 
-export const registerIntercepts = authDispatch => {
+const registerIntercepts = authDispatch => {
   axios.interceptors.response.use(handleSuccessResponse, error =>
     handleErrorResponse(error, authDispatch)
   );
 };
+
+export { setAuthHeaders, resetAuthTokens, registerIntercepts };

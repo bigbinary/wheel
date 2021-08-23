@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-import { Button } from "neetoui";
 import { Form, Formik } from "formik";
+import { Button } from "neetoui";
 import { Input as FormikInput } from "neetoui/formik";
 import { Header } from "neetoui/layouts";
+import React, { useState } from "react";
+
 import { useUserState } from "contexts/user";
+
 import formValidationSchemas from "constants/formValidationSchemas";
 
 const Profile = () => {

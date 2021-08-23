@@ -1,5 +1,6 @@
-import React from "react";
 import { Pane } from "neetoui";
+import React from "react";
+
 import NewNoteForm from "./NewNoteForm";
 
 export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
