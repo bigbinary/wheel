@@ -37,6 +37,11 @@ module.exports = {
     "no-unused-vars": "error",
     "no-undef": "error",
     "no-console": "error",
+    "consistent-return": "error",
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: "var", next: "return" }
+    ],
     "react/prop-types": "off",
     "react/no-unescaped-entities": "off",
     "react/display-name": "error",
