@@ -3,7 +3,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "app/**/*.{html,md,js,jsx,json}": [
+    "app/**/*.{js,jsx,json}": [
       "prettier --write",
       "eslint --fix",
       "git add"
