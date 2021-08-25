@@ -4,6 +4,7 @@ class CypressRunsWorker < BaseWorker
   def perform(url)
     super()
 
-    `CYPRESS_baseUrl=#{url} npx cypress run --record --key #{Rails.application.secrets.cypress[:record_key]}`
+    record_key = Rails.application.secrets.cypress[:record_key]
+    `CYPRESS_baseUrl=#{url} npx cypress run --project ./cypress-tests --record --key #{record_key}`
   end
 end
