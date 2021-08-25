@@ -5,7 +5,7 @@ class Api::V1::CypressRunsController < Api::V1::BaseController
   skip_before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
-  # before_action :verify_authorization_token
+  before_action :verify_authorization_token
 
   def create
     CypressRunsWorker.perform_async(params[:app_url])
