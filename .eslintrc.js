@@ -80,12 +80,12 @@ module.exports = {
         alphabetize: { order: "asc", caseInsensitive: true },
         warnOnUnassignedImports: true,
         groups: [
+          "builtin",
           "external",
           "internal",
           "index",
           "sibling",
           "parent",
-          "builtin",
           "object",
           "type"
         ],
@@ -96,9 +96,10 @@ module.exports = {
           { pattern: "constants/**", group: "internal" },
           { pattern: "contexts/**", group: "internal" },
           { pattern: "reducers/**", group: "internal" },
-          { pattern: "neetoui/**", group: "external" }
+          { pattern: "neetoui/**", group: "external" },
+          { pattern: "react+(-native|)", group: "external", position: "before" }
         ],
-        pathGroupsExcludedImportTypes: ["builtin"]
+        pathGroupsExcludedImportTypes: ["react", "react-native"]
       }
     ]
   },

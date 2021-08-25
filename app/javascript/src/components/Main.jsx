@@ -1,7 +1,8 @@
+import React, { useEffect, useState } from "react";
+
 import { PageLoader } from "neetoui";
 import PropTypes from "prop-types";
 import { either, isEmpty, isNil } from "ramda";
-import React, { useEffect, useState } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 

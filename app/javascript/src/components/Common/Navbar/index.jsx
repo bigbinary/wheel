@@ -1,5 +1,6 @@
-import { Toastr } from "neetoui";
 import React from "react";
+
+import { Toastr } from "neetoui";
 import { withRouter } from "react-router-dom";
 
 import authenticationApi from "apis/authentication";

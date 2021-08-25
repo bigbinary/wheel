@@ -1,16 +1,16 @@
+import React, { useState } from "react";
+
 import { Form, Formik } from "formik";
 import { Button } from "neetoui";
 import { Input as FormikInput } from "neetoui/formik";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
 
 import authenticationApi from "apis/authentication";
 import { setAuthHeaders } from "apis/axios";
-import { useAuthDispatch } from "contexts/auth";
-import { useUserDispatch } from "contexts/user";
-
 import formInitialValues from "constants/formInitialValues";
 import formValidationSchemas from "constants/formValidationSchemas";
+import { useAuthDispatch } from "contexts/auth";
+import { useUserDispatch } from "contexts/user";
 
 const Signup = ({ history }) => {
   const [loading, setLoading] = useState(false);

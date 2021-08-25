@@ -1,6 +1,7 @@
+import React from "react";
+
 import classnames from "classnames";
 import { Button, Dropdown, Tooltip } from "neetoui";
-import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 import SubMenu from "./SubMenu";

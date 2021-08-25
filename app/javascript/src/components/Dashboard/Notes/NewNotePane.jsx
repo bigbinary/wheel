@@ -1,5 +1,6 @@
-import { Pane } from "neetoui";
 import React from "react";
+
+import { Pane } from "neetoui";
 
 import NewNoteForm from "./NewNoteForm";
 

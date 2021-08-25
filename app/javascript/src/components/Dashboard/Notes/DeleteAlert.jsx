@@ -1,5 +1,6 @@
-import { Modal } from "neetoui";
 import React, { useState } from "react";
+
+import { Modal } from "neetoui";
 
 import notesApi from "apis/notes";
 

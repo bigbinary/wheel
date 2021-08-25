@@ -1,8 +1,9 @@
+import React from "react";
+
 import { Form, Formik } from "formik";
 import { Button, Toastr } from "neetoui";
 import { Input as FormikInput } from "neetoui/formik";
 import { Header } from "neetoui/layouts";
-import React from "react";
 import * as Yup from "yup";
 
 import registrationsApi from "apis/registrations";
