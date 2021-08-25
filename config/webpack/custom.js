@@ -7,7 +7,7 @@ module.exports = {
       constants: "src/constants",
       contexts: "src/contexts",
       reducers: "src/reducers",
-      neetoui: "@bigbinary/neetoui",
-    },
-  },
+      neetoui: "@bigbinary/neetoui"
+    }
+  }
 };

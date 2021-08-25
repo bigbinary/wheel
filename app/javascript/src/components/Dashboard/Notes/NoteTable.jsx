@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Checkbox } from "neetoui";
 
 export default function NoteTable({

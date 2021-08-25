@@ -1,9 +1,9 @@
 import React from "react";
 
-import Main from "./components/Main";
-
 import { AuthProvider } from "contexts/auth";
 import { UserProvider } from "contexts/user";
+
+import Main from "./components/Main";
 
 const App = props => {
   return (

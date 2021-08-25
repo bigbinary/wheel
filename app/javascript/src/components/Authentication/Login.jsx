@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+
 import { Form, Formik } from "formik";
-import { Input as FormikInput } from "neetoui/formik";
-import { setAuthHeaders } from "apis/axios";
-import { useAuthDispatch } from "contexts/auth";
-import { useUserDispatch } from "contexts/user";
 import { Button, Toastr } from "neetoui";
+import { Input as FormikInput } from "neetoui/formik";
+import PropTypes from "prop-types";
+
 import authenticationApi from "apis/authentication";
+import { setAuthHeaders } from "apis/axios";
 import formInitialValues from "constants/formInitialValues";
 import formValidationSchemas from "constants/formValidationSchemas";
+import { useAuthDispatch } from "contexts/auth";
+import { useUserDispatch } from "contexts/user";
 
 const Login = ({ history }) => {
   const [loading, setLoading] = useState(false);
