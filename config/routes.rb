@@ -16,22 +16,7 @@ Rails.application.routes.draw do
 
   draw :sidekiq
   draw :active_admin
-
-  namespace :api, defaults: { format: :json } do
-    namespace :v1 do
-      devise_scope :user do
-        post "login" => "sessions#create", as: "login"
-        delete "logout" => "sessions#destroy", as: "logout"
-      end
-
-      resources :users, only: [:show, :create, :update, :destroy], constraints: { id: /.*/ }
-      resources :notes, only: [:index, :create] do
-        collection do
-          post "bulk_delete"
-        end
-      end
-    end
-  end
+  draw :api
 
   root "home#index"
   get "*path", to: "home#index", via: :all
