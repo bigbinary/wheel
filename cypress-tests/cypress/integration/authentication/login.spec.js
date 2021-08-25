@@ -43,7 +43,6 @@ describe("Login", () => {
     cy.get(loginSelectors.submitButton).click();
     cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
 
-    cy.clearAndType(loginSelectors.emailTextField, user.email);
     cy.clearAndType(loginSelectors.passwordTextField, invalidCredential);
     cy.get(loginSelectors.submitButton).click();
     cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
