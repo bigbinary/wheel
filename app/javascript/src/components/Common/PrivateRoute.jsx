@@ -1,6 +1,7 @@
 import React from "react";
-import { Redirect, Route } from "react-router-dom";
+
 import PropTypes from "prop-types";
+import { Redirect, Route } from "react-router-dom";
 
 const PrivateRoute = ({
   component: Component,
@@ -25,9 +26,9 @@ const PrivateRoute = ({
 PrivateRoute.propTypes = {
   component: PropTypes.func,
   condition: PropTypes.bool,
+  location: PropTypes.object,
   path: PropTypes.string,
-  redirectRoute: PropTypes.string,
-  location: PropTypes.object
+  redirectRoute: PropTypes.string
 };
 
 export default PrivateRoute;

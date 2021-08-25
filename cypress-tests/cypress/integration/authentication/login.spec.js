@@ -6,6 +6,7 @@ import { loginPath, notesPath } from "Constants/routes";
 describe("Login", () => {
   let user;
   const invalidCredential = fake.word;
+  const shortPassword = fake.number;
 
   before(() => {
     cy.fixture("credentials/oliver.json").then(oliver => {
@@ -24,7 +25,6 @@ describe("Login", () => {
     cy.get(loginSelectors.emailTextField).clear();
     cy.get(loginSelectors.passwordTextField).clear();
     cy.get(loginSelectors.submitButton).click();
-
     cy.get(loginSelectors.inputErrorMessage).should(
       "contain.text",
       loginTexts.required
@@ -33,16 +33,19 @@ describe("Login", () => {
     cy.clearAndType(loginSelectors.emailTextField, invalidCredential);
     cy.clearAndType(loginSelectors.passwordTextField, user.password);
     cy.get(loginSelectors.submitButton).click();
-
     cy.get(loginSelectors.inputErrorMessage).should(
       "have.inSensTrimmedText",
       loginTexts.invalidEmailMessage
     );
 
     cy.clearAndType(loginSelectors.emailTextField, user.email);
+    cy.get(loginSelectors.passwordTextField).type(shortPassword);
+    cy.get(loginSelectors.submitButton).click();
+    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
+
     cy.clearAndType(loginSelectors.passwordTextField, invalidCredential);
     cy.get(loginSelectors.submitButton).click();
-    cy.verifyToastMessage(loginTexts.invalidPasswordMessage);
+    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
   });
 
   it("should be able to login with valid credentials", () => {

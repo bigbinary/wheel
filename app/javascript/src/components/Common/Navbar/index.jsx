@@ -1,11 +1,14 @@
 import React from "react";
-import AccountDropdown from "./AccountDropdown";
-import NavItem from "./NavItem";
+
+import { Toastr } from "neetoui";
 import { withRouter } from "react-router-dom";
-import { useAuthDispatch } from "contexts/auth";
+
 import authenticationApi from "apis/authentication";
 import { resetAuthTokens } from "apis/axios";
-import { Toastr } from "neetoui";
+import { useAuthDispatch } from "contexts/auth";
+
+import AccountDropdown from "./AccountDropdown";
+import NavItem from "./NavItem";
 
 const NavBar = () => {
   const authDispatch = useAuthDispatch();

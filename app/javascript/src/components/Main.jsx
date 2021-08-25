@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import { ToastContainer } from "react-toastify";
-import { either, isEmpty, isNil } from "ramda";
 
-import { initializeLogger } from "common/logger";
-import { setAuthHeaders, registerIntercepts } from "apis/axios";
 import { PageLoader } from "neetoui";
-import Dashboard from "components/Dashboard";
+import PropTypes from "prop-types";
+import { either, isEmpty, isNil } from "ramda";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-import PrivateRoute from "components/Common/PrivateRoute";
-import PasswordReset from "components/Authentication/ResetPassword";
+import { setAuthHeaders, registerIntercepts } from "apis/axios";
+import { initializeLogger } from "common/logger";
 import Login from "components/Authentication/Login";
+import PasswordReset from "components/Authentication/ResetPassword";
 import Signup from "components/Authentication/Signup";
+import PrivateRoute from "components/Common/PrivateRoute";
+import Dashboard from "components/Dashboard";
 import Hero from "components/Home/Hero";
-
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 

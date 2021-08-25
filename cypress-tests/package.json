@@ -10,9 +10,7 @@
     "cy:run": "CYPRESS_baseUrl=$HEROKU_URL cypress run --record --browser chrome",
     "cypress:run": "CYPRESS_BASE_URL=$npm_config_START_URL cypress run --browser chrome --headless --record --key $npm_config_RECORD_KEY",
     "cy:run:dev": "cypress run --env configFile=development",
-    "cy:open:dev": "cypress open --env configFile=development",
-    "cy:run:production": "cypress run --env configFile=production",
-    "cy:open:production": "cypress open --env configFile=production"
+    "cy:open:dev": "cypress open --env configFile=development"
   },
   "author": "",
   "license": "ISC",

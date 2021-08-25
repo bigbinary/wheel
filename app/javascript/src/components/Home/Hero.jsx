@@ -1,7 +1,8 @@
 import React from "react";
+
 import { Button } from "neetoui";
 
-export default function Hero() {
+function Hero() {
   const features = [
     "Uses Rails, React, Tailwind CSS and Webpacker.",
     "Uses Devise, Honeybadger, Sidekiq, PostgreSQL, ActiveAdmin.",
@@ -44,3 +45,5 @@ const Features = ({ features }) => {
     </ul>
   );
 };
+
+export default Hero;

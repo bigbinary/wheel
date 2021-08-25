@@ -1,9 +1,11 @@
 import React from "react";
-import * as Yup from "yup";
+
 import { Form, Formik } from "formik";
-import { Input as FormikInput } from "neetoui/formik";
 import { Button, Toastr } from "neetoui";
+import { Input as FormikInput } from "neetoui/formik";
 import { Header } from "neetoui/layouts";
+import * as Yup from "yup";
+
 import registrationsApi from "apis/registrations";
 
 const Edit = () => {
