@@ -25,7 +25,6 @@ describe("Login", () => {
     cy.get(loginSelectors.emailTextField).clear();
     cy.get(loginSelectors.passwordTextField).clear();
     cy.get(loginSelectors.submitButton).click();
-
     cy.get(loginSelectors.inputErrorMessage).should(
       "contain.text",
       loginTexts.required
@@ -42,12 +41,12 @@ describe("Login", () => {
     cy.clearAndType(loginSelectors.emailTextField, user.email);
     cy.get(loginSelectors.passwordTextField).type(shortPassword);
     cy.get(loginSelectors.submitButton).click();
-    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordErrorMessage);
+    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
 
     cy.clearAndType(loginSelectors.emailTextField, user.email);
     cy.clearAndType(loginSelectors.passwordTextField, invalidCredential);
     cy.get(loginSelectors.submitButton).click();
-    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordErrorMessage);
+    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
   });
 
   it("should be able to login with valid credentials", () => {
