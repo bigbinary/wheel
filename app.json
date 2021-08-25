@@ -1,13 +1,13 @@
 {
   "name": "wheel",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "bundle exec rake db:migrate && cd cypress-tests && npm install yarn && yarn install"
   },
   "env": {
-    "SECRET_KEY_BASE":{
+    "SECRET_KEY_BASE": {
       "generator": "secret"
     },
-   "RACK_ENV": {
+    "RACK_ENV": {
       "value": "heroku"
     },
     "RAILS_ENV": {
@@ -35,7 +35,7 @@
       "value": "true"
     }
   },
-  "formation": { },
+  "formation": {},
   "addons": [
     {
       "plan": "heroku-postgresql",
