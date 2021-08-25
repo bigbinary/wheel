@@ -112,6 +112,8 @@ cypress-tests/.vscode
 # Ignore cypress screenshots and videos
 cypress-tests/cypress/artifacts/screenshots/
 cypress-tests/cypress/artifacts/videos/
+cypress-tests/cypress/screenshots/
+cypress-tests/cypress/videos/
 
 # Ignore test report folder
 /test/reports
