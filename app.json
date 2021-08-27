@@ -54,6 +54,6 @@
     {
       "url": "heroku/ruby"
     },
-    { "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome" }
+    { "url": "heroku/google-chrome" }
   ]
 }
