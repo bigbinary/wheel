@@ -1,20 +1,17 @@
 version: 2
 
 orbs:
-  slack: circleci/slack@3.2.0
   cypress: cypress-io/cypress@1.16.1
 
 workflows:
   version: 2
-  commit:
-    jobs:
 
 jobs:
   cypress-ci:
     parallelism: 1
     docker:
       - image: 'cypress/included:3.4.0'
-    working_directory: ~/aceinvoice-web
+    working_directory: ~/wheel
     steps:
       - checkout
       - run:
