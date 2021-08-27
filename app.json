@@ -1,7 +1,7 @@
 {
   "name": "wheel",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && npm install --only=dev --prefix ./cypress-tests"
+    "postdeploy": "bundle exec rake db:migrate && npm install --prefix ./cypress-tests"
   },
   "env": {
     "SECRET_KEY_BASE": {
@@ -48,12 +48,12 @@
     }
   ],
   "buildpacks": [
-    { "url": "https://github.com/heroku/heroku-buildpack-google-chrome" },
     {
       "url": "heroku/nodejs"
     },
     {
       "url": "heroku/ruby"
-    }
+    },
+    { "url": "https://github.com/heroku/heroku-buildpack-xvfb-google-chrome" }
   ]
 }
