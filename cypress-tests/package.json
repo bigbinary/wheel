@@ -1,8 +1,9 @@
 {
-  "name": "cypress",
+  "name": "wheel-cypress",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "cy:open": "cypress open",
     "cy:version": "cypress version",
