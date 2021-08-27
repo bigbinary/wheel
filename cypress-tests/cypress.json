@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "projectId": "we61dn",
+  "execTimeout": 1800000,
+  "defaultCommandTimeout": 30000,
+  "requestTimeout": 10000,
+  "pageLoadTimeout": 20000,
+  "responseTimeout": 10000,
+  "viewportWidth": 1200,
+  "viewportHeight": 960,
+  "testFiles": "**/*.spec.js",
+  "chromeWebSecurity": false
+}

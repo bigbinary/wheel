@@ -1,0 +1,29 @@
+version: 2
+
+orbs:
+  slack: circleci/slack@3.2.0
+  cypress: cypress-io/cypress@1.16.1
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+
+jobs:
+  cypress-ci:
+    parallelism: 1
+    docker:
+      - image: 'cypress/included:3.4.0'
+    working_directory: ~/aceinvoice-web
+    steps:
+      - checkout
+      - run:
+          name: Execute cypress
+          command: |
+            cd cypress-tests
+            npm install
+            npm run cypress:run --START_URL=${START_URL} --RECORD_KEY=${RECORD_KEY}
+      - store_artifacts:
+          path: cypress-tests/cypress/videos
+      - store_artifacts:
+          path: cypress-tests/cypress/screenshots

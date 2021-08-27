@@ -1,0 +1,25 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:version": "cypress version",
+    "cy:verify": "cypress verify",
+    "cy:run": "CYPRESS_baseUrl=$HEROKU_URL cypress run --record --browser chrome",
+    "cypress:run": "CYPRESS_BASE_URL=$npm_config_START_URL cypress run --browser chrome --headless --record --key $npm_config_RECORD_KEY",
+    "cy:run:dev": "cypress run --env configFile=development",
+    "cy:open:dev": "cypress open --env configFile=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/webpack-preprocessor": "^5.9.1",
+    "cypress": "^8.3.0",
+    "webpack": "^5.51.1"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}

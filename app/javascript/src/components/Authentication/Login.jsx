@@ -58,6 +58,7 @@ const Login = ({ history }) => {
                 placeholder="oliver@example.com"
                 required
                 label="Email"
+                data-cy="login-email-text-field"
               />
               <FormikInput
                 name="password"
@@ -65,6 +66,7 @@ const Login = ({ history }) => {
                 placeholder="******"
                 required
                 label="Password"
+                data-cy="login-password-text-field"
               />
               <Button
                 type="submit"
@@ -76,6 +78,7 @@ const Login = ({ history }) => {
                 loading={loading}
                 fullWidth
                 label="Login"
+                data-cy="login-submit-button"
               />
             </Form>
           )}
@@ -83,9 +86,19 @@ const Login = ({ history }) => {
         <div className="flex flex-col items-center justify-center mt-4 space-y-2">
           <div className="flex flex-row items-center justify-start space-x-1">
             <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
-            <Button label="Signup" style="link" to="/signup" />
+            <Button
+              label="Signup"
+              style="link"
+              to="/signup"
+              data-cy="sign-up-link"
+            />
           </div>
-          <Button label="Forgot password?" style="link" to="/my/password/new" />
+          <Button
+            label="Forgot password?"
+            style="link"
+            to="/my/password/new"
+            data-cy="forgot-password-link"
+          />
         </div>
       </div>
     </div>
