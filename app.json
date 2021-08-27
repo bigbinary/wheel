@@ -1,7 +1,7 @@
 {
   "name": "wheel",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate && npm install --prefix ./cypress-tests"
+    "postdeploy": "bundle exec rake db:migrate && npm install --only=dev --prefix ./cypress-tests"
   },
   "env": {
     "SECRET_KEY_BASE": {
