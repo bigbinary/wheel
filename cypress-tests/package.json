@@ -17,6 +17,7 @@
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.9.1",
     "cypress": "^8.3.0",
+    "path-browserify": "^1.0.1",
     "webpack": "^5.51.1"
   },
   "dependencies": {

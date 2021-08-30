@@ -9,9 +9,9 @@ global_job_config:
   prologue:
     commands:
       - checkout
-      - sem-version ruby 2.7.2
-      - sem-version node 12.16.0
-      - sem-service start postgres 12
+      - sem-version ruby 3.0.1
+      - sem-version node 16.5.0
+      - sem-service start postgres 12.4
       - cache restore
       - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
       - yarn install
