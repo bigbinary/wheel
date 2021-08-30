@@ -7,7 +7,7 @@ Rails application built with opinions of BigBinary style of working.
 
 Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`.
 
-Install the [Node.js](https://nodejs.org) version `v16.4.2` which we have specified inside the `.node-version` file.
+Install the [Node.js](https://nodejs.org) version `v16.5` which we have specified inside the `.node-version` file.
 
 ```bash
 nvm install
