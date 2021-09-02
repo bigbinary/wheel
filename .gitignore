@@ -1,9 +1,8 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+# Ignore all SQLite databases.
+/db/*.sqlite3*
 
 # Ignore database.yml file
 /config/database.yml
