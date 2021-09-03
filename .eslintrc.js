@@ -76,8 +76,6 @@ module.exports = {
     "react/jsx-no-duplicate-props": "error",
     // not-auto-fixable: Disallow undeclared variables in JSX.
     "react/jsx-no-undef": "error",
-    // auto-fixable: Disallow unnecessary fragments.
-    "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
     // not-auto-fixable: Enforce PascalCase for user-defined JSX components.
     "react/jsx-pascal-case": ["error", { allowNamespace: true }],
     // not-auto-fixable: Prevent variables used in JSX to be marked as unused.
