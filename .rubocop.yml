@@ -429,6 +429,14 @@ Layout/CaseIndentation:
 Layout/LineLength:
   Enabled: true
   Max: 120
+  IgnoredPatterns: [
+    '^\s*#', # line that begins with comment
+    '^\s*"', # line that begins with double quote (long string literal)
+    "^\\s*'", # line that begins with single quote (long string literal)
+    '"$', # line that ends with double quote (long string variable assignment)
+    "'$", # line that ends with single quote (long string variable assignment)
+    '\/$', # line that ends with slash (long regex variable assignment)
+  ]
 
 # Indent using two spaces
 Layout/IndentationWidth:
