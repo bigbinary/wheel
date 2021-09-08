@@ -491,6 +491,13 @@ Lint/BooleanSymbol:
   Enabled: true
 
 # ====================================================================================================
+# All Bundler cop rules
+# ====================================================================================================
+Bundler/OrderedGems:
+  Enabled: true
+  TreatCommentsAsGroupSeparators: true
+
+# ====================================================================================================
 # All Rails cop rules
 # ====================================================================================================
 # Enabled Rails cops for the command for VSCode linting and while running rubocop -a

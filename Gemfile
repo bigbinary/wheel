@@ -8,8 +8,8 @@ gem "rails", "~> 6.1.3.2"
 gem "sprockets"
 
 # friends of Rails
-gem "sprockets-rails"
 gem "sass-rails", ">= 6"
+gem "sprockets-rails"
 gem "uglifier", ">= 2.7.1"
 
 gem "webpacker"
