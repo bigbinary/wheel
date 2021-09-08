@@ -37,7 +37,7 @@ module.exports = {
     sourceType: "module"
   },
   parser: "babel-eslint",
-  plugins: ["react", "prettier", "import", "react-hooks"],
+  plugins: ["react", "prettier", "import", "react-hooks", "promise"],
   rules: {
     // auto-fixable: Respect all Prettier rules and apply it.
     "prettier/prettier": "error",
@@ -56,6 +56,10 @@ module.exports = {
       "error",
       { blankLine: "always", prev: "var", next: "return" }
     ],
+    // not-auto-fixable: ensure people use async/await promising chaining rather than using "then-catch-finally" statements
+    "promise/prefer-await-to-then": "error",
+    // auto-fixable: avoid calling "new" on a Promise static method like reject, resolve etc
+    "promise/no-new-statics": "error",
     // not-auto-fixable: Prevent missing props validation in a React component definition.
     "react/prop-types": "off",
     // not-auto-fixable: Detect unescaped HTML entities, which might represent malformed tags.

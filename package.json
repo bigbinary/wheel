@@ -28,6 +28,7 @@
     "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-json": "^3.0.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
