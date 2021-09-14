@@ -14,7 +14,14 @@ end
 Sidekiq::Extensions.enable_delay!
 
 Sidekiq.configure_server do |config|
-  config.redis = { url: Rails.application.secrets.redis_url, size: 9 }
+  config.redis = {
+    url: Rails.application.secrets.redis_url,
+    size: 9,
+    ssl_params: {
+      verify_mode: OpenSSL::SSL::VERIFY_NONE
+    }
+  }
+
   schedule_file = Rails.root.join("config/schedule.yml")
 
   if File.exists?(schedule_file)
@@ -23,5 +30,11 @@ Sidekiq.configure_server do |config|
 end
 
 Sidekiq.configure_client do |config|
-  config.redis = { url: Rails.application.secrets.redis_url, size: 1 }
+  config.redis = {
+    url: Rails.application.secrets.redis_url,
+    size: 1,
+    ssl_params: {
+      verify_mode: OpenSSL::SSL::VERIFY_NONE
+    }
+  }
 end
