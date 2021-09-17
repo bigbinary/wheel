@@ -9,16 +9,14 @@ class Api::V1::NotesController < Api::V1::BaseController
   end
 
   def create
-    @note = current_user.notes.new note_params
-
-    if @note.save
+    if (note = current_user.notes.new(note_params)) && note.save
       render json: {
-        note: @note,
-        notice: "#{@note.title.humanize} has been added to your notes!"
+        note: note,
+        notice: "#{note.title.humanize} has been added to your notes!"
       }
     else
       render json: {
-        error: @note.errors.full_messages.to_sentence
+        error: note.errors.full_messages.to_sentence
       }, status: :unprocessable_entity
     end
   end
