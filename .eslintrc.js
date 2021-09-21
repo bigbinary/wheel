@@ -72,12 +72,7 @@ module.exports = {
     "jam3/no-sanitizer-with-danger": [
       2,
       {
-        wrapperName: [
-          "dompurify",
-          "sanitizer",
-          "sanitize",
-          "dompurify.sanitize"
-        ]
+        wrapperName: ["dompurify", "sanitizer", "sanitize"]
       }
     ],
     // not-auto-fixable: Report when a DOM element is using both children and dangerouslySetInnerHTML.
