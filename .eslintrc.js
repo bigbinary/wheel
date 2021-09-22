@@ -37,7 +37,7 @@ module.exports = {
     sourceType: "module"
   },
   parser: "babel-eslint",
-  plugins: ["react", "prettier", "import", "react-hooks", "promise"],
+  plugins: ["react", "prettier", "import", "react-hooks", "promise", "jam3"],
   rules: {
     // auto-fixable: Respect all Prettier rules and apply it.
     "prettier/prettier": "error",
@@ -68,8 +68,13 @@ module.exports = {
     "react/display-name": "error",
     // not-auto-fixable: Reports when this.state is accessed within setState.
     "react/no-access-state-in-setstate": "error",
-    // not-auto-fixable: Prevent usage of dangerous JSX props.
-    "react/no-danger": "error",
+    // not-auto-fixable: Prevent un-sanitized dangerouslySetInnerHTML.
+    "jam3/no-sanitizer-with-danger": [
+      2,
+      {
+        wrapperName: ["dompurify", "sanitizer", "sanitize"]
+      }
+    ],
     // not-auto-fixable: Report when a DOM element is using both children and dangerouslySetInnerHTML.
     "react/no-danger-with-children": "error",
     // not-auto-fixable: Prevent definitions of unused prop types.
