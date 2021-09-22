@@ -6,4 +6,3 @@ module.exports = {
     "promise/no-new-statics": "error"
   }
 };
-

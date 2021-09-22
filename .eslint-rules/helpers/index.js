@@ -26,9 +26,13 @@ const buildPathGroupsBasedOnWebpackAliases = () => {
     // sometimes alias might be already resolved to full absolute path
     const isAleadyAnAbsolutePath = path.includes("app/");
 
-    const absolutePath = isAleadyAnAbsolutePath? path: `${railsJSFilesRoot}${path}`;
-    const wildCard = isFile(absolutePath+".js") || isFile(absolutePath+".jsx") ? "" : "/**";
-
+    const absolutePath = isAleadyAnAbsolutePath
+      ? path
+      : `${railsJSFilesRoot}${path}`;
+    const wildCard =
+      isFile(absolutePath + ".js") || isFile(absolutePath + ".jsx")
+        ? ""
+        : "/**";
 
     let group = "internal";
     if (name === "neetoui") {

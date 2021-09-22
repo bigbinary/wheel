@@ -18,6 +18,11 @@
       "eslint --fix",
       "git add"
     ],
+    ".eslint-rules/**/*": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
     "./**/*.rb": [
       "bundle exec rubocop -a"
     ],
