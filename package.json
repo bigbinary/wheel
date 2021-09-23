@@ -5,7 +5,8 @@
     "yarn": "1.22.x"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sync_with_wheel": "curl -s -L \"https://gist.github.com/yedhink/d0e88d99536eca2bffb7becab49a0a39/raw/sync_with_wheel.sh?cachebust=$(date +%s)\" | bash"
   },
   "lint-staged": {
     "app/**/*.{js,jsx,json}": [
