@@ -41,6 +41,9 @@ blocks:
 
         - name: Rubocop
           commands:
+            - bundle exec rubocop
+
+        - name: Eslint+Prettier
             - checkout
             - git fetch --unshallow
             - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
