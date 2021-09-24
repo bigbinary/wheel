@@ -42,14 +42,10 @@ blocks:
         - name: Rubocop
           commands:
             - checkout
-            - git ls-files
             - git fetch --unshallow
-            - git ls-files
             - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
-            - git ls-files
             - git fetch origin master
-            - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master
-            - npx eslint .eslintrc.js
+            - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs sh -c 'for arg do npx prettier --loglevel silent "$arg" && npx eslint "$arg";done'
 
   - name: Tests
     task:

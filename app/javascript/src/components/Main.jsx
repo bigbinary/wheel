@@ -25,9 +25,8 @@ const Main = props => {
   const isLoggedIn = !either(isNil, isEmpty)(authToken);
 
   useEffect(() => {
-    userDispatch({
-      type: "SET_USER",
-      payload: { user: props.user }
+    userDispatch({ type: "SET_USER",
+        payload: { user: props.user }
     });
     initializeLogger();
     registerIntercepts(authDispatch);
