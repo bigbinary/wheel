@@ -44,6 +44,7 @@ blocks:
             - checkout
             - git fetch --unshallow
             - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+            - git fetch --all
             - git log
             - git branch -r --all --sort=-committerdate
             - git diff-tree -r --no-commit-id --name-only HEAD master
