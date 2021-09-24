@@ -42,13 +42,14 @@ blocks:
         - name: Rubocop
           commands:
             - checkout
+            - git ls-files
             - git fetch --unshallow
+            - git ls-files
             - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
-            - git remote -v
-            - git fetch --all
-            - git log
-            - git branch -r --all --sort=-committerdate
+            - git ls-files
+            - git fetch origin master
             - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master
+            - npx eslint .eslintrc.js
 
   - name: Tests
     task:

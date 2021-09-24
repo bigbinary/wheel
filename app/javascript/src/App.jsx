@@ -5,6 +5,7 @@ import { UserProvider } from "contexts/user";
 
 import Main from "./components/Main";
 
+// comment
 const App = props => {
   return (
     <AuthProvider>
