@@ -41,7 +41,9 @@ blocks:
 
         - name: Rubocop
           commands:
-            - bundle exec rubocop
+            - checkout
+            - git fetch --unshallow
+            - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 
   - name: Tests
     task:
