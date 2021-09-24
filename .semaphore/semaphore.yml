@@ -43,12 +43,13 @@ blocks:
           commands:
             - bundle exec rubocop
 
-        - name: Eslint + Prettier
+        - name: Prettier + Eslint
           commands:
             - checkout
             - git fetch --unshallow
             - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
             - git fetch origin master
+            - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs npx prettier -c
             - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs npx eslint
 
   - name: Tests
