@@ -49,7 +49,8 @@ blocks:
             - git fetch --unshallow
             - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
             - git fetch origin master
-            - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs sh -c 'for arg do npx prettier "$arg" && npx eslint "$arg";done'
+            - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs npx prettier -c
+            - git diff-tree -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs npx eslint
 
   - name: Tests
     task:

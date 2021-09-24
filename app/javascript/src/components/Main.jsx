@@ -17,21 +17,21 @@ import Hero from "components/Home/Hero";
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 
-const Main = props => {
+const Main = (props) => {
   const [loading, setLoading] = useState(true);
   const { authToken } = useAuthState();
   const userDispatch = useUserDispatch();
   const authDispatch = useAuthDispatch();
   const isLoggedIn = !either(isNil, isEmpty)(authToken);
 
-  useEffect(() => {
-    userDispatch({ type: "SET_USER",
-        payload: { user: props.user }
-    });
-    initializeLogger();
-    registerIntercepts(authDispatch);
-    setAuthHeaders(setLoading);
-  }, []);
+  if (isLoggedIn) {
+    useEffect(() => {
+      userDispatch({ type: "SET_USER", payload: { user: props.user } });
+      initializeLogger();
+      registerIntercepts(authDispatch);
+      setAuthHeaders(setLoading);
+    }, []);
+  }
 
   if (loading) {
     return (
