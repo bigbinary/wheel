@@ -5,7 +5,8 @@
     "yarn": "1.22.x"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sync_with_wheel": "curl -s -L \"https://raw.githubusercontent.com/bigbinary/wheel/master/.scripts/sync_with_wheel.sh\" | bash"
   },
   "lint-staged": {
     "app/**/*.{js,jsx,json}": [
@@ -14,6 +15,11 @@
       "git add"
     ],
     "{package.json,.eslintrc.js,.prettierrc.js}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    ".eslint-rules/**/*": [
       "prettier --write",
       "eslint --fix",
       "git add"
