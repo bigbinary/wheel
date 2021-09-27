@@ -22,6 +22,7 @@ declare -a configs=(
   ".eslint-rules/overrides.js"
   ".eslint-rules/promise.js"
   ".eslint-rules/react.js"
+  ".eslint-rules/custom.js"
   ".rubocop.yml"
   ".prettierrc.js"
   ".editorconfig"
