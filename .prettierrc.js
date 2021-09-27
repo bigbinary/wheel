@@ -9,7 +9,7 @@ module.exports = {
   jsxSingleQuote: false,
   singleQuote: false,
   bracketSpacing: true,
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   proseWrap: "always",
   endOfLine: "lf"
 };

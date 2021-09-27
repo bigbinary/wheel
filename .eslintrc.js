@@ -44,12 +44,6 @@ module.exports = {
   rules: {
     // auto-fixable: Respect all Prettier rules and apply it.
     "prettier/prettier": "error",
-    // auto-fixable: Indent by 2 spaces. Same as editorconfig and Rubocop config.
-    indent: [
-      "error",
-      2,
-      { SwitchCase: 1, ignoredNodes: ["LogicalExpression"] }
-    ],
     // not-auto-fixable: No unused variables allowed.
     "no-unused-vars": "error",
     // not-auto-fixable: No undefined variables allowed.
