@@ -53,8 +53,13 @@ module.exports = {
     "no-console": "error",
     // not-auto-fixable: require `return` statements to either always or never specify values.
     "consistent-return": "error",
+    // auto-fixable: sadly this doesn't support guard clauses yet.
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: "if", next: ["if", "return"] }
+    ],
     // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
-    curly: ["error", "multi-or-nest"],
+    curly: ["error", "multi-line"],
     // not-auto-fixable: Prevent un-sanitized dangerouslySetInnerHTML.
     "jam3/no-sanitizer-with-danger": [
       2,
