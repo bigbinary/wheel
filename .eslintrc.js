@@ -12,6 +12,7 @@ module.exports = {
    * unless you're sure of it.
    */
   extends: [
+    "plugin:cypress/recommended",
     "plugin:json/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
@@ -25,8 +26,7 @@ module.exports = {
     // custom rules cannot override the following rules.
     "./.eslint-rules/imports/enforced",
     "./.eslint-rules/react",
-    "./.eslint-rules/promise",
-    "plugin:cypress/recommended"
+    "./.eslint-rules/promise"
   ],
   settings: {
     react: {
