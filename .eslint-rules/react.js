@@ -8,10 +8,10 @@ module.exports = {
     "react/display-name": "error",
     // not-auto-fixable: Reports when this.state is accessed within setState.
     "react/no-access-state-in-setstate": "error",
-    // not-auto-fixable: Prevent usage of dangerous JSX props.
-    "react/no-danger": "error",
+    // not-auto-fixable: Prevent usage of dangerous JSX props. Currently jam3 plugin will take care of handling this.
+    "react/no-danger": "off",
     // not-auto-fixable: Report when a DOM element is using both children and dangerouslySetInnerHTML.
-    "react/no-danger-with-children": "error",
+    "react/no-danger-with-children": "warn",
     // not-auto-fixable: Prevent definitions of unused prop types.
     "react/no-unused-prop-types": "error",
     // not-auto-fixable: Report missing key props in iterators/collection literals. Important rule!
