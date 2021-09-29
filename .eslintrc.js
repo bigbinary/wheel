@@ -25,7 +25,8 @@ module.exports = {
     // custom rules cannot override the following rules.
     "./.eslint-rules/imports/enforced",
     "./.eslint-rules/react",
-    "./.eslint-rules/promise"
+    "./.eslint-rules/promise",
+    "plugin:cypress/recommended"
   ],
   settings: {
     react: {
