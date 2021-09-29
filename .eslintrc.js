@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
     commonjs: true,
-    node: true
+    node: true,
   },
   /*
    * The order of extending each plugin matters a LOT!!
@@ -25,19 +25,19 @@ module.exports = {
     // custom rules cannot override the following rules.
     "./.eslint-rules/imports/enforced",
     "./.eslint-rules/react",
-    "./.eslint-rules/promise"
+    "./.eslint-rules/promise",
   ],
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: "module",
   },
   parser: "babel-eslint",
   plugins: ["react", "prettier", "import", "react-hooks", "promise", "jam3"],
@@ -55,14 +55,14 @@ module.exports = {
     // auto-fixable: require or disallow padding lines between statements. Helps maintain blank space after guard clauses etc.
     "padding-line-between-statements": [
       "error",
-      { blankLine: "always", prev: "var", next: "return" }
+      { blankLine: "always", prev: "var", next: "return" },
     ],
     // not-auto-fixable: Prevent un-sanitized dangerouslySetInnerHTML.
     "jam3/no-sanitizer-with-danger": [
       2,
       {
-        wrapperName: ["dompurify", "sanitizer", "sanitize"]
-      }
-    ]
-  }
+        wrapperName: ["dompurify", "sanitizer", "sanitize"],
+      },
+    ],
+  },
 };
