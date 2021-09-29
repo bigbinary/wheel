@@ -59,6 +59,7 @@
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.6",
     "core-js": "3.7.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-jam3": "^0.2.3",
     "formik": "^2.2.5",
     "js-logger": "^1.6.1",
