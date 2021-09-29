@@ -39,7 +39,8 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  parser: "babel-eslint",
+  // Run yarn remove babel-eslint;yarn add -D @babel/eslint-parser
+  parser: "@babel/eslint-parser",
   plugins: ["react", "prettier", "import", "react-hooks", "promise", "jam3"],
   rules: {
     // auto-fixable: Respect all Prettier rules and apply it.
@@ -52,11 +53,8 @@ module.exports = {
     "no-console": "error",
     // not-auto-fixable: require `return` statements to either always or never specify values.
     "consistent-return": "error",
-    // auto-fixable: require or disallow padding lines between statements. Helps maintain blank space after guard clauses etc.
-    "padding-line-between-statements": [
-      "error",
-      { blankLine: "always", prev: "var", next: "return" }
-    ],
+    // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
+    curly: ["error", "multi-or-nest"],
     // not-auto-fixable: Prevent un-sanitized dangerouslySetInnerHTML.
     "jam3/no-sanitizer-with-danger": [
       2,
