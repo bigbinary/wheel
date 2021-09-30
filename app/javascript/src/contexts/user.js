@@ -24,6 +24,7 @@ const useUserState = () => {
   if (context === undefined) {
     throw new Error("useUserState must be used within a UserProvider");
   }
+
   return context;
 };
 
@@ -32,6 +33,7 @@ const useUserDispatch = () => {
   if (context === undefined) {
     throw new Error("useUserDispatch must be used within a UserProvider");
   }
+
   return context;
 };
 

@@ -38,6 +38,7 @@ const Notes = () => {
   if (loading) {
     return <PageLoader />;
   }
+
   return (
     <>
       <Header

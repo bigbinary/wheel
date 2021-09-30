@@ -1,8 +1,9 @@
 # For executing this script, run the following from your terminal:
 # curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/master/.scripts/sync_with_wheel.sh" | bash
+yarn remove babel-eslint 2> /dev/null
+yarn add -D @babel/eslint-parser
 yarn add -D prettier
 yarn add -D eslint \
-babel-eslint \
 eslint-plugin-react-hooks \
 eslint-plugin-import \
 eslint-config-prettier \

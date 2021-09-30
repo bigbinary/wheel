@@ -32,6 +32,7 @@ const handleSuccessResponse = response => {
       Toastr.success(response.data.notice);
     }
   }
+
   return response;
 };
 
@@ -42,6 +43,7 @@ const handleErrorResponse = (error, authDispatch) => {
   } else {
     Toastr.error({ error: error.response?.data?.error || error.message });
   }
+
   return Promise.reject(error);
 };
 

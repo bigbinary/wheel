@@ -31,6 +31,7 @@ const useAuthState = () => {
   if (context === undefined) {
     throw new Error("useAuthState must be used within a AuthProvider");
   }
+
   return context;
 };
 
@@ -39,6 +40,7 @@ const useAuthDispatch = () => {
   if (context === undefined) {
     throw new Error("useAuthDispatch must be used within a AuthProvider");
   }
+
   return context;
 };
 
