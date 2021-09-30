@@ -39,7 +39,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  // Run yarn remove babel-eslint;yarn add -D @babel/eslint-parser
+  // babel-eslint is deprecated now. This is the latest package.
   parser: "@babel/eslint-parser",
   plugins: ["react", "prettier", "import", "react-hooks", "promise", "jam3"],
   rules: {
