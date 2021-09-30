@@ -1,0 +1,11 @@
+public
+coverage
+db
+docs
+log
+.scripts
+.semaphore
+test
+tmp
+.vscode
+babel.config.js

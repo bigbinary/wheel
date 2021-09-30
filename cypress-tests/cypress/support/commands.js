@@ -24,9 +24,9 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import { loginSelectors } from "Selectors/login";
 import { loginPath } from "Constants/routes";
 import { commonSelectors } from "Selectors/common";
+import { loginSelectors } from "Selectors/login";
 
 Cypress.Commands.add("loginViaUI", (email, password) => {
   cy.visit(loginPath);

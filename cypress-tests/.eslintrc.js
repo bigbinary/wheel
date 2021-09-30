@@ -1,6 +1,12 @@
+// DO NOT ADD ANY OTHER RULES TO THIS FILE WITHOUT
+// CONSULTING WITH THE WHEEL TEAM.
+
 const { buildPathGroupsBasedOnWebpackAliases } = require(__dirname +
-  "/../helpers");
-const pathGroups = buildPathGroupsBasedOnWebpackAliases({});
+  "/../.eslint-rules/helpers");
+const pathGroups = buildPathGroupsBasedOnWebpackAliases({
+  customJSRoot: "cypress-tests/",
+  customAliasPath: "cypress-tests/cypress/webpack.config.js"
+});
 
 const pathGroupForKeepingReactImportsAtTop = {
   pattern: "react+(-native|)",
@@ -8,31 +14,14 @@ const pathGroupForKeepingReactImportsAtTop = {
   position: "before"
 };
 
-/*
-Example pathGroups structure. Adding this here
-so that if anyone wants to add custom config,
-they can make use of this:
-[
-  { pattern: 'apis/**', group: 'internal' },
-  { pattern: 'common/**', group: 'internal' },
-  { pattern: 'components/**', group: 'internal' },
-  { pattern: 'constants/**', group: 'internal' },
-  { pattern: 'contexts/**', group: 'internal' },
-  { pattern: 'reducers/**', group: 'internal' },
-  { pattern: 'Constants', group: 'internal' },
-  { pattern: 'neetoui/**', group: 'external' },
-  {
-    pattern: 'react+(-native|)',
-    group: 'external',
-    position: 'before'
-  }
-]
-*/
 pathGroups.push(pathGroupForKeepingReactImportsAtTop);
 
 module.exports = {
+  extends: ["../.eslintrc"],
   rules: {
-    // auto-fixable: Enforce a convention in module import order - we enforce https://www.bigbinary.com/react-best-practices/sort-import-statements
+    // disable async/await for cypress given that cypress doesn't allow async/await syntax
+    // https://docs.cypress.io/faq/questions/using-cypress-faq#Can-I-use-the-new-ES7-async-await-syntax
+    "promise/prefer-await-to-then": "off",
     "import/order": [
       "error",
       {

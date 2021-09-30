@@ -1,4 +1,6 @@
 import faker from "faker";
+
+// eslint-disable-next-line
 export let fake = {};
 
 function firstName() {

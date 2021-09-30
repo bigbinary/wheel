@@ -17,6 +17,7 @@ eslint-plugin-cypress
 raw_base_url="https://raw.githubusercontent.com/bigbinary/wheel/master"
 declare -a configs=(
   ".eslintrc.js"
+  ".eslintignore"
   ".eslint-rules/helpers/index.js"
   ".eslint-rules/imports/enforced.js"
   ".eslint-rules/imports/order.js"
@@ -33,6 +34,7 @@ declare -a configs=(
   ".husky/helpers/prevent_pushing_to_master.sh"
   ".husky/pre-commit"
   ".husky/pre-push"
+  "cypress-tests/.eslintrc.js"
 )
 
 for config in "${configs[@]}"; do

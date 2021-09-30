@@ -4,10 +4,10 @@
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "SECRET_KEY_BASE":{
+    "SECRET_KEY_BASE": {
       "generator": "secret"
     },
-   "RACK_ENV": {
+    "RACK_ENV": {
       "value": "heroku"
     },
     "RAILS_ENV": {
@@ -35,7 +35,7 @@
       "value": "true"
     }
   },
-  "formation": { },
+  "formation": {},
   "addons": [
     {
       "plan": "heroku-postgresql",

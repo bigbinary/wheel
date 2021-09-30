@@ -1,7 +1,7 @@
+import { loginPath, notesPath } from "Constants/routes";
 import { fake } from "Fixtures/fake";
 import { loginSelectors } from "Selectors/login";
 import { loginTexts } from "Texts/login";
-import { loginPath, notesPath } from "Constants/routes";
 
 describe("Login", () => {
   let user;
