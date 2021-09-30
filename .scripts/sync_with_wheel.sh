@@ -33,6 +33,7 @@ declare -a configs=(
   ".husky/helpers/prevent_pushing_to_master.sh"
   ".husky/pre-commit"
   ".husky/pre-push"
+  "cypress-tests/.eslintrc.js"
 )
 
 for config in "${configs[@]}"; do
