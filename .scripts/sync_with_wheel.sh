@@ -17,6 +17,7 @@ eslint-plugin-cypress
 raw_base_url="https://raw.githubusercontent.com/bigbinary/wheel/master"
 declare -a configs=(
   ".eslintrc.js"
+  ".eslintignore"
   ".eslint-rules/helpers/index.js"
   ".eslint-rules/imports/enforced.js"
   ".eslint-rules/imports/order.js"

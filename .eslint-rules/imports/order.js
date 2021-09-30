@@ -1,6 +1,6 @@
 const { buildPathGroupsBasedOnWebpackAliases } = require(__dirname +
   "/../helpers");
-const pathGroups = buildPathGroupsBasedOnWebpackAliases();
+const pathGroups = buildPathGroupsBasedOnWebpackAliases({});
 
 const pathGroupForKeepingReactImportsAtTop = {
   pattern: "react+(-native|)",
