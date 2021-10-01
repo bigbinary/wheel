@@ -17,6 +17,7 @@ const pathGroupForKeepingReactImportsAtTop = {
 pathGroups.push(pathGroupForKeepingReactImportsAtTop);
 
 module.exports = {
+  root: true,
   extends: ["../.eslintrc"],
   rules: {
     // disable async/await for cypress given that cypress doesn't allow async/await syntax
