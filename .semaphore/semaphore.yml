@@ -45,7 +45,8 @@ blocks:
 
         - name: Eslint
           commands:
-            - curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/ffac127738e5770d92f377260d45fc2b2f312c98/.semaphore/commands/run_eslint_on_modified_files.sh" | ${SHELL}
+            - checkout
+            - curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/ffac127738e5770d92f377260d45fc2b2f312c98/.semaphore/commands/run_eslint_on_modified_files.sh" | bash
 
   - name: Tests
     task:
