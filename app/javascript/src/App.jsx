@@ -6,6 +6,7 @@ import { UserProvider } from "contexts/user";
 import Main from "./components/Main";
 
 const App = props => {
+  console.log("Hopefully eslint will catch this");
   return (
     <AuthProvider>
       <UserProvider>
