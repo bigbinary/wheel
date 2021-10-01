@@ -35,6 +35,7 @@ declare -a configs=(
   ".husky/pre-commit"
   ".husky/pre-push"
   "cypress-tests/.eslintrc.js"
+  ".semaphore/commands/run_eslint_on_modified_files.sh"
 )
 
 for config in "${configs[@]}"; do

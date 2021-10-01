@@ -45,11 +45,7 @@ blocks:
 
         - name: Eslint
           commands:
-            - checkout
-            - git fetch --unshallow
-            - git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
-            - git fetch origin master
-            - git diff-tree --diff-filter=a -r --no-commit-id --name-only HEAD remotes/origin/master | grep --color=none -i -e "\.js$" -e "\.jsx$" | xargs npx eslint
+            - curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/dc2312e1c52ebb13bc3c50296d620f93aebd2e33/.semaphore/commands/run_eslint_on_modified_files.sh" | bash
 
   - name: Tests
     task:
