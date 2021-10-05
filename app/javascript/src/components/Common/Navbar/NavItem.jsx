@@ -49,13 +49,13 @@ export default function NavItem({
         <SubMenu subLinks={subLinks} title={title} />
       </Dropdown>
     );
-  } else {
-    return (
-      <div className="mb-6">
-        <Tooltip content={title} position="right">
-          <NavButton />
-        </Tooltip>
-      </div>
-    );
   }
+
+  return (
+    <div className="mb-6">
+      <Tooltip content={title} position="right">
+        <NavButton />
+      </Tooltip>
+    </div>
+  );
 }
