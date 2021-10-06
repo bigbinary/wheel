@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from "react";
 
+import * as neetoIcons from "@bigbinary/neeto-icons";
+import * as v2 from "@bigbinary/neetoui/v2";
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button, PageLoader } from "neetoui";
-import { Header, SubHeader } from "neetoui/layouts";
+import { PageLoader } from "neetoui";
+import { Header } from "neetoui/layouts";
+// SubHeader
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
+import Card from "./Card";
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./NewNotePane";
-import NoteTable from "./NoteTable";
+// import NoteTable from "./NoteTable";
 
-const Notes = () => {
+const Notes = ({ setShowNotesMenuBar }) => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState("");
+  // const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -42,18 +46,32 @@ const Notes = () => {
   return (
     <>
       <Header
-        title="Notes"
+        title={
+          <div className="flex items-center gap-3">
+            <neetoIcons.MenuHorizontal
+              onClick={() => setShowNotesMenuBar(prevState => !prevState)}
+            />
+            <v2.Typography style="h2">All Notes</v2.Typography>
+          </div>
+        }
         actionBlock={
-          <Button
-            onClick={() => setShowNewNotePane(true)}
-            label="Add New Note"
-            icon="ri-add-line"
-          />
+          <div className="flex gap-3">
+            <v2.Input
+              prefix={<neetoIcons.Search />}
+              size="small"
+              placeholder="Search Name, Email, Phone Number, Ect."
+            />
+            <v2.Button
+              onClick={() => setShowNewNotePane(true)}
+              label="Add Note"
+              icon="ri-add-line"
+            />
+          </div>
         }
       />
       {notes.length ? (
-        <>
-          <SubHeader
+        <div className="mt-7 w-full">
+          {/* <SubHeader
             searchProps={{
               value: searchTerm,
               onChange: e => setSearchTerm(e.target.value),
@@ -63,13 +81,16 @@ const Notes = () => {
               onClick: () => setShowDeleteAlert(true),
               disabled: !selectedNoteIds.length
             }}
-          />
-          <NoteTable
+          /> */}
+          {/* <NoteTable
             selectedNoteIds={selectedNoteIds}
             setSelectedNoteIds={setSelectedNoteIds}
             notes={notes}
-          />
-        </>
+          /> */}
+          {[0, 1, 2, 3].map(item => (
+            <Card key={item} />
+          ))}
+        </div>
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
@@ -86,7 +107,7 @@ const Notes = () => {
       />
       {showDeleteAlert && (
         <DeleteAlert
-          selectedNoteIds={selectedNoteIds}
+          // selectedNoteIds={selectedNoteIds}
           onClose={() => setShowDeleteAlert(false)}
           refetch={fetchNotes}
         />
