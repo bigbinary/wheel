@@ -3,12 +3,14 @@ const setToLocalStorage = (key, value) => {
 };
 
 const getFromLocalStorage = key => {
+  let storedValue = null;
   try {
-    JSON.parse(localStorage.getItem(key));
+    storedValue = JSON.parse(localStorage.getItem(key));
   } catch (error) {
+    logger.error(error);
     localStorage.setItem(key, JSON.stringify(null));
   }
-  return localStorage.getItem(key);
+  return storedValue;
 };
 
 export { setToLocalStorage, getFromLocalStorage };
