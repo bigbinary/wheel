@@ -1,8 +1,10 @@
+import { setToLocalStorage } from "helpers/storage";
+
 const authReducer = (state, { type, payload }) => {
   switch (type) {
     case "LOGIN": {
-      localStorage.setItem("authToken", JSON.stringify(payload.auth_token));
-      localStorage.setItem("authEmail", JSON.stringify(payload.email));
+      setToLocalStorage("authToken", payload.auth_token);
+      setToLocalStorage("authEmail", payload.email);
       return {
         isLoggedIn: true,
         authToken: payload.auth_token,
@@ -10,8 +12,8 @@ const authReducer = (state, { type, payload }) => {
       };
     }
     case "LOGOUT": {
-      localStorage.setItem("authToken", JSON.stringify(null));
-      localStorage.setItem("authEmail", JSON.stringify(null));
+      setToLocalStorage("authToken", null);
+      setToLocalStorage("authEmail", null);
       return { isLoggedIn: false, authToken: null, authEmail: null };
     }
     default: {

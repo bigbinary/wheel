@@ -1,6 +1,8 @@
 import axios from "axios";
 import { Toastr } from "neetoui";
 
+import { getFromLocalStorage } from "helpers/storage";
+
 axios.defaults.baseURL = "/";
 
 const setAuthHeaders = (setLoading = () => null) => {
@@ -11,8 +13,8 @@ const setAuthHeaders = (setLoading = () => null) => {
       .querySelector('[name="csrf-token"]')
       .getAttribute("content")
   };
-  const token = JSON.parse(localStorage.getItem("authToken"));
-  const email = JSON.parse(localStorage.getItem("authEmail"));
+  const token = JSON.parse(getFromLocalStorage("authToken"));
+  const email = JSON.parse(getFromLocalStorage("authEmail"));
   if (token && email) {
     axios.defaults.headers["X-Auth-Email"] = email;
     axios.defaults.headers["X-Auth-Token"] = token;
