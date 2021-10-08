@@ -7,8 +7,8 @@ const getFromLocalStorage = key => {
   try {
     storedValue = JSON.parse(localStorage.getItem(key));
   } catch (error) {
-    logger.error(error);
     localStorage.setItem(key, JSON.stringify(null));
+    logger.error(error);
   }
   return storedValue;
 };
