@@ -11,13 +11,11 @@
   "lint-staged": {
     "app/**/*.{js,jsx,json}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "{package.json,.eslintrc.js,.prettierrc.js}": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     ".eslint-rules/**/*": [
       "prettier --write",
