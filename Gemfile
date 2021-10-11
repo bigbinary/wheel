@@ -56,6 +56,9 @@ group :development, :test do
 
   # A runtime developer console and IRB alternative with powerful introspection capabilities
   gem "pry"
+
+  # For auto-generating demo data
+  gem "faker", "~> 2.19"
 end
 
 group :development, :staging, :heroku do
