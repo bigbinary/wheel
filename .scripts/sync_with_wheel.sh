@@ -36,6 +36,9 @@ declare -a configs=(
   ".husky/pre-push"
   "cypress-tests/.eslintrc.js"
   ".semaphore/commands/run_eslint_on_modified_files.sh"
+  ".node-version"
+  ".nvmrc"
+  ".ruby-version"
 )
 
 for config in "${configs[@]}"; do

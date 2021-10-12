@@ -10,7 +10,7 @@ global_job_config:
     commands:
       - checkout
       - sem-version ruby 3.0.2
-      - sem-version node 16.5.0
+      - sem-version node 16.5
       - sem-service start postgres 12.4
       - cache restore
       - bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
