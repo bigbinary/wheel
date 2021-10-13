@@ -119,6 +119,10 @@ Layout/EmptyLinesAroundClassBody:
 # ====================================================================================================
 # All Method related rules
 # ====================================================================================================
+# This cop checks whether class/module/method definitions are separated by one or more empty lines.
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+
 # This cop checks the . position in multi-line method calls.
 # The dot should be leading rather than trailing.
 Layout/DotPosition:
