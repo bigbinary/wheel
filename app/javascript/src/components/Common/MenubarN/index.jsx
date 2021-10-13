@@ -75,7 +75,7 @@ const MenubarN = () => {
         <MenuBar.Block label="Middle-East" count={60} />
         <MenuBar.Block label="Asia" count={60} />
       </MenuBar>
-      <div className="flex flex-col items-start justify-start flex-grow h-screen overflow-y-auto">
+      <div className="flex flex-col items-start justify-start flex-grow h-screen overflow-y-auto w-auto">
         <Notes />
       </div>
     </div>

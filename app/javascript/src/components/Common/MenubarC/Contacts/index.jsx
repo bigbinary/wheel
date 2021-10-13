@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 
+import { Button } from "@bigbinary/neetoui/v2";
+import { Header } from "@bigbinary/neetoui/v2/layouts";
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button, PageLoader } from "neetoui";
-import { Header, SubHeader } from "neetoui/layouts";
+import { PageLoader } from "neetoui";
+import { SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
@@ -10,6 +12,8 @@ import EmptyState from "components/Common/EmptyState";
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./NewNotePane";
 import NoteTable from "./NoteTable";
+
+import burgerMenu from "../../MenubarN/Notes/BurgerMenu.jpg";
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
@@ -41,7 +45,7 @@ const Contacts = () => {
 
   return (
     <>
-      <Header
+      {/* <Header
         title="Contacts"
         actionBlock={
           <Button
@@ -49,6 +53,34 @@ const Contacts = () => {
             label="Add New Note"
             icon="ri-add-line"
           />
+        }
+      /> */}
+      <Header
+        actionBlock={
+          <Button
+            onClick={() => setShowNewNotePane(true)}
+            label="Primary Action"
+          />
+        }
+        // breadcrumbs={[
+        //   {
+        //     link: '/',
+        //     text: 'Home'
+        //   }
+        // ]}
+        menuBarHandle={
+          <Button
+            className="mr-2"
+            icon={function noRefCheck() {
+              return <img src={burgerMenu} />;
+            }}
+            style="text"
+          />
+        }
+        title={
+          <div className="flex items-center">
+            <h3>Contacts</h3>
+          </div>
         }
       />
       {notes.length ? (
