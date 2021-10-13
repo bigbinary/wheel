@@ -4,6 +4,8 @@ import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
 import { Typography } from "@bigbinary/neetoui/v2";
 import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 
+import Contacts from "components/Common/MenubarC/Contacts";
+
 const MenubarC = () => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
@@ -72,6 +74,9 @@ const MenubarC = () => {
         <MenuBar.Block label="Middle-East" count={60} />
         <MenuBar.Block label="Asia" count={60} />
       </MenuBar>
+      <div className="flex flex-col items-start justify-start flex-grow h-screen overflow-y-auto w-auto">
+        <Contacts />
+      </div>
     </div>
   );
 };
