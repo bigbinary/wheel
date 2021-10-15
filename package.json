@@ -19,8 +19,7 @@
     ],
     ".eslint-rules/**/*": [
       "prettier --write",
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
     "./**/*.rb": [
       "bundle exec rubocop -a"
@@ -32,7 +31,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.8",
     "autoprefixer": "^10.2.5",
-    "eslint": "^8.0.0",
+    "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-json": "^3.1.0",
