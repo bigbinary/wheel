@@ -1,0 +1,25 @@
+.kebab-menu {
+  display: inline-block;
+  position: relative;
+
+  .kebab-menu__content {
+    min-width: 247px;
+    cursor: pointer;
+    padding: 16px;
+    position: absolute;
+    right: 0;
+    background-color: #f8f9f9;
+    border-radius: 2px;
+    z-index: 999;
+
+    .kebab-menu__item {
+      padding: 4px 16px;
+      display: flex;
+      width: 100%;
+
+      &:hover {
+        background-color: #e9ebed;
+      }
+    }
+  }
+}
