@@ -40,7 +40,6 @@ export const Menubar = () => {
         <MenuBar.Block label="Europe" count={80} />
         <MenuBar.Block label="Middle-East" count={60} />
         <MenuBar.Block label="Asia" count={60} />
-        <MenuBar.AddNew label="Add New Segments" />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -66,21 +65,6 @@ export const Menubar = () => {
         <MenuBar.Block label="Europe" count={80} />
         <MenuBar.Block label="Middle-East" count={60} />
         <MenuBar.Block label="Asia" count={60} />
-        <MenuBar.AddNew label="Add New Tag" />
-
-        <MenuBar.Item
-          label="General"
-          description="Welcome Message, KB and Labels "
-        />
-        <MenuBar.Item
-          label="Styling"
-          active
-          description="Brand Color, Logo and Widget Position"
-        />
-        <MenuBar.Item
-          label="Widget Icon"
-          description="Position, Icon and Label"
-        />
       </MenuBar>
     </div>
   );
