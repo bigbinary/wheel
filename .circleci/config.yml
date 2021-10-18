@@ -11,7 +11,7 @@ jobs:
     parallelism: 1
     docker:
       - image: 'cypress/included:3.4.0'
-    working_directory: ~/wheel
+    working_directory: ~/neetoui-challenge
     steps:
       - checkout
       - run:

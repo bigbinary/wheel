@@ -6,9 +6,9 @@ default: &default
 
 development:
   <<: *default
-  database: wheel_development
+  database: neetoui-challenge_development
 
 test:
   <<: *default
   user: postgres
-  database: wheel_test<%= ENV['CIRCLE_NODE_INDEX'] %>
+  database: neetoui-challenge_test<%= ENV['CIRCLE_NODE_INDEX'] %>

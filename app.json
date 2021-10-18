@@ -1,5 +1,5 @@
 {
-  "name": "wheel",
+  "name": "neetoui-challenge",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },

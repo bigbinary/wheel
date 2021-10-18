@@ -10,7 +10,7 @@ volumes:
 services:
   db:
     image: postgres:12.5-alpine
-    container_name: wheel_db
+    container_name: neetoui-challenge_db
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
@@ -32,7 +32,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: wheel_sidekiq
+    container_name: neetoui-challenge_sidekiq
     networks:
       - development
     depends_on:
@@ -69,8 +69,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: wheel_app
-    image: wheel-dev:1.0.0
+    container_name: neetoui-challenge_app
+    image: neetoui-challenge-dev:1.0.0
     volumes:
       - .:/var/app:cached
       - gem_cache:/usr/local/bundle/gems

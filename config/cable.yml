@@ -7,6 +7,6 @@ test:
 production:
   adapter: redis
   url: <%= Rails.application.secrets.redis_url %>
-  channel_prefix: wheel_production
+  channel_prefix: neetoui-challenge_production
   ssl_params:
     verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>

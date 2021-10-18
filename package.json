@@ -6,7 +6,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "sync_with_wheel": "curl -s -L \"https://raw.githubusercontent.com/bigbinary/wheel/master/.scripts/sync_with_wheel.sh\" | bash"
+    "sync_with_neetoui-challenge": "curl -s -L \"https://raw.githubusercontent.com/bigbinary/neetoui-challenge/master/.scripts/sync_with_neetoui-challenge.sh\" | bash"
   },
   "lint-staged": {
     "app/**/*.{js,jsx,json}": [
