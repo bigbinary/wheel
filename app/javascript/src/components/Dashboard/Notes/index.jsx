@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+import { Search } from "@bigbinary/neeto-icons";
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button, PageLoader } from "neetoui";
+import { Button, PageLoader, Input } from "neetoui";
 import { Header, SubHeader, Container } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
@@ -19,6 +20,7 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
+  const [toggle, setToggle] = useState(true);
 
   useEffect(() => {
     fetchNotes();
@@ -42,17 +44,25 @@ const Notes = () => {
 
   return (
     <div className="flex w-full">
-      <Menubar />
+      <Menubar showMenu={toggle} />
       <Container>
         <Header
-          title="Notes"
           actionBlock={
-            <Button
-              onClick={() => setShowNewNotePane(true)}
-              label="Add New Note"
-              icon="ri-add-line"
-            />
+            <div className="flex justify-around mr-2">
+              <Input
+                className="p-5"
+                label="Search"
+                prefix={<Search size={16} />}
+              />
+              <Button
+                label="Add New Note"
+                icon="ri-add-line"
+                onClick={() => setShowNewNotePane(true)}
+              />
+            </div>
           }
+          menuBarToggle={() => setToggle(!toggle)}
+          title="All Notes"
         />
         {notes.length ? (
           <>
