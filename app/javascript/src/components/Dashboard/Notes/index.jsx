@@ -6,6 +6,7 @@ import { Header, SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
+import { Menubar } from "components/Common/Menubar";
 
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./NewNotePane";
@@ -41,6 +42,7 @@ const Notes = () => {
 
   return (
     <>
+      <Menubar />
       <Header
         title="Notes"
         actionBlock={
