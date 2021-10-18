@@ -42,11 +42,12 @@ const Notes = () => {
   return (
     <>
       <Header
-        title="Notes"
+        menuBarToggle={true}
+        title="All Notes"
         actionBlock={
           <Button
             onClick={() => setShowNewNotePane(true)}
-            label="Add New Note"
+            label="Add Note"
             icon="ri-add-line"
           />
         }
