@@ -9,3 +9,4 @@ test
 tmp
 .vscode
 babel.config.js
+app/javascript/packs
