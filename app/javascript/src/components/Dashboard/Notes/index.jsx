@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import { Search } from "@bigbinary/neeto-icons";
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button, PageLoader, Input } from "neetoui";
-import { Header, SubHeader, Container } from "neetoui/layouts";
+import { PageLoader } from "neetoui";
+import { Button, Input } from "neetoui/v2";
+import { Header, Container } from "neetoui/v2/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
@@ -43,30 +44,36 @@ const Notes = () => {
   }
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full align-bottom">
       <Menubar showMenu={toggle} />
       <Container>
         <Header
+          menuBarToggle={() => setToggle(!toggle)}
+          title="All Notes"
           actionBlock={
-            <div className="flex justify-around mr-2">
+            <div className="flex justify-around mr-2 w-max">
               <Input
-                className="p-5"
-                label="Search"
+                className="w-96 px-4"
+                size="large"
+                placeholder="Search Name, Email, Phone Number"
                 prefix={<Search size={16} />}
+                onChange={setSearchTerm}
+                value={searchTerm}
               />
               <Button
-                label="Add New Note"
-                icon="ri-add-line"
+                className="h-10"
+                size="large"
+                label="Add New Notes"
                 onClick={() => setShowNewNotePane(true)}
+                type="button"
+                icon="ri-add-line"
               />
             </div>
           }
-          menuBarToggle={() => setToggle(!toggle)}
-          title="All Notes"
         />
         {notes.length ? (
           <>
-            <SubHeader
+            {/* <SubHeader
               searchProps={{
                 value: searchTerm,
                 onChange: e => setSearchTerm(e.target.value),
@@ -76,7 +83,7 @@ const Notes = () => {
                 onClick: () => setShowDeleteAlert(true),
                 disabled: !selectedNoteIds.length
               }}
-            />
+            /> */}
             <NoteTable
               selectedNoteIds={selectedNoteIds}
               setSelectedNoteIds={setSelectedNoteIds}
