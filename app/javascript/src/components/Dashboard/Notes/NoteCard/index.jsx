@@ -16,7 +16,7 @@ export const NoteCard = ({
       {notes.map((note, index) => (
         <div
           key={index}
-          className="border border-gray-300 rounded shadow-md p-4"
+          className="border border-gray-300 rounded neeto-ui-shadow-s p-4"
           onClick={event => {
             event.stopPropagation();
             const index = selectedNoteIds.indexOf(note.id);

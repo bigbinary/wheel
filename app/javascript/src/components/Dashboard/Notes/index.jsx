@@ -49,12 +49,13 @@ const Notes = () => {
       <Menubar showMenu={toggle} title="Notes" />
       <Container>
         <Header
+          className="text-md"
           menuBarToggle={() => setToggle(!toggle)}
           title="All Notes"
           actionBlock={
             <div className="flex justify-around mr-2 w-max">
               <Input
-                className="w-96 px-4"
+                className="w-96 px-4 h-9"
                 size="large"
                 placeholder="Search Name, Email, Phone Number"
                 prefix={<Search size={16} />}
@@ -62,8 +63,8 @@ const Notes = () => {
                 value={searchTerm}
               />
               <Button
-                className="h-10"
-                label="Add New Notes"
+                className="h-9"
+                label="Add Note"
                 onClick={() => setShowNewNotePane(true)}
                 type="button"
                 icon="ri-add-line"
