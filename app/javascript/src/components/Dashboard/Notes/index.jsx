@@ -12,7 +12,8 @@ import { Menubar } from "components/Common/Menubar";
 
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./NewNotePane";
-import NoteTable from "./NoteTable";
+//import NoteTable from "./NoteTable";
+import { NoteCard } from "./NoteCard";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -45,7 +46,7 @@ const Notes = () => {
 
   return (
     <div className="flex w-full align-bottom">
-      <Menubar showMenu={toggle} />
+      <Menubar showMenu={toggle} title="Notes" />
       <Container>
         <Header
           menuBarToggle={() => setToggle(!toggle)}
@@ -62,7 +63,6 @@ const Notes = () => {
               />
               <Button
                 className="h-10"
-                size="large"
                 label="Add New Notes"
                 onClick={() => setShowNewNotePane(true)}
                 type="button"
@@ -84,7 +84,12 @@ const Notes = () => {
                 disabled: !selectedNoteIds.length
               }}
             /> */}
-            <NoteTable
+            {/* <NoteTable
+              selectedNoteIds={selectedNoteIds}
+              setSelectedNoteIds={setSelectedNoteIds}
+              notes={notes}
+            /> */}
+            <NoteCard
               selectedNoteIds={selectedNoteIds}
               setSelectedNoteIds={setSelectedNoteIds}
               notes={notes}

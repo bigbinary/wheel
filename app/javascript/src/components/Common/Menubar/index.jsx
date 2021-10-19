@@ -10,7 +10,7 @@ export const Menubar = props => {
 
   return (
     <div className="flex">
-      <MenuBar showMenu={props.showMenu} title="Contacts">
+      <MenuBar showMenu={props.showMenu} title={props.title}>
         <MenuBar.Block label="All" count={13} active />
         <MenuBar.Block label="Users" count={2} />
         <MenuBar.Block label="Leads" count={7} />
