@@ -92,6 +92,7 @@ const Notes = () => {
             <NoteCard
               selectedNoteIds={selectedNoteIds}
               setSelectedNoteIds={setSelectedNoteIds}
+              setShowDeleteAlert={setShowDeleteAlert}
               notes={notes}
             />
           </>
