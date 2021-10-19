@@ -27,7 +27,7 @@ const Notes = () => {
     try {
       setLoading(true);
       if (notes) {
-        true;
+        true; //this condition is just to avoid eslint commit issues.
       }
       const response = await notesApi.fetch();
       setNotes(response.data.notes);
