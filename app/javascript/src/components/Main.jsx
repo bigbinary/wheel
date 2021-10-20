@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { PageLoader } from "neetoui";
 import PropTypes from "prop-types";
-import { either, isEmpty, isNil } from "ramda";
+import * as R from "ramda";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
@@ -22,10 +22,13 @@ const Main = props => {
   const { authToken } = useAuthState();
   const userDispatch = useUserDispatch();
   const authDispatch = useAuthDispatch();
-  const isLoggedIn = !either(isNil, isEmpty)(authToken);
+  const isLoggedIn = !R.apply(
+    R.or,
+    R.map(R.either(R.isNil, R.isEmpty), [authToken, props?.user])
+  );
 
   useEffect(() => {
-    userDispatch({ type: "SET_USER", payload: { user: props.user } });
+    userDispatch({ type: "SET_USER", payload: { user: props?.user } });
     initializeLogger();
     registerIntercepts(authDispatch);
     setAuthHeaders(setLoading);
