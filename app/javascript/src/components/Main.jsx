@@ -15,16 +15,18 @@ import PrivateRoute from "components/Common/PrivateRoute";
 import Dashboard from "components/Dashboard";
 import Hero from "components/Home/Hero";
 import { useAuthState, useAuthDispatch } from "contexts/auth";
-import { useUserDispatch } from "contexts/user";
+import { useUserDispatch, useUserState } from "contexts/user";
 
 const Main = props => {
   const [loading, setLoading] = useState(true);
   const { authToken } = useAuthState();
+  const { user: userContextState } = useUserState();
   const userDispatch = useUserDispatch();
   const authDispatch = useAuthDispatch();
+  const currentUser = userContextState || props?.user;
   const isLoggedIn = !R.apply(
     R.or,
-    R.map(R.either(R.isNil, R.isEmpty), [authToken, props?.user])
+    R.map(R.either(R.isNil, R.isEmpty), [authToken, currentUser])
   );
 
   useEffect(() => {
