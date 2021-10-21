@@ -5,7 +5,7 @@ import { Checkbox } from "neetoui";
 export default function NoteTable({
   selectedNoteIds,
   setSelectedNoteIds,
-  notes = []
+  notes = [],
 }) {
   return (
     <div className="w-full px-4">
@@ -47,7 +47,7 @@ export default function NoteTable({
                     if (index > -1) {
                       setSelectedNoteIds([
                         ...selectedNoteIds.slice(0, index),
-                        ...selectedNoteIds.slice(index + 1)
+                        ...selectedNoteIds.slice(index + 1),
                       ]);
                     } else {
                       setSelectedNoteIds([...selectedNoteIds, note.id]);
