@@ -1,16 +1,16 @@
 export default {
   loginForm: {
     email: "",
-    password: ""
+    password: "",
   },
   resetPasswordForm: {
-    email: ""
+    email: "",
   },
   signupForm: {
     email: "",
     firstName: "",
     lastName: "",
     password: "",
-    passwordConfirmation: ""
-  }
+    passwordConfirmation: "",
+  },
 };

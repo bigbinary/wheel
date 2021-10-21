@@ -25,7 +25,7 @@ const Profile = () => {
             email: user.email,
             firstName: user.first_name,
             lastName: user.last_name,
-            password: ""
+            password: "",
           }}
           onSubmit={onSubmit}
           validateOnBlur={submitted}

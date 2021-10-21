@@ -15,7 +15,7 @@ const PrivateRoute = ({
       <Redirect
         to={{
           pathname: redirectRoute,
-          from: props.location
+          from: props.location,
         }}
       />
     );
@@ -29,7 +29,7 @@ PrivateRoute.propTypes = {
   condition: PropTypes.bool,
   location: PropTypes.object,
   path: PropTypes.string,
-  redirectRoute: PropTypes.string
+  redirectRoute: PropTypes.string,
 };
 
 export default PrivateRoute;

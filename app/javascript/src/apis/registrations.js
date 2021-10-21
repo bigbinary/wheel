@@ -3,7 +3,7 @@ import axios from "axios";
 const updatePassword = payload => axios.put("my/password/update", payload);
 
 const registrationsApi = {
-  updatePassword
+  updatePassword,
 };
 
 export default registrationsApi;

@@ -21,12 +21,12 @@ export default function NewNoteForm({ onClose, refetch }) {
     <Formik
       initialValues={{
         title: "",
-        description: ""
+        description: "",
       }}
       onSubmit={handleSubmit}
       validationSchema={yup.object({
         title: yup.string().required("Title is required"),
-        description: yup.string().required("Description is required")
+        description: yup.string().required("Description is required"),
       })}
     >
       {({ isSubmitting }) => (

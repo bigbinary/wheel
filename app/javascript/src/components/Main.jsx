@@ -64,7 +64,7 @@ const Main = props => {
 };
 
 Main.propTypes = {
-  user: PropTypes.object
+  user: PropTypes.object,
 };
 
 export default Main;

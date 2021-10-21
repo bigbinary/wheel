@@ -2,7 +2,7 @@ const userReducer = (state, { type, payload }) => {
   switch (type) {
     case "SET_USER": {
       return {
-        user: payload.user
+        user: payload.user,
       };
     }
     default: {
