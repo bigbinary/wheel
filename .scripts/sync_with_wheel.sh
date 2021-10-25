@@ -39,6 +39,7 @@ declare -a configs=(
   ".node-version"
   ".nvmrc"
   ".ruby-version"
+  "Dockerfile.dev"
 )
 
 for config in "${configs[@]}"; do
