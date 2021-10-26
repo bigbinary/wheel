@@ -33,7 +33,7 @@ global_job_config:
       value: "test"
 
 blocks:
-  - name: Checking a few things before running minitest
+  - name: Checking a few things before running Rails tests
     task:
       jobs:
         - name: Ruby Audit
@@ -48,10 +48,10 @@ blocks:
           commands:
             - curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/master/.semaphore/commands/run_eslint_on_modified_files.sh" | bash
 
-  - name: Tests
+  - name: Rails Tests
     task:
       jobs:
-        - name: minitest
+        - name: Rails Tests
           commands:
             - bin/webpack
             - bundle exec rails test
