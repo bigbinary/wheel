@@ -11,7 +11,8 @@ module.exports = {
       ],
       rules: {
         "import/order": "off",
-        "react-hooks/rules-of-hooks": "off"
+        "react-hooks/rules-of-hooks": "off",
+        "comma-dangle": ["error", "always-multiline"]
       }
     },
     {
