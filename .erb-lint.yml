@@ -5,6 +5,8 @@ exclude:
   - '**/node_modules/**/*'
 EnableDefaultLinters: true
 linters:
+  PartialInstanceVariable:
+    enabled: true
   ErbSafety:
     enabled: true
   Rubocop:

@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/Shopify/erb-lint.git
+  revision: c30fa2783d5a028b9c67795ab20f4d6b19280b9e
+  branch: main
+  specs:
+    erb_lint (0.1.1)
+      activesupport
+      better_html (~> 1.0.7)
+      html_tokenizer
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -115,14 +129,6 @@ GEM
       rails (>= 4.0)
     email_validator (2.2.3)
       activemodel
-    erb_lint (0.1.1)
-      activesupport
-      better_html (~> 1.0.7)
-      html_tokenizer
-      parser (>= 2.7.1.4)
-      rainbow
-      rubocop
-      smart_properties
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
@@ -347,7 +353,7 @@ DEPENDENCIES
   devise (~> 4.7)
   email_prefixer
   email_validator
-  erb_lint
+  erb_lint!
   factory_bot_rails
   faker (~> 2.19)
   honeybadger
