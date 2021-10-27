@@ -83,6 +83,8 @@ group :development do
   # A Ruby static code analyzer, based on the community Ruby style guide
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
+  # For linting ERB files - by Shopify
+  gem "erb_lint", require: false
 
   # Patch-level verification for Bundler
   gem "bundler-audit", require: false
