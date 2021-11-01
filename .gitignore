@@ -1,14 +1,14 @@
-# Ignore bundler config.
+# Ignore bundler config
 /.bundle
 
-# Ignore all SQLite databases.
+# Ignore all SQLite databases
 /db/*.sqlite3*
 
 # Ignore database.yml file
 /config/database.yml
 
-# Ignore all logfiles and tempfiles.
-/log/*.log
+# Ignore all logfiles
+/log/*
 /tmp
 /db/backups
 public/uploads
@@ -20,7 +20,7 @@ coverage
 # Ignore node packages
 node_modules
 
-# rails specific ignores
+# Rails specific ignores
 storage/
 vendor/
 test/reports
@@ -29,10 +29,10 @@ test/fixtures
 /public/assets
 /public/packs-test
 
-# Ignore master key for decrypting credentials and more.
+# Ignore master key for decrypting credentials and more
 /config/master.key
 
-#Ignore environment variables
+# Ignore environment variables
 /.env
 
 #---------------------------------------#
@@ -94,7 +94,6 @@ yarn-debug.log*
 .yarnrc
 yarn-1.22.5.cjs
 yarn-1.22.5.js
-
 
 # Ignore node_modules in cypress folder
 cypress-tests/node_modules
