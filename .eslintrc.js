@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     es6: true,
     commonjs: true,
-    node: true
+    node: true,
   },
   /*
    * The order of extending each plugin matters a LOT!!
@@ -26,19 +26,19 @@ module.exports = {
     // custom rules cannot override the following rules.
     "./.eslint-rules/imports/enforced",
     "./.eslint-rules/react",
-    "./.eslint-rules/promise"
+    "./.eslint-rules/promise",
   ],
   settings: {
     react: {
-      version: "detect"
-    }
+      version: "detect",
+    },
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: "module",
   },
   // babel-eslint is deprecated now. This is the latest package.
   parser: "@babel/eslint-parser",
@@ -57,7 +57,7 @@ module.exports = {
     // auto-fixable: sadly this doesn't support guard clauses yet.
     "padding-line-between-statements": [
       "error",
-      { blankLine: "always", prev: "if", next: ["if", "return"] }
+      { blankLine: "always", prev: "if", next: ["if", "return"] },
     ],
     // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
     curly: ["error", "multi-line"],
@@ -67,8 +67,19 @@ module.exports = {
     "jam3/no-sanitizer-with-danger": [
       2,
       {
-        wrapperName: ["dompurify", "sanitizer", "sanitize"]
-      }
-    ]
-  }
+        wrapperName: ["dompurify", "sanitizer", "sanitize"],
+      },
+    ],
+    // auto-fixable: Requires trailing commas when the last element or property is in a different line than the closing ] or }
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "never",
+      },
+    ],
+  },
 };
