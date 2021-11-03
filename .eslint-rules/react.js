@@ -27,6 +27,6 @@ module.exports = {
     // not-auto-fixable: Ensures https://reactjs.org/docs/hooks-rules.html.
     "react-hooks/rules-of-hooks": "error",
     // not-auto-fixable: Ensures https://reactjs.org/docs/hooks-rules.html - Checks effect dependencies.
-    "react-hooks/exhaustive-deps": "off"
-  }
+    "react-hooks/exhaustive-deps": "error",
+  },
 };

@@ -34,7 +34,7 @@ const Main = props => {
     initializeLogger();
     registerIntercepts(authDispatch);
     setAuthHeaders(setLoading);
-  }, []);
+  }, [authDispatch, props?.user, userDispatch]);
 
   if (loading) {
     return (
