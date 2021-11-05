@@ -4,7 +4,7 @@ yarn remove babel-eslint 2> /dev/null
 yarn add -D @babel/eslint-parser
 yarn add -D prettier
 yarn add -D eslint \
-eslint-plugin-react-hooks \
+eslint-plugin-react-hooks@4.2.1-alpha-13455d26d-20211104 \
 eslint-plugin-import \
 eslint-config-prettier \
 eslint-plugin-prettier \
