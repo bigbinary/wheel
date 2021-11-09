@@ -5,13 +5,13 @@ const { buildPathGroupsBasedOnWebpackAliases } = require(__dirname +
   "/../.eslint-rules/helpers");
 const pathGroups = buildPathGroupsBasedOnWebpackAliases({
   customJSRoot: "cypress-tests/",
-  customAliasPath: "cypress-tests/cypress/webpack.config.js"
+  customAliasPath: "cypress-tests/cypress/webpack.config.js",
 });
 
 const pathGroupForKeepingReactImportsAtTop = {
   pattern: "react+(-native|)",
   group: "external",
-  position: "before"
+  position: "before",
 };
 
 pathGroups.push(pathGroupForKeepingReactImportsAtTop);
@@ -37,7 +37,7 @@ module.exports = {
           "sibling",
           "parent",
           "object",
-          "type"
+          "type",
         ],
         /*
          * Currently we check for existence of webpack alias
@@ -48,8 +48,8 @@ module.exports = {
          */
         pathGroups,
         // Ignore react imports so that they're always ordered to the top of the file.
-        pathGroupsExcludedImportTypes: ["react", "react-native"]
-      }
-    ]
-  }
+        pathGroupsExcludedImportTypes: ["react", "react-native"],
+      },
+    ],
+  },
 };

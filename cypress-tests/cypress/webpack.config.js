@@ -8,10 +8,10 @@ module.exports = {
       Support: path.resolve(__dirname, "support"),
       Texts: path.resolve(__dirname, "constants/texts"),
       Selectors: path.resolve(__dirname, "constants/selectors"),
-      Constants: path.resolve(__dirname, "constants")
+      Constants: path.resolve(__dirname, "constants"),
     },
     fallback: {
-      path: require.resolve("path-browserify")
-    }
-  }
+      path: require.resolve("path-browserify"),
+    },
+  },
 };
