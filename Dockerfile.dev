@@ -5,6 +5,9 @@ ENV BUNDLE_VERSION 2.2.29
 ENV RAILS_PORT 3000
 ENV LAUNCHY_DRY_RUN true
 ENV BROWSER /dev/null
+ENV BUNDLE_PATH /usr/local/bundle
+ENV GEM_PATH /usr/local/bundle
+ENV GEM_HOME /usr/local/bundle
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
