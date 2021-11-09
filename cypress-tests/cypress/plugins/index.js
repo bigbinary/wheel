@@ -16,9 +16,10 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
+const path = require("path");
+
 const webpack = require("@cypress/webpack-preprocessor");
 const fs = require("fs-extra");
-const path = require("path");
 
 const getConfigurationByFile = file => {
   const pathToConfigFile = `config/cypress.${file}.json`;
@@ -33,7 +34,7 @@ module.exports = (on, config) => {
   const options = {
     // send in the options from your webpack.config.js
     webpackOptions: require("../webpack.config"),
-    watchOptions: {}
+    watchOptions: {},
   };
   on("file:preprocessor", webpack(options));
 

@@ -6,5 +6,5 @@ export const loginSelectors = {
   submitButton: dataCy("login-submit-button"),
   signUpLink: dataCy("sign-up-link"),
   forgotPasswordLink: dataCy("forgot-password-link"),
-  inputErrorMessage: ".nui-input__error"
+  inputErrorMessage: ".nui-input__error",
 };
