@@ -12,16 +12,14 @@ describe("Login", () => {
     cy.fixture("credentials/oliver.json").then(oliver => {
       user = oliver;
     });
-  });
 
-  beforeEach(() => {
     cy.visit(loginPath);
-
     cy.get(loginSelectors.forgotPasswordLink).should("exist");
     cy.get(loginSelectors.signUpLink).should("exist");
   });
 
-  it("should not be able to login with invalid credentials", () => {
+  it("should verify login functionality", () => {
+    // should not be able to login with invalid credentials
     cy.get(loginSelectors.emailTextField).clear();
     cy.get(loginSelectors.passwordTextField).clear();
     cy.get(loginSelectors.submitButton).click();
@@ -46,10 +44,11 @@ describe("Login", () => {
     cy.clearAndType(loginSelectors.passwordTextField, invalidCredential);
     cy.get(loginSelectors.submitButton).click();
     cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
-  });
 
-  it("should be able to login with valid credentials", () => {
-    cy.loginViaUI(user.email, user.password);
+    // login with valid credentials
+    cy.clearAndType(loginSelectors.emailTextField, user.email);
+    cy.clearAndType(loginSelectors.passwordTextField, user.password);
+    cy.get(loginSelectors.submitButton).click();
     cy.verifyToastMessage(loginTexts.loginMessage);
     cy.url().should("include", notesPath);
   });
