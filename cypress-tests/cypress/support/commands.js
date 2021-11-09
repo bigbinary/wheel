@@ -24,16 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import { loginPath } from "Constants/routes";
 import { commonSelectors } from "Selectors/common";
-import { loginSelectors } from "Selectors/login";
-
-Cypress.Commands.add("loginViaUI", (email, password) => {
-  cy.visit(loginPath);
-  cy.clearAndType(loginSelectors.emailTextField, email);
-  cy.clearAndType(loginSelectors.passwordTextField, password);
-  cy.get(loginSelectors.submitButton).click();
-});
 
 Cypress.Commands.add(
   "inSensContains",
