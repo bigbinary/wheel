@@ -1,9 +1,6 @@
 {
+  "include": ["./node_modules/cypress", "cypress/**/*.js"],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "Texts/*": ["./constants/texts/*"],
-      "Selectors/*": ["./constants/selectors/*"]
-    }
+    "allowJs": true
   }
 }
