@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "Texts/*": ["./constants/texts/*"],
+      "Selectors/*": ["./constants/selectors/*"]
+    }
+  }
+}
