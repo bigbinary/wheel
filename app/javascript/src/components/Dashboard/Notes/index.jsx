@@ -26,8 +26,8 @@ const Notes = () => {
   const fetchNotes = async () => {
     try {
       setLoading(true);
-      const response = await notesApi.fetch();
-      setNotes(response.data.notes);
+      const { data } = await notesApi.fetch();
+      setNotes(data.notes);
     } catch (error) {
       logger.error(error);
     } finally {
@@ -89,6 +89,7 @@ const Notes = () => {
           selectedNoteIds={selectedNoteIds}
           onClose={() => setShowDeleteAlert(false)}
           refetch={fetchNotes}
+          setSelectedNoteIds={setSelectedNoteIds}
         />
       )}
     </>

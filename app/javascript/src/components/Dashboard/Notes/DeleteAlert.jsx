@@ -4,13 +4,19 @@ import { Modal } from "neetoui";
 
 import notesApi from "apis/notes";
 
-export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {
+const DeleteAlert = ({
+  refetch,
+  onClose,
+  selectedNoteIds,
+  setSelectedNoteIds,
+}) => {
   const [deleting, setDeleting] = useState(false);
   const handleDelete = async () => {
     try {
       setDeleting(true);
       await notesApi.destroy({ ids: selectedNoteIds });
       onClose();
+      setSelectedNoteIds([]);
       refetch();
     } catch (error) {
       logger.error(error);
@@ -48,4 +54,6 @@ export default function DeleteAlert({ refetch, onClose, selectedNoteIds }) {
       </div>
     </Modal>
   );
-}
+};
+
+export default DeleteAlert;
