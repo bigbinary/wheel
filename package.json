@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.14.5",
-    "@bigbinary/neetoui": "^1.0.27",
+    "@bigbinary/neetoui": "^2.1.21",
     "@rails/webpacker": "5.4.3",
     "axios": "^0.23.0",
     "babel-plugin-js-logger": "^1.0.17",
