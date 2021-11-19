@@ -10,16 +10,14 @@ import Notes from "./Notes";
 
 const Home = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex w-full h-screen">
       <Sidebar />
-      <div className="flex flex-col items-start justify-start flex-grow h-screen overflow-y-auto">
-        <Switch>
-          <Route exact path="/notes" component={Notes} />
-          <Route exact path="/my/password/edit" component={PasswordEdit} />
-          <Route exact path="/my/profile" component={Profile} />
-          <Redirect from="/" to="/notes" />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/notes" component={Notes} />
+        <Route exact path="/my/password/edit" component={PasswordEdit} />
+        <Route exact path="/my/profile" component={Profile} />
+        <Redirect from="/" to="/notes" />
+      </Switch>
     </div>
   );
 };

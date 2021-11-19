@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Toastr } from "neetoui";
-import { Input as FormikInput } from "neetoui/formik";
-import { Header } from "neetoui/layouts";
+import { Button, Toastr } from "neetoui/v2";
+import { Input } from "neetoui/v2/formik";
+import { Container, Header } from "neetoui/v2/layouts";
 import * as Yup from "yup";
 
 import registrationsApi from "apis/registrations";
@@ -39,7 +39,7 @@ const Edit = () => {
   };
 
   return (
-    <>
+    <Container>
       <Header title="Change Password" className="border-b border-gray-200" />
       <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
         <Formik
@@ -52,26 +52,28 @@ const Edit = () => {
           onSubmit={handleSubmit}
         >
           <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
-            <FormikInput
+            <Input
               {...formikInputAttrs}
               name="currentPassword"
               label="Current password"
             />
-            <FormikInput
-              {...formikInputAttrs}
-              name="password"
-              label="New password"
-            />
-            <FormikInput
+            <Input {...formikInputAttrs} name="password" label="New password" />
+            <Input
               {...formikInputAttrs}
               name="passwordConfirmation"
               label="Confirm password"
             />
-            <Button name="submit" type="submit" label="Update" fullWidth />
+            <Button
+              name="submit"
+              type="submit"
+              label="Update"
+              className="h-8"
+              fullWidth
+            />
           </Form>
         </Formik>
       </div>
-    </>
+    </Container>
   );
 };
 
