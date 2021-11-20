@@ -64,11 +64,7 @@ const Notes = () => {
               disabled: !selectedNoteIds.length,
             }}
           />
-          <NoteTable
-            selectedNoteIds={selectedNoteIds}
-            setSelectedNoteIds={setSelectedNoteIds}
-            notes={notes}
-          />
+          <NoteTable setSelectedNoteIds={setSelectedNoteIds} notes={notes} />
         </>
       ) : (
         <EmptyState

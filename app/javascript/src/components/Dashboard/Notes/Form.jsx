@@ -1,8 +1,8 @@
 import React from "react";
 
 import { Formik, Form } from "formik";
-import { Button } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Button, Pane } from "neetoui/v2";
+import { Input, Textarea } from "neetoui/v2/formik";
 import * as yup from "yup";
 
 import notesApi from "apis/notes";
@@ -30,27 +30,33 @@ export default function NewNoteForm({ onClose, refetch }) {
       })}
     >
       {({ isSubmitting }) => (
-        <Form>
-          <Input label="Title" name="title" className="mb-6" />
-          <Textarea label="Description" name="description" rows={8} />
-          <div className="nui-pane__footer nui-pane__footer--absolute">
+        <Form className="w-full">
+          <Pane.Body className="space-y-6">
+            <Input label="Title" name="title" className="flex-grow-0 w-full" />
+            <Textarea
+              label="Description"
+              name="description"
+              className="flex-grow-0 w-full"
+              rows={8}
+            />
+          </Pane.Body>
+          <Pane.Footer>
+            <Button
+              type="submit"
+              label="Save Changes"
+              size="large"
+              style="primary"
+              className="mr-3"
+              disabled={isSubmitting}
+              loading={isSubmitting}
+            />
             <Button
               onClick={onClose}
               label="Cancel"
               size="large"
-              style="secondary"
+              style="text"
             />
-
-            <Button
-              type="submit"
-              label="Submit"
-              size="large"
-              style="primary"
-              className="ml-2"
-              disabled={isSubmitting}
-              loading={isSubmitting}
-            />
-          </div>
+          </Pane.Footer>
         </Form>
       )}
     </Formik>
