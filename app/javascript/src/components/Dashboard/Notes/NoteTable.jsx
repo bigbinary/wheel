@@ -9,14 +9,12 @@ export const COLUMN_DATA = [
     title: "Title",
     dataIndex: "title",
     key: "title",
-    sorter: true,
     width: "30%",
   },
   {
     title: "Description",
     dataIndex: "description",
     key: "description",
-    sorter: true,
     width: "70%",
   },
 ];
