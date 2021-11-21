@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Table } from "neetoui/v2";
+
+import EditNotePane from "./Pane/EditNote";
 
 export const COLUMN_DATA = [
   {
@@ -19,7 +21,13 @@ export const COLUMN_DATA = [
   },
 ];
 
-export default function NoteTable({ setSelectedNoteIds, notes = [] }) {
+export default function NoteTable({
+  setSelectedNoteIds,
+  notes = [],
+  fetchNotes,
+}) {
+  const [showEditNote, setShowEditNote] = useState(false);
+  const [selectedNote, setSelectedNote] = useState({});
   //ToDo: Fix in neetoUI inorder to resolve warning
   notes = notes.map(note => ({
     ...note,
@@ -27,18 +35,27 @@ export default function NoteTable({ setSelectedNoteIds, notes = [] }) {
   }));
 
   return (
-    <div className="w-full">
-      <Table
-        rowData={notes}
-        columnData={COLUMN_DATA}
-        onRowSelect={selectedRowKeys => {
-          setSelectedNoteIds(selectedRowKeys);
-        }}
-        // onRowClick={(event, note) => {
-        //   ToDo: Show Update Pane
-        // }}
-        allowRowClick={true}
+    <>
+      <div className="w-full">
+        <Table
+          rowData={notes}
+          columnData={COLUMN_DATA}
+          onRowSelect={selectedRowKeys => {
+            setSelectedNoteIds(selectedRowKeys);
+          }}
+          onRowClick={(_, note) => {
+            setSelectedNote(note);
+            setShowEditNote(true);
+          }}
+          allowRowClick={true}
+        />
+      </div>
+      <EditNotePane
+        showPane={showEditNote}
+        setShowPane={setShowEditNote}
+        fetchNotes={fetchNotes}
+        note={selectedNote}
       />
-    </div>
+    </>
   );
 }

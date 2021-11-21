@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Api::V1::NotesController < Api::V1::BaseController
-  before_action :load_note!, only: [:show, :delete]
+  before_action :load_note!, only: [:update, :delete]
   before_action :load_notes!, only: :bulk_delete
 
   def index
@@ -13,6 +13,18 @@ class Api::V1::NotesController < Api::V1::BaseController
       render json: {
         note: note,
         notice: "#{note.title.humanize} has been added to your notes!"
+      }
+    else
+      render json: {
+        error: note.errors.full_messages.to_sentence
+      }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @note.update(note_params)
+      render json: {
+        notice: "#{@note.title.humanize} note has been updated"
       }
     else
       render json: {

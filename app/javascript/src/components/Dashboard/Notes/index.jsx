@@ -8,8 +8,8 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import NewNotePane from "./NewNotePane";
 import NoteTable from "./NoteTable";
+import NewNotePane from "./Pane/CreateNote";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -64,7 +64,11 @@ const Notes = () => {
               disabled: !selectedNoteIds.length,
             }}
           />
-          <NoteTable setSelectedNoteIds={setSelectedNoteIds} notes={notes} />
+          <NoteTable
+            setSelectedNoteIds={setSelectedNoteIds}
+            notes={notes}
+            fetchNotes={fetchNotes}
+          />
         </>
       ) : (
         <EmptyState

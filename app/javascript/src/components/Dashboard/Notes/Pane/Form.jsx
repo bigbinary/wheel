@@ -3,14 +3,18 @@ import React from "react";
 import { Formik, Form } from "formik";
 import { Button, Pane } from "neetoui/v2";
 import { Input, Textarea } from "neetoui/v2/formik";
-import * as yup from "yup";
 
 import notesApi from "apis/notes";
+import formValidationSchemas from "constants/formValidationSchemas";
 
-export default function NewNoteForm({ onClose, refetch }) {
+export default function NoteForm({ onClose, refetch, note, isEdit }) {
   const handleSubmit = async values => {
     try {
-      await notesApi.create(values);
+      if (isEdit) {
+        await notesApi.update(note.id, values);
+      } else {
+        await notesApi.create(values);
+      }
       refetch();
       onClose();
     } catch (err) {
@@ -19,15 +23,9 @@ export default function NewNoteForm({ onClose, refetch }) {
   };
   return (
     <Formik
-      initialValues={{
-        title: "",
-        description: "",
-      }}
+      initialValues={note}
       onSubmit={handleSubmit}
-      validationSchema={yup.object({
-        title: yup.string().required("Title is required"),
-        description: yup.string().required("Description is required"),
-      })}
+      validationSchema={formValidationSchemas.notesForm}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
@@ -43,7 +41,7 @@ export default function NewNoteForm({ onClose, refetch }) {
           <Pane.Footer>
             <Button
               type="submit"
-              label="Save Changes"
+              label={isEdit ? "Update" : "Save Changes"}
               size="large"
               style="primary"
               className="mr-3"
