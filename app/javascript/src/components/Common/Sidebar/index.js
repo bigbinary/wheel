@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Toastr } from "neetoui/v2";
 import { Sidebar } from "neetoui/v2/layouts";
 import { useHistory } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 
 import authenticationApi from "apis/authentication";
 import { resetAuthTokens } from "apis/axios";
@@ -67,4 +66,4 @@ const Sidenav = () => {
   );
 };
 
-export default withRouter(Sidenav);
+export default Sidenav;
