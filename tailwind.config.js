@@ -11,8 +11,9 @@ module.exports = {
       "./app/javascript/**/**/**/*.jsx",
       "./app/views/**/**/*.slim",
       "./app/views/**/**/*/*.slim",
+      "./node_modules/@bigbinary/neetoui/**/*",
     ],
-    defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
   },
   theme: {
     extend: {
@@ -30,9 +31,9 @@ module.exports = {
           900: "#192040",
         },
       },
-    }
+    },
   },
   variants: {
-    borderWidth: ['last']
-  }
+    borderWidth: ["last"],
+  },
 };
