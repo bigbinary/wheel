@@ -28,7 +28,7 @@ class Api::V1::NotesController < Api::V1::BaseController
       }
     else
       render status: :unprocessable_entity, json: {
-        error: note.errors.full_messages.to_sentence
+        error: @note.errors.full_messages.to_sentence
       }
     end
   end
