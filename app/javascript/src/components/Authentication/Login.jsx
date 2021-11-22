@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Toastr } from "neetoui";
-import { Input as FormikInput } from "neetoui/formik";
+import { Button, Toastr } from "neetoui/v2";
+import { Input } from "neetoui/v2/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
@@ -52,7 +52,7 @@ const Login = ({ history }) => {
         >
           {({ handleSubmit }) => (
             <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
-              <FormikInput
+              <Input
                 name="email"
                 type="email"
                 placeholder="oliver@example.com"
@@ -60,7 +60,7 @@ const Login = ({ history }) => {
                 label="Email"
                 data-cy="login-email-text-field"
               />
-              <FormikInput
+              <Input
                 name="password"
                 type="password"
                 placeholder="******"
@@ -77,6 +77,7 @@ const Login = ({ history }) => {
                 }}
                 loading={loading}
                 fullWidth
+                className="h-8"
                 label="Login"
                 data-cy="login-submit-button"
               />

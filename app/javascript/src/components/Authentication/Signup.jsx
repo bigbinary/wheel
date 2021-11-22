@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button } from "neetoui";
-import { Input as FormikInput } from "neetoui/formik";
+import { Button } from "neetoui/v2";
+import { Input } from "neetoui/v2/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
@@ -50,7 +50,7 @@ const Signup = ({ history }) => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 bg-gray-100 overflow-y-auto overflow-x-hidden">
+    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 overflow-x-hidden overflow-y-auto bg-gray-100">
       <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
         <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
           Signup
@@ -64,35 +64,35 @@ const Signup = ({ history }) => {
         >
           {({ handleSubmit }) => (
             <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
-              <FormikInput
+              <Input
                 name="email"
                 type="email"
                 label="Email"
                 placeholder="oliver@example.com"
                 required
               />
-              <FormikInput
+              <Input
                 name="firstName"
                 type="text"
                 label="First name"
                 placeholder="Sam"
                 required
               />
-              <FormikInput
+              <Input
                 name="lastName"
                 type="text"
                 placeholder="Smith"
                 label="Last name"
                 required
               />
-              <FormikInput
+              <Input
                 name="password"
                 type="password"
                 label="Password"
                 placeholder="******"
                 required
               />
-              <FormikInput
+              <Input
                 name="passwordConfirmation"
                 type="password"
                 label="Confirm password"
@@ -106,6 +106,7 @@ const Signup = ({ history }) => {
                   setSubmitted(true);
                   handleSubmit();
                 }}
+                className="h-8"
                 loading={loading}
                 label="Signup"
                 fullWidth

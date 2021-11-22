@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button } from "neetoui";
-import { Input as FormikInput } from "neetoui/formik";
+import { Button } from "neetoui/v2";
+import { Input } from "neetoui/v2/formik";
 
 import formInitialValues from "constants/formInitialValues";
 import formValidationSchemas from "constants/formValidationSchemas";
@@ -15,7 +15,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 bg-gray-100 overflow-y-auto overflow-x-hidden">
+    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 overflow-x-hidden overflow-y-auto bg-gray-100">
       <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
         <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
           Forgot your password?
@@ -36,7 +36,7 @@ const ResetPassword = () => {
               className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
               id="new_user"
             >
-              <FormikInput name="email" label="Email" type="email" required />
+              <Input name="email" label="Email" type="email" required />
               <div className="flex flex-col items-center justify-center space-y-2">
                 <Button
                   type="submit"
@@ -47,6 +47,7 @@ const ResetPassword = () => {
                   }}
                   label="Send reset password email"
                   data-disable-with="Send reset password email"
+                  className="h-8"
                   fullWidth
                 />
                 <Button label="Back" style="link" to="/login" />

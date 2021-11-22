@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { PageLoader } from "neetoui";
+import { PageLoader } from "neetoui/v2";
 import PropTypes from "prop-types";
 import * as R from "ramda";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
