@@ -1282,10 +1282,10 @@
     react "^17.0.2"
     react-dom "^17.0.2"
 
-"@bigbinary/neetoui@^2.1.21":
-  version "2.1.21"
-  resolved "https://registry.yarnpkg.com/@bigbinary/neetoui/-/neetoui-2.1.21.tgz#534b75d4afc4b269c66e387502b2cb2b0b62e348"
-  integrity sha512-gW0sQ+r/sc6+nEA8vO0Y/C+uaEf116q2RfyzWvGKvWKYv1HHHGRrckcASbQEMbRD5rpq+yIk51V1XQ+lwEyDYQ==
+"@bigbinary/neetoui@^2.1.23":
+  version "2.1.23"
+  resolved "https://registry.yarnpkg.com/@bigbinary/neetoui/-/neetoui-2.1.23.tgz#dacece37d18922b20c948f31142765acfb4a548d"
+  integrity sha512-cK/mi9QLTojCIUPqAk7oBTzb/hAKUBclaP5YvXEGJKrWKggAGQ9o06DGTqcc/QR31sRKcej5kmJJT4R7TKBpbA==
   dependencies:
     "@bigbinary/neeto-icons" "^1.8.3"
     "@popperjs/core" "^2.9.2"

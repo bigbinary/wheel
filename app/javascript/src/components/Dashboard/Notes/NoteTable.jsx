@@ -26,11 +26,6 @@ export default function NoteTable({
 }) {
   const [showEditNote, setShowEditNote] = useState(false);
   const [selectedNote, setSelectedNote] = useState({});
-  //ToDo: Fix in neetoUI inorder to resolve warning
-  notes = notes.map(note => ({
-    ...note,
-    key: note.id,
-  }));
 
   return (
     <>
