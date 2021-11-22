@@ -8,6 +8,7 @@ import Form from "./Form";
 
 export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
   const onClose = () => setShowPane(false);
+
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>

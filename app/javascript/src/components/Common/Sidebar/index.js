@@ -10,7 +10,7 @@ import { resetAuthTokens } from "apis/axios";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
-import constants from "./constants";
+import { APP_NAME, SIDENAV_LINKS } from "./constants";
 
 const Sidenav = () => {
   const history = useHistory();
@@ -49,8 +49,8 @@ const Sidenav = () => {
   return (
     <Sidebar
       isCollapsed={isSidebarCollapsed}
-      navLinks={constants.SIDENAV_LINKS}
-      appName={constants.APP_NAME}
+      navLinks={SIDENAV_LINKS}
+      appName={APP_NAME}
       organizationInfo={{
         name: "Wheel",
         subdomain: "bigbinary.com",
@@ -61,7 +61,6 @@ const Sidenav = () => {
         email: user.email,
         dropdownProps,
       }}
-      footerLinks={constants.FOOTER_LINKS}
       onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       changelogProps={{ id: "neetochangelog-trigger" }}
     />

@@ -11,6 +11,7 @@ export default function EditNotePane({
   note,
 }) {
   const onClose = () => setShowPane(false);
+
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>

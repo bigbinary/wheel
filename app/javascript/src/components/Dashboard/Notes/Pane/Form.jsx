@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui/v2";
+import { Button, Pane, Toastr } from "neetoui/v2";
 import { Input, Textarea } from "neetoui/v2/formik";
 
 import notesApi from "apis/notes";
@@ -18,9 +18,10 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
       refetch();
       onClose();
     } catch (err) {
-      logger.error(err);
+      Toastr.error(err);
     }
   };
+
   return (
     <Formik
       initialValues={note}
