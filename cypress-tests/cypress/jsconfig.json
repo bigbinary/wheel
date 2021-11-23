@@ -1,5 +1,5 @@
 {
-  "include": ["./node_modules/cypress", "cypress/**/*.js"],
+  "include": ["**/*", "cypress/**/*.js"],
   "compilerOptions": {
     "allowJs": true,
     "baseUrl": ".",
