@@ -1,22 +1,6 @@
-$sidebar-width: 72px;
-
-.nh-sidebar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: $sidebar-width;
-  height: 100vh;
-  transition: width 0.3s;
-}
-
-.nh-logo {
-  width: 100%;
-  min-height: 72px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-bottom: thin solid theme("colors.gray.300");
-  padding: 8px 12px;
+.neeto-ui-sidebar__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #0000 !important;
 }

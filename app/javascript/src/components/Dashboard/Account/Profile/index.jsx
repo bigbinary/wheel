@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button } from "neetoui";
-import { Input as FormikInput } from "neetoui/formik";
-import { Header } from "neetoui/layouts";
+import { Button } from "neetoui/v2";
+import { Input as FormikInput } from "neetoui/v2/formik";
+import { Header } from "neetoui/v2/layouts";
 
 import formValidationSchemas from "constants/formValidationSchemas";
 import { useUserState } from "contexts/user";

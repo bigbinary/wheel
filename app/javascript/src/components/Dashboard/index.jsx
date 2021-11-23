@@ -10,9 +10,9 @@ import Notes from "./Notes";
 
 const Home = () => {
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-row items-start justify-start">
       <Navbar />
-      <div className="flex flex-col items-start justify-start flex-grow h-screen overflow-y-auto">
+      <div className="relative flex flex-row flex-grow h-screen overflow-auto">
         <Switch>
           <Route exact path="/notes" component={Notes} />
           <Route exact path="/my/password/edit" component={PasswordEdit} />

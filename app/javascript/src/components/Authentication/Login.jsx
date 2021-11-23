@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Toastr } from "neetoui";
-import { Input as FormikInput } from "neetoui/formik";
+import { Button, Toastr } from "neetoui/v2";
+import { Input as FormikInput } from "neetoui/v2/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";

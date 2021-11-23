@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "neetoui";
+import { Button } from "neetoui/v2";
 
 function Hero() {
   const features = [
