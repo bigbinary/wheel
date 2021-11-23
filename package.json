@@ -43,6 +43,7 @@
     "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "4.2.1-alpha-13455d26d-20211104",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.2",
     "lint-staged": "^11.2.3",
     "postcss": "^8.2.15",

@@ -42,7 +42,15 @@ module.exports = {
   },
   // babel-eslint is deprecated now. This is the latest package.
   parser: "@babel/eslint-parser",
-  plugins: ["react", "prettier", "import", "react-hooks", "promise", "jam3"],
+  plugins: [
+    "react",
+    "prettier",
+    "import",
+    "react-hooks",
+    "promise",
+    "jam3",
+    "unused-imports",
+  ],
   rules: {
     // auto-fixable: Respect all Prettier rules and apply it.
     "prettier/prettier": "error",
@@ -81,5 +89,13 @@ module.exports = {
         functions: "never",
       },
     ],
+    // auto-fixable: If a variable is never reassigned, using the const declaration is better.
+    "prefer-const": "error",
+    // auto-fixable: It is considered good practice to use the type-safe equality operators === and !==.
+    eqeqeq: "error",
+    // not-auto-fixable: Rule flags optional chaining expressions in positions where short-circuiting to undefined causes throwing a TypeError afterward.
+    "no-unsafe-optional-chaining": "error",
+    // auto-fixable: Remove all unused imports.
+    "unused-imports/no-unused-imports": "error",
   },
 };

@@ -12,7 +12,8 @@ eslint-plugin-json \
 eslint-plugin-react \
 eslint-plugin-promise \
 eslint-plugin-jam3 \
-eslint-plugin-cypress
+eslint-plugin-cypress \
+eslint-plugin-unused-imports
 
 raw_base_url="https://raw.githubusercontent.com/bigbinary/wheel/master"
 declare -a configs=(
