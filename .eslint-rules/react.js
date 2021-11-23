@@ -22,6 +22,8 @@ module.exports = {
     "react/jsx-no-undef": "error",
     // not-auto-fixable: Enforce PascalCase for user-defined JSX components.
     "react/jsx-pascal-case": ["error", { allowNamespace: true }],
+    // not-auto-fixable: Prevent React to be incorrectly marked as unused.
+    "react/jsx-uses-react": "error",
     // not-auto-fixable: Prevent variables used in JSX to be marked as unused.
     "react/jsx-uses-vars": "error",
     // not-auto-fixable: Ensures https://reactjs.org/docs/hooks-rules.html.
