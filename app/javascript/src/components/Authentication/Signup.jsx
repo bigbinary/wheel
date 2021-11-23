@@ -1,32 +1,24 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button } from "neetoui/v2";
+import { Button, Toastr } from "neetoui/v2";
 import { Input } from "neetoui/v2/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
-import { setAuthHeaders } from "apis/axios";
 import formInitialValues from "constants/formInitialValues";
 import formValidationSchemas from "constants/formValidationSchemas";
-import { useAuthDispatch } from "contexts/auth";
-import { useUserDispatch } from "contexts/user";
 
 const Signup = ({ history }) => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
-  const authDispatch = useAuthDispatch();
-  const userDispatch = useUserDispatch();
 
   const onSubmit = async formData => {
     const { email, firstName, lastName, password, passwordConfirmation } =
       formData;
     try {
       setLoading(true);
-      const {
-        data: { user, auth_token },
-      } = await authenticationApi.signup({
+      await authenticationApi.signup({
         user: {
           email,
           first_name: firstName,
@@ -35,15 +27,10 @@ const Signup = ({ history }) => {
           password_confirmation: passwordConfirmation,
         },
       });
-      authDispatch({
-        type: "LOGIN",
-        payload: { auth_token, email, is_admin: false },
-      });
-      userDispatch({ type: "SET_USER", payload: { user } });
-      setAuthHeaders();
-      history.push("/");
+      Toastr.success("Successfully signed up. Please login.");
+      history.push("/login");
     } catch (error) {
-      alert(error.response.data.error);
+      logger.error(error);
     } finally {
       setLoading(false);
     }
