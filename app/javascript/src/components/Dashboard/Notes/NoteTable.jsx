@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import { Table } from "neetoui/v2";
 
@@ -26,10 +26,9 @@ export default function NoteTable({
 }) {
   const [showEditNote, setShowEditNote] = useState(false);
   const [selectedNote, setSelectedNote] = useState({});
-  const parentContainerRef = useRef(null);
   return (
     <>
-      <div className="w-full notes-table-height" ref={parentContainerRef}>
+      <div className="w-full notes-table-height">
         <Table
           rowData={notes}
           columnData={COLUMN_DATA}
