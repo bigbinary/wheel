@@ -1273,6 +1273,15 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
+"@bigbinary/neeto-icons@^1.8.13":
+  version "1.8.13"
+  resolved "https://registry.yarnpkg.com/@bigbinary/neeto-icons/-/neeto-icons-1.8.13.tgz#b1a4eb72a0235bd39846f9ac313ae8dfa2e2739e"
+  integrity sha512-/SmkWCdRa8aoCNShWgNOlnccKdjcvB5KPjI1c3ak2g6GGVFcAbrFqFKQuErJzl7bDXRhbEQIKUSjj/heI5SDGA==
+  dependencies:
+    prop-types "^15.7.2"
+    react "^17.0.2"
+    react-dom "^17.0.2"
+
 "@bigbinary/neeto-icons@^1.8.3":
   version "1.8.6"
   resolved "https://registry.yarnpkg.com/@bigbinary/neeto-icons/-/neeto-icons-1.8.6.tgz#eadc08451e70009dd8dc170e36f242ebbfe0f86c"

@@ -1,7 +1,4 @@
-import React from "react";
-
-const NotesIcon = () => <i className="text-2xl ri-file-text-line" />;
-const SettingsIcon = () => <i className="text-2xl ri-settings-2-line" />;
+import { Text, Settings, NeetoInsights } from "@bigbinary/neeto-icons";
 
 export const APP_NAME = "Wheel";
 
@@ -13,21 +10,16 @@ export const SIDENAV_LINKS = [
   {
     label: "Notes",
     to: "/notes",
-    icon: NotesIcon,
+    icon: Text,
   },
   {
-    label: "Settings",
-    to: "/settings",
-    icon: SettingsIcon,
-    items: [
-      {
-        label: "My Profile",
-        to: "/my/profile",
-      },
-      {
-        label: "Change Password",
-        to: "/my/password/edit",
-      },
-    ],
+    label: "Contacts",
+    to: "/contacts",
+    icon: Settings,
+  },
+  {
+    label: "Reports",
+    to: "/reports",
+    icon: NeetoInsights,
   },
 ];

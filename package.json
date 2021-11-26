@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@bigbinary/neeto-icons": "^1.8.13",
     "@bigbinary/neetoui": "^3.0.1",
     "@rails/webpacker": "5.4.3",
     "axios": "^0.23.0",
