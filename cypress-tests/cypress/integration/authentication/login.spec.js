@@ -6,7 +6,6 @@ import { loginTexts } from "Texts/login";
 describe("Login", () => {
   let user;
   const invalidCredential = fake.word;
-  const shortPassword = fake.number;
 
   before(() => {
     cy.fixture("credentials/oliver.json").then(oliver => {
@@ -23,27 +22,22 @@ describe("Login", () => {
     cy.get(loginSelectors.emailTextField).clear();
     cy.get(loginSelectors.passwordTextField).clear();
     cy.get(loginSelectors.submitButton).click();
-    cy.get(loginSelectors.inputErrorMessage).should(
-      "contain.text",
+    cy.get(loginSelectors.emailInputErrorMessage).should(
+      "have.inSensTrimmedText",
+      loginTexts.required
+    );
+    cy.get(loginSelectors.passwordInputErrorMessage).should(
+      "have.inSensTrimmedText",
       loginTexts.required
     );
 
     cy.clearAndType(loginSelectors.emailTextField, invalidCredential);
     cy.clearAndType(loginSelectors.passwordTextField, user.password);
     cy.get(loginSelectors.submitButton).click();
-    cy.get(loginSelectors.inputErrorMessage).should(
+    cy.get(loginSelectors.emailInputErrorMessage).should(
       "have.inSensTrimmedText",
       loginTexts.invalidEmailMessage
     );
-
-    cy.clearAndType(loginSelectors.emailTextField, user.email);
-    cy.get(loginSelectors.passwordTextField).type(shortPassword);
-    cy.get(loginSelectors.submitButton).click();
-    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
-
-    cy.clearAndType(loginSelectors.passwordTextField, invalidCredential);
-    cy.get(loginSelectors.submitButton).click();
-    cy.verifyToastMessage(loginTexts.incorrectEmailOrPasswordMessage);
 
     // login with valid credentials
     cy.clearAndType(loginSelectors.emailTextField, user.email);
