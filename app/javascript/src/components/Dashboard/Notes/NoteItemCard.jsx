@@ -44,7 +44,7 @@ const formatDate = timestamp => {
   return new Date(timestamp).toLocaleDateString("en-US", options);
 };
 
-function NoteItemCard({ note }) {
+function NoteItemCard({ note, setSelectedNoteId, setShowDeleteAlert }) {
   return (
     <>
       <div className="border neeto-ui-shadow-s px-3.5 py-4 mb-4">
@@ -53,7 +53,15 @@ function NoteItemCard({ note }) {
           <div className="ml-auto">
             <Dropdown buttonStyle="text" icon={MenuVertical}>
               <li> Edit </li>
-              <li> Delete </li>
+              <li
+                onClick={() => {
+                  setSelectedNoteId(note.id);
+                  setShowDeleteAlert(true);
+                }}
+              >
+                {" "}
+                Delete{" "}
+              </li>
             </Dropdown>
           </div>
         </div>
