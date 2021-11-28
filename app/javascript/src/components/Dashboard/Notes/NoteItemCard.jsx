@@ -3,6 +3,9 @@ import React from "react";
 import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
 import { Dropdown, Tag, Avatar, Tooltip } from "neetoui/v2";
 
+import { USR_IMG_TMP } from "../../Common/Sidebar/constants";
+
+//const { user } = useUserState();
 const getTimeSince = timestamp => {
   var date = new Date(timestamp);
   var seconds = Math.floor((new Date() - date) / 1000);
@@ -75,8 +78,7 @@ function NoteItemCard({ note }) {
               size="small"
               user={{
                 name: "Ashley Cooper",
-                imageUrl:
-                  "https://randomuser.me/api/portraits/med/women/54.jpg",
+                imageUrl: USR_IMG_TMP,
               }}
             />
           </div>
