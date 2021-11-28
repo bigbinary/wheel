@@ -39,6 +39,11 @@ const getTimeSince = timestamp => {
   return Math.floor(seconds) + " second" + (floored > 1 ? "s" : "");
 };
 
+const formatDate = timestamp => {
+  var options = { weekday: "long", hour: "2-digit", minute: "2-digit" };
+  return new Date(timestamp).toLocaleDateString("en-US", options);
+};
+
 function NoteItemCard({ note }) {
   return (
     <>
@@ -46,13 +51,7 @@ function NoteItemCard({ note }) {
         <div className="flex">
           <h4>{note.title}</h4>
           <div className="ml-auto">
-            <Dropdown
-              buttonProps={{
-                onClick: function noRefCheck() {},
-              }}
-              buttonStyle="text"
-              icon={MenuVertical}
-            >
+            <Dropdown buttonStyle="text" icon={MenuVertical}>
               <li> Edit </li>
               <li> Delete </li>
             </Dropdown>
@@ -66,13 +65,14 @@ function NoteItemCard({ note }) {
             <Tag className="bg-gray-100" label="Getting Started" />
           </div>
           <div className="ml-auto flex items-center">
-            <Tooltip position="bottom-start" content="Tooltip">
-              <>
-                <Clock color="#1e1e20" size={14} />
-                <span className="text-textGray ml-1 mr-2 text-xs">
-                  Created {getTimeSince(note.created_at)} ago
-                </span>
-              </>
+            <Clock color="#1e1e20" size={14} />
+            <Tooltip
+              position="bottom-start"
+              content={formatDate(note.created_at)}
+            >
+              <span className="text-textGray ml-1 mr-2 text-xs">
+                Created {getTimeSince(note.created_at)} ago
+              </span>
             </Tooltip>
             <Avatar
               size="small"
