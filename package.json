@@ -70,11 +70,11 @@
     "prop-types": "^15.7.2",
     "ramda": "^0.27.1",
     "react": "^17.0.1",
+    "react_ujs": "^2.6.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-router-nav-prompt": "^0.4.0",
     "react-toastify": "8.0.2",
-    "react_ujs": "^2.6.1",
     "yup": "^0.31.0"
   }
 }
