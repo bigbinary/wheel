@@ -177,6 +177,8 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.21.0)
     parser (3.0.2.0)
@@ -292,6 +294,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.4.2)
     thor (1.1.0)
     tilt (2.0.10)
     tzinfo (2.0.4)
@@ -319,6 +322,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   activeadmin
@@ -353,6 +357,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sprockets
   sprockets-rails
+  sqlite3 (~> 1.4)
   uglifier (>= 2.7.1)
   web-console
   webpacker

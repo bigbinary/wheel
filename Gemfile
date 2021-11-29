@@ -14,6 +14,10 @@ gem "uglifier", ">= 2.7.1"
 
 gem "webpacker"
 
+# database
+gem "pg", group: [:production]
+gem "sqlite3", "~> 1.4", group: [:development, :test]
+
 # React
 gem "react-rails"
 
