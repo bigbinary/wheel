@@ -13,7 +13,7 @@ export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Create a New Note
+          Add New Note
         </Typography>
       </Pane.Header>
       <Form
