@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Alert } from "neetoui/v2";
+import { Alert, Toastr } from "neetoui/v2";
 
 const DeleteAlert = ({
   onClose,
@@ -16,6 +16,7 @@ const DeleteAlert = ({
     );
     setDeleting(false);
     setShowDeleteAlert(false);
+    Toastr.success("Contact deleted successfully.");
   };
 
   return (
