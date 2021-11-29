@@ -52,7 +52,14 @@ function NoteItemCard({ note, setSelectedNoteId, setShowDeleteAlert }) {
           <h4>{note.title}</h4>
           <div className="ml-auto">
             <Dropdown buttonStyle="text" icon={MenuVertical}>
-              <li> Edit </li>
+              <li
+                onClick={() => {
+                  setSelectedNoteId(note.id);
+                }}
+              >
+                {" "}
+                Edit{" "}
+              </li>
               <li
                 onClick={() => {
                   setSelectedNoteId(note.id);
