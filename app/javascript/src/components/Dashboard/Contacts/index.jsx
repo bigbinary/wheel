@@ -11,10 +11,12 @@ import { dummyContacts } from "./constants";
 import ContactList from "./ContactList";
 import ContactsMenu from "./ContactsMenu";
 import DeleteAlert from "./DeleteAlert";
+import NewContactPane from "./Pane/CreateContact";
 
 function Contacts() {
   const [showContactsMenu, setShowContactsMenu] = useState(true);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [selectedContactId, setSelectedContactId] = useState(false);
   const [contacts, setContacts] = useState(dummyContacts);
 
@@ -36,7 +38,11 @@ function Contacts() {
                 className="mr-4 w-72"
                 placeholder="Search Name, Email, Phone Number, Ect."
               />
-              <Button label="New Contact" icon={Plus} />
+              <Button
+                label="New Contact"
+                icon={Plus}
+                onClick={() => setShowNewContactPane(value => !value)}
+              />
             </>
           }
         />
@@ -51,7 +57,7 @@ function Contacts() {
             image={EmptyNotesListImage}
             title="Looks like you don't have any contacts!"
             subtitle="Add your contacts to send customized emails to them."
-            primaryAction={() => {}}
+            primaryAction={() => setShowNewContactPane(value => !value)}
             primaryActionLabel="Add New Contact"
           />
         )}
@@ -64,6 +70,11 @@ function Contacts() {
           />
         )}
       </Container>
+      <NewContactPane
+        showPane={showNewContactPane}
+        setShowPane={setShowNewContactPane}
+        setContacts={setContacts}
+      />
     </section>
   );
 }

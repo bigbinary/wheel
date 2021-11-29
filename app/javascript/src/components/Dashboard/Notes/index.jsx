@@ -82,9 +82,9 @@ const Notes = () => {
           />
         )}
         <NewNotePane
+          fetchNotes={fetchNotes}
           showPane={showNewNotePane}
           setShowPane={setShowNewNotePane}
-          fetchNotes={fetchNotes}
         />
         {showDeleteAlert && (
           <DeleteAlert
