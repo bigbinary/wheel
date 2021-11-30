@@ -30,6 +30,9 @@
     ],
     "{Gemfile,Rakefile,config.ru}": [
       "bundle exec rubocop -a"
+    ],
+    "app/views/**/*.html.erb": [
+      "bundle exec erblint --lint-all --format compact -a"
     ]
   },
   "devDependencies": {

@@ -44,6 +44,10 @@ blocks:
           commands:
             - bundle exec rubocop
 
+        - name: Erb lint
+          commands:
+            - bundle exec erblint --lint-all --format compact
+
         - name: Eslint
           commands:
             - curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/master/.semaphore/commands/run_eslint_on_modified_files.sh" | bash

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible" />
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta charset="utf-8">
+    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     <title>
       <%= content_for?(:title) ? yield(:title) : "Wheel" %>
     </title>
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag "application" %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag "application" %>
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all" %>
     <!--<link rel="icon" href="/favicon.ico" type="image/x-icon"-->
     <!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"-->

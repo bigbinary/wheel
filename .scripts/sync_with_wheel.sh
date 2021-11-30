@@ -41,6 +41,7 @@ declare -a configs=(
   ".nvmrc"
   ".ruby-version"
   "Dockerfile.dev"
+  ".erb-lint.yml"
 )
 
 for config in "${configs[@]}"; do
