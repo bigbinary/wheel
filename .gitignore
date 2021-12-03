@@ -116,3 +116,6 @@ cypress-tests/cypress/videos/
 # Ignore test report folder
 /test/reports
 cypress-tests/debug.log
+
+# Ignore redis dump file
+dump.rdb
