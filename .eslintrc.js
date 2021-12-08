@@ -16,7 +16,6 @@ module.exports = {
     "plugin:json/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
-    "prettier",
     "./.eslint-rules/globals",
     "./.eslint-rules/imports/order",
     "./.eslint-rules/overrides",
@@ -27,6 +26,7 @@ module.exports = {
     "./.eslint-rules/imports/enforced",
     "./.eslint-rules/react",
     "./.eslint-rules/promise",
+    "prettier",
   ],
   settings: {
     react: {
