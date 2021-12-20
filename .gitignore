@@ -11,7 +11,7 @@
 /log/*
 /tmp
 /db/backups
-public/uploads
+/public/uploads
 *.DS_Store
 coverage
 .*swp
@@ -21,8 +21,8 @@ coverage
 node_modules
 
 # Rails specific ignores
-storage/
-vendor/
+/storage
+/vendor
 test/reports
 test/fixtures
 /public/packs
@@ -52,7 +52,7 @@ Sessionx.vim
 ## Backup and swap files
 *~
 ## Auto-generated tag files
-tags
+/tags
 # Vscode
 .vscode-test
 
@@ -103,6 +103,7 @@ cypress-tests/package-lock.json
 
 # Ignore all logfiles and tempfiles in cypress folder
 cypress-tests/cypress/results
+cypress-tests/debug.log
 
 # Ignore IDE related files in cypress folder
 cypress-tests/.vscode
@@ -112,10 +113,6 @@ cypress-tests/cypress/artifacts/screenshots/
 cypress-tests/cypress/artifacts/videos/
 cypress-tests/cypress/screenshots/
 cypress-tests/cypress/videos/
-
-# Ignore test report folder
-/test/reports
-cypress-tests/debug.log
 
 # Ignore redis dump file
 dump.rdb
