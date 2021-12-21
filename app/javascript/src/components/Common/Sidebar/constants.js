@@ -1,4 +1,4 @@
-import { Text, UserCircle, Report } from "@bigbinary/neeto-icons";
+import { Text, UserCircle, Inbox } from "@bigbinary/neeto-icons";
 
 export const APP_NAME = "Wheel";
 
@@ -20,7 +20,7 @@ export const SIDENAV_LINKS = [
   {
     label: "Settings",
     to: "/settings",
-    icon: Report,
+    icon: Inbox,
     items: [
       {
         label: "My Profile",
