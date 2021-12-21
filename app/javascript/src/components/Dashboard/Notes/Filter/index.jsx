@@ -7,7 +7,7 @@ import { MenuBar } from "@bigbinary/neetoui/v2/layouts";
 const Filter = ({ showMenu }) => {
   const isSearchCollapsed = true;
   return (
-    <MenuBar showMenu={showMenu} title="Contacts">
+    <MenuBar showMenu={showMenu} title="Notes">
       <MenuBar.Block label="All" count={200} active />
       <MenuBar.Block label="Users" count={80} />
       <MenuBar.Block label="Leads" count={60} />
