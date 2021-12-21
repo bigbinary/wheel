@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui/v2";
-import { Input, Textarea } from "neetoui/v2/formik";
+import { Button, Pane, Select } from "neetoui/v2";
+import { Input } from "neetoui/v2/formik";
 
 import notesApi from "apis/notes";
 import formValidationSchemas from "constants/formValidationSchemas";
+
+import { SELECT_OPTIONS } from "./constants";
 
 export default function NoteForm({ onClose, refetch, note, isEdit }) {
   const [submitted, setSubmitted] = useState(false);
@@ -41,12 +43,25 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
               className="flex-grow-0 w-full"
               required
             />
-            <Textarea
+            <Input
               label="Description"
               name="description"
               className="flex-grow-0 w-full"
-              rows={8}
               required
+            />
+            <Select
+              name="asignedContact"
+              label="Assigned Contact"
+              options={SELECT_OPTIONS}
+              placeholder="Select role"
+              className="flex-grow-0 w-full"
+            />
+            <Select
+              name="tags"
+              label="Tags"
+              options={SELECT_OPTIONS}
+              placeholder="Select role"
+              className="flex-grow-0 w-full"
             />
           </Pane.Body>
           <Pane.Footer>
