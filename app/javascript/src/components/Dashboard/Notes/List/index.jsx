@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
 import { Button, PageLoader, Typography } from "neetoui/v2";
-import { Container, Header, SubHeader, MenuBar } from "@bigbinary/neetoui/v2/layouts";
+import { Container, Header, SubHeader, MenuBar, Scrollable } from "@bigbinary/neetoui/v2/layouts";
+
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import NoteList from "./NoteList";
-import NewNotePane from "./Pane/CreateNote";
+import Note from "./Note";
 import FilterBar from "./FilterBar";
-import constants from "./constants";
+
+import NewNotePane from "../Pane/CreateNote";
+import constants from "../constants";
 
 const Notes = () => {
   const [loading, setLoading] = useState(false);
@@ -47,7 +49,6 @@ const Notes = () => {
     <>
       <FilterBar showMenu={showMenu}/>
       <Container>
-        
         <Header
           actionBlock={
             <Button
@@ -64,11 +65,18 @@ const Notes = () => {
           menuBarToggle={() => setShowMenu(!showMenu)}
         />
         {notes.length ? (
-          <>
-            <NoteList
-              notes={notes}
-            />
-          </>
+            <Scrollable className="w-full">
+              {notes.map(note => (
+                <Note 
+                  id={note.id} 
+                  title={note.title} 
+                  description={note.description}
+                  tags={note.tags}
+                  createdAt={note.createdAt}
+                  key={note.id}
+                />
+              ))}
+            </Scrollable>
         ) : (
           <EmptyState
             image={EmptyNotesListImage}
