@@ -6,7 +6,7 @@ import Sidebar from "components/Common/Sidebar";
 
 import PasswordEdit from "./Account/Passwords/Edit";
 import Profile from "./Account/Profile";
-import Notes from "./Notes";
+import Notes from "./Notes/List";
 
 const Home = () => {
   return (
