@@ -21,5 +21,57 @@ export default {
       tags: ["laptop"],
       createdAt: {date: "Wednesday 10.30 am", timeAgo: "1 day ago"}
     }
+  ],
+  contacts: [
+    {
+      label: "John Doe",
+      value: "John Doe"
+    },
+    {
+      label: "Jane Doe",
+      value: "Jane Doe"
+    },
+    {
+      label: "John Doe",
+      value: "John Doe"
+    },
+    {
+      label: "Jack Doe",
+      value: "Jack Doe"
+    },
+    {
+      label: "Jill Doe",
+      value: "Jill Doe"
+    },
+    {
+      label: "Jenny Doe",
+      value: "Jenny Doe"
+    }
+  ],
+  tags: [
+    {
+      label: "Laptop",
+      value: "laptop"
+    },
+    {
+      label: "Desktop",
+      value: "desktop"
+    },
+    {
+      label: "Phone",
+      value: "phone"
+    },
+    {
+      label: "Tablet",
+      value: "tablet"
+    },
+    {
+      label: "Printer",
+      value: "printer"
+    },
+    {
+      label: "Scanner",
+      value: "scanner"
+    }
   ]
 };
