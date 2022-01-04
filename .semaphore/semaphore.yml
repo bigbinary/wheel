@@ -60,3 +60,11 @@ blocks:
           commands:
             - bin/webpack
             - bundle exec rails test
+            - test-results publish ./reports
+
+after_pipeline:
+  task:
+    jobs:
+      - name: Publish Results
+        commands:
+          - test-results gen-pipeline-report
