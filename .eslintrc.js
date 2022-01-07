@@ -97,5 +97,7 @@ module.exports = {
     "no-unsafe-optional-chaining": "error",
     // auto-fixable: Remove all unused imports.
     "unused-imports/no-unused-imports": "error",
+    // auto-fixable-1-level-deep: Using nested ternary operators make the code unreadable. Use if/else or switch with if/else. If it's JSX then move it out into a function or a variable.
+    "no-nested-ternary": "error",
   },
 };
