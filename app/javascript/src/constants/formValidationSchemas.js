@@ -1,30 +1,31 @@
-import * as Yup from "yup";
+import * as yup from "yup";
 
 export default {
-  loginForm: Yup.object().shape({
-    email: Yup.string().email("Invalid email address").required("Required"),
-    password: Yup.string().required("Required"),
+  loginForm: yup.object().shape({
+    email: yup.string().email("Invalid email address").required("Required"),
+    password: yup.string().required("Required"),
   }),
-  resetPasswordForm: Yup.object().shape({
-    email: Yup.string().email("Invalid email address").required("Required"),
+  resetPasswordForm: yup.object().shape({
+    email: yup.string().email("Invalid email address").required("Required"),
   }),
-  signupForm: Yup.object().shape({
-    email: Yup.string().email("Invalid email address").required("Required"),
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
-    password: Yup.string().required("Required"),
-    passwordConfirmation: Yup.string()
-      .oneOf([Yup.ref("password")], "Passwords must match")
+  signupForm: yup.object().shape({
+    email: yup.string().email("Invalid email address").required("Required"),
+    firstName: yup.string().required("Required"),
+    lastName: yup.string().required("Required"),
+    password: yup.string().required("Required"),
+    passwordConfirmation: yup
+      .string()
+      .oneOf([yup.ref("password")], "Passwords must match")
       .required("Required"),
   }),
-  profileForm: Yup.object().shape({
-    email: Yup.string().email("Invalid email address").required("Required"),
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
-    password: Yup.string().required("Required"),
+  profileForm: yup.object().shape({
+    email: yup.string().email("Invalid email address").required("Required"),
+    firstName: yup.string().required("Required"),
+    lastName: yup.string().required("Required"),
+    password: yup.string().required("Required"),
   }),
-  notesForm: Yup.object().shape({
-    title: Yup.string().required("Title is required"),
-    description: Yup.string().required("Description is required"),
+  notesForm: yup.object().shape({
+    title: yup.string().required("Title is required"),
+    description: yup.string().required("Description is required"),
   }),
 };

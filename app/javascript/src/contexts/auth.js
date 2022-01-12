@@ -2,8 +2,8 @@ import React from "react";
 
 import PropTypes from "prop-types";
 
-import { getFromLocalStorage } from "helpers/storage";
 import authReducer from "reducers/auth";
+import { getFromLocalStorage } from "utils/storage";
 
 const AuthStateContext = React.createContext();
 const AuthDispatchContext = React.createContext();

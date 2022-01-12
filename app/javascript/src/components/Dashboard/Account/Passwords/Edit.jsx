@@ -4,17 +4,18 @@ import { Form, Formik } from "formik";
 import { Button, Toastr } from "neetoui";
 import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
-import * as Yup from "yup";
+import * as yup from "yup";
 
 import registrationsApi from "apis/registrations";
 
 const Edit = () => {
-  const validationSchema = Yup.object({
-    currentPassword: Yup.string().required("Current password is required"),
-    password: Yup.string().required("New password is required"),
-    passwordConfirmation: Yup.string()
+  const validationSchema = yup.object({
+    currentPassword: yup.string().required("Current password is required"),
+    password: yup.string().required("New password is required"),
+    passwordConfirmation: yup
+      .string()
       .required("Password confirmation is required")
-      .oneOf([Yup.ref("password"), null], "Passwords must match"),
+      .oneOf([yup.ref("password"), null], "Passwords must match"),
   });
 
   const formikInputAttrs = {

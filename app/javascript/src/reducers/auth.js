@@ -1,4 +1,4 @@
-import { setToLocalStorage } from "helpers/storage";
+import { setToLocalStorage } from "utils/storage";
 
 const authReducer = (state, { type, payload }) => {
   switch (type) {

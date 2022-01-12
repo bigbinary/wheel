@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Toastr } from "neetoui";
 
-import { getFromLocalStorage } from "helpers/storage";
+import { getFromLocalStorage } from "utils/storage";
 
 axios.defaults.baseURL = "/";
 
