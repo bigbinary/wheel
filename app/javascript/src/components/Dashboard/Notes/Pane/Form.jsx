@@ -5,7 +5,8 @@ import { Button, Pane } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
 import notesApi from "apis/notes";
-import formValidationSchemas from "constants/formValidationSchemas";
+
+import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
 export default function NoteForm({ onClose, refetch, note, isEdit }) {
   const [submitted, setSubmitted] = useState(false);
@@ -30,7 +31,7 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
       onSubmit={handleSubmit}
       validateOnBlur={submitted}
       validateOnChange={submitted}
-      validationSchema={formValidationSchemas.notesForm}
+      validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
     >
       {({ isSubmitting, handleSubmit }) => (
         <Form className="w-full">

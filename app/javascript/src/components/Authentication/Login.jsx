@@ -7,10 +7,14 @@ import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
 import { setAuthHeaders } from "apis/axios";
-import formInitialValues from "constants/formInitialValues";
-import formValidationSchemas from "constants/formValidationSchemas";
+import { SIGNUP_PATH, RESET_PASSWORD_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
+
+import {
+  LOGIN_FORM_INITIAL_VALUES,
+  LOGIN_FORM_VALIDATION_SCHEMA,
+} from "./constants";
 
 const Login = ({ history }) => {
   const [loading, setLoading] = useState(false);
@@ -44,11 +48,11 @@ const Login = ({ history }) => {
           Sign In
         </h2>
         <Formik
-          initialValues={formInitialValues.loginForm}
+          initialValues={LOGIN_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
           onSubmit={onSubmit}
-          validationSchema={formValidationSchemas.loginForm}
+          validationSchema={LOGIN_FORM_VALIDATION_SCHEMA}
         >
           {({ handleSubmit }) => (
             <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
@@ -90,14 +94,14 @@ const Login = ({ history }) => {
             <Button
               label="Signup"
               style="link"
-              to="/signup"
+              to={SIGNUP_PATH}
               data-cy="sign-up-link"
             />
           </div>
           <Button
             label="Forgot password?"
             style="link"
-            to="/my/password/new"
+            to={RESET_PASSWORD_PATH}
             data-cy="forgot-password-link"
           />
         </div>

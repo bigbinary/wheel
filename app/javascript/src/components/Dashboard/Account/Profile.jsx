@@ -5,8 +5,10 @@ import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
-import formValidationSchemas from "constants/formValidationSchemas";
 import { useUserState } from "contexts/user";
+
+import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";
+import { buildProfileFormInitialValues } from "./utils";
 
 const Profile = () => {
   const { user } = useUserState();
@@ -21,16 +23,11 @@ const Profile = () => {
       <Header title="My Profile" className="border-b border-gray-200" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
-          initialValues={{
-            email: user.email,
-            firstName: user.first_name,
-            lastName: user.last_name,
-            password: "",
-          }}
+          initialValues={buildProfileFormInitialValues(user)}
           onSubmit={onSubmit}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          validationSchema={formValidationSchemas.profileForm}
+          validationSchema={PROFILE_FORM_VALIDATION_SCHEMA}
         >
           {({ handleSubmit }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">

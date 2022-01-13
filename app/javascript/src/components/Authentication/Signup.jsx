@@ -6,8 +6,12 @@ import { Input } from "neetoui/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
-import formInitialValues from "constants/formInitialValues";
-import formValidationSchemas from "constants/formValidationSchemas";
+import { LOGIN_PATH } from "components/routeConstants";
+
+import {
+  SIGNUP_FORM_INITIAL_VALUES,
+  SIGNUP_FORM_VALIDATION_SCHEMA,
+} from "./constants";
 
 const Signup = ({ history }) => {
   const [loading, setLoading] = useState(false);
@@ -43,11 +47,11 @@ const Signup = ({ history }) => {
           Signup
         </h2>
         <Formik
-          initialValues={formInitialValues.signupForm}
+          initialValues={SIGNUP_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
           onSubmit={onSubmit}
-          validationSchema={formValidationSchemas.signupForm}
+          validationSchema={SIGNUP_FORM_VALIDATION_SCHEMA}
         >
           {({ handleSubmit }) => (
             <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
@@ -103,7 +107,7 @@ const Signup = ({ history }) => {
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>
-          <Button label="Login" style="link" to="/login" />
+          <Button label="Login" style="link" to={LOGIN_PATH} />
         </div>
       </div>
     </div>

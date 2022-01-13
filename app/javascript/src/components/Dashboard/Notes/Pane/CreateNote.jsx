@@ -2,9 +2,9 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui";
 
-import formInitialValues from "constants/formInitialValues";
-
 import Form from "./Form";
+
+import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
 
 export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
   const onClose = () => setShowPane(false);
@@ -19,7 +19,7 @@ export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
       <Form
         onClose={onClose}
         refetch={fetchNotes}
-        note={formInitialValues.notesForm}
+        note={NOTES_FORM_INITIAL_FORM_VALUES}
         isEdit={false}
       />
     </Pane>

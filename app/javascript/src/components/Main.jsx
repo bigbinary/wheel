@@ -8,12 +8,14 @@ import { ToastContainer } from "react-toastify";
 
 import { setAuthHeaders, registerIntercepts } from "apis/axios";
 import { initializeLogger } from "common/logger";
-import Login from "components/Authentication/Login";
-import PasswordReset from "components/Authentication/ResetPassword";
-import Signup from "components/Authentication/Signup";
 import PrivateRoute from "components/Common/PrivateRoute";
-import Dashboard from "components/Dashboard";
-import Hero from "components/Home/Hero";
+import Hero from "components/Hero";
+import {
+  AUTH_ROUTES,
+  PRIVATE_ROUTES,
+  DASHBOARD_PATH,
+  LOGIN_PATH,
+} from "components/routeConstants";
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch, useUserState } from "contexts/user";
 
@@ -48,16 +50,24 @@ const Main = props => {
     <BrowserRouter>
       <ToastContainer />
       <Switch>
-        <Route exact path="/my/password/new" component={PasswordReset} />
-        <Route exact path="/signup" component={Signup} />
-        <Route exact path="/login" component={Login} />
-        {!isLoggedIn && <Route exact path="/" component={Hero} />}
-        <PrivateRoute
-          path="/"
-          redirectRoute="/login"
-          condition={isLoggedIn}
-          component={Dashboard}
-        />
+        {AUTH_ROUTES.map(route => (
+          <Route
+            key={route.path}
+            exact
+            path={route.path}
+            component={route.component}
+          />
+        ))}
+        {!isLoggedIn && <Route exact path={DASHBOARD_PATH} component={Hero} />}
+        {PRIVATE_ROUTES.map(route => (
+          <PrivateRoute
+            key={route.path}
+            path={route.path}
+            redirectRoute={LOGIN_PATH}
+            condition={isLoggedIn}
+            component={route.component}
+          />
+        ))}
       </Switch>
     </BrowserRouter>
   );

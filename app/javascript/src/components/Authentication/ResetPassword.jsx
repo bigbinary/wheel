@@ -4,8 +4,12 @@ import { Form, Formik } from "formik";
 import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 
-import formInitialValues from "constants/formInitialValues";
-import formValidationSchemas from "constants/formValidationSchemas";
+import { LOGIN_PATH, SIGNUP_PATH } from "components/routeConstants";
+
+import {
+  RESET_PASSWORD_FORM_INITIAL_VALUES,
+  RESET_PASSWORD_FORM_VALIDATION_SCHEMA,
+} from "./constants";
 
 const ResetPassword = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -25,11 +29,11 @@ const ResetPassword = () => {
           your password.
         </div>
         <Formik
-          initialValues={formInitialValues.resetPasswordForm}
+          initialValues={RESET_PASSWORD_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
           onSubmit={onSubmit}
-          validationSchema={formValidationSchemas.resetPasswordForm}
+          validationSchema={RESET_PASSWORD_FORM_VALIDATION_SCHEMA}
         >
           {({ handleSubmit }) => (
             <Form
@@ -50,14 +54,14 @@ const ResetPassword = () => {
                   className="h-8"
                   fullWidth
                 />
-                <Button label="Back" style="link" to="/login" />
+                <Button label="Back" style="link" to={LOGIN_PATH} />
               </div>
             </Form>
           )}
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
-          <Button label="Signup" style="link" to="/signup" />
+          <Button label="Signup" style="link" to={SIGNUP_PATH} />
         </div>
       </div>
     </div>

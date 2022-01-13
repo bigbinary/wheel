@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 
 import authenticationApi from "apis/authentication";
 import { resetAuthTokens } from "apis/axios";
+import { PROFILE_PATH, CHANGE_PASSWORD_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
@@ -33,11 +34,11 @@ const Sidenav = () => {
   const bottomLinks = [
     {
       label: "My Profile",
-      onClick: () => history.push("/my/profile"),
+      onClick: () => history.push(PROFILE_PATH),
     },
     {
       label: "Change Password",
-      onClick: () => history.push("/my/password/edit"),
+      onClick: () => history.push(CHANGE_PASSWORD_PATH),
     },
     {
       label: "Logout",
