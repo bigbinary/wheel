@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Toastr } from "neetoui";
+import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import PropTypes from "prop-types";
 
@@ -17,26 +17,14 @@ const Signup = ({ history }) => {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const onSubmit = async formData => {
-    const { email, firstName, lastName, password, passwordConfirmation } =
-      formData;
+  const handleSubmit = async formData => {
     try {
       setLoading(true);
-      await authenticationApi.signup({
-        user: {
-          email,
-          first_name: firstName,
-          last_name: lastName,
-          password,
-          password_confirmation: passwordConfirmation,
-        },
-      });
-      Toastr.success("Successfully signed up. Please login.");
-      history.push("/login");
+      await authenticationApi.signup(formData);
+      history.push(LOGIN_PATH);
     } catch (error) {
-      logger.error(error);
-    } finally {
       setLoading(false);
+      logger.error(error);
     }
   };
 
@@ -50,60 +38,56 @@ const Signup = ({ history }) => {
           initialValues={SIGNUP_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
           validationSchema={SIGNUP_FORM_VALIDATION_SCHEMA}
         >
-          {({ handleSubmit }) => (
-            <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
-              <Input
-                name="email"
-                type="email"
-                label="Email"
-                placeholder="oliver@example.com"
-                required
-              />
-              <Input
-                name="firstName"
-                type="text"
-                label="First name"
-                placeholder="Sam"
-                required
-              />
-              <Input
-                name="lastName"
-                type="text"
-                placeholder="Smith"
-                label="Last name"
-                required
-              />
-              <Input
-                name="password"
-                type="password"
-                label="Password"
-                placeholder="******"
-                required
-              />
-              <Input
-                name="passwordConfirmation"
-                type="password"
-                label="Confirm password"
-                placeholder="******"
-                required
-              />
-              <Button
-                type="submit"
-                onClick={e => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                  handleSubmit();
-                }}
-                className="h-8"
-                loading={loading}
-                label="Signup"
-                fullWidth
-              />
-            </Form>
-          )}
+          <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+            <Input
+              required
+              name="email"
+              type="email"
+              label="Email"
+              placeholder="oliver@example.com"
+            />
+            <Input
+              required
+              name="firstName"
+              type="text"
+              label="First name"
+              placeholder="Sam"
+            />
+            <Input
+              required
+              name="lastName"
+              type="text"
+              placeholder="Smith"
+              label="Last name"
+            />
+            <Input
+              required
+              name="password"
+              type="password"
+              label="Password"
+              placeholder="******"
+            />
+            <Input
+              required
+              name="passwordConfirmation"
+              type="password"
+              label="Confirm password"
+              placeholder="******"
+            />
+            <Button
+              fullWidth
+              type="submit"
+              onClick={() => {
+                setSubmitted(true);
+              }}
+              className="h-8"
+              loading={loading}
+              label="Signup"
+            />
+          </Form>
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>

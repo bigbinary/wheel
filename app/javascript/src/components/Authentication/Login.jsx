@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Toastr } from "neetoui";
+import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
-import { setAuthHeaders } from "apis/axios";
-import { SIGNUP_PATH, RESET_PASSWORD_PATH } from "components/routeConstants";
+import {
+  SIGNUP_PATH,
+  RESET_PASSWORD_PATH,
+  DASHBOARD_PATH,
+} from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 
@@ -23,21 +26,18 @@ const Login = ({ history }) => {
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
-  const onSubmit = async ({ email, password }) => {
+  const handleSubmit = async ({ email, password }) => {
     try {
       setLoading(true);
       const {
         data: { auth_token, user, is_admin },
-      } = await authenticationApi.login({ user: { email, password } });
+      } = await authenticationApi.login({ email, password });
       authDispatch({ type: "LOGIN", payload: { auth_token, email, is_admin } });
       userDispatch({ type: "SET_USER", payload: { user } });
-      setAuthHeaders();
-      history.push("/");
-      Toastr.success("Logged in successfully.");
+      history.push(DASHBOARD_PATH);
     } catch (error) {
-      logger.error(error);
-    } finally {
       setLoading(false);
+      logger.error(error);
     }
   };
 
@@ -51,42 +51,38 @@ const Login = ({ history }) => {
           initialValues={LOGIN_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          onSubmit={onSubmit}
+          onSubmit={handleSubmit}
           validationSchema={LOGIN_FORM_VALIDATION_SCHEMA}
         >
-          {({ handleSubmit }) => (
-            <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
-              <Input
-                name="email"
-                type="email"
-                placeholder="oliver@example.com"
-                required
-                label="Email"
-                data-cy="login-email-text-field"
-              />
-              <Input
-                name="password"
-                type="password"
-                placeholder="******"
-                required
-                label="Password"
-                data-cy="login-password-text-field"
-              />
-              <Button
-                type="submit"
-                onClick={e => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                  handleSubmit();
-                }}
-                loading={loading}
-                fullWidth
-                className="h-8"
-                label="Login"
-                data-cy="login-submit-button"
-              />
-            </Form>
-          )}
+          <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+            <Input
+              required
+              name="email"
+              label="Email"
+              type="email"
+              placeholder="oliver@example.com"
+              data-cy="login-email-text-field"
+            />
+            <Input
+              required
+              name="password"
+              label="Password"
+              type="password"
+              placeholder="******"
+              data-cy="login-password-text-field"
+            />
+            <Button
+              fullWidth
+              type="submit"
+              label="Login"
+              data-cy="login-submit-button"
+              className="h-8"
+              loading={loading}
+              onClick={() => {
+                setSubmitted(true);
+              }}
+            />
+          </Form>
         </Formik>
         <div className="mt-4 flex flex-col items-center justify-center space-y-2">
           <div className="flex flex-row items-center justify-start space-x-1">

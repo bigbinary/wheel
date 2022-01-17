@@ -11,12 +11,8 @@ import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";
 import { buildProfileFormInitialValues } from "./utils";
 
 const Profile = () => {
-  const { user } = useUserState();
   const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = () => {
-    // submit form
-  };
+  const { user } = useUserState();
 
   return (
     <Container>
@@ -24,35 +20,31 @@ const Profile = () => {
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={buildProfileFormInitialValues(user)}
-          onSubmit={onSubmit}
+          onSubmit={() => {}}
           validateOnBlur={submitted}
           validateOnChange={submitted}
           validationSchema={PROFILE_FORM_VALIDATION_SCHEMA}
         >
-          {({ handleSubmit }) => (
-            <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
-              <Input name="email" label="Email" type="email" required />
-              <Input name="firstName" label="First Name" required />
-              <Input name="lastName" label="Last name" required />
-              <Input
-                name="password"
-                label="Current password"
-                type="password"
-                required
-              />
-              <Button
-                type="submit"
-                onClick={e => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                  handleSubmit();
-                }}
-                label="Update"
-                className="h-8"
-                fullWidth
-              />
-            </Form>
-          )}
+          <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+            <Input required name="email" label="Email" type="email" />
+            <Input required name="firstName" label="First Name" />
+            <Input required name="lastName" label="Last name" />
+            <Input
+              required
+              name="password"
+              label="Current password"
+              type="password"
+            />
+            <Button
+              fullWidth
+              type="submit"
+              onClick={() => {
+                setSubmitted(true);
+              }}
+              label="Update"
+              className="h-8"
+            />
+          </Form>
         </Formik>
       </div>
     </Container>

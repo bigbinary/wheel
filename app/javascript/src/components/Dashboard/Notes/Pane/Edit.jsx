@@ -19,7 +19,7 @@ export default function EditNotePane({
           Edit Note
         </Typography>
       </Pane.Header>
-      <Form onClose={onClose} refetch={fetchNotes} note={note} isEdit={true} />
+      <Form isEdit onClose={onClose} refetch={fetchNotes} note={note} />
     </Pane>
   );
 }

@@ -52,8 +52,8 @@ const Main = props => {
       <Switch>
         {AUTH_ROUTES.map(route => (
           <Route
-            key={route.path}
             exact
+            key={route.path}
             path={route.path}
             component={route.component}
           />

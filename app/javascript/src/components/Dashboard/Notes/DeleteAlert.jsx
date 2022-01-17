@@ -11,6 +11,7 @@ const DeleteAlert = ({
   setSelectedNoteIds,
 }) => {
   const [deleting, setDeleting] = useState(false);
+
   const handleDelete = async () => {
     try {
       setDeleting(true);
@@ -24,6 +25,7 @@ const DeleteAlert = ({
       setDeleting(false);
     }
   };
+
   return (
     <Alert
       isOpen

@@ -9,15 +9,15 @@ import {
   DASHBOARD_PATH,
 } from "components/routeConstants";
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <div className="flex h-screen w-full">
       <Sidebar />
       <Switch>
         {DASHBOARD_ROUTES.map(route => (
           <Route
-            key={route.path}
             exact
+            key={route.path}
             path={route.path}
             component={route.component}
           />
@@ -28,4 +28,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dashboard;
