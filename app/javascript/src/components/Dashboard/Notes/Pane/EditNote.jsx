@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Pane, Typography } from "neetoui/v2";
+import { Pane, Typography } from "neetoui";
 
 import Form from "./Form";
 

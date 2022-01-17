@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Table } from "neetoui/v2";
+import { Table } from "neetoui";
 
 import EditNotePane from "./Pane/EditNote";
 

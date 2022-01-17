@@ -1273,25 +1273,23 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
-"@bigbinary/neeto-icons@^1.8.3":
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/@bigbinary/neeto-icons/-/neeto-icons-1.8.6.tgz#eadc08451e70009dd8dc170e36f242ebbfe0f86c"
-  integrity sha512-Pd4jDwzUX8Dd+wjrEOueeJzcU1kgpAB5nMPT/ckQVwQkLOEMShRLnIaRor2GJ7F8/3lapyzkWQbd9BJTvD7Q4w==
+"@bigbinary/neeto-icons@^1.8.17":
+  version "1.8.17"
+  resolved "https://registry.yarnpkg.com/@bigbinary/neeto-icons/-/neeto-icons-1.8.17.tgz#c4b01bf0ee742fd24ff12c393e598358bf399ca2"
+  integrity sha512-vWZ4lYsGC7sPbslEeJBZVThWdwrRTbKTA+8HGGBxeiiCCzqqUU7AC2CrbR8xc3WedBOPtCg/8qeyT/PgpnfpWQ==
   dependencies:
     prop-types "^15.7.2"
     react "^17.0.2"
     react-dom "^17.0.2"
 
-"@bigbinary/neetoui@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@bigbinary/neetoui/-/neetoui-3.0.1.tgz#54acb2a959f58425a01c60980283f27a037ce542"
-  integrity sha512-7Ahdsht1/VOQzCZXLaHKkCnboO+41aAoiMR8uVOcE2JrrkpDIoif6zstk8oSy4vAUNQL/yEtKi1XqsVAVyCPsQ==
+"@bigbinary/neetoui@^3.2.13":
+  version "3.2.13"
+  resolved "https://registry.yarnpkg.com/@bigbinary/neetoui/-/neetoui-3.2.13.tgz#50d875e0571a313032985b79b9bc302ab54d70ff"
+  integrity sha512-we80zpJKZR2QptLQXymr2MFaKdWrfh6vAw8cI/R5MZvByX1caoNXjj8FZ8NrhnQ8qXgy4tyD2J0lBFJ8BzKIkw==
   dependencies:
-    "@bigbinary/neeto-icons" "^1.8.3"
+    "@bigbinary/neeto-icons" "^1.8.17"
     "@popperjs/core" "^2.9.2"
     "@reach/auto-id" "^0.15.0"
-    "@tailwindcss/forms" "^0.3.2"
-    "@tailwindcss/typography" "^0.4.0"
     "@tippyjs/react" "^4.2.5"
     antd "^4.17.1"
     dayjs "^1.10.3"
@@ -1460,23 +1458,6 @@
   dependencies:
     tiny-warning "^1.0.3"
     tslib "^2.3.0"
-
-"@tailwindcss/forms@^0.3.2":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/forms/-/forms-0.3.2.tgz#e28c4514a53e69f725416a5a2a6d0f221683f069"
-  integrity sha512-aj2/rJsGb2whAZ/BQWHWWQRSbhH0r/l1ozOByiv+ZNjBD84GMvb5dhAyfpeasFky+EJrAwX5eaqft8NQMZFWvA==
-  dependencies:
-    mini-svg-data-uri "^1.2.3"
-
-"@tailwindcss/typography@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/typography/-/typography-0.4.0.tgz#b80974ad6af93df7b06e1981cb4d79698b6ad5c7"
-  integrity sha512-3BfOYT5MYNEq81Ism3L2qu/HRP2Q5vWqZtZRQqQrthHuaTK9qpuPfbMT5WATjAM5J1OePKBaI5pLoX4S1JGNMQ==
-  dependencies:
-    lodash.castarray "^4.4.0"
-    lodash.isplainobject "^4.0.6"
-    lodash.merge "^4.6.2"
-    lodash.uniq "^4.5.0"
 
 "@tippyjs/react@^4.2.5":
   version "4.2.6"
@@ -5902,11 +5883,6 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
-lodash.castarray@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.castarray/-/lodash.castarray-4.4.0.tgz#c02513515e309daddd4c24c60cfddcf5976d9115"
-  integrity sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=
-
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -5921,11 +5897,6 @@ lodash.has@^4.0:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/lodash.has/-/lodash.has-4.5.2.tgz#d19f4dc1095058cccbe2b0cdf4ee0fe4aa37c862"
   integrity sha1-0Z9NwQlQWMzL4rDN9O4P5Ko3yGI=
-
-lodash.isplainobject@^4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/lodash.isplainobject/-/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
-  integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -6192,11 +6163,6 @@ mini-css-extract-plugin@^0.9.0:
     normalize-url "1.9.1"
     schema-utils "^1.0.0"
     webpack-sources "^1.1.0"
-
-mini-svg-data-uri@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.2.3.tgz#e16baa92ad55ddaa1c2c135759129f41910bc39f"
-  integrity sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"

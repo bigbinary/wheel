@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Toastr } from "neetoui/v2";
-import { Sidebar } from "neetoui/v2/layouts";
+import { Toastr } from "neetoui";
+import { Sidebar } from "neetoui/layouts";
 import { useHistory } from "react-router-dom";
 
 import authenticationApi from "apis/authentication";
@@ -30,7 +30,7 @@ const Sidenav = () => {
     }
   };
 
-  const dropdownProps = [
+  const bottomLinks = [
     {
       label: "My Profile",
       onClick: () => history.push("/my/profile"),
@@ -47,6 +47,7 @@ const Sidenav = () => {
 
   return (
     <Sidebar
+      collapsible
       isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
       appName={APP_NAME}
@@ -58,7 +59,7 @@ const Sidenav = () => {
         name: `${user.first_name} ${user.last_name}`,
         imageUrl: user.profile_image_path,
         email: user.email,
-        dropdownProps,
+        bottomLinks,
       }}
       onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       changelogProps={{ id: "neetochangelog-trigger" }}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button, PageLoader } from "neetoui/v2";
-import { Container, Header, SubHeader } from "neetoui/v2/layouts";
+import { Button, PageLoader } from "neetoui";
+import { Container, Header, SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
