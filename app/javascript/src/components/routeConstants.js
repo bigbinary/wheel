@@ -2,7 +2,7 @@ import Login from "components/Authentication/Login";
 import PasswordReset from "components/Authentication/ResetPassword";
 import Signup from "components/Authentication/Signup";
 import Dashboard from "components/Dashboard";
-import PasswordEdit from "components/Dashboard/Account/Passwords/Edit";
+import PasswordEdit from "components/Dashboard/Account/Password/Edit";
 import Profile from "components/Dashboard/Account/Profile";
 import Notes from "components/Dashboard/Notes";
 

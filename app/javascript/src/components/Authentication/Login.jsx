@@ -20,15 +20,12 @@ import {
 } from "./constants";
 
 const Login = ({ history }) => {
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
   const handleSubmit = async ({ email, password }) => {
     try {
-      setLoading(true);
       const {
         data: { auth_token, user, is_admin },
       } = await authenticationApi.login({ email, password });
@@ -36,7 +33,6 @@ const Login = ({ history }) => {
       userDispatch({ type: "SET_USER", payload: { user } });
       history.push(DASHBOARD_PATH);
     } catch (error) {
-      setLoading(false);
       logger.error(error);
     }
   };
@@ -54,39 +50,40 @@ const Login = ({ history }) => {
           onSubmit={handleSubmit}
           validationSchema={LOGIN_FORM_VALIDATION_SCHEMA}
         >
-          <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
-            <Input
-              required
-              name="email"
-              label="Email"
-              type="email"
-              placeholder="oliver@example.com"
-              data-cy="login-email-text-field"
-            />
-            <Input
-              required
-              name="password"
-              label="Password"
-              type="password"
-              placeholder="******"
-              data-cy="login-password-text-field"
-            />
-            <Button
-              fullWidth
-              type="submit"
-              label="Login"
-              data-cy="login-submit-button"
-              className="h-8"
-              loading={loading}
-              onClick={() => {
-                setSubmitted(true);
-              }}
-            />
-          </Form>
+          {({ isSubmitting }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+              <Input
+                required
+                name="email"
+                label="Email"
+                type="email"
+                placeholder="oliver@example.com"
+                data-cy="login-email-text-field"
+              />
+              <Input
+                required
+                name="password"
+                label="Password"
+                type="password"
+                placeholder="******"
+                data-cy="login-password-text-field"
+              />
+              <Button
+                fullWidth
+                type="submit"
+                label="Login"
+                data-cy="login-submit-button"
+                className="h-8"
+                loading={isSubmitting}
+                disabled={isSubmitting}
+                onClick={() => setSubmitted(true)}
+              />
+            </Form>
+          )}
         </Formik>
         <div className="mt-4 flex flex-col items-center justify-center space-y-2">
           <div className="flex flex-row items-center justify-start space-x-1">
-            <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
+            <p className="font-normal text-gray-600">Don't have an account?</p>
             <Button
               label="Signup"
               style="link"

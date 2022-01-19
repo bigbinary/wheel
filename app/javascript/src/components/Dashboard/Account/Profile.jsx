@@ -20,31 +20,33 @@ const Profile = () => {
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={buildProfileFormInitialValues(user)}
-          onSubmit={() => {}}
+          onSubmit={() => null}
           validateOnBlur={submitted}
           validateOnChange={submitted}
           validationSchema={PROFILE_FORM_VALIDATION_SCHEMA}
         >
-          <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
-            <Input required name="email" label="Email" type="email" />
-            <Input required name="firstName" label="First Name" />
-            <Input required name="lastName" label="Last name" />
-            <Input
-              required
-              name="password"
-              label="Current password"
-              type="password"
-            />
-            <Button
-              fullWidth
-              type="submit"
-              onClick={() => {
-                setSubmitted(true);
-              }}
-              label="Update"
-              className="h-8"
-            />
-          </Form>
+          {({ isSubmitting }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+              <Input required name="email" label="Email" type="email" />
+              <Input required name="firstName" label="First Name" />
+              <Input required name="lastName" label="Last name" />
+              <Input
+                required
+                name="password"
+                label="Current password"
+                type="password"
+              />
+              <Button
+                fullWidth
+                type="submit"
+                onClick={() => setSubmitted(true)}
+                label="Update"
+                className="h-8"
+                loading={isSubmitting}
+                disabled={isSubmitting}
+              />
+            </Form>
+          )}
         </Formik>
       </div>
     </Container>

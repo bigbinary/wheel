@@ -1,4 +1,4 @@
-export const FEATURES_LIST = [
+export const FEATURE_LIST = [
   "Uses Rails, React, Tailwind CSS and Webpacker.",
   "Uses Devise, Honeybadger, Sidekiq, PostgreSQL, ActiveAdmin.",
   "Heroku ready. Push to Heroku and it will work.",

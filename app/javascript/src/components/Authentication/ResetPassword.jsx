@@ -31,25 +31,27 @@ const ResetPassword = () => {
           onSubmit={() => null}
           validationSchema={RESET_PASSWORD_FORM_VALIDATION_SCHEMA}
         >
-          <Form
-            className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
-            id="new_user"
-          >
-            <Input name="email" label="Email" type="email" required />
-            <div className="flex flex-col items-center justify-center space-y-2">
-              <Button
-                fullWidth
-                type="submit"
-                onClick={() => {
-                  setSubmitted(true);
-                }}
-                label="Send reset password email"
-                data-disable-with="Send reset password email"
-                className="h-8"
-              />
-              <Button label="Back" style="link" to={LOGIN_PATH} />
-            </div>
-          </Form>
+          {({ isSubmitting }) => (
+            <Form
+              className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
+              id="new_user"
+            >
+              <Input name="email" label="Email" type="email" required />
+              <div className="flex flex-col items-center justify-center space-y-2">
+                <Button
+                  fullWidth
+                  className="h-8"
+                  type="submit"
+                  label="Send reset password email"
+                  data-disable-with="Send reset password email"
+                  onClick={() => setSubmitted(true)}
+                  loading={isSubmitting}
+                  disabled={isSubmitting}
+                />
+                <Button label="Back" style="link" to={LOGIN_PATH} />
+              </div>
+            </Form>
+          )}
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">{`Don't have an account?`}</p>

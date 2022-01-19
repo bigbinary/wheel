@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button } from "neetoui";
 
-import { FEATURES_LIST } from "./constants";
+import { FEATURE_LIST } from "./constants";
 
 const Features = ({ features }) => {
   return (
@@ -25,7 +25,7 @@ const Hero = () => {
           Don&apos;t reinvent the wheel. Use sane defaults to bootstrap your
           react-rails project!
         </p>
-        <Features features={FEATURES_LIST} />
+        <Features features={FEATURE_LIST} />
         <div className="flex items-center justify-center mt-6">
           <Button size="large" type="primary" to="/login" label="Login" />
         </div>

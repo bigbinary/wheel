@@ -14,16 +14,13 @@ import {
 } from "./constants";
 
 const Signup = ({ history }) => {
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async formData => {
     try {
-      setLoading(true);
       await authenticationApi.signup(formData);
       history.push(LOGIN_PATH);
     } catch (error) {
-      setLoading(false);
       logger.error(error);
     }
   };
@@ -41,53 +38,54 @@ const Signup = ({ history }) => {
           onSubmit={handleSubmit}
           validationSchema={SIGNUP_FORM_VALIDATION_SCHEMA}
         >
-          <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
-            <Input
-              required
-              name="email"
-              type="email"
-              label="Email"
-              placeholder="oliver@example.com"
-            />
-            <Input
-              required
-              name="firstName"
-              type="text"
-              label="First name"
-              placeholder="Sam"
-            />
-            <Input
-              required
-              name="lastName"
-              type="text"
-              placeholder="Smith"
-              label="Last name"
-            />
-            <Input
-              required
-              name="password"
-              type="password"
-              label="Password"
-              placeholder="******"
-            />
-            <Input
-              required
-              name="passwordConfirmation"
-              type="password"
-              label="Confirm password"
-              placeholder="******"
-            />
-            <Button
-              fullWidth
-              type="submit"
-              onClick={() => {
-                setSubmitted(true);
-              }}
-              className="h-8"
-              loading={loading}
-              label="Signup"
-            />
-          </Form>
+          {({ isSubmitting }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+              <Input
+                required
+                name="email"
+                type="email"
+                label="Email"
+                placeholder="oliver@example.com"
+              />
+              <Input
+                required
+                name="firstName"
+                type="text"
+                label="First name"
+                placeholder="Sam"
+              />
+              <Input
+                required
+                name="lastName"
+                type="text"
+                placeholder="Smith"
+                label="Last name"
+              />
+              <Input
+                required
+                name="password"
+                type="password"
+                label="Password"
+                placeholder="******"
+              />
+              <Input
+                required
+                name="passwordConfirmation"
+                type="password"
+                label="Confirm password"
+                placeholder="******"
+              />
+              <Button
+                fullWidth
+                type="submit"
+                onClick={() => setSubmitted(true)}
+                className="h-8"
+                loading={isSubmitting}
+                disabled={isSubmitting}
+                label="Signup"
+              />
+            </Form>
+          )}
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>

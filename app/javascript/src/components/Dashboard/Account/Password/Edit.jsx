@@ -14,17 +14,13 @@ import {
 } from "../constants";
 
 const Edit = () => {
-  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async data => {
     try {
-      setLoading(true);
       await registrationsApi.updatePassword(data);
     } catch (error) {
       logger.error(error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -39,34 +35,35 @@ const Edit = () => {
           validateOnBlur={submitted}
           validateOnChange={submitted}
         >
-          <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
-            <Input
-              {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
-              name="currentPassword"
-              label="Current password"
-            />
-            <Input
-              {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
-              name="password"
-              label="New password"
-            />
-            <Input
-              {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
-              name="passwordConfirmation"
-              label="Confirm password"
-            />
-            <Button
-              fullWidth
-              name="submit"
-              type="submit"
-              label="Update"
-              className="h-8"
-              loading={loading}
-              onClick={() => {
-                setSubmitted(true);
-              }}
-            />
-          </Form>
+          {({ isSubmitting }) => (
+            <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+              <Input
+                {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
+                name="currentPassword"
+                label="Current password"
+              />
+              <Input
+                {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
+                name="password"
+                label="New password"
+              />
+              <Input
+                {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
+                name="passwordConfirmation"
+                label="Confirm password"
+              />
+              <Button
+                fullWidth
+                name="submit"
+                type="submit"
+                label="Update"
+                className="h-8"
+                loading={isSubmitting}
+                disabled={isSubmitting}
+                onClick={() => setSubmitted(true)}
+              />
+            </Form>
+          )}
         </Formik>
       </div>
     </Container>
