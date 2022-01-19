@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button } from "neetoui/v2";
-import { Input } from "neetoui/v2/formik";
+import { Button } from "neetoui";
+import { Input } from "neetoui/formik";
 
 import formInitialValues from "constants/formInitialValues";
 import formValidationSchemas from "constants/formValidationSchemas";

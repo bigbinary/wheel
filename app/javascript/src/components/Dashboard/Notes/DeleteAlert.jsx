@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Alert } from "neetoui/v2";
+import { Alert } from "neetoui";
 
 import notesApi from "apis/notes";
 

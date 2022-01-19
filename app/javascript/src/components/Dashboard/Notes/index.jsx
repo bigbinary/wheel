@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Button, PageLoader } from "neetoui/v2";
-import { Container, Header, SubHeader } from "neetoui/v2/layouts";
+import { Delete } from "neetoicons";
+import { Button, PageLoader } from "neetoui";
+import { Container, Header, SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
@@ -50,19 +51,22 @@ const Notes = () => {
             icon="ri-add-line"
           />
         }
+        searchProps={{
+          value: searchTerm,
+          onChange: e => setSearchTerm(e.target.value),
+        }}
       />
       {notes.length ? (
         <>
           <SubHeader
-            searchProps={{
-              value: searchTerm,
-              onChange: e => setSearchTerm(e.target.value),
-              clear: () => setSearchTerm(""),
-            }}
-            deleteButtonProps={{
-              onClick: () => setShowDeleteAlert(true),
-              disabled: !selectedNoteIds.length,
-            }}
+            rightActionBlock={
+              <Button
+                label="Delete"
+                icon={Delete}
+                onClick={() => setShowDeleteAlert(true)}
+                disabled={!selectedNoteIds.length}
+              />
+            }
           />
           <NoteTable
             setSelectedNoteIds={setSelectedNoteIds}
