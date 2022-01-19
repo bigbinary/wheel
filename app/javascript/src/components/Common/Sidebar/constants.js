@@ -1,7 +1,4 @@
-import React from "react";
-
-const NotesIcon = () => <i className="text-2xl ri-file-text-line" />;
-const SettingsIcon = () => <i className="text-2xl ri-settings-2-line" />;
+import { Notes, Settings } from "neetoicons";
 
 export const APP_NAME = "Wheel";
 
@@ -13,12 +10,12 @@ export const SIDENAV_LINKS = [
   {
     label: "Notes",
     to: "/notes",
-    icon: NotesIcon,
+    icon: Notes,
   },
   {
     label: "Settings",
     to: "/settings",
-    icon: SettingsIcon,
+    icon: Settings,
     items: [
       {
         label: "My Profile",

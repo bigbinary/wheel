@@ -53,11 +53,12 @@
     "lint-staged": "^11.2.3",
     "postcss": "^8.2.15",
     "prettier": "^2.4.1",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
     "@babel/preset-react": "^7.14.5",
+    "@bigbinary/neeto-icons": "^1.8.17",
     "@bigbinary/neetoui": "^3.2.13",
     "@rails/webpacker": "5.4.3",
     "axios": "^0.23.0",
