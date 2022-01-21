@@ -52,7 +52,7 @@ const Signup = ({ history }) => {
                 name="firstName"
                 type="text"
                 label="First name"
-                placeholder="Sam"
+                placeholder="Oliver"
               />
               <Input
                 required

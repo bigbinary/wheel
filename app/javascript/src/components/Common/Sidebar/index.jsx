@@ -46,12 +46,8 @@ const Sidebar = () => {
   ];
 
   return (
-<<<<<<< HEAD:app/javascript/src/components/Common/Sidebar/index.js
-    <Sidebar
-      collapsible
-=======
     <NeetoUISidebar
->>>>>>> 38a1549 (refactored react components):app/javascript/src/components/Common/Sidebar/index.jsx
+      collapsible
       isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
       appName={APP_NAME}
