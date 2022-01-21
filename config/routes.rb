@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
-  get "/logout" => "sessions#destroy", :as => :logout
+
   devise_scope :user do
     scope "my" do
       put "profile/update", to: "registrations#update"
-      put "password/update", to: "registrations#update_password"
+      put "password/update", to: "passwords#update_password"
     end
   end
 

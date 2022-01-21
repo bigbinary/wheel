@@ -19,33 +19,19 @@ class Api::V1::UsersController < Api::V1::BaseController
 
     if user.valid?
       sign_in(user)
-      render json: { user: user, auth_token: user.authentication_token }
+      render status: :ok, json: { user: user, auth_token: user.authentication_token }
     else
-      render json: { error: user.errors.full_messages.to_sentence }, status: 422
-    end
-  end
-
-  def update
-    if @user.blank?
-      respond_with_error "User with id #{params[:id]} not found.", :not_found
-
-    elsif @user.update(user_params)
-      render json: @user
-
-    else
-      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
+      respond_with_error user.errors.full_messages.to_sentence, :unprocessable_entity
     end
   end
 
   def destroy
     if @user.blank?
       respond_with_error "User with id #{params[:id]} not found.", :not_found
-
     elsif @user.destroy
-      render json: @user
-
+      render status: :ok, json: @user
     else
-      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
+      respond_with_error @user.errors.full_messages.to_sentence, :unprocessable_entity
     end
   end
 
