@@ -1,16 +1,9 @@
 const setToLocalStorage = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
+  if (value !== null) {
+    localStorage.setItem(key, JSON.stringify(value));
+  } else localStorage.removeItem(key);
 };
 
-const getFromLocalStorage = key => {
-  let storedValue = null;
-  try {
-    storedValue = JSON.parse(localStorage.getItem(key));
-  } catch (error) {
-    localStorage.setItem(key, JSON.stringify(null));
-    logger.error(error);
-  }
-  return storedValue;
-};
+const getFromLocalStorage = key => JSON.parse(localStorage.getItem(key));
 
 export { setToLocalStorage, getFromLocalStorage };
