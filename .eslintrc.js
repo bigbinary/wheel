@@ -1,7 +1,7 @@
 module.exports = {
   env: {
-    // window object etc part of browser are made available globally.
-    browser: true,
+    browser: true, // window object etc part of browser are made available globally.
+    es2020: true, // to include BigInt support
     es6: true,
     commonjs: true,
     node: true,
