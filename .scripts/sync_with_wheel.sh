@@ -40,7 +40,6 @@ declare -a configs=(
   ".node-version"
   ".nvmrc"
   ".ruby-version"
-  "Dockerfile.dev"
   ".erb-lint.yml"
 )
 
