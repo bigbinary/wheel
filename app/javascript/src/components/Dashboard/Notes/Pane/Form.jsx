@@ -38,13 +38,13 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
             <Input
               label="Title"
               name="title"
-              className="flex-grow-0 w-full"
+              className="w-full flex-grow-0"
               required
             />
             <Textarea
               label="Description"
               name="description"
-              className="flex-grow-0 w-full"
+              className="w-full flex-grow-0"
               rows={8}
               required
             />

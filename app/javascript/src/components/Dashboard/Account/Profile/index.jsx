@@ -19,7 +19,7 @@ const Profile = () => {
   return (
     <Container>
       <Header title="My Profile" className="border-b border-gray-200" />
-      <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
+      <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={{
             email: user.email,
@@ -33,7 +33,7 @@ const Profile = () => {
           validationSchema={formValidationSchemas.profileForm}
         >
           {({ handleSubmit }) => (
-            <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+            <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input name="email" label="Email" type="email" required />
               <Input name="firstName" label="First Name" required />
               <Input name="lastName" label="Last name" required />

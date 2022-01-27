@@ -41,7 +41,7 @@ const Edit = () => {
   return (
     <Container>
       <Header title="Change Password" className="border-b border-gray-200" />
-      <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
+      <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={{
             currentPassword: "",
@@ -51,7 +51,7 @@ const Edit = () => {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+          <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
             <Input
               {...formikInputAttrs}
               name="currentPassword"

@@ -10,13 +10,13 @@ export default function EmptyState({
   primaryActionLabel,
 }) {
   return (
-    <div className="flex flex-row items-start justify-start w-full h-full">
-      <div className="w-3/5 m-auto">
-        <div className="max-w-sm m-auto mb-8">
+    <div className="flex h-full w-full flex-row items-start justify-start">
+      <div className="m-auto w-3/5">
+        <div className="m-auto mb-8 max-w-sm">
           <img src={image} />
         </div>
-        <h2 className="mb-4 text-2xl font-medium text-center">{title}</h2>
-        <p className="mb-8 text-base font-normal leading-relaxed text-center text-gray-600">
+        <h2 className="mb-4 text-center text-2xl font-medium">{title}</h2>
+        <p className="mb-8 text-center text-base font-normal leading-relaxed text-gray-600">
           {subtitle}
         </p>
         <div className="flex flex-row items-center justify-center">
