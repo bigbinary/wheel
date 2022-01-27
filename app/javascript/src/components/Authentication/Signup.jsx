@@ -37,9 +37,9 @@ const Signup = ({ history }) => {
   };
 
   return (
-    <div className="flex flex-row items-center justify-center w-screen h-screen p-6 overflow-x-hidden overflow-y-auto bg-gray-100">
-      <div className="flex flex-col items-center justify-center w-full h-full mx-auto sm:max-w-md">
-        <h2 className="mb-5 text-3xl font-extrabold text-center text-gray-800">
+    <div className="flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-6">
+      <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
+        <h2 className="mb-5 text-center text-3xl font-extrabold text-gray-800">
           Signup
         </h2>
         <Formik
@@ -50,7 +50,7 @@ const Signup = ({ history }) => {
           validationSchema={formValidationSchemas.signupForm}
         >
           {({ handleSubmit }) => (
-            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+            <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
               <Input
                 name="email"
                 type="email"
@@ -101,7 +101,7 @@ const Signup = ({ history }) => {
             </Form>
           )}
         </Formik>
-        <div className="flex flex-row items-center justify-start mt-4 space-x-1">
+        <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>
           <Button label="Login" style="link" to="/login" />
         </div>

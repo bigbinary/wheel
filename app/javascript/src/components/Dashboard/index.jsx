@@ -10,7 +10,7 @@ import Notes from "./Notes";
 
 const Home = () => {
   return (
-    <div className="flex w-full h-screen">
+    <div className="flex h-screen w-full">
       <Sidebar />
       <Switch>
         <Route exact path="/notes" component={Notes} />

@@ -28,7 +28,7 @@ export default function NoteTable({
   const [selectedNote, setSelectedNote] = useState({});
   return (
     <>
-      <div className="w-full notes-table-height">
+      <div className="notes-table-height w-full">
         <Table
           rowData={notes}
           columnData={COLUMN_DATA}
