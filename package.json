@@ -26,10 +26,10 @@
       "eslint --fix"
     ],
     "./**/*.rb": [
-      "bundle exec rubocop -a"
+      "bundle exec rubocop -a --force-exclusion"
     ],
     "{Gemfile,Rakefile,config.ru}": [
-      "bundle exec rubocop -a"
+      "bundle exec rubocop -a --force-exclusion"
     ],
     "app/views/**/*.html.erb": [
       "bundle exec erblint --lint-all --format compact -a"
