@@ -1,43 +1,28 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < Api::V1::BaseController
-  skip_before_action :authenticate_user!, only: [:create]
-  skip_before_action :authenticate_user_using_x_auth_token, only: [:create]
+  skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user_using_x_auth_token, only: :create
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user!, only: %i[show destroy]
 
   def show
-    if @user
-      render json: @user
-    else
-      respond_with_error "User with id #{params[:id]} not found.", :not_found
-    end
+    render status: :ok, json: @user
   end
 
   def create
-    user = User.create user_params
-
-    if user.valid?
-      sign_in(user)
-      render status: :ok, json: { user: user, auth_token: user.authentication_token }
-    else
-      respond_with_error user.errors.full_messages.to_sentence, :unprocessable_entity
-    end
+    user = User.create!(user_params)
+    render status: :ok, json: { user: user, auth_token: user.authentication_token }
   end
 
   def destroy
-    if @user.blank?
-      respond_with_error "User with id #{params[:id]} not found.", :not_found
-    elsif @user.destroy
-      render status: :ok, json: @user
-    else
-      respond_with_error @user.errors.full_messages.to_sentence, :unprocessable_entity
-    end
+    @user.destroy!
+    respond_with_success(t("successfully_destroyed", count: 1, entity: "User"))
   end
 
   private
 
-    def set_user
+    def set_user!
       @user = User.find(params[:id])
     end
 

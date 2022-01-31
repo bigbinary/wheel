@@ -11,7 +11,7 @@ class User < ApplicationRecord
   before_save :ensure_authentication_token_is_present
 
   validates :first_name, :last_name, :email, presence: true
-  validates :email, uniqueness: true
+  validates_uniqueness_of :email, case_sensitive: false
 
   def name
     [first_name, last_name].join(" ").strip

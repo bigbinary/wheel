@@ -1,45 +1,30 @@
 # frozen_string_literal: true
 
 class Api::V1::NotesController < Api::V1::BaseController
-  before_action :load_note!, only: %i[update delete]
-  before_action :load_notes!, only: :bulk_delete
+  before_action :set_note!, only: %i[update delete]
+  before_action :set_notes, only: :bulk_delete
 
   def index
-    render json: { notes: current_user.notes }
+    render status: :ok, json: { notes: current_user.notes }
   end
 
   def create
-    if (note = current_user.notes.new(note_params)) && note.save
-      render status: :ok, json: {
-        note: note,
-        notice: "#{note.title.humanize} has been added to your notes!"
-      }
-    else
-      render status: :unprocessable_entity, json: {
-        error: note.errors.full_messages.to_sentence
-      }
-    end
+    note = current_user.notes.new(note_params)
+    note.save!
+    respond_with_success(t("successfully_created", entity: "Note"))
   end
 
   def update
-    if @note.update(note_params)
-      render status: :ok, json: {
-        notice: "#{@note.title.humanize} note has been updated"
-      }
-    else
-      render status: :unprocessable_entity, json: {
-        error: @note.errors.full_messages.to_sentence
-      }
-    end
+    @note.update!(note_params)
+    respond_with_success(t("successfully_updated", entity: "Note"))
   end
 
   def bulk_delete
+    records_size = @notes.size
     if @notes.destroy_all
-      render status: :ok, json: {
-        notice: I18n.t("notice.note", count: @notes.size, action: "deleted")
-      }
+      respond_with_success(t("successfully_deleted", count: records_size, entity: records_size > 1 ? "Notes" : "Note"))
     else
-      render status: :unprocessable_entity, json: { error: "Something went wrong!" }
+      respond_with_error(t("Something went wrong!"))
     end
   end
 
@@ -49,11 +34,11 @@ class Api::V1::NotesController < Api::V1::BaseController
       params.require(:note).permit(:title, :description)
     end
 
-    def load_note!
+    def set_note!
       @note = current_user.notes.find(params[:id])
     end
 
-    def load_notes!
+    def set_notes
       @notes = current_user.notes.where(id: params[:ids])
     end
 end

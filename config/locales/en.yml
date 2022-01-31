@@ -30,9 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  notice:
-    note:
-      one: "Note has been successfully %{action}."
-      other: "Notes have been successfully %{action}."
-
+  invalid_credentials: "Incorrect email or password!"
+  successfully_created: "%{entity} was successfully created!"
+  successfully_updated: "%{entity} was successfully updated!"
+  successfully_deleted:
+    one: "%{entity} has been successfully deleted!"
+    other: "%{entity} have been successfully deleted!"

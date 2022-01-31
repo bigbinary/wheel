@@ -59,6 +59,8 @@ group :development, :test do
 
   # For auto-generating demo data
   gem "faker", "~> 2.19"
+
+  gem "byebug"
 end
 
 group :development, :staging, :heroku do
