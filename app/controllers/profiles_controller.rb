@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class ProfilesController < Devise::RegistrationsController
-  prepend_before_action :authenticate_scope!
+  prepend_before_action :authenticate_scope!, only: :update
   before_action :load_resource
 
   def update
     if resource.update_with_password(update_params)
       bypass_sign_in resource, scope: :user
-      render status: :ok, json: { notice: "User profile has been successfully updated" }
+      render status: :ok, json: { notice: "User profile has been successfully updated", user: resource }
     else
       clean_up_passwords resource
       render status: :unprocessable_entity, json: { error: "Couldn't update the user profile! Please try again." }

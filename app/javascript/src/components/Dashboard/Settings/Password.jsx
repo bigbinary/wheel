@@ -6,7 +6,7 @@ import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
 import profilesApi from "apis/profiles";
-import { DASHBOARD_PATH } from "components/routeConstants";
+import { LOGIN_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 
 import {
@@ -23,7 +23,7 @@ const Password = () => {
     try {
       await profilesApi.updatePassword(data);
       authDispatch({ type: "LOGOUT" });
-      window.location.href = DASHBOARD_PATH;
+      window.location.href = LOGIN_PATH;
     } catch (error) {
       logger.error(error);
     }

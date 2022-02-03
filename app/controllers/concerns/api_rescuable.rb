@@ -29,7 +29,7 @@ module ApiRescuable
 
     def handle_api_error(exception)
       log_exception(exception)
-      respond_with_error(exception.record.errors_to_sentence, :internal_server_error)
+      respond_with_error(exception.original_message, :internal_server_error)
     end
 
     def log_exception(exception)

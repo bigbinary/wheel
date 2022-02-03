@@ -6,7 +6,7 @@ import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
 import profilesApi from "apis/profiles";
-import { DASHBOARD_PATH } from "components/routeConstants";
+import { LOGIN_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
@@ -21,7 +21,7 @@ const Email = () => {
     try {
       await profilesApi.updateEmail(data);
       authDispatch({ type: "LOGOUT" });
-      window.location.href = DASHBOARD_PATH;
+      window.location.href = LOGIN_PATH;
     } catch (err) {
       logger.error(err);
     }

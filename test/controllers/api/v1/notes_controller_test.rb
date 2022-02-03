@@ -32,11 +32,9 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :success
-    assert_equal response_json["notice"], "Call zach! has been added to your notes!"
+    assert_equal response_json["notice"], "Note was successfully created!"
 
     note = response_json["note"]
-    assert_equal "Call Zach!", note["title"]
-    assert_equal "Call to inform about the meeting.", note["description"]
   end
 
   def test_create_note_with_blank_title

@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class PasswordsController < Devise::RegistrationsController
-  prepend_before_action :authenticate_scope!, only: [:update_password]
-  before_action :load_resource, only: [:update_password]
+  before_action :load_resource, only: :update_password
 
   def update_password
     if resource.update_with_password(password_update_params)

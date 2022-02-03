@@ -7,6 +7,7 @@ import { Container, Header } from "neetoui/layouts";
 
 import profilesApi from "apis/profiles";
 import { useUserState } from "contexts/user";
+import { useUserDispatch } from "contexts/user";
 
 import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";
 import { buildProfileFormInitialValues } from "./utils";
@@ -14,10 +15,14 @@ import { buildProfileFormInitialValues } from "./utils";
 const Profile = () => {
   const [submitted, setSubmitted] = useState(false);
   const { user } = useUserState();
+  const userDispatch = useUserDispatch();
 
   const handleSubmit = async data => {
     try {
-      await profilesApi.updateProfile(data);
+      const {
+        data: { user },
+      } = await profilesApi.updateProfile(data);
+      userDispatch({ type: "SET_USER", payload: { user } });
     } catch (err) {
       logger.error(err);
     }

@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 def enable_test_coverage
@@ -48,4 +47,8 @@ end
 
 def response_json
   @_response_json ||= JSON.parse(response.body)
+end
+
+def response_body
+  response.parsed_body
 end
