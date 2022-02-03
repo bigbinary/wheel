@@ -5,7 +5,7 @@ const updatePassword = ({
   password,
   passwordConfirmation: password_confirmation,
 }) =>
-  axios.put("my/password/update", {
+  axios.patch("my/password", {
     user: { current_password, password, password_confirmation },
   });
 
@@ -15,13 +15,17 @@ const updateProfile = ({
   lastName: last_name,
   password: current_password,
 }) =>
-  axios.put("/my/profile/update", {
+  axios.put("/my/profile", {
     user: { email, first_name, last_name, current_password },
   });
 
-const registrationsApi = {
+const updateEmail = ({ email, password: current_password }) =>
+  axios.patch("/my/email", { user: { email, current_password } });
+
+const profilesApi = {
   updatePassword,
   updateProfile,
+  updateEmail,
 };
 
-export default registrationsApi;
+export default profilesApi;

@@ -2,14 +2,14 @@ import Login from "components/Authentication/Login";
 import PasswordReset from "components/Authentication/ResetPassword";
 import Signup from "components/Authentication/Signup";
 import Dashboard from "components/Dashboard";
-import PasswordEdit from "components/Dashboard/Account/Password/Edit";
-import Profile from "components/Dashboard/Account/Profile";
 import Notes from "components/Dashboard/Notes";
+import Settings from "components/Dashboard/Settings";
 
 export const DASHBOARD_PATH = "/";
 export const NOTES_PATH = "/notes";
-export const CHANGE_PASSWORD_PATH = "/my/password/edit";
-export const PROFILE_PATH = "/my/profile";
+export const CHANGE_PASSWORD_PATH = "/settings?tab=password";
+export const PROFILE_PATH = "/settings?tab=profile";
+export const SETTINGS_PATH = "/settings";
 export const LOGIN_PATH = "/login";
 export const SIGNUP_PATH = "/signup";
 export const RESET_PASSWORD_PATH = "/my/password/new";
@@ -37,11 +37,7 @@ export const DASHBOARD_ROUTES = [
     component: Notes,
   },
   {
-    path: CHANGE_PASSWORD_PATH,
-    component: PasswordEdit,
-  },
-  {
-    path: PROFILE_PATH,
-    component: Profile,
+    path: SETTINGS_PATH,
+    component: Settings,
   },
 ];

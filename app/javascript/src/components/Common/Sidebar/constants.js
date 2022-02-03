@@ -16,15 +16,5 @@ export const SIDENAV_LINKS = [
     label: "Settings",
     to: "/settings",
     icon: Settings,
-    items: [
-      {
-        label: "My Profile",
-        to: "/my/profile",
-      },
-      {
-        label: "Change Password",
-        to: "/my/password/edit",
-      },
-    ],
   },
 ];

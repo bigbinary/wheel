@@ -4,7 +4,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   skip_before_action :authenticate_user!, only: :create
   skip_before_action :authenticate_user_using_x_auth_token, only: :create
 
-  before_action :set_user!, only: %i[show destroy]
+  before_action :load_user!, only: %i[show destroy]
 
   def show
     render status: :ok, json: @user
@@ -22,7 +22,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   private
 
-    def set_user!
+    def load_user!
       @user = User.find(params[:id])
     end
 

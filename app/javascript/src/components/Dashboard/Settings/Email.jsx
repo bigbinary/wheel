@@ -5,19 +5,23 @@ import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
-import registrationsApi from "apis/registrations";
+import profilesApi from "apis/profiles";
+import { DASHBOARD_PATH } from "components/routeConstants";
+import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
-import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";
-import { buildProfileFormInitialValues } from "./utils";
+import { EMAIL_FORM_VALIDATION_SCHEMA } from "./constants";
 
-const Profile = () => {
+const Email = () => {
   const [submitted, setSubmitted] = useState(false);
   const { user } = useUserState();
+  const authDispatch = useAuthDispatch();
 
   const handleSubmit = async data => {
     try {
-      await registrationsApi.updateProfile(data);
+      await profilesApi.updateEmail(data);
+      authDispatch({ type: "LOGOUT" });
+      window.location.href = DASHBOARD_PATH;
     } catch (err) {
       logger.error(err);
     }
@@ -25,20 +29,18 @@ const Profile = () => {
 
   return (
     <Container>
-      <Header title="My Profile" className="border-b border-gray-200" />
+      <Header title="Update Email" className="border-b border-gray-200" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
-          initialValues={buildProfileFormInitialValues(user)}
+          initialValues={{ email: user.email }}
           onSubmit={handleSubmit}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          validationSchema={PROFILE_FORM_VALIDATION_SCHEMA}
+          validationSchema={EMAIL_FORM_VALIDATION_SCHEMA}
         >
           {({ isSubmitting }) => (
-            <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+            <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input required name="email" label="Email" type="email" />
-              <Input required name="firstName" label="First Name" />
-              <Input required name="lastName" label="Last name" />
               <Input
                 required
                 name="password"
@@ -62,4 +64,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Email;

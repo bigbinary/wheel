@@ -14,13 +14,8 @@ const Dashboard = () => {
     <div className="flex h-screen w-full">
       <Sidebar />
       <Switch>
-        {DASHBOARD_ROUTES.map(route => (
-          <Route
-            exact
-            key={route.path}
-            path={route.path}
-            component={route.component}
-          />
+        {DASHBOARD_ROUTES.map(({ path, component }) => (
+          <Route exact key={path} path={path} component={component} />
         ))}
         <Redirect from={DASHBOARD_PATH} to={NOTES_PATH} />
       </Switch>

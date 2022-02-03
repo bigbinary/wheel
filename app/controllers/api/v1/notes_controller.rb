@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Api::V1::NotesController < Api::V1::BaseController
-  before_action :set_note!, only: %i[update delete]
-  before_action :set_notes, only: :bulk_delete
+  before_action :load_note!, only: %i[update delete]
+  before_action :load_notes, only: :bulk_delete
 
   def index
     render status: :ok, json: { notes: current_user.notes }
@@ -34,11 +34,11 @@ class Api::V1::NotesController < Api::V1::BaseController
       params.require(:note).permit(:title, :description)
     end
 
-    def set_note!
+    def load_note!
       @note = current_user.notes.find(params[:id])
     end
 
-    def set_notes
+    def load_notes
       @notes = current_user.notes.where(id: params[:ids])
     end
 end

@@ -1,24 +1,29 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Toastr } from "neetoui";
+import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
-import registrationsApi from "apis/registrations";
+import profilesApi from "apis/profiles";
+import { DASHBOARD_PATH } from "components/routeConstants";
+import { useAuthDispatch } from "contexts/auth";
 
 import {
   CHANGE_PASSWORD_FORM_INITIAL_VALUES,
   CHANGE_PASSWORD_FORM_VALIDATION_SCHEMA,
   CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES,
-} from "../constants";
+} from "./constants";
 
-const Edit = () => {
+const Password = () => {
   const [submitted, setSubmitted] = useState(false);
+  const authDispatch = useAuthDispatch();
 
   const handleSubmit = async data => {
     try {
-      await registrationsApi.updatePassword(data);
+      await profilesApi.updatePassword(data);
+      authDispatch({ type: "LOGOUT" });
+      window.location.href = DASHBOARD_PATH;
     } catch (error) {
       logger.error(error);
     }
@@ -36,7 +41,7 @@ const Edit = () => {
           validateOnChange={submitted}
         >
           {({ isSubmitting }) => (
-            <Form className="w-full p-8 space-y-6 bg-white border rounded-lg shadow-sm">
+            <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input
                 {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
                 name="currentPassword"
@@ -70,4 +75,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default Password;

@@ -2,7 +2,7 @@
 
 require "test_helper"
 
-class RegistrationsControllerTest < ActionDispatch::IntegrationTest
+class ProfilesControllerTest < ActionDispatch::IntegrationTest
   def test_successfull_user_registration
     assert_difference("User.count") do
       post user_registration_url, params: {

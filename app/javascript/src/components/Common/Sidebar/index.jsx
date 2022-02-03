@@ -47,7 +47,6 @@ const Sidebar = () => {
 
   return (
     <NeetoUISidebar
-      collapsible
       isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
       appName={APP_NAME}
