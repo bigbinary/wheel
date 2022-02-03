@@ -39,7 +39,7 @@ const Signup = ({ history }) => {
           validationSchema={SIGNUP_FORM_VALIDATION_SCHEMA}
         >
           {({ isSubmitting }) => (
-            <Form className="w-full p-8 space-y-6 bg-white border rounded-md shadow">
+            <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
               <Input
                 required
                 name="email"

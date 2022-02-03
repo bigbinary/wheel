@@ -33,7 +33,7 @@ const ResetPassword = () => {
         >
           {({ isSubmitting }) => (
             <Form
-              className="w-full p-8 space-y-6 bg-white border rounded-md shadow"
+              className="w-full space-y-6 rounded-md border bg-white p-8 shadow"
               id="new_user"
             >
               <Input name="email" label="Email" type="email" required />
