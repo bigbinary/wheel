@@ -15,7 +15,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     get api_v1_notes_url, headers: @headers
 
     assert_response :success
-    note = response_json["notes"].first
+    note = response_body["notes"].first
     assert_equal %w{ id description title created_at updated_at user_id }.sort, note.keys.sort
   end
 
@@ -32,9 +32,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :success
-    assert_equal response_json["notice"], "Note was successfully created!"
-
-    note = response_json["note"]
+    assert_equal response_body["notice"], t("successfully_created", entity: "Note")
   end
 
   def test_create_note_with_blank_title
@@ -42,7 +40,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
                            headers: @headers
     assert_response :unprocessable_entity
 
-    assert_equal response_json["error"], "Title can't be blank"
+    assert_equal response_body["error"], "Title can't be blank"
   end
 
   def test_create_note_with_blank_description
@@ -50,7 +48,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
                            headers: @headers
     assert_response :unprocessable_entity
 
-    assert_equal response_json["error"], "Description can't be blank"
+    assert_equal response_body["error"], "Description can't be blank"
   end
 
   def test_delete_single_note
@@ -62,6 +60,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_response :success
+    assert_equal response_body["notice"], t("successfully_deleted", count: 1, entity: "Note")
   end
 
   def test_delete_multiple_note
@@ -73,6 +72,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
       post bulk_delete_api_v1_notes_path, params: { ids: [milk.id, bulbs.id, rent.id] }, headers: @headers
     end
     assert_response :success
+    assert_equal response_body["notice"], t("successfully_deleted", count: 3, entity: "Notes")
   end
 
   def test_delete_invalid_id
@@ -80,6 +80,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
       post bulk_delete_api_v1_notes_path, params: { ids: ["random_id"] }, headers: @headers
     end
 
-    assert_response :success
+    assert_response :unprocessable_entity
+    assert_equal response_body["error"], t("not_found", entity: "Note")
   end
 end

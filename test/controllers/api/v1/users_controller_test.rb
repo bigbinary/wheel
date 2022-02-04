@@ -22,9 +22,8 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     get api_v1_user_url(@admin), params: { format: :json },
                                 headers: headers(@admin, an_invalid_email)
 
-    assert_response 401
-    assert_equal "Could not authenticate with the provided credentials",
-      response_body["error"]
+    assert_response :unauthorized
+    assert_equal response_body["error"], t("invalid_credentials")
   end
 
   def test_create_user_with_valid_info
@@ -64,16 +63,15 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     post api_v1_users_url, params: { user: invalid_user_json, format: :json }
 
-    assert_response 422
+    assert_response :unprocessable_entity
     assert_equal "Password can't be blank", response_body["error"]
   end
 
   def test_destroy_should_not_be_invokable_without_authentication
     delete api_v1_user_url(@admin.email), params: { id: @admin.email, format: :json }
 
-    assert_response 401
-    assert_equal "Could not authenticate with the provided credentials",
-      response_body["error"]
+    assert_response :unauthorized
+    assert_equal response_body["error"], t("invalid_credentials")
   end
 
   def test_destroy_should_destroy_user
@@ -90,8 +88,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
     delete api_v1_user_url(@admin), params: { format: :json }, headers: headers(@admin, email)
 
-    assert_response 401
-    assert_equal "Could not authenticate with the provided credentials",
-      response_body["error"]
+    assert_response :unauthorized
+    assert_equal response_body["error"], t("invalid_credentials")
   end
 end

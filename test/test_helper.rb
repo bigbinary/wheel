@@ -45,10 +45,6 @@ def headers(user, options = {})
   }.merge(options)
 end
 
-def response_json
-  @_response_json ||= JSON.parse(response.body)
-end
-
 def response_body
   response.parsed_body
 end
