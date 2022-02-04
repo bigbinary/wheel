@@ -12,7 +12,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def create
     user = User.create!(user_params)
-    render status: :ok, json: { user: user, auth_token: user.authentication_token }
+    respond_with_json(:ok, { user: user, auth_token: user.authentication_token })
   end
 
   def destroy

@@ -40,5 +40,6 @@ class Api::V1::NotesController < Api::V1::BaseController
 
     def load_notes
       @notes = current_user.notes.where(id: params[:ids])
+      respond_with_error(t("not_found", entity: "Note")) if @notes.empty?
     end
 end

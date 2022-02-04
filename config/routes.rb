@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     scope "my" do
       put "profile", to: "profiles#update"
-      patch "password", to: "passwords#update_password"
+      patch "password", to: "passwords#update"
       patch "email", to: "profiles#update_email"
     end
   end

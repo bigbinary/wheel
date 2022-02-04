@@ -1,21 +1,23 @@
 # frozen_string_literal: true
 
 class PasswordsController < Devise::RegistrationsController
-  before_action :load_resource, only: :update_password
+  include ApiResponders
 
-  def update_password
-    if resource.update_with_password(password_update_params)
-      sign_out(resource)
-      render status: :ok, json: { notice: "Password has been successfully updated" }
+  before_action :load_resource
+
+  def update
+    if resource.update_with_password(update_params)
+      bypass_sign_in resource, scope: :user
+      respond_with_success(t("successfully_updated", entity: "Password"))
     else
       clean_up_passwords resource
-      render status: :unprocessable_entity, json: { error: "Couldn't update the password! Please try again." }
+      respond_with_error(resource.errors_to_sentence)
     end
   end
 
   private
 
-    def password_update_params
+    def update_params
       resource_params.permit(:password, :password_confirmation, :current_password)
     end
 

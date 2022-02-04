@@ -10,7 +10,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
       respond_with_error(t("invalid_credentials"), :unauthorized)
     else
       sign_in(user)
-      render status: :created, json: { auth_token: user.authentication_token, user: user, is_admin: user.super_admin? }
+      respond_with_json(:created, { auth_token: user.authentication_token, user: user, is_admin: user.super_admin? })
     end
   end
 

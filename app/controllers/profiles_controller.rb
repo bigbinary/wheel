@@ -1,26 +1,26 @@
 # frozen_string_literal: true
 
 class ProfilesController < Devise::RegistrationsController
+  include ApiResponders
+
   prepend_before_action :authenticate_scope!, only: :update
   before_action :load_resource
 
   def update
     if resource.update_with_password(update_params)
       bypass_sign_in resource, scope: :user
-      render status: :ok, json: { notice: "User profile has been successfully updated", user: resource }
+      respond_with_success(t("successfully_updated", entity: "User profile"), :ok, { user: resource })
     else
-      clean_up_passwords resource
-      render status: :unprocessable_entity, json: { error: "Couldn't update the user profile! Please try again." }
+      respond_with_error(resource.errors_to_sentence)
     end
   end
 
   def update_email
     if resource.update_with_password(update_params)
       sign_out(resource)
-      render status: :ok, json: { notice: "Email has been successfully updated" }
+      respond_with_success(t("successfully_updated", entity: "Email"))
     else
-      clean_up_passwords resource
-      render status: :unprocessable_entity, json: { error: "Couldn't update the Email! Please try again." }
+      respond_with_error(resource.errors_to_sentence)
     end
   end
 
