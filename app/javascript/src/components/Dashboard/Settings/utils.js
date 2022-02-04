@@ -8,3 +8,8 @@ export const buildProfileFormInitialValues = user => ({
   lastName: user.last_name,
   password: "",
 });
+
+export const buildEmailFormInitialValues = user => ({
+  email: user.email,
+  password: "",
+});

@@ -6,8 +6,6 @@ import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
 import profilesApi from "apis/profiles";
-import { LOGIN_PATH } from "components/routeConstants";
-import { useAuthDispatch } from "contexts/auth";
 
 import {
   CHANGE_PASSWORD_FORM_INITIAL_VALUES,
@@ -17,13 +15,11 @@ import {
 
 const Password = () => {
   const [submitted, setSubmitted] = useState(false);
-  const authDispatch = useAuthDispatch();
 
-  const handleSubmit = async data => {
+  const handleSubmit = async (data, { resetForm }) => {
     try {
       await profilesApi.updatePassword(data);
-      authDispatch({ type: "LOGOUT" });
-      window.location.href = LOGIN_PATH;
+      resetForm();
     } catch (error) {
       logger.error(error);
     }

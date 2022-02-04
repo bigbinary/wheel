@@ -36,6 +36,7 @@ export const PROFILE_FORM_VALIDATION_SCHEMA = yup.object().shape({
 
 export const EMAIL_FORM_VALIDATION_SCHEMA = yup.object().shape({
   email: yup.string().email("Invalid email address").required("Required"),
+  password: yup.string().required("Required"),
 });
 
 export const CHANGE_PASSWORD_FORM_INITIAL_VALUES = {

@@ -17,7 +17,7 @@ const Settings = ({ history, location }) => {
 
   return (
     <>
-      <MenuBar showMenu={true} title="Settings">
+      <MenuBar showMenu title="Settings">
         {SETTINGS_NAVLINKS.map(navlink => (
           <MenuBar.Item
             key={navlink.key}
