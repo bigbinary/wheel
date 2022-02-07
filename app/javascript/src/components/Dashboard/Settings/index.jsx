@@ -8,12 +8,16 @@ import { getActiveNavLink } from "./utils";
 
 const Settings = ({ history, location }) => {
   const { tab } = queryString.parse(location.search);
-
   const [activeNavlink, setActiveNavlink] = useState(
-    getActiveNavLink(tab) || SETTINGS_NAVLINKS[0]
+    () => getActiveNavLink(tab) || SETTINGS_NAVLINKS[0]
   );
 
   useEffect(() => history.push(activeNavlink?.path), [activeNavlink]);
+
+  if (location.state?.resetTab) {
+    location.state.resetTab = null;
+    setActiveNavlink(() => getActiveNavLink(tab));
+  }
 
   return (
     <>

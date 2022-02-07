@@ -9,15 +9,17 @@ import profilesApi from "apis/profiles";
 import { useUserState } from "contexts/user";
 import { useUserDispatch } from "contexts/user";
 
+import ConfirmPasswordModal from "./ConfirmPasswordModal";
 import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";
 import { buildProfileFormInitialValues } from "./utils";
 
 const Profile = () => {
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { user } = useUserState();
   const userDispatch = useUserDispatch();
 
-  const handleSubmit = async data => {
+  const handleSubmit = async (data, { resetForm }) => {
     try {
       const {
         data: { user },
@@ -25,7 +27,17 @@ const Profile = () => {
       userDispatch({ type: "SET_USER", payload: { user } });
     } catch (err) {
       logger.error(err);
+    } finally {
+      resetForm("password");
+      setShowPasswordModal(false);
     }
+  };
+
+  const promptPassword = async (e, validateForm) => {
+    e.preventDefault();
+    setSubmitted(true);
+    const { firstName, lastName } = await validateForm();
+    if (!firstName && !lastName) setShowPasswordModal(true);
   };
 
   return (
@@ -39,25 +51,34 @@ const Profile = () => {
           validateOnChange={submitted}
           validationSchema={PROFILE_FORM_VALIDATION_SCHEMA}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, handleSubmit: submitForm, validateForm }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input required name="firstName" label="First Name" />
               <Input required name="lastName" label="Last name" />
-              <Input
-                required
-                name="password"
-                label="Current password"
-                type="password"
-              />
               <Button
                 fullWidth
                 type="submit"
-                onClick={() => setSubmitted(true)}
+                onClick={e => promptPassword(e, validateForm)}
                 label="Update"
                 className="h-8"
                 loading={isSubmitting}
                 disabled={isSubmitting}
               />
+              <ConfirmPasswordModal
+                isOpen={showPasswordModal}
+                onClose={() => setShowPasswordModal(false)}
+                header="Please enter your password to continue."
+                onSubmit={submitForm}
+                isSubmitting={isSubmitting}
+              >
+                <Input
+                  required
+                  name="password"
+                  label="Current password"
+                  type="password"
+                  className="my-2"
+                />
+              </ConfirmPasswordModal>
             </Form>
           )}
         </Formik>

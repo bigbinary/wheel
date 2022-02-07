@@ -33,11 +33,11 @@ const Sidebar = () => {
   const bottomLinks = [
     {
       label: "My Profile",
-      onClick: () => history.push(PROFILE_PATH),
+      onClick: () => history.push(PROFILE_PATH, { resetTab: true }),
     },
     {
       label: "Change Password",
-      onClick: () => history.push(CHANGE_PASSWORD_PATH),
+      onClick: () => history.push(CHANGE_PASSWORD_PATH, { resetTab: true }),
     },
     {
       label: "Logout",

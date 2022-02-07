@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Form, Formik } from "formik";
-import { Button, Alert } from "neetoui";
+import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
@@ -10,33 +10,33 @@ import { LOGIN_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
+import ConfirmPasswordModal from "./ConfirmPasswordModal";
 import { EMAIL_FORM_VALIDATION_SCHEMA } from "./constants";
 import { buildEmailFormInitialValues } from "./utils";
 
 const Email = () => {
-  const [showUpdateAlert, setShowUpdateAlert] = useState(false);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const { user } = useUserState();
   const authDispatch = useAuthDispatch();
 
-  const handleSubmit = async data => {
+  const handleSubmit = async (data, { resetForm }) => {
     try {
       await profilesApi.updateEmail(data);
       authDispatch({ type: "LOGOUT" });
       window.location.href = LOGIN_PATH;
     } catch (err) {
-      setShowUpdateAlert(false);
+      resetForm("password");
+      setShowPasswordModal(false);
       logger.error(err);
     }
   };
 
-  const showUpdateConfirmation = async (e, validateForm) => {
+  const promptPassword = async (e, validateForm) => {
     e.preventDefault();
     setSubmitted(true);
-    const errors = await validateForm();
-    if (Object.keys(errors).length < 1) {
-      setShowUpdateAlert(true);
-    }
+    const { email } = await validateForm();
+    if (!email) setShowPasswordModal(true);
   };
 
   return (
@@ -53,30 +53,36 @@ const Email = () => {
           {({ isSubmitting, handleSubmit: submitForm, validateForm }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input required name="email" label="Email" type="email" />
-              <Input
-                required
-                name="password"
-                label="Current password"
-                type="password"
-              />
               <Button
                 fullWidth
                 type="submit"
-                onClick={e => showUpdateConfirmation(e, validateForm)}
+                onClick={e => promptPassword(e, validateForm)}
                 label="Update"
                 className="h-8"
                 loading={isSubmitting}
                 disabled={isSubmitting}
               />
-              <Alert
-                isOpen={showUpdateAlert}
-                message="Are you sure you want to update your email?"
-                onClose={() => setShowUpdateAlert(false)}
+              <ConfirmPasswordModal
+                isOpen={showPasswordModal}
+                onClose={() => setShowPasswordModal(false)}
+                header="Are you sure you want to update your email?"
                 onSubmit={submitForm}
-                title="You will be logged out upon updating your email!"
-                loading={isSubmitting}
-                disabled={isSubmitting}
-              />
+                isSubmitting={isSubmitting}
+              >
+                <>
+                  <p className="my-2">
+                    You will be logged out upon updating your email! Please
+                    enter your password to continue.
+                  </p>
+                  <Input
+                    required
+                    name="password"
+                    label="Current password"
+                    type="password"
+                    className="my-2"
+                  />
+                </>
+              </ConfirmPasswordModal>
             </Form>
           )}
         </Formik>
