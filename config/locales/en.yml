@@ -38,3 +38,4 @@ en:
     one: "%{entity} has been successfully deleted!"
     other: "%{entity} have been successfully deleted!"
   update_failure: "Couldn't update the %{entity}! Please try again."
+  signup_successful: "Signup successful. Please login to continue"

@@ -37,7 +37,6 @@ class NoteTest < ActiveSupport::TestCase
     @note.save
     duplicate_note = @note.dup
     duplicate_note.save
-    byebug
     assert_not duplicate_note.valid?
     assert_equal duplicate_note.errors.full_messages, ["Title has already been taken"]
   end

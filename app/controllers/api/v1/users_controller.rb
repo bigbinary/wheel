@@ -13,7 +13,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   def create
     user = User.create!(user_params)
     respond_with_success(
-      "Signup successful. Please login to continue", :ok,
+      t("signip_successful"), :ok,
       { user: user, auth_token: user.authentication_token })
   end
 
