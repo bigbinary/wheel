@@ -55,7 +55,8 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
       email: valid_email,
       first_name: "John",
       last_name: "Smith",
-      password: nil # Invalid password
+      password: nil,
+      password_confirmation: nil
     }
 
     # Ensure that there are no users with this email in db
@@ -64,7 +65,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     post api_v1_users_url, params: { user: invalid_user_json, format: :json }
 
     assert_response :unprocessable_entity
-    assert_equal "Password can't be blank", response_body["error"]
+    assert_equal "Password can't be blank and Password confirmation can't be blank", response_body["error"]
   end
 
   def test_destroy_should_not_be_invokable_without_authentication

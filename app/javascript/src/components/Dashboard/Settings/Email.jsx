@@ -70,7 +70,7 @@ const Email = () => {
               />
               <Alert
                 isOpen={showUpdateAlert}
-                message="Are you sure you want to continue? You will need to login to continue."
+                message="Are you sure you want to update your email?"
                 onClose={() => setShowUpdateAlert(false)}
                 onSubmit={submitForm}
                 title="You will be logged out upon updating your email!"

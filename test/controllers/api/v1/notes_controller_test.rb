@@ -5,13 +5,12 @@ require "test_helper"
 class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   def setup
     @admin = create :user, :admin
+    sign_in @admin
+    @notes = create_list(:note, 3, user: @admin)
     @headers = headers(@admin)
   end
 
   def test_list_all_notes_for_a_user
-    create :note, :milk, user: @admin
-    create :note, :rent, user: @admin
-
     get api_v1_notes_url, headers: @headers
 
     assert_response :success
@@ -35,7 +34,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal response_body["notice"], t("successfully_created", entity: "Note")
   end
 
-  def test_create_note_with_blank_title
+  def test_returb_error_on_creating_note_with_blank_title
     post api_v1_notes_url, params: { note: { title: "", description: "zach@example.com" } },
                            headers: @headers
     assert_response :unprocessable_entity
@@ -43,7 +42,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
     assert_equal response_body["error"], "Title can't be blank"
   end
 
-  def test_create_note_with_blank_description
+  def test_returb_error_on_creating_note_with_blank_description
     post api_v1_notes_url, params: { note: { title: "Zach", description: "" } },
                            headers: @headers
     assert_response :unprocessable_entity
@@ -52,11 +51,8 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_delete_single_note
-    milk = create :note, :milk, user: @admin
-    bulbs = create :note, :bulbs, user: @admin
-
     assert_difference "@admin.notes.count", -1 do
-      post bulk_delete_api_v1_notes_path, params: { ids: [milk.id] }, headers: @headers
+      post bulk_delete_api_v1_notes_path, params: { ids: [@notes.first.id] }, headers: @headers
     end
 
     assert_response :success
@@ -64,12 +60,8 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_delete_multiple_note
-    milk = create :note, :milk, user: @admin
-    bulbs = create :note, :bulbs, user: @admin
-    rent = create :note, :rent, user: @admin
-
     assert_difference "@admin.notes.count", -3 do
-      post bulk_delete_api_v1_notes_path, params: { ids: [milk.id, bulbs.id, rent.id] }, headers: @headers
+      post bulk_delete_api_v1_notes_path, params: { ids: @notes.pluck(:id) }, headers: @headers
     end
     assert_response :success
     assert_equal response_body["notice"], t("successfully_deleted", count: 3, entity: "Notes")
