@@ -45,7 +45,7 @@ gem "email_validator"
 gem "email_prefixer"
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", ">= 1.7.4", require: false
+gem "bootsnap", ">= 1.9.4", require: false
 
 # Background jobs
 gem "sidekiq"
