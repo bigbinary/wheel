@@ -28,7 +28,12 @@ const Profile = () => {
     } catch (err) {
       logger.error(err);
     } finally {
-      resetForm("password");
+      resetForm({
+        values: buildProfileFormInitialValues({
+          first_name: data.firstName,
+          last_name: data.lastName,
+        }),
+      });
       setShowPasswordModal(false);
     }
   };
