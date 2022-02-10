@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 import { Form, Formik } from "formik";
 import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
+import { equals } from "ramda";
 
 import profilesApi from "apis/profiles";
 import { LOGIN_PATH } from "components/routeConstants";
@@ -19,6 +20,10 @@ const Email = () => {
   const [submitted, setSubmitted] = useState(false);
   const { user } = useUserState();
   const authDispatch = useAuthDispatch();
+  const initialFormValues = useMemo(
+    () => buildEmailFormInitialValues(user),
+    [user]
+  );
 
   const handleSubmit = async (data, { resetForm }) => {
     try {
@@ -26,7 +31,7 @@ const Email = () => {
       authDispatch({ type: "LOGOUT" });
       window.location.href = LOGIN_PATH;
     } catch (err) {
-      resetForm("password");
+      resetForm();
       setShowPasswordModal(false);
       logger.error(err);
     }
@@ -39,18 +44,32 @@ const Email = () => {
     if (!email) setShowPasswordModal(true);
   };
 
+  const closeModal = (values, resetForm) => {
+    setShowPasswordModal(false);
+    resetForm({
+      values: { ...values, password: "" },
+      errors: {},
+    });
+  };
+
   return (
     <Container>
       <Header title="Update Email" className="border-b border-gray-200" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
-          initialValues={buildEmailFormInitialValues(user)}
+          initialValues={initialFormValues}
           onSubmit={handleSubmit}
           validateOnBlur={submitted}
           validateOnChange={submitted}
           validationSchema={EMAIL_FORM_VALIDATION_SCHEMA}
         >
-          {({ isSubmitting, handleSubmit: submitForm, validateForm }) => (
+          {({
+            values,
+            isSubmitting,
+            handleSubmit: submitForm,
+            validateForm,
+            resetForm,
+          }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input required name="email" label="Email" type="email" />
               <Button
@@ -60,14 +79,15 @@ const Email = () => {
                 label="Update"
                 className="h-8"
                 loading={isSubmitting}
-                disabled={isSubmitting}
+                disabled={equals(values, initialFormValues) || isSubmitting}
               />
               <ConfirmPasswordModal
                 isOpen={showPasswordModal}
-                onClose={() => setShowPasswordModal(false)}
+                onClose={() => closeModal(values, resetForm)}
                 header="Are you sure you want to update your email?"
                 onSubmit={submitForm}
                 isSubmitting={isSubmitting}
+                disabled={isSubmitting || !values.password}
               >
                 <>
                   <p className="my-2">

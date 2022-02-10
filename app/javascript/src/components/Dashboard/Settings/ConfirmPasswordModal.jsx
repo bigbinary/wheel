@@ -9,6 +9,7 @@ const ConfirmPasswordModal = ({
   children,
   onSubmit,
   isSubmitting,
+  disabled,
 }) => (
   <Modal isOpen={isOpen} onClose={onClose}>
     <Modal.Header>
@@ -17,11 +18,12 @@ const ConfirmPasswordModal = ({
     <Modal.Body>{children}</Modal.Body>
     <Modal.Footer className="space-x-2">
       <Button
+        type="submit"
         label="Continue"
         onClick={onSubmit}
         size="large"
         loading={isSubmitting}
-        disabled={isSubmitting}
+        disabled={disabled}
       />
       <Button
         style="text"

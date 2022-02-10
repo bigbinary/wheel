@@ -36,7 +36,7 @@ const Password = () => {
           validateOnBlur={submitted}
           validateOnChange={submitted}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, dirty }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input
                 {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
@@ -60,7 +60,7 @@ const Password = () => {
                 label="Update"
                 className="h-8"
                 loading={isSubmitting}
-                disabled={isSubmitting}
+                disabled={!dirty || isSubmitting}
                 onClick={() => setSubmitted(true)}
               />
             </Form>
