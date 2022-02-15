@@ -31,10 +31,4 @@ module ApiRescuable
       log_exception(exception)
       respond_with_error(exception.original_message, :internal_server_error)
     end
-
-    def log_exception(exception)
-      Rails.logger.info exception.class.to_s
-      Rails.logger.info exception.to_s
-      Rails.logger.info exception.backtrace.join("\n")
-    end
 end
