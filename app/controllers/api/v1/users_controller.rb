@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   before_action :load_user!, only: %i[show destroy]
 
   def show
-    render status: :ok, json: @user
+    respond_with_json(:ok, @user)
   end
 
   def create

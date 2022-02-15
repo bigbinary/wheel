@@ -5,6 +5,4 @@ class Api::V1::BaseController < ApplicationController
   include Loggable
   include ApiRescuable
   include Authenticable
-
-  respond_to :json
 end

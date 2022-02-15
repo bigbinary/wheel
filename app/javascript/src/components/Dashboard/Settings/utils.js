@@ -6,10 +6,8 @@ export const getActiveNavLink = key =>
 export const buildProfileFormInitialValues = user => ({
   firstName: user.first_name,
   lastName: user.last_name,
-  password: "",
 });
 
 export const buildEmailFormInitialValues = user => ({
   email: user.email,
-  password: "",
 });
