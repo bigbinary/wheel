@@ -5,7 +5,7 @@ class Api::V1::NotesController < Api::V1::BaseController
   before_action :load_notes, only: :bulk_delete
 
   def index
-    render status: :ok, json: { notes: current_user.notes }
+    respond_with_json(:ok, { notes: current_user.notes })
   end
 
   def create
