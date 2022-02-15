@@ -10,5 +10,4 @@ export const buildProfileFormInitialValues = user => ({
 
 export const buildEmailFormInitialValues = user => ({
   email: user.email,
-  password: "",
 });

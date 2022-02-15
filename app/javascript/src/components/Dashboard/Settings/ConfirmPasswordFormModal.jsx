@@ -22,11 +22,6 @@ const ConfirmPasswordFormModal = ({
     innerRef.current?.resetForm?.();
   }, [isOpen]);
 
-  const handleClose = ({ resetForm }) => {
-    resetForm();
-    return onClose();
-  };
-
   return (
     <Formik
       innerRef={innerRef}
@@ -34,8 +29,8 @@ const ConfirmPasswordFormModal = ({
       onSubmit={onSubmit}
       validationSchema={PASSWORD_VALIDATION_SCHEMA}
     >
-      {({ values, isSubmitting, resetForm, handleSubmit }) => (
-        <Modal isOpen={isOpen} onClose={() => handleClose({ resetForm })}>
+      {({ values, isSubmitting, handleSubmit }) => (
+        <Modal isOpen={isOpen} onClose={onClose}>
           <Modal.Header>
             <Typography style="h2">{header}</Typography>
           </Modal.Header>

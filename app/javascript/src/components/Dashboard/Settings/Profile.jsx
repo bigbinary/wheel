@@ -24,7 +24,7 @@ const Profile = () => {
     [user]
   );
 
-  const handleSubmit = async values => {
+  const handleSubmit = async (values, { resetForm }) => {
     try {
       const {
         data: { user },
@@ -34,6 +34,8 @@ const Profile = () => {
       });
       userDispatch({ type: "SET_USER", payload: { user } });
     } catch (err) {
+      resetForm();
+      formikPasswordContext.setShowPasswordModal(false);
       logger.error(err);
     }
   };
@@ -51,6 +53,7 @@ const Profile = () => {
       <Header title="My Profile" className="border-b border-gray-200" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
+          enableReinitialize
           innerRef={formikPasswordContext.formRef}
           initialValues={initialFormValues}
           onSubmit={handleSubmit}
