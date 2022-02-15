@@ -15,7 +15,7 @@ module ApiResponders
       render status: status, json: { notice: message }.merge(context)
     end
 
-    def respond_with_json(status = :ok, context = {})
-      render status: status, json: context
+    def respond_with_json(json = {}, status = :ok)
+      render status: status, json: json
     end
 end
