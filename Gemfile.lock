@@ -105,8 +105,8 @@ GEM
       parser (>= 2.4)
       smart_properties
     bindex (0.8.1)
-    bootsnap (1.9.1)
-      msgpack (~> 1.0)
+    bootsnap (1.10.3)
+      msgpack (~> 1.2)
     builder (3.2.4)
     bullet (6.1.5)
       activesupport (>= 3.0.0)
@@ -195,7 +195,7 @@ GEM
     minitest (5.14.4)
     minitest-ci (3.4.0)
       minitest (>= 5.0.6)
-    msgpack (1.4.2)
+    msgpack (1.4.4)
     nio4r (2.5.8)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
@@ -347,7 +347,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   autoprefixer-rails
-  bootsnap (>= 1.7.4)
+  bootsnap (>= 1.9.4)
   bullet
   bundler-audit
   devise (~> 4.7)
@@ -383,7 +383,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.22
+   2.2.32
