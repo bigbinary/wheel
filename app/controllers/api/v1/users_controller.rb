@@ -1,57 +1,32 @@
 # frozen_string_literal: true
 
 class Api::V1::UsersController < Api::V1::BaseController
-  skip_before_action :authenticate_user!, only: [:create]
-  skip_before_action :authenticate_user_using_x_auth_token, only: [:create]
+  skip_before_action :authenticate_user!, only: :create
+  skip_before_action :authenticate_user_using_x_auth_token, only: :create
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :load_user!, only: %i[show destroy]
 
   def show
-    if @user
-      render json: @user
-    else
-      respond_with_error "User with id #{params[:id]} not found.", :not_found
-    end
+    respond_with_json(@user)
   end
 
   def create
-    user = User.create user_params
-
-    if user.valid?
-      sign_in(user)
-      render json: { user: user, auth_token: user.authentication_token }
-    else
-      render json: { error: user.errors.full_messages.to_sentence }, status: 422
-    end
-  end
-
-  def update
-    if @user.blank?
-      respond_with_error "User with id #{params[:id]} not found.", :not_found
-
-    elsif @user.update(user_params)
-      render json: @user
-
-    else
-      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
-    end
+    user = User.create!(user_params)
+    respond_with_success(
+      t("signup_successful"),
+      :ok,
+      { user: user, auth_token: user.authentication_token }
+    )
   end
 
   def destroy
-    if @user.blank?
-      respond_with_error "User with id #{params[:id]} not found.", :not_found
-
-    elsif @user.destroy
-      render json: @user
-
-    else
-      render json: { error: @user.errors.full_messages.to_sentence }, status: 422
-    end
+    @user.destroy!
+    respond_with_success(t("successfully_destroyed", count: 1, entity: "User"))
   end
 
   private
 
-    def set_user
+    def load_user!
       @user = User.find(params[:id])
     end
 

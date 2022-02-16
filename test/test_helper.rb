@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 def enable_test_coverage
@@ -46,6 +45,6 @@ def headers(user, options = {})
   }.merge(options)
 end
 
-def response_json
-  @_response_json ||= JSON.parse(response.body)
+def response_body
+  response.parsed_body
 end

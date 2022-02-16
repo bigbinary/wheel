@@ -3,23 +3,24 @@ import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 
 import Sidebar from "components/Common/Sidebar";
+import {
+  DASHBOARD_ROUTES,
+  NOTES_PATH,
+  DASHBOARD_PATH,
+} from "components/routeConstants";
 
-import PasswordEdit from "./Account/Passwords/Edit";
-import Profile from "./Account/Profile";
-import Notes from "./Notes";
-
-const Home = () => {
+const Dashboard = () => {
   return (
     <div className="flex h-screen w-full">
       <Sidebar />
       <Switch>
-        <Route exact path="/notes" component={Notes} />
-        <Route exact path="/my/password/edit" component={PasswordEdit} />
-        <Route exact path="/my/profile" component={Profile} />
-        <Redirect from="/" to="/notes" />
+        {DASHBOARD_ROUTES.map(({ path, component }) => (
+          <Route exact key={path} path={path} component={component} />
+        ))}
+        <Redirect from={DASHBOARD_PATH} to={NOTES_PATH} />
       </Switch>
     </div>
   );
 };
 
-export default Home;
+export default Dashboard;

@@ -5,12 +5,13 @@ Rails.application.routes.draw do
     instance_eval(File.read(Rails.root.join("config/routes/#{routes_name}.rb")))
   end
 
-  devise_for :users, path_prefix: "devise", controllers: { registrations: "registrations" }
-  get "/logout" => "sessions#destroy", :as => :logout
+  devise_for :users, path_prefix: "devise", controllers: { registrations: "profiles" }
+
   devise_scope :user do
     scope "my" do
-      put "profile/update", to: "registrations#update"
-      put "password/update", to: "registrations#update_password"
+      put "profile", to: "profiles#update"
+      patch "password", to: "passwords#update"
+      patch "email", to: "profiles#update_email"
     end
   end
 

@@ -1,43 +1,43 @@
 import React, { useState } from "react";
 
-import { Toastr } from "neetoui";
-import { Sidebar } from "neetoui/layouts";
+import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
 import { useHistory } from "react-router-dom";
 
 import authenticationApi from "apis/authentication";
-import { resetAuthTokens } from "apis/axios";
+import {
+  PROFILE_PATH,
+  CHANGE_PASSWORD_PATH,
+  LOGIN_PATH,
+} from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
 
 import { APP_NAME, SIDENAV_LINKS } from "./constants";
 
-const Sidenav = () => {
+const Sidebar = () => {
+  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
   const history = useHistory();
   const authDispatch = useAuthDispatch();
-
   const { user } = useUserState();
-
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
 
   const handleLogout = async () => {
     try {
       await authenticationApi.logout();
       authDispatch({ type: "LOGOUT" });
-      resetAuthTokens();
-      window.location.href = "/";
+      window.location.href = LOGIN_PATH;
     } catch (error) {
-      Toastr.error(error);
+      logger.error(error);
     }
   };
 
   const bottomLinks = [
     {
       label: "My Profile",
-      onClick: () => history.push("/my/profile"),
+      onClick: () => history.push(PROFILE_PATH, { resetTab: true }),
     },
     {
       label: "Change Password",
-      onClick: () => history.push("/my/password/edit"),
+      onClick: () => history.push(CHANGE_PASSWORD_PATH, { resetTab: true }),
     },
     {
       label: "Logout",
@@ -46,8 +46,7 @@ const Sidenav = () => {
   ];
 
   return (
-    <Sidebar
-      collapsible
+    <NeetoUISidebar
       isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
       appName={APP_NAME}
@@ -67,4 +66,4 @@ const Sidenav = () => {
   );
 };
 
-export default Sidenav;
+export default Sidebar;

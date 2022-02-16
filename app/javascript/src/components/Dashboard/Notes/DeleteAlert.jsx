@@ -11,6 +11,7 @@ const DeleteAlert = ({
   setSelectedNoteIds,
 }) => {
   const [deleting, setDeleting] = useState(false);
+
   const handleDelete = async () => {
     try {
       setDeleting(true);
@@ -20,10 +21,10 @@ const DeleteAlert = ({
       refetch();
     } catch (error) {
       logger.error(error);
-    } finally {
       setDeleting(false);
     }
   };
+
   return (
     <Alert
       isOpen

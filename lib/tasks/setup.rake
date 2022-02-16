@@ -42,10 +42,13 @@ def create_sample_data!
 end
 
 def create_user!(options = {})
-  user_attributes = { password: "welcome",
-                      first_name: "Oliver",
-                      last_name: "Smith",
-                      role: "super_admin" }
+  user_attributes = {
+    first_name: "Oliver",
+    last_name: "Smith",
+    password: "welcome",
+    password_confirmation: "welcome",
+    role: "super_admin"
+  }
   attributes = user_attributes.merge options
   User.create! attributes
 end

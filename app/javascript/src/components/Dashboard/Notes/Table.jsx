@@ -1,40 +1,21 @@
 import React, { useState } from "react";
 
-import { Table } from "neetoui";
+import { Table as NeetoUITable } from "neetoui";
 
-import EditNotePane from "./Pane/EditNote";
+import { NOTES_TABLE_COLUMN_DATA } from "./constants";
+import EditNotePane from "./Pane/Edit";
 
-export const COLUMN_DATA = [
-  {
-    title: "Title",
-    dataIndex: "title",
-    key: "title",
-    width: "30%",
-  },
-  {
-    title: "Description",
-    dataIndex: "description",
-    key: "description",
-    width: "70%",
-  },
-];
-
-export default function NoteTable({
-  setSelectedNoteIds,
-  notes = [],
-  fetchNotes,
-}) {
+const Table = ({ setSelectedNoteIds, notes = [], fetchNotes }) => {
   const [showEditNote, setShowEditNote] = useState(false);
   const [selectedNote, setSelectedNote] = useState({});
+
   return (
     <>
       <div className="notes-table-height w-full">
-        <Table
+        <NeetoUITable
           rowData={notes}
-          columnData={COLUMN_DATA}
-          onRowSelect={selectedRowKeys => {
-            setSelectedNoteIds(selectedRowKeys);
-          }}
+          columnData={NOTES_TABLE_COLUMN_DATA}
+          onRowSelect={selectedRowKeys => setSelectedNoteIds(selectedRowKeys)}
           onRowClick={(_, note) => {
             setSelectedNote(note);
             setShowEditNote(true);
@@ -50,4 +31,6 @@ export default function NoteTable({
       />
     </>
   );
-}
+};
+
+export default Table;

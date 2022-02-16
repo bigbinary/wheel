@@ -4,22 +4,24 @@ import { Pane, Typography } from "neetoui";
 
 import Form from "./Form";
 
-export default function EditNotePane({
-  fetchNotes,
-  showPane,
-  setShowPane,
-  note,
-}) {
+import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
+
+export default function NewNotePane({ fetchNotes, showPane, setShowPane }) {
   const onClose = () => setShowPane(false);
 
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Edit Note
+          Create a New Note
         </Typography>
       </Pane.Header>
-      <Form onClose={onClose} refetch={fetchNotes} note={note} isEdit={true} />
+      <Form
+        onClose={onClose}
+        refetch={fetchNotes}
+        note={NOTES_FORM_INITIAL_FORM_VALUES}
+        isEdit={false}
+      />
     </Pane>
   );
 }

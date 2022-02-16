@@ -6,9 +6,9 @@ class ApiInvalidJsonDataTest < ActionDispatch::IntegrationTest
   def test_invalid_payload_responds_with_message
     invalid_json = %Q{ { "foo":'bar' } }
 
-    post "/api/v1/users", params: { foo: "bar" }, as: :json
+    post "/api/v1/users", params: invalid_json, as: :json
 
-    assert_response 500
-    assert response.body.include?("Something went wrong. Please try again later."), response.body
+    assert_response :internal_server_error
+    assert_equal response_body["error"], "param is missing or the value is empty: user"
   end
 end

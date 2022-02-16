@@ -5,13 +5,14 @@ import { Button, Pane } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
 import notesApi from "apis/notes";
-import formValidationSchemas from "constants/formValidationSchemas";
+
+import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
 export default function NoteForm({ onClose, refetch, note, isEdit }) {
   const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = async values => {
     try {
-      setSubmitted(true);
       if (isEdit) {
         await notesApi.update(note.id, values);
       } else {
@@ -30,9 +31,9 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
       onSubmit={handleSubmit}
       validateOnBlur={submitted}
       validateOnChange={submitted}
-      validationSchema={formValidationSchemas.notesForm}
+      validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
     >
-      {({ isSubmitting, handleSubmit }) => (
+      {({ isSubmitting }) => (
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
@@ -58,11 +59,7 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
               className="mr-3"
               disabled={isSubmitting}
               loading={isSubmitting}
-              onClick={e => {
-                e.preventDefault();
-                setSubmitted(true);
-                handleSubmit();
-              }}
+              onClick={() => setSubmitted(true)}
             />
             <Button
               onClick={onClose}
