@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   end
 
   draw :sidekiq
-  draw :active_admin
   draw :api
 
   root "home#index"
