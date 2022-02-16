@@ -36,7 +36,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_returb_error_on_creating_note_with_blank_title
     post api_v1_notes_url, params: { note: { title: "", description: "zach@example.com" } },
-                           headers: @headers
+      headers: @headers
     assert_response :unprocessable_entity
 
     assert_equal response_body["error"], "Title can't be blank"
@@ -44,7 +44,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_returb_error_on_creating_note_with_blank_description
     post api_v1_notes_url, params: { note: { title: "Zach", description: "" } },
-                           headers: @headers
+      headers: @headers
     assert_response :unprocessable_entity
 
     assert_equal response_body["error"], "Description can't be blank"
