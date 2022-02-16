@@ -13,8 +13,10 @@ class Api::V1::UsersController < Api::V1::BaseController
   def create
     user = User.create!(user_params)
     respond_with_success(
-      t("signip_successful"), :ok,
-      { user: user, auth_token: user.authentication_token })
+      t("signup_successful"),
+      :ok,
+      { user: user, auth_token: user.authentication_token }
+    )
   end
 
   def destroy
