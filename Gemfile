@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "3.0.3"
 
-gem "rails", "~> 6.1.4.1"
+gem "rails", "~> 7.0.2.2"
 gem "sprockets"
 
 # friends of Rails
@@ -35,9 +35,6 @@ gem "honeybadger"
 # Support cross-browser css compatibility
 gem "autoprefixer-rails"
 
-# Admin framework
-gem "activeadmin"
-
 # Email validation
 gem "email_validator"
 
@@ -57,6 +54,9 @@ group :development, :test do
   # Adds step-by-step debugging and stack navigation capabilities to pry using byebug.
   # supports both syntax - pry and byebug
   gem "pry-byebug"
+
+  # For others who are not used to pry - similar to pry
+  gem "byebug"
 
   # For auto-generating demo data
   gem "faker", "~> 2.19"
