@@ -1,6 +1,6 @@
 export const FEATURE_LIST = [
   "Uses Rails, React, Tailwind CSS and Webpacker.",
-  "Uses Devise, Honeybadger, Sidekiq, PostgreSQL, ActiveAdmin.",
+  "Uses Devise, Honeybadger, Sidekiq, PostgreSQL.",
   "Heroku ready. Push to Heroku and it will work.",
   "Uses slim for cleaner syntax over erb and better performance over haml.",
   "Intercepts all outgoing emails in non production environment using gem mail_interceptor.",

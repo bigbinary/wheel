@@ -50,7 +50,6 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 - Heroku ready. Push to Heroku and it will work.
 - Uses [Honeybadger](https://www.honeybadger.io/).
 - Uses slim for cleaner syntax over erb and better performance over haml.
-- Uses [ActiveAdmin](http://activeadmin.info).
 - Uses [Sidekiq](https://github.com/mperham/sidekiq).
 - Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
 - Uses [SemaphoreCI](https://semaphoreci.com/) for continuous testing.
