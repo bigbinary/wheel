@@ -54,13 +54,12 @@ group :development, :test do
   # Rails integration for factory-bot
   gem "factory_bot_rails"
 
-  # A runtime developer console and IRB alternative with powerful introspection capabilities
-  gem "pry"
+  # Adds step-by-step debugging and stack navigation capabilities to pry using byebug.
+  # supports both syntax - pry and byebug
+  gem "pry-byebug"
 
   # For auto-generating demo data
   gem "faker", "~> 2.19"
-
-  gem "byebug"
 end
 
 group :development, :staging, :heroku do
