@@ -55,9 +55,6 @@ group :development, :test do
   # supports both syntax - pry and byebug
   gem "pry-byebug"
 
-  # For others who are not used to pry - similar to pry
-  gem "byebug"
-
   # For auto-generating demo data
   gem "faker", "~> 2.19"
 end
