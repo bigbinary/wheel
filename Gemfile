@@ -56,7 +56,7 @@ group :development, :test do
   gem "pry-byebug"
 
   # For auto-generating demo data
-  gem "faker", "~> 2.19"
+  gem "faker"
 end
 
 group :development, :staging, :heroku do
@@ -65,14 +65,8 @@ group :development, :staging, :heroku do
 end
 
 group :development do
-  # speeds up development by keeping your application running in the background
-
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code
   gem "web-console"
-
-  # Listens to file modifications and notifies whoever is subscribed.
-  # This way, rails reloads your files when you save them.
-  gem "listen", "~> 3.2"
 
   # reports N+1 queries
   gem "bullet"
@@ -80,6 +74,7 @@ group :development do
   # A Ruby static code analyzer, based on the community Ruby style guide
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
+
   # For linting ERB files
   gem "erb_lint", require: false, git: "https://github.com/Shopify/erb-lint.git", branch: "main"
 
