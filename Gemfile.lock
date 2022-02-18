@@ -287,10 +287,6 @@ GEM
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
     smart_properties (1.17.0)
-    spring (2.1.1)
-    spring-watcher-listen (2.0.1)
-      listen (>= 2.7, < 4.0)
-      spring (>= 1.2, < 3.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -357,8 +353,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   sidekiq
   simplecov
-  spring
-  spring-watcher-listen (~> 2.0.0)
   sprockets
   sprockets-rails
   uglifier (>= 2.7.1)
