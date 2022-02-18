@@ -30,7 +30,6 @@ AllCops:
     - "bin/**/*"
     - "config/webpack/**/*"
     - "db/schema.rb"
-    - "config/**/*"
 
 # ====================================================================================================
 # All access modifier related rules
@@ -88,6 +87,8 @@ Style/FrozenStringLiteralComment:
   Enabled: true
   EnforcedStyle: always
   SafeAutoCorrect: true
+  Exclude:
+    - "config/**/*"
 
 # ====================================================================================================
 # All Class related rules
