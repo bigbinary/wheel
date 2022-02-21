@@ -7,6 +7,9 @@ ruby "3.0.3"
 gem "rails", "~> 6.1.4.1"
 gem "sprockets"
 
+# For loading environemnt variables from .env files
+gem "dotenv-rails"
+
 # friends of Rails
 gem "sass-rails", ">= 6"
 gem "sprockets-rails"

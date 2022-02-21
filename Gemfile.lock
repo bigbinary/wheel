@@ -126,6 +126,10 @@ GEM
       responders
       warden (~> 1.2.3)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     email_prefixer (1.2.0)
       rails (>= 4.0)
     email_validator (2.2.3)
@@ -355,6 +359,7 @@ DEPENDENCIES
   bullet
   bundler-audit
   devise (~> 4.7)
+  dotenv-rails
   email_prefixer
   email_validator
   erb_lint!
