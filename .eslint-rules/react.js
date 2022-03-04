@@ -30,5 +30,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     // not-auto-fixable: Ensures https://reactjs.org/docs/hooks-rules.html - Checks effect dependencies.
     "react-hooks/exhaustive-deps": "warn",
+    // auto-fixable: A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+    "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
   },
 };
