@@ -4,17 +4,15 @@ import { Button } from "neetoui";
 
 import { FEATURE_LIST } from "./constants";
 
-const Features = ({ features }) => {
-  return (
-    <ul className="list-disc">
-      {features.map((feature, index) => (
-        <li key={index} className="border-b border-gray-100 py-3 last:border-0">
-          {feature}
-        </li>
-      ))}
-    </ul>
-  );
-};
+const Features = ({ features }) => (
+  <ul className="list-disc">
+    {features.map((feature, index) => (
+      <li key={index} className="border-b border-gray-100 py-3 last:border-0">
+        {feature}
+      </li>
+    ))}
+  </ul>
+);
 
 const Hero = () => (
   <div className="flex h-screen flex-row items-center justify-center">

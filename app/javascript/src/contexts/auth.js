@@ -45,9 +45,7 @@ const useAuthDispatch = () => {
   return context;
 };
 
-const useAuth = () => {
-  return [useAuthState(), useAuthDispatch()];
-};
+const useAuth = () => [useAuthState(), useAuthDispatch()];
 
 AuthProvider.propTypes = {
   children: PropTypes.node,

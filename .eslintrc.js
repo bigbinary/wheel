@@ -99,5 +99,9 @@ module.exports = {
     "unused-imports/no-unused-imports": "error",
     // auto-fixable-1-level-deep: Using nested ternary operators make the code unreadable. Use if/else or switch with if/else. If it's JSX then move it out into a function or a variable.
     "no-nested-ternary": "error",
+    // auto-fixable: Enforces no braces where they can be omitted.
+    "arrow-body-style": ["error", "as-needed"],
+    // auto-fixable: Suggests using template literals instead of string concatenation.
+    "prefer-template": "error",
   },
 };

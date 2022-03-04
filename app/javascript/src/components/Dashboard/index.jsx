@@ -9,18 +9,16 @@ import {
   DASHBOARD_PATH,
 } from "components/routeConstants";
 
-const Dashboard = () => {
-  return (
-    <div className="flex h-screen w-full">
-      <Sidebar />
-      <Switch>
-        {DASHBOARD_ROUTES.map(({ path, component }) => (
-          <Route exact key={path} path={path} component={component} />
-        ))}
-        <Redirect from={DASHBOARD_PATH} to={NOTES_PATH} />
-      </Switch>
-    </div>
-  );
-};
+const Dashboard = () => (
+  <div className="flex h-screen w-full">
+    <Sidebar />
+    <Switch>
+      {DASHBOARD_ROUTES.map(({ path, component }) => (
+        <Route exact key={path} path={path} component={component} />
+      ))}
+      <Redirect from={DASHBOARD_PATH} to={NOTES_PATH} />
+    </Switch>
+  </div>
+);
 
 export default Dashboard;

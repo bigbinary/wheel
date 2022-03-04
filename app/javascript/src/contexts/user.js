@@ -37,9 +37,7 @@ const useUserDispatch = () => {
   return context;
 };
 
-const useUser = () => {
-  return [useUserState(), useUserDispatch()];
-};
+const useUser = () => [useUserState(), useUserDispatch()];
 
 UserProvider.propTypes = {
   children: PropTypes.node,
