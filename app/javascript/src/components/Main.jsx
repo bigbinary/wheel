@@ -18,6 +18,10 @@ import {
 } from "components/routeConstants";
 import { useAuthState, useAuthDispatch } from "contexts/auth";
 import { useUserDispatch, useUserState } from "contexts/user";
+import {
+  clearLocalStorageCredentials,
+  getFromLocalStorage,
+} from "utils/storage";
 
 const Main = props => {
   const [loading, setLoading] = useState(true);
@@ -37,6 +41,15 @@ const Main = props => {
     registerIntercepts(authDispatch);
     setAuthHeaders(setLoading);
   }, [authDispatch, props?.user, userDispatch]);
+
+  useEffect(() => {
+    const previousLoginAuthEmail = getFromLocalStorage("authEmail");
+    const hasDeviseUserSessionExpired = !props?.user;
+    const sessionExpiredButLocalStorageCredsExist =
+      hasDeviseUserSessionExpired && previousLoginAuthEmail;
+
+    if (sessionExpiredButLocalStorageCredsExist) clearLocalStorageCredentials();
+  }, [props?.user?.email]);
 
   if (loading) {
     return (
