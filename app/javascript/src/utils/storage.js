@@ -6,4 +6,9 @@ const setToLocalStorage = (key, value) => {
 
 const getFromLocalStorage = key => JSON.parse(localStorage.getItem(key));
 
-export { setToLocalStorage, getFromLocalStorage };
+const clearLocalStorageCredentials = () => {
+  setToLocalStorage("authEmail", null);
+  setToLocalStorage("authToken", null);
+};
+
+export { setToLocalStorage, getFromLocalStorage, clearLocalStorageCredentials };

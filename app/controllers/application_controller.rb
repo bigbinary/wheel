@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include SetHoneyBadgerContext
+  include Expirable
 
   private
 
