@@ -8,6 +8,6 @@ module.exports = {
     logger: "readonly",
     module: "writable",
     // Makes props obtained from Rails backend available everywhere in this project.
-    globalProps: "readonly"
-  }
+    globalProps: "readonly",
+  },
 };
