@@ -16,7 +16,7 @@
   "license": "ISC",
   "devDependencies": {
     "@cypress/webpack-preprocessor": "^5.9.1",
-    "cypress": "^8.3.0",
+    "cypress": "^9.5.3",
     "path-browserify": "^1.0.1",
     "webpack": "^5.51.1"
   },
