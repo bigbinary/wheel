@@ -1,5 +1,6 @@
 import { loginPath, notesPath } from "Constants/routes";
 import { fake } from "Fixtures/fake";
+import { commonSelectors } from "Selectors/common";
 import { loginSelectors } from "Selectors/login";
 import { loginTexts } from "Texts/login";
 
@@ -21,13 +22,13 @@ describe("Login", () => {
     // should not be able to login with invalid credentials
     cy.get(loginSelectors.emailTextField).clear();
     cy.get(loginSelectors.passwordTextField).clear();
-    cy.get(loginSelectors.submitButton).click();
+    cy.get(loginSelectors.submitButton).dblclick();
     cy.get(loginSelectors.emailInputErrorMessage).should(
-      "have.inSensTrimmedText",
+      "have.text",
       loginTexts.required
     );
     cy.get(loginSelectors.passwordInputErrorMessage).should(
-      "have.inSensTrimmedText",
+      "have.text",
       loginTexts.required
     );
 
@@ -35,7 +36,7 @@ describe("Login", () => {
     cy.clearAndType(loginSelectors.passwordTextField, user.password);
     cy.get(loginSelectors.submitButton).click();
     cy.get(loginSelectors.emailInputErrorMessage).should(
-      "have.inSensTrimmedText",
+      "have.text",
       loginTexts.invalidEmailMessage
     );
 
@@ -43,7 +44,7 @@ describe("Login", () => {
     cy.clearAndType(loginSelectors.emailTextField, user.email);
     cy.clearAndType(loginSelectors.passwordTextField, user.password);
     cy.get(loginSelectors.submitButton).click();
-    cy.verifyToastMessage(loginTexts.loginMessage);
     cy.url().should("include", notesPath);
+    cy.get(commonSelectors.mainHeading).should("have.text", loginTexts.notes);
   });
 });
