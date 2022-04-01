@@ -3,4 +3,5 @@ export const loginTexts = {
   required: "Required",
   invalidEmailMessage: "Invalid email address",
   incorrectEmailOrPasswordMessage: "Incorrect email or password",
+  notes: "Notes",
 };
