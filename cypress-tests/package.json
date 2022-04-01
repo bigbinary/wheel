@@ -14,13 +14,11 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "faker": "^5.5.3",
     "@cypress/webpack-preprocessor": "^5.9.1",
     "cypress": "^9.5.3",
     "path-browserify": "^1.0.1",
     "webpack": "^5.51.1"
-  },
-  "dependencies": {
-    "faker": "^5.5.3"
   }
 }
