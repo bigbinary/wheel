@@ -10,7 +10,7 @@ jobs:
   cypress-ci:
     parallelism: 1
     docker:
-      - image: 'cypress/included:3.4.0'
+      - image: "cypress/included:9.5.3"
     working_directory: ~/wheel
     steps:
       - checkout
