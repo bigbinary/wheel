@@ -42,6 +42,15 @@ declare -a configs=(
   ".nvmrc"
   ".ruby-version"
   ".erb-lint.yml"
+  "bin/bundle"
+  "bin/rails"
+  "bin/rake"
+  "bin/setup"
+  "bin/spring"
+  "bin/update"
+  "bin/webpack"
+  "bin/webpack-dev-server"
+  "bin/yarn"
 )
 
 for config in "${configs[@]}"; do
