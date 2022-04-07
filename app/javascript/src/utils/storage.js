@@ -4,7 +4,12 @@ const setToLocalStorage = (key, value) => {
   } else localStorage.removeItem(key);
 };
 
-const getFromLocalStorage = key => JSON.parse(localStorage.getItem(key));
+const getFromLocalStorage = key => {
+  const value = localStorage.getItem(key);
+  const response = value ? JSON.parse(value) : "";
+
+  return response;
+};
 
 const clearLocalStorageCredentials = () => {
   setToLocalStorage("authEmail", null);
