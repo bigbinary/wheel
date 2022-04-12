@@ -198,7 +198,7 @@ GEM
       minitest (>= 5.0.6)
     msgpack (1.4.4)
     nio4r (2.5.8)
-    nokogiri (1.13.3)
+    nokogiri (1.13.4)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
