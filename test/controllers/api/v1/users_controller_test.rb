@@ -9,7 +9,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
 
   def test_show_for_a_valid_user
     get api_v1_user_url(@admin), params: { format: :json },
-                                headers: headers(@admin)
+      headers: headers(@admin)
 
     assert_response :success
     json = response_body
@@ -20,7 +20,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
     an_invalid_email = { "X-Auth-Email" => "this_email_is_not_present_in_db@example.com" }
 
     get api_v1_user_url(@admin), params: { format: :json },
-                                headers: headers(@admin, an_invalid_email)
+      headers: headers(@admin, an_invalid_email)
 
     assert_response :unauthorized
     assert_equal response_body["error"], t("invalid_credentials")
@@ -78,7 +78,7 @@ class Api::V1::UsersControllerTest < ActionDispatch::IntegrationTest
   def test_destroy_should_destroy_user
     assert_difference "User.count", -1 do
       delete api_v1_user_url(@admin), params: { format: :json },
-                                     headers: headers(@admin)
+        headers: headers(@admin)
 
       assert_response :success
     end
