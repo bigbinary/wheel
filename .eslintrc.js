@@ -103,5 +103,7 @@ module.exports = {
     "arrow-body-style": ["error", "as-needed"],
     // auto-fixable: Suggests using template literals instead of string concatenation.
     "prefer-template": "error",
+    // auto-fixable: Disallows ternary operators when simpler alternatives exist.
+    "no-unneeded-ternary": ["error", { defaultAssignment: false }],
   },
 };
