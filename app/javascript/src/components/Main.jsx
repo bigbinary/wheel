@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import { PageLoader } from "neetoui";
 import PropTypes from "prop-types";
-import * as R from "ramda";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { isPresent } from "utils";
 
 import { setAuthHeaders, registerIntercepts } from "apis/axios";
 import { initializeLogger } from "common/logger";
@@ -30,10 +30,7 @@ const Main = props => {
   const userDispatch = useUserDispatch();
   const authDispatch = useAuthDispatch();
   const currentUser = userContextState || props?.user;
-  const isLoggedIn = !R.apply(
-    R.or,
-    R.map(R.either(R.isNil, R.isEmpty), [authToken, currentUser])
-  );
+  const isLoggedIn = isPresent(authToken) && isPresent(currentUser);
 
   useEffect(() => {
     userDispatch({ type: "SET_USER", payload: { user: props?.user } });
