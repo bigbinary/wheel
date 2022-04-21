@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_05_19_154812) do
     t.string "resource_id", null: false
     t.string "resource_type", null: false
     t.string "author_type"
-    t.bigint "author_id"
+    t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
