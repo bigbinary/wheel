@@ -193,15 +193,11 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.0)
     minitest (5.15.0)
     minitest-ci (3.4.0)
       minitest (>= 5.0.6)
     msgpack (1.5.1)
     nio4r (2.5.8)
-    nokogiri (1.13.4)
-      mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
     nokogiri (1.13.4-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -271,13 +267,13 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-    rubocop (1.27.0)
+    rubocop (1.28.0)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.16.0, < 2.0)
+      rubocop-ast (>= 1.17.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.17.0)
@@ -301,7 +297,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
-    sidekiq (6.4.1)
+    sidekiq (6.4.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -349,8 +345,6 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  ruby
-  x86_64-darwin-20
   x86_64-darwin-21
 
 DEPENDENCIES
