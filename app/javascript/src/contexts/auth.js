@@ -12,8 +12,8 @@ const token = getFromLocalStorage("authToken");
 const email = getFromLocalStorage("authEmail");
 const initialState = {
   isLoggedIn: !!token,
-  authToken: token ? token : null,
-  authEmail: email ? email : null,
+  authToken: token || null,
+  authEmail: email || null,
 };
 
 const AuthProvider = ({ children }) => {
