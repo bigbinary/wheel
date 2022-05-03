@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.0.4"
+ruby "3.1.2"
 
 gem "rails", "~> 6.1.5"
 gem "sprockets"
@@ -22,6 +22,9 @@ gem "pg"
 
 # Application server
 gem "puma"
+
+# for sending mails via SMTP
+gem "net-smtp"
 
 # JSON builder
 gem "jbuilder", ">= 2.7"

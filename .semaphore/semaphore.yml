@@ -9,7 +9,7 @@ global_job_config:
   prologue:
     commands:
       - checkout
-      - sem-version ruby 3.0.4
+      - sem-version ruby 3.1.2
       - sem-version node 16.5
       - sem-version c 8
       - sem-service start postgres 12.4
@@ -51,7 +51,9 @@ blocks:
 
         - name: Eslint
           commands:
-            - curl -s -L "https://raw.githubusercontent.com/bigbinary/wheel/master/.semaphore/commands/run_eslint_on_modified_files.sh" | bash
+            - curl -s -L
+              "https://raw.githubusercontent.com/bigbinary/wheel/master/.semaphore/commands/run_eslint_on_modified_files.sh"
+              | bash
 
   - name: Rails Tests
     task:
