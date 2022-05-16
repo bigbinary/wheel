@@ -420,6 +420,15 @@ Layout/EmptyLines:
   Enabled: true
 
 # ====================================================================================================
+# All naming convetion related rules for variables
+# ====================================================================================================
+# Refer: https://www.bigbinary.com/learn-rubyonrails-book/n+1-queries-and-memoization#bb-generated-p-id-44
+# Sadly this cannot be auto-corrected.
+Naming/MemoizedInstanceVariableName:
+  Enabled: true
+  EnforcedStyleForLeadingUnderscores: required
+
+# ====================================================================================================
 # All misc rules that don't fall into other categories
 # ====================================================================================================
 # Prefer &&/|| over and/or.
