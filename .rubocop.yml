@@ -423,7 +423,7 @@ Layout/EmptyLines:
 # All naming convetion related rules for variables
 # ====================================================================================================
 # Refer: https://www.bigbinary.com/learn-rubyonrails-book/n+1-queries-and-memoization#bb-generated-p-id-44
-# Sadlt this cannot be auto-corrected.
+# Sadly this cannot be auto-corrected.
 Naming/MemoizedInstanceVariableName:
   Enabled: true
   EnforcedStyleForLeadingUnderscores: required
