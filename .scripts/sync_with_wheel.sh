@@ -34,6 +34,7 @@ declare -a configs=(
   ".vscode/settings.json"
   ".husky/helpers/lint_staged.sh"
   ".husky/helpers/prevent_pushing_to_master.sh"
+  ".husky/helpers/prevent_conflict_markers.sh"
   ".husky/pre-commit"
   ".husky/pre-push"
   "cypress-tests/.eslintrc.js"
