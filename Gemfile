@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 ruby "3.0.4"
 
+# Check semaphore config - this gem only relevant in semaphoreCI
+gem "ffi", github: "ffi/ffi", submodules: true
+
 gem "rails", "~> 6.1.5"
 gem "sprockets"
 
