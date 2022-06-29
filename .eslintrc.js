@@ -105,5 +105,11 @@ module.exports = {
     "prefer-template": "error",
     // auto-fixable: Disallows ternary operators when simpler alternatives exist.
     "no-unneeded-ternary": ["error", { defaultAssignment: false }],
+    // auto-fixable: Partially fixable. Prefer {x} over {x: x}.
+    "object-shorthand": [
+      "error",
+      "always",
+      { avoidQuotes: true, ignoreConstructors: true },
+    ],
   },
 };
