@@ -1,33 +1,32 @@
 version: v1.0
-name: minitest
+name: cicheck
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1804
+    os_image: ubuntu2004
 
 global_job_config:
   prologue:
     commands:
       - checkout
+      # TODO: keep the version aligned with neeto side
       - sem-version ruby 3.0.4
       - sem-version node 16.5
-      - sem-version c 8
-      - sem-service start postgres 12.4
+      - sem-service start postgres 13
       - cache restore
+      # Ubuntu 20.04 upgraded libffi6 to libffi7 but our Rails apps are still looking for libffi6
+      - sudo apt-get install -y libffi-dev
       - bundle config set --local path 'vendor/bundle'
-      - bundle check || bundle install --jobs=4 --retry=3
+      # To avoid race conditions and issues like post_install hook failing, set jobs=1
+      - bundle check || bundle install --jobs=1 --retry=3
       - yarn install
       - cache store
       - cp config/database.yml.ci config/database.yml
       - bundle exec rake db:create db:schema:load --trace
 
-  epilogue:
-    commands:
-      - artifact push job reports
-
   env_vars:
     - name: TZ
-      value: "/usr/share/zoneinfo/America/New_York"
+      value: UTC
     - name: RAILS_ENV
       value: "test"
     - name: RACK_ENV
@@ -58,13 +57,4 @@ blocks:
       jobs:
         - name: Rails Tests
           commands:
-            - bin/webpack
             - bundle exec rails test
-            - test-results publish ./reports
-
-after_pipeline:
-  task:
-    jobs:
-      - name: Publish Results
-        commands:
-          - test-results gen-pipeline-report
