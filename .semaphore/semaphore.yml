@@ -11,7 +11,6 @@ global_job_config:
       - checkout
       - sem-version ruby 3.0.4
       - sem-version node 16.5
-      - sem-version c 8
       - sem-service start postgres 13
       - cache restore
       - bundle config set --local path 'vendor/bundle'
@@ -54,5 +53,4 @@ blocks:
       jobs:
         - name: Rails Tests
           commands:
-            - bin/webpack
             - bundle exec rails test
