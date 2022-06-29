@@ -13,10 +13,10 @@ global_job_config:
       - sem-version node 16.5
       - sem-service start postgres 13
       - cache restore
+      # Ubuntu 20.04 upgraded libffi6 to libffi7 but our Rails apps are still looking for libffi6
+      - sudo apt-get install -y libffi-dev
       - bundle config set --local path 'vendor/bundle'
       - bundle check || bundle install --jobs=4 --retry=3
-      # Ubuntu 20.04 upgraded libffi6 to libffi7 but our Rails apps are still looking for libffi6
-      - gem pristine ffi
       - yarn install
       - cache store
       - cp config/database.yml.ci config/database.yml
