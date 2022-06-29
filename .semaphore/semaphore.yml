@@ -9,14 +9,18 @@ global_job_config:
   prologue:
     commands:
       - checkout
+      # TODO: keep the version aligned with neeto side
       - sem-version ruby 3.0.4
       - sem-version node 16.5
       - sem-service start postgres 13
+      - cache restore
       # Ubuntu 20.04 upgraded libffi6 to libffi7 but our Rails apps are still looking for libffi6
       - sudo apt-get install -y libffi-dev
       - bundle config set --local path 'vendor/bundle'
+      # To avoid race conditions and issues like post_install hook failing, set jobs=1
       - bundle check || bundle install --jobs=1 --retry=3
       - yarn install
+      - cache store
       - cp config/database.yml.ci config/database.yml
       - bundle exec rake db:create db:schema:load --trace
 
