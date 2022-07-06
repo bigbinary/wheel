@@ -1,8 +1,9 @@
 // DO NOT ADD ANY OTHER RULES TO THIS FILE WITHOUT
 // CONSULTING WITH THE WHEEL TEAM.
 
-const { buildPathGroupsBasedOnWebpackAliases } = require(__dirname +
-  "/../.eslint-rules/helpers");
+const {
+  buildPathGroupsBasedOnWebpackAliases,
+} = require(`${__dirname}/../.eslint-rules/helpers`);
 const pathGroups = buildPathGroupsBasedOnWebpackAliases({
   customJSRoot: "cypress-tests/",
   customAliasPath: "cypress-tests/cypress/webpack.config.js",
