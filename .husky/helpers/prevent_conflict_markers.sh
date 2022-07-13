@@ -4,9 +4,12 @@ repeat() {
   char="$1"
   times="$2"
   text=""
-  for (( i = 0; i < "$times"; ++i ))
+  i="0"
+
+  while [ $i -lt $times ]
   do
     text="${text}${char}"
+    i=$((i+1))
   done
   echo "$text"
 }
