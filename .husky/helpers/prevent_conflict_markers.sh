@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 repeat() {
   char="$1"
