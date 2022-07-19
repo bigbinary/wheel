@@ -4,7 +4,7 @@ repeat() {
   char="$1"
   times="$2"
   text=""
-  i="0"
+  i=0
 
   while [ $i -lt $times ]
   do
