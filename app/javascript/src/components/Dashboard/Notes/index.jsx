@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Button } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
-import { NOTES as notes } from "components/constants";
-
+import { NOTES as notes } from "./constants";
 import DeleteAlert from "./DeleteAlert";
 import NotesList from "./NotesList";
 import NotesMenuBar from "./NotesMenuBar";
