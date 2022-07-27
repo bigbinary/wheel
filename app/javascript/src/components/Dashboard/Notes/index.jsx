@@ -1,102 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import EmptyNotesListImage from "images/EmptyNotesList";
-import { Delete } from "neetoicons";
-import { Button, PageLoader } from "neetoui";
-import { Container, Header, SubHeader } from "neetoui/layouts";
+import { Button } from "neetoui";
+import { Container, Header } from "neetoui/layouts";
 
-import notesApi from "apis/notes";
-import EmptyState from "components/Common/EmptyState";
+import { NOTES as notes } from "components/constants";
 
 import DeleteAlert from "./DeleteAlert";
+import NotesList from "./NotesList";
+import NotesMenuBar from "./NotesMenuBar";
 import NewNotePane from "./Pane/Create";
-import Table from "./Table";
 
 const Notes = () => {
-  const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
-  const [notes, setNotes] = useState([]);
-
-  useEffect(() => {
-    fetchNotes();
-  }, []);
-
-  const fetchNotes = async () => {
-    try {
-      setLoading(true);
-      const { data } = await notesApi.fetch();
-      setNotes(data.notes);
-    } catch (error) {
-      logger.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return <PageLoader />;
-  }
+  const [showMenu, setshowMenu] = useState(true);
 
   return (
-    <Container>
-      <Header
-        title="Notes"
-        actionBlock={
-          <Button
-            onClick={() => setShowNewNotePane(true)}
-            label="Add New Note"
-            icon="ri-add-line"
-          />
-        }
-        searchProps={{
-          value: searchTerm,
-          onChange: e => setSearchTerm(e.target.value),
-        }}
-      />
-      {notes.length ? (
-        <>
-          <SubHeader
-            rightActionBlock={
-              <Button
-                label="Delete"
-                icon={Delete}
-                onClick={() => setShowDeleteAlert(true)}
-                disabled={!selectedNoteIds.length}
-              />
-            }
-          />
-          <Table
+    <div className="flex">
+      <NotesMenuBar showMenu={showMenu} />
+      <Container>
+        <Header
+          title="All Notes"
+          actionBlock={
+            <Button
+              onClick={() => setShowNewNotePane(true)}
+              label="Add Note"
+              icon="ri-add-line"
+            />
+          }
+          menuBarToggle={
+            (onclick = () => {
+              setshowMenu(!showMenu);
+            })
+          }
+          searchProps={{
+            value: searchTerm,
+            onChange: e => setSearchTerm(e.target.value),
+          }}
+        />
+        <NotesList notes={notes} />
+        <NewNotePane
+          showPane={showNewNotePane}
+          setShowPane={setShowNewNotePane}
+          fetchNotes={notes}
+        />
+        {showDeleteAlert && (
+          <DeleteAlert
+            selectedNoteIds={selectedNoteIds}
+            onClose={() => setShowDeleteAlert(false)}
+            refetch={notes}
             setSelectedNoteIds={setSelectedNoteIds}
-            notes={notes}
-            fetchNotes={fetchNotes}
           />
-        </>
-      ) : (
-        <EmptyState
-          image={EmptyNotesListImage}
-          title="Looks like you don't have any notes!"
-          subtitle="Add your notes to send customized emails to them."
-          primaryAction={() => setShowNewNotePane(true)}
-          primaryActionLabel="Add New Note"
-        />
-      )}
-      <NewNotePane
-        showPane={showNewNotePane}
-        setShowPane={setShowNewNotePane}
-        fetchNotes={fetchNotes}
-      />
-      {showDeleteAlert && (
-        <DeleteAlert
-          selectedNoteIds={selectedNoteIds}
-          onClose={() => setShowDeleteAlert(false)}
-          refetch={fetchNotes}
-          setSelectedNoteIds={setSelectedNoteIds}
-        />
-      )}
-    </Container>
+        )}
+      </Container>
+    </div>
   );
 };
 
