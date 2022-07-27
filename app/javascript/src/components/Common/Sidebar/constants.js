@@ -1,3 +1,4 @@
+import { UserCircle as Contacts } from "@bigbinary/neeto-icons";
 import { Notes, Settings } from "neetoicons";
 
 export const APP_NAME = "Wheel";
@@ -11,6 +12,11 @@ export const SIDENAV_LINKS = [
     label: "Notes",
     to: "/notes",
     icon: Notes,
+  },
+  {
+    label: "Contacts",
+    to: "/contacts",
+    icon: Contacts,
   },
   {
     label: "Settings",

@@ -11,38 +11,3 @@ export const FEATURE_LIST = [
   "Performs background job processing 'inline' for heroku env. It means heroku can deliver emails.",
   "Letter opener gem for development.",
 ];
-
-export const NOTES = [
-  {
-    title: "How to claim the warranty?",
-    description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    execution_status: "Getting Started",
-    status: "created",
-    created_at: "2 hours ago",
-    created_by: "Oliver Smith",
-  },
-  {
-    title: "How to claim the warranty?",
-    description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    execution_status: "Getting Started",
-    status: "drafted",
-    created_at: "2 hours ago",
-    created_by: "Oliver Smith",
-  },
-  {
-    title: "How to claim the warranty?",
-    description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    execution_status: "Getting Started",
-    status: "drafted",
-    created_at: "2 hours ago",
-    created_by: "Oliver Smith",
-  },
-  {
-    title: "How to claim the warranty?",
-    description: `Are you getting my texts???" she texted to him. He glanced at it and chuckled under his breath. Of course he was getting them, but if he wasn't getting`,
-    execution_status: "Getting Started",
-    status: "drafted",
-    created_at: "2 hours ago",
-    created_by: "Oliver Smith",
-  },
-];
