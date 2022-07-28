@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Table } from "@bigbinary/neetoui";
+import { Table } from "neetoui";
 
 import { CONTACTS_COLUMNS as columns } from "./constants";
 import { CONTACTS_ROWS as rows } from "./constants";

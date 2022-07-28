@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import { Search, Settings, Plus } from "@bigbinary/neeto-icons";
-import { Typography } from "@bigbinary/neetoui";
-import { MenuBar } from "@bigbinary/neetoui/layouts";
+import { Search, Settings, Plus } from "neetoicons";
+import { Typography } from "neetoui";
+import { MenuBar } from "neetoui/layouts";
 
 export default function ContactsMenuBar({ showMenu }) {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);

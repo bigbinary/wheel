@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Clock, MenuHorizontal } from "@bigbinary/neeto-icons";
-import { Typography, Tag, Dropdown, Avatar } from "@bigbinary/neetoui";
+import { Clock, MenuHorizontal } from "neetoicons";
+import { Typography, Tag, Dropdown, Avatar } from "neetoui";
 
-export default function NotesList({ notes, index }) {
+export default function NotesList({ notes, onDelete }) {
   return (
     <div className="mt-2 flex w-full flex-col">
-      {notes.map(note => (
+      {notes.map((note, index) => (
         <div
           className="mb-4 w-full border border-gray-200 bg-white p-6 shadow-md dark:border-gray-700 dark:bg-gray-800"
           key={index}
@@ -15,7 +15,7 @@ export default function NotesList({ notes, index }) {
             <Typography style="h2">{note.title}</Typography>
             <Dropdown icon={MenuHorizontal} buttonStyle="text">
               <li>Edit</li>
-              <li>Delete</li>
+              <li onClick={onDelete}>Delete</li>
             </Dropdown>
           </div>
           <div className="mb-3">
