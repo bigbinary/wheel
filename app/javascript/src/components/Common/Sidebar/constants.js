@@ -1,5 +1,4 @@
-import { UserCircle as Contacts } from "@bigbinary/neeto-icons";
-import { Notes, Settings } from "neetoicons";
+import { Notes, Settings, UserCircle as Contacts } from "neetoicons";
 
 export const APP_NAME = "Wheel";
 
