@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
-
-import notesApi from "apis/notes";
+import { Button, Pane, Toastr } from "neetoui";
+import { Input, Select } from "neetoui/formik";
 
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
-export default function NoteForm({ onClose, refetch, note, isEdit }) {
+export default function NoteForm({ onClose, note, isEdit }) {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async values => {
+  const handleSubmit = () => {
     try {
-      if (isEdit) {
-        await notesApi.update(note.id, values);
-      } else {
-        await notesApi.create(values);
-      }
-      refetch();
+      Toastr.success("Note has been successfully created.");
       onClose();
     } catch (err) {
       logger.error(err);
@@ -40,13 +33,28 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
               label="Title"
               name="title"
               className="w-full flex-grow-0"
+              placeholder="Add Title"
               required
             />
-            <Textarea
+            <Input
               label="Description"
               name="description"
               className="w-full flex-grow-0"
-              rows={8}
+              placeholder="Add Description"
+              required
+            />
+            <Select
+              label="Assigned Contact"
+              name="contact"
+              className="w-full flex-grow-0"
+              placeholder="Select Role"
+              required
+            />
+            <Select
+              label="Tags"
+              name="tags"
+              className="w-full flex-grow-0"
+              placeholder="Select Tag"
               required
             />
           </Pane.Body>
