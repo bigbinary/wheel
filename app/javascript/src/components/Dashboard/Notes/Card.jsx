@@ -16,7 +16,7 @@ const Card = props => {
           icon={MenuVertical}
         >
           <li className="m-1">Edit</li>
-          <li className="m-1" onClick={() => action?.delete(note.id)}>
+          <li className="m-1" onClick={() => action.delete(note.id)}>
             Delete
           </li>
         </Dropdown>
@@ -38,7 +38,7 @@ const Card = props => {
           </Tooltip>
           <Avatar
             onClick={function noRefCheck() {}}
-            size="small"
+            size="medium"
             user={{
               name: "Oliver Smith",
             }}

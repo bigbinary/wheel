@@ -43,7 +43,8 @@ const Notes = () => {
     fetchNotes();
   }, []);
 
-  const handleDeleteSelection = () => {
+  const handleDeleteSelection = id => {
+    setSelectedNoteIds([id]);
     setShowDeleteAlert(true);
   };
 

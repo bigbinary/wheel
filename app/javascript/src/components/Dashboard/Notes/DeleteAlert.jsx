@@ -28,13 +28,13 @@ const DeleteAlert = ({
   return (
     <Alert
       isOpen
-      onSubmit={handleDelete}
+      size="sm"
+      title="Delete Note"
+      message="Are you sure you want to delete the note? This action cannot be undone."
       onClose={onClose}
-      message="Are you sure you want to continue? This cannot be undone."
-      title={`Delete ${selectedNoteIds.length} ${
-        selectedNoteIds.length > 1 ? "notes" : "note"
-      }?`}
+      onSubmit={handleDelete}
       isSubmitting={deleting}
+      closeButton={false}
     />
   );
 };
