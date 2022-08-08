@@ -79,6 +79,7 @@ const Notes = () => {
             <Button
               onClick={() => setShowNewNotePane(true)}
               label="Add New Note"
+              size="large"
               icon="ri-add-line"
             />
           }
