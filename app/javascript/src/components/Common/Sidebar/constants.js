@@ -1,4 +1,4 @@
-import { Notes, Settings } from "neetoicons";
+import { Notes, UserCircle, Download } from "neetoicons";
 
 export const APP_NAME = "Wheel";
 
@@ -13,8 +13,13 @@ export const SIDENAV_LINKS = [
     icon: Notes,
   },
   {
+    label: "Contacts",
+    to: "/contacts",
+    icon: UserCircle,
+  },
+  {
     label: "Settings",
     to: "/settings",
-    icon: Settings,
+    icon: Download,
   },
 ];
