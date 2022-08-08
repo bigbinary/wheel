@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
+import { Check } from "@bigbinary/neeto-icons";
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Button, Pane, Toastr } from "neetoui";
+import { Input, Textarea, Select } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
@@ -18,6 +19,7 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
       } else {
         await notesApi.create(values);
       }
+      Toastr.success("Form has been successfully saved.");
       refetch();
       onClose();
     } catch (err) {
@@ -37,28 +39,77 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
+              required
               label="Title"
               name="title"
               className="w-full flex-grow-0"
-              required
             />
             <Textarea
+              required
               label="Description"
               name="description"
+              placeholder="Enter note description"
               className="w-full flex-grow-0"
-              rows={8}
+              rows={3}
+            />
+            <Select
+              defaultValue={{
+                label: "Jacob Jones",
+                value: "Jacob Jones",
+              }}
+              isSearchable
+              label="Assigned Contact"
+              name="assignedContact"
               required
+              className="w-full flex-grow-0"
+              options={[
+                {
+                  label: "Jacob Jones",
+                  value: "Jacob Jones",
+                },
+                {
+                  label: "Ronald Richards",
+                  value: "Ronald Richards",
+                },
+              ]}
+              placeholder="Select contact"
+            />
+            <Select
+              defaultValue={{
+                label: "Sales",
+                value: "Sales",
+              }}
+              isSearchable
+              label="Tags"
+              name="ValueList"
+              className="w-full flex-grow-0"
+              isMulti
+              required
+              options={[
+                {
+                  label: "Sales",
+                  value: "Sales",
+                },
+                {
+                  label: "Finance",
+                  value: "Finance",
+                },
+              ]}
+              placeholder="Select tags"
             />
           </Pane.Body>
           <Pane.Footer>
             <Button
+              disabled={isSubmitting}
+              loading={isSubmitting}
               type="submit"
-              label={isEdit ? "Update" : "Save Changes"}
+              label="Save Changes"
               size="large"
               style="primary"
               className="mr-3"
-              disabled={isSubmitting}
-              loading={isSubmitting}
+              icon={Check}
+              iconPosition="right"
+              iconSize={14}
               onClick={() => setSubmitted(true)}
             />
             <Button
