@@ -2,6 +2,23 @@ import React from "react";
 
 import { MenuVertical } from "neetoicons";
 import { Avatar, Dropdown } from "neetoui";
+import * as yup from "yup";
+
+export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
+  firstname: "",
+  lastname: "",
+  email: "",
+  role: "",
+};
+
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  firstname: yup.string().min(3).required("firstname is required"),
+  lastname: yup.string().min(3).required("lastname is required"),
+  email: yup
+    .string()
+    .email("Must be a valid email")
+    .required("Email is required"),
+});
 
 export const MENUBAR_DATA = {
   heads: [

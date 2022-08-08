@@ -7,11 +7,12 @@ import Menubar from "components/Common/Menubar";
 import Table from "components/Dashboard/Contacts/Table";
 
 import { CONTACTS_DATA, MENUBAR_DATA } from "./constants";
+import NewContactPane from "./Pane/Create";
 
 function Contacts() {
   const [searchTerm, setSearchTerm] = useState("");
   const [, setCategory] = useState("All");
-  const [, setShowNewContactPane] = useState(false);
+  const [showNewContactPane, setShowNewContactPane] = useState(false);
 
   return (
     <>
@@ -38,6 +39,10 @@ function Contacts() {
           menuBarToggle
         />
         <Table contacts={CONTACTS_DATA} />
+        <NewContactPane
+          showPane={showNewContactPane}
+          setShowPane={setShowNewContactPane}
+        />
       </Container>
     </>
   );
