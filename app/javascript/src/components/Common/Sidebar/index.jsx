@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { LeftArrow, RightArrow } from "neetoicons";
 import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
 import { useHistory } from "react-router-dom";
 
@@ -28,6 +29,10 @@ const Sidebar = () => {
     } catch (error) {
       logger.error(error);
     }
+  };
+  const handleCollapse = e => {
+    e.preventDefault();
+    setIsSidebarCollapsed(prevState => !prevState);
   };
 
   const bottomLinks = [
@@ -60,8 +65,15 @@ const Sidebar = () => {
         email: user.email,
         bottomLinks,
       }}
+      footerLinks={[
+        {
+          icon: !isSidebarCollapsed ? LeftArrow : RightArrow,
+          to: "/unique",
+          onClick: handleCollapse,
+        },
+      ]}
       onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-      changelogProps={{ id: "neetochangelog-trigger" }}
+      tooltipStyle={0}
     />
   );
 };
