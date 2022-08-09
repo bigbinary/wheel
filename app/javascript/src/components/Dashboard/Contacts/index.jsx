@@ -11,13 +11,13 @@ import NewContactPane from "./Pane/Create";
 
 function Contacts() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [, setCategory] = useState("All");
+  const [category, setCategory] = useState("All");
   const [showNewContactPane, setShowNewContactPane] = useState(false);
 
   return (
     <>
       <Menubar
-        title="Contacts"
+        title={`${category} Contacts`}
         setCategory={setCategory}
         options={MENUBAR_DATA}
       />
