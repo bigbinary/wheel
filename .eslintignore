@@ -10,3 +10,4 @@ tmp
 .vscode
 babel.config.js
 app/javascript/packs
+jsconfig.json
