@@ -2,16 +2,16 @@ import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
 import { Button, Pane, Toastr } from "neetoui";
-import { Input, Select } from "neetoui/formik";
+import { Input } from "neetoui/formik";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import { CONTACTS_FORM_VALIDATION_SCHEMA } from "../constants";
 
-export default function NoteForm({ onClose, note, isEdit }) {
+export default function ContactForm({ onClose, contact }) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = () => {
     try {
-      Toastr.success("Note has been successfully created.");
+      Toastr.success("Contact has been successfully created.");
       onClose();
     } catch (err) {
       logger.error(err);
@@ -20,46 +20,50 @@ export default function NoteForm({ onClose, note, isEdit }) {
 
   return (
     <Formik
-      initialValues={note}
+      initialValues={contact}
       onSubmit={handleSubmit}
       validateOnBlur={submitted}
       validateOnChange={submitted}
-      validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
+      validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
           <Pane.Body className="space-y-6">
+            <div className="flex w-full justify-between space-x-4">
+              <Input
+                label="First Name"
+                name="first_name"
+                className="float-left flex"
+                placeholder="Add Title"
+                required
+              />
+              <Input
+                label="Last Name"
+                name="last_name"
+                className="float-right flex"
+                placeholder="Add Description"
+                required
+              />
+            </div>
             <Input
-              label="Title"
-              name="title"
+              label="Email"
+              name="email"
               className="w-full flex-grow-0"
-              placeholder="Add Title"
+              placeholder="Add Email"
               required
             />
             <Input
-              label="Description"
-              name="description"
+              label="Address"
+              name="address"
               className="w-full flex-grow-0"
-              placeholder="Add Description"
+              placeholder="Add Address"
               required
-            />
-            <Select
-              label="Assigned Contact"
-              name="assigned_contact"
-              className="w-full flex-grow-0"
-              placeholder="Select Role"
-            />
-            <Select
-              label="Tags"
-              name="tags"
-              className="w-full flex-grow-0"
-              placeholder="Select Tag"
             />
           </Pane.Body>
           <Pane.Footer>
             <Button
               type="submit"
-              label={isEdit ? "Update" : "Save Changes"}
+              label="Save Changes"
               size="large"
               style="primary"
               className="mr-3"

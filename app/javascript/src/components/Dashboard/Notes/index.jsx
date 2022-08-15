@@ -13,7 +13,7 @@ const Notes = () => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [showMenu, setshowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(true);
 
   return (
     <div className="flex">
@@ -28,11 +28,9 @@ const Notes = () => {
               icon="ri-add-line"
             />
           }
-          menuBarToggle={
-            (onclick = () => {
-              setshowMenu(!showMenu);
-            })
-          }
+          menuBarToggle={() => {
+            setShowMenu(!showMenu);
+          }}
           searchProps={{
             value: searchTerm,
             onChange: e => setSearchTerm(e.target.value),

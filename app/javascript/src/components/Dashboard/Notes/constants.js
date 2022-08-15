@@ -3,6 +3,8 @@ import * as yup from "yup";
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",
   description: "",
+  assigned_contacts: "",
+  tags: "",
 };
 
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
