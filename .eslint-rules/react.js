@@ -32,5 +32,13 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn",
     // auto-fixable: A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
     "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
+    // auto-fixable: Prefer arrow function expressions for component declaration.
+    "react/function-component-definition": [
+      "error",
+      {
+        namedComponents: "arrow-function",
+        unnamedComponents: "arrow-function",
+      },
+    ],
   },
 };
