@@ -17,10 +17,10 @@ const NewNotePane = ({ fetchNotes, showPane, setShowPane }) => {
         </Typography>
       </Pane.Header>
       <Form
-        onClose={onClose}
-        refetch={fetchNotes}
-        note={NOTES_FORM_INITIAL_FORM_VALUES}
         isEdit={false}
+        note={NOTES_FORM_INITIAL_FORM_VALUES}
+        refetch={fetchNotes}
+        onClose={onClose}
       />
     </Pane>
   );

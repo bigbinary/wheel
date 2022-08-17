@@ -14,7 +14,7 @@ const EditNotePane = ({ fetchNotes, showPane, setShowPane, note }) => {
           Edit Note
         </Typography>
       </Pane.Header>
-      <Form isEdit onClose={onClose} refetch={fetchNotes} note={note} />
+      <Form isEdit note={note} refetch={fetchNotes} onClose={onClose} />
     </Pane>
   );
 };

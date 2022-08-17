@@ -46,9 +46,9 @@ const Notes = () => {
         title="Notes"
         actionBlock={
           <Button
-            onClick={() => setShowNewNotePane(true)}
-            label="Add New Note"
             icon="ri-add-line"
+            label="Add New Note"
+            onClick={() => setShowNewNotePane(true)}
           />
         }
         searchProps={{
@@ -61,39 +61,39 @@ const Notes = () => {
           <SubHeader
             rightActionBlock={
               <Button
-                label="Delete"
-                icon={Delete}
-                onClick={() => setShowDeleteAlert(true)}
                 disabled={!selectedNoteIds.length}
+                icon={Delete}
+                label="Delete"
+                onClick={() => setShowDeleteAlert(true)}
               />
             }
           />
           <Table
-            setSelectedNoteIds={setSelectedNoteIds}
-            notes={notes}
             fetchNotes={fetchNotes}
+            notes={notes}
+            setSelectedNoteIds={setSelectedNoteIds}
           />
         </>
       ) : (
         <EmptyState
           image={EmptyNotesListImage}
-          title="Looks like you don't have any notes!"
-          subtitle="Add your notes to send customized emails to them."
           primaryAction={() => setShowNewNotePane(true)}
           primaryActionLabel="Add New Note"
+          subtitle="Add your notes to send customized emails to them."
+          title="Looks like you don't have any notes!"
         />
       )}
       <NewNotePane
-        showPane={showNewNotePane}
-        setShowPane={setShowNewNotePane}
         fetchNotes={fetchNotes}
+        setShowPane={setShowNewNotePane}
+        showPane={showNewNotePane}
       />
       {showDeleteAlert && (
         <DeleteAlert
-          selectedNoteIds={selectedNoteIds}
-          onClose={() => setShowDeleteAlert(false)}
           refetch={fetchNotes}
+          selectedNoteIds={selectedNoteIds}
           setSelectedNoteIds={setSelectedNoteIds}
+          onClose={() => setShowDeleteAlert(false)}
         />
       )}
     </Container>

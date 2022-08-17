@@ -47,35 +47,35 @@ const Login = ({ history }) => {
           initialValues={LOGIN_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          onSubmit={handleSubmit}
           validationSchema={LOGIN_FORM_VALIDATION_SCHEMA}
+          onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
             <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
               <Input
                 required
-                name="email"
-                label="Email"
-                type="email"
-                placeholder="oliver@example.com"
                 data-cy="login-email-text-field"
+                label="Email"
+                name="email"
+                placeholder="oliver@example.com"
+                type="email"
               />
               <Input
                 required
-                name="password"
-                label="Password"
-                type="password"
-                placeholder="******"
                 data-cy="login-password-text-field"
+                label="Password"
+                name="password"
+                placeholder="******"
+                type="password"
               />
               <Button
                 fullWidth
-                type="submit"
-                label="Login"
-                data-cy="login-submit-button"
                 className="h-8"
-                loading={isSubmitting}
+                data-cy="login-submit-button"
                 disabled={isSubmitting}
+                label="Login"
+                loading={isSubmitting}
+                type="submit"
                 onClick={() => setSubmitted(true)}
               />
             </Form>
@@ -85,17 +85,17 @@ const Login = ({ history }) => {
           <div className="flex flex-row items-center justify-start space-x-1">
             <p className="font-normal text-gray-600">Don't have an account?</p>
             <Button
+              data-cy="sign-up-link"
               label="Signup"
               style="link"
               to={SIGNUP_PATH}
-              data-cy="sign-up-link"
             />
           </div>
           <Button
+            data-cy="forgot-password-link"
             label="Forgot password?"
             style="link"
             to={RESET_PASSWORD_PATH}
-            data-cy="forgot-password-link"
           />
         </div>
       </div>

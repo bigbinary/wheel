@@ -63,19 +63,19 @@ const Main = props => {
         {AUTH_ROUTES.map(route => (
           <Route
             exact
+            component={route.component}
             key={route.path}
             path={route.path}
-            component={route.component}
           />
         ))}
-        {!isLoggedIn && <Route exact path={DASHBOARD_PATH} component={Hero} />}
+        {!isLoggedIn && <Route exact component={Hero} path={DASHBOARD_PATH} />}
         {PRIVATE_ROUTES.map(route => (
           <PrivateRoute
+            component={route.component}
+            condition={isLoggedIn}
             key={route.path}
             path={route.path}
             redirectRoute={LOGIN_PATH}
-            condition={isLoggedIn}
-            component={route.component}
           />
         ))}
       </Switch>

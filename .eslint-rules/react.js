@@ -40,5 +40,43 @@ module.exports = {
         unnamedComponents: "arrow-function",
       },
     ],
+    // auto-fixable: Components without children can be self-closed to avoid unnecessary extra closing tag.
+    "react/self-closing-comp": [
+      "error",
+      {
+        component: true,
+        html: true,
+      },
+    ],
+    // auto-fixable: Wrapping multiline JSX in parentheses can improve readability and/or convenience.
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        declaration: "parens-new-line",
+        assignment: "parens-new-line",
+        return: "parens-new-line",
+        arrow: "parens-new-line",
+        condition: "parens-new-line",
+        logical: "parens-new-line",
+        prop: "ignore",
+      },
+    ],
+    // not-auto-fixable: Make sure files containing JSX is having .jsx extension.
+    "react/jsx-filename-extension": ["error", { allow: "as-needed" }],
+    // auto-fixable: Omit mentioning the "true" value if it can be implicitly understood in props.
+    "react/jsx-boolean-value": "error",
+    // auto-fixable: Partially fixable. Make sure the state and setter have symmertic naming.
+    "react/hook-use-state": "error",
+    // auto-fixable: Shorthand notations should always be at the top and also enforce props alphabetical sorting.
+    "react/jsx-sort-props": [
+      "error",
+      {
+        callbacksLast: true,
+        shorthandFirst: true,
+        multiline: "last",
+        reservedFirst: false,
+        locale: "auto",
+      },
+    ],
   },
 };

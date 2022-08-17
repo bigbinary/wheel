@@ -48,35 +48,35 @@ const Email = () => {
 
   return (
     <Container>
-      <Header title="Update Email" className="border-b border-gray-200" />
+      <Header className="border-b border-gray-200" title="Update Email" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={initialFormValues}
-          onSubmit={handleSubmit}
           innerRef={formikPasswordContext.formRef}
           validationSchema={EMAIL_FORM_VALIDATION_SCHEMA}
+          onSubmit={handleSubmit}
         >
           {({ dirty, isSubmitting, validateForm }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
-              <Input required name="email" label="Email" type="email" />
+              <Input required label="Email" name="email" type="email" />
               <Button
                 fullWidth
+                className="h-8"
+                disabled={!dirty || isSubmitting}
+                label="Update"
+                loading={isSubmitting}
                 type="submit"
                 onClick={e => promptPassword(e, validateForm)}
-                label="Update"
-                className="h-8"
-                loading={isSubmitting}
-                disabled={!dirty || isSubmitting}
               />
             </Form>
           )}
         </Formik>
         <ConfirmPasswordFormModal
+          alertMessage="You will be logged out upon updating your email! Please enter your password to continue."
+          header="Are you sure you want to update your email?"
           isOpen={formikPasswordContext.showPasswordModal}
           onClose={formikPasswordContext.closeModal}
-          header="Are you sure you want to update your email?"
           onSubmit={formikPasswordContext.handlePasswordConfirmation}
-          alertMessage="You will be logged out upon updating your email! Please enter your password to continue."
         />
       </div>
     </Container>

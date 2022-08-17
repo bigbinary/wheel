@@ -21,10 +21,10 @@ const EmptyState = ({
       <div className="flex flex-row items-center justify-center">
         {primaryAction && (
           <Button
-            type="primary"
             icon="ri-add-fill"
-            onClick={primaryAction}
             label={primaryActionLabel}
+            type="primary"
+            onClick={primaryAction}
           />
         )}
       </div>

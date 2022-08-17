@@ -35,54 +35,54 @@ const Signup = ({ history }) => {
           initialValues={SIGNUP_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          onSubmit={handleSubmit}
           validationSchema={SIGNUP_FORM_VALIDATION_SCHEMA}
+          onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
             <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
               <Input
                 required
-                name="email"
-                type="email"
                 label="Email"
+                name="email"
                 placeholder="oliver@example.com"
+                type="email"
               />
               <Input
                 required
-                name="firstName"
-                type="text"
                 label="First name"
+                name="firstName"
                 placeholder="Oliver"
-              />
-              <Input
-                required
-                name="lastName"
                 type="text"
-                placeholder="Smith"
+              />
+              <Input
+                required
                 label="Last name"
+                name="lastName"
+                placeholder="Smith"
+                type="text"
               />
               <Input
                 required
-                name="password"
-                type="password"
                 label="Password"
+                name="password"
                 placeholder="******"
+                type="password"
               />
               <Input
                 required
-                name="passwordConfirmation"
-                type="password"
                 label="Confirm password"
+                name="passwordConfirmation"
                 placeholder="******"
+                type="password"
               />
               <Button
                 fullWidth
-                type="submit"
-                onClick={() => setSubmitted(true)}
                 className="h-8"
-                loading={isSubmitting}
                 disabled={isSubmitting}
                 label="Signup"
+                loading={isSubmitting}
+                type="submit"
+                onClick={() => setSubmitted(true)}
               />
             </Form>
           )}

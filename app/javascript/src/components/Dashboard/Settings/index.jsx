@@ -24,10 +24,10 @@ const Settings = ({ history, location }) => {
       <MenuBar showMenu title="Settings">
         {SETTINGS_NAVLINKS.map(navlink => (
           <MenuBar.Item
+            active={tab === navlink.key}
+            description={navlink.description}
             key={navlink.key}
             label={navlink.label}
-            description={navlink.description}
-            active={tab === navlink.key}
             onClick={() => setActiveNavlink(navlink)}
           />
         ))}

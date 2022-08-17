@@ -113,6 +113,8 @@ module.exports = {
     ],
     // auto-fixable: Partially fixable. Unless there's a need to the this keyword, there's no advantage of using a plain function.
     "prefer-arrow-callback": ["error", { allowUnboundThis: true }],
+    // not-auto-fixable: Convert multiple imports from same module into a single import.
+    "no-duplicate-imports": ["error", { includeExports: true }],
     // auto-fixable: This rule conflicts with prettier rules. Thus we've NOT kept this rule in react file. This rule ensures we don't add blank lines in JSX.
     "react/jsx-newline": ["error", { prevent: true }],
   },
