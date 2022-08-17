@@ -61,5 +61,7 @@ module.exports = {
         prop: "ignore",
       },
     ],
+    // not-auto-fixable: Make sure files containing JSX is having .jsx extension.
+    "react/jsx-filename-extension": ["error", { allow: "as-needed" }],
   },
 };
