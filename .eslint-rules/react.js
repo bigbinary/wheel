@@ -65,7 +65,18 @@ module.exports = {
     "react/jsx-filename-extension": ["error", { allow: "as-needed" }],
     // auto-fixable: Omit mentioning the "true" value if it can be implicitly understood in props.
     "react/jsx-boolean-value": "error",
-    // auto-fixable: Make sure the state and setter have symmertic naming.
+    // auto-fixable: Partially fixable. Make sure the state and setter have symmertic naming.
     "react/hook-use-state": "error",
+    // auto-fixable: Shorthand notations should always be at the top and also enforce props alphabetical sorting.
+    "react/jsx-sort-props": [
+      "error",
+      {
+        callbacksLast: true,
+        shorthandFirst: true,
+        multiline: "last",
+        reservedFirst: false,
+        locale: "auto",
+      },
+    ],
   },
 };
