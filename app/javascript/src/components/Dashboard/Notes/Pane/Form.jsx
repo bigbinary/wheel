@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
-export default function NoteForm({ onClose, refetch, note, isEdit }) {
+const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async values => {
@@ -72,4 +72,6 @@ export default function NoteForm({ onClose, refetch, note, isEdit }) {
       )}
     </Formik>
   );
-}
+};
+
+export default NoteForm;

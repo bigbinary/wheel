@@ -111,5 +111,9 @@ module.exports = {
       "always",
       { avoidQuotes: true, ignoreConstructors: true },
     ],
+    // auto-fixable: Partially fixable. Unless there's a need to the this keyword, there's no advantage of using a plain function.
+    "prefer-arrow-callback": ["error", { allowUnboundThis: true }],
+    // auto-fixable: This rule conflicts with prettier rules. Thus we've NOT kept this rule in react file. This rule ensures we don't add blank lines in JSX.
+    "react/jsx-newline": ["error", { prevent: true }],
   },
 };
