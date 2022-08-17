@@ -48,5 +48,18 @@ module.exports = {
         html: true,
       },
     ],
+    // auto-fixable: Wrapping multiline JSX in parentheses can improve readability and/or convenience.
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        declaration: "parens-new-line",
+        assignment: "parens-new-line",
+        return: "parens-new-line",
+        arrow: "parens-new-line",
+        condition: "parens-new-line",
+        logical: "parens-new-line",
+        prop: "ignore",
+      },
+    ],
   },
 };
