@@ -40,5 +40,13 @@ module.exports = {
         unnamedComponents: "arrow-function",
       },
     ],
+    // auto-fixable: Components without children can be self-closed to avoid unnecessary extra closing tag.
+    "react/self-closing-comp": [
+      "error",
+      {
+        component: true,
+        html: true,
+      },
+    ],
   },
 };
