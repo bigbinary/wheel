@@ -28,25 +28,25 @@ const ResetPassword = () => {
           initialValues={RESET_PASSWORD_FORM_INITIAL_VALUES}
           validateOnBlur={submitted}
           validateOnChange={submitted}
-          onSubmit={() => null}
           validationSchema={RESET_PASSWORD_FORM_VALIDATION_SCHEMA}
+          onSubmit={() => null}
         >
           {({ isSubmitting }) => (
             <Form
               className="w-full space-y-6 rounded-md border bg-white p-8 shadow"
               id="new_user"
             >
-              <Input name="email" label="Email" type="email" required />
+              <Input required label="Email" name="email" type="email" />
               <div className="flex flex-col items-center justify-center space-y-2">
                 <Button
                   fullWidth
                   className="h-8"
-                  type="submit"
-                  label="Send reset password email"
                   data-disable-with="Send reset password email"
-                  onClick={() => setSubmitted(true)}
-                  loading={isSubmitting}
                   disabled={isSubmitting}
+                  label="Send reset password email"
+                  loading={isSubmitting}
+                  type="submit"
+                  onClick={() => setSubmitted(true)}
                 />
                 <Button label="Back" style="link" to={LOGIN_PATH} />
               </div>

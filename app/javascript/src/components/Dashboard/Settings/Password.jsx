@@ -27,40 +27,40 @@ const Password = () => {
 
   return (
     <Container>
-      <Header title="Change Password" className="border-b border-gray-200" />
+      <Header className="border-b border-gray-200" title="Change Password" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={CHANGE_PASSWORD_FORM_INITIAL_VALUES}
-          validationSchema={CHANGE_PASSWORD_FORM_VALIDATION_SCHEMA}
-          onSubmit={handleSubmit}
           validateOnBlur={submitted}
           validateOnChange={submitted}
+          validationSchema={CHANGE_PASSWORD_FORM_VALIDATION_SCHEMA}
+          onSubmit={handleSubmit}
         >
           {({ isSubmitting, dirty }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
               <Input
                 {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
-                name="currentPassword"
                 label="Current password"
+                name="currentPassword"
               />
               <Input
                 {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
-                name="password"
                 label="New password"
+                name="password"
               />
               <Input
                 {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
-                name="passwordConfirmation"
                 label="Confirm password"
+                name="passwordConfirmation"
               />
               <Button
                 fullWidth
+                className="h-8"
+                disabled={!dirty || isSubmitting}
+                label="Update"
+                loading={isSubmitting}
                 name="submit"
                 type="submit"
-                label="Update"
-                className="h-8"
-                loading={isSubmitting}
-                disabled={!dirty || isSubmitting}
                 onClick={() => setSubmitted(true)}
               />
             </Form>

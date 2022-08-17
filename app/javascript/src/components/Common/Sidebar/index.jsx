@@ -47,9 +47,10 @@ const Sidebar = () => {
 
   return (
     <NeetoUISidebar
+      appName={APP_NAME}
+      changelogProps={{ id: "neetochangelog-trigger" }}
       isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
-      appName={APP_NAME}
       organizationInfo={{
         name: "Wheel",
         subdomain: "bigbinary.com",
@@ -61,7 +62,6 @@ const Sidebar = () => {
         bottomLinks,
       }}
       onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-      changelogProps={{ id: "neetochangelog-trigger" }}
     />
   );
 };

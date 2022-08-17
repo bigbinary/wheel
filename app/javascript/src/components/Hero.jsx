@@ -7,7 +7,7 @@ import { FEATURE_LIST } from "./constants";
 const Features = ({ features }) => (
   <ul className="list-disc">
     {features.map((feature, index) => (
-      <li key={index} className="border-b border-gray-100 py-3 last:border-0">
+      <li className="border-b border-gray-100 py-3 last:border-0" key={index}>
         {feature}
       </li>
     ))}
@@ -24,7 +24,7 @@ const Hero = () => (
       </p>
       <Features features={FEATURE_LIST} />
       <div className="mt-6 flex items-center justify-center">
-        <Button size="large" type="primary" to="/login" label="Login" />
+        <Button label="Login" size="large" to="/login" type="primary" />
       </div>
     </div>
   </div>

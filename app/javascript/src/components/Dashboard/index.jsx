@@ -14,7 +14,7 @@ const Dashboard = () => (
     <Sidebar />
     <Switch>
       {DASHBOARD_ROUTES.map(({ path, component }) => (
-        <Route exact key={path} path={path} component={component} />
+        <Route exact component={component} key={path} path={path} />
       ))}
       <Redirect from={DASHBOARD_PATH} to={NOTES_PATH} />
     </Switch>

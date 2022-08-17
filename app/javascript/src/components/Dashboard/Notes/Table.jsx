@@ -13,21 +13,21 @@ const Table = ({ setSelectedNoteIds, notes = [], fetchNotes }) => {
     <>
       <div className="notes-table-height w-full">
         <NeetoUITable
-          rowData={notes}
+          allowRowClick
           columnData={NOTES_TABLE_COLUMN_DATA}
+          rowData={notes}
           onRowSelect={selectedRowKeys => setSelectedNoteIds(selectedRowKeys)}
           onRowClick={(_, note) => {
             setSelectedNote(note);
             setShowEditNote(true);
           }}
-          allowRowClick={true}
         />
       </div>
       <EditNotePane
-        showPane={showEditNote}
-        setShowPane={setShowEditNote}
         fetchNotes={fetchNotes}
         note={selectedNote}
+        setShowPane={setShowEditNote}
+        showPane={showEditNote}
       />
     </>
   );

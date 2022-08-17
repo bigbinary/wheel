@@ -6,8 +6,7 @@ import { Input } from "neetoui/formik";
 import { Container, Header } from "neetoui/layouts";
 
 import profilesApi from "apis/profiles";
-import { useUserState } from "contexts/user";
-import { useUserDispatch } from "contexts/user";
+import { useUserState, useUserDispatch } from "contexts/user";
 
 import ConfirmPasswordFormModal from "./ConfirmPasswordFormModal";
 import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";
@@ -50,35 +49,35 @@ const Profile = () => {
 
   return (
     <Container>
-      <Header title="My Profile" className="border-b border-gray-200" />
+      <Header className="border-b border-gray-200" title="My Profile" />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           enableReinitialize
-          innerRef={formikPasswordContext.formRef}
           initialValues={initialFormValues}
-          onSubmit={handleSubmit}
+          innerRef={formikPasswordContext.formRef}
           validationSchema={PROFILE_FORM_VALIDATION_SCHEMA}
+          onSubmit={handleSubmit}
         >
           {({ dirty, isSubmitting, validateForm }) => (
             <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
-              <Input required name="firstName" label="First Name" />
-              <Input required name="lastName" label="Last name" />
+              <Input required label="First Name" name="firstName" />
+              <Input required label="Last name" name="lastName" />
               <Button
                 fullWidth
+                className="h-8"
+                disabled={!dirty || isSubmitting}
+                label="Update"
+                loading={isSubmitting}
                 type="submit"
                 onClick={e => promptPassword(e, validateForm)}
-                label="Update"
-                className="h-8"
-                loading={isSubmitting}
-                disabled={!dirty || isSubmitting}
               />
             </Form>
           )}
         </Formik>
         <ConfirmPasswordFormModal
+          header="Please enter your password to continue."
           isOpen={formikPasswordContext.showPasswordModal}
           onClose={formikPasswordContext.closeModal}
-          header="Please enter your password to continue."
           onSubmit={formikPasswordContext.handlePasswordConfirmation}
         />
       </div>

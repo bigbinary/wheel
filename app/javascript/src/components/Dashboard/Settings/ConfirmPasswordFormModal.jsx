@@ -24,10 +24,10 @@ const ConfirmPasswordFormModal = ({
 
   return (
     <Formik
-      innerRef={innerRef}
       initialValues={PASSWORD_CONFIRMATION_FORM_INITIAL_VALUES}
-      onSubmit={onSubmit}
+      innerRef={innerRef}
       validationSchema={PASSWORD_VALIDATION_SCHEMA}
+      onSubmit={onSubmit}
     >
       {({ values, isSubmitting, handleSubmit }) => (
         <Modal isOpen={isOpen} onClose={onClose}>
@@ -38,29 +38,29 @@ const ConfirmPasswordFormModal = ({
             <Modal.Body>
               {alertMessage && <p className="my-2">{alertMessage}</p>}
               <Input
-                required
                 autoFocus
-                name="password"
-                label="Current password"
-                type="password"
+                required
                 className="my-2"
+                label="Current password"
+                name="password"
+                type="password"
               />
             </Modal.Body>
             <Modal.Footer className="space-x-2">
               <Button
-                type="submit"
-                label="Continue"
-                size="large"
-                onClick={handleSubmit}
-                loading={isSubmitting}
                 disabled={isSubmitting || !values.password}
+                label="Continue"
+                loading={isSubmitting}
+                size="large"
+                type="submit"
+                onClick={handleSubmit}
               />
               <Button
-                style="text"
-                label="Cancel"
-                onClick={onClose}
-                size="large"
                 disabled={isSubmitting}
+                label="Cancel"
+                size="large"
+                style="text"
+                onClick={onClose}
               />
             </Modal.Footer>
           </Form>
