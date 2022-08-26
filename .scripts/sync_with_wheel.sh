@@ -47,7 +47,6 @@ declare -a configs=(
   "bin/rails"
   "bin/rake"
   "bin/setup"
-  "bin/spring"
   "bin/update"
   "bin/webpack"
   "bin/webpack-dev-server"
