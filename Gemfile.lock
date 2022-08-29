@@ -191,9 +191,6 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
-    listen (3.7.1)
-      rb-fsevent (~> 0.10, >= 0.10.3)
-      rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -279,9 +276,6 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    rb-fsevent (0.11.1)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
     react-rails (2.6.2)
       babel-transpiler (>= 0.7.0)
       connection_pool
@@ -391,7 +385,6 @@ DEPENDENCIES
   honeybadger
   jbuilder (>= 2.7)
   letter_opener
-  listen (~> 3.2)
   mail_interceptor
   minitest
   minitest-ci

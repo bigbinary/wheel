@@ -71,10 +71,6 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code
   gem "web-console"
 
-  # Listens to file modifications and notifies whoever is subscribed.
-  # This way, rails reloads your files when you save them.
-  gem "listen", "~> 3.2"
-
   # reports N+1 queries
   gem "bullet"
 
