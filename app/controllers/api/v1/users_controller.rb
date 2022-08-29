@@ -21,7 +21,7 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def destroy
     @user.destroy!
-    respond_with_success(t("successfully_destroyed", count: 1, entity: "User"))
+    respond_with_success(t("successfully_deleted", count: 1, entity: "User"))
   end
 
   private
