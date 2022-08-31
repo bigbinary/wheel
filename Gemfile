@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "3.0.4"
 
-gem "rails", "~> 6.1.5"
+gem "rails", "~> 7.0.3.1"
 gem "sprockets"
 
 # friends of Rails
@@ -68,16 +68,8 @@ group :development, :staging, :heroku do
 end
 
 group :development do
-  # speeds up development by keeping your application running in the background
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
-
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code
   gem "web-console"
-
-  # Listens to file modifications and notifies whoever is subscribed.
-  # This way, rails reloads your files when you save them.
-  gem "listen", "~> 3.2"
 
   # reports N+1 queries
   gem "bullet"
