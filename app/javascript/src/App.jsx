@@ -1,3 +1,4 @@
+/// <reference path="types.d.ts" />
 import React from "react";
 
 import { AuthProvider } from "contexts/auth";
