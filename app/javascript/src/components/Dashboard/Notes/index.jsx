@@ -9,6 +9,7 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
+import NotesMenu from "./NotesMenu";
 import NewNotePane from "./Pane/Create";
 import Table from "./Table";
 
@@ -19,6 +20,7 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     fetchNotes();
@@ -42,6 +44,7 @@ const Notes = () => {
 
   return (
     <Container>
+      <NotesMenu showMenu={showMenu} />
       <Header
         title="Notes"
         actionBlock={
@@ -51,6 +54,9 @@ const Notes = () => {
             onClick={() => setShowNewNotePane(true)}
           />
         }
+        menuBarToggle={() => {
+          setShowMenu(!showMenu);
+        }}
         searchProps={{
           value: searchTerm,
           onChange: e => setSearchTerm(e.target.value),
