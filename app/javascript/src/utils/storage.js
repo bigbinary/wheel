@@ -5,9 +5,14 @@ const setToLocalStorage = (key, value) => {
 };
 
 const getFromLocalStorage = key => {
-  const value = localStorage.getItem(key);
-  const response = value ? JSON.parse(value) : "";
-
+  let response = "";
+  try {
+    const value = localStorage.getItem(key);
+    response = value ? JSON.parse(value) : "";
+  } catch (error) {
+    logger.error(error);
+    response = "";
+  }
   return response;
 };
 
