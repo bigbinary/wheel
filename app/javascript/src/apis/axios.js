@@ -1,11 +1,7 @@
 import axios from "axios";
 import { Toastr } from "neetoui";
 
-import { LOGIN_PATH } from "components/routeConstants";
-import {
-  clearLocalStorageCredentials,
-  getFromLocalStorage,
-} from "utils/storage";
+import { getFromLocalStorage } from "utils/storage";
 
 axios.defaults.baseURL = "/";
 
@@ -42,11 +38,10 @@ const handleSuccessResponse = response => {
   return response;
 };
 
-const handleErrorResponse = error => {
+const handleErrorResponse = (error, authDispatch) => {
   if (error.response?.status === 401) {
+    authDispatch({ type: "LOGOUT" });
     Toastr.error(error.response?.data?.error);
-    clearLocalStorageCredentials();
-    setTimeout(() => (window.location.href = LOGIN_PATH), 2000);
   } else {
     Toastr.error(error.response?.data?.error || error.message);
   }
