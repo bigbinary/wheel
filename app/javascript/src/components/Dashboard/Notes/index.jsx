@@ -49,7 +49,8 @@ const Notes = () => {
     <Container>
       <NotesMenu showMenu={showMenu} />
       <Header
-        title="All Notes"
+        menuBarToggle={() => setShowMenu(!showMenu)}
+        title="Notes"
         actionBlock={
           <Button
             icon="ri-add-line"
@@ -57,9 +58,6 @@ const Notes = () => {
             onClick={() => setShowNewNotePane(true)}
           />
         }
-        menuBarToggle={() => {
-          setShowMenu(!showMenu);
-        }}
         searchProps={{
           value: searchTerm,
           onChange: e => setSearchTerm(e.target.value),
