@@ -6,7 +6,9 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "sync_with_wheel": "curl -s -L \"https://raw.githubusercontent.com/bigbinary/wheel/master/.scripts/sync_with_wheel.sh\" | bash"
+    "sync_with_wheel": "curl -s -L \"https://raw.githubusercontent.com/bigbinary/wheel/master/.scripts/sync_with_wheel.sh\" | bash",
+    "lint": "eslint \"app/javascript/src/**/*.{js,jsx}\"",
+    "lint:fix": "eslint --fix \"app/javascript/src/**/*.{js,jsx}\""
   },
   "lint-staged": {
     "app/**/*.{js,jsx,json}": [
