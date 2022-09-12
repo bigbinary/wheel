@@ -11,7 +11,7 @@ module Authenticable
   private
 
     def authenticate_user_using_x_auth_token
-      user_email = request.headers["X-Auth-Email"]
+      user_email = request.headers["X-Auth-Email"].presence
       auth_token = request.headers["X-Auth-Token"].presence
       user = user_email && User.find_by(email: user_email)
 
