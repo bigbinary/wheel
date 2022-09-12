@@ -25,12 +25,13 @@ import {
 
 const Main = props => {
   const [loading, setLoading] = useState(true);
-  const { authToken } = useAuthState();
+  const { authToken, authEmail } = useAuthState();
   const { user: userContextState } = useUserState();
   const userDispatch = useUserDispatch();
   const authDispatch = useAuthDispatch();
   const currentUser = userContextState || props?.user;
-  const isLoggedIn = isPresent(authToken) && isPresent(currentUser);
+  const isLoggedIn =
+    isPresent(authEmail) && isPresent(authToken) && isPresent(currentUser);
 
   useEffect(() => {
     userDispatch({ type: "SET_USER", payload: { user: props?.user } });
