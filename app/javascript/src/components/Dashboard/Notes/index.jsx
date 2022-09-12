@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import { Button, PageLoader } from "neetoui";
+import { Button, PageLoader, Toastr } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import { NOTES } from "./constants";
+import DeleteAlert from "./DeleteAlert";
 import NotesList from "./NotesList";
 import NotesMenu from "./NotesMenu";
 import NewNotePane from "./Pane/Create";
@@ -14,6 +15,9 @@ const Notes = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [notes, setNotes] = useState([{}]);
   const [showMenu, setShowMenu] = useState(false);
+  const [showDeleteAlert, setShowDeleteAlert] = useState(false);
+  const [deleteNoteId, setDeleteNoteId] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     setNotes(NOTES);
@@ -23,6 +27,23 @@ const Notes = () => {
   if (loading) {
     return <PageLoader />;
   }
+
+  const handleDeleteNote = async () => {
+    try {
+      const newNotes = notes.filter(note => note.id !== deleteNoteId);
+      setNotes(newNotes);
+      setIsOpen(false);
+      Toastr.success("Note Successfully Submitted");
+    } catch (error) {
+      logger.error(error);
+      Toastr.success("Some Error Occured! Note not deleted");
+    }
+  };
+
+  const closeDeleteAlertHelper = () => {
+    setDeleteNoteId(null);
+    setShowDeleteAlert(false);
+  };
 
   return (
     <Container>
@@ -44,16 +65,24 @@ const Notes = () => {
           onChange: e => setSearchTerm(e.target.value),
         }}
       />
-      <NotesList notes={notes} setShowNewNotePane={setShowNewNotePane} />
+      <NotesList
+        notes={notes}
+        setDeleteNoteId={setDeleteNoteId}
+        setIsOpen={setIsOpen}
+        setShowDeleteAlert={setShowDeleteAlert}
+        setShowNewNotePane={setShowNewNotePane}
+      />
       <NewNotePane
         setShowPane={setShowNewNotePane}
         showPane={showNewNotePane}
       />
-      {/* {showDeleteAlert && (
+      {showDeleteAlert && (
         <DeleteAlert
-          onClose={() => setShowDeleteAlert(false)}
+          isOpen={isOpen}
+          onClose={closeDeleteAlertHelper}
+          onDelete={handleDeleteNote}
         />
-      )} */}
+      )}
     </Container>
   );
 };
