@@ -46,42 +46,44 @@ const Notes = () => {
   };
 
   return (
-    <Container>
+    <div className="flex w-full">
       <NotesMenu showMenu={showMenu} />
-      <Header
-        menuBarToggle={() => setShowMenu(!showMenu)}
-        title="Notes"
-        actionBlock={
-          <Button
-            icon="ri-add-line"
-            label="Add New Note"
-            onClick={() => setShowNewNotePane(true)}
-          />
-        }
-        searchProps={{
-          value: searchTerm,
-          onChange: e => setSearchTerm(e.target.value),
-        }}
-      />
-      <NotesList
-        notes={notes}
-        setDeleteNoteId={setDeleteNoteId}
-        setIsOpen={setIsOpen}
-        setShowDeleteAlert={setShowDeleteAlert}
-        setShowNewNotePane={setShowNewNotePane}
-      />
-      <NewNotePane
-        setShowPane={setShowNewNotePane}
-        showPane={showNewNotePane}
-      />
-      {showDeleteAlert && (
-        <DeleteAlert
-          isOpen={isOpen}
-          onClose={closeDeleteAlertHelper}
-          onDelete={handleDeleteNote}
+      <Container>
+        <Header
+          menuBarToggle={() => setShowMenu(!showMenu)}
+          title="Notes"
+          actionBlock={
+            <Button
+              icon="ri-add-line"
+              label="Add New Note"
+              onClick={() => setShowNewNotePane(true)}
+            />
+          }
+          searchProps={{
+            value: searchTerm,
+            onChange: e => setSearchTerm(e.target.value),
+          }}
         />
-      )}
-    </Container>
+        <NotesList
+          notes={notes}
+          setDeleteNoteId={setDeleteNoteId}
+          setIsOpen={setIsOpen}
+          setShowDeleteAlert={setShowDeleteAlert}
+          setShowNewNotePane={setShowNewNotePane}
+        />
+        <NewNotePane
+          setShowPane={setShowNewNotePane}
+          showPane={showNewNotePane}
+        />
+        {showDeleteAlert && (
+          <DeleteAlert
+            isOpen={isOpen}
+            onClose={closeDeleteAlertHelper}
+            onDelete={handleDeleteNote}
+          />
+        )}
+      </Container>
+    </div>
   );
 };
 
