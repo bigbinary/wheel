@@ -1,6 +1,6 @@
 import { Notes, Settings } from "neetoicons";
 
-export const APP_NAME = "Wheel";
+export const APP_NAME = "NeetoUiChallenge";
 
 export const PASSWORD_PATH = "/my/password/edit";
 export const PROFILE_PATH = "/my/profile";
