@@ -11,7 +11,7 @@ jobs:
     parallelism: 1
     docker:
       - image: "cypress/included:8.5.0"
-    working_directory: ~/wheel
+    working_directory: ~/NeetoUiChallenge
     steps:
       - checkout
       - run:
