@@ -1,6 +1,5 @@
+import Avatar from "images/avatar.png";
 import * as yup from "yup";
-
-import Avatar from "../../../images/avatar.png";
 
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",

@@ -13,7 +13,7 @@ const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [notes, setNotes] = useState([{}]);
+  const [notes, setNotes] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [deleteNoteId, setDeleteNoteId] = useState(null);
@@ -50,7 +50,7 @@ const Notes = () => {
       <NotesMenu showMenu={showMenu} />
       <Container>
         <Header
-          menuBarToggle={() => setShowMenu(!showMenu)}
+          menuBarToggle={() => setShowMenu(show => !show)}
           title="Notes"
           actionBlock={
             <Button

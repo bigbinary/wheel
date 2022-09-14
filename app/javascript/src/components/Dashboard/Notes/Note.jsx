@@ -1,6 +1,6 @@
 import React from "react";
 
-import { MenuVertical, Clock } from "@bigbinary/neeto-icons";
+import { MenuVertical, Clock } from "neetoicons";
 import { Typography, Dropdown, Tag, Tooltip, Avatar } from "neetoui";
 
 const Note = ({
@@ -49,7 +49,7 @@ const Note = ({
             user={{
               imageUrl: avatar,
             }}
-            onClick={function noRefCheck() {}}
+            onClick={() => {}}
           />
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Plus, Search, Settings } from "@bigbinary/neeto-icons";
+import { Plus, Search, Settings } from "neetoicons";
 import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
