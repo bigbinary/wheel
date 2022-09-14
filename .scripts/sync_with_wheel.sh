@@ -1,5 +1,5 @@
 # For executing this script, run the following from your terminal:
-# curl -s -L "https://raw.githubusercontent.com/bigbinary/NeetoUiChallenge/master/.scripts/sync_with_NeetoUiChallenge.sh" | bash
+# curl -s -L "https://raw.githubusercontent.com/bigbinary/neetouichallenge/master/.scripts/sync_with_neetouichallenge.sh" | bash
 yarn remove babel-eslint 2> /dev/null
 yarn add -D @babel/eslint-parser
 yarn add -D prettier
@@ -16,7 +16,7 @@ eslint-plugin-cypress \
 eslint-plugin-unused-imports \
 prettier-plugin-tailwindcss
 
-raw_base_url="https://raw.githubusercontent.com/bigbinary/NeetoUiChallenge/master"
+raw_base_url="https://raw.githubusercontent.com/bigbinary/neetouichallenge/master"
 declare -a configs=(
   ".eslintrc.js"
   ".eslintignore"
