@@ -5,7 +5,7 @@ import { Typography } from "neetoui";
 import { MenuBar } from "neetoui/layouts";
 
 const NotesMenu = ({ showMenu }) => (
-  <MenuBar showMenu={showMenu} title="Notes">
+  <MenuBar showMenu={showMenu} title="All Notes">
     <MenuBar.Block active count={200} label="All" />
     <MenuBar.Block count={80} label="Users" />
     <MenuBar.Block count={60} label="Leads" />

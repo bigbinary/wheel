@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
 import { Button, Pane } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Input, Select } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
@@ -41,12 +41,72 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               label="Title"
               name="title"
             />
-            <Textarea
+            <Input
               required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
               rows={8}
+            />
+            <Select
+              className="w-full flex-grow-0"
+              label="Assigned Contact"
+              name="assigned_contact"
+              placeholder="Select an Option"
+              options={[
+                {
+                  label: "Value One",
+                  value: "value1",
+                },
+                {
+                  label: "Value Two",
+                  value: "value2",
+                },
+                {
+                  label: "Value Three",
+                  value: "value3",
+                },
+                {
+                  label: "Value Four",
+                  value: "value4",
+                },
+                {
+                  label: "Value Five",
+                  value: "value5",
+                },
+              ]}
+            />
+            <Select
+              className="w-full flex-grow-0"
+              label="Tags"
+              name="tag"
+              placeholder="Select an Option"
+              options={[
+                {
+                  label: "Getting Started",
+                  value: "getting_started",
+                },
+                {
+                  label: "Onboarding",
+                  value: "onboarding",
+                },
+                {
+                  label: "User Flow",
+                  value: "user_flow",
+                },
+                {
+                  label: "UX",
+                  value: "ux",
+                },
+                {
+                  label: "Bugs",
+                  value: "bugs",
+                },
+                {
+                  label: "V2",
+                  value: "v2",
+                },
+              ]}
             />
           </Pane.Body>
           <Pane.Footer>
