@@ -52,7 +52,7 @@ const Sidebar = () => {
       isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
       organizationInfo={{
-        name: "NeetoUiChallenge",
+        name: "neetouichallenge",
         subdomain: "bigbinary.com",
       }}
       profileInfo={{

@@ -50,7 +50,7 @@ blocks:
 
         - name: Eslint
           commands:
-            - curl -s -L "https://raw.githubusercontent.com/bigbinary/NeetoUiChallenge/master/.semaphore/commands/run_eslint_on_modified_files.sh" | bash
+            - curl -s -L "https://raw.githubusercontent.com/bigbinary/neetouichallenge/master/.semaphore/commands/run_eslint_on_modified_files.sh" | bash
 
   - name: Rails Tests
     task:
