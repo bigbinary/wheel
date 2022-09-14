@@ -19,7 +19,7 @@ const NotesList = ({
         {notes.map(note => (
           <Note
             avatar={note.avatar}
-            created_at={note.created_at}
+            createdAt={note.created_at}
             description={note.description}
             id={note.id}
             key={note.id}

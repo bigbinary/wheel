@@ -9,24 +9,25 @@ const Note = ({
   description,
   tag,
   status,
-  created_at,
+  createdAt,
   avatar,
   setShowDeleteAlert,
   setDeleteNoteId,
   setIsOpen,
 }) => {
-  const deleteHelper = () => {
+  const handleDelete = () => {
     setIsOpen(true);
     setShowDeleteAlert(true);
     setDeleteNoteId(id);
   };
+
   return (
     <div className="mb-3 w-full border p-4 shadow-md">
       <div className="flex justify-between">
         <Typography component="h4">{title}</Typography>
         <Dropdown buttonStyle="text" icon={MenuVertical} position="bottom-end">
           <li>Edit</li>
-          <li onClick={deleteHelper}>Delete</li>
+          <li onClick={handleDelete}>Delete</li>
         </Dropdown>
       </div>
       <div className="mb-3">
@@ -41,7 +42,7 @@ const Note = ({
           <Clock size={14} />
           <Tooltip content="Friday, 05:36PM" position="bottom">
             <Typography className="capitalize" style="body2">
-              {status} {created_at}
+              {status} {createdAt}
             </Typography>
           </Tooltip>
           <Avatar

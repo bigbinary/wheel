@@ -40,7 +40,7 @@ const Notes = () => {
     }
   };
 
-  const closeDeleteAlertHelper = () => {
+  const handleCloseDeleteAlert = () => {
     setDeleteNoteId(null);
     setShowDeleteAlert(false);
   };
@@ -78,7 +78,7 @@ const Notes = () => {
         {showDeleteAlert && (
           <DeleteAlert
             isOpen={isOpen}
-            onClose={closeDeleteAlertHelper}
+            onClose={handleCloseDeleteAlert}
             onDelete={handleDeleteNote}
           />
         )}

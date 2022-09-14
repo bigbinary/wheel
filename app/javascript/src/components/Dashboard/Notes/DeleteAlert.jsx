@@ -7,7 +7,7 @@ const DeleteAlert = ({ onClose, onDelete, isOpen }) => (
     isOpen={isOpen}
     message="Are you sure you want to delete the note? This action cannot be undone."
     size="large"
-    title={`Delete Note`}
+    title="Delete Note"
     onClose={onClose}
     onSubmit={() => onDelete()}
   />
