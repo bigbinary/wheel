@@ -3,6 +3,21 @@ import React from "react";
 import ProfilePicture from "images/ContactProfilePicture";
 import { MenuHorizontal } from "neetoicons";
 import { Typography, Avatar } from "neetoui";
+import * as yup from "yup";
+
+export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  role: "",
+};
+
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  first_name: yup.string().required("First Name is required"),
+  last_name: yup.string().required("Last Name is required"),
+  email: yup.string().email("Invalid email").required("Email is required"),
+  role: yup.string().required("Role is required"),
+});
 
 export const COLUMN_DATA = [
   {
