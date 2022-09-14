@@ -1,36 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
-import { Table as NeetoUITable } from "neetoui";
+import Note from "./Note";
 
-import { NOTES_TABLE_COLUMN_DATA } from "./constants";
-import EditNotePane from "./Pane/Edit";
-
-const Table = ({ setSelectedNoteIds, notes = [], fetchNotes }) => {
-  const [showEditNote, setShowEditNote] = useState(false);
-  const [selectedNote, setSelectedNote] = useState({});
-
-  return (
-    <>
-      <div className="notes-table-height w-full">
-        <NeetoUITable
-          allowRowClick
-          columnData={NOTES_TABLE_COLUMN_DATA}
-          rowData={notes}
-          onRowSelect={selectedRowKeys => setSelectedNoteIds(selectedRowKeys)}
-          onRowClick={(_, note) => {
-            setSelectedNote(note);
-            setShowEditNote(true);
-          }}
+const Table = ({ notes = [] }) => (
+  <>
+    <div className="notes-table-height flex w-full flex-col">
+      {notes.map(note => (
+        <Note
+          avatar={note.avatar}
+          created_at={note.created_at}
+          description={note.description}
+          key={note.id}
+          status={note.status}
+          tag={note.tag}
+          title={note.title}
         />
-      </div>
-      <EditNotePane
+      ))}
+    </div>
+    {/* <EditNotePane
         fetchNotes={fetchNotes}
         note={selectedNote}
         setShowPane={setShowEditNote}
         showPane={showEditNote}
-      />
-    </>
-  );
-};
+      /> */}
+  </>
+);
 
 export default Table;
