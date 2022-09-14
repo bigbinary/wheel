@@ -18,7 +18,7 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
 
     create_table :active_storage_attachments do |t|
       t.string :name, null: false
-      t.references :record, null: false, polymorphic: true, index: false
+      t.references :record, null: false, polymorphic: true, index: false, type: :uuid
       t.references :blob, null: false
 
       t.datetime :created_at, null: false
@@ -28,7 +28,7 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.foreign_key :active_storage_blobs, column: :blob_id
     end
 
-    create_table :active_storage_variant_records do |t|
+    create_table :active_storage_variant_records, id: :uuid do |t|
       t.belongs_to :blob, null: false, index: false
       t.string :variation_digest, null: false
 
