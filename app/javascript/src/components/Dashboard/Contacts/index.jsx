@@ -6,12 +6,12 @@ import { Container, Header } from "neetoui/layouts";
 import { CONTACT_ROWS } from "./constants";
 import ContactsList from "./ContactsList";
 import ContactsMenu from "./ContactsMenu";
-import NewContactPane from "./Pane/Create";
+import Create from "./Pane/Create";
 
 const Contacts = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const [contacts, setContacts] = useState([{}]);
+  const [contacts, setContacts] = useState([]);
   const [showMenu, setShowMenu] = useState(false);
   const [showNewContactPane, setShowNewContactPane] = useState(false);
 
@@ -29,6 +29,7 @@ const Contacts = () => {
       <ContactsMenu showMenu={showMenu} />
       <Container>
         <Header
+          menuBarToggle={() => setShowMenu(show => !show)}
           title="All Contacts"
           actionBlock={
             <Button
@@ -37,16 +38,13 @@ const Contacts = () => {
               onClick={() => setShowNewContactPane(true)}
             />
           }
-          menuBarToggle={() => {
-            setShowMenu(!showMenu);
-          }}
           searchProps={{
             value: searchTerm,
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
         <ContactsList contacts={contacts} />
-        <NewContactPane
+        <Create
           setShowPane={setShowNewContactPane}
           showPane={showNewContactPane}
         />

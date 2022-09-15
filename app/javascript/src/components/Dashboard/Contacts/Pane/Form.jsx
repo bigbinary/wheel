@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
+import { Button, Pane, Toastr } from "neetoui";
 import { Input, Select } from "neetoui/formik";
 
 import { CONTACTS_FORM_VALIDATION_SCHEMA } from "../constants";
@@ -9,33 +9,40 @@ import { CONTACTS_FORM_VALIDATION_SCHEMA } from "../constants";
 const ContactForm = ({ onClose, contact }) => {
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = () => {
+    try {
+      Toastr.success("Contact added successfully.");
+      onClose();
+    } catch (err) {
+      Toastr.success("Failed to add contact.");
+      logger.error(err);
+    }
+  };
+
   return (
     <Formik
       initialValues={contact}
       validateOnBlur={submitted}
       validateOnChange={submitted}
       validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}
-      onSubmit={() => {}}
+      onSubmit={() => handleSubmit()}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <div className="flex w-full gap-4">
               <Input
-                required
                 label="First Name"
                 name="first_name"
                 placeholder="Enter first name"
               />
               <Input
-                required
                 label="Last Name"
                 name="last_name"
                 placeholder="Enter last name"
               />
             </div>
             <Input
-              required
               className="w-full flex-grow-0"
               label="Email"
               name="email"
@@ -73,7 +80,8 @@ const ContactForm = ({ onClose, contact }) => {
               label="Cancel"
               size="large"
               style="text"
-              onClick={onClose}
+              type="reset"
+              onClick={() => onClose()}
             />
           </Pane.Footer>
         </Form>

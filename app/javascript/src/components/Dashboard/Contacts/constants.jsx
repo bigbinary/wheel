@@ -9,14 +9,21 @@ export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
   first_name: "",
   last_name: "",
   email: "",
-  role: "",
+  role: null,
 };
 
 export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
   first_name: yup.string().required("First Name is required"),
   last_name: yup.string().required("Last Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
-  role: yup.string().required("Role is required"),
+  role: yup
+    .object()
+    .nullable()
+    .shape({
+      label: yup.string(),
+      value: yup.string(),
+    })
+    .required("Role is required"),
 });
 
 export const COLUMN_DATA = [
@@ -77,7 +84,7 @@ export const CONTACTS = [
   },
 ];
 
-export const CONTACT_ROWS = Array(10)
+export const CONTACT_ROWS = Array(45)
   .fill(CONTACTS)
   .flat()
   .map((item, idx) => ({ ...item, id: idx }));

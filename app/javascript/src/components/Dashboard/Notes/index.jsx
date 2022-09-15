@@ -33,7 +33,7 @@ const Notes = () => {
       const newNotes = notes.filter(note => note.id !== deleteNoteId);
       setNotes(newNotes);
       setIsOpen(false);
-      Toastr.success("Note Successfully Submitted");
+      Toastr.success("Note Successfully Deleted");
     } catch (error) {
       logger.error(error);
       Toastr.success("Some Error Occured! Note not deleted");

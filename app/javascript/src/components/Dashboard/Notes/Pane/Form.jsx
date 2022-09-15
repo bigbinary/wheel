@@ -1,25 +1,20 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
-import { Input, Select } from "neetoui/formik";
-
-import notesApi from "apis/notes";
+import { Button, Pane, Toastr } from "neetoui";
+import { Input, Select, Textarea } from "neetoui/formik";
 
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
 const NoteForm = ({ onClose, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async values => {
+  const handleSubmit = () => {
     try {
-      if (isEdit) {
-        await notesApi.update(note.id, values);
-      } else {
-        await notesApi.create(values);
-      }
+      Toastr.success("Note added successfully.");
       onClose();
     } catch (err) {
+      Toastr.success("Failed to add note.");
       logger.error(err);
     }
   };
@@ -30,23 +25,23 @@ const NoteForm = ({ onClose, note, isEdit }) => {
       validateOnBlur={submitted}
       validateOnChange={submitted}
       validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
-      onSubmit={handleSubmit}
+      onSubmit={() => handleSubmit()}
     >
       {({ isSubmitting }) => (
         <Form className="w-full">
           <Pane.Body className="space-y-6">
             <Input
-              required
               className="w-full flex-grow-0"
               label="Title"
               name="title"
+              placeholder="Enter note title"
             />
-            <Input
-              required
+            <Textarea
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              rows={8}
+              placeholder="Enter note description"
+              rows={2}
             />
             <Select
               className="w-full flex-grow-0"
@@ -124,7 +119,8 @@ const NoteForm = ({ onClose, note, isEdit }) => {
               label="Cancel"
               size="large"
               style="text"
-              onClick={onClose}
+              type="reset"
+              onClick={() => onClose()}
             />
           </Pane.Footer>
         </Form>
