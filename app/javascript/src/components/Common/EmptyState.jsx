@@ -15,7 +15,7 @@ const EmptyState = ({
         <img src={image} />
       </div>
       <h2 className="mb-4 text-center text-2xl font-medium">{title}</h2>
-      <p className="mb-8 text-center text-base font-normal leading-relaxed text-gray-600">
+      <p className="neeto-ui-text-gray-600 mb-8 text-center text-base font-normal leading-relaxed">
         {subtitle}
       </p>
       <div className="flex flex-row items-center justify-center">

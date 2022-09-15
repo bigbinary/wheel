@@ -15,12 +15,12 @@ const ResetPassword = () => {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div className="flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-6">
+    <div className="neeto-ui-bg-gray-100 flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden p-6">
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
-        <h2 className="mb-5 text-center text-3xl font-extrabold text-gray-800">
+        <h2 className="neeto-ui-text-gray-800 mb-5 text-center text-3xl font-extrabold">
           Forgot your password?
         </h2>
-        <div className="mb-5 -mt-4 w-2/3 text-center text-gray-700">
+        <div className="neeto-ui-text-gray-700 mb-5 -mt-4 w-2/3 text-center">
           Enter your email address below and we&apos;ll send you a link to reset
           your password.
         </div>
@@ -33,7 +33,7 @@ const ResetPassword = () => {
         >
           {({ isSubmitting }) => (
             <Form
-              className="w-full space-y-6 rounded-md border bg-white p-8 shadow"
+              className="neeto-ui-rounded-md neeto-ui-bg-white neeto-ui-shadow-s w-full space-y-6 border p-8"
               id="new_user"
             >
               <Input required label="Email" name="email" type="email" />
@@ -60,7 +60,7 @@ const ResetPassword = () => {
           )}
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
-          <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
+          <p className="neeto-ui-text-gray-600 font-normal">{`Don't have an account?`}</p>
           <Button label="Signup" size="small" style="link" to={SIGNUP_PATH} />
         </div>
       </div>

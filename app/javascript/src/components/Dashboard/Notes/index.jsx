@@ -49,7 +49,7 @@ const Notes = () => {
         actionBlock={
           <Button
             icon="ri-add-line"
-            label="Add New Note"
+            label="Add new note"
             size="small"
             onClick={() => setShowNewNotePane(true)}
           />
@@ -73,6 +73,7 @@ const Notes = () => {
             }
           />
           <Table
+            rowSelection
             fetchNotes={fetchNotes}
             notes={notes}
             setSelectedNoteIds={setSelectedNoteIds}

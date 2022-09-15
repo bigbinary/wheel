@@ -54,7 +54,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
             <Button
               className="mr-3"
               disabled={isSubmitting}
-              label={isEdit ? "Update" : "Save Changes"}
+              label={isEdit ? "Update" : "Save changes"}
               loading={isSubmitting}
               style="primary"
               type="submit"

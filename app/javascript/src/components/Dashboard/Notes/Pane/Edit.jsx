@@ -11,7 +11,7 @@ const EditNotePane = ({ fetchNotes, showPane, setShowPane, note }) => {
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Edit Note
+          Edit note
         </Typography>
       </Pane.Header>
       <Form isEdit note={note} refetch={fetchNotes} onClose={onClose} />

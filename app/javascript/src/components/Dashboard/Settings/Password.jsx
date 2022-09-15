@@ -27,7 +27,10 @@ const Password = () => {
 
   return (
     <Container>
-      <Header className="border-b border-gray-200" title="Change Password" />
+      <Header
+        className="neeto-ui-border-gray-200 border-b"
+        title="Change password"
+      />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={CHANGE_PASSWORD_FORM_INITIAL_VALUES}
@@ -37,7 +40,7 @@ const Password = () => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting, dirty }) => (
-            <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
+            <Form className="neeto-ui-rounded-lg neeto-ui-bg-white neeto-ui-shadow-s w-full space-y-6 border p-8">
               <Input
                 {...CHANGE_PASSWORD_FORM_INPUT_ATTRIBUTES}
                 label="Current password"
