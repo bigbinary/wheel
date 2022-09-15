@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import { Settings, Plus, Search } from "neetoicons"
-import { Typography } from "neetoui"
-import { MenuBar } from "neetoui/layouts"
+import { Settings, Plus, Search } from "neetoicons";
+import { Typography } from "neetoui";
+import { MenuBar } from "neetoui/layouts";
 
-const Menu = ({showMenu}) => {
+const Menu = ({ showMenu }) => {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
     <div className="flex">
       <MenuBar showMenu={showMenu} title="Notes">
-        <MenuBar.Block label="All" count={80} active />
-        <MenuBar.Block label="Users" count={60} />
-        <MenuBar.Block label="Leads" count={50} />
-        <MenuBar.Block label="Visitors" count={80} />
-
+        <MenuBar.Block active count={80} label="All" />
+        <MenuBar.Block count={60} label="Users" />
+        <MenuBar.Block count={50} label="Leads" />
+        <MenuBar.Block count={80} label="Visitors" />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -36,9 +35,9 @@ const Menu = ({showMenu}) => {
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
-        <MenuBar.Block label="Europe" count={80} />
-        <MenuBar.Block label="Middle-East" count={60} />
-        <MenuBar.Block label="Asia" count={60} />
+        <MenuBar.Block count={80} label="Europe" />
+        <MenuBar.Block count={60} label="Middle-East" />
+        <MenuBar.Block count={60} label="Asia" />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -61,12 +60,12 @@ const Menu = ({showMenu}) => {
             Tags
           </Typography>
         </MenuBar.SubTitle>
-        <MenuBar.Block label="Europe" count={80} />
-        <MenuBar.Block label="Middle-East" count={60} />
-        <MenuBar.Block label="Asia" count={60} />
+        <MenuBar.Block count={80} label="Europe" />
+        <MenuBar.Block count={60} label="Middle-East" />
+        <MenuBar.Block count={60} label="Asia" />
       </MenuBar>
     </div>
   );
-}
+};
 
 export default Menu;
