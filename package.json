@@ -61,7 +61,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.16.7",
     "@bigbinary/neeto-icons": "^1.8.17",
-    "@bigbinary/neetoui": "^3.2.29",
+    "@bigbinary/neetoui": "^4.0.3",
     "@rails/webpacker": "5.4.3",
     "axios": "^0.26.1",
     "babel-plugin-js-logger": "^1.0.17",
