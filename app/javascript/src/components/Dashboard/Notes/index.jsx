@@ -7,9 +7,9 @@ import { Container, Header } from "neetoui/layouts";
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
-import NewNotePane from "./Pane/Create";
-import Menu from "./Menu";
 import List from "./List";
+import Menu from "./Menu";
+import NewNotePane from "./Pane/Create";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);
@@ -40,11 +40,11 @@ const Notes = () => {
 
   return (
     <>
-      <Menu showMenu={showMenu}/>
+      <Menu showMenu={showMenu} />
       <Container>
         <Header
-          title="All Notes"
           menuBarToggle={() => setShowMenu(prevState => !prevState)}
+          title="All Notes"
           actionBlock={
             <Button
               icon="ri-add-line"
@@ -58,7 +58,7 @@ const Notes = () => {
           }}
         />
         {notes.length ? (
-          <List notes={notes} fetchNotes={fetchNotes} />
+          <List fetchNotes={fetchNotes} notes={notes} />
         ) : (
           <EmptyState
             image={EmptyNotesListImage}

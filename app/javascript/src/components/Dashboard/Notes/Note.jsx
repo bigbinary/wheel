@@ -1,18 +1,20 @@
-import React from 'react';
+import React from "react";
 
 import Container from "./Note/Container";
-import Header from './Note/Header';
-import Footer from './Note/Footer';
-import Content from './Note/Content';
+import Content from "./Note/Content";
+import Footer from "./Note/Footer";
+import Header from "./Note/Header";
 
-const Note = ({note, onClickEdit, onClickDelete}) => {
-  return (
+const Note = ({ note, onClickEdit, onClickDelete }) => (
   <Container key={note.id}>
-      <Header note={note} onClickEdit={onClickEdit} onClickDelete={onClickDelete}/>
-      <Content description={note.description}/>
-      <Footer />
+    <Header
+      note={note}
+      onClickDelete={onClickDelete}
+      onClickEdit={onClickEdit}
+    />
+    <Content description={note.description} />
+    <Footer />
   </Container>
-  );
-}
+);
 
 export default Note;
