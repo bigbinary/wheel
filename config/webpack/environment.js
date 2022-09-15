@@ -1,6 +1,7 @@
 const { environment } = require("@rails/webpacker");
 
 const customAliasConfig = require("./alias");
+
 environment.config.merge(customAliasConfig);
 
 const babelLoader = environment.loaders.get("babel");
