@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
-    "module": "commonJS",
     "baseUrl": ".",
     "paths": {
       "neetoui": ["@bigbinary/neetoui"]
@@ -12,8 +14,10 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "checkJs": true,
-    "jsx": "preserve"
+    "allowJs": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true
   },
   "exclude": ["**/node_modules", "**/.*/"],
-  "include": ["./**/*.js", "./**/*.jsx"]
+  "include": ["./**/*.js", "./**/*.jsx", "types/*.d.ts"]
 }
