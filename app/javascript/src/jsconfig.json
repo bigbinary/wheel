@@ -19,5 +19,5 @@
     "resolveJsonModule": true
   },
   "exclude": ["**/node_modules", "**/.*/"],
-  "include": ["./**/*.js", "./**/*.jsx", "./typings/*.d.ts"]
+  "include": ["./**/*.js", "./**/*.jsx", "types/*.d.ts"]
 }
