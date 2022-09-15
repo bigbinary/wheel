@@ -1,39 +1,30 @@
 import React, { useState } from "react";
 
-import { Alert } from "neetoui";
+import { Alert, Toastr } from "@bigbinary/neetoui";
 
-import notesApi from "apis/notes";
-
-const DeleteAlert = ({
-  refetch,
-  onClose,
-  selectedNoteIds,
-  setSelectedNoteIds,
-}) => {
-  const [deleting, setDeleting] = useState(false);
+const DeleteAlert = onClose => {
+  const [open, setOpen] = useState(true);
 
   const handleDelete = async () => {
     try {
-      setDeleting(true);
-      await notesApi.destroy({ ids: selectedNoteIds });
-      onClose();
-      setSelectedNoteIds([]);
-      refetch();
+      closeAlert();
+      Toastr.success("Note has been successfully deleted.");
     } catch (error) {
       logger.error(error);
-      setDeleting(false);
     }
+  };
+
+  const closeAlert = () => {
+    setOpen(false);
+    onClose;
   };
 
   return (
     <Alert
-      isOpen
-      isSubmitting={deleting}
+      isOpen={open}
       message="Are you sure you want to continue? This cannot be undone."
-      title={`Delete ${selectedNoteIds.length} ${
-        selectedNoteIds.length > 1 ? "notes" : "note"
-      }?`}
-      onClose={onClose}
+      title="Deleting Note"
+      onClose={closeAlert}
       onSubmit={handleDelete}
     />
   );

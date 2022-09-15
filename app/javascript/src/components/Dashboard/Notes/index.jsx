@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import { Button } from "@bigbinary/neetoui";
-import { Container, Header } from "@bigbinary/neetoui/layouts";
+import { Button } from "neetoui";
+import { Container, Header } from "neetoui/layouts";
 
 import { NOTES as notes } from "components/constants";
 
@@ -14,7 +14,6 @@ const Notes = () => {
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [showMenu, setshowMenu] = useState(true);
 
   return (
@@ -40,19 +39,14 @@ const Notes = () => {
             onChange: e => setSearchTerm(e.target.value),
           }}
         />
-        <NotesList notes={notes} />
+        <NotesList notes={notes} onDelete={()=>setShowDeleteAlert(true)}/>
         <NewNotePane
           showPane={showNewNotePane}
           setShowPane={setShowNewNotePane}
           fetchNotes={notes}
         />
         {showDeleteAlert && (
-          <DeleteAlert
-            selectedNoteIds={selectedNoteIds}
-            onClose={() => setShowDeleteAlert(false)}
-            refetch={notes}
-            setSelectedNoteIds={setSelectedNoteIds}
-          />
+          <DeleteAlert onClose={() => setShowDeleteAlert(false)} />
         )}
       </Container>
     </div>

@@ -9,12 +9,13 @@ export default function NotesMenuBar({ showMenu }) {
   const [isSearchCollapsed, setIsSearchCollapsed] = useState(true);
 
   return (
-    <div className="flex">
+    <div>
       <MenuBar showMenu={showMenu} title="Notes">
-        <MenuBar.Block active count={200} label="All" />
-        <MenuBar.Block count={80} label="Users" />
-        <MenuBar.Block count={60} label="Leads" />
-        <MenuBar.Block count={60} label="Visitors" />
+        <MenuBar.Block label="All" count={200} active />
+        <MenuBar.Block label="Users" count={80} />
+        <MenuBar.Block label="Leads" count={60} />
+        <MenuBar.Block label="Visitors" count={60} />
+
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -36,9 +37,9 @@ export default function NotesMenuBar({ showMenu }) {
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
-        <MenuBar.Block count={80} label="Europe" />
-        <MenuBar.Block count={60} label="Middle-East" />
-        <MenuBar.Block count={60} label="Asia" />
+        <MenuBar.Block label="Europe" count={80} />
+        <MenuBar.Block label="Middle-East" count={60} />
+        <MenuBar.Block label="Asia" count={60} />
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -61,9 +62,9 @@ export default function NotesMenuBar({ showMenu }) {
             Tags
           </Typography>
         </MenuBar.SubTitle>
-        <MenuBar.Block count={80} label="Sales" />
-        <MenuBar.Block count={60} label="Finance" />
-        <MenuBar.Block count={60} label="User Experience" />
+        <MenuBar.Block label="Sales" count={80} />
+        <MenuBar.Block label="Finance" count={60} />
+        <MenuBar.Block label="User Experience" count={60} />
       </MenuBar>
     </div>
   );
