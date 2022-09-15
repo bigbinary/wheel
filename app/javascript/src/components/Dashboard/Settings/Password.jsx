@@ -60,6 +60,7 @@ const Password = () => {
                 label="Update"
                 loading={isSubmitting}
                 name="submit"
+                size="small"
                 type="submit"
                 onClick={() => setSubmitted(true)}
               />

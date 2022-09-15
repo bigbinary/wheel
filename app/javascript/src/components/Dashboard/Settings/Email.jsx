@@ -65,6 +65,7 @@ const Email = () => {
                 disabled={!dirty || isSubmitting}
                 label="Update"
                 loading={isSubmitting}
+                size="small"
                 type="submit"
                 onClick={e => promptPassword(e, validateForm)}
               />

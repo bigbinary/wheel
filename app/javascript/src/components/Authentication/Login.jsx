@@ -75,6 +75,7 @@ const Login = ({ history }) => {
                 disabled={isSubmitting}
                 label="Login"
                 loading={isSubmitting}
+                size="small"
                 type="submit"
                 onClick={() => setSubmitted(true)}
               />
@@ -87,6 +88,7 @@ const Login = ({ history }) => {
             <Button
               data-cy="sign-up-link"
               label="Signup"
+              size="small"
               style="link"
               to={SIGNUP_PATH}
             />
@@ -94,6 +96,7 @@ const Login = ({ history }) => {
           <Button
             data-cy="forgot-password-link"
             label="Forgot password?"
+            size="small"
             style="link"
             to={RESET_PASSWORD_PATH}
           />

@@ -24,7 +24,7 @@ const Hero = () => (
       </p>
       <Features features={FEATURE_LIST} />
       <div className="mt-6 flex items-center justify-center">
-        <Button label="Login" size="large" to="/login" type="primary" />
+        <Button label="Login" to="/login" type="primary" />
       </div>
     </div>
   </div>

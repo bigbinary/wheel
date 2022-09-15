@@ -81,6 +81,7 @@ const Signup = ({ history }) => {
                 disabled={isSubmitting}
                 label="Signup"
                 loading={isSubmitting}
+                size="small"
                 type="submit"
                 onClick={() => setSubmitted(true)}
               />
@@ -89,7 +90,7 @@ const Signup = ({ history }) => {
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">Already have an account?</p>
-          <Button label="Login" style="link" to={LOGIN_PATH} />
+          <Button label="Login" size="small" style="link" to={LOGIN_PATH} />
         </div>
       </div>
     </div>

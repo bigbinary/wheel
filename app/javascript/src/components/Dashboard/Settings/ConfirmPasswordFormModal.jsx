@@ -51,14 +51,12 @@ const ConfirmPasswordFormModal = ({
                 disabled={isSubmitting || !values.password}
                 label="Continue"
                 loading={isSubmitting}
-                size="large"
                 type="submit"
                 onClick={handleSubmit}
               />
               <Button
                 disabled={isSubmitting}
                 label="Cancel"
-                size="large"
                 style="text"
                 onClick={onClose}
               />

@@ -45,17 +45,23 @@ const ResetPassword = () => {
                   disabled={isSubmitting}
                   label="Send reset password email"
                   loading={isSubmitting}
+                  size="small"
                   type="submit"
                   onClick={() => setSubmitted(true)}
                 />
-                <Button label="Back" style="link" to={LOGIN_PATH} />
+                <Button
+                  label="Back"
+                  size="small"
+                  style="link"
+                  to={LOGIN_PATH}
+                />
               </div>
             </Form>
           )}
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
           <p className="font-normal text-gray-600">{`Don't have an account?`}</p>
-          <Button label="Signup" style="link" to={SIGNUP_PATH} />
+          <Button label="Signup" size="small" style="link" to={SIGNUP_PATH} />
         </div>
       </div>
     </div>
