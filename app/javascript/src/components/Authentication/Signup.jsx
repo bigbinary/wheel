@@ -26,9 +26,9 @@ const Signup = ({ history }) => {
   };
 
   return (
-    <div className="flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-6">
+    <div className="neeto-ui-bg-gray-100 flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden p-6">
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
-        <h2 className="mb-5 text-center text-3xl font-extrabold text-gray-800">
+        <h2 className="neeto-ui-text-gray-800 mb-5 text-center text-3xl font-extrabold">
           Signup
         </h2>
         <Formik
@@ -39,7 +39,7 @@ const Signup = ({ history }) => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
-            <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
+            <Form className="neeto-ui-rounded-md neeto-ui-bg-white neeto-ui-shadow-s w-full space-y-6 border p-8">
               <Input
                 required
                 label="Email"
@@ -81,6 +81,7 @@ const Signup = ({ history }) => {
                 disabled={isSubmitting}
                 label="Signup"
                 loading={isSubmitting}
+                size="small"
                 type="submit"
                 onClick={() => setSubmitted(true)}
               />
@@ -88,8 +89,10 @@ const Signup = ({ history }) => {
           )}
         </Formik>
         <div className="mt-4 flex flex-row items-center justify-start space-x-1">
-          <p className="font-normal text-gray-600">Already have an account?</p>
-          <Button label="Login" style="link" to={LOGIN_PATH} />
+          <p className="neeto-ui-text-gray-600 font-normal">
+            Already have an account?
+          </p>
+          <Button label="Login" size="small" style="link" to={LOGIN_PATH} />
         </div>
       </div>
     </div>

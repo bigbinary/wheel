@@ -49,7 +49,8 @@ const Notes = () => {
         actionBlock={
           <Button
             icon="ri-add-line"
-            label="Add New Note"
+            label="Add new note"
+            size="small"
             onClick={() => setShowNewNotePane(true)}
           />
         }
@@ -66,6 +67,7 @@ const Notes = () => {
                 disabled={!selectedNoteIds.length}
                 icon={Delete}
                 label="Delete"
+                size="small"
                 onClick={() => setShowDeleteAlert(true)}
               />
             }
@@ -73,6 +75,7 @@ const Notes = () => {
           <Table
             fetchNotes={fetchNotes}
             notes={notes}
+            selectedNoteIds={selectedNoteIds}
             setSelectedNoteIds={setSelectedNoteIds}
           />
         </>
@@ -80,7 +83,7 @@ const Notes = () => {
         <EmptyState
           image={EmptyNotesListImage}
           primaryAction={() => setShowNewNotePane(true)}
-          primaryActionLabel="Add New Note"
+          primaryActionLabel="Add new note"
           subtitle="Add your notes to send customized emails to them."
           title="Looks like you don't have any notes!"
         />

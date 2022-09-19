@@ -54,19 +54,13 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
             <Button
               className="mr-3"
               disabled={isSubmitting}
-              label={isEdit ? "Update" : "Save Changes"}
+              label={isEdit ? "Update" : "Save changes"}
               loading={isSubmitting}
-              size="large"
               style="primary"
               type="submit"
               onClick={() => setSubmitted(true)}
             />
-            <Button
-              label="Cancel"
-              size="large"
-              style="text"
-              onClick={onClose}
-            />
+            <Button label="Cancel" style="text" onClick={onClose} />
           </Pane.Footer>
         </Form>
       )}

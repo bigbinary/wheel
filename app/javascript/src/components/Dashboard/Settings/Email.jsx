@@ -48,7 +48,10 @@ const Email = () => {
 
   return (
     <Container>
-      <Header className="border-b border-gray-200" title="Update Email" />
+      <Header
+        className="neeto-ui-border-gray-200 border-b"
+        title="Update email"
+      />
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
         <Formik
           initialValues={initialFormValues}
@@ -57,7 +60,7 @@ const Email = () => {
           onSubmit={handleSubmit}
         >
           {({ dirty, isSubmitting, validateForm }) => (
-            <Form className="w-full space-y-6 rounded-lg border bg-white p-8 shadow-sm">
+            <Form className="neeto-ui-rounded-lg neeto-ui-bg-white neeto-ui-shadow-s w-full space-y-6 border p-8">
               <Input required label="Email" name="email" type="email" />
               <Button
                 fullWidth
@@ -65,6 +68,7 @@ const Email = () => {
                 disabled={!dirty || isSubmitting}
                 label="Update"
                 loading={isSubmitting}
+                size="small"
                 type="submit"
                 onClick={e => promptPassword(e, validateForm)}
               />

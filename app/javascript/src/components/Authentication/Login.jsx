@@ -38,9 +38,9 @@ const Login = ({ history }) => {
   };
 
   return (
-    <div className="flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden bg-gray-100 p-6">
+    <div className="neeto-ui-bg-gray-100 flex h-screen w-screen flex-row items-center justify-center overflow-y-auto overflow-x-hidden p-6">
       <div className="mx-auto flex h-full w-full flex-col items-center justify-center sm:max-w-md">
-        <h2 className="mb-5 text-center text-3xl font-extrabold text-gray-800">
+        <h2 className="neeto-ui-text-gray-800 mb-5 text-center text-3xl font-extrabold">
           Sign In
         </h2>
         <Formik
@@ -51,7 +51,7 @@ const Login = ({ history }) => {
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
-            <Form className="w-full space-y-6 rounded-md border bg-white p-8 shadow">
+            <Form className="neeto-ui-rounded-md neeto-ui-bg-white neeto-ui-shadow-s w-full space-y-6 border p-8">
               <Input
                 required
                 data-cy="login-email-text-field"
@@ -75,6 +75,7 @@ const Login = ({ history }) => {
                 disabled={isSubmitting}
                 label="Login"
                 loading={isSubmitting}
+                size="small"
                 type="submit"
                 onClick={() => setSubmitted(true)}
               />
@@ -83,10 +84,13 @@ const Login = ({ history }) => {
         </Formik>
         <div className="mt-4 flex flex-col items-center justify-center space-y-2">
           <div className="flex flex-row items-center justify-start space-x-1">
-            <p className="font-normal text-gray-600">Don't have an account?</p>
+            <p className="neeto-ui-text-gray-600 font-normal">
+              Don't have an account?
+            </p>
             <Button
               data-cy="sign-up-link"
               label="Signup"
+              size="small"
               style="link"
               to={SIGNUP_PATH}
             />
@@ -94,6 +98,7 @@ const Login = ({ history }) => {
           <Button
             data-cy="forgot-password-link"
             label="Forgot password?"
+            size="small"
             style="link"
             to={RESET_PASSWORD_PATH}
           />

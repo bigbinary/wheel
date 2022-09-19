@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
 import { useHistory } from "react-router-dom";
@@ -15,7 +15,6 @@ import { useUserState } from "contexts/user";
 import { APP_NAME, SIDENAV_LINKS } from "./constants";
 
 const Sidebar = () => {
-  const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(true);
   const history = useHistory();
   const authDispatch = useAuthDispatch();
   const { user } = useUserState();
@@ -32,11 +31,11 @@ const Sidebar = () => {
 
   const bottomLinks = [
     {
-      label: "My Profile",
+      label: "My profile",
       onClick: () => history.push(PROFILE_PATH, { resetTab: true }),
     },
     {
-      label: "Change Password",
+      label: "Change password",
       onClick: () => history.push(CHANGE_PASSWORD_PATH, { resetTab: true }),
     },
     {
@@ -49,7 +48,6 @@ const Sidebar = () => {
     <NeetoUISidebar
       appName={APP_NAME}
       changelogProps={{ id: "neetochangelog-trigger" }}
-      isCollapsed={isSidebarCollapsed}
       navLinks={SIDENAV_LINKS}
       organizationInfo={{
         name: "Wheel",
@@ -61,7 +59,6 @@ const Sidebar = () => {
         email: user.email,
         bottomLinks,
       }}
-      onCollapse={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
     />
   );
 };
