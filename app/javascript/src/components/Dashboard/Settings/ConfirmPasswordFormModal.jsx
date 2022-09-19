@@ -58,6 +58,7 @@ const ConfirmPasswordFormModal = ({
                 disabled={isSubmitting}
                 label="Cancel"
                 style="text"
+                type="reset"
                 onClick={onClose}
               />
             </Modal.Footer>

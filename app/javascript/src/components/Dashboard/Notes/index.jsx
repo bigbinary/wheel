@@ -73,9 +73,9 @@ const Notes = () => {
             }
           />
           <Table
-            rowSelection
             fetchNotes={fetchNotes}
             notes={notes}
+            selectedNoteIds={selectedNoteIds}
             setSelectedNoteIds={setSelectedNoteIds}
           />
         </>
