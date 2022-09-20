@@ -5,15 +5,17 @@ Rails application built with opinions of BigBinary style of working.
 
 ## Local Development Setup
 
-Clone this repo by running `git clone https://github.com/bigbinary/wheel.git`.
+First clone this repo.
 
-Install the [Node.js](https://nodejs.org) version `v16.5` which we have specified inside the `.node-version` file.
+Then install the [Node.js](https://nodejs.org) version `v16.5` which we have specified inside the `.node-version` file of this repo.
 
 ```bash
 nvm install
 ```
 
-Make sure that [yarn](https://yarnpkg.com) is installed with it as well.
+Make sure that [yarn](https://yarnpkg.com) is installed with it as well in your system.
+
+After `yarn` is installed, install the Node.js and Rails dependencies and also seed the database, by running:
 
 ```bash
 ./bin/setup
@@ -22,7 +24,7 @@ Make sure that [yarn](https://yarnpkg.com) is installed with it as well.
 Start the server by executing following command.
 
 ```bash
-bundle exec rails server
+bundle exec rails server -p 3000
 ```
 
 Visit http://localhost:3000 and login with email `oliver@example.com` and password `welcome`.
