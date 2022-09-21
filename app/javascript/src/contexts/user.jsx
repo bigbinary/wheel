@@ -10,6 +10,7 @@ const initialState = { user: null };
 
 const UserProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(userReducer, initialState);
+
   return (
     <UserStateContext.Provider value={state}>
       <UserDispatchContext.Provider value={dispatch}>

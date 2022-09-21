@@ -66,6 +66,8 @@ module.exports = {
     "padding-line-between-statements": [
       "error",
       { blankLine: "always", prev: "if", next: ["if", "return"] },
+      // The newline-before-return rule is deprecated in favor of the following:
+      { blankLine: "always", prev: "*", next: "return" },
     ],
     // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
     curly: ["error", "multi-line"],
