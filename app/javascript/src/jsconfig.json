@@ -8,7 +8,8 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "neetoui": ["@bigbinary/neetoui"]
+      "neetoui/*": ["../../../node_modules/@bigbinary/neetoui/*"],
+      "neetoui": ["../../../node_modules/@bigbinary/neetoui"]
     },
     "pretty": true,
     "experimentalDecorators": true,

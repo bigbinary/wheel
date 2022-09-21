@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { MenuBar } from "neetoui/layouts";
 import queryString from "query-string";
 
-import { SETTINGS_NAVLINKS } from "./constants";
+import { SETTINGS_NAVLINKS } from "./navLinks";
 import { getActiveNavLink } from "./utils";
 
 const Settings = ({ history, location }) => {

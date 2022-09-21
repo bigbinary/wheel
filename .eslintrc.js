@@ -32,6 +32,12 @@ module.exports = {
     react: {
       version: "detect",
     },
+    // We need this for the import/extensions rule to work: https://github.com/import-js/eslint-plugin-import#importextensions
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".svg", ".json", ".mp3"],
+      },
+    },
   },
   parserOptions: {
     ecmaFeatures: {
