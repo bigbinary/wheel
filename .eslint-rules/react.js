@@ -78,5 +78,15 @@ module.exports = {
         locale: "auto",
       },
     ],
+    // auto-fixable: Disallow unnecessary curly braces in JSX props and/or children.
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        props: "never",
+        children: "never",
+        // JSX prop values that are JSX elements should be enclosed in braces.
+        propElementValues: "always",
+      },
+    ],
   },
 };
