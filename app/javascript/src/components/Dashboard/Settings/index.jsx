@@ -32,7 +32,7 @@ const Settings = ({ history, location }) => {
           />
         ))}
       </MenuBar>
-      {<activeNavlink.component />}
+      <activeNavlink.component />
     </>
   );
 };

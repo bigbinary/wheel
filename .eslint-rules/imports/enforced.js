@@ -15,6 +15,14 @@ module.exports = {
     // not-auto-fixable: Ensure all exports appear after other statements.
     "import/exports-last": "error",
     // auto-fixable: Enforce a newline after import statements.
-    "import/newline-after-import": ["error", { count: 1 }]
-  }
+    "import/newline-after-import": ["error", { count: 1 }],
+    // auto-fixable: Remove file extensions for import statements.
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        ignorePackages: true,
+      },
+    ],
+  },
 };

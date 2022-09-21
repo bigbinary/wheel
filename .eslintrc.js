@@ -66,6 +66,8 @@ module.exports = {
     "padding-line-between-statements": [
       "error",
       { blankLine: "always", prev: "if", next: ["if", "return"] },
+      // The newline-before-return rule is deprecated in favor of the following:
+      { blankLine: "always", prev: "*", next: "return" },
     ],
     // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
     curly: ["error", "multi-line"],
@@ -115,6 +117,8 @@ module.exports = {
     "prefer-arrow-callback": ["error", { allowUnboundThis: true }],
     // not-auto-fixable: Convert multiple imports from same module into a single import.
     "no-duplicate-imports": ["error", { includeExports: true }],
+    // auto-fixable: Partially fixable. In JavaScript, there are a lot of different ways to convert value types. Allow only readable coercions.
+    "no-implicit-coercion": ["error", { allow: ["!!"] }],
     // auto-fixable: This rule conflicts with prettier rules. Thus we've NOT kept this rule in react file. This rule ensures we don't add blank lines in JSX.
     "react/jsx-newline": ["error", { prevent: true }],
   },
