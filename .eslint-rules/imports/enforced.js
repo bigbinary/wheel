@@ -22,6 +22,7 @@ module.exports = {
       "never",
       {
         ignorePackages: true,
+        pattern: { json: "always", mp3: "always" }
       },
     ],
   },
