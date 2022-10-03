@@ -119,6 +119,8 @@ module.exports = {
     "no-duplicate-imports": ["error", { includeExports: true }],
     // auto-fixable: Partially fixable. In JavaScript, there are a lot of different ways to convert value types. Allow only readable coercions.
     "no-implicit-coercion": ["error", { allow: ["!!"] }],
+    // auto-fixable: Require let or const instead of var.
+    "no-var": "error",
     // auto-fixable: This rule conflicts with prettier rules. Thus we've NOT kept this rule in react file. This rule ensures we don't add blank lines in JSX.
     "react/jsx-newline": ["error", { prevent: true }],
   },
