@@ -76,6 +76,19 @@ module.exports = {
       { blankLine: "always", prev: "if", next: ["if", "return"] },
       // The newline-before-return rule is deprecated in favor of the following:
       { blankLine: "always", prev: "*", next: "return" },
+      // Add newline between function declarations
+      {
+        blankLine: "always",
+        prev: [
+          "block",
+          "multiline-block-like",
+          "function",
+          "iife",
+          "multiline-const",
+          "multiline-expression",
+        ],
+        next: ["function", "iife", "multiline-const", "multiline-expression"],
+      },
     ],
     // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
     curly: ["error", "multi-line"],
