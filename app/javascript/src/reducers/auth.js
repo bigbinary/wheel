@@ -1,7 +1,7 @@
 import { resetAuthTokens, setAuthHeaders } from "apis/axios";
 import { setToLocalStorage } from "utils/storage";
 
-const authReducer = (state, { type, payload }) => {
+const authReducer = (_, { type, payload }) => {
   switch (type) {
     case "LOGIN": {
       setToLocalStorage("authToken", payload.auth_token);

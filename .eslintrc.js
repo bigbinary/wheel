@@ -55,7 +55,15 @@ module.exports = {
     // auto-fixable: Respect all Prettier rules and apply it.
     "prettier/prettier": "error",
     // not-auto-fixable: No unused variables allowed.
-    "no-unused-vars": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        args: "all",
+        argsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+        caughtErrors: "all",
+      },
+    ],
     // not-auto-fixable: No undefined variables allowed.
     "no-undef": "error",
     // not-auto-fixable: Dont use console statements. Use logger which babel will remove during bundling.
