@@ -55,7 +55,15 @@ module.exports = {
     // auto-fixable: Respect all Prettier rules and apply it.
     "prettier/prettier": "error",
     // not-auto-fixable: No unused variables allowed.
-    "no-unused-vars": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        args: "all",
+        argsIgnorePattern: "^_",
+        destructuredArrayIgnorePattern: "^_",
+        caughtErrors: "all",
+      },
+    ],
     // not-auto-fixable: No undefined variables allowed.
     "no-undef": "error",
     // not-auto-fixable: Dont use console statements. Use logger which babel will remove during bundling.
@@ -68,6 +76,19 @@ module.exports = {
       { blankLine: "always", prev: "if", next: ["if", "return"] },
       // The newline-before-return rule is deprecated in favor of the following:
       { blankLine: "always", prev: "*", next: "return" },
+      // Add newline between function declarations
+      {
+        blankLine: "always",
+        prev: [
+          "block",
+          "multiline-block-like",
+          "function",
+          "iife",
+          "multiline-const",
+          "multiline-expression",
+        ],
+        next: ["function", "iife", "multiline-const", "multiline-expression"],
+      },
     ],
     // auto-fixable: Single line statements needn't have any braces. But in all other cases enforce curly braces.
     curly: ["error", "multi-line"],
@@ -119,6 +140,8 @@ module.exports = {
     "no-duplicate-imports": ["error", { includeExports: true }],
     // auto-fixable: Partially fixable. In JavaScript, there are a lot of different ways to convert value types. Allow only readable coercions.
     "no-implicit-coercion": ["error", { allow: ["!!"] }],
+    // auto-fixable: Require let or const instead of var.
+    "no-var": "error",
     // auto-fixable: This rule conflicts with prettier rules. Thus we've NOT kept this rule in react file. This rule ensures we don't add blank lines in JSX.
     "react/jsx-newline": ["error", { prevent: true }],
   },
