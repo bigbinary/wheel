@@ -1,4 +1,4 @@
-[![Build Status](https://bigbinary.semaphoreci.com/badges/wheel/branches/master.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/wheel)
+[![Build Status](https://bigbinary.semaphoreci.com/badges/wheel/branches/main.svg?style=shields)](https://bigbinary.semaphoreci.com/projects/wheel)
 
 Made by the team at [BigBinary](https://bigbinary.com), this is a base project to quickly spin up a
 Rails application built with opinions of BigBinary style of working.
@@ -32,7 +32,7 @@ Visit http://localhost:3000 and login with email `oliver@example.com` and passwo
 
 ## Using docker for development
 
-Follow the instructions mentioned [here](https://github.com/bigbinary/wheel/blob/master/docs/using_docker.md) to use docker for development.
+Follow the instructions mentioned [here](https://github.com/bigbinary/wheel/blob/main/docs/using_docker.md) to use docker for development.
 
 ## Replace Wheel with your project name
 
@@ -57,7 +57,7 @@ perl -pi -w -e 's/wheel/Pump/g;' $(git ls-files)
 - Intercepts all outgoing emails in non production environment using gem [mail_interceptor](https://github.com/bigbinary/mail_interceptor).
 - Uses [SemaphoreCI](https://semaphoreci.com/) for continuous testing.
 - Uses PostgreSQL.
-- Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/master/lib/rack/deflater.rb).
+- Content compression via [Rack::Deflater](https://github.com/rack/rack/blob/main/lib/rack/deflater.rb).
 - Auto-formats Ruby code with [rubocop](https://github.com/bbatsov/rubocop).
 - Auto-formats JavaScript and CSS code with [prettier](https://github.com/prettier/prettier).
 - Performs background job processing "inline" for heroku env. It means heroku can deliver emails.
