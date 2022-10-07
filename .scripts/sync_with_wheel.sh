@@ -16,7 +16,7 @@ eslint-plugin-cypress \
 eslint-plugin-unused-imports \
 prettier-plugin-tailwindcss
 
-raw_base_url="https://raw.githubusercontent.com/bigbinary/wheel/master"
+raw_base_url="https://raw.githubusercontent.com/bigbinary/wheel/main"
 declare -a configs=(
   ".eslintrc.js"
   ".eslintignore"
@@ -33,7 +33,7 @@ declare -a configs=(
   ".vscode/extensions.json"
   ".vscode/settings.json"
   ".husky/helpers/lint_staged.sh"
-  ".husky/helpers/prevent_pushing_to_master.sh"
+  ".husky/helpers/prevent_pushing_to_main.sh"
   ".husky/helpers/prevent_conflict_markers.sh"
   ".husky/pre-commit"
   ".husky/pre-push"
