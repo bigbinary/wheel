@@ -1,4 +1,6 @@
 {
+  "name": "Wheel",
+  "version": "1.0.0",
   "engines": {
     "node": "16.5",
     "npm": "7.x",
