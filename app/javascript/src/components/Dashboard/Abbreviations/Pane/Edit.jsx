@@ -4,19 +4,29 @@ import { Pane, Typography } from "neetoui";
 
 import Form from "./Form";
 
-const EditNotePane = ({ fetchNotes, showPane, setShowPane, note }) => {
+const EditAbbreviationPane = ({
+  fetchAbbreviations,
+  showPane,
+  setShowPane,
+  abbreviation,
+}) => {
   const onClose = () => setShowPane(false);
 
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Edit note
+          Edit abbreviation
         </Typography>
       </Pane.Header>
-      <Form isEdit note={note} refetch={fetchNotes} onClose={onClose} />
+      <Form
+        isEdit
+        abbreviation={abbreviation}
+        refetch={fetchAbbreviations}
+        onClose={onClose}
+      />
     </Pane>
   );
 };
 
-export default EditNotePane;
+export default EditAbbreviationPane;

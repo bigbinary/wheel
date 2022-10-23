@@ -13,6 +13,11 @@ namespace :api, defaults: { format: :json } do
         post "bulk_delete"
       end
     end
+    resources :abbreviations, only: [:index, :create, :update, :destroy] do
+      collection do
+        post "bulk_delete"
+      end
+    end
 
     resources :cypress_runs, only: [:create]
   end

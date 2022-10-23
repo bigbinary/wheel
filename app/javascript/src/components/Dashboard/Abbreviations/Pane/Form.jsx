@@ -4,19 +4,19 @@ import { Formik, Form } from "formik";
 import { Button, Pane } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
-import notesApi from "apis/notes";
+import abbreviationApi from "apis/abbreviations";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import { ABBREVIATIONS_FORM_VALIDATION_SCHEMA } from "../constants";
 
-const NoteForm = ({ onClose, refetch, note, isEdit }) => {
+const AbbreviationForm = ({ onClose, refetch, abbreviation, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async values => {
     try {
       if (isEdit) {
-        await notesApi.update(note.id, values);
+        await abbreviationApi.update(abbreviation.id, values);
       } else {
-        await notesApi.create(values);
+        await abbreviationApi.create(values);
       }
       refetch();
       onClose();
@@ -27,10 +27,10 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
 
   return (
     <Formik
-      initialValues={note}
+      initialValues={abbreviation}
       validateOnBlur={submitted}
       validateOnChange={submitted}
-      validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
+      validationSchema={ABBREVIATIONS_FORM_VALIDATION_SCHEMA}
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
@@ -39,15 +39,15 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
             <Input
               required
               className="w-full flex-grow-0"
-              label="Title"
-              name="title"
+              label="Name"
+              name="name"
             />
             <Textarea
               required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              rows={8}
+              rows={2}
             />
           </Pane.Body>
           <Pane.Footer>
@@ -68,4 +68,4 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   );
 };
 
-export default NoteForm;
+export default AbbreviationForm;

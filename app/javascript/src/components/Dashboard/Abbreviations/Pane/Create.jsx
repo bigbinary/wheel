@@ -4,26 +4,26 @@ import { Pane, Typography } from "neetoui";
 
 import Form from "./Form";
 
-import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
+import { ABBREVIATIONS_FORM_INITIAL_FORM_VALUES } from "../constants";
 
-const NewNotePane = ({ fetchNotes, showPane, setShowPane }) => {
+const NewAbbreviationPane = ({ fetchAbbreviations, showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
 
   return (
     <Pane isOpen={showPane} onClose={onClose}>
       <Pane.Header>
         <Typography style="h2" weight="semibold">
-          Create a new note
+          Add abbreviation
         </Typography>
       </Pane.Header>
       <Form
+        abbreviation={ABBREVIATIONS_FORM_INITIAL_FORM_VALUES}
         isEdit={false}
-        note={NOTES_FORM_INITIAL_FORM_VALUES}
-        refetch={fetchNotes}
+        refetch={fetchAbbreviations}
         onClose={onClose}
       />
     </Pane>
   );
 };
 
-export default NewNotePane;
+export default NewAbbreviationPane;
