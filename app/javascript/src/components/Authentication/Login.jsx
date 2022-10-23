@@ -6,11 +6,7 @@ import { Input } from "neetoui/formik";
 import PropTypes from "prop-types";
 
 import authenticationApi from "apis/authentication";
-import {
-  SIGNUP_PATH,
-  RESET_PASSWORD_PATH,
-  DASHBOARD_PATH,
-} from "components/routeConstants";
+import { RESET_PASSWORD_PATH, DASHBOARD_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserDispatch } from "contexts/user";
 
@@ -83,18 +79,6 @@ const Login = ({ history }) => {
           )}
         </Formik>
         <div className="mt-4 flex flex-col items-center justify-center space-y-2">
-          <div className="flex flex-row items-center justify-start space-x-1">
-            <p className="neeto-ui-text-gray-600 font-normal">
-              Don't have an account?
-            </p>
-            <Button
-              data-cy="sign-up-link"
-              label="Signup"
-              size="small"
-              style="link"
-              to={SIGNUP_PATH}
-            />
-          </div>
           <Button
             data-cy="forgot-password-link"
             label="Forgot password?"
