@@ -3,7 +3,6 @@
 require "json"
 
 config = `curl -s 'https://raw.githubusercontent.com/bigbinary/wheel/main/.vscode/extensions.json'`
-# echo $extensions
 extensions = JSON.parse(config)["recommendations"]
 
 extensions.each do |extension|
