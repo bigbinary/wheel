@@ -27,6 +27,5 @@ extensions = JSON.parse(config)["recommendations"]
 extension_installation_command = code_file_location.nil? ? "code-insiders --install-extension" : "code --install-extension"
 
 extensions.each do |extension|
-  output = `#{extension_installation_command} #{extension}`
-  puts output
+  puts `#{extension_installation_command} #{extension}`
 end
