@@ -4,10 +4,10 @@ import { Table as NeetoUITable } from "neetoui";
 
 import Card from "./Card";
 
-const Table = ({ notes = [] }) => {
+const Table = ({ notes = [], fetchNotes }) => {
   const columnData = [
     {
-      render: note => <Card note={note} />,
+      render: note => <Card fetchNotes={fetchNotes} note={note} />,
     },
   ];
 
