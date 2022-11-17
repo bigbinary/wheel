@@ -37,8 +37,8 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
       validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
       onSubmit={handleSubmit}
     >
-      {({ isSubmitting }) => (
-        <Form className="w-full">
+      {({ isSubmitting, errors }) => (
+        <Form noValidate className="w-full">
           <Pane.Body className="space-y-6">
             <Input
               required
@@ -56,6 +56,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
             <Select
               required
               className="w-full flex-grow-0"
+              error={errors.assigned_contact?.value}
               isSearchable={false}
               label="Assigned Contact"
               name="assigned_contact"
@@ -66,7 +67,8 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               isSearchable
               required
               className="w-full flex-grow-0"
-              label="Assigned Contact"
+              error={errors.tags}
+              label="Tags"
               name="tags"
               options={NOTE_TAG_OPTIONS}
             />

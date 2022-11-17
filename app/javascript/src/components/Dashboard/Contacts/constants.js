@@ -20,13 +20,12 @@ export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
     .object()
     .nullable()
     .shape({
-      label: yup.string().required("Role is required"),
-      value: yup.string().required("Role is required"),
-    })
-    .required("Role is required"),
+      label: yup.string().required("Please select a role"),
+      value: yup.string().required("Please select a role"),
+    }),
 });
 
-export const ROLES = [
+export const ROLE_OPTIONS = [
   { label: "Agent", value: "agent" },
   { label: "Admin", value: "admin" },
   { label: "User", value: "user" },

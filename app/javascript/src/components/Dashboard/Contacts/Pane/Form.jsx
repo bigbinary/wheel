@@ -5,7 +5,7 @@ import { Check } from "neetoicons";
 import { Button, Pane } from "neetoui";
 import { Input, Select } from "neetoui/formik";
 
-import { CONTACTS_FORM_VALIDATION_SCHEMA, ROLES } from "../constants";
+import { CONTACTS_FORM_VALIDATION_SCHEMA, ROLE_OPTIONS } from "../constants";
 
 export const ContactForm = ({ onSubmit, onClose, contact, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +18,7 @@ export const ContactForm = ({ onSubmit, onClose, contact, isEdit }) => {
       validationSchema={CONTACTS_FORM_VALIDATION_SCHEMA}
       onSubmit={onSubmit}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, errors }) => (
         <Form noValidate className="w-full">
           <Pane.Body className="space-y-6">
             <div className="flex w-full flex-grow-0 items-start justify-between space-x-4">
@@ -46,9 +46,10 @@ export const ContactForm = ({ onSubmit, onClose, contact, isEdit }) => {
               isSearchable
               required
               className="w-full flex-grow-0"
+              error={errors.role?.value}
               label="Role"
               name="role"
-              options={ROLES}
+              options={ROLE_OPTIONS}
               placeholder="Select Role"
             />
           </Pane.Body>
