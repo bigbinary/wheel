@@ -1,0 +1,17 @@
+.neeto-ui-btn--style-primary {
+  border-radius: 0%;
+  background-color: $neeto-ui-primary-bg-color;
+  color: $neeto-ui-primary-text-color;
+
+  &:active, &:hover:not(:disabled) {
+    border-radius: 0%;
+    background-color: $neeto-ui-primary-hover-color;
+    color: $neeto-ui-primary-text-color;
+  }
+}
+
+.neeto-ui-input__wrapper {
+  > .neeto-ui-input {
+    border-radius: 0%;
+  }
+}

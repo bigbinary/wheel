@@ -1,34 +1,30 @@
 import React, { useState, useEffect } from "react";
 
 import EmptyNotesListImage from "images/EmptyNotesList";
-import { Delete, Search, Plus, Settings } from "neetoicons";
-import { Button, PageLoader, Typography } from "neetoui";
-import { Container, Header, SubHeader, MenuBar } from "neetoui/layouts";
+import { Delete } from "neetoicons";
+import { Button, PageLoader } from "neetoui";
+import { Container, Header, SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
-import { NOTES_TYPES, NOTES_SEGMENTS, NOTES_TAGS } from "./constants";
 import DeleteAlert from "./DeleteAlert";
+import MenuSidebar from "./MenuSidebar";
 import NewNotePane from "./Pane/Create";
 import Table from "./Table";
 
-const Notes = ({ history }) => {
+const Notes = () => {
   const [loading, setLoading] = useState(true);
   const [showNewNotePane, setShowNewNotePane] = useState(false);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedNoteIds, setSelectedNoteIds] = useState([]);
   const [notes, setNotes] = useState([]);
-  const [activeFilter, setActiveFilter] = useState(NOTES_TYPES[0]);
-  const [isSegmentSearchCollapsed, setIsSegmentSearchCollapsed] =
-    useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     fetchNotes();
   }, []);
-
-  useEffect(() => history.push(activeFilter?.path), [activeFilter]);
 
   const fetchNotes = async () => {
     try {
@@ -50,95 +46,24 @@ const Notes = ({ history }) => {
 
   return (
     <>
-      <MenuBar showMenu title="Notes">
-        {NOTES_TYPES.map(filter => (
-          <MenuBar.Block
-            active={activeFilter.key === filter.key}
-            count={filter.count}
-            key={filter.key}
-            label={filter.label}
-            onClick={() => setActiveFilter(filter)}
-          />
-        ))}
-        <MenuBar.SubTitle
-          iconProps={[
-            {
-              icon: Search,
-              onClick: () =>
-                setIsSegmentSearchCollapsed(
-                  isSegmentSearchCollapsed => !isSegmentSearchCollapsed
-                ),
-            },
-          ]}
-        >
-          <Typography
-            component="h4"
-            style="h5"
-            textTransform="uppercase"
-            weight="bold"
-          >
-            Segments
-          </Typography>
-        </MenuBar.SubTitle>
-        <MenuBar.Search
-          collapse={isSegmentSearchCollapsed}
-          onCollapse={() => setIsSegmentSearchCollapsed(true)}
-        />
-        {NOTES_SEGMENTS.map(filter => (
-          <MenuBar.Block
-            active={activeFilter.key === filter.key}
-            count={filter.count}
-            key={filter.key}
-            label={filter.label}
-            onClick={() => setActiveFilter(filter)}
-          />
-        ))}
-        <MenuBar.SubTitle
-          iconProps={[
-            {
-              icon: Settings,
-            },
-            {
-              icon: Plus,
-            },
-            {
-              icon: Search,
-            },
-          ]}
-        >
-          <Typography
-            component="h4"
-            style="h5"
-            textTransform="uppercase"
-            weight="bold"
-          >
-            Tags
-          </Typography>
-        </MenuBar.SubTitle>
-        {NOTES_TAGS.map(filter => (
-          <MenuBar.Block
-            active={activeFilter.key === filter.key}
-            count={filter.count}
-            key={filter.key}
-            label={filter.label}
-            onClick={() => setActiveFilter(filter)}
-          />
-        ))}
-      </MenuBar>
+      <MenuSidebar showMenu={showMenu} />
       <Container>
         <Header
-          title="Notes"
+          menuBarToggle={() => setShowMenu(!showMenu)}
+          title="All Notes"
           actionBlock={
             <Button
               icon="ri-add-line"
-              label="Add new note"
-              size="small"
+              label="Add Note"
+              size="medium"
+              style="primary"
               onClick={() => setShowNewNotePane(true)}
             />
           }
           searchProps={{
             value: searchTerm,
             onChange: e => setSearchTerm(e.target.value),
+            placeholder: "Search Name, Email, Phone number etc",
           }}
         />
         {notes.length ? (
