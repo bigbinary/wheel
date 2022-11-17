@@ -8,11 +8,13 @@ import EmptyState from "components/Common/EmptyState";
 
 import { CONTACTS } from "./constants";
 import MenuSidebar from "./MenuSidebar";
+import NewContactPane from "./Pane/Create";
 import Table from "./Table";
 
 const Contacts = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedContactIds, setSelectedContactIds] = useState([]);
+  const [showNewContactPane, setShowNewContactPane] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -33,7 +35,9 @@ const Contacts = () => {
               label="Add Contact"
               size="medium"
               style="primary"
-              onClick={() => {}}
+              onClick={() => {
+                setShowNewContactPane(true);
+              }}
             />
           }
           searchProps={{
@@ -58,6 +62,10 @@ const Contacts = () => {
             title="Looks like you don't have any Contacts!"
           />
         )}
+        <NewContactPane
+          setShowPane={setShowNewContactPane}
+          showPane={showNewContactPane}
+        />
       </Container>
     </>
   );

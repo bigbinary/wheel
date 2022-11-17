@@ -1,5 +1,9 @@
+import * as yup from "yup";
+
 export const CONTACT_DELETED_MESSAGE = "Contact successfully deleted.";
 export const CONTACT_ADDED_MESSAGE = "Contact successfully added.";
+
+export const DEFAULT_PAGE_SIZE = 10;
 
 export const CONTACT_FORM_INITIAL_FORM_VALUES = {
   first_name: "",
@@ -7,6 +11,27 @@ export const CONTACT_FORM_INITIAL_FORM_VALUES = {
   email: "",
   role: "",
 };
+
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  first_name: yup.string().required("First Name is required"),
+  last_name: yup.string().required("Last Name is required"),
+  email: yup.string().email("Invalid Email").required("Email is required"),
+  role: yup
+    .object()
+    .nullable()
+    .shape({
+      label: yup.string().required("Role is required"),
+      value: yup.string().required("Role is required"),
+    })
+    .required("Role is required"),
+});
+
+export const ROLES = [
+  { label: "Agent", value: "agent" },
+  { label: "Admin", value: "admin" },
+  { label: "User", value: "user" },
+  { label: "Accountant", value: "accountant" },
+];
 
 export const CONTACT_TYPES = [
   {
