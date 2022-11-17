@@ -103,14 +103,3 @@ export const NOTES_TAGS = [
     count: 20,
   },
 ];
-
-export const NOTE_OPTIONS = [
-  {
-    key: "edit",
-    value: "Edit",
-  },
-  {
-    key: "delete",
-    value: "Delete",
-  },
-];
