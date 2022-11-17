@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
 import { Formik, Form } from "formik";
-import { Button, Pane } from "neetoui";
+import { Button, Pane, Select } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import {
+  NOTES_FORM_VALIDATION_SCHEMA,
+  ASSIGN_CONTACT_OPTIONS,
+  NOTE_TAG_OPTIONS,
+} from "../constants";
 
 const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -47,7 +51,24 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              rows={8}
+              rows={2}
+            />
+            <Select
+              required
+              className="w-full flex-grow-0"
+              isSearchable={false}
+              label="Assigned Contact"
+              name="assigned_contact"
+              options={ASSIGN_CONTACT_OPTIONS}
+            />
+            <Select
+              isMulti
+              isSearchable
+              required
+              className="w-full flex-grow-0"
+              label="Assigned Contact"
+              name="tags"
+              options={NOTE_TAG_OPTIONS}
             />
           </Pane.Body>
           <Pane.Footer>

@@ -8,6 +8,8 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
   description: yup.string().required("Description is required"),
+  assigned_contact: yup.array().required("Please assign to a contact"),
+  tags: yup.array().required("Please assign tags to note"),
 });
 
 export const NOTES_TABLE_COLUMN_DATA = [
@@ -102,4 +104,18 @@ export const NOTES_TAGS = [
     component: "",
     count: 20,
   },
+];
+
+export const ASSIGN_CONTACT_OPTIONS = [
+  { label: "Visitor 1", value: "visitor1_id" },
+  { label: "Contact 2", value: "contact2_id" },
+];
+
+export const NOTE_TAG_OPTIONS = [
+  { label: "Getting Started", value: "getting-started" },
+  { label: "Onboarding", value: "onboarding" },
+  { label: "User Flow", value: "user-flow" },
+  { label: "UX", value: "ux" },
+  { label: "Bugs", value: "bugs" },
+  { label: "V2", value: "v2" },
 ];
