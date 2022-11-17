@@ -15,3 +15,12 @@
     border-radius: 0%;
   }
 }
+
+.neeto-ui-tag--type-outline {
+  &.neeto-ui-tag--style-primary {
+    border-color: $neeto-ui-tag-border-color;
+    background-color: $neeto-ui-tag-bg-color;
+    color: $neeto-ui-tag-text-color;
+    border-radius: 2%;
+  }
+}
