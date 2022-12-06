@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Formik, Form } from "formik";
+import { Formik, Form as FormikForm } from "formik";
 import { Button, Pane } from "neetoui";
 import { Input, Textarea } from "neetoui/formik";
 
@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
-const NoteForm = ({ onClose, refetch, note, isEdit }) => {
+const Form = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async values => {
@@ -34,7 +34,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full">
+        <FormikForm className="w-full">
           <Pane.Body className="space-y-6">
             <Input
               required
@@ -62,10 +62,10 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
             />
             <Button label="Cancel" style="text" onClick={onClose} />
           </Pane.Footer>
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   );
 };
 
-export default NoteForm;
+export default Form;
