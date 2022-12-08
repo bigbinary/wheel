@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "3.0.4"
+ruby "3.1.2"
 
 gem "rails", "~> 7.0.3.1"
 gem "sprockets"
@@ -48,7 +48,7 @@ gem "email_prefixer"
 gem "bootsnap", ">= 1.9.4", require: false
 
 # Background jobs
-gem "sidekiq"
+gem "sidekiq", "<7"
 
 group :development, :test do
   # Rails integration for factory-bot
