@@ -15,7 +15,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     respond_with_success(
       t("signup_successful"),
       :ok,
-      { user: user, auth_token: user.authentication_token }
+      { user:, auth_token: user.authentication_token }
     )
   end
 
