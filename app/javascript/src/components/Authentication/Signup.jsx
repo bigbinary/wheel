@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Form, Formik } from "formik";
 import { Button } from "neetoui";
@@ -14,8 +14,6 @@ import {
 } from "./constants";
 
 const Signup = ({ history }) => {
-  const [submitted, setSubmitted] = useState(false);
-
   const handleSubmit = async formData => {
     try {
       await authenticationApi.signup(formData);
@@ -33,8 +31,6 @@ const Signup = ({ history }) => {
         </h2>
         <Formik
           initialValues={SIGNUP_FORM_INITIAL_VALUES}
-          validateOnBlur={submitted}
-          validateOnChange={submitted}
           validationSchema={SIGNUP_FORM_VALIDATION_SCHEMA}
           onSubmit={handleSubmit}
         >
@@ -83,7 +79,6 @@ const Signup = ({ history }) => {
                 loading={isSubmitting}
                 size="small"
                 type="submit"
-                onClick={() => setSubmitted(true)}
               />
             </Form>
           )}

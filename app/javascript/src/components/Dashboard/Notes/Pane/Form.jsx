@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Formik, Form as FormikForm } from "formik";
 import { Button, Pane } from "neetoui";
@@ -9,8 +9,6 @@ import notesApi from "apis/notes";
 import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
 
 const Form = ({ onClose, refetch, note, isEdit }) => {
-  const [submitted, setSubmitted] = useState(false);
-
   const handleSubmit = async values => {
     try {
       if (isEdit) {
@@ -28,8 +26,6 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
   return (
     <Formik
       initialValues={note}
-      validateOnBlur={submitted}
-      validateOnChange={submitted}
       validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
       onSubmit={handleSubmit}
     >
@@ -58,7 +54,6 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
               loading={isSubmitting}
               style="primary"
               type="submit"
-              onClick={() => setSubmitted(true)}
             />
             <Button label="Cancel" style="text" onClick={onClose} />
           </Pane.Footer>
