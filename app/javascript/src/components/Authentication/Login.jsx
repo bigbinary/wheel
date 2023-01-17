@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Form, Formik } from "formik";
 import { Button } from "neetoui";
@@ -20,7 +20,6 @@ import {
 } from "./constants";
 
 const Login = ({ history }) => {
-  const [submitted, setSubmitted] = useState(false);
   const authDispatch = useAuthDispatch();
   const userDispatch = useUserDispatch();
 
@@ -45,8 +44,6 @@ const Login = ({ history }) => {
         </h2>
         <Formik
           initialValues={LOGIN_FORM_INITIAL_VALUES}
-          validateOnBlur={submitted}
-          validateOnChange={submitted}
           validationSchema={LOGIN_FORM_VALIDATION_SCHEMA}
           onSubmit={handleSubmit}
         >
@@ -77,7 +74,6 @@ const Login = ({ history }) => {
                 loading={isSubmitting}
                 size="small"
                 type="submit"
-                onClick={() => setSubmitted(true)}
               />
             </Form>
           )}
