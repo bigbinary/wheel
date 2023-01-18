@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :notes, dependent: :delete_all
+
+  validates :email, uniqueness: true
+  validates :password_confirmation, presence: true, on: :create
+  validates :first_name, :last_name, :email, presence: true
+
+  before_save :ensure_authentication_token_is_present
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :trackable, :validatable, :rememberable
-
-  has_many :notes, dependent: :delete_all
-
-  before_save :ensure_authentication_token_is_present
-
-  validates :first_name, :last_name, :email, presence: true
-  validates :email, uniqueness: true
-  validates :password_confirmation, presence: true, on: :create
 
   def name
     [first_name, last_name].join(" ").strip

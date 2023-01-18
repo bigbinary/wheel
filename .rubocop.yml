@@ -95,7 +95,82 @@ Style/FrozenStringLiteralComment:
 Layout/ClassStructure:
   Enabled: true
   Description: "Enforces a canonical order of definitions within a class body."
-  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#consistent-classes"
+  StyleGuide: "https://github.com/rubocop/rails-style-guide#macro-style-methods"
+  Categories:
+    module_inclusions:
+      - include
+      - prepend
+      - extend
+    scopes:
+      - default_scope
+      - scope
+    attributes:
+      - attribute
+      - attr_reader
+      - attr_writer
+      - attr_accessor
+    enum:
+      - enum
+    store:
+      # https://api.rubyonrails.org/classes/ActiveRecord/Store.html
+      - store
+    associations:
+      - belongs_to
+      - has_one
+      - has_many
+      - has_and_belongs_to_many
+    other_macros:
+      - neeto_sso_track_widget_tokens
+      - devise
+      - delegate
+      - accepts_nested_attributes_for
+    validations:
+      - validate
+      - validates
+      - validates_acceptance_of
+      - validates_associated
+      - validates_confirmation_of
+      - validates_exclusion_of
+      - validates_format_of
+      - validates_inclusion_of
+      - validates_length_of
+      - validates_numericality_of
+      - validates_presence_of
+      - validates_uniqueness_of
+      - validates_each
+      - validate_with
+    callbacks:
+      - before_validation
+      - after_validation
+      - before_save
+      - around_save
+      - after_save
+      - before_update
+      - around_update
+      - after_update
+      - before_create
+      - after_create
+      - before_destroy
+      - around_destroy
+      - after_destroy
+      - after_commit
+      - after_create_commit
+  ExpectedOrder:
+      - module_inclusions
+      - scopes
+      - constants
+      - attributes
+      - enum
+      - store
+      - associations
+      - validations
+      - callbacks
+      - other_macros
+      - initializer
+      - public_class_methods
+      - public_methods
+      - protected_methods
+      - private_methods
 
 # In a regular class definition, no empty lines around the body.
 # bad
@@ -442,7 +517,7 @@ Layout/CaseIndentation:
 Layout/LineLength:
   Enabled: true
   Max: 120
-  IgnoredPatterns: [
+  AllowedPatterns: [
     '^\s*#', # line that begins with comment
     '^\s*"', # line that begins with double quote (long string literal)
     "^\\s*'", # line that begins with single quote (long string literal)
