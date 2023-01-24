@@ -8,7 +8,7 @@ import { isPresent } from "utils";
 
 import { setAuthHeaders, registerIntercepts } from "apis/axios";
 import { initializeLogger } from "common/logger";
-import PrivateRoute from "components/Common/PrivateRoute";
+import PrivateRoute from "components/commons/PrivateRoute";
 import Hero from "components/Hero";
 import {
   AUTH_ROUTES,

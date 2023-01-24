@@ -6,7 +6,7 @@ import { Button, PageLoader } from "neetoui";
 import { Container, Header, SubHeader } from "neetoui/layouts";
 
 import notesApi from "apis/notes";
-import EmptyState from "components/Common/EmptyState";
+import EmptyState from "components/commons/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./Pane/Create";
