@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/Shopify/erb-lint.git
-  revision: beb96d595e1591a4b06920e8cc35efc05606a9b8
+  revision: b0f68a9daf345d6fe19c4814063f565b273f4f06
   branch: main
   specs:
-    erb_lint (0.3.1)
+    erb_lint (0.4.0)
       activesupport
       better_html (>= 2.0.1)
       parser (>= 2.7.1.4)
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/ffi/ffi.git
-  revision: 227d1ce472ec90144249f8cf85b52d85cbab925c
+  revision: 73c36d77d76ef681cade4c4024abfe73af8a38b6
   submodules: true
   specs:
     ffi (1.15.5)
@@ -95,13 +95,13 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
     arbre (1.5.0)
       activesupport (>= 3.0.0, < 7.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.7.0)
+    autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -116,7 +116,7 @@ GEM
       parser (>= 2.4)
       smart_properties
     bindex (0.8.1)
-    bootsnap (1.15.0)
+    bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
     bullet (7.0.7)
@@ -127,11 +127,11 @@ GEM
       thor (~> 1.0)
     byebug (11.1.3)
     coderay (1.1.3)
-    concurrent-ruby (1.1.10)
-    connection_pool (2.4.0)
+    concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
     crass (1.0.6)
     date (3.3.3)
-    devise (4.8.1)
+    devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -154,13 +154,13 @@ GEM
     formtastic (4.0.0)
       actionpack (>= 5.2.0)
     formtastic_i18n (0.7.0)
-    globalid (1.0.1)
+    globalid (1.1.0)
       activesupport (>= 5.0)
-    has_scope (0.8.0)
+    has_scope (0.8.1)
       actionpack (>= 5.2)
       activesupport (>= 5.2)
-    honeybadger (5.0.2)
-    i18n (1.12.0)
+    honeybadger (5.2.1)
+    i18n (1.14.0)
       concurrent-ruby (~> 1.0)
     inherited_resources (1.13.1)
       actionpack (>= 5.2, < 7.1)
@@ -191,10 +191,10 @@ GEM
       addressable (~> 2.8)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
-    loofah (2.19.1)
+    loofah (2.21.3)
       crass (~> 1.0.2)
-      nokogiri (>= 1.5.9)
-    mail (2.8.0.1)
+      nokogiri (>= 1.12.0)
+    mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -204,10 +204,10 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.17.0)
+    minitest (5.18.0)
     minitest-ci (3.4.0)
       minitest (>= 5.0.6)
-    msgpack (1.6.0)
+    msgpack (1.7.1)
     net-imap (0.3.4)
       date
       net-protocol
@@ -217,18 +217,14 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    nio4r (2.5.8)
-    nokogiri (1.14.3-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.14.3-x86_64-linux)
+    nio4r (2.5.9)
+    nokogiri (1.15.2-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    parallel (1.22.1)
-    parser (3.2.0.0)
+    parallel (1.23.0)
+    parser (3.2.2.1)
       ast (~> 2.4.1)
-    pg (1.4.5)
+    pg (1.5.3)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -236,13 +232,13 @@ GEM
       byebug (~> 11.0)
       pry (>= 0.13, < 0.15)
     public_suffix (5.0.1)
-    puma (6.0.2)
+    puma (6.3.0)
       nio4r (~> 2.0)
     racc (1.6.2)
-    rack (2.2.6.4)
-    rack-proxy (0.7.4)
+    rack (2.2.7)
+    rack-proxy (0.7.6)
       rack
-    rack-test (2.0.2)
+    rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.3.1)
       actioncable (= 7.0.3.1)
@@ -261,8 +257,9 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.4)
-      loofah (~> 2.19, >= 2.19.1)
+    rails-html-sanitizer (1.6.0)
+      loofah (~> 2.21)
+      nokogiri (~> 1.14)
     railties (7.0.3.1)
       actionpack (= 7.0.3.1)
       activesupport (= 7.0.3.1)
@@ -276,7 +273,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    react-rails (2.6.2)
+    react-rails (2.7.1)
       babel-transpiler (>= 0.7.0)
       connection_pool
       execjs
@@ -284,30 +281,30 @@ GEM
       tilt
     redis-client (0.14.1)
       connection_pool
-    regexp_parser (2.6.1)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
+    regexp_parser (2.8.0)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.5)
-    rubocop (1.43.0)
+    rubocop (1.51.0)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
-      rubocop-ast (>= 1.24.1, < 2.0)
+      rubocop-ast (>= 1.28.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.24.1)
-      parser (>= 3.1.1.0)
-    rubocop-rails (2.17.4)
+    rubocop-ast (1.29.0)
+      parser (>= 3.2.1.0)
+    rubocop-rails (2.19.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
-    ruby-progressbar (1.11.0)
+    ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
-    ruby_audit (2.1.0)
+    ruby_audit (2.2.0)
       bundler-audit (~> 0.9.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -320,11 +317,16 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
-    sidekiq (7.0.8)
+    shakapacker (6.6.0)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
+    sidekiq (7.1.1)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
-      redis-client (>= 0.11.0)
+      redis-client (>= 0.14.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -339,10 +341,10 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    thor (1.2.1)
-    tilt (2.0.11)
-    timeout (0.3.1)
-    tzinfo (2.0.5)
+    thor (1.2.2)
+    tilt (2.1.0)
+    timeout (0.3.2)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
@@ -355,21 +357,13 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webpacker (5.4.3)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.6)
+    zeitwerk (2.6.8)
 
 PLATFORMS
-  arm64-darwin-22
   x86_64-darwin-21
-  x86_64-darwin-22
-  x86_64-linux
 
 DEPENDENCIES
   activeadmin
@@ -399,16 +393,16 @@ DEPENDENCIES
   rubocop-rails
   ruby_audit
   sass-rails (>= 6)
+  shakapacker
   sidekiq (< 8)
   simplecov
   sprockets
   sprockets-rails
   uglifier (>= 2.7.1)
   web-console
-  webpacker
 
 RUBY VERSION
    ruby 3.1.3p185
 
 BUNDLED WITH
-   2.3.26
+   2.4.8

@@ -48,8 +48,8 @@ declare -a configs=(
   "bin/rake"
   "bin/setup"
   "bin/update"
-  "bin/webpack"
-  "bin/webpack-dev-server"
+  "bin/webpacker"
+  "bin/webpacker-dev-server"
   "bin/yarn"
 )
 

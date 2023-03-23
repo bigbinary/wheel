@@ -52,7 +52,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: ./bin/webpack-dev-server
+    command: ./bin/webpacker-dev-server
     ports:
       - 3035:3035
     networks:

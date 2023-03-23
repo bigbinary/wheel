@@ -12,7 +12,7 @@ gem "sass-rails", ">= 6"
 gem "sprockets-rails"
 gem "uglifier", ">= 2.7.1"
 
-gem "webpacker"
+gem "shakapacker"
 
 # React
 gem "react-rails"
