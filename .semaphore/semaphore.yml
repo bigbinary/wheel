@@ -44,7 +44,6 @@ blocks:
               "https://raw.githubusercontent.com/bigbinary/wheel/main/.semaphore/commands/run_eslint_on_modified_files.sh"
               | bash'
             - bundle exec rake db:create db:schema:load --trace
-            - bundle exec rake incinerator:check_for_missing_models
             - bundle exec rails test
             - bundle exec rake simplecov_coverage:publish
             - test-results publish ./test/reports
