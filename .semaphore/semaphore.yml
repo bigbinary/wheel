@@ -45,11 +45,4 @@ blocks:
               | bash'
             - bundle exec rake db:create db:schema:load --trace
             - bundle exec rails test
-            - test-results publish ./test/reports
             - bundle exec rake setup
-after_pipeline:
-  task:
-    jobs:
-      - name: Publish Results
-        commands:
-          - test-results gen-pipeline-report
