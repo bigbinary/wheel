@@ -45,7 +45,6 @@ blocks:
               | bash'
             - bundle exec rake db:create db:schema:load --trace
             - bundle exec rails test
-            - bundle exec rake simplecov_coverage:publish
             - test-results publish ./test/reports
             - bundle exec rake setup
 after_pipeline:
