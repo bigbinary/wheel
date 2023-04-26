@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-Redis.exists_returns_integer = true
-
 if Rails.env.heroku?
   require "sidekiq/testing"
   Sidekiq::Testing.inline!
