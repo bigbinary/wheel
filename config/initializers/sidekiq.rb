@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-Redis.exists_returns_integer = true
-
 if Rails.env.heroku?
   require "sidekiq/testing"
   Sidekiq::Testing.inline!
@@ -10,8 +8,6 @@ end
 if Rails.env.test?
   Sidekiq.logger.level = Logger::WARN
 end
-
-Sidekiq::Extensions.enable_delay!
 
 Sidekiq.configure_server do |config|
   config.redis = {

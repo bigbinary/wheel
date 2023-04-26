@@ -48,7 +48,7 @@ gem "email_prefixer"
 gem "bootsnap", ">= 1.9.4", require: false
 
 # Background jobs
-gem "sidekiq", "<7"
+gem "sidekiq", "<8"
 
 group :development, :test do
   # Rails integration for factory-bot
