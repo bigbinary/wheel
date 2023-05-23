@@ -1,6 +1,3 @@
-const process = require("process");
-
-const Dotenv = require("dotenv-webpack");
 const { webpackConfig, merge } = require("shakapacker");
 const webpack = require("webpack");
 
@@ -19,13 +16,6 @@ const commonOptions = {
   plugins: [
     new webpack.ProvidePlugin({
       process: "process/browser",
-    }),
-    new Dotenv({
-      path: `./.env${
-        process.env.NODE_ENV === "production" ? "" : `.${process.env.NODE_ENV}`
-      }`,
-      systemvars: true,
-      silent: true,
     }),
   ],
 };
