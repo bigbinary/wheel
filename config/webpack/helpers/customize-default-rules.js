@@ -4,7 +4,7 @@
   Track the following the issues to get the status of feature development in shakapacker:
   https://github.com/shakacode/shakapacker/issues/80
   https://github.com/shakacode/shakapacker/issues/87
-  Usauge:
+  Usage:
     const customizeWebpackDefaultRules = require("./helpers/customize-default-rules");
     const defaultRules = {
       "asset/resource": {
@@ -16,11 +16,11 @@
     };
     const customWebpackConfig = customizeWebpackDefaultRules(webpackConfig, defaultRules);
   NOTE:
-    - Check if the option to optout deafult configuration is introduced or not before upgrading further.
+    - Check if the option to output default configuration is introduced or not before upgrading further.
     - Update the defaultRuleType constant whenever shakapacker introduces a new default rule/loader.
 */
 const {
-  filterBy,
+  findBy,
   findIndexBy,
 } = require("@bigbinary/neeto-commons-frontend/pure");
 
@@ -29,10 +29,10 @@ const modifyDefaultRulesConfig = (webpackConfig, rules = {}) => {
 
   Object.keys(rules).forEach(ruleName => {
     if (defaultRuleType.includes(ruleName)) {
-      const rule = filterBy(
+      const rule = findBy(
         { type: "asset/resource" },
         webpackConfig.module.rules
-      )[0];
+      );
 
       const rulePosition = findIndexBy(
         { type: ruleName },

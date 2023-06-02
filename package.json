@@ -107,6 +107,7 @@
     "sass": "^1.59.3",
     "sass-loader": "^13.2.1",
     "shakapacker": "6.6.0",
+    "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.2",
     "tailwindcss": "^2.1.2",
     "terser-webpack-plugin": "^5.3.6",
