@@ -6,7 +6,6 @@
   <title><%= content_for?(:title) ? yield(:title) : "Wheel" %></title>
   <script src="https://www.google.com/recaptcha/api.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : Rails.application.secrets.app_default_title %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_pack_tag "application" %>
