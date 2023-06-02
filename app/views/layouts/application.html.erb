@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <title>
-      <%= content_for?(:title) ? yield(:title) : "Wheel" %>
-    </title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_pack_tag "application" %>
-    <%= javascript_pack_tag "application" %>
-    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all" %>
-    <!--<link rel="icon" href="/favicon.ico" type="image/x-icon"-->
-    <!--<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"-->
-  </head>
-  <body class="antialiased">
-    <%= yield %>
-  </body>
+<html>
+
+<head>
+  <meta name="google-site-verification" content="ZUi6T_v55Vx89N3jiaOjLZTzF_3q9Ex2jaVd4XowxV4">
+  <title><%= content_for?(:title) ? yield(:title) : "Wheel" %></title>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : Rails.application.secrets.app_default_title %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_pack_tag "application" %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" %>
+  <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all" %>
+</head>
+
+<body>
+  <%= yield %>
+  <%= javascript_pack_tag "application", crossorigin: "anonymous" %>
+</body>
+
 </html>

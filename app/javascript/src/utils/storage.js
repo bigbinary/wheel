@@ -1,3 +1,5 @@
+import { isPresent } from "utils";
+
 const setToLocalStorage = (key, value) => {
   if (value !== null) {
     localStorage.setItem(key, JSON.stringify(value));
@@ -8,7 +10,7 @@ const getFromLocalStorage = key => {
   let response = "";
   try {
     const value = localStorage.getItem(key);
-    response = value ? JSON.parse(value) : "";
+    response = isPresent(value) ? JSON.parse(value) : "";
   } catch (error) {
     logger.error(error);
     response = "";
