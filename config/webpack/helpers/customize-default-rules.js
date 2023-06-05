@@ -19,10 +19,7 @@
     - Check if the option to output default configuration is introduced or not before upgrading further.
     - Update the defaultRuleType constant whenever shakapacker introduces a new default rule/loader.
 */
-const {
-  findBy,
-  findIndexBy,
-} = require("@bigbinary/neeto-commons-frontend/pure");
+const { findBy, findIndexBy } = require("./utils");
 
 const modifyDefaultRulesConfig = (webpackConfig, rules = {}) => {
   const defaultRuleType = ["asset/resource", "asset/source"];
