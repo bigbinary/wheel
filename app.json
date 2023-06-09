@@ -38,13 +38,10 @@
   "formation": {},
   "addons": [
     {
-      "plan": "heroku-postgresql",
+      "plan": "postgresql",
       "options": {
-        "version": "12"
+        "version": "14"
       }
-    },
-    {
-      "plan": "heroku-redis:hobby-dev"
     }
   ],
   "buildpacks": [
