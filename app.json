@@ -38,7 +38,7 @@
   "formation": {},
   "addons": [
     {
-      "plan": "postgresql",
+      "plan": "heroku-postgresql",
       "options": {
         "version": "14"
       }
