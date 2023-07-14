@@ -15,7 +15,7 @@ global_job_config:
     commands:
       - checkout
       # TODO: keep the version aligned with neeto side
-      - sem-version ruby 3.1.3
+      - sem-version ruby 3.2.2
       - sem-version node 18.12
       - sem-service start postgres 13
       - sem-service start redis 7.0.5
