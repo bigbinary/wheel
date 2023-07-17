@@ -3,7 +3,7 @@ to quickly spin up a Rails application built with opinions of BigBinary style of
 working.
 
 ## Local Development Setup
-
+test
 First clone this repo.
 
 Then install the [Node.js](https://nodejs.org) version `v18.12` which we have specified inside the `.node-version` file of this repo., using the following command:
