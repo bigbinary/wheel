@@ -3,7 +3,7 @@ require:
   - rubocop-rails
 
 AllCops:
-  TargetRubyVersion: 3.1.2
+  TargetRubyVersion: 3.2.2
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
@@ -157,22 +157,22 @@ Layout/ClassStructure:
       - after_commit
       - after_create_commit
   ExpectedOrder:
-      - module_inclusions
-      - third_party
-      - scopes
-      - constants
-      - attributes
-      - enum
-      - store
-      - associations
-      - validations
-      - callbacks
-      - other_macros
-      - initializer
-      - public_class_methods
-      - public_methods
-      - protected_methods
-      - private_methods
+    - module_inclusions
+    - third_party
+    - scopes
+    - constants
+    - attributes
+    - enum
+    - store
+    - associations
+    - validations
+    - callbacks
+    - other_macros
+    - initializer
+    - public_class_methods
+    - public_methods
+    - protected_methods
+    - private_methods
 
 # In a regular class definition, no empty lines around the body.
 # bad
@@ -520,13 +520,13 @@ Layout/LineLength:
   Enabled: true
   Max: 120
   AllowedPatterns: [
-    '^\s*#', # line that begins with comment
-    '^\s*"', # line that begins with double quote (long string literal)
-    "^\\s*'", # line that begins with single quote (long string literal)
-    '"$', # line that ends with double quote (long string variable assignment)
-    "'$", # line that ends with single quote (long string variable assignment)
-    '\/$', # line that ends with slash (long regex variable assignment)
-  ]
+      '^\s*#', # line that begins with comment
+      '^\s*"', # line that begins with double quote (long string literal)
+      "^\\s*'", # line that begins with single quote (long string literal)
+      '"$', # line that ends with double quote (long string variable assignment)
+      "'$", # line that ends with single quote (long string variable assignment)
+      '\/$', # line that ends with slash (long regex variable assignment)
+    ]
 
 # Indent using two spaces
 Layout/IndentationWidth:
