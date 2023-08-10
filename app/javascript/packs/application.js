@@ -10,6 +10,19 @@
 
 import "stylesheets/application";
 
+import initializeApplication from "@bigbinary/neeto-commons-frontend/initializers";
+
+initializeApplication({
+  skip: {
+    mixpanel: true,
+    logger: true,
+    i18n: true,
+    globalProps: true,
+    baseUrl: true,
+    axios: true,
+  },
+});
+
 // Support component names relative to this directory:
 const componentRequireContext = require.context("src", true);
 const ReactRailsUJS = require("react_ujs");

@@ -12,7 +12,6 @@ eslint-plugin-json \
 eslint-plugin-react \
 eslint-plugin-promise \
 eslint-plugin-jam3 \
-eslint-plugin-cypress \
 eslint-plugin-unused-imports \
 prettier-plugin-tailwindcss
 

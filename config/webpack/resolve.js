@@ -13,6 +13,7 @@ module.exports = {
     reducers: absolutePath("src/reducers"),
     neetoui: "@bigbinary/neetoui",
     neetoicons: "@bigbinary/neeto-icons",
+    neetomolecules: "@bigbinary/neeto-molecules",
     utils: absolutePath("src/utils"),
   },
   extensions: [
@@ -31,4 +32,19 @@ module.exports = {
     ".jpeg",
     ".jpg",
   ],
+  fallback: {
+    assert: require.resolve("assert/"),
+    buffer: require.resolve("buffer/"),
+    crypto: require.resolve("crypto-browserify"),
+    fs: false,
+    http: require.resolve("stream-http"),
+    https: require.resolve("https-browserify"),
+    os: require.resolve("os-browserify/browser"),
+    path: require.resolve("path-browserify"),
+    stream: require.resolve("stream-browserify"),
+    tty: require.resolve("tty-browserify"),
+    util: require.resolve("util/"),
+    url: require.resolve("url/"),
+    zlib: require.resolve("browserify-zlib"),
+  },
 };

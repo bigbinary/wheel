@@ -26,23 +26,11 @@ gem "puma"
 # JSON builder
 gem "jbuilder", ">= 2.7"
 
-# Authentication
-gem "devise", "~> 4.7"
-
-# Error tracking
-gem "honeybadger"
-
 # Support cross-browser css compatibility
 gem "autoprefixer-rails"
 
-# Admin framework
-gem "activeadmin"
-
 # Email validation
 gem "email_validator"
-
-# Adds prefix to subject in emails
-gem "email_prefixer"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.9.4", require: false
@@ -85,9 +73,6 @@ group :development do
 
   # vulnerability checker for Ruby itself
   gem "ruby_audit", require: false
-
-  # Preview email in browser
-  gem "letter_opener"
 end
 
 group :test do

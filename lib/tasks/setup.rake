@@ -38,17 +38,5 @@ def delete_all_records_from_all_tables
 end
 
 def create_sample_data!
-  create_user! email: "oliver@example.com"
-end
-
-def create_user!(options = {})
-  user_attributes = {
-    first_name: "Oliver",
-    last_name: "Smith",
-    password: "welcome",
-    password_confirmation: "welcome",
-    role: "super_admin"
-  }
-  attributes = user_attributes.merge options
-  User.create! attributes
+  puts "**Write logic to seed sample data later in Scribble as per requirements**"
 end
