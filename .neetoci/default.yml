@@ -1,4 +1,5 @@
 version: v1.0
+plan: standard-2
 name: neetoCi
 global_job_config:
   setup:
