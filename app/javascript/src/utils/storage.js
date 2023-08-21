@@ -13,6 +13,7 @@ const getFromLocalStorage = key => {
     response = isPresent(value) ? JSON.parse(value) : null;
   } catch (error) {
     logger.error(error);
+    response = null;
   }
 
   return response;
