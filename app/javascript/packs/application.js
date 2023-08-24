@@ -15,6 +15,3 @@ const componentRequireContext = require.context("src", true);
 const ReactRailsUJS = require("react_ujs");
 
 ReactRailsUJS.useContext(componentRequireContext);
-
-// Makes React dev tools etc, work.
-ReactRailsUJS.mountComponents();
