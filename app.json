@@ -38,7 +38,7 @@
   "formation": {},
   "addons": [
     {
-      "plan": "heroku-postgresql",
+      "plan": "neetodeploy-postgresql:basic",
       "options": {
         "version": "14"
       }
