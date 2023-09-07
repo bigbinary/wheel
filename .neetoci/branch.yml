@@ -1,0 +1,31 @@
+version: v1.0
+triggers:
+  - event: branch
+    branch_name: main
+plan: standard-2
+name: neetoCi
+global_job_config:
+  setup:
+    - checkout
+    - neetoci-version ruby 3.2.2
+    - neetoci-version node 18.12
+    - neetoci-service start postgres 13
+    - neetoci-service start redis 7.0.5
+    - cp config/database.yml.ci config/database.yml
+    - bundle config path 'vendor/bundle'
+    - cache restore
+    - bundle install --jobs 1
+    - yarn install
+    - cache store
+  jobs:
+    - name: CiChecks
+      commands:
+        - bundle exec ruby-audit check
+        - bundle exec rubocop
+        - bundle exec erblint --lint-all --format compact
+        - 'curl -s -L
+          "https://raw.githubusercontent.com/bigbinary/wheel/main/.semaphore/commands/run_eslint_on_modified_files.sh"
+          | bash'
+        - bundle exec rake db:create db:schema:load --trace
+        - bundle exec rails test
+        - bundle exec rake setup
