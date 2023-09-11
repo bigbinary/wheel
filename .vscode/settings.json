@@ -1,9 +1,6 @@
 {
   "[ruby]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
-    "editor.formatOnType": true,
-    "editor.insertSpaces": true,
-    "files.insertFinalNewline": true,
     "editor.semanticHighlighting.enabled": true,
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "Shopify.ruby-lsp"
