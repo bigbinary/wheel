@@ -2,7 +2,7 @@
   "recommendations": [
     "bradlc.vscode-tailwindcss",
     "kaiwood.endwise",
-    "rebornix.ruby",
+    "Shopify.ruby-lsp",
     "redhat.vscode-yaml",
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
