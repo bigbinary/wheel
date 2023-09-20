@@ -1,6 +1,7 @@
 version: v1.0
+
 plan: standard-2
-name: neetoCi
+
 global_job_config:
   setup:
     - checkout
@@ -26,3 +27,8 @@ global_job_config:
         - bundle exec rake db:create db:schema:load --trace
         - bundle exec rails test
         - bundle exec rake setup
+
+triggers:
+  - event: branch
+    branch_name: main
+  - event: pull_request
