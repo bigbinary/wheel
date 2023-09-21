@@ -33,7 +33,8 @@ password `welcome`.
 
 ## Using docker for development
 
-Follow the instructions mentioned
+In BigBinary we follow the above mentioned style of installing dependencies using `./bin/setup` and then running the servers manually.
+If that doesn't work in your system for some reason, then you can opt into following the instructions mentioned
 [here](https://github.com/bigbinary/wheel/blob/main/docs/using_docker.md) to use
 docker for development.
 
