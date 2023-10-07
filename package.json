@@ -88,7 +88,7 @@
     "ignore-loader": "^0.1.2",
     "js-logger": "^1.6.1",
     "mini-css-extract-plugin": "^2.7.5",
-    "postcss": "^8.4.21",
+    "postcss": "^8.4.31",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.1.0",
