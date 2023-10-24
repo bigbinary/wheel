@@ -14,21 +14,21 @@ module ApiRescuable
 
     def handle_validation_error(exception)
       log_exception(exception)
-      respond_with_error(exception.record.errors_to_sentence)
+      render_error(exception.record.errors_to_sentence)
     end
 
     def handle_record_not_found(exception)
       log_exception(exception)
-      respond_with_error(exception.message, :not_found)
+      render_error(exception.message, :not_found)
     end
 
     def handle_record_not_unique(exception)
       log_exception(exception)
-      respond_with_error(exception.record.errors_to_sentence)
+      render_error(exception.record.errors_to_sentence)
     end
 
     def handle_api_error(exception)
       log_exception(exception)
-      respond_with_error(exception.original_message, :internal_server_error)
+      render_error(exception.original_message, :internal_server_error)
     end
 end

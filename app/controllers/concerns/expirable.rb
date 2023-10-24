@@ -10,6 +10,6 @@ module Expirable
   private
 
     def ensure_user_is_logged_out_during_session_expiry
-      respond_with_json({ error: t("session.expiry") }, :unauthorized) and return
+      render_json({ error: t("session.expiry") }, :unauthorized) and return
     end
 end

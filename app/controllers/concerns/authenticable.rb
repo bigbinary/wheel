@@ -18,7 +18,7 @@ module Authenticable
       if user && auth_token && Devise.secure_compare(user.authentication_token, auth_token)
         sign_in user, store: false
       else
-        respond_with_error(t("invalid_credentials"), :unauthorized)
+        render_error(t("invalid_credentials"), :unauthorized)
       end
     end
 end
