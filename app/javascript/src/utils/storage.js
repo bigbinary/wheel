@@ -7,16 +7,15 @@ const setToLocalStorage = (key, value) => {
 };
 
 const getFromLocalStorage = key => {
-  let response = null;
   try {
     const value = localStorage.getItem(key);
-    response = isPresent(value) ? JSON.parse(value) : null;
+
+    return isPresent(value) ? JSON.parse(value) : null;
   } catch (error) {
     logger.error(error);
-    response = null;
-  }
 
-  return response;
+    return null;
+  }
 };
 
 const clearLocalStorageCredentials = () => {
