@@ -5,26 +5,26 @@ class Api::V1::NotesController < Api::V1::BaseController
   before_action :load_notes, only: :bulk_delete
 
   def index
-    respond_with_json({ notes: current_user.notes })
+    render_json({ notes: current_user.notes })
   end
 
   def create
     note = current_user.notes.new(note_params)
     note.save!
-    respond_with_success(t("successfully_created", entity: "Note"))
+    render_message(t("successfully_created", entity: "Note"))
   end
 
   def update
     @note.update!(note_params)
-    respond_with_success(t("successfully_updated", entity: "Note"))
+    render_message(t("successfully_updated", entity: "Note"))
   end
 
   def bulk_delete
     records_size = @notes.size
     if @notes.destroy_all
-      respond_with_success(t("successfully_deleted", count: records_size, entity: records_size > 1 ? "Notes" : "Note"))
+      render_message(t("successfully_deleted", count: records_size, entity: records_size > 1 ? "Notes" : "Note"))
     else
-      respond_with_error(t("Something went wrong!"))
+      render_error(t("Something went wrong!"))
     end
   end
 
@@ -40,6 +40,6 @@ class Api::V1::NotesController < Api::V1::BaseController
 
     def load_notes
       @notes = current_user.notes.where(id: params[:ids])
-      respond_with_error(t("not_found", entity: "Note")) if @notes.empty?
+      render_error(t("not_found", entity: "Note")) if @notes.empty?
     end
 end

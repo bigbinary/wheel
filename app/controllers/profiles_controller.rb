@@ -9,18 +9,18 @@ class ProfilesController < Devise::RegistrationsController
   def update
     if resource.update_with_password(update_params)
       bypass_sign_in resource, scope: :user
-      respond_with_success(t("successfully_updated", entity: "User profile"), :ok, { user: resource })
+      render_message(t("successfully_updated", entity: "User profile"), :ok, { user: resource })
     else
-      respond_with_error(resource.errors_to_sentence)
+      render_error(resource.errors_to_sentence)
     end
   end
 
   def update_email
     if resource.update_with_password(update_params)
       sign_out(resource)
-      respond_with_success(t("successfully_updated", entity: "Email"))
+      render_message(t("successfully_updated", entity: "Email"))
     else
-      respond_with_error(resource.errors_to_sentence)
+      render_error(resource.errors_to_sentence)
     end
   end
 
