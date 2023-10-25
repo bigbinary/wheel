@@ -9,7 +9,7 @@ class Api::V1::NotesController < Api::V1::BaseController
   end
 
   def create
-    note = current_user.notes.create!(note_params)
+    current_user.notes.create!(note_params)
     render_message(t("successfully_created", entity: "Note"))
   end
 
