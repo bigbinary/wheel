@@ -60,8 +60,7 @@
       "options": {
         "version": "14"
       }
-    },
-    
+    }
   ],
   "buildpacks": [
     {
