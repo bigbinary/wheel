@@ -42,7 +42,26 @@
       "options": {
         "version": "14"
       }
-    }
+    },
+    {
+      "plan": "neetodeploy-redis:basic",
+      "options": {
+        "version": "14"
+      }
+    },
+      {
+      "plan": "neetodeploy-elasticsearch:basic",
+      "options": {
+        "version": "14"
+      }
+    },
+      {
+      "plan": "neetodeploy-postgresql:basic",
+      "options": {
+        "version": "14"
+      }
+    },
+    
   ],
   "buildpacks": [
     {
