@@ -71,7 +71,7 @@
     "@emotion/is-prop-valid": "^1.2.0",
     "@svgr/webpack": "6.5.1",
     "antd": "^4.23.1",
-    "axios": "^0.26.1",
+    "axios": "^1.6.0",
     "babel-loader": "^8.2.5",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-js-logger": "^1.0.17",
