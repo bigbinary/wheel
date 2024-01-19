@@ -116,5 +116,9 @@
     "webpack-merge": "^5.8.0",
     "webpack-sources": "^3.2.3",
     "yup": "^0.32.11"
+  },
+  "resolutions": {
+    "strip-ansi": "^6.0.1",
+    "string-width": "^4.2.2"
   }
 }
