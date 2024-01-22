@@ -108,7 +108,7 @@
     "shakapacker": "6.6.0",
     "source-map-loader": "^4.0.1",
     "style-loader": "^3.3.2",
-    "tailwindcss": "^2.1.2",
+    "tailwindcss": "^3.4.1",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.74.0",
     "webpack-assets-manifest": "^5.1.0",
@@ -116,5 +116,9 @@
     "webpack-merge": "^5.8.0",
     "webpack-sources": "^3.2.3",
     "yup": "^0.32.11"
+  },
+  "resolutions": {
+    "strip-ansi": "^6.0.1",
+    "string-width": "^4.2.2"
   }
 }
