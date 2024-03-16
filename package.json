@@ -2,7 +2,7 @@
   "name": "Wheel",
   "version": "1.0.0",
   "engines": {
-    "node": "18",
+    "node": "18.18.2",
     "npm": "7.x",
     "yarn": "1.22.x"
   },
