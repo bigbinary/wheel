@@ -1,0 +1,30 @@
+<% branch_name = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '') %>
+<% repository_name = `git rev-parse --show-toplevel`.split('/').last.strip %>
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['PG_HOST'] %>
+  pool: 5
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: <%= "#{repository_name}_development" %>
+
+test:
+  <<: *default
+  database: <%= "#{repository_name}_test" %>
+
+heroku:
+  <<: *default
+  database: <%= "#{repository_name}_heroku" %>
+
+staging:
+  <<: *default
+  database: <%= "#{repository_name}_staging" %>
+
+production:
+  <<: *default
+  database: <%= "#{repository_name}_production" %>
