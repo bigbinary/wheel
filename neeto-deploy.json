@@ -52,5 +52,99 @@
     {
       "url": "heroku/ruby"
     }
-  ]
+  ],
+  "nixpacks": {
+    "build": {
+      "dependsOn": [
+        "install",
+        "node:install"
+      ],
+      "cmds": [
+        "bundle exec rake assets:precompile",
+        "bundle exec bootsnap precompile app/ lib/"
+      ]
+    },
+    "install": {
+      "dependsOn": [
+        "setup"
+      ],
+      "cmds": [
+        "bundle install",
+        "bundle exec bootsnap precompile --gemfile"
+      ],
+      "onlyIncludeFiles": [
+        "Gemfile",
+        "Gemfile.lock"
+      ],
+      "cacheDirectories": [
+        "/root/.bundle/cache"
+      ],
+      "paths": [
+        "/usr/local/rvm/rubies/3.2.2/bin",
+        "/usr/local/rvm/gems/3.2.2/bin",
+        "/usr/local/rvm/gems/3.2.2@global/bin"
+      ]
+    },
+    "node:install": {
+      "dependsOn": [
+        "setup"
+      ],
+      "cmds": [
+        "yarn install --frozen-lockfile"
+      ],
+      "cacheDirectories": [
+        "/root/.cache/Cypress",
+        "/usr/local/share/.cache/yarn/v6"
+      ],
+      "paths": [
+        "/app/node_modules/.bin"
+      ]
+    },
+    "node:setup": {
+      "nixPkgs": [
+        "nodejs_18",
+        "yarn-1_x"
+      ],
+      "nixOverlays": [
+        "https://github.com/railwayapp/nix-npm-overlay/archive/main.tar.gz"
+      ],
+      "nixpkgsArchive": "bf744fe90419885eefced41b3e5ae442d732712d"
+    },
+    "setup": {
+      "nixPkgs": [
+        "rustc"
+      ],
+      "nixOverlays": [
+
+      ],
+      "nixpkgsArchive": "5148520bfab61f99fd25fb9ff7bfbb50dad3c9db",
+      "aptPkgs": [
+        "procps",
+        "libpq-dev",
+        "git",
+        "curl",
+        "autoconf",
+        "bison",
+        "build-essential",
+        "libssl-dev",
+        "libyaml-dev",
+        "libreadline6-dev",
+        "zlib1g-dev",
+        "libncurses5-dev",
+        "libffi-dev",
+        "libgdbm6",
+        "libgdbm-dev",
+        "libdb-dev"
+      ],
+      "cmds": [
+        "curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash -s stable && printf '\\neval \"$(~/.rbenv/bin/rbenv init -)\"' >> /root/.profile && . /root/.profile && rbenv install 3.2.2 && rbenv global 3.2.2 && gem install bundler:2.4.8"
+      ],
+      "onlyIncludeFiles": [
+
+      ],
+      "paths": [
+        "$HOME/.rbenv/bin"
+      ]
+    }
+  }
 }
