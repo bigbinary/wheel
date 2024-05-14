@@ -1,4 +1,58 @@
 {
+  "name": "wheel",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "RACK_ENV": {
+      "value": "heroku"
+    },
+    "RAILS_ENV": {
+      "value": "heroku"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": false
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "LOG_LEVEL": {
+      "value": "DEBUG"
+    },
+    "YARN_PRODUCTION": {
+      "value": "true"
+    },
+    "YARN_CACHE": {
+      "value": "true"
+    },
+    "NODE_MODULES_CACHE": {
+      "value": "true"
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    {
+      "plan": "neetodeploy-postgresql:basic",
+      "options": {
+        "version": "14"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ],
   "nixpacks": {
     "build": {
       "dependsOn": [
@@ -56,23 +110,11 @@
       ],
       "nixpkgsArchive": "bf744fe90419885eefced41b3e5ae442d732712d"
     },
-    "release": {
-      "dependsOn": [
-        "setup",
-        "install",
-        "build"
-      ],
-      "cmds": [
-        "bundle exec rake db:migrate && bundle exec rake reset_and_populate_sample_data"
-      ]
-    },
     "setup": {
       "nixPkgs": [
         "rustc"
       ],
-      "nixOverlays": [
-
-      ],
+      "nixOverlays": [],
       "nixpkgsArchive": "5148520bfab61f99fd25fb9ff7bfbb50dad3c9db",
       "aptPkgs": [
         "procps",
@@ -95,9 +137,7 @@
       "cmds": [
         "curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash -s stable && printf '\\neval \"$(~/.rbenv/bin/rbenv init -)\"' >> /root/.profile && . /root/.profile && rbenv install 3.2.2 && rbenv global 3.2.2 && gem install bundler:2.4.8"
       ],
-      "onlyIncludeFiles": [
-
-      ],
+      "onlyIncludeFiles": [],
       "paths": [
         "$HOME/.rbenv/bin"
       ]
