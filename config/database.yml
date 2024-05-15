@@ -1,6 +1,3 @@
-<% branch_name = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '') %>
-<% repository_name = `git rev-parse --show-toplevel`.split('/').last.strip %>
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -11,20 +8,20 @@ default: &default
 
 development:
   <<: *default
-  database: <%= "#{repository_name}_development" %>
+  database: wheel-vishal_development
 
 test:
   <<: *default
-  database: <%= "#{repository_name}_test" %>
+  database: wheel-vishal_test
 
 heroku:
   <<: *default
-  database: <%= "#{repository_name}_heroku" %>
+  database: wheel-vishal_heroku
 
 staging:
   <<: *default
-  database: <%= "#{repository_name}_staging" %>
+  database: wheel-vishal_staging
 
 production:
   <<: *default
-  database: <%= "#{repository_name}_production" %>
+  database: wheel-vishal_production
