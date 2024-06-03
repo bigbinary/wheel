@@ -5,7 +5,7 @@ plan: standard-2
 global_job_config:
   setup:
     - checkout
-    - neetoci-version ruby 3.2.2
+    - neetoci-version ruby 3.2.4
     - neetoci-version node 18.12
     - neetoci-service start postgres 13
     - neetoci-service start redis 7.0.5

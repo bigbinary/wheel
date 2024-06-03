@@ -399,7 +399,7 @@ DEPENDENCIES
   rubocop-rails
   ruby_audit
   sass-rails (>= 6)
-  shakapacker
+  shakapacker (~> 6.6.0)
   sidekiq (< 8)
   simplecov
   sprockets
@@ -408,7 +408,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.2.2p53
+   ruby 3.2.4p170
 
 BUNDLED WITH
    2.4.8
