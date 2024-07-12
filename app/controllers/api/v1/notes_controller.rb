@@ -2,7 +2,7 @@
 
 class Api::V1::NotesController < Api::V1::BaseController
   before_action :load_note!, only: %i[update delete]
-  before_action :load_notes, only: :bulk_delete
+  before_action :load_notes, only: :bulk_destroy
 
   def index
     render_json({ notes: current_user.notes })
@@ -18,7 +18,7 @@ class Api::V1::NotesController < Api::V1::BaseController
     render_message(t("successfully_updated", entity: "Note"))
   end
 
-  def bulk_delete
+  def bulk_destroy
     records_size = @notes.size
     if @notes.destroy_all
       render_message(t("successfully_deleted", count: records_size, entity: records_size > 1 ? "Notes" : "Note"))

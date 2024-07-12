@@ -52,7 +52,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_delete_single_note
     assert_difference "@admin.notes.count", -1 do
-      post bulk_delete_api_v1_notes_path, params: { ids: [@notes.first.id] }, headers: @headers
+      post bulk_destroy_api_v1_notes_path, params: { ids: [@notes.first.id] }, headers: @headers
     end
 
     assert_response :success
@@ -61,7 +61,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_delete_multiple_note
     assert_difference "@admin.notes.count", -3 do
-      post bulk_delete_api_v1_notes_path, params: { ids: @notes.pluck(:id) }, headers: @headers
+      post bulk_destroy_api_v1_notes_path, params: { ids: @notes.pluck(:id) }, headers: @headers
     end
     assert_response :success
     assert_equal response_body["notice"], t("successfully_deleted", count: 3, entity: "Notes")
@@ -69,7 +69,7 @@ class Api::V1::NotesControllerTest < ActionDispatch::IntegrationTest
 
   def test_delete_invalid_id
     assert_no_difference "@admin.notes.count" do
-      post bulk_delete_api_v1_notes_path, params: { ids: ["random_id"] }, headers: @headers
+      post bulk_destroy_api_v1_notes_path, params: { ids: ["random_id"] }, headers: @headers
     end
 
     assert_response :unprocessable_entity
