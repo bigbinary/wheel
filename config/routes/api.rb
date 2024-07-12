@@ -10,7 +10,7 @@ namespace :api, defaults: { format: :json } do
     resources :users, only: [:show, :create, :update, :destroy], constraints: { id: /.*/ }
     resources :notes, only: [:index, :create, :update] do
       collection do
-        post "bulk_delete"
+        post "bulk_destroy"
       end
     end
 
