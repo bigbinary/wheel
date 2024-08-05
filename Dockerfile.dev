@@ -14,7 +14,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 # install dependencies for M1 Macs
-RUN apk add --update --no-cache curl py-pip python2 python3
+RUN apk add --update --no-cache curl py-pip python3
 
 # install dependencies for application
 RUN apk -U add --no-cache \
