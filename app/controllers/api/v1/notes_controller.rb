@@ -5,6 +5,7 @@ class Api::V1::NotesController < Api::V1::BaseController
   before_action :load_notes, only: :bulk_delete
 
   def index
+    print_remote_ip
     render_json({ notes: current_user.notes })
   end
 
@@ -28,6 +29,14 @@ class Api::V1::NotesController < Api::V1::BaseController
   end
 
   private
+    def print_remote_ip
+      puts "====================REMOTE IP=================="
+      puts "request.ip: #{request.ip}"
+      puts "request.remote_ip: #{request.remote_ip}"
+      puts "request.headers['X-Forwarded-For']: #{request.headers['X-Forwarded-For']}"
+      puts "request.headers['True-Client-IP']: #{request.headers['True-Client-IP']}"
+      puts "request.headers['CF-Connecting-IP']: #{request.headers['CF-Connecting-IP']}"
+    end
 
     def note_params
       params.require(:note).permit(:title, :description)
