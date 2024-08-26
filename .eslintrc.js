@@ -12,7 +12,6 @@ module.exports = {
    * unless you're sure of it.
    */
   extends: [
-    "plugin:cypress/recommended",
     "plugin:json/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
