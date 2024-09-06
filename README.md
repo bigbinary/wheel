@@ -1,4 +1,4 @@
-Made by the team at [Neeto](https://neeto.com), this is a base project
+Made by the team at [BigBinary](https://bigbinary.com), this is a base project
 to quickly spin up a Rails application built with opinions of BigBinary style of
 working.
 
