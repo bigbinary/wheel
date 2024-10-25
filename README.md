@@ -2,7 +2,7 @@ Made by the team at [BigBinary](https://bigbinary.com), this is a base project
 to quickly spin up a Rails application built with opinions of BigBinary style of
 working.
 
-## Local Development Setup
+## Local Development
 
 First clone this repo.
 
