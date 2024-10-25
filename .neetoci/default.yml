@@ -8,7 +8,7 @@ global_job_config:
     - neetoci-version ruby 3.2.2
     - neetoci-version node 18.12
     - neetoci-service start postgres 13
-    - neetoci-service start redis 7.0.5
+    - neetoci-service start redis 2.3.4
     - cp config/database.yml.ci config/database.yml
     - bundle config path 'vendor/bundle'
     - cache restore
