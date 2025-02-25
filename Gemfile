@@ -12,8 +12,6 @@ gem "sass-rails", ">= 6"
 gem "sprockets-rails"
 gem "uglifier", ">= 2.7.1"
 
-gem "shakapacker", "~> 6.6.0"
-
 # React
 gem "react-rails"
 
