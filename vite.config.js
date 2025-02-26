@@ -1,10 +1,11 @@
-const path = require("path");
+import { mergeDeepRight } from "ramda";
 
+const resolveConfig = require("./config/build/resolve");
 const postCssConfig = require("./postcss.config");
 
 const port = process.env.DEVSERVER_PORT || 8000;
 
-const config = {
+const baseConfig = {
   assetsInclude: ["**/*.yaml"],
   css: { postcss: postCssConfig },
   server: { port, origin: `http://localhost:${port}` },
@@ -15,17 +16,15 @@ const config = {
   },
   root: "app/javascript/packs",
   resolve: {
-    alias: {
-      contexts: path.resolve(__dirname, "./app/javascript/src/contexts"),
-      components: path.resolve(__dirname, "./app/javascript/src/components"),
-      reducers: path.resolve(__dirname, "./app/javascript/src/reducers"),
-      common: path.resolve(__dirname, "./app/javascript/src/common"),
-      apis: path.resolve(__dirname, "./app/javascript/src/apis"),
-      utils: path.resolve(__dirname, "./app/javascript/src/utils"),
-      neetoui: "@bigbinary/neetoui",
-      neetoicons: "@bigbinary/neeto-icons",
-    },
+    alias: {},
   },
 };
 
-module.exports = config;
+const viteConfig = mergeDeepRight(baseConfig, {
+  resolve: {
+    alias: resolveConfig.alias,
+    extensions: resolveConfig.extensions,
+  },
+});
+
+module.exports = viteConfig;
