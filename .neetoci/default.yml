@@ -11,10 +11,8 @@ global_job_config:
     - neetoci-service start redis 7.0.5
     - cp config/database.yml.ci config/database.yml
     - bundle config path 'vendor/bundle'
-    - cache restore
     - bundle install --jobs 1
     - yarn install
-    - cache store
   jobs:
     - name: CiChecks
       commands:
