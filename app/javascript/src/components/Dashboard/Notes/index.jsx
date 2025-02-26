@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 // import EmptyNotesListImage from "../../../../../assets/images/EmptyNotesListImage";
-import { Delete } from "@bigbinary/neeto-icons";
 import notesApi from "apis/notes";
+import { Delete } from "neetoicons";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header, SubHeader } from "neetoui/layouts";
 

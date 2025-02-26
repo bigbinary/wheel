@@ -23,7 +23,7 @@ const config = {
       apis: path.resolve(__dirname, "./app/javascript/src/apis"),
       utils: path.resolve(__dirname, "./app/javascript/src/utils"),
       neetoui: "@bigbinary/neetoui",
-      neetoicons: "@bigbinary/neetoicons",
+      neetoicons: "@bigbinary/neeto-icons",
     },
   },
 };
