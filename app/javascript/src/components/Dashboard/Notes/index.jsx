@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import EmptyNotesListImage from "images/EmptyNotesList";
-import { Delete } from "neetoicons";
+// import EmptyNotesListImage from "../../../../../assets/images/EmptyNotesListImage";
+import { Delete } from "@bigbinary/neeto-icons";
+import notesApi from "apis/notes";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header, SubHeader } from "neetoui/layouts";
-
-import notesApi from "apis/notes";
-import EmptyState from "components/commons/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./Pane/Create";
@@ -80,13 +78,14 @@ const Notes = () => {
           />
         </>
       ) : (
-        <EmptyState
-          image={<EmptyNotesListImage />}
-          primaryAction={() => setShowNewNotePane(true)}
-          primaryActionLabel="Add new note"
-          subtitle="Add your notes to send customized emails to them."
-          title="Looks like you don't have any notes!"
-        />
+        // <EmptyState
+        //   image={<EmptyNotesListImage />}
+        //   primaryAction={() => setShowNewNotePane(true)}
+        //   primaryActionLabel="Add new note"
+        //   subtitle="Add your notes to send customized emails to them."
+        //   title="Looks like you don't have any notes!"
+        // />
+        <h1>Empty State</h1>
       )}
       <NewNotePane
         fetchNotes={fetchNotes}

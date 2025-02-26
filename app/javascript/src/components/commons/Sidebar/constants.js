@@ -1,4 +1,4 @@
-import { Notes, Settings } from "neetoicons";
+import { Notes, Settings } from "@bigbinary/neeto-icons";
 
 export const APP_NAME = "Wheel";
 
