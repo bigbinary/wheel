@@ -1,8 +1,9 @@
 ---
 glob: "app/views/**/*.{html}{+*,}.erb"
 exclude:
-  - '**/vendor/**/*'
-  - '**/node_modules/**/*'
+  - "**/vendor/**/*"
+  - "**/node_modules/**/*"
+  - "app/views/shared/_bundle.html.erb"
 EnableDefaultLinters: true
 linters:
   PartialInstanceVariable:
