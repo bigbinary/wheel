@@ -11,6 +11,7 @@
     "sync_with_wheel": "curl -s -L \"https://raw.githubusercontent.com/bigbinary/wheel/main/.scripts/sync_with_wheel.sh\" | bash",
     "lint": "eslint \"app/javascript/src/**/*.{js,jsx}\"",
     "lint:fix": "eslint --fix \"app/javascript/src/**/*.{js,jsx}\"",
+    "build": "node esbuild.config.js",
     "dev": "vite"
   },
   "lint-staged": {
@@ -80,6 +81,12 @@
     "classnames": "^2.3.1",
     "core-js": "3.21.1",
     "css-loader": "^6.7.3",
+    "esbuild": "^0.23.1",
+    "esbuild-plugin-svgr": "^3.1.0",
+    "esbuild-plugin-yaml": "^0.0.1",
+    "esbuild-plugins-node-modules-polyfill": "^1.6.8",
+    "esbuild-rails": "^1.0.7",
+    "esbuild-sass-plugin": "^3.3.1",
     "formik": "^2.2.9",
     "i18next": "21.7.0",
     "ignore-loader": "^0.1.2",
