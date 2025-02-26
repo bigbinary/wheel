@@ -14,4 +14,4 @@ const config = {
   root: "app/javascript/packs",
 };
 
-module.exports = { config };
+module.exports = config;
