@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <% if Rails.application.secrets.esbuild_devserver || !Rails.env.local? %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+  <% end %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" %>
   <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all" %>
 </head>
