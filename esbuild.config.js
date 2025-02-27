@@ -61,6 +61,7 @@ const defaultConfigurations = {
   ],
   alias,
   define: {
+    process: "{'env': {}}",
     "process.env.RAILS_ENV": "'development'",
     "process.env.NODE_DEBUG": "'development'",
     "process.env": "{}",
