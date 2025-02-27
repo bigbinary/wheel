@@ -1,8 +1,12 @@
 import { build } from "esbuild";
 import { mergeDeepLeft } from "ramda";
 
-const projectConfigurations = require("./config/esbuild/config");
+import projectConfigurations from "./config/esbuild/config.js";
 
-const defaultConfigurations = {};
+const { extensions, ...projectConfigWithoutExtensions } = projectConfigurations;
 
-build(mergeDeepLeft(projectConfigurations, defaultConfigurations));
+const defaultConfigurations = {
+  bundle: true,
+};
+
+build(mergeDeepLeft(projectConfigWithoutExtensions, defaultConfigurations));
