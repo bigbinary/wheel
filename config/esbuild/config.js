@@ -1,9 +1,14 @@
 const path = require("path");
 
+const entryPoint = file => path.join(process.cwd(), file);
+
 const absolutePath = basePath =>
   path.resolve(__dirname, "..", "..", `app/javascript/${basePath}`);
 
 module.exports = {
+  entryPoints: {
+    application: entryPoint("app/javascript/packs/application.js"),
+  },
   alias: {
     apis: absolutePath("src/apis"),
     common: absolutePath("src/common"),
