@@ -1,4 +1,4 @@
-<% if !ENV["ESBUILD_DEVSERVER"] && Rails.env.development? %>
+<% if Rails.env.development? %>
   <script type="module">
     import RefreshRuntime from 'http://localhost:<%= ENV.fetch("DEVSERVER_PORT", 8000) %>/@react-refresh';
     RefreshRuntime.injectIntoGlobalHook(window);
@@ -8,6 +8,6 @@
   </script>
   <%= javascript_include_tag "http://localhost:#{ENV.fetch("DEVSERVER_PORT", 8000)}/@vite/client", type: "module" %>
   <%= javascript_include_tag "http://localhost:#{ENV.fetch("DEVSERVER_PORT", 8000)}/#{entrypoint}.js", type: "module" %>
-<% elsif ENV["ESBUILD_DEVSERVER"] || !Rails.env.test? %>
+<% else %>
   <%= javascript_include_tag "#{entrypoint}", type: "module", crossorigin: "anonymous" %>
 <% end %>
