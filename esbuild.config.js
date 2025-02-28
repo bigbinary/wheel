@@ -1,6 +1,5 @@
 import { createRequire } from "module";
 import path from "path";
-
 import { build } from "esbuild";
 import { nodeModulesPolyfillPlugin } from "esbuild-plugins-node-modules-polyfill";
 import { sassPlugin } from "esbuild-sass-plugin";
@@ -9,14 +8,14 @@ import { mergeDeepLeft } from "ramda";
 import sass from "sass";
 
 const require = createRequire(import.meta.url);
-
-const projectConfigurations = require("./config/esbuild/config.js");
+const projectConfigurations = require("./config/build/config.js");
 const postCssConfig = require("./postcss.config.js");
-const { alias, define } = require("./config/build/config.js");
+const { alias, define, extensions } = projectConfigurations;
 
 const isWatchMode = process.argv.includes("--watch");
 
-const { extensions, ...projectConfigWithoutExtensions } = projectConfigurations;
+const { extensions: _, ...projectConfigWithoutExtensions } =
+  projectConfigurations;
 
 const defaultConfigurations = {
   bundle: true,
@@ -39,11 +38,10 @@ const defaultConfigurations = {
         const { css } = await postcss(postCssConfig.plugins).process(source, {
           from: undefined,
         });
-
         return css;
       },
-      importMapper: path =>
-        path.replace("@bigbinary/neetoui", "@bigbinary/neetoui/dist"),
+      importMapper: filePath =>
+        filePath.replace("@bigbinary/neetoui", "@bigbinary/neetoui/dist"),
       logger: sass.Logger.silent,
     }),
     nodeModulesPolyfillPlugin({

@@ -1,8 +1,5 @@
 import { mergeDeepRight } from "ramda";
-
-import { alias, define } from "./config/build/config";
-import esbuildConfig from "./config/esbuild/config";
-
+import { alias, define, entryPoints, extensions } from "./config/build/config";
 const postCssConfig = require("./postcss.config");
 
 const port = process.env.DEVSERVER_PORT || 8000;
@@ -25,10 +22,10 @@ const baseConfig = {
 
 const viteConfig = mergeDeepRight(baseConfig, {
   resolve: {
-    alias: esbuildConfig.alias,
-    extensions: esbuildConfig.extensions,
+    alias,
+    extensions,
   },
-  rollupOptions: { input: esbuildConfig.entryPoints },
+  rollupOptions: { input: entryPoints },
 });
 
 module.exports = viteConfig;
