@@ -62,6 +62,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.19.1",
+    "@babel/plugin-transform-react-constant-elements": "^7.25.9",
     "@babel/plugin-transform-runtime": "^7.19.1",
     "@babel/preset-env": "7.17.10",
     "@babel/preset-react": "^7.16.7",
@@ -70,6 +71,8 @@
     "@bigbinary/neeto-icons": "1.8.17",
     "@bigbinary/neetoui": "^4.0.3",
     "@emotion/is-prop-valid": "^1.2.0",
+    "@rollup/pluginutils": "^5.1.4",
+    "@svgr/plugin-svgo": "^8.1.0",
     "antd": "^4.23.1",
     "axios": "1.7.7",
     "babel-loader": "^8.2.5",

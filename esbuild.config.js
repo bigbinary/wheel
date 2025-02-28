@@ -8,6 +8,7 @@ import { mergeDeepLeft } from "ramda";
 import sass from "sass";
 
 const require = createRequire(import.meta.url);
+const svgPlugin = require("esbuild-plugin-svgr");
 const projectConfigurations = require("./config/build/config.js");
 const postCssConfig = require("./postcss.config.js");
 const { alias, define, extensions } = projectConfigurations;
@@ -33,6 +34,7 @@ const defaultConfigurations = {
     ".ico": "file",
   },
   plugins: [
+    svgPlugin(),
     sassPlugin({
       transform: async source => {
         const { css } = await postcss(postCssConfig.plugins).process(source, {
