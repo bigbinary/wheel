@@ -80,7 +80,7 @@ const Notes = () => {
         </>
       ) : (
         <EmptyState
-          image={<img alt="Empty notes list" src={EmptyNotesListImage} />}
+          image={<EmptyNotesListImage />}
           primaryAction={() => setShowNewNotePane(true)}
           primaryActionLabel="Add new note"
           subtitle="Add your notes to send customized emails to them."

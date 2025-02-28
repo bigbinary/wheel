@@ -1,6 +1,6 @@
 import { mergeDeepRight } from "ramda";
-
-const resolveConfig = require("./config/build/resolve");
+import { alias, define, entryPoints, extensions } from "./config/build/config";
+import svgr from "./config/plugins/svgr";
 const postCssConfig = require("./postcss.config");
 
 const port = process.env.DEVSERVER_PORT || 8000;
@@ -16,15 +16,18 @@ const baseConfig = {
   },
   root: "app/javascript/packs",
   resolve: {
-    alias: {},
+    alias,
   },
+  define,
+  plugins: [svgr()],
 };
 
 const viteConfig = mergeDeepRight(baseConfig, {
   resolve: {
-    alias: resolveConfig.alias,
-    extensions: resolveConfig.extensions,
+    alias,
+    extensions,
   },
+  rollupOptions: { input: entryPoints },
 });
 
 module.exports = viteConfig;

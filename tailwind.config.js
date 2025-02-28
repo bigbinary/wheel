@@ -1,14 +1,9 @@
 module.exports = {
   important: true,
   content: [
-    "./app/javascript/**/*.js",
-    "./app/javascript/**/**/*.js",
-    "./app/javascript/**/**/**/*.js",
-    "./app/javascript/**/*.jsx",
-    "./app/javascript/**/**/*.jsx",
-    "./app/javascript/**/**/**/*.jsx",
-    "./app/views/**/**/*.slim",
-    "./app/views/**/**/*/*.slim",
-    "./node_modules/@bigbinary/neetoui/**/*",
+    "./app/javascript/**/*.{js,jsx}",
+    "./app/views/**/*.html.erb",
+    "./app/views/**/*.slim",
+    "./node_modules/@bigbinary/**/*.js",
   ],
 };
