@@ -2,15 +2,17 @@
 
 source "https://rubygems.org"
 
-ruby "3.3.5"
+ruby "3.2.4"
 
-gem "rails", "~> 7.1.3.4"
+gem "rails", "~> 7.0.8"
 gem "sprockets"
 
 # friends of Rails
 gem "sass-rails", ">= 6"
 gem "sprockets-rails"
 gem "uglifier", ">= 2.7.1"
+
+gem "shakapacker", "~> 6.6.0"
 
 # React
 gem "react-rails"

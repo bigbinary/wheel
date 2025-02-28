@@ -1,4 +1,4 @@
-FROM neeto/ruby-3.3.5:node22.13
+FROM neeto/ruby-3.2.4:node18.12
 
 ENV APP_PATH /var/app
 ENV BUNDLE_VERSION 2.2.32
