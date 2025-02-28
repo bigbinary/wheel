@@ -1,5 +1,6 @@
 import { mergeDeepRight } from "ramda";
 
+import { alias, define } from "./config/build/config";
 import esbuildConfig from "./config/esbuild/config";
 
 const postCssConfig = require("./postcss.config");
@@ -17,8 +18,9 @@ const baseConfig = {
   },
   root: "app/javascript/packs",
   resolve: {
-    alias: {},
+    alias,
   },
+  define,
 };
 
 const viteConfig = mergeDeepRight(baseConfig, {

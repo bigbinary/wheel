@@ -12,18 +12,11 @@ const require = createRequire(import.meta.url);
 
 const projectConfigurations = require("./config/esbuild/config.js");
 const postCssConfig = require("./postcss.config.js");
+const { alias, define } = require("./config/build/config.js");
 
 const isWatchMode = process.argv.includes("--watch");
 
 const { extensions, ...projectConfigWithoutExtensions } = projectConfigurations;
-
-const alias = {
-  images: path.resolve(process.cwd(), "app/assets/images"),
-  crypto: require.resolve("crypto-browserify"),
-  path: require.resolve("path-browserify"),
-  buffer: require.resolve("buffer"),
-  stream: require.resolve("stream-browserify"),
-};
 
 const defaultConfigurations = {
   bundle: true,
@@ -62,11 +55,7 @@ const defaultConfigurations = {
     }),
   ],
   alias,
-  define: {
-    "process.env.RAILS_ENV": "'development'",
-    "process.env.NODE_DEBUG": "'development'",
-    "process.env": "{}",
-  },
+  define,
 };
 
 build(mergeDeepLeft(projectConfigWithoutExtensions, defaultConfigurations));
