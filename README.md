@@ -6,9 +6,7 @@ working.
 
 First clone this repo.
 
-Then install the [Node.js](https://nodejs.org) version `v22.13` which we have
-specified inside the `.node-version` file of this repo., using the following
-command:
+Then install the [Node.js](https://nodejs.org) version `v18.12` which we have specified inside the `.node-version` file of this repo., using the following command:
 
 ```bash
 nvm install
@@ -35,10 +33,8 @@ password `welcome`.
 
 ## Using docker for development
 
-In BigBinary we follow the above mentioned style of installing dependencies
-using `./bin/setup` and then running the servers manually. If that doesn't work
-in your system for some reason, then you can opt into following the instructions
-mentioned
+In BigBinary we follow the above mentioned style of installing dependencies using `./bin/setup` and then running the servers manually.
+If that doesn't work in your system for some reason, then you can opt into following the instructions mentioned
 [here](https://github.com/bigbinary/wheel/blob/main/docs/using_docker.md) to use
 docker for development.
 
@@ -74,10 +70,9 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
 
 ## neetoDeploy Review
 
-[neetoDeploy Review](https://www.neeto.com/neetodeploy) is enabled on this
-application. Thus all PRs will have a review app and once the PR is merged to
-main, it will be deployed to production instance. The neetoDeploy instance for
-Wheel is hosted in `neeto-engineering` organization.
+[neetoDeploy Review](https://www.neeto.com/neetodeploy) is enabled on this application. Thus all PRs will have a review
+app and once the PR is merged to main, it will be deployed to production instance. The neetoDeploy instance for Wheel
+is hosted in `neeto-engineering` organization.
 
 ## About BigBinary
 

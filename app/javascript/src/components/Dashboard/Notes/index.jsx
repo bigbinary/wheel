@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import notesApi from "apis/notes";
-import EmptyNotesListImage from "assets/images/EmptyNotesList";
-import EmptyState from "components/commons/EmptyState";
+import EmptyNotesListImage from "images/EmptyNotesList";
 import { Delete } from "neetoicons";
 import { Button, PageLoader } from "neetoui";
 import { Container, Header, SubHeader } from "neetoui/layouts";
+
+import notesApi from "apis/notes";
+import EmptyState from "components/commons/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./Pane/Create";
@@ -80,7 +81,7 @@ const Notes = () => {
         </>
       ) : (
         <EmptyState
-          image={<img alt="Empty notes list" src={EmptyNotesListImage} />}
+          image={<EmptyNotesListImage />}
           primaryAction={() => setShowNewNotePane(true)}
           primaryActionLabel="Add new note"
           subtitle="Add your notes to send customized emails to them."

@@ -1,0 +1,96 @@
+# Note: You must restart bin/webpacker-dev-server for changes to take effect
+
+default: &default
+  source_path: app/javascript
+  source_entry_path: packs
+  public_root_path: public
+  public_output_path: packs
+  cache_path: tmp/cache/webpacker
+  check_yarn_integrity: false
+  webpack_compile_output: false
+
+  # Additional paths webpack should look up modules
+  # ['app/assets', 'engine/foo/app/assets']
+  additional_paths: ["app/assets"]
+
+  # Reload manifest.json on all requests so we reload latest compiled packs
+  cache_manifest: false
+
+development:
+  <<: *default
+  compile: false
+
+  # Reference: https://webpack.js.org/configuration/dev-server/
+  dev_server:
+    https: false
+    host: localhost
+    port: 8014
+    public: localhost:8014
+    hmr: false
+    # Defaults to the inverse of hmr. Uncomment to manually set this.
+    # live_reload: true
+    client:
+      # Should we show a full-screen overlay in the browser when there are compiler errors or warnings?
+      overlay: false
+    # May also be a string
+    # webSocketURL:
+    #  hostname: "0.0.0.0"
+    #  pathname: "/ws"
+    #  port: 8080
+    # Should we use gzip compression?
+    compress: true
+    # Note that apps that do not check the host are vulnerable to DNS rebinding attacks
+    disable_host_check: true
+    use_local_ip: false
+    quiet: false
+    # Newly added to webpacker.yml by shakapacker
+    # allowed_hosts: "all"
+    # pretty: true
+    headers:
+      "Access-Control-Allow-Origin": "*"
+    static:
+      watch:
+        ignored: "**/node_modules/**"
+
+test:
+  <<: *default
+  compile: true
+
+  # Compile test packs to a separate directory
+  public_output_path: packs-test
+
+heroku:
+  <<: *default
+
+  # Production depends on precompilation of packs prior to booting for performance.
+  compile: false
+
+  # Extract and emit a css file
+  extract_css: true
+
+  # Cache manifest.json for performance
+  cache_manifest: true
+
+staging:
+  <<: *default
+
+  # Production depends on precompilation of packs prior to booting for performance.
+  compile: false
+
+  # Extract and emit a css file
+  extract_css: true
+
+  # Cache manifest.json for performance
+  cache_manifest: true
+
+production:
+  <<: *default
+
+  # Production depends on precompilation of packs prior to booting for performance.
+  compile: false
+
+  # Extract and emit a css file
+  extract_css: true
+
+  # Cache manifest.json for performance
+  cache_manifest: true
