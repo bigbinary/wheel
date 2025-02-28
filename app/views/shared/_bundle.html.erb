@@ -1,4 +1,4 @@
-<% if Rails.env.development? %>
+<% if Rails.env.development? || Rails.env.test? %>
   <script type="module">
     import RefreshRuntime from 'http://localhost:<%= ENV.fetch("DEVSERVER_PORT", 8000) %>/@react-refresh';
     RefreshRuntime.injectIntoGlobalHook(window);
