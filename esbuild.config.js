@@ -8,10 +8,11 @@ import postcss from "postcss";
 import { mergeDeepLeft } from "ramda";
 import sass from "sass";
 
-import projectConfigurations from "./config/esbuild/config.js";
-import postCssConfig from "./postcss.config.js";
-
 const require = createRequire(import.meta.url);
+
+const projectConfigurations = require("./config/esbuild/config.js");
+const postCssConfig = require("./postcss.config.js");
+
 const isWatchMode = process.argv.includes("--watch");
 
 const { extensions, ...projectConfigWithoutExtensions } = projectConfigurations;
@@ -29,6 +30,7 @@ const defaultConfigurations = {
   format: "esm",
   platform: "browser",
   mainFields: ["browser", "module", "main"],
+  resolveExtensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".json", ".svg"],
   outdir: path.join(process.cwd(), "app/assets/builds"),
   sourcemap: isWatchMode ? true : "external",
   loader: {
@@ -61,7 +63,6 @@ const defaultConfigurations = {
   ],
   alias,
   define: {
-    process: "{'env': {}}",
     "process.env.RAILS_ENV": "'development'",
     "process.env.NODE_DEBUG": "'development'",
     "process.env": "{}",
