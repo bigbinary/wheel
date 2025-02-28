@@ -14,11 +14,13 @@ module.exports = {
     neetoui: "@bigbinary/neetoui",
     neetoicons: "@bigbinary/neeto-icons",
     utils: absolutePath("src/utils"),
+    assets: absolutePath("../assets"),
   },
   extensions: [
     ".ts",
     ".mjs",
     ".js",
+    ".jsx",
     ".sass",
     ".scss",
     ".css",

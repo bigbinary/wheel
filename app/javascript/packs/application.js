@@ -8,10 +8,14 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-import "stylesheets/application";
+import "../stylesheets/application.scss";
+import React from "react";
+import ReactRailsUJS from "react_ujs";
+
+const App = React.lazy(() => import("../src/App"));
 
 // Support component names relative to this directory:
-const componentRequireContext = require.context("src", true);
-const ReactRailsUJS = require("react_ujs");
-
-ReactRailsUJS.useContext(componentRequireContext);
+const componentsContext = { App };
+ReactRailsUJS.getConstructor = name => {
+  return componentsContext[name];
+};

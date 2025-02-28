@@ -8,14 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <%= stylesheet_pack_tag "application" %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" %>
   <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css", media: "all" %>
 </head>
 
 <body>
   <%= yield %>
-  <%= javascript_pack_tag "application", crossorigin: "anonymous" %>
+  <%= render "shared/bundle", entrypoint: "application" %>
 </body>
 
 </html>
