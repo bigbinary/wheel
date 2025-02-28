@@ -9,5 +9,6 @@
   <%= javascript_include_tag "http://localhost:#{ENV.fetch("DEVSERVER_PORT", 8000)}/@vite/client", type: "module" %>
   <%= javascript_include_tag "http://localhost:#{ENV.fetch("DEVSERVER_PORT", 8000)}/#{entrypoint}.js", type: "module" %>
 <% else %>
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "#{entrypoint}", type: "module", crossorigin: "anonymous" %>
 <% end %>
