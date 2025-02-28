@@ -23,7 +23,7 @@ const defaultConfigurations = {
   format: "esm",
   platform: "browser",
   mainFields: ["browser", "module", "main"],
-  resolveExtensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".json", ".svg"],
+  resolveExtensions: extensions,
   outdir: path.join(process.cwd(), "app/assets/builds"),
   sourcemap: isWatchMode ? true : "external",
   loader: {
