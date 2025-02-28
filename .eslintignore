@@ -11,3 +11,5 @@ tmp
 babel.config.js
 app/javascript/packs
 jsconfig.json
+esbuild.config.js
+vite.config.js
