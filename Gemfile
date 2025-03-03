@@ -8,7 +8,6 @@ gem "rails", "~> 7.1.3.4"
 gem "sprockets"
 
 # friends of Rails
-gem "sass-rails", ">= 6"
 gem "sprockets-rails"
 gem "uglifier", ">= 2.7.1"
 
