@@ -10,15 +10,18 @@ import sass from "sass";
 const require = createRequire(import.meta.url);
 const svgPlugin = require("esbuild-plugin-svgr");
 const projectConfigurations = require("./config/build/config.js");
-const projectConstants = require("./config/build/constants.js")
+const projectConstants = require("./config/build/constants.js");
 const postCssConfig = require("./postcss.config.js");
 const { alias } = projectConfigurations;
 const { define, extensions } = projectConstants;
 
 const isWatchMode = process.argv.includes("--watch");
 
-const { absolutePath: _, extensions: __, ...projectConstantsWithoutExtensions } =
-  projectConstants;
+const {
+  absolutePath: _,
+  extensions: __,
+  ...projectConstantsWithoutExtensions
+} = projectConstants;
 
 const defaultConfigurations = {
   bundle: true,
