@@ -39,6 +39,7 @@ module.exports = {
     },
   },
   parserOptions: {
+    requireConfigFile: false,
     ecmaFeatures: {
       jsx: true,
     },
