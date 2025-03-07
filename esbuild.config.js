@@ -17,8 +17,8 @@ const { define, extensions } = projectConstants;
 
 const isWatchMode = process.argv.includes("--watch");
 
-const { extensions: _, ...projectConfigWithoutExtensions } =
-  projectConfigurations;
+const { absolutePath: _, extensions: __, ...projectConstantsWithoutExtensions } =
+  projectConstants;
 
 const defaultConfigurations = {
   bundle: true,
@@ -60,4 +60,4 @@ const defaultConfigurations = {
   define,
 };
 
-build(mergeDeepLeft(projectConfigWithoutExtensions, defaultConfigurations));
+build(mergeDeepLeft(projectConstantsWithoutExtensions, defaultConfigurations));

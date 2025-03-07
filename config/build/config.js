@@ -1,6 +1,9 @@
+import { createRequire } from "module";
 import path from "path";
 
-import { absolutePath } from "./constants";
+import { absolutePath } from "./constants.js";
+
+const require = createRequire(import.meta.url);
 
 const alias = {
   images: path.resolve(process.cwd(), "app/assets/images"),
@@ -21,4 +24,3 @@ const alias = {
 };
 
 export { alias };
-
