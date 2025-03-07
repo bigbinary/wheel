@@ -13,4 +13,3 @@ jsconfig.json
 esbuild.config.js
 vite.config.js
 config/build/config.js
-babel.config.js
