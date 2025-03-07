@@ -12,3 +12,4 @@ app/javascript/packs
 jsconfig.json
 esbuild.config.js
 vite.config.js
+config/build/config.js
