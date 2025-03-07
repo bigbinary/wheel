@@ -41,4 +41,4 @@ const extensions = [
   ".jpg",
 ];
 
-export { alias, define, entryPoints, extensions };
+export { define, entryPoints, extensions, absolutePath };

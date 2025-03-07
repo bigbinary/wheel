@@ -1,5 +1,6 @@
 import { mergeDeepRight } from "ramda";
-import { alias, define, entryPoints, extensions } from "./config/build/config";
+import { alias } from "./config/build/config";
+import { define, entryPoints, extensions } from "./config/build/constants";
 import svgr from "./config/plugins/svgr";
 const postCssConfig = require("./postcss.config");
 

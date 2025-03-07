@@ -1,3 +1,7 @@
+import path from "path";
+
+import { absolutePath } from "./constants";
+
 const alias = {
   images: path.resolve(process.cwd(), "app/assets/images"),
   crypto: require.resolve("crypto-browserify"),
@@ -15,4 +19,6 @@ const alias = {
   utils: absolutePath("src/utils"),
   assets: absolutePath("../assets"),
 };
+
+export { alias };
 
