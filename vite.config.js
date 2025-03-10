@@ -1,7 +1,7 @@
 import { mergeDeepRight } from "ramda";
 import { alias } from "./config/build/config";
 import { define, entryPoints, extensions } from "./config/build/constants";
-import svgr from "./config/plugins/svgr";
+import svgr from "vite-plugin-svgr";
 const postCssConfig = require("./postcss.config");
 
 const port = process.env.DEVSERVER_PORT || 8000;
@@ -20,7 +20,12 @@ const baseConfig = {
     alias,
   },
   define,
-  plugins: [svgr()],
+  plugins: [
+    svgr({
+      svgrOptions: { exportType: "default" },
+      include: "**/*.svg",
+    }),
+  ],
 };
 
 const viteConfig = mergeDeepRight(baseConfig, {
