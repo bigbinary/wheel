@@ -1,0 +1,14 @@
+<% if Rails.env.development? || Rails.env.test? %>
+  <script type="module">
+    import RefreshRuntime from 'http://localhost:8000/@react-refresh';
+    RefreshRuntime.injectIntoGlobalHook(window);
+    window.$RefreshReg$ = () => {};
+    window.$RefreshSig$ = () => (type) => type;
+    window.__vite_plugin_react_preamble_installed__ = true;
+  </script>
+  <%= javascript_include_tag "http://localhost:8000/@vite/client", type: "module" %>
+  <%= javascript_include_tag "http://localhost:8000/#{entrypoint}.js", type: "module" %>
+<% else %>
+  <%= stylesheet_link_tag "#{entrypoint}", media: "all" %>
+  <%= javascript_include_tag "#{entrypoint}", type: "module", crossorigin: "anonymous" %>
+<% end %>

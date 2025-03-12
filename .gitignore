@@ -118,3 +118,6 @@ cypress-tests/cypress/videos/
 
 # Ignore redis dump file
 dump.rdb
+
+# Ignore build files
+/app/assets/builds
