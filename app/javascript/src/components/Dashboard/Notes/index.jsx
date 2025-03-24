@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 
+import Container from "@bigbinary/neeto-molecules/Container";
+import Header from "@bigbinary/neeto-molecules/Header";
+import PageLoader from "@bigbinary/neeto-molecules/PageLoader";
+import SubHeader from "@bigbinary/neeto-molecules/SubHeader";
 import notesApi from "apis/notes";
 import EmptyNotesListImage from "assets/images/EmptyNotesList";
 import EmptyState from "components/commons/EmptyState";
 import { Delete } from "neetoicons";
-import { Button, PageLoader } from "neetoui";
-import { Container, Header, SubHeader } from "neetoui/layouts";
+import { Button } from "neetoui";
 
 import DeleteAlert from "./DeleteAlert";
 import NewNotePane from "./Pane/Create";

@@ -1,8 +1,6 @@
 import React from "react";
 
-import { Sidebar as NeetoUISidebar } from "neetoui/layouts";
-import { useHistory } from "react-router-dom";
-
+import NeetoUISidebar from "@bigbinary/neeto-molecules/Sidebar";
 import authenticationApi from "apis/authentication";
 import {
   PROFILE_PATH,
@@ -11,6 +9,7 @@ import {
 } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
+import { useHistory } from "react-router-dom";
 
 import { APP_NAME, SIDENAV_LINKS } from "./constants";
 

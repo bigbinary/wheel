@@ -1,12 +1,12 @@
 import React, { useMemo } from "react";
 
+import Container from "@bigbinary/neeto-molecules/Container";
+import Header from "@bigbinary/neeto-molecules/Header";
+import profilesApi from "apis/profiles";
+import { useUserState, useUserDispatch } from "contexts/user";
 import { Form, Formik } from "formik";
 import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
-import { Container, Header } from "neetoui/layouts";
-
-import profilesApi from "apis/profiles";
-import { useUserState, useUserDispatch } from "contexts/user";
 
 import ConfirmPasswordFormModal from "./ConfirmPasswordFormModal";
 import { PROFILE_FORM_VALIDATION_SCHEMA } from "./constants";

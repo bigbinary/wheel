@@ -1,11 +1,11 @@
 import React from "react";
 
+import Container from "@bigbinary/neeto-molecules/Container";
+import Header from "@bigbinary/neeto-molecules/Header";
+import profilesApi from "apis/profiles";
 import { Form, Formik } from "formik";
 import { Button } from "neetoui";
 import { Input } from "neetoui/formik";
-import { Container, Header } from "neetoui/layouts";
-
-import profilesApi from "apis/profiles";
 
 import {
   CHANGE_PASSWORD_FORM_INITIAL_VALUES,

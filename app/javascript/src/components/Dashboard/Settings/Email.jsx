@@ -1,14 +1,14 @@
 import React, { useMemo } from "react";
 
-import { Form, Formik } from "formik";
-import { Button } from "neetoui";
-import { Input } from "neetoui/formik";
-import { Container, Header } from "neetoui/layouts";
-
+import Container from "@bigbinary/neeto-molecules/Container";
+import Header from "@bigbinary/neeto-molecules/Header";
 import profilesApi from "apis/profiles";
 import { LOGIN_PATH } from "components/routeConstants";
 import { useAuthDispatch } from "contexts/auth";
 import { useUserState } from "contexts/user";
+import { Form, Formik } from "formik";
+import { Button } from "neetoui";
+import { Input } from "neetoui/formik";
 
 import ConfirmPasswordFormModal from "./ConfirmPasswordFormModal";
 import { EMAIL_FORM_VALIDATION_SCHEMA } from "./constants";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { MenuBar } from "neetoui/layouts";
+import MenuBar from "@bigbinary/neeto-molecules/MenuBar";
 import queryString from "query-string";
 
 import { SETTINGS_NAVLINKS } from "./navLinks";
