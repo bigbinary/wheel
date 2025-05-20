@@ -1,4 +1,4 @@
 git fetch --unshallow 2> /dev/null
 git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
 git fetch origin main
-git diff-tree --diff-filter=a -r --no-commit-id --name-only HEAD remotes/origin/main | grep --color=none -i -e "\.js$" -e "\.jsx$"| awk '!/.eslintrc.js/ {print}' | xargs npx eslint --cache --no-error-on-unmatched-pattern
+git diff-tree --diff-filter=a -r --no-commit-id --name-only HEAD remotes/origin/main | grep --color=none -i -e "\.js$" -e "\.jsx$"| awk '!/eslint.config.mjs/ {print}' | xargs npx eslint --cache --no-error-on-unmatched-pattern
