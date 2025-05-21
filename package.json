@@ -67,7 +67,7 @@
     "@babel/preset-env": "7.17.10",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.21.0",
-    "@babel/runtime": "^7.19.0",
+    "@babel/runtime": "^7.26.10",
     "@bigbinary/neeto-icons": "1.8.17",
     "@bigbinary/neetoui": "^4.0.3",
     "@emotion/is-prop-valid": "^1.2.0",
