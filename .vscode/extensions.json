@@ -7,7 +7,7 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "streetsidesoftware.code-spell-checker",
-    "CraigMaslowski.erb",
+    "bung87.rails",
     "eamodio.gitlens"
   ]
 }
