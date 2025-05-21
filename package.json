@@ -74,7 +74,7 @@
     "@rollup/pluginutils": "^5.1.4",
     "@svgr/plugin-svgo": "^8.1.0",
     "antd": "^4.23.1",
-    "axios": "1.7.7",
+    "axios": "1.8.2",
     "babel-loader": "^8.2.5",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-js-logger": "^1.0.17",
