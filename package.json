@@ -58,7 +58,7 @@
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.1",
     "prettier-plugin-tailwindcss": "^0.1.8",
-    "vite": "^6.0.3"
+    "vite": "^6.2.7"
   },
   "dependencies": {
     "@babel/core": "^7.19.1",
