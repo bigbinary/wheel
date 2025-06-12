@@ -27,10 +27,6 @@
       "prettier --write",
       "eslint --fix"
     ],
-    "cypress-tests/**/*.{js,jsx,json}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
     "./**/*.rb": [
       "bundle exec rubocop -a --force-exclusion"
     ],
