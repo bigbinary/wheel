@@ -12,7 +12,6 @@ eslint-plugin-json \
 eslint-plugin-react \
 eslint-plugin-promise \
 eslint-plugin-jam3 \
-eslint-plugin-cypress \
 eslint-plugin-unused-imports \
 prettier-plugin-tailwindcss
 
@@ -37,7 +36,6 @@ declare -a configs=(
   ".husky/helpers/prevent_conflict_markers.sh"
   ".husky/pre-commit"
   ".husky/pre-push"
-  "cypress-tests/.eslintrc.js"
   ".semaphore/commands/run_eslint_on_modified_files.sh"
   ".node-version"
   ".nvmrc"
