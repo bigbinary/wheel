@@ -72,9 +72,9 @@ perl -pi -w -e 's/Wheel/Pump/g;' $(git ls-files)
   [prettier](https://github.com/prettier/prettier).
 - Letter opener gem for development.
 
-## neetoDeploy Review
+## NeetoDeploy Review
 
-[neetoDeploy Review](https://www.neeto.com/neetodeploy) is enabled on this
+[NeetoDeploy Review](https://www.neeto.com/neetodeploy) is enabled on this
 application. Thus all PRs will have a review app and once the PR is merged to
 main, it will be deployed to production instance. The neetoDeploy instance for
 Wheel is hosted in `neeto-engineering` organization.
@@ -85,4 +85,4 @@ Wheel is hosted in `neeto-engineering` organization.
 
 wheel is maintained by [BigBinary](https://www.bigbinary.com). BigBinary is a
 software consultancy company. We build web and mobile applications using Ruby on
-Rails, React.js, React Native and Node.js.
+Rails, React.js and React Native.
