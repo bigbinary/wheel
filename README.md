@@ -1,3 +1,12 @@
+# ⚠️ Project archived
+
+This project is no longer being actively maintained.
+
+We are keeping the repository public for anyone who may still find it useful, but
+we do not plan to provide updates, bug fixes, or support.
+
+----
+
 Made by the team at [BigBinary](https://bigbinary.com), this is a base project
 to quickly spin up a Rails application built with opinions of BigBinary style of
 working.
