@@ -1,13 +1,8 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@use "tailwindcss/base" as *;
+@use "tailwindcss/components" as *;
+@use "tailwindcss/utilities" as *;
+@use "@bigbinary/neetoui" as *;
+@use "layouts/sidebar" as *;
+@use "components/notes" as *;
 
 @import "react-toastify/dist/ReactToastify.min.css";
-
-@import "@bigbinary/neetoui";
-
-//Sidebar
-@import "layouts/sidebar";
-
-//Components
-@import "components/notes";
